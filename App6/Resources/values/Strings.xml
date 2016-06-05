@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="save">Save and Add New</string>
+    <string name="ApplicationName">Data Encryptor</string>
+  <string name="DEFAULT_ERRORCODE">9999</string>
+</resources>
