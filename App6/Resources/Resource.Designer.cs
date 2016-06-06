@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("App6.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("JhpDataSystem.Resource", IsApplication=true)]
 
-namespace App6
+namespace JhpDataSystem
 {
 	
 	
@@ -26,6 +26,10 @@ namespace App6
 		
 		public static void UpdateIdValues()
 		{
+			global::PCLCrypto.Resource.String.ApplicationName = global::JhpDataSystem.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::JhpDataSystem.Resource.String.Hello;
+			global::PCLStorage.Resource.String.ApplicationName = global::JhpDataSystem.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::JhpDataSystem.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -149,11 +153,14 @@ namespace App6
 			// aapt resource value: 0x7f040001
 			public const int ApplicationName = 2130968577;
 			
-			// aapt resource value: 0x7f040002
-			public const int DEFAULT_ERRORCODE = 2130968578;
+			// aapt resource value: 0x7f040003
+			public const int DEFAULT_ERRORCODE = 2130968579;
 			
 			// aapt resource value: 0x7f040000
-			public const int save = 2130968576;
+			public const int Hello = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int save = 2130968578;
 			
 			static String()
 			{

@@ -9,10 +9,10 @@ using System.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using App6.db;
-//using System.Net;
+using JhpDataSystem.db;
 
-namespace App6
+
+namespace JhpDataSystem
 {
     [Activity(Label = "Jhpiego Systems", MainLauncher = true, Icon = "@drawable/jhpiego_logo")]
     public class MainActivity : Activity
@@ -158,8 +158,7 @@ namespace App6
         }
 
         public async void getWebResource(object sender, EventArgs e)
-        {
-            
+        {            
             ////http://www.w3schools.com/json/tryit.asp?filename=tryjson_http&url=myTutorials.txt
             //string url = "http://www.w3schools.com/json/tryit.asp?filename=tryjson_http&url=myTutorials.txt";
             //JsonValue json = await FetchDataAsync(url);

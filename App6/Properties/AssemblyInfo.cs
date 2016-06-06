@@ -12,11 +12,11 @@ using Android.App;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("App6")]
+[assembly: AssemblyTitle("Jhp Data Systems")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("App6")]
+[assembly: AssemblyCompany("Jhpiego")]
+[assembly: AssemblyProduct("Jhpiego Data Systems")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

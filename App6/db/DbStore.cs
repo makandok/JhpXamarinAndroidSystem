@@ -1,7 +1,7 @@
 using System;
 using Mono.Data.Sqlite;
 
-namespace App6.db
+namespace JhpDataSystem.db
 {
     internal class DbStore
     {

@@ -1,4 +1,4 @@
-namespace App6.Interfaces
+namespace JhpDataSystem.Interfaces
 {
     interface IJsonable
     {
