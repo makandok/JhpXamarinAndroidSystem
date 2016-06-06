@@ -75,8 +75,8 @@ namespace App6
 			// aapt resource value: 0x7f05000e
 			public const int editText = 2131034126;
 			
-			// aapt resource value: 0x7f050009
-			public const int fetchData = 2131034121;
+			// aapt resource value: 0x7f05000a
+			public const int fetchData = 2131034122;
 			
 			// aapt resource value: 0x7f050003
 			public const int label1 = 2131034115;
@@ -99,8 +99,8 @@ namespace App6
 			// aapt resource value: 0x7f050001
 			public const int text4 = 2131034113;
 			
-			// aapt resource value: 0x7f05000a
-			public const int textAllValues = 2131034122;
+			// aapt resource value: 0x7f050009
+			public const int textAllValues = 2131034121;
 			
 			// aapt resource value: 0x7f05000b
 			public const int textView = 2131034123;
@@ -122,13 +122,16 @@ namespace App6
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int DefaultView = 2130903040;
+			public const int DataManager = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int DefaultView = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int main_view = 2130903042;
+			public const int Main = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int main_view = 2130903043;
 			
 			static Layout()
 			{

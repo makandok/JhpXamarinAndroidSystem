@@ -51,16 +51,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/save" />
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="134.5dp"
+        android:id="@+id/textAllValues" />
     <Button
-        android:text="Fetch Data"
+        android:text="Synchronise with Server"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/fetchData"
         android:onClick="getWebResource" />
-    <TextView
-        android:text="Text"
-        android:layout_width="match_parent"
-        android:layout_height="179.5dp"
-        android:id="@+id/textAllValues"
-        android:layout_marginBottom="24.0dp" />
 </LinearLayout>

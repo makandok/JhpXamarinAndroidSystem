@@ -9,6 +9,7 @@ using System.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using App6.db;
 //using System.Net;
 
 namespace App6
@@ -89,14 +90,11 @@ namespace App6
                     //inputType
                     var asSpecificType = view as EditText;
                     bundle.PutString(controlName, asSpecificType.Text);
-
-                    //fieldObject = new FieldValue() { Name = controlName, Value = asSpecificType.Text };
                 }
                 else if (viewType == typeof(DatePicker))
                 {
                     var asSpecificType = view as DatePicker;
                     bundle.PutLong(controlName, asSpecificType.DateTime.ToBinary());
-                    //fieldObject = new FieldValue() { Name = controlName, Value = new JsonValue((asSpecificType.DateTime)  };                  
                 }
                 //else if (viewType == typeof(DatePicker))
                 //{
@@ -108,23 +106,67 @@ namespace App6
                 }
             }
 
-            BigBundle.Clear();
-            BigBundle.PutAll(bundle);
+            //we save to the local database
+            var id = DbStore.newId();
+            var myKey = DbStore.Save(id, "default", "I've been Saved");
 
-            var resultsView = FindViewById<TextView>(Resource.Id.textAllValues);
-            resultsView.Text = bundle.ToString();
+            //we clear the ui
+            resetUi();
+
+            updateFilterList();
+
+            //BigBundle.Clear();
+            //BigBundle.PutAll(bundle);
+
+            //var resultsView = FindViewById<TextView>(Resource.Id.textAllValues);
+            //resultsView.Text = bundle.ToString();
         }
 
+        private void updateFilterList()
+        {
+            //we get the keys
+            var records = DbStore.GetKey("default");
+
+            //and show them in the next grid
+            var joined = string.Join("\n", records);
+            var resultsView = FindViewById<TextView>(Resource.Id.textAllValues);
+            resultsView.Text = joined;
+        }
+
+        private void resetUi()
+        {
+            foreach (var controlName in DATA_CONTROLs_ARRAY)
+            {
+                var controlId = Resources.GetIdentifier(controlName, "id", PackageName);
+                if (controlId == 0)
+                    continue;
+
+                var view = FindViewById(controlId);
+                var viewType = view.GetType();
+
+                if (viewType == typeof(EditText))
+                {
+                    var asSpecificType = view as EditText;
+                    asSpecificType.Text = "";
+                }
+                else if (viewType == typeof(DatePicker))
+                {
+                    var asSpecificType = view as DatePicker;
+                    asSpecificType.DateTime = DateTime.MinValue;
+                }
+            }
+        }
 
         public async void getWebResource(object sender, EventArgs e)
         {
-            //http://www.w3schools.com/json/tryit.asp?filename=tryjson_http&url=myTutorials.txt
-            string url = "http://www.w3schools.com/json/tryit.asp?filename=tryjson_http&url=myTutorials.txt";
-            JsonValue json = await FetchDataAsync(url);
-            // ParseAndDisplay (json);
+            
+            ////http://www.w3schools.com/json/tryit.asp?filename=tryjson_http&url=myTutorials.txt
+            //string url = "http://www.w3schools.com/json/tryit.asp?filename=tryjson_http&url=myTutorials.txt";
+            //JsonValue json = await FetchDataAsync(url);
+            //// ParseAndDisplay (json);
 
-            var resultsView = FindViewById<TextView>(Resource.Id.textAllValues);
-            resultsView.Text = json.ToString();
+            //var resultsView = FindViewById<TextView>(Resource.Id.textAllValues);
+            //resultsView.Text = json.ToString();
         }
 
         private async Task<JsonValue> FetchDataAsync(string url)
