@@ -10,13 +10,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using JhpDataSystem.db;
-
+using JhpDataSystem.Interfaces;
 
 namespace JhpDataSystem
 {
     [Activity(Label = "Jhpiego Systems", MainLauncher = true, Icon = "@drawable/jhpiego_logo")]
     public class MainActivity : Activity
     {
+        public Dictionary<string, string> ApiAssets = null;
+        string ProjectId = string.Empty;
+        string DataStoreApplicationKey = string.Empty;
         Bundle BigBundle = null;
         const string ALL_VALUES = "allValues";
         string[] DATA_CONTROLs_ARRAY = new[] { "text3",
@@ -38,6 +41,25 @@ namespace JhpDataSystem
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+
+            //we initialise the app key for our data store
+            //var a = Android.Content.Res.AssetManager.GetObject();
+            ApiAssets = new Dictionary<string, string>();
+            //we read the api key file
+
+            var inputStream = Assets.Open(Constants.API_KEYFILE);
+            var jsonObject = System.Json.JsonValue.Load(inputStream);
+
+            ApiAssets[Constants.ASSET_NAME_APPNAME] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_APPNAME);
+            ApiAssets[Constants.ASSET_PROJECT_ID] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_PROJECT_ID);
+            ApiAssets[Constants.ASSET_NAME_SVC_ACCTEMAIL] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_SVC_ACCTEMAIL);
+            ApiAssets[Constants.ASSET_DATASTORE_APPKEY] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_DATASTORE_APPKEY);
+            ApiAssets[Constants.ASSET_P12KEYFILE] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_P12KEYFILE);
+
+            ProjectId = ApiAssets[Constants.ASSET_PROJECT_ID];
+
+            //ASSET_DATASTORE_APPKEY
+            DataStoreApplicationKey = ApiAssets[Constants.ASSET_DATASTORE_APPKEY];
 
             if (BigBundle == null)
             {
@@ -67,6 +89,11 @@ namespace JhpDataSystem
 
         private void buttonClicked(object sender, EventArgs e)
         {
+            //new got(Assets) { AplicationKey = "" }.unwrapAriaStark(ApiAssets);
+
+            new got(Assets) { AplicationKey = "" }.trainAriaStark(ApiAssets);
+
+            return;
             var bundle = new Bundle();
 
             var asButton = sender as Button;

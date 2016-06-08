@@ -18,13 +18,13 @@ namespace JhpDataSystem
         }
     }
 
-    public class DataStore
-    {
-        public DataStore(string jsonString)
-        {
+    //public class DataStore
+    //{
+    //    public DataStore(string jsonString)
+    //    {
 
-        }
+    //    }
 
-        public List<FieldValue> FieldValues { get; set; }
-    }
+    //    public List<FieldValue> FieldValues { get; set; }
+    //}
 }

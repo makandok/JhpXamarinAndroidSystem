@@ -1,26 +1,25 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Google.Apis.Auth.OAuth2;
 using System.Threading.Tasks;
 using Google.Apis.Services;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Auth.OAuth2.Flows;
+using Google.Apis.Oauth2.v2.Data;
 using System.Threading;
 using Google.Apis.Http;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using RestSharp;
 
 namespace JhpDataSystem.db
 {
     internal class WebDb
     {
+        public void doNothing()
+        {
+            var client = new RestClient();
+            //client.JsonSerializer = new YourCustomSerializer();
+        }
+
         public Google.Apis.Storage.v1.Data.Objects ListBucketContents(Google.Apis.Storage.v1.StorageService storage, string bucket)
         {
             //https://cloud.google.com/docs/authentication#code_samples
@@ -29,45 +28,6 @@ namespace JhpDataSystem.db
                 bucket);
             var requestResult = request.Execute();
             return requestResult;
-        }
-
-        public Google.Apis.Storage.v1.StorageService CreateAuthorizedClient()
-        {
-            return null;
-        //    //https://cloud.google.com/docs/authentication#code_samples
-        //    ServiceCredential credential =
-        //        GoogleCredential.GetApplicationDefaultAsync().Result;
-        //    // Inject the Cloud Storage scope if required.
-        //    if (credential.IsCreateScopedRequired)
-        //    {
-        //        credential = credential.CreateScoped(new[]
-        //        {
-        //    StorageService.Scope.DevstorageReadOnly
-        //});
-        //    }
-        //    return new StorageService(new BaseClientService.Initializer()
-        //    {
-        //        HttpClientInitializer = credential,
-        //        ApplicationName = "DotNet Google Cloud Platform Auth Sample",
-        //    });
-        }
-
-        async void saveDataToDataStore()
-        {
-            //GoogleCredential credential = await GoogleCredential.GetApplicationDefaultAsync();
-
-            //var client = DatastoreClient.Create();
-
-            //var keyFactory = new KeyFactory(projectId, namespaceId, "message");
-            //var entity = new Entity
-            //{
-            //    Key = keyFactory.CreateInsertionKey(),
-            //    ["created"] = DateTime.UtcNow,
-            //    ["text"] = "Text of the message"
-            //};
-            //var transaction = client.BeginTransaction(projectId).Transaction;
-            //var commitResponse = client.Commit(projectId, Mode.TRANSACTIONAL, transaction, new[] { entity.ToInsert() });
-            //var insertedKey = commitResponse.MutationResults[0].Key;
         }
 
         private async Task RunUsingUserCredential()
@@ -95,6 +55,8 @@ namespace JhpDataSystem.db
                 ApiKey = "[YOUR_API_KEY_HERE]",
                 
             });
+
+            
 
             var httpClient = new ConfigurableHttpClient(messageHandler);
 

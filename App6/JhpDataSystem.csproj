@@ -97,36 +97,39 @@
       <HintPath>..\packages\AWSSDK.SQS.3.1.0.9\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\AWSSDK.SQS.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\..\..\..\GitHub\google-api-dotnet-client\bccrypto-csharp-1.8.1-bin\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis, Version=1.13.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.13.1\lib\portable-net45+sl50+netcore45+wpa81+wp8\Google.Apis.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Google.Apis.Auth, Version=1.13.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.13.1\lib\portable-net45+sl50+netcore45+wpa81+wp8\Google.Apis.Auth.dll</HintPath>
+    <Reference Include="Google.Apis.Auth, Version=1.13.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.13.0\lib\portable-net45+sl50+netcore45+wpa81+wp8\Google.Apis.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Google.Apis.Core, Version=1.13.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.Core.1.13.1\lib\portable-net45+sl50+netcore45+wpa81+wp8\Google.Apis.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Google.Apis.Datastore.v1beta3, Version=1.13.1.505, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Datastore.v1beta3.1.13.1.505\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Datastore.v1beta3.dll</HintPath>
+    <Reference Include="Google.Apis.Datastore.v1beta3, Version=1.13.0.487, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Datastore.v1beta3.1.13.0.487\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Datastore.v1beta3.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Google.Apis.Drive.v3, Version=1.13.1.505, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Drive.v3.1.13.1.505\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Drive.v3.dll</HintPath>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.13.0.498, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Drive.v3.1.13.0.498\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Drive.v3.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Google.Apis.Logging.v2beta1, Version=1.13.1.446, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Logging.v2beta1.1.13.1.446\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Logging.v2beta1.dll</HintPath>
+    <Reference Include="Google.Apis.Logging.v2beta1, Version=1.13.0.446, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Logging.v2beta1.1.13.0.446\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Logging.v2beta1.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Google.Apis.Oauth2.v2, Version=1.13.1.509, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Oauth2.v2.1.13.1.509\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Oauth2.v2.dll</HintPath>
+    <Reference Include="Google.Apis.Oauth2.v2, Version=1.13.0.454, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Oauth2.v2.1.13.0.454\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Oauth2.v2.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Google.Apis.Storage.v1, Version=1.13.1.489, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Storage.v1.1.13.1.489\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Storage.v1.dll</HintPath>
+    <Reference Include="Google.Apis.Storage.v1, Version=1.13.0.489, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Storage.v1.1.13.0.489\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Storage.v1.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -168,6 +171,10 @@
       <HintPath>..\packages\Xam.Plugins.Messaging.3.2.1\lib\MonoAndroid10\Plugin.Messaging.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\MonoAndroid10\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SQLitePCL, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\MonoAndroid\SQLitePCL.dll</HintPath>
       <Private>True</Private>
@@ -206,12 +213,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="db\Class1.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="db\BigQueryAssist.cs" />
+    <Compile Include="db\DefaultCredentialProvider.cs" />
+    <Compile Include="db\GoogleCredential.cs" />
+    <Compile Include="db\ServiceAccountCredentiaal.cs" />
     <Compile Include="db\DbStore.cs" />
+    <Compile Include="db\SampleMain.cs" />
+    <Compile Include="db\SHA256CryptoServiceProvider.cs" />
     <Compile Include="db\StorageSample.cs" />
     <Compile Include="db\WebDb.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="FieldValue.cs" />
     <Compile Include="Interfaces\IJsonable.cs" />
+    <Compile Include="JhpSecurity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,6 +234,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <AndroidAsset Include="Assets\api_keys.json" />
+    <AndroidAsset Include="Assets\key.p12" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
