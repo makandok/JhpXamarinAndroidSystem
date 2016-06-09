@@ -217,19 +217,27 @@
     <Compile Include="db\BigQueryAssist.cs" />
     <Compile Include="db\DefaultCredentialProvider.cs" />
     <Compile Include="db\GoogleCredential.cs" />
+    <Compile Include="Humongous.cs" />
+    <Compile Include="model\AppUser.cs" />
+    <Compile Include="model\EntityKey.cs" />
+    <Compile Include="store\DbSaveableEntity.cs" />
+    <Compile Include="store\KindRegistryQuery.cs" />
     <Compile Include="db\ServiceAccountCredentiaal.cs" />
-    <Compile Include="db\DbStore.cs" />
     <Compile Include="db\SampleMain.cs" />
     <Compile Include="db\SHA256CryptoServiceProvider.cs" />
     <Compile Include="db\StorageSample.cs" />
     <Compile Include="db\WebDb.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="FieldValue.cs" />
-    <Compile Include="Interfaces\IJsonable.cs" />
     <Compile Include="JhpSecurity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\layout\UserLogin.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\UserAuthenticator.cs" />
+    <Compile Include="store\LocalDB.cs" />
+    <Compile Include="store\LocalEntityStore.cs" />
+    <Compile Include="store\ProcessLogger.cs" />
+    <Compile Include="store\TableStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -241,9 +249,6 @@
     </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\DefaultView.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -260,16 +265,17 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\main_view.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\jhpiego_logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="communicator\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\DataManager.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserLoginLayout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <None Include="Resources\values\ConstantNumbers.xml" />

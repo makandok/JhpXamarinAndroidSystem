@@ -10,7 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using JhpDataSystem.db;
-using JhpDataSystem.Interfaces;
+using JhpDataSystem.store;
+using JhpDataSystem.model;
 
 namespace JhpDataSystem
 {
@@ -25,8 +26,7 @@ namespace JhpDataSystem
         string[] DATA_CONTROLs_ARRAY = new[] { "text3",
                 "text4", "text1","text2","datePicker1","jumbo1"
             };
-        //private object Constants;
-
+        
         protected override void OnSaveInstanceState(Bundle outState)
         {
             base.OnSaveInstanceState(outState);
@@ -79,8 +79,25 @@ namespace JhpDataSystem
             button.Click += buttonClicked;
 
             var button2 = FindViewById<Button>(Resource.Id.fetchData);
-            button2.Click += getWebResource; ;
-       }
+            button2.Click += getWebResource;
+
+            var showLoginButton = FindViewById<Button>(Resource.Id.showLoginForm);
+            showLoginButton.Click += LoginButton_Click;
+
+            var loginFormButton = FindViewById<Button>(Resource.Id.buttonLoginIn);
+            
+            loginFormButton.Click += authenticateUser_Click;
+        }
+
+        private void authenticateUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            SetContentView(Resource.Layout.UserLoginLayout);
+        }
 
         private void doGetData(object sender, EventArgs e)
         {
@@ -134,8 +151,7 @@ namespace JhpDataSystem
             }
 
             //we save to the local database
-            var id = DbStore.newId();
-            var myKey = DbStore.Save(id, "default", "I've been Saved");
+            var myKey = LocalEntityStore.Instance.Put(new KindName("default"), new KindItem("I've been Saved"));
 
             //we clear the ui
             resetUi();
@@ -152,7 +168,7 @@ namespace JhpDataSystem
         private void updateFilterList()
         {
             //we get the keys
-            var records = DbStore.GetKey("default");
+            var records = LocalEntityStore.Instance.GetKeys(new KindName("default"));
 
             //and show them in the next grid
             var joined = string.Join("\n", records);
@@ -234,6 +250,12 @@ namespace JhpDataSystem
             }
             return result;
         }
+
+        //[Java.Interop.Export("myClickHandler")]
+        //public void doLogin(View view)
+        //{
+        //    //object sender, EventArgs e
+        //}
     }
 }
 

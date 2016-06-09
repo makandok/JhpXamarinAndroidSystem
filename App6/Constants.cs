@@ -11,5 +11,9 @@ namespace JhpDataSystem
         internal const string API_KEYFILE = "api_keys.json";
         internal static System.Collections.Generic.List<string> 
             ENCRYPTED_ASSETS = new System.Collections.Generic.List<string>() { ASSET_DATASTORE_APPKEY };
+        public const string DBSAVE_ERROR = "default error value";
+
+        public const string KIND_APPUSERS = "appusers";
+        public const string MOTHER_OFBOLG = "Text to Encrypt. Do NOT CHANGE";
     }
 }
