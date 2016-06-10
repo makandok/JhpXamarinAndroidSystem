@@ -7,7 +7,7 @@ namespace JhpDataSystem.store
     {
         public const string defaultDatabaseName = "JhpDefaultDB1.db3";
         public string ConnectionString { get; set; }
-        public string GetDb()
+        public LocalDB()
         {
             var personalFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var dbpath = System.IO.Path.Combine(personalFolder, defaultDatabaseName);
@@ -15,10 +15,10 @@ namespace JhpDataSystem.store
             {
                 SqliteConnection.CreateFile(dbpath);
             }
-            return ConnectionString = "URI=file:" + dbpath;
+            ConnectionString = "URI=file:" + dbpath;
         }
 
-        public string GetDb(string databaseName)
+        public LocalDB(string databaseName)
         {
             var personalFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var dbpath = System.IO.Path.Combine(personalFolder, databaseName + ".db3");
@@ -26,7 +26,7 @@ namespace JhpDataSystem.store
             {
                 SqliteConnection.CreateFile(dbpath);
             }
-            return ConnectionString = "URI=file:" + dbpath;
+            ConnectionString = "URI=file:" + dbpath;
         }
 
         public string newId()

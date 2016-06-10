@@ -5,8 +5,8 @@ namespace JhpDataSystem.model
         public KindKey Id { get; set; }
         public string UserId { get; set; }
         public string Names { get; set; }
-        public string SpawnOfAzog { get; set; }
-        public string MotherOfBolg { get; set; }
+        public string KnownBolg { get; set; }
+        //public string MotherOfBolg { get; set; }
     }
 
     public class UserSession

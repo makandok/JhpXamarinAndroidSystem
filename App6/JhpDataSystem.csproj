@@ -218,6 +218,7 @@
     <Compile Include="db\DefaultCredentialProvider.cs" />
     <Compile Include="db\GoogleCredential.cs" />
     <Compile Include="Humongous.cs" />
+    <Compile Include="Archive.cs" />
     <Compile Include="model\AppUser.cs" />
     <Compile Include="model\EntityKey.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
@@ -230,7 +231,6 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="JhpSecurity.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Resources\layout\UserLogin.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\UserAuthenticator.cs" />
@@ -249,6 +249,9 @@
     </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\AdminOptionsLayout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -272,13 +275,9 @@
     <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\DataManager.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\UserLoginLayout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <None Include="Resources\values\ConstantNumbers.xml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.CognitoIdentity.3.1.0.9\analyzers\dotnet\cs\AWSSDK.CognitoIdentity.CodeAnalysis.dll" />
@@ -291,6 +290,9 @@
     <Analyzer Include="..\packages\AWSSDK.SimpleEmail.3.1.3.2\analyzers\dotnet\cs\AWSSDK.SimpleEmail.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.SimpleNotificationService.3.1.0.7\analyzers\dotnet\cs\AWSSDK.SimpleNotificationService.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.SQS.3.1.0.9\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Styles.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

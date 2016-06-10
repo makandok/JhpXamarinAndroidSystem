@@ -1,5 +1,6 @@
 using JhpDataSystem.model;
 using System.Collections.Generic;
+using System;
 
 namespace JhpDataSystem.store
 {
@@ -7,6 +8,7 @@ namespace JhpDataSystem.store
     {
         public string ConnectionString;
         static LocalEntityStore _instance;
+        LocalDB _localDb;
         public static LocalEntityStore Instance
         {
             get
@@ -14,23 +16,37 @@ namespace JhpDataSystem.store
                 if (_instance == null)
                 {
                     _instance = new LocalEntityStore();
-                    _instance.initialiseStore();
+                    _instance.Initialise();
                 }
                 return _instance;
             }
         }
 
-        void initialiseStore()
+        /// <summary>
+        /// Call to ensure that all relevant tables are built
+        /// </summary>
+        private void Initialise()
         {
-            ConnectionString = new LocalDB().GetDb();
-            //does nothing, can remove it
+            _localDb = new LocalDB();
+            ConnectionString = new LocalDB().ConnectionString;
+
+            defaultTableStore = new TableStore(Constants.KIND_DEFAULT);
+            defaultTableStore.build();
+            new TableStore(Constants.KIND_APPUSERS).build();
+            new TableStore(Constants.KIND_PREPEX).build();
+            new TableStore(Constants.KIND_VMMC).build();
             new KindRegistryQuery().build();
+            //new TableStore(Constants.KIND_VMMC_POSTOP).build();
         }
 
-        internal KindKey Put(KindName entityKind, KindItem dataToSave)
-        {
-            return new TableStore(entityKind).Put(dataToSave);
-        }
+        internal TableStore defaultTableStore { get; set; }
+
+        public LocalDB InstanceLocalDb { get { return _localDb; } }
+
+        //internal KindKey Put(KindName entityKind, KindItem dataToSave)
+        //{
+        //    return new TableStore(entityKind).Put(dataToSave);
+        //}
 
         internal KindKey Save(KindKey entityId, KindName entityKind, KindItem dataToSave)
         {

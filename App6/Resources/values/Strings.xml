@@ -4,4 +4,7 @@
   <string name="ApplicationName">Data Encryptor</string>
   <string name="DEFAULT_ERRORCODE">9999</string>
   <string name="login">Login</string>
+  <string name="EditUser">Edit Users</string>
+  
+
 </resources>

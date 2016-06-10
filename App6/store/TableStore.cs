@@ -117,7 +117,7 @@ namespace JhpDataSystem.store
         public List<KindItem> Get(KindKey entityId)
         {
             if (entityId == null)
-                return null;
+                throw new ArgumentNullException("entityId is null");
 
             return GetBlob(entityId);
         }
@@ -151,8 +151,6 @@ namespace JhpDataSystem.store
                     if (entityId == null)
                     {
                         command.CommandText = string.Format(selectDatablobs, _tableName.Value);
-                        command.Parameters.AddWithValue("@id", entityId.Value);
-
                     }
                     else
                     {

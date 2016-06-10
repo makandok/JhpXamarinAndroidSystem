@@ -5,7 +5,7 @@ namespace JhpDataSystem.store
 {
     internal class KindRegistryQuery: TableStore
     {
-        public KindRegistryQuery() : base("kindRegister")
+        public KindRegistryQuery() : base(Constants.KIND_REGISTER)
         {
 
         }

@@ -1,25 +1,20 @@
 ﻿using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.Json;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using JhpDataSystem.db;
 using JhpDataSystem.store;
 using JhpDataSystem.model;
-using JhpDataSystem.Security;
-using Newtonsoft.Json;
 
 namespace JhpDataSystem
 {
-    [Activity(Label = "Jhpiego Systems", MainLauncher = true, Icon = "@drawable/jhpiego_logo")]
-    public class MainActivity : Activity
+    public class Archive : Activity
     {
+        public Dictionary<string, string> ApiAssets = null;
         string ProjectId = string.Empty;
         string DataStoreApplicationKey = string.Empty;
         Bundle BigBundle = null;
@@ -41,17 +36,27 @@ namespace JhpDataSystem
         {
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
-            LoginButton_Click(null, null);
-            AppInstance.Instance.InitialiseAppResources(Assets);
-            //we initialise the app key for our data store
-            ProjectId = AppInstance.Instance.ApiAssets[Constants.ASSET_PROJECT_ID];
-            DataStoreApplicationKey = AppInstance.Instance.ApiAssets[Constants.ASSET_DATASTORE_APPKEY];
-        }
-
-        void LoadMainView(Bundle bundle)
-        {
             SetContentView(Resource.Layout.Main);
-            bindMainActivityEvents();
+
+            //we initialise the app key for our data store
+            //var a = Android.Content.Res.AssetManager.GetObject();
+            ApiAssets = new Dictionary<string, string>();
+            //we read the api key file
+
+            var inputStream = Assets.Open(Constants.API_KEYFILE);
+            var jsonObject = System.Json.JsonValue.Load(inputStream);
+
+            ApiAssets[Constants.ASSET_NAME_APPNAME] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_APPNAME);
+            ApiAssets[Constants.ASSET_PROJECT_ID] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_PROJECT_ID);
+            ApiAssets[Constants.ASSET_NAME_SVC_ACCTEMAIL] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_SVC_ACCTEMAIL);
+            ApiAssets[Constants.ASSET_DATASTORE_APPKEY] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_DATASTORE_APPKEY);
+            ApiAssets[Constants.ASSET_P12KEYFILE] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_P12KEYFILE);
+
+            ProjectId = ApiAssets[Constants.ASSET_PROJECT_ID];
+
+            //ASSET_DATASTORE_APPKEY
+            DataStoreApplicationKey = ApiAssets[Constants.ASSET_DATASTORE_APPKEY];
+
             if (BigBundle == null)
             {
                 BigBundle = new Bundle();
@@ -61,19 +66,8 @@ namespace JhpDataSystem
             {
                 BigBundle.PutAll(bundle.GetBundle(ALL_VALUES));
                 var resultsView = FindViewById<TextView>(Resource.Id.textAllValues);
-                resultsView.Text = BigBundle.ToString();
+                resultsView.Text = BigBundle.ToString();                
             }
-        }
-
-        void bindMainActivityEvents()
-        {
-            var loggedInUserText = FindViewById<Button>(Resource.Id.tLoggedInUser);
-            if (AppInstance.Instance.CurrentUser != null)
-            {
-                var user = AppInstance.Instance.CurrentUser;
-                loggedInUserText.Text = string.Format(user.User.Names + " ({0})", user.User.UserId);
-            }
-            loggedInUserText.Click += showMenuLoggedInUser;
 
             // Get our button from the layout resource,
             // and attach an event to it
@@ -85,138 +79,19 @@ namespace JhpDataSystem
 
             var showLoginButton = FindViewById<Button>(Resource.Id.showLoginForm);
             showLoginButton.Click += LoginButton_Click;
-        }
 
-        void showDialog(string title, string message)
-        {
-            new AlertDialog.Builder(this)
-            .SetTitle(title)
-            .SetMessage(message)
-            .SetPositiveButton("OK", (senderAlert, args) => { })
-            .Create()
-            .Show();
-        }
-
-        private void showMenuLoggedInUser(object sender, EventArgs e)
-        {
-            new AlertDialog.Builder(this)
-                    .SetTitle("Confirm Action")
-                    .SetMessage("Do you want to log out")
-                    .SetPositiveButton("OK", (senderAlert, args) =>
-                    {
-                        doLogOut();
-                    })
-                    .SetNegativeButton("Cancel", (a, b)=> { return; })
-                    .Create()
-                    .Show();
-        }
-
-        private void doLogOut()
-        {
-            AppInstance.Instance.CurrentUser = null;
-            var tuser = FindViewById<Button>(Resource.Id.tLoggedInUser);
-            tuser.Text = "Not Logged In";
-            //we show the log in screen
-            LoginButton_Click(null, null);
+            //var loginFormButton = FindViewById<Button>(Resource.Id.buttonLoginIn);            
+            //loginFormButton.Click += doLoginIn_Click;
         }
 
         private void doLoginIn_Click(object sender, EventArgs e)
         {
-            var tusername = FindViewById<EditText>(Resource.Id.tUserName);
-            var tpasscode = FindViewById<EditText>(Resource.Id.tPassCode);
 
-            var uname = tusername.Text;
-            if (string.IsNullOrWhiteSpace(uname) || string.IsNullOrWhiteSpace(tpasscode.Text))
-            {
-                showDialog("Alert", "UserName and Passcode are both required");
-                return;
-            }
-
-            var passcode = Convert.ToInt32(tpasscode.Text);
-
-            var authenticator = new UserAuthenticator();
-            var user = authenticator.Authenticate(uname, passcode);
-            if (user != null)
-            {
-                //we set this as the logged in user
-                AppInstance.Instance.CurrentUser = user;
-                if (user.User.UserId == Constants.ADMIN_USERNAME)
-                {
-                    //we show the admin view
-                    SetContentView(Resource.Layout.AdminOptionsLayout);
-                    var loginFormButton = FindViewById<Button>(Resource.Id.buttonSaveChanges);
-                    loginFormButton.Click += SaveUserOptions_Click;
-                }
-                else
-                {
-                    //load the main view and update current user options
-                    SetContentView(Resource.Layout.Main);
-                    UpdateCurrentUserOptions(user);
-                }
-            }
-            else
-            {
-                showDialog("Login Unsuccessful", "Could not log you in. Please check input supplied");
-            }
-        }
-
-        private void UpdateCurrentUserOptions(UserSession user)
-        {
-            bindMainActivityEvents();
-        }
-
-        private void SaveUserOptions_Click(object sender, EventArgs e)
-        {
-            var userAuthenticator = new UserAuthenticator();
-            var userCreds = userAuthenticator.LoadCredentials();
-
-            var tNames = FindViewById<EditText>(Resource.Id.tUserNames);
-            var tusername = FindViewById<EditText>(Resource.Id.tUserName);
-            var tpasscode = FindViewById<EditText>(Resource.Id.tUserPassCode);
-            var tpasscodAgain = FindViewById<EditText>(Resource.Id.tUserPassCodeAgain);
-            if (string.IsNullOrWhiteSpace(tNames.Text) || string.IsNullOrWhiteSpace(tusername.Text) 
-                || string.IsNullOrWhiteSpace(tpasscode.Text) || (tpasscode.Text != tpasscodAgain.Text))
-            {
-                showDialog("Alert", "UserName and Passcode are both required, and Passcodes should match");
-                return;
-            }
-
-            var uname = tusername.Text.ToLowerInvariant();
-            var passcode = Convert.ToInt32(tpasscode.Text);
-            var hash = userAuthenticator.computeHash(uname, passcode);
-
-            var matchingCred = (from cred in userCreds
-                                where cred.UserId == uname
-                                select cred).FirstOrDefault();
-            AppUser user = null;
-            if (matchingCred == null)
-            {
-                //means we're ading a new user
-                user = new AppUser()
-                {
-                    Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
-                    UserId = uname,
-                    Names = tNames.Text.ToUpperInvariant(),
-                    KnownBolg = hash
-                };
-            }
-            else
-            {
-                //confirm with the user
-                user = matchingCred;
-                user.KnownBolg = hash;
-                user.Names = tNames.Text.ToUpperInvariant();
-            }
-
-            //we save to the database
-            new DbSaveableEntity(user) { kindName = UserAuthenticator.KindName }.Save();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
             SetContentView(Resource.Layout.UserLoginLayout);
-            var loginFormButton = FindViewById<Button>(Resource.Id.buttonLoginIn);
-            loginFormButton.Click += doLoginIn_Click;
         }
 
         private void doGetData(object sender, EventArgs e)
@@ -228,7 +103,7 @@ namespace JhpDataSystem
         {
             //new got(Assets) { AplicationKey = "" }.unwrapAriaStark(ApiAssets);
 
-            new got(Assets) { AplicationKey = "" }.trainAriaStark(AppInstance.Instance.ApiAssets);
+            new got(Assets) { AplicationKey = "" }.trainAriaStark(ApiAssets);
 
             return;
             var bundle = new Bundle();
@@ -272,7 +147,7 @@ namespace JhpDataSystem
 
             //we save to the local database
             var id = Guid.NewGuid().ToString("N");
-            var myKey = LocalEntityStore.Instance.Save(new KindKey(id), new KindName(Constants.KIND_DEFAULT), new KindItem("I've been Saved"));
+            var myKey = LocalEntityStore.Instance.Save( new KindKey(id), new KindName(Constants.KIND_DEFAULT), new KindItem("I've been Saved"));
 
             //we clear the ui
             resetUi();

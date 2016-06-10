@@ -1,5 +1,6 @@
 using JhpDataSystem.model;
 using Newtonsoft.Json;
+using System;
 
 namespace JhpDataSystem.store
 {
@@ -11,6 +12,8 @@ namespace JhpDataSystem.store
             wrappedEntity = entity;
         }
 
+        public KindName kindName { get; set; }
+
         public KindKey Key { get { return wrappedEntity.Id; } set { wrappedEntity.Id = value; } }
         public string getJson()
         {
@@ -20,6 +23,16 @@ namespace JhpDataSystem.store
         public static T fromJson<T>(KindItem jsonString) where T : ISaveableEntity
         {
             return JsonConvert.DeserializeObject<T>(jsonString.Value);
+        }
+
+        public void Save()
+        {
+            if (wrappedEntity == null)
+                throw new ArgumentNullException("Wrapped entity can not be null");
+
+            LocalEntityStore.Instance.Save(wrappedEntity.Id, kindName, new KindItem(
+                getJson()
+                ));
         }
     }
 }

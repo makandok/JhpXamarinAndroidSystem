@@ -3,6 +3,39 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+    <Button
+        margin_right="5dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_dark"
+        android:id="@+id/tLoggedInUser"
+        android:gravity="right"
+        android:text="Not Logged In" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <Button
+            android:id="@+id/SaveData"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Save" />
+        <Button
+            android:text="Upload"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/fetchData"
+            android:onClick="getWebResource" />
+        <Button
+            android:text="Login"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/showLoginForm" />
+    </LinearLayout>
     <EditText
         android:inputType="number"
         android:layout_width="match_parent"
@@ -46,26 +79,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/datePicker1"
         android:calendarViewShown="false" />
-    <Button
-        android:id="@+id/SaveData"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/save" />
     <TextView
         android:text="Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textAllValues"
         android:layout_marginBottom="0.0dp" />
-    <Button
-        android:text="Synchronise with Server"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/fetchData"
-        android:onClick="getWebResource" />
-    <Button
-        android:text="Show Login Form"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/showLoginForm" />
 </LinearLayout>
