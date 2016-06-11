@@ -77,8 +77,8 @@ namespace JhpDataSystem
             var button2 = FindViewById<Button>(Resource.Id.fetchData);
             button2.Click += getWebResource;
 
-            var showLoginButton = FindViewById<Button>(Resource.Id.showLoginForm);
-            showLoginButton.Click += LoginButton_Click;
+            //var showLoginButton = FindViewById<Button>(Resource.Id.showLoginForm);
+            //showLoginButton.Click += LoginButton_Click;
 
             //var loginFormButton = FindViewById<Button>(Resource.Id.buttonLoginIn);            
             //loginFormButton.Click += doLoginIn_Click;

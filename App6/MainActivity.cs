@@ -14,6 +14,7 @@ using JhpDataSystem.store;
 using JhpDataSystem.model;
 using JhpDataSystem.Security;
 using Newtonsoft.Json;
+using JhpDataSystem.Modules.Prepex;
 
 namespace JhpDataSystem
 {
@@ -40,18 +41,18 @@ namespace JhpDataSystem
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            // Set our view from the "main" layout resource
-            LoginButton_Click(null, null);
             AppInstance.Instance.InitialiseAppResources(Assets);
             //we initialise the app key for our data store
             ProjectId = AppInstance.Instance.ApiAssets[Constants.ASSET_PROJECT_ID];
             DataStoreApplicationKey = AppInstance.Instance.ApiAssets[Constants.ASSET_DATASTORE_APPKEY];
+
+            // Set our view from the "main" layout resource
+            showLoginForm();
         }
 
         void LoadMainView(Bundle bundle)
-        {
-            SetContentView(Resource.Layout.Main);
-            bindMainActivityEvents();
+        {            
+            showHomePage();
             if (BigBundle == null)
             {
                 BigBundle = new Bundle();
@@ -61,12 +62,16 @@ namespace JhpDataSystem
             {
                 BigBundle.PutAll(bundle.GetBundle(ALL_VALUES));
                 var resultsView = FindViewById<TextView>(Resource.Id.textAllValues);
-                resultsView.Text = BigBundle.ToString();
+                if (resultsView != null)
+                {
+                    resultsView.Text = BigBundle.ToString();
+                }
             }
         }
 
-        void bindMainActivityEvents()
+        void showHomePage()
         {
+            SetContentView(Resource.Layout.Main);
             var loggedInUserText = FindViewById<Button>(Resource.Id.tLoggedInUser);
             if (AppInstance.Instance.CurrentUser != null)
             {
@@ -83,8 +88,18 @@ namespace JhpDataSystem
             var button2 = FindViewById<Button>(Resource.Id.fetchData);
             button2.Click += getWebResource;
 
-            var showLoginButton = FindViewById<Button>(Resource.Id.showLoginForm);
-            showLoginButton.Click += LoginButton_Click;
+            var showLoginButton = FindViewById<Button>(Resource.Id.buttonPrepexHome);
+            //PrepexActivity
+            showLoginButton.Click += (x, y) => { StartActivity(typeof(PrepexActivity)); };
+
+
+            var buttonVmmcHome = FindViewById<Button>(Resource.Id.buttonVmmcHome);
+            buttonVmmcHome.Click += (x, y) => {
+                var uri = Android.Net.Uri.Parse("http://www.xamarin.com");
+                var intent = new Intent(Intent.ActionView, uri);
+                StartActivity(intent);
+            };
+            //buttonVmmcHome
         }
 
         void showDialog(string title, string message)
@@ -115,9 +130,10 @@ namespace JhpDataSystem
         {
             AppInstance.Instance.CurrentUser = null;
             var tuser = FindViewById<Button>(Resource.Id.tLoggedInUser);
-            tuser.Text = "Not Logged In";
+            if (tuser != null)
+            { tuser.Text = "Not Logged In"; }
             //we show the log in screen
-            LoginButton_Click(null, null);
+            showLoginForm();
         }
 
         private void doLoginIn_Click(object sender, EventArgs e)
@@ -143,15 +159,12 @@ namespace JhpDataSystem
                 if (user.User.UserId == Constants.ADMIN_USERNAME)
                 {
                     //we show the admin view
-                    SetContentView(Resource.Layout.AdminOptionsLayout);
-                    var loginFormButton = FindViewById<Button>(Resource.Id.buttonSaveChanges);
-                    loginFormButton.Click += SaveUserOptions_Click;
+                    showAdminPage();
                 }
                 else
                 {
                     //load the main view and update current user options
-                    SetContentView(Resource.Layout.Main);
-                    UpdateCurrentUserOptions(user);
+                    showHomePage();
                 }
             }
             else
@@ -160,9 +173,38 @@ namespace JhpDataSystem
             }
         }
 
-        private void UpdateCurrentUserOptions(UserSession user)
+        void showAdminPage()
         {
-            bindMainActivityEvents();
+            SetContentView(Resource.Layout.AdminOptionsLayout);
+
+            var buttonSaveChanges = FindViewById<Button>(Resource.Id.buttonSaveChanges);
+            buttonSaveChanges.Click += SaveUserOptions_Click;
+
+            //buttonAdminLogOut
+            var buttonAdminLogOut = FindViewById<Button>(Resource.Id.buttonAdminLogOut);
+            buttonAdminLogOut.Click += buttonAdminLogOut_Click;
+                //(sender, e)=> { Activity.Finish(); };
+
+            //buttonAdminViewUsers
+            var buttonAdminViewUsers = FindViewById<Button>(Resource.Id.buttonAdminViewUsers);
+            buttonAdminViewUsers.Click += buttonAdminViewUsers_Click;
+        }
+
+        private void buttonAdminLogOut_Click(object sender, EventArgs e)
+        {
+            doLogOut();
+        }
+
+        private void buttonAdminViewUsers_Click(object sender, EventArgs e)
+        {
+            //we get all the users
+            var userCreds = (new UserAuthenticator().LoadCredentials()
+                .Select(t => t.UserId + " (" + t.Names + ")")).ToList();
+            userCreds.Sort();
+            var asOne = string.Join(" | ", userCreds);
+
+            //and show in a grid or alert
+            showDialog("Current Users", asOne);
         }
 
         private void SaveUserOptions_Click(object sender, EventArgs e)
@@ -212,7 +254,7 @@ namespace JhpDataSystem
             new DbSaveableEntity(user) { kindName = UserAuthenticator.KindName }.Save();
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        void showLoginForm()
         {
             SetContentView(Resource.Layout.UserLoginLayout);
             var loginFormButton = FindViewById<Button>(Resource.Id.buttonLoginIn);

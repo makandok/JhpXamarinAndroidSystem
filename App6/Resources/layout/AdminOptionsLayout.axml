@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
+    android:minHeight="25px"
+    android:weightSum="100">
     <LinearLayout
         android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout2"
+        android:layout_weight="45">
         <TextView
             android:text="Add / Edit Users"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tUserNameLabel"
             android:textColor="@android:color/holo_blue_dark"
-            android:textSize="25dp" />
+            android:textSize="24dp" />
         <EditText
             android:inputType="textPersonName"
             android:layout_width="match_parent"
@@ -55,5 +57,42 @@
             android:layout_height="60dp"
             padding_left="50dp"
             android:id="@+id/buttonSaveChanges" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout1"
+        android:layout_weight="55">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3"
+            android:gravity="right">
+            <Button
+                android:text="View Users"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:id="@+id/buttonAdminViewUsers"
+                android:textColor="@android:color/holo_blue_dark" />
+            <Button
+                android:text="Log Out"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:id="@+id/buttonAdminLogOut"
+                android:textColor="@android:color/holo_blue_dark" />
+        </LinearLayout>
+        <TextView
+            android:text="Explore Database"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tExploreDbLabel"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="25dp" />
     </LinearLayout>
 </LinearLayout>

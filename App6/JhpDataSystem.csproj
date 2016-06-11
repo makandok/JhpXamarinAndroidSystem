@@ -219,8 +219,12 @@
     <Compile Include="db\GoogleCredential.cs" />
     <Compile Include="Humongous.cs" />
     <Compile Include="Archive.cs" />
+    <Compile Include="IApplicationModule.cs" />
     <Compile Include="model\AppUser.cs" />
     <Compile Include="model\EntityKey.cs" />
+    <Compile Include="Modules\BrowserDataEntryActivity.cs" />
+    <Compile Include="Modules\Prepex\PrepexActivity.cs" />
+    <Compile Include="Resources\layout\WebhostActivity.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
     <Compile Include="store\KindRegistryQuery.cs" />
     <Compile Include="db\ServiceAccountCredentiaal.cs" />
@@ -244,12 +248,21 @@
     <AndroidAsset Include="Assets\api_keys.json" />
     <AndroidAsset Include="Assets\key.p12" />
     <None Include="GettingStarted.Xamarin" />
+    <AndroidResource Include="Resources\layout\PrepexHome.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\AdminOptionsLayout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\acction_bar.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DataEntryPage.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -273,6 +286,7 @@
   <ItemGroup>
     <Folder Include="communicator\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Modules\IhpVmmc\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserLoginLayout.axml">

@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:theme="@android:style/Theme.NoTitleBar">
     <Button
         margin_right="5dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -20,6 +21,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1">
         <Button
+            android:id="@+id/buttonPrepexHome"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Prepex" />
+        <Button
+            android:id="@+id/buttonVmmcHome"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="VMMC" />
+        <Button
             android:id="@+id/SaveData"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
@@ -30,11 +41,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/fetchData"
             android:onClick="getWebResource" />
-        <Button
-            android:text="Login"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/showLoginForm" />
     </LinearLayout>
     <EditText
         android:inputType="number"
@@ -79,6 +85,44 @@
         android:layout_height="wrap_content"
         android:id="@+id/datePicker1"
         android:calendarViewShown="false" />
+    <RadioGroup
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup1">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="RadioButton"
+            android:id="@+id/radioButton1" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:id="@+id/radioButton2" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:id="@+id/radioButton3" />
+    </RadioGroup>
+    <CheckBox
+        android:text="CheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox1" />
+    <CheckBox
+        android:text="CheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox2" />
+    <CheckBox
+        android:text="CheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox3" />
     <TextView
         android:text="Text"
         android:layout_width="match_parent"
