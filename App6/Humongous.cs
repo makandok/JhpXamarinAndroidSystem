@@ -1,3 +1,4 @@
+using Android.App;
 using Android.Content.Res;
 using JhpDataSystem.model;
 using JhpDataSystem.store;
@@ -41,6 +42,7 @@ namespace JhpDataSystem
         }
 
         public UserSession CurrentUser { get; internal set; }
+
 
         //public Dictionary<Type, KindName> KindNames = new Dictionary<Type, KindName>()
         //    {

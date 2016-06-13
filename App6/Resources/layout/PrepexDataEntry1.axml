@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/nextAndPrevButtons" />
+    <TextView
+        android:text="@string/personaldetails_hdr"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/personaldetails_hdr"
+        android:background="@android:drawable/editbox_dropdown_dark_frame" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clientname"
+        android:hint="@string/clientname" />
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:id="@+id/dob" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ageinyears"
+        android:hint="@string/ageinyears" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clientsphysicaladdress"
+        android:hint="@string/clientsphysicaladdress" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clienttel"
+        android:hint="@string/clienttel" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/homecell"
+        android:hint="@string/homecell" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mobilecell"
+        android:hint="@string/mobilecell" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/workcontactnumber"
+        android:hint="@string/workcontactnumber" />
+    <TextView
+        android:text="@string/alternateaddresstype"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/labelalternateaddresstype" />
+    <RadioGroup
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/alternateaddresstype"
+        android:showDividers="none"
+        android:clipChildren="false">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:text="Work"
+            android:id="@+id/alternateaddresstype_work" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:text="School"
+            android:id="@+id/alternateaddresstype_school" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:text="Friend/Next of Kin"
+            android:id="@+id/alternateaddresstype_friendnextofkin"
+            style="@android:style/Widget.CompoundButton.RadioButton" />
+    </RadioGroup>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/alternateaddress"
+        android:hint="@string/alternateaddress" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/alternatephone"
+        android:hint="@string/alternatephone" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/friend_nextofkin"
+        android:hint="@string/friend_nextofkin" />
+    <TextView
+        android:text="@string/facility_hdr"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/facility_hdr" />
+    <TextView
+        android:text="@string/typeofsite"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/labeltypeofsite" />
+    <RadioGroup
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/typeofsite">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Dedicated Site"
+            android:id="@+id/typeofsite_dedicatedsite" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Mobile Outreach"
+            android:id="@+id/typeofsite_mobileoutreach" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Masss Event"
+            android:id="@+id/typeofsite_masssevent" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Routine Service"
+            android:id="@+id/typeofsite_routineservice" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Public hospital/clinic"
+            android:id="@+id/typeofsite_publichospitalclinic" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Mission hospital"
+            android:id="@+id/typeofsite_missionhospital" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Private clinic/hospital"
+            android:id="@+id/typeofsite_privateclinichospital" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Other"
+            android:id="@+id/typeofsite_other" />
+    </RadioGroup>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/typeofsite_specify"
+        android:hint="@string/typeofsite_specify" />
+    <TextView
+        android:text="@string/howclientlearnt"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/labelhowclientlearnt" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Friend/Family"
+        android:id="@+id/howclientlearnt_friendfamily" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Partner/Spouse"
+        android:id="@+id/howclientlearnt_partnerspouse" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Health worker"
+        android:id="@+id/howclientlearnt_healthworker" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Poster/newspaper/leaflet"
+        android:id="@+id/howclientlearnt_posternewspaperleaflet" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Other Client"
+        android:id="@+id/howclientlearnt_otherclient" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Community Mobilizer"
+        android:id="@+id/howclientlearnt_communitymobilizer" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="TV/radio"
+        android:id="@+id/howclientlearnt_tvradio" />
+    <TextView
+        android:text="@string/indiv_counse_hdr"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/indiv_counse_hdr" />
+    <TextView
+        android:text="@string/primaryreasoncirc"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/labelprimaryreasoncirc" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Partial Hiv protecction"
+        android:id="@+id/primaryreasoncirc_partialhivprotecction" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Sexual pleasure"
+        android:id="@+id/primaryreasoncirc_sexualpleasure" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="STI protection"
+        android:id="@+id/primaryreasoncirc_stiprotection" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Medical"
+        android:id="@+id/primaryreasoncirc_medical" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Appearance"
+        android:id="@+id/primaryreasoncirc_appearance" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Hygiene"
+        android:id="@+id/primaryreasoncirc_hygiene" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Cultural/social/religious"
+        android:id="@+id/primaryreasoncirc_culturalsocialreligious" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Other"
+        android:id="@+id/primaryreasoncirc_other" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/primaryreasoncirc_specify"
+        android:hint="@string/primaryreasoncirc_specify" />
+</LinearLayout>

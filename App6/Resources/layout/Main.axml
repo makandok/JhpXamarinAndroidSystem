@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:theme="@android:style/Theme.NoTitleBar">
+    android:layout_height="fill_parent">
     <Button
         margin_right="5dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -42,91 +41,30 @@
             android:id="@+id/fetchData"
             android:onClick="getWebResource" />
     </LinearLayout>
-    <EditText
-        android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/text3"
-        android:hint="Intake Form Serial" />
-    <EditText
-        android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/text4"
-        android:hint="Register Number" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="15.5dp"
-        android:id="@+id/space1" />
-    <TextView
-        android:text="First set of data"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/label1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/text1"
-        android:hint="first set of data typed here" />
-    <TextView
-        android:text="Second set of data"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/label2" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/text2"
-        android:hint="type Second set of data here" />
-    <DatePicker
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/datePicker1"
-        android:calendarViewShown="false" />
     <RadioGroup
+        android:weightSum="100"
+        android:orientation="horizontal"
+        android:text="Select applicable option"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/radioGroup1">
+        android:id="@+id/radioGroup1"
+        android:layout_marginLeft="50dp">
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="RadioButton"
-            android:id="@+id/radioButton1" />
+            android:text="and I have some long text to share with everyone ccheer up"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:id="@+id/radioButton4" />
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="Select this option if gender is unknownand love it ticked"
             android:id="@+id/radioButton2" />
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="All other gender types e.g. Female are welcome here"
             android:id="@+id/radioButton3" />
     </RadioGroup>
-    <CheckBox
-        android:text="CheckBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox1" />
-    <CheckBox
-        android:text="CheckBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox2" />
-    <CheckBox
-        android:text="CheckBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox3" />
-    <TextView
-        android:text="Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textAllValues"
-        android:layout_marginBottom="0.0dp" />
 </LinearLayout>

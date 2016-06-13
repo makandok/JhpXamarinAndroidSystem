@@ -15,6 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Label Save and Close"
+            android:layout_width="120dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/textLabel2" />
         <Button
             android:text="Cancel"
             android:layout_width="120dp"

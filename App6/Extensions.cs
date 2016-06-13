@@ -1,19 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
 namespace JhpDataSystem
 {
     internal static class Extensions
     {
+        //internal static void Click()
+        //{
+
+        //}
+
         internal static string toText(this System.IO.Stream stream)
         {
             var mstream = new System.IO.MemoryStream();

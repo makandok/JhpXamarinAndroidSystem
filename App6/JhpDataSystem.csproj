@@ -213,13 +213,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminActivity.cs" />
+    <Compile Include="ApplicationSplashActivity.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="db\BigQueryAssist.cs" />
     <Compile Include="db\DefaultCredentialProvider.cs" />
     <Compile Include="db\GoogleCredential.cs" />
     <Compile Include="Humongous.cs" />
-    <Compile Include="Archive.cs" />
+    <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
+    <Compile Include="LauncherActivity.cs" />
     <Compile Include="model\AppUser.cs" />
     <Compile Include="model\EntityKey.cs" />
     <Compile Include="Modules\BrowserDataEntryActivity.cs" />
@@ -242,6 +245,7 @@
     <Compile Include="store\LocalEntityStore.cs" />
     <Compile Include="store\ProcessLogger.cs" />
     <Compile Include="store\TableStore.cs" />
+    <None Include="Samples\DatePickerFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -263,6 +267,22 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\DataEntryPage.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PrepexDataEntry1.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PrepexDataEntry2.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PrepexDataEntry3.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PrepexDataEntry4.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PrepexDataEntry5.axml" />
+    <AndroidResource Include="Resources\layout\PrepexDataEntryEnd.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -287,6 +307,7 @@
     <Folder Include="communicator\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Modules\IhpVmmc\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserLoginLayout.axml">
@@ -307,6 +328,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\nextAndPrevButtons.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\spalshHelper.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\theme.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
