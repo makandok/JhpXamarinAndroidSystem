@@ -213,7 +213,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminActivity.cs" />
     <Compile Include="ApplicationSplashActivity.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="db\BigQueryAssist.cs" />
