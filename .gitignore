@@ -212,3 +212,4 @@ _Pvt_Extensions/
 ModelManifest.xml
 api_keys.json
 *.p12
+/App6/AdminActivity.cs
