@@ -6,16 +6,16 @@
     <LinearLayout
         android:weightSum="100"
         android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/linearLayout1">
         <LinearLayout
             android:layout_weight="25"
             android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
+            android:minWidth="25dp"
+            android:minHeight="25dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout2">
@@ -28,8 +28,8 @@
         <LinearLayout
             android:layout_weight="50"
             android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
+            android:minWidth="25dp"
+            android:minHeight="25dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout4">
@@ -42,8 +42,8 @@
         <LinearLayout
             android:layout_weight="25"
             android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
+            android:minWidth="25dp"
+            android:minHeight="25dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/linearLayout3">

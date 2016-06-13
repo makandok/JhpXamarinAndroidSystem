@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<include layout="@layout/nextandprevbuttons" />
+
+    <TextView
+android:text="@string/hypospadiasis"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_hypospadiasis" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_hypospadiasis" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/hypospadiasis_yes"
+             android:id="@+id/hypospadiasis_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/hypospadiasis_no"
+             android:id="@+id/hypospadiasis_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/otherurethralanomaly"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_otherurethralanomaly" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_otherurethralanomaly" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/otherurethralanomaly_yes"
+             android:id="@+id/otherurethralanomaly_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/otherurethralanomaly_no"
+             android:id="@+id/otherurethralanomaly_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/hydrocele"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_hydrocele" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_hydrocele" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/hydrocele_yes"
+             android:id="@+id/hydrocele_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/hydrocele_no"
+             android:id="@+id/hydrocele_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/scrotalhernia"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_scrotalhernia" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_scrotalhernia" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/scrotalhernia_yes"
+             android:id="@+id/scrotalhernia_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/scrotalhernia_no"
+             android:id="@+id/scrotalhernia_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/genitalulcers"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_genitalulcers" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_genitalulcers" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/genitalulcers_yes"
+             android:id="@+id/genitalulcers_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/genitalulcers_no"
+             android:id="@+id/genitalulcers_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/dermatitisofthepenis"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_dermatitisofthepenis" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_dermatitisofthepenis" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/dermatitisofthepenis_yes"
+             android:id="@+id/dermatitisofthepenis_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/dermatitisofthepenis_no"
+             android:id="@+id/dermatitisofthepenis_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/genitalwarts"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_genitalwarts" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_genitalwarts" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/genitalwarts_yes"
+             android:id="@+id/genitalwarts_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/genitalwarts_no"
+             android:id="@+id/genitalwarts_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/urethraldischarge"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_urethraldischarge" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_urethraldischarge" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/urethraldischarge_yes"
+             android:id="@+id/urethraldischarge_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/urethraldischarge_no"
+             android:id="@+id/urethraldischarge_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/balantis"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_balantis" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_balantis" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/balantis_yes"
+             android:id="@+id/balantis_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/balantis_no"
+             android:id="@+id/balantis_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/posthitis"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_posthitis" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_posthitis" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/posthitis_yes"
+             android:id="@+id/posthitis_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/posthitis_no"
+             android:id="@+id/posthitis_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/foreskinattachedtotheglans"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_foreskinattachedtotheglans" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_foreskinattachedtotheglans" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/foreskinattachedtotheglans_yes"
+             android:id="@+id/foreskinattachedtotheglans_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/foreskinattachedtotheglans_no"
+             android:id="@+id/foreskinattachedtotheglans_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/others"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_others" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_others" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/others_yes"
+             android:id="@+id/others_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/others_no"
+             android:id="@+id/others_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/circ_method_hdr"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/circ_method_hdr" />
+
+    <TextView
+android:text="@string/circumcisionmethodchosen"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_circumcisionmethodchosen" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_circumcisionmethodchosen" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/circumcisionmethodchosen_surgicalcircumcision"
+             android:id="@+id/circumcisionmethodchosen_surgicalcircumcision" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/circumcisionmethodchosen_prepexcircumcision"
+             android:id="@+id/circumcisionmethodchosen_prepexcircumcision" /></RadioGroup >
+
+    <TextView
+android:text="@string/eligibleforprepex"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_eligibleforprepex" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_eligibleforprepex" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/eligibleforprepex_yes"
+             android:id="@+id/eligibleforprepex_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/eligibleforprepex_no"
+             android:id="@+id/eligibleforprepex_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/eligibleforprepex_noreason"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eligibleforprepex_noreason" />
+
+    <TextView
+android:text="@string/prepexcircumcisionsection"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/prepexcircumcisionsection" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/prepex_proc_hdr"
+        android:hint="@string/prepex_proc_hdr" />
+
+    <TextView
+android:text="@string/prepexdevicesize"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_prepexdevicesize" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_prepexdevicesize" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/prepexdevicesize_sizea"
+             android:id="@+id/prepexdevicesize_sizea" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/prepexdevicesize_sizeb"
+             android:id="@+id/prepexdevicesize_sizeb" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/prepexdevicesize_sizec"
+             android:id="@+id/prepexdevicesize_sizec" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/prepexdevicesize_sized"
+             android:id="@+id/prepexdevicesize_sized" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/prepexdevicesize_sizee"
+             android:id="@+id/prepexdevicesize_sizee" /></RadioGroup >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/devicebatchid"
+        android:hint="@string/devicebatchid" />
+
+    <DatePicker
+        android:layout_width="match_parent"
+android:layout_height="90dp"
+android:calendarViewShown="false"
+        android:id="@+id/timelineofcircmarked" />
+
+
+    <DatePicker
+        android:layout_width="match_parent"
+android:layout_height="90dp"
+android:calendarViewShown="false"
+        android:id="@+id/timeplacementringremoved" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/comments"
+        android:hint="@string/comments" />
+
+</LinearLayout>

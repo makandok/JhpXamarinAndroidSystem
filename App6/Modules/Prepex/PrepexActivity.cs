@@ -10,11 +10,10 @@ namespace JhpDataSystem.Modules.Prepex
     public class PrepexActivity : Activity
     {
         List<int> allDataEntryViews = new List<int>() {
-                Resource.Layout.PrepexDataEntry1,
-                Resource.Layout.PrepexDataEntry2,
-                Resource.Layout.PrepexDataEntry3,
-                Resource.Layout.PrepexDataEntry4,
-                Resource.Layout.PrepexDataEntry5
+                Resource.Layout.prepexreg1,
+                Resource.Layout.prepexreg2,
+                Resource.Layout.prepexreg3,
+                Resource.Layout.prepexreg4
             };
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -75,17 +74,17 @@ namespace JhpDataSystem.Modules.Prepex
 
         private void showCliwentDueForView()
         {
-            SetContentView(Resource.Layout.PrepexDataEntry1);
+            SetContentView(Resource.Layout.prepexreg1);
         }
 
         private void showViewList()
         {
-            SetContentView(Resource.Layout.PrepexDataEntry1);
+            SetContentView(Resource.Layout.prepexreg1);
         }
 
         private void showEditExistingView()
         {
-            SetContentView(Resource.Layout.PrepexDataEntry1);
+            SetContentView(Resource.Layout.prepexreg1);
             //
         }
 
@@ -98,45 +97,38 @@ namespace JhpDataSystem.Modules.Prepex
                 case -1:
                     nextLayout =
                         getNext ?
-                        Resource.Layout.PrepexDataEntry1 :
-                        nextLayout = Resource.Layout.PrepexDataEntry1;
+                        Resource.Layout.prepexreg1 :
+                        nextLayout = Resource.Layout.prepexreg1;
                     break;
-                case Resource.Layout.PrepexDataEntry1:
+                case Resource.Layout.prepexreg1:
                     nextLayout =
                     getNext ?
-                        Resource.Layout.PrepexDataEntry2 :
-                        nextLayout = Resource.Layout.PrepexDataEntry1;
+                        Resource.Layout.prepexreg2 :
+                        nextLayout = Resource.Layout.prepexreg1;
                     break;
-                case Resource.Layout.PrepexDataEntry2:
+                case Resource.Layout.prepexreg2:
                     nextLayout =
                     getNext ?
-                        Resource.Layout.PrepexDataEntry3 :
-                        nextLayout = Resource.Layout.PrepexDataEntry1;
+                        Resource.Layout.prepexreg3 :
+                        nextLayout = Resource.Layout.prepexreg1;
                     break;
-                case Resource.Layout.PrepexDataEntry3:
+                case Resource.Layout.prepexreg3:
                     nextLayout =
                     getNext ?
-                        Resource.Layout.PrepexDataEntry4 :
-                        nextLayout = Resource.Layout.PrepexDataEntry2;
+                        Resource.Layout.prepexreg4 :
+                        nextLayout = Resource.Layout.prepexreg2;
                     break;
-                case Resource.Layout.PrepexDataEntry4:
-                    nextLayout =
-                    getNext ?
-                        Resource.Layout.PrepexDataEntry5 :
-                        nextLayout = Resource.Layout.PrepexDataEntry3;
-                    break;
-                case Resource.Layout.PrepexDataEntry5:
+                case Resource.Layout.prepexreg4:
                     nextLayout =
                     getNext ?
                         Resource.Layout.PrepexDataEntryEnd :
-                        nextLayout = Resource.Layout.PrepexDataEntry4;
-                    //nextLayout = Resource.Layout.PrepexDataEntryEnd;
+                        nextLayout = Resource.Layout.prepexreg3;
                     break;
                 case Resource.Layout.PrepexDataEntryEnd:
                     nextLayout =
                         getNext ?
                         Resource.Layout.PrepexDataEntryEnd :
-                        nextLayout = Resource.Layout.PrepexDataEntry5;
+                        nextLayout = Resource.Layout.prepexreg4;
                     break;
                 default:
                     {

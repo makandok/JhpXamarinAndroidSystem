@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<include layout="@layout/nextandprevbuttons" />
+
+    <TextView
+android:text="@string/aesduringplacement_hdr"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aesduringplacement_hdr" />
+
+    <TextView
+android:text="@string/aesduringplacement"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_aesduringplacement" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_aesduringplacement" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/aesduringplacement_noadverseeventsdiagnosed"
+             android:id="@+id/aesduringplacement_noadverseeventsdiagnosed" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/aesduringplacement_adverseeventsdiagnosed"
+             android:id="@+id/aesduringplacement_adverseeventsdiagnosed" /></RadioGroup >
+
+    <TextView
+android:text="@string/aesdiagnosed_hdr"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aesdiagnosed_hdr" />
+
+    <TextView
+android:text="@string/pain"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_pain" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_pain" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/pain_mild"
+             android:id="@+id/pain_mild" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/pain_moderate"
+             android:id="@+id/pain_moderate" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/pain_severe"
+             android:id="@+id/pain_severe" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/pain_severitynotclassified"
+             android:id="@+id/pain_severitynotclassified" /></RadioGroup >
+
+    <TextView
+android:text="@string/bleeding"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_bleeding" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_bleeding" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/bleeding_mild"
+             android:id="@+id/bleeding_mild" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/bleeding_moderate"
+             android:id="@+id/bleeding_moderate" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/bleeding_severe"
+             android:id="@+id/bleeding_severe" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/bleeding_severitynotclassified"
+             android:id="@+id/bleeding_severitynotclassified" /></RadioGroup >
+
+    <TextView
+android:text="@string/anesthesia_analgesicreaction"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_anesthesia_analgesicreaction" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_anesthesia_analgesicreaction" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/anesthesia_analgesicreaction_mild"
+             android:id="@+id/anesthesia_analgesicreaction_mild" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/anesthesia_analgesicreaction_moderate"
+             android:id="@+id/anesthesia_analgesicreaction_moderate" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/anesthesia_analgesicreaction_severe"
+             android:id="@+id/anesthesia_analgesicreaction_severe" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/anesthesia_analgesicreaction_severitynotclassified"
+             android:id="@+id/anesthesia_analgesicreaction_severitynotclassified" /></RadioGroup >
+
+    <TextView
+android:text="@string/damagetopenis"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_damagetopenis" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_damagetopenis" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/damagetopenis_mild"
+             android:id="@+id/damagetopenis_mild" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/damagetopenis_moderate"
+             android:id="@+id/damagetopenis_moderate" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/damagetopenis_severe"
+             android:id="@+id/damagetopenis_severe" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/damagetopenis_severitynotclassified"
+             android:id="@+id/damagetopenis_severitynotclassified" /></RadioGroup >
+
+    <TextView
+android:text="@string/difficultywithplacement"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_difficultywithplacement" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_difficultywithplacement" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/difficultywithplacement_mild"
+             android:id="@+id/difficultywithplacement_mild" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/difficultywithplacement_moderate"
+             android:id="@+id/difficultywithplacement_moderate" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/difficultywithplacement_severe"
+             android:id="@+id/difficultywithplacement_severe" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/difficultywithplacement_severitynotclassified"
+             android:id="@+id/difficultywithplacement_severitynotclassified" /></RadioGroup >
+
+    <TextView
+android:text="@string/devicemalfunction"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_devicemalfunction" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_devicemalfunction" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/devicemalfunction_mild"
+             android:id="@+id/devicemalfunction_mild" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/devicemalfunction_moderate"
+             android:id="@+id/devicemalfunction_moderate" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/devicemalfunction_severe"
+             android:id="@+id/devicemalfunction_severe" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/devicemalfunction_severitynotclassified"
+             android:id="@+id/devicemalfunction_severitynotclassified" /></RadioGroup >
+
+    <TextView
+android:text="@string/postappassessmenthdr"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/postappassessmenthdr" />
+
+    <TextView
+android:text="@string/clientinstructedonhdr"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clientinstructedonhdr" />
+
+    <TextView
+android:text="@string/nottomovedevice"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_nottomovedevice" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_nottomovedevice" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/nottomovedevice_yes"
+             android:id="@+id/nottomovedevice_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/nottomovedevice_no"
+             android:id="@+id/nottomovedevice_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/removalond7"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_removalond7" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_removalond7" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/removalond7_yes"
+             android:id="@+id/removalond7_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/removalond7_no"
+             android:id="@+id/removalond7_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/removalbefored7"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_removalbefored7" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_removalbefored7" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/removalbefored7_yes"
+             android:id="@+id/removalbefored7_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/removalbefored7_no"
+             android:id="@+id/removalbefored7_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/onlydesignatedprovider"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_onlydesignatedprovider" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_onlydesignatedprovider" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/onlydesignatedprovider_yes"
+             android:id="@+id/onlydesignatedprovider_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/onlydesignatedprovider_no"
+             android:id="@+id/onlydesignatedprovider_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/notpullforeskin"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_notpullforeskin" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_notpullforeskin" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/notpullforeskin_yes"
+             android:id="@+id/notpullforeskin_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/notpullforeskin_no"
+             android:id="@+id/notpullforeskin_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/nosexualintercourse"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_nosexualintercourse" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_nosexualintercourse" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/nosexualintercourse_yes"
+             android:id="@+id/nosexualintercourse_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/nosexualintercourse_no"
+             android:id="@+id/nosexualintercourse_no" /></RadioGroup >
+
+    <TextView
+android:text="@string/writteninstructions"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_writteninstructions" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_writteninstructions" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/writteninstructions_yes"
+             android:id="@+id/writteninstructions_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/writteninstructions_no"
+             android:id="@+id/writteninstructions_no" /></RadioGroup >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clientclinicaldisposition"
+        android:hint="@string/clientclinicaldisposition" />
+
+    <TextView
+android:text="@string/orlanalgesiagiven"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_orlanalgesiagiven" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_orlanalgesiagiven" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/orlanalgesiagiven_yes"
+             android:id="@+id/orlanalgesiagiven_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/orlanalgesiagiven_no"
+             android:id="@+id/orlanalgesiagiven_no" /></RadioGroup >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameoralanalgesiadrug"
+        android:hint="@string/nameoralanalgesiadrug" />
+
+    <DatePicker
+        android:layout_width="match_parent"
+android:layout_height="90dp"
+android:calendarViewShown="false"
+        android:id="@+id/scheduledremovaldate" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dischargedby"
+        android:hint="@string/dischargedby" />
+
+    <TextView
+android:text="@string/signed"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_signed" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_signed" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/signed_yes"
+             android:id="@+id/signed_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/signed_no"
+             android:id="@+id/signed_no" /></RadioGroup >
+
+</LinearLayout>
