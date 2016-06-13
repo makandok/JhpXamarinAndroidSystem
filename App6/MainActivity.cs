@@ -82,7 +82,7 @@ namespace JhpDataSystem
                 if (user.User.UserId == Constants.ADMIN_USERNAME)
                 {
                     //we show the admin view
-                    StartActivity(typeof(AdminActivity));
+                    StartActivity(typeof(SystemConfigActivity));
                 }
                 else
                 {

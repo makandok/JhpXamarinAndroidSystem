@@ -227,6 +227,7 @@
     <AndroidResource Include="Resources\layout\prepexdatareviewer.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <Compile Include="SystemConfigActivity.cs" />
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />
