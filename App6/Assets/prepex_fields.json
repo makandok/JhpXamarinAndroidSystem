@@ -1,0 +1,867 @@
+[
+  {
+    "name": "facilityname",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "dateofvisit",
+    "dataType": "DatePicker",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "district",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "clientidnumber",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "clientname",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "dob",
+    "dataType": "DatePicker",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "ageinyears",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "clientsphysicaladdress",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "clienttel",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "homecell",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "mobilecell",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "workcontactnumber",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "alternateaddresstype_work",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "alternateaddresstype_school",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "alternateaddresstype_friendnextofkin",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "alternateaddress",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "alternatephone",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "friend_nextofkin",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "typeofsite_dedicatedsite",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "typeofsite_mobileoutreach",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "typeofsite_masssevent",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "typeofsite_routineservice",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "typeofsite_publichospitalclinic",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "typeofsite_missionhospital",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "typeofsite_privateclinichospital",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "typeofsite_other",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "typeofsite_specify",
+    "dataType": "EditText",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "howclientlearnt_friendfamily",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "howclientlearnt_partnerspouse",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "howclientlearnt_healthworker",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "howclientlearnt_posternewspaperleaflet",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "howclientlearnt_otherclient",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "howclientlearnt_communitymobilizer",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "howclientlearnt_tvradio",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg1"
+  },
+  {
+    "name": "primaryreasoncirc_partialhivprotecction",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "primaryreasoncirc_sexualpleasure",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "primaryreasoncirc_stiprotection",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "primaryreasoncirc_medical",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "primaryreasoncirc_appearance",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "primaryreasoncirc_hygiene",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "primaryreasoncirc_culturalsocialreligious",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "primaryreasoncirc_other",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "primaryreasoncirc_specify",
+    "dataType": "EditText",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "hivstatus_positive",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "hivstatus_negative",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "hivstatus_indeterminate",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "hivstatus_unknownrefusedselfreported",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "allergictomeds_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "allergictomeds_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "allergictomeds_specify",
+    "dataType": "EditText",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "everdiagnosedwith_hemophiliableedingdisorder",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "everdiagnosedwith_diabetes",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "everdiagnosedwith_hypertension",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "everdiagnosedwith_cancer",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "everdiagnosedwith_peripheralvasculardisease",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "currentlytakingmeds_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "currentlytakingmeds_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "currentlytakingmeds_specify",
+    "dataType": "EditText",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "hadoperation_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "hadoperation_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "hadoperation_specify",
+    "dataType": "EditText",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "complaints_urethraldischarge",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "complaints_genitalsore",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "complaints_painfulweakerection",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "complaints_swellingofthescrotum",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "complaints_painonurination",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "complaints_difficulltyinretractingforeskin",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "complaints_other",
+    "dataType": "CheckBox",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "complaints_specify",
+    "dataType": "EditText",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "generalcondition_healthy",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "generalcondition_illlooking",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "pallor_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "pallor_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "lymphadenopathy_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "lymphadenopathy_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "wasting_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "wasting_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "phimosis_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "phimosis_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "paraphimosis_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "paraphimosis_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "narrowprepuce_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "narrowprepuce_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "tightfrenulum_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "tightfrenulum_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "epispadiasis_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "epispadiasis_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg2"
+  },
+  {
+    "name": "hypospadiasis_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "hypospadiasis_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "otherurethralanomaly_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "otherurethralanomaly_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "hydrocele_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "hydrocele_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "scrotalhernia_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "scrotalhernia_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "genitalulcers_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "genitalulcers_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "dermatitisofthepenis_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "dermatitisofthepenis_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "genitalwarts_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "genitalwarts_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "urethraldischarge_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "urethraldischarge_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "balantis_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "balantis_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "posthitis_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "posthitis_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "foreskinattachedtotheglans_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "foreskinattachedtotheglans_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "others_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "others_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "circumcisionmethodchosen_surgicalcircumcision",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "circumcisionmethodchosen_prepexcircumcision",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "eligibleforprepex_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "eligibleforprepex_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "prepex_proc_hdr",
+    "dataType": "EditText",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "prepexdevicesize_sizea",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "prepexdevicesize_sizeb",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "prepexdevicesize_sizec",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "prepexdevicesize_sized",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "prepexdevicesize_sizee",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "devicebatchid",
+    "dataType": "EditText",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "timelineofcircmarked",
+    "dataType": "DatePicker",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "timeplacementringremoved",
+    "dataType": "DatePicker",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "comments",
+    "dataType": "EditText",
+    "pageName": "prepexreg3"
+  },
+  {
+    "name": "aesduringplacement_noadverseeventsdiagnosed",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "aesduringplacement_adverseeventsdiagnosed",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "pain_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "pain_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "pain_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "pain_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "bleeding_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "bleeding_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "bleeding_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "bleeding_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "anesthesia_analgesicreaction_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "anesthesia_analgesicreaction_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "anesthesia_analgesicreaction_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "anesthesia_analgesicreaction_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "damagetopenis_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "damagetopenis_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "damagetopenis_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "damagetopenis_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "difficultywithplacement_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "difficultywithplacement_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "difficultywithplacement_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "difficultywithplacement_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "devicemalfunction_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "devicemalfunction_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "devicemalfunction_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "devicemalfunction_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "nottomovedevice_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "nottomovedevice_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "removalond7_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "removalond7_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "removalbefored7_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "removalbefored7_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "onlydesignatedprovider_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "onlydesignatedprovider_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "notpullforeskin_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "notpullforeskin_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "nosexualintercourse_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "nosexualintercourse_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "writteninstructions_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "writteninstructions_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "clientclinicaldisposition",
+    "dataType": "EditText",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "orlanalgesiagiven_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "orlanalgesiagiven_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "nameoralanalgesiadrug",
+    "dataType": "EditText",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "scheduledremovaldate",
+    "dataType": "DatePicker",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "dischargedby",
+    "dataType": "EditText",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "signed_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  },
+  {
+    "name": "signed_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexreg4"
+  }
+]

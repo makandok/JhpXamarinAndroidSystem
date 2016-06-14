@@ -11,12 +11,13 @@ namespace ExcelToAndroidXML
 {
     class Program
     {
+        
         const int TARGET_NUMPAGES = 4;
 
         static void Main(string[] args)
         {
             var XML_FORMAT = "axml";
-            var MODULE_NAME_PREFIX = "PrepexReg";
+            var MODULE_NAME_PREFIX = "prepexreg";
             var text = File.ReadAllText("json1.json");
             var lookups = JsonConvert.DeserializeObject<List<FieldChoices>>(text);
             lookups.ForEach(
@@ -44,7 +45,7 @@ namespace ExcelToAndroidXML
                 );
 
             var fieldCounter = 0;
-            var pagedField = new List<ViewDefinitionBuilder>();
+            var pagedFieldDefinitions = new List<ViewDefinitionBuilder>();
             ViewDefinitionBuilder dataPage = null;
             var pageCounter = 0;
             var sets = fields.Count / TARGET_NUMPAGES;
@@ -54,7 +55,7 @@ namespace ExcelToAndroidXML
                 {
                     //create a new view
                     var currentDataPage = new ViewDefinitionBuilder() { pageName = MODULE_NAME_PREFIX + (++pageCounter) };
-                    pagedField.Add(currentDataPage);
+                    pagedFieldDefinitions.Add(currentDataPage);
                     dataPage = currentDataPage;
                 }
                 fieldCounter++;
@@ -62,35 +63,37 @@ namespace ExcelToAndroidXML
             }
 
             var fieldsLookup = MODULE_NAME_PREFIX.ToLowerInvariant() + "_fields.json";
-            //File.WriteAllText(fieldsLookup, "");
             var stringResoures = MODULE_NAME_PREFIX.ToLowerInvariant() + "_string.json";
-            //File.WriteAllText(stringResoures, "");
             var isFirst = true;
-            foreach (var page in pagedField)
+
+            foreach (var page in pagedFieldDefinitions)
             {
                 var pageContents = page.build();
                 //we create the view and write to it
-                File.WriteAllText(page.pageName.ToLowerInvariant()+ "."+ XML_FORMAT, pageContents);
+                File.WriteAllText(page.pageName.ToLowerInvariant()+ ".axml", pageContents);
+                File.WriteAllText(page.pageName.ToLowerInvariant() + ".xml", pageContents);
+
                 if (isFirst)
                 {
                     isFirst = false;
                     //we write the strings resoures entries
                     File.WriteAllText(stringResoures, page.metaDataProvider.StringResourcesItems.ToString());
-                    //we write the field dictionary
-                    File.WriteAllText(fieldsLookup,
-                        JsonConvert.SerializeObject(page.metaDataProvider.ModelItems)
-                        );
                 }
                 else
                 {
                     //we write the strings resoures entries
                     File.AppendAllText(stringResoures, page.metaDataProvider.StringResourcesItems.ToString());
-                    //we write the field dictionary
-                    File.AppendAllText(fieldsLookup,
-                        JsonConvert.SerializeObject(page.metaDataProvider.ModelItems)
-                        );
                 }
             }
+
+            //we write the field dictionary
+            //process after FieldDef.build()
+            var allFields = (from pageFieldDef in pagedFieldDefinitions
+                             from fielddef in pageFieldDef.metaDataProvider.ModelItems
+                             select fielddef).ToList();
+            File.WriteAllText(fieldsLookup, JsonConvert.SerializeObject(allFields));
+
+            //kipeto
             Console.WriteLine("Import completed, press any key to return");
             Console.ReadLine();
         }

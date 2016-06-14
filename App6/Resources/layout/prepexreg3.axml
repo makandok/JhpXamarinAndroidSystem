@@ -354,9 +354,10 @@ android:orientation="horizontal"
              android:id="@+id/others_no" /></RadioGroup >
 
     <TextView
-android:text="@string/circ_method_hdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/circ_method_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/circ_method_hdr" />
@@ -420,24 +421,34 @@ android:orientation="horizontal"
              android:id="@+id/eligibleforprepex_no" /></RadioGroup >
 
     <TextView
-android:text="@string/eligibleforprepex_noreason"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/eligibleforprepex_noreason"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/eligibleforprepex_noreason" />
 
     <TextView
-android:text="@string/prepexcircumcisionsection"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/prepexcircumcisionsection"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/prepexcircumcisionsection" />
 
-    <EditText
+    <TextView
+        android:text="@string/prepex_proc_hdr"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/prepex_proc_hdr" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/prepex_proc_hdr"
         android:hint="@string/prepex_proc_hdr" />
 
@@ -491,29 +502,85 @@ android:orientation="horizontal"
              android:text="@string/prepexdevicesize_sizee"
              android:id="@+id/prepexdevicesize_sizee" /></RadioGroup >
 
-    <EditText
+    <TextView
+        android:text="@string/devicebatchid"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/devicebatchid" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/devicebatchid"
         android:hint="@string/devicebatchid" />
 
-    <DatePicker
-        android:layout_width="match_parent"
-android:layout_height="90dp"
-android:calendarViewShown="false"
-        android:id="@+id/timelineofcircmarked" />
-
-
-    <DatePicker
-        android:layout_width="match_parent"
-android:layout_height="90dp"
-android:calendarViewShown="false"
-        android:id="@+id/timeplacementringremoved" />
-
-
-    <EditText
+    <TextView
+        android:text="@string/timelineofcircmarked"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/dttxt_timelineofcircmarked" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/dtbtn_timelineofcircmarked"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="@string/sys_dateselect"/>
+        <EditText
+            android:text=""
+            android:textColor="@android:color/holo_blue_dark"
+            android:minWidth="25dp"
+            android:minHeight="25dp"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/dttxt_timelineofcircmarked"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/timeplacementringremoved"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/dttxt_timeplacementringremoved" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/dtbtn_timeplacementringremoved"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="@string/sys_dateselect"/>
+        <EditText
+            android:text=""
+            android:textColor="@android:color/holo_blue_dark"
+            android:minWidth="25dp"
+            android:minHeight="25dp"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/dttxt_timeplacementringremoved"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/comments"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/comments" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/comments"
         android:hint="@string/comments" />
 

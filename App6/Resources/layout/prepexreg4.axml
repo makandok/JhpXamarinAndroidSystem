@@ -6,9 +6,10 @@
 <include layout="@layout/nextandprevbuttons" />
 
     <TextView
-android:text="@string/aesduringplacement_hdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/aesduringplacement_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/aesduringplacement_hdr" />
@@ -43,9 +44,10 @@ android:orientation="horizontal"
              android:id="@+id/aesduringplacement_adverseeventsdiagnosed" /></RadioGroup >
 
     <TextView
-android:text="@string/aesdiagnosed_hdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/aesdiagnosed_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/aesdiagnosed_hdr" />
@@ -309,17 +311,19 @@ android:orientation="horizontal"
              android:id="@+id/devicemalfunction_severitynotclassified" /></RadioGroup >
 
     <TextView
-android:text="@string/postappassessmenthdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/postappassessmenthdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/postappassessmenthdr" />
 
     <TextView
-android:text="@string/clientinstructedonhdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/clientinstructedonhdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/clientinstructedonhdr" />
@@ -527,9 +531,17 @@ android:orientation="horizontal"
              android:text="@string/writteninstructions_no"
              android:id="@+id/writteninstructions_no" /></RadioGroup >
 
-    <EditText
+    <TextView
+        android:text="@string/clientclinicaldisposition"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/clientclinicaldisposition" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/clientclinicaldisposition"
         android:hint="@string/clientclinicaldisposition" />
 
@@ -562,22 +574,58 @@ android:orientation="horizontal"
              android:text="@string/orlanalgesiagiven_no"
              android:id="@+id/orlanalgesiagiven_no" /></RadioGroup >
 
-    <EditText
+    <TextView
+        android:text="@string/nameoralanalgesiadrug"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/nameoralanalgesiadrug" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/nameoralanalgesiadrug"
         android:hint="@string/nameoralanalgesiadrug" />
 
-    <DatePicker
-        android:layout_width="match_parent"
-android:layout_height="90dp"
-android:calendarViewShown="false"
-        android:id="@+id/scheduledremovaldate" />
-
-
-    <EditText
+    <TextView
+        android:text="@string/scheduledremovaldate"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/dttxt_scheduledremovaldate" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/dtbtn_scheduledremovaldate"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="@string/sys_dateselect"/>
+        <EditText
+            android:text=""
+            android:textColor="@android:color/holo_blue_dark"
+            android:minWidth="25dp"
+            android:minHeight="25dp"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/dttxt_scheduledremovaldate"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/dischargedby"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/dischargedby" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/dischargedby"
         android:hint="@string/dischargedby" />
 

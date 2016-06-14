@@ -2,7 +2,7 @@ using JhpDataSystem.model;
 
 namespace JhpDataSystem
 {
-    internal class Constants
+    public class Constants
     {
         //tables in the database
         public const string KIND_APPUSERS = "appusers";
@@ -31,6 +31,17 @@ namespace JhpDataSystem
 
         public static string SUPPORTADMIN_USERNAME = "support";
 
-        
+        internal const string FILE_PREPEX_FIELDS = "prepex_fields.json";
+
+        internal const string PP_VIEWS_1= "prepexreg1";
+        internal const string PP_VIEWS_2 = "prepexreg2";
+        internal const string PP_VIEWS_3 = "prepexreg3";
+        internal const string PP_VIEWS_4 = "prepexreg4";
+
+        internal const string DATEPICKER = "DatePicker";
+
+        internal const string DATE_BUTTON_PREFIX = "dtbtn_";
+        internal const string DATE_TEXT_PREFIX = "dttxt_";
+        internal const string LABEL_PREFIX = "sylbl_";
     }
 }

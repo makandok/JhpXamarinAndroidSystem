@@ -17,7 +17,7 @@
   },
   {
     "ViewName": "dateofvisit",
-    "ViewType": "Text",
+    "ViewType": "Date",
     "DisplayLabel": "Date of Visit",
     "ListName": "",
     "GridColumn": "1",
@@ -32,9 +32,9 @@
     "Id": "4"
   },
   {
-    "ViewName": "cllientidnumber",
-    "ViewType": "date",
-    "DisplayLabel": "Cllient ID Number",
+    "ViewName": "clientidnumber",
+    "ViewType": "int",
+    "DisplayLabel": "Client ID Number",
     "ListName": "",
     "GridColumn": "2",
     "Id": "5"

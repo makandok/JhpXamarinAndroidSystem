@@ -6,13 +6,15 @@
   <string name="login">Login</string>
   <string name="EditUser">Edit Users</string>
 
-
+  <string name="sys_dateselect">Select Date</string>
   <string name="generalsummary_hdr">General Summary</string>
   <string name="facilityname">Facility</string>
   <string name="dateofvisit">Date of Visit</string>
   <string name="district">District</string>
+  <string name="clientidnumber">Client ID Number</string>
   <string name="personaldetails_hdr">Personal Details</string>
   <string name="clientname">Client Name</string>
+  <string name="dob">DOB</string>
   <string name="ageinyears">Age in Years</string>
   <string name="clientsphysicaladdress">Clients Physical Address</string>
   <string name="clienttel">Client Tel</string>
@@ -46,6 +48,7 @@
   <string name="howclientlearnt_communitymobilizer">Community Mobilizer</string>
   <string name="howclientlearnt_tvradio">TV/radio</string>
   <string name="indiv_counse_hdr">Individual Counsellling</string>
+  <string name="sys_dateselect">Select Date</string>
   <string name="primaryreasoncirc">Primary reason for circumcision</string>
   <string name="primaryreasoncirc_partialhivprotecction">Partial Hiv protecction</string>
   <string name="primaryreasoncirc_sexualpleasure">Sexual pleasure</string>
@@ -117,6 +120,7 @@
   <string name="epispadiasis">Epispadiasis</string>
   <string name="epispadiasis_yes">Yes</string>
   <string name="epispadiasis_no">No</string>
+  <string name="sys_dateselect">Select Date</string>
   <string name="hypospadiasis">Hypospadiasis</string>
   <string name="hypospadiasis_yes">Yes</string>
   <string name="hypospadiasis_no">No</string>
@@ -170,7 +174,10 @@
   <string name="prepexdevicesize_sized">Size D</string>
   <string name="prepexdevicesize_sizee">Size E</string>
   <string name="devicebatchid">Device Batch Id</string>
+  <string name="timelineofcircmarked">Time Line of Circ Marked</string>
+  <string name="timeplacementringremoved">Time Placement Ring Removed</string>
   <string name="comments">Comments</string>
+  <string name="sys_dateselect">Select Date</string>
   <string name="aesduringplacement_hdr">Adverse Events During Placement (before discharge)</string>
   <string name="aesduringplacement">AES during placement</string>
   <string name="aesduringplacement_noadverseeventsdiagnosed">No Adverse events diagnosed</string>
@@ -234,6 +241,7 @@
   <string name="orlanalgesiagiven_yes">Yes</string>
   <string name="orlanalgesiagiven_no">No</string>
   <string name="nameoralanalgesiadrug">Oral Analgesia Drug</string>
+  <string name="scheduledremovaldate">Scheduled removal date</string>
   <string name="dischargedby">Discharged by (Name)</string>
   <string name="signed">Signed</string>
   <string name="signed_yes">Yes</string>

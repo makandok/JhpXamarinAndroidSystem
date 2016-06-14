@@ -23,6 +23,11 @@ namespace ExcelToAndroidXML
 
     public class ViewDefinitionBuilder
     {
+        internal const string SYS_DATE_SELECT_TEXT = "sys_dateselect";
+        internal const string DATE_BUTTON_PREFIX = "dtbtn_";
+        internal const string DATE_TEXT_PREFIX = "dttxt_";
+        internal const string LABEL_PREFIX = "sylbl_";
+
         public string pageName { get; set; }
         public List<FieldDefinition> ViewFields { get; set; }
         public MetaDataProvider metaDataProvider = null;
@@ -53,6 +58,7 @@ namespace ExcelToAndroidXML
 </LinearLayout>
 ";
             metaDataProvider = new MetaDataProvider();
+            metaDataProvider.AddStringResource(SYS_DATE_SELECT_TEXT, "Select Date");
             var asString = getData(ViewFields);
 
             //we update the page names
@@ -75,7 +81,7 @@ namespace ExcelToAndroidXML
                     case "Cell":
                     case "Number":
                         {
-                            fieldXml = getXamlDefinitionForNumber(field);
+                            fieldXml = getXamlDefinitionForTextField(field, true);
                             break;
                         }
                     case "Date":
@@ -88,7 +94,7 @@ namespace ExcelToAndroidXML
                     case "Text":
                     case "EditText":
                         {
-                            fieldXml = getXamlDefinitionForTextField(field);
+                            fieldXml = getXamlDefinitionForTextField(field, false);
                             break;
                         }
                     case "Label":
@@ -126,46 +132,89 @@ namespace ExcelToAndroidXML
             return builder.ToString();
         }
 
-        string getXamlDefinitionForNumber(FieldDefinition field)
-        {
-            var stringsEntryText = field.DisplayLabel;
-            var stringsEntryName = field.ViewName;
-            var fieldXml = (@"
-    <EditText
-        android:inputType='number'
-        android:layout_width='match_parent'
-        android:layout_height='wrap_content'
-        android:id='@+id/" + stringsEntryName + @"'
-        android:hint='@string/" + stringsEntryName + @"' />
-");
-            metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "EditText", name = stringsEntryName });
-            metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
-            return fieldXml.Replace("'", "\"");
-        }
+//        string getXamlDefinitionForNumber(FieldDefinition field)
+//        {
+//            var stringsEntryText = field.DisplayLabel;
+//            var stringsEntryName = field.ViewName;
+//            var fieldXml = (@"
+//    <EditText
+//        android:inputType='number'
+//        android:layout_width='match_parent'
+//        android:layout_height='wrap_content'
+//        android:id='@+id/" + stringsEntryName + @"'
+//        android:hint='@string/" + stringsEntryName + @"' />
+//");
+//            metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "EditText", name = stringsEntryName });
+//            metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
+//            return fieldXml.Replace("'", "\"");
+//        }
 
         string getXamlDefinitionForDate(FieldDefinition field)
         {
             var stringsEntryText = field.DisplayLabel;
             var stringsEntryName = field.ViewName;
-            var fieldXml = (@"
-    <DatePicker
-        android:layout_width='match_parent'
-android:layout_height='90dp'
-android:calendarViewShown='false'
-        android:id='@+id/" + stringsEntryName + @"' />
-");
+            //for dates, we do the following, show an EditText and a Buttton
+            //button called dtbtn_{sysfieldname}, textfield called txt_{sysfieldname}
+            //Button hass text: Select Date [{Label}]
+            var fieldXml = getDateControlsDef(stringsEntryName);
+            //we need this for the button label
+            metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);            
             metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "DatePicker", name = stringsEntryName });
+            return fieldXml;
+        }
+
+        string getDateControlsDef(string fieldName)
+        {
+            var buttonName = DATE_BUTTON_PREFIX + fieldName;
+            var textName = DATE_TEXT_PREFIX + fieldName;
+            var labelName = LABEL_PREFIX + fieldName;
+
+            var fieldXml = @"
+    <TextView
+        android:text='@string/" + fieldName + @"'
+        android:textColor='@android:color/holo_blue_dark'
+        android:textAppearance='?android:attr/textAppearanceMedium'
+        android:layout_width='match_parent'
+        android:layout_height='wrap_content'
+        android:labelFor='@+id/" + textName + @"' />
+    <LinearLayout
+        android:orientation='horizontal'
+        android:layout_width='match_parent'
+        android:layout_height='wrap_content'>
+        <Button
+            android:id='@+id/" + buttonName + @"'
+            android:layout_width='wrap_content'
+            android:layout_height='45dp'
+            android:text='@string/" + SYS_DATE_SELECT_TEXT + @"'/>
+        <EditText
+            android:text=''
+            android:textColor='@android:color/holo_blue_dark'
+            android:minWidth='25dp'
+            android:minHeight='25dp'
+            android:layout_width='150dp'
+            android:layout_height='40dp'
+            android:id='@+id/" + textName + @"'
+            android:textSize='30sp' />
+    </LinearLayout>";
             return fieldXml.Replace("'", "\"");
         }
 
-        string getXamlDefinitionForTextField(FieldDefinition field)
+        string getXamlDefinitionForTextField(FieldDefinition field, bool isNumeric)
         {
             var stringsEntryText = field.DisplayLabel;
             var stringsEntryName = field.ViewName;
             var fieldXml = (@"
-    <EditText
+    <TextView
+        android:text='@string/" + stringsEntryName + @"'
+        android:textColor='@android:color/holo_blue_dark'
+        android:textAppearance='?android:attr/textAppearanceMedium'
         android:layout_width='match_parent'
         android:layout_height='wrap_content'
+        android:labelFor='@+id/" + stringsEntryName + @"' />
+    <EditText
+        android:layout_height='40dp'
+        android:layout_width='match_parent'
+        android:inputType='" + (isNumeric?"number":"text") + @"'
         android:id='@+id/" + stringsEntryName + @"'
         android:hint='@string/" + stringsEntryName + @"' />");
             metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "EditText", name = stringsEntryName });
@@ -177,11 +226,13 @@ android:calendarViewShown='false'
         {
             var stringsEntryText = field.DisplayLabel;
             var stringsEntryName = field.ViewName;
+            //        android:textStyle='bold'
             var fieldXml = (@"
     <TextView
-android:text='@string/" + stringsEntryName + @"'
-android:textColor='@android:color/holo_blue_dark'
-android:textAppearance='?android:attr/textAppearanceSmall'
+        android:text='@string/" + stringsEntryName + @"'
+        android:background='@color/colorPrimaryDark'
+        android:textColor='@color/white'
+        android:textAppearance='?android:attr/textAppearanceLarge'
         android:layout_width='match_parent'
         android:layout_height='wrap_content'
         android:id='@+id/" + stringsEntryName + @"' />");

@@ -226,7 +226,9 @@
     <AndroidResource Include="Resources\layout\prepexdatareviewer.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <Compile Include="model\FieldItem.cs" />
     <Compile Include="SystemConfigActivity.cs" />
+    <AndroidAsset Include="Assets\prepex_fields.json" />
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />
@@ -331,6 +333,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\theme.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

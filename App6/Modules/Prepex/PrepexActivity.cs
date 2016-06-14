@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using JhpDataSystem.model;
+using System.Linq;
 
 namespace JhpDataSystem.Modules.Prepex
 {
@@ -16,16 +18,21 @@ namespace JhpDataSystem.Modules.Prepex
                 Resource.Layout.prepexreg4
             };
 
+        //TextView textView1, textView2;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
             showPrepexHome();
+            //var 
+            //textView1 = FindViewById<TextView>(Resource.Id.textView1);
+            //textView2 = FindViewById<TextView>(Resource.Id.textView2);
         }
 
         void showPrepexHome()
         {
+            currentLayout = -1;
             SetContentView(Resource.Layout.PrepexHome);
             var closeButton = FindViewById<Button>(Resource.Id.buttonClose);
             closeButton.Click += (sender, e) => {
@@ -66,10 +73,73 @@ namespace JhpDataSystem.Modules.Prepex
 
             currentLayout = page;
             SetContentView(page);
-            if (showNext)
+
+            addDefaultNavBehaviours();
+            bindDateDialogEventsForView(page);
+        }
+
+        private void bindDateDialogEventsForView(int viewId)
+        {
+            //we get all the relevant fields for this view
+            var viewFields = GetFieldsForView(viewId);
+
+            //we find the date fields
+            var dateFields = (from field in viewFields
+                              where field.dataType == Constants.DATEPICKER
+                              select field).ToList();
+            var context = this;
+            //Android.Content.Res.Resources res = context.Resources;
+            //string recordTable = res.GetString(Resource.String.RecordsTable);
+            foreach (var field in dateFields)
             {
-                addDefaultNavBehaviours();
+                //we convert these into int Ids
+                int resID = context.Resources.GetIdentifier(
+                    Constants.DATE_BUTTON_PREFIX + field.name, "id", context.PackageName);
+                if (resID == 0)
+                    continue;
+
+                var dateSelectButton = FindViewById<Button>(resID);
+                if (dateSelectButton == null)
+                    continue;
+
+                //create events for them and their accompanyinng text fields
+                dateSelectButton.Click += (a, b) =>
+                {
+                    var dateViewId = context.Resources.GetIdentifier(
+                        Constants.DATE_TEXT_PREFIX + field.name, "id", context.PackageName);
+                    var sisterView = FindViewById<EditText>(dateViewId);
+                    if (sisterView == null)
+                        return;
+                    //sisterView.Text = "text set by date click";
+                    var frag = DatePickerFragment.NewInstance((time) =>
+                    {
+                        sisterView.Text = time.ToLongDateString();
+                    });
+                    frag.Show(FragmentManager, DatePickerFragment.TAG);
+                };
             }
+        }
+
+        private List<FieldItem> GetFieldsForView(int viewId)
+        {
+            var filterString = string.Empty;
+            switch (viewId)
+            {
+                case Resource.Layout.prepexreg1:
+                    filterString = Constants.PP_VIEWS_1;
+                    break;
+                case Resource.Layout.prepexreg2:
+                    filterString = Constants.PP_VIEWS_2;
+                    break;
+                case Resource.Layout.prepexreg3:
+                    filterString = Constants.PP_VIEWS_3;
+                    break;
+                case Resource.Layout.prepexreg4:
+                    filterString = Constants.PP_VIEWS_4;
+                    break;
+            }
+            var fields = (AppInstance.Instance.FieldItems.Where(t => t.pageName == filterString)).ToList();
+            return fields;
         }
 
         private void showCliwentDueForView()
@@ -138,6 +208,11 @@ namespace JhpDataSystem.Modules.Prepex
             return nextLayout;
         }
 
+        void saveViewData()
+        {
+
+        }
+
         private void addDefaultNavBehaviours()
         {
             var buttonPrev = FindViewById<Button>(Resource.Id.buttonPrevious);
@@ -155,13 +230,19 @@ namespace JhpDataSystem.Modules.Prepex
                     var data = "";
                 };
 
-                //buttonSave
-                var buttonSave = FindViewById<Button>(Resource.Id.buttonSave);
-                buttonSave.Click += (sender, e) => {
-                    //we get all the data
-                    var data = "";
-                    //and save to local db
+                //buttonDiscard
+                var buttonDiscard = FindViewById<Button>(Resource.Id.buttonDiscard);
+                buttonDiscard.Click += (sender, e) => {
+                    //confirm and quit
+new AlertDialog.Builder(this)
+.SetTitle("Confirm Action")
+.SetMessage("Are you sure you want to quit? Any changes will be lost")
+.SetNegativeButton("Cancel", (senderAlert, args) => {  })
+.SetPositiveButton("OK", (senderAlert, args) => { showPrepexHome(); })
+.Create()
+.Show();
 
+                    //just quit
                 };
 
                 //buttonFinalise

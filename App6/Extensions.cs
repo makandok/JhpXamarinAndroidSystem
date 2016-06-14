@@ -9,6 +9,10 @@ namespace JhpDataSystem
 
         internal static string toText(this System.IO.Stream stream)
         {
+            //var buffer = new byte[length];
+            //prepexFieldsStream.Read(buffer, 0, Convert.ToInt32(length));
+            //var asString = Convert.ToString(buffer);
+
             var mstream = new System.IO.MemoryStream();
             stream.CopyTo(mstream);
             var bytes = mstream.ToArray();

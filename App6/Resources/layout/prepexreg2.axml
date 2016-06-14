@@ -62,9 +62,17 @@ android:textAppearance="?android:attr/textAppearanceSmall"
              android:text="@string/primaryreasoncirc_other"
              android:id="@+id/primaryreasoncirc_other" />
 
-    <EditText
+    <TextView
+        android:text="@string/primaryreasoncirc_specify"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/primaryreasoncirc_specify" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/primaryreasoncirc_specify"
         android:hint="@string/primaryreasoncirc_specify" />
 
@@ -102,9 +110,10 @@ android:textAppearance="?android:attr/textAppearanceSmall"
              android:id="@+id/hivstatus_unknownrefusedselfreported" />
 
     <TextView
-android:text="@string/screen_hdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/screen_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/screen_hdr" />
@@ -138,9 +147,17 @@ android:orientation="horizontal"
              android:text="@string/allergictomeds_no"
              android:id="@+id/allergictomeds_no" /></RadioGroup >
 
-    <EditText
+    <TextView
+        android:text="@string/allergictomeds_specify"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/allergictomeds_specify" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/allergictomeds_specify"
         android:hint="@string/allergictomeds_specify" />
 
@@ -212,9 +229,17 @@ android:orientation="horizontal"
              android:text="@string/currentlytakingmeds_no"
              android:id="@+id/currentlytakingmeds_no" /></RadioGroup >
 
-    <EditText
+    <TextView
+        android:text="@string/currentlytakingmeds_specify"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/currentlytakingmeds_specify" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/currentlytakingmeds_specify"
         android:hint="@string/currentlytakingmeds_specify" />
 
@@ -247,9 +272,17 @@ android:orientation="horizontal"
              android:text="@string/hadoperation_no"
              android:id="@+id/hadoperation_no" /></RadioGroup >
 
-    <EditText
+    <TextView
+        android:text="@string/hadoperation_specify"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/hadoperation_specify" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/hadoperation_specify"
         android:hint="@string/hadoperation_specify" />
 
@@ -304,9 +337,17 @@ android:textAppearance="?android:attr/textAppearanceSmall"
              android:text="@string/complaints_other"
              android:id="@+id/complaints_other" />
 
-    <EditText
+    <TextView
+        android:text="@string/complaints_specify"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/complaints_specify" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/complaints_specify"
         android:hint="@string/complaints_specify" />
 
@@ -427,9 +468,10 @@ android:orientation="horizontal"
              android:id="@+id/wasting_no" /></RadioGroup >
 
     <TextView
-android:text="@string/genital"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/genital"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/genital" />

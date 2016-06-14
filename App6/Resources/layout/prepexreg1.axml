@@ -6,104 +6,216 @@
 <include layout="@layout/nextandprevbuttons" />
 
     <TextView
-android:text="@string/generalsummary_hdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/generalsummary_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/generalsummary_hdr" />
 
-    <EditText
+    <TextView
+        android:text="@string/facilityname"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/facilityname" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/facilityname"
         android:hint="@string/facilityname" />
 
-    <EditText
+    <TextView
+        android:text="@string/dateofvisit"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/dateofvisit"
-        android:hint="@string/dateofvisit" />
+        android:labelFor="@+id/dttxt_dateofvisit" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/dtbtn_dateofvisit"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="@string/sys_dateselect"/>
+        <EditText
+            android:text=""
+            android:textColor="@android:color/holo_blue_dark"
+            android:minWidth="25dp"
+            android:minHeight="25dp"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/dttxt_dateofvisit"
+            android:textSize="30sp" />
+    </LinearLayout>
 
-    <EditText
+    <TextView
+        android:text="@string/district"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/district" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/district"
         android:hint="@string/district" />
 
-    <DatePicker
+    <TextView
+        android:text="@string/clientidnumber"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
-android:layout_height="90dp"
-android:calendarViewShown="false"
-        android:id="@+id/cllientidnumber" />
-
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/clientidnumber" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:id="@+id/clientidnumber"
+        android:hint="@string/clientidnumber" />
 
     <TextView
-android:text="@string/personaldetails_hdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/personaldetails_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/personaldetails_hdr" />
 
-    <EditText
+    <TextView
+        android:text="@string/clientname"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/clientname" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/clientname"
         android:hint="@string/clientname" />
 
-    <DatePicker
-        android:layout_width="match_parent"
-android:layout_height="90dp"
-android:calendarViewShown="false"
-        android:id="@+id/dob" />
-
-
-    <EditText
-        android:inputType="number"
+    <TextView
+        android:text="@string/dob"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/dttxt_dob" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/dtbtn_dob"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="@string/sys_dateselect"/>
+        <EditText
+            android:text=""
+            android:textColor="@android:color/holo_blue_dark"
+            android:minWidth="25dp"
+            android:minHeight="25dp"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/dttxt_dob"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/ageinyears"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/ageinyears" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
         android:id="@+id/ageinyears"
         android:hint="@string/ageinyears" />
 
-
-    <EditText
+    <TextView
+        android:text="@string/clientsphysicaladdress"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/clientsphysicaladdress" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/clientsphysicaladdress"
         android:hint="@string/clientsphysicaladdress" />
 
-    <EditText
-        android:inputType="number"
+    <TextView
+        android:text="@string/clienttel"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/clienttel" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
         android:id="@+id/clienttel"
         android:hint="@string/clienttel" />
 
-
-    <EditText
-        android:inputType="number"
+    <TextView
+        android:text="@string/homecell"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/homecell" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
         android:id="@+id/homecell"
         android:hint="@string/homecell" />
 
-
-    <EditText
-        android:inputType="number"
+    <TextView
+        android:text="@string/mobilecell"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/mobilecell" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
         android:id="@+id/mobilecell"
         android:hint="@string/mobilecell" />
 
-
-    <EditText
-        android:inputType="number"
+    <TextView
+        android:text="@string/workcontactnumber"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/workcontactnumber" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
         android:id="@+id/workcontactnumber"
         android:hint="@string/workcontactnumber" />
-
 
     <TextView
 android:text="@string/alternateaddresstype"
@@ -141,28 +253,53 @@ android:orientation="horizontal"
              android:text="@string/alternateaddresstype_friendnextofkin"
              android:id="@+id/alternateaddresstype_friendnextofkin" /></RadioGroup >
 
-    <EditText
+    <TextView
+        android:text="@string/alternateaddress"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/alternateaddress" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/alternateaddress"
         android:hint="@string/alternateaddress" />
 
-    <EditText
+    <TextView
+        android:text="@string/alternatephone"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/alternatephone" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/alternatephone"
         android:hint="@string/alternatephone" />
 
-    <EditText
+    <TextView
+        android:text="@string/friend_nextofkin"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/friend_nextofkin" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/friend_nextofkin"
         android:hint="@string/friend_nextofkin" />
 
     <TextView
-android:text="@string/facility_hdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/facility_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/facility_hdr" />
@@ -238,9 +375,17 @@ android:orientation="horizontal"
              android:text="@string/typeofsite_other"
              android:id="@+id/typeofsite_other" /></RadioGroup >
 
-    <EditText
+    <TextView
+        android:text="@string/typeofsite_specify"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/typeofsite_specify" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
         android:id="@+id/typeofsite_specify"
         android:hint="@string/typeofsite_specify" />
 
@@ -296,9 +441,10 @@ android:textAppearance="?android:attr/textAppearanceSmall"
              android:id="@+id/howclientlearnt_tvradio" />
 
     <TextView
-android:text="@string/indiv_counse_hdr"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/indiv_counse_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/indiv_counse_hdr" />
