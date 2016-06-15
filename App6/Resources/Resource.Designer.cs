@@ -48,23 +48,26 @@ namespace JhpDataSystem
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050002
-			public const int colorAccent = 2131034114;
+			// aapt resource value: 0x7f050003
+			public const int colorAccent = 2131034115;
 			
 			// aapt resource value: 0x7f050000
-			public const int colorPrimary = 2131034112;
+			public const int colorEditable = 2131034112;
 			
 			// aapt resource value: 0x7f050001
-			public const int colorPrimaryDark = 2131034113;
+			public const int colorPrimary = 2131034113;
 			
-			// aapt resource value: 0x7f050003
-			public const int divider_color = 2131034115;
-			
-			// aapt resource value: 0x7f050005
-			public const int theme_devicedefault_background = 2131034117;
+			// aapt resource value: 0x7f050002
+			public const int colorPrimaryDark = 2131034114;
 			
 			// aapt resource value: 0x7f050004
-			public const int white = 2131034116;
+			public const int divider_color = 2131034116;
+			
+			// aapt resource value: 0x7f050006
+			public const int theme_devicedefault_background = 2131034118;
+			
+			// aapt resource value: 0x7f050005
+			public const int white = 2131034117;
 			
 			static Color()
 			{
@@ -104,77 +107,77 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f07001c
 			public const int SaveData = 2131165212;
 			
-			// aapt resource value: 0x7f0700ff
-			public const int aesdiagnosed_hdr = 2131165439;
-			
-			// aapt resource value: 0x7f0700fe
-			public const int aesduringplacement_adverseeventsdiagnosed = 2131165438;
-			
-			// aapt resource value: 0x7f0700fa
-			public const int aesduringplacement_hdr = 2131165434;
-			
 			// aapt resource value: 0x7f0700fd
-			public const int aesduringplacement_noadverseeventsdiagnosed = 2131165437;
+			public const int aesdiagnosed_hdr = 2131165437;
 			
-			// aapt resource value: 0x7f07003b
-			public const int ageinyears = 2131165243;
+			// aapt resource value: 0x7f0700fc
+			public const int aesduringplacement_adverseeventsdiagnosed = 2131165436;
 			
-			// aapt resource value: 0x7f070071
-			public const int allergictomeds_no = 2131165297;
+			// aapt resource value: 0x7f0700f8
+			public const int aesduringplacement_hdr = 2131165432;
 			
-			// aapt resource value: 0x7f070072
-			public const int allergictomeds_specify = 2131165298;
+			// aapt resource value: 0x7f0700fb
+			public const int aesduringplacement_noadverseeventsdiagnosed = 2131165435;
+			
+			// aapt resource value: 0x7f070039
+			public const int ageinyears = 2131165241;
+			
+			// aapt resource value: 0x7f07006f
+			public const int allergictomeds_no = 2131165295;
 			
 			// aapt resource value: 0x7f070070
-			public const int allergictomeds_yes = 2131165296;
+			public const int allergictomeds_specify = 2131165296;
 			
-			// aapt resource value: 0x7f070046
-			public const int alternateaddress = 2131165254;
-			
-			// aapt resource value: 0x7f070045
-			public const int alternateaddresstype_friendnextofkin = 2131165253;
+			// aapt resource value: 0x7f07006e
+			public const int allergictomeds_yes = 2131165294;
 			
 			// aapt resource value: 0x7f070044
-			public const int alternateaddresstype_school = 2131165252;
+			public const int alternateaddress = 2131165252;
 			
 			// aapt resource value: 0x7f070043
-			public const int alternateaddresstype_work = 2131165251;
+			public const int alternateaddresstype_friendnextofkin = 2131165251;
 			
-			// aapt resource value: 0x7f070047
-			public const int alternatephone = 2131165255;
+			// aapt resource value: 0x7f070042
+			public const int alternateaddresstype_school = 2131165250;
+			
+			// aapt resource value: 0x7f070041
+			public const int alternateaddresstype_work = 2131165249;
+			
+			// aapt resource value: 0x7f070045
+			public const int alternatephone = 2131165253;
+			
+			// aapt resource value: 0x7f07010c
+			public const int anesthesia_analgesicreaction_mild = 2131165452;
+			
+			// aapt resource value: 0x7f07010d
+			public const int anesthesia_analgesicreaction_moderate = 2131165453;
 			
 			// aapt resource value: 0x7f07010e
-			public const int anesthesia_analgesicreaction_mild = 2131165454;
+			public const int anesthesia_analgesicreaction_severe = 2131165454;
 			
 			// aapt resource value: 0x7f07010f
-			public const int anesthesia_analgesicreaction_moderate = 2131165455;
+			public const int anesthesia_analgesicreaction_severitynotclassified = 2131165455;
 			
-			// aapt resource value: 0x7f070110
-			public const int anesthesia_analgesicreaction_severe = 2131165456;
+			// aapt resource value: 0x7f0700d2
+			public const int balantis_no = 2131165394;
 			
-			// aapt resource value: 0x7f070111
-			public const int anesthesia_analgesicreaction_severitynotclassified = 2131165457;
+			// aapt resource value: 0x7f0700d1
+			public const int balantis_yes = 2131165393;
 			
-			// aapt resource value: 0x7f0700d4
-			public const int balantis_no = 2131165396;
+			// aapt resource value: 0x7f070106
+			public const int bleeding_mild = 2131165446;
 			
-			// aapt resource value: 0x7f0700d3
-			public const int balantis_yes = 2131165395;
+			// aapt resource value: 0x7f070107
+			public const int bleeding_moderate = 2131165447;
 			
 			// aapt resource value: 0x7f070108
-			public const int bleeding_mild = 2131165448;
+			public const int bleeding_severe = 2131165448;
 			
 			// aapt resource value: 0x7f070109
-			public const int bleeding_moderate = 2131165449;
+			public const int bleeding_severitynotclassified = 2131165449;
 			
-			// aapt resource value: 0x7f07010a
-			public const int bleeding_severe = 2131165450;
-			
-			// aapt resource value: 0x7f07010b
-			public const int bleeding_severitynotclassified = 2131165451;
-			
-			// aapt resource value: 0x7f07002a
-			public const int buttonAddNew = 2131165226;
+			// aapt resource value: 0x7f070026
+			public const int buttonAddNew = 2131165222;
 			
 			// aapt resource value: 0x7f070013
 			public const int buttonAdminLogOut = 2131165203;
@@ -182,38 +185,47 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070012
 			public const int buttonAdminViewUsers = 2131165202;
 			
-			// aapt resource value: 0x7f07002e
-			public const int buttonClientsDueFor = 2131165230;
-			
-			// aapt resource value: 0x7f070029
-			public const int buttonClose = 2131165225;
-			
 			// aapt resource value: 0x7f070027
-			public const int buttonDiscard = 2131165223;
+			public const int buttonClientEvaluation = 2131165223;
+			
+			// aapt resource value: 0x7f07002c
+			public const int buttonClientsToCall = 2131165228;
 			
 			// aapt resource value: 0x7f07002b
-			public const int buttonEditExisting = 2131165227;
+			public const int buttonClientsToSms = 2131165227;
 			
-			// aapt resource value: 0x7f070028
-			public const int buttonFinalise = 2131165224;
+			// aapt resource value: 0x7f070025
+			public const int buttonClose = 2131165221;
 			
-			// aapt resource value: 0x7f070151
-			public const int buttonLoginIn = 2131165521;
+			// aapt resource value: 0x7f070029
+			public const int buttonDeviceRemovalVisit = 2131165225;
+			
+			// aapt resource value: 0x7f070023
+			public const int buttonDiscard = 2131165219;
 			
 			// aapt resource value: 0x7f070024
-			public const int buttonNext = 2131165220;
+			public const int buttonFinalise = 2131165220;
 			
-			// aapt resource value: 0x7f07001a
-			public const int buttonPrepexHome = 2131165210;
+			// aapt resource value: 0x7f07014f
+			public const int buttonLoginIn = 2131165519;
 			
-			// aapt resource value: 0x7f070022
-			public const int buttonPrevious = 2131165218;
+			// aapt resource value: 0x7f070020
+			public const int buttonNext = 2131165216;
+			
+			// aapt resource value: 0x7f07002a
+			public const int buttonPostRemovalVisit = 2131165226;
+			
+			// aapt resource value: 0x7f07001b
+			public const int buttonPrepexHome = 2131165211;
+			
+			// aapt resource value: 0x7f07001e
+			public const int buttonPrevious = 2131165214;
 			
 			// aapt resource value: 0x7f070016
 			public const int buttonQuit = 2131165206;
 			
-			// aapt resource value: 0x7f070026
-			public const int buttonReview = 2131165222;
+			// aapt resource value: 0x7f070022
+			public const int buttonReview = 2131165218;
 			
 			// aapt resource value: 0x7f070017
 			public const int buttonSave = 2131165207;
@@ -221,290 +233,290 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070011
 			public const int buttonSaveChanges = 2131165201;
 			
-			// aapt resource value: 0x7f07002f
-			public const int buttonSelectDate = 2131165231;
+			// aapt resource value: 0x7f07002e
+			public const int buttonSupplies = 2131165230;
 			
-			// aapt resource value: 0x7f070030
-			public const int buttonSelectDate2 = 2131165232;
+			// aapt resource value: 0x7f070028
+			public const int buttonUnscheduled = 2131165224;
 			
-			// aapt resource value: 0x7f07002c
-			public const int buttonViewList = 2131165228;
+			// aapt resource value: 0x7f07002d
+			public const int buttonViewList = 2131165229;
 			
-			// aapt resource value: 0x7f07001b
-			public const int buttonVmmcHome = 2131165211;
+			// aapt resource value: 0x7f07001a
+			public const int buttonVmmcHome = 2131165210;
 			
-			// aapt resource value: 0x7f0700e1
-			public const int circ_method_hdr = 2131165409;
+			// aapt resource value: 0x7f0700df
+			public const int circ_method_hdr = 2131165407;
 			
-			// aapt resource value: 0x7f0700e5
-			public const int circumcisionmethodchosen_prepexcircumcision = 2131165413;
+			// aapt resource value: 0x7f0700e3
+			public const int circumcisionmethodchosen_prepexcircumcision = 2131165411;
 			
-			// aapt resource value: 0x7f0700e4
-			public const int circumcisionmethodchosen_surgicalcircumcision = 2131165412;
+			// aapt resource value: 0x7f0700e2
+			public const int circumcisionmethodchosen_surgicalcircumcision = 2131165410;
 			
-			// aapt resource value: 0x7f070142
-			public const int clientclinicaldisposition = 2131165506;
-			
-			// aapt resource value: 0x7f070036
-			public const int clientidnumber = 2131165238;
-			
-			// aapt resource value: 0x7f070125
-			public const int clientinstructedonhdr = 2131165477;
-			
-			// aapt resource value: 0x7f070038
-			public const int clientname = 2131165240;
-			
-			// aapt resource value: 0x7f07003c
-			public const int clientsphysicaladdress = 2131165244;
-			
-			// aapt resource value: 0x7f07003d
-			public const int clienttel = 2131165245;
-			
-			// aapt resource value: 0x7f0700f9
-			public const int comments = 2131165433;
-			
-			// aapt resource value: 0x7f070089
-			public const int complaints_difficulltyinretractingforeskin = 2131165321;
-			
-			// aapt resource value: 0x7f070085
-			public const int complaints_genitalsore = 2131165317;
-			
-			// aapt resource value: 0x7f07008a
-			public const int complaints_other = 2131165322;
-			
-			// aapt resource value: 0x7f070086
-			public const int complaints_painfulweakerection = 2131165318;
-			
-			// aapt resource value: 0x7f070088
-			public const int complaints_painonurination = 2131165320;
-			
-			// aapt resource value: 0x7f07008b
-			public const int complaints_specify = 2131165323;
-			
-			// aapt resource value: 0x7f070087
-			public const int complaints_swellingofthescrotum = 2131165319;
-			
-			// aapt resource value: 0x7f070084
-			public const int complaints_urethraldischarge = 2131165316;
-			
-			// aapt resource value: 0x7f07007c
-			public const int currentlytakingmeds_no = 2131165308;
-			
-			// aapt resource value: 0x7f07007d
-			public const int currentlytakingmeds_specify = 2131165309;
-			
-			// aapt resource value: 0x7f07007b
-			public const int currentlytakingmeds_yes = 2131165307;
-			
-			// aapt resource value: 0x7f070114
-			public const int damagetopenis_mild = 2131165460;
-			
-			// aapt resource value: 0x7f070115
-			public const int damagetopenis_moderate = 2131165461;
-			
-			// aapt resource value: 0x7f070116
-			public const int damagetopenis_severe = 2131165462;
-			
-			// aapt resource value: 0x7f070117
-			public const int damagetopenis_severitynotclassified = 2131165463;
-			
-			// aapt resource value: 0x7f0700c8
-			public const int dermatitisofthepenis_no = 2131165384;
-			
-			// aapt resource value: 0x7f0700c7
-			public const int dermatitisofthepenis_yes = 2131165383;
-			
-			// aapt resource value: 0x7f0700f4
-			public const int devicebatchid = 2131165428;
-			
-			// aapt resource value: 0x7f070120
-			public const int devicemalfunction_mild = 2131165472;
-			
-			// aapt resource value: 0x7f070121
-			public const int devicemalfunction_moderate = 2131165473;
-			
-			// aapt resource value: 0x7f070122
-			public const int devicemalfunction_severe = 2131165474;
-			
-			// aapt resource value: 0x7f070123
-			public const int devicemalfunction_severitynotclassified = 2131165475;
-			
-			// aapt resource value: 0x7f07011a
-			public const int difficultywithplacement_mild = 2131165466;
-			
-			// aapt resource value: 0x7f07011b
-			public const int difficultywithplacement_moderate = 2131165467;
-			
-			// aapt resource value: 0x7f07011c
-			public const int difficultywithplacement_severe = 2131165468;
-			
-			// aapt resource value: 0x7f07011d
-			public const int difficultywithplacement_severitynotclassified = 2131165469;
-			
-			// aapt resource value: 0x7f07014a
-			public const int dischargedby = 2131165514;
-			
-			// aapt resource value: 0x7f070035
-			public const int district = 2131165237;
+			// aapt resource value: 0x7f070140
+			public const int clientclinicaldisposition = 2131165504;
 			
 			// aapt resource value: 0x7f070034
-			public const int dtbtn_dateofvisit = 2131165236;
+			public const int clientidnumber = 2131165236;
+			
+			// aapt resource value: 0x7f070123
+			public const int clientinstructedonhdr = 2131165475;
+			
+			// aapt resource value: 0x7f070036
+			public const int clientname = 2131165238;
 			
 			// aapt resource value: 0x7f07003a
-			public const int dtbtn_dob = 2131165242;
+			public const int clientsphysicaladdress = 2131165242;
 			
-			// aapt resource value: 0x7f070149
-			public const int dtbtn_scheduledremovaldate = 2131165513;
-			
-			// aapt resource value: 0x7f0700f6
-			public const int dtbtn_timelineofcircmarked = 2131165430;
-			
-			// aapt resource value: 0x7f0700f8
-			public const int dtbtn_timeplacementringremoved = 2131165432;
-			
-			// aapt resource value: 0x7f070033
-			public const int dttxt_dateofvisit = 2131165235;
-			
-			// aapt resource value: 0x7f070039
-			public const int dttxt_dob = 2131165241;
-			
-			// aapt resource value: 0x7f070148
-			public const int dttxt_scheduledremovaldate = 2131165512;
-			
-			// aapt resource value: 0x7f0700f5
-			public const int dttxt_timelineofcircmarked = 2131165429;
+			// aapt resource value: 0x7f07003b
+			public const int clienttel = 2131165243;
 			
 			// aapt resource value: 0x7f0700f7
-			public const int dttxt_timeplacementringremoved = 2131165431;
+			public const int comments = 2131165431;
 			
-			// aapt resource value: 0x7f0700e9
-			public const int eligibleforprepex_no = 2131165417;
+			// aapt resource value: 0x7f070087
+			public const int complaints_difficulltyinretractingforeskin = 2131165319;
 			
-			// aapt resource value: 0x7f0700ea
-			public const int eligibleforprepex_noreason = 2131165418;
+			// aapt resource value: 0x7f070083
+			public const int complaints_genitalsore = 2131165315;
 			
-			// aapt resource value: 0x7f0700e8
-			public const int eligibleforprepex_yes = 2131165416;
+			// aapt resource value: 0x7f070088
+			public const int complaints_other = 2131165320;
 			
-			// aapt resource value: 0x7f0700b0
-			public const int epispadiasis_no = 2131165360;
+			// aapt resource value: 0x7f070084
+			public const int complaints_painfulweakerection = 2131165316;
 			
-			// aapt resource value: 0x7f0700af
-			public const int epispadiasis_yes = 2131165359;
+			// aapt resource value: 0x7f070086
+			public const int complaints_painonurination = 2131165318;
 			
-			// aapt resource value: 0x7f070077
-			public const int everdiagnosedwith_cancer = 2131165303;
+			// aapt resource value: 0x7f070089
+			public const int complaints_specify = 2131165321;
 			
-			// aapt resource value: 0x7f070075
-			public const int everdiagnosedwith_diabetes = 2131165301;
+			// aapt resource value: 0x7f070085
+			public const int complaints_swellingofthescrotum = 2131165317;
 			
-			// aapt resource value: 0x7f070074
-			public const int everdiagnosedwith_hemophiliableedingdisorder = 2131165300;
+			// aapt resource value: 0x7f070082
+			public const int complaints_urethraldischarge = 2131165314;
 			
-			// aapt resource value: 0x7f070076
-			public const int everdiagnosedwith_hypertension = 2131165302;
+			// aapt resource value: 0x7f07007a
+			public const int currentlytakingmeds_no = 2131165306;
 			
-			// aapt resource value: 0x7f070078
-			public const int everdiagnosedwith_peripheralvasculardisease = 2131165304;
+			// aapt resource value: 0x7f07007b
+			public const int currentlytakingmeds_specify = 2131165307;
 			
-			// aapt resource value: 0x7f070049
-			public const int facility_hdr = 2131165257;
+			// aapt resource value: 0x7f070079
+			public const int currentlytakingmeds_yes = 2131165305;
+			
+			// aapt resource value: 0x7f070112
+			public const int damagetopenis_mild = 2131165458;
+			
+			// aapt resource value: 0x7f070113
+			public const int damagetopenis_moderate = 2131165459;
+			
+			// aapt resource value: 0x7f070114
+			public const int damagetopenis_severe = 2131165460;
+			
+			// aapt resource value: 0x7f070115
+			public const int damagetopenis_severitynotclassified = 2131165461;
+			
+			// aapt resource value: 0x7f0700c6
+			public const int dermatitisofthepenis_no = 2131165382;
+			
+			// aapt resource value: 0x7f0700c5
+			public const int dermatitisofthepenis_yes = 2131165381;
+			
+			// aapt resource value: 0x7f0700f2
+			public const int devicebatchid = 2131165426;
+			
+			// aapt resource value: 0x7f07011e
+			public const int devicemalfunction_mild = 2131165470;
+			
+			// aapt resource value: 0x7f07011f
+			public const int devicemalfunction_moderate = 2131165471;
+			
+			// aapt resource value: 0x7f070120
+			public const int devicemalfunction_severe = 2131165472;
+			
+			// aapt resource value: 0x7f070121
+			public const int devicemalfunction_severitynotclassified = 2131165473;
+			
+			// aapt resource value: 0x7f070118
+			public const int difficultywithplacement_mild = 2131165464;
+			
+			// aapt resource value: 0x7f070119
+			public const int difficultywithplacement_moderate = 2131165465;
+			
+			// aapt resource value: 0x7f07011a
+			public const int difficultywithplacement_severe = 2131165466;
+			
+			// aapt resource value: 0x7f07011b
+			public const int difficultywithplacement_severitynotclassified = 2131165467;
+			
+			// aapt resource value: 0x7f070148
+			public const int dischargedby = 2131165512;
+			
+			// aapt resource value: 0x7f070033
+			public const int district = 2131165235;
 			
 			// aapt resource value: 0x7f070032
-			public const int facilityname = 2131165234;
+			public const int dtbtn_dateofvisit = 2131165234;
+			
+			// aapt resource value: 0x7f070038
+			public const int dtbtn_dob = 2131165240;
+			
+			// aapt resource value: 0x7f070147
+			public const int dtbtn_scheduledremovaldate = 2131165511;
+			
+			// aapt resource value: 0x7f0700f4
+			public const int dtbtn_timelineofcircmarked = 2131165428;
+			
+			// aapt resource value: 0x7f0700f6
+			public const int dtbtn_timeplacementringremoved = 2131165430;
+			
+			// aapt resource value: 0x7f070031
+			public const int dttxt_dateofvisit = 2131165233;
+			
+			// aapt resource value: 0x7f070037
+			public const int dttxt_dob = 2131165239;
+			
+			// aapt resource value: 0x7f070146
+			public const int dttxt_scheduledremovaldate = 2131165510;
+			
+			// aapt resource value: 0x7f0700f3
+			public const int dttxt_timelineofcircmarked = 2131165427;
+			
+			// aapt resource value: 0x7f0700f5
+			public const int dttxt_timeplacementringremoved = 2131165429;
+			
+			// aapt resource value: 0x7f0700e7
+			public const int eligibleforprepex_no = 2131165415;
+			
+			// aapt resource value: 0x7f0700e8
+			public const int eligibleforprepex_noreason = 2131165416;
+			
+			// aapt resource value: 0x7f0700e6
+			public const int eligibleforprepex_yes = 2131165414;
+			
+			// aapt resource value: 0x7f0700ae
+			public const int epispadiasis_no = 2131165358;
+			
+			// aapt resource value: 0x7f0700ad
+			public const int epispadiasis_yes = 2131165357;
+			
+			// aapt resource value: 0x7f070075
+			public const int everdiagnosedwith_cancer = 2131165301;
+			
+			// aapt resource value: 0x7f070073
+			public const int everdiagnosedwith_diabetes = 2131165299;
+			
+			// aapt resource value: 0x7f070072
+			public const int everdiagnosedwith_hemophiliableedingdisorder = 2131165298;
+			
+			// aapt resource value: 0x7f070074
+			public const int everdiagnosedwith_hypertension = 2131165300;
+			
+			// aapt resource value: 0x7f070076
+			public const int everdiagnosedwith_peripheralvasculardisease = 2131165302;
+			
+			// aapt resource value: 0x7f070047
+			public const int facility_hdr = 2131165255;
+			
+			// aapt resource value: 0x7f070030
+			public const int facilityname = 2131165232;
 			
 			// aapt resource value: 0x7f07001d
 			public const int fetchData = 2131165213;
 			
-			// aapt resource value: 0x7f0700dc
-			public const int foreskinattachedtotheglans_no = 2131165404;
+			// aapt resource value: 0x7f0700da
+			public const int foreskinattachedtotheglans_no = 2131165402;
 			
-			// aapt resource value: 0x7f0700db
-			public const int foreskinattachedtotheglans_yes = 2131165403;
+			// aapt resource value: 0x7f0700d9
+			public const int foreskinattachedtotheglans_yes = 2131165401;
 			
-			// aapt resource value: 0x7f070048
-			public const int friend_nextofkin = 2131165256;
+			// aapt resource value: 0x7f070046
+			public const int friend_nextofkin = 2131165254;
 			
-			// aapt resource value: 0x7f07008e
-			public const int generalcondition_healthy = 2131165326;
+			// aapt resource value: 0x7f07008c
+			public const int generalcondition_healthy = 2131165324;
 			
-			// aapt resource value: 0x7f07008f
-			public const int generalcondition_illlooking = 2131165327;
+			// aapt resource value: 0x7f07008d
+			public const int generalcondition_illlooking = 2131165325;
 			
-			// aapt resource value: 0x7f070031
-			public const int generalsummary_hdr = 2131165233;
+			// aapt resource value: 0x7f07002f
+			public const int generalsummary_hdr = 2131165231;
 			
-			// aapt resource value: 0x7f07009c
-			public const int genital = 2131165340;
+			// aapt resource value: 0x7f07009a
+			public const int genital = 2131165338;
 			
-			// aapt resource value: 0x7f0700c4
-			public const int genitalulcers_no = 2131165380;
+			// aapt resource value: 0x7f0700c2
+			public const int genitalulcers_no = 2131165378;
 			
-			// aapt resource value: 0x7f0700c3
-			public const int genitalulcers_yes = 2131165379;
+			// aapt resource value: 0x7f0700c1
+			public const int genitalulcers_yes = 2131165377;
 			
-			// aapt resource value: 0x7f0700cc
-			public const int genitalwarts_no = 2131165388;
+			// aapt resource value: 0x7f0700ca
+			public const int genitalwarts_no = 2131165386;
 			
-			// aapt resource value: 0x7f0700cb
-			public const int genitalwarts_yes = 2131165387;
+			// aapt resource value: 0x7f0700c9
+			public const int genitalwarts_yes = 2131165385;
 			
-			// aapt resource value: 0x7f070081
-			public const int hadoperation_no = 2131165313;
-			
-			// aapt resource value: 0x7f070082
-			public const int hadoperation_specify = 2131165314;
+			// aapt resource value: 0x7f07007f
+			public const int hadoperation_no = 2131165311;
 			
 			// aapt resource value: 0x7f070080
-			public const int hadoperation_yes = 2131165312;
+			public const int hadoperation_specify = 2131165312;
 			
-			// aapt resource value: 0x7f07006b
-			public const int hivstatus_indeterminate = 2131165291;
-			
-			// aapt resource value: 0x7f07006a
-			public const int hivstatus_negative = 2131165290;
+			// aapt resource value: 0x7f07007e
+			public const int hadoperation_yes = 2131165310;
 			
 			// aapt resource value: 0x7f070069
-			public const int hivstatus_positive = 2131165289;
+			public const int hivstatus_indeterminate = 2131165289;
 			
-			// aapt resource value: 0x7f07006c
-			public const int hivstatus_unknownrefusedselfreported = 2131165292;
+			// aapt resource value: 0x7f070068
+			public const int hivstatus_negative = 2131165288;
 			
-			// aapt resource value: 0x7f07003e
-			public const int homecell = 2131165246;
+			// aapt resource value: 0x7f070067
+			public const int hivstatus_positive = 2131165287;
 			
-			// aapt resource value: 0x7f07005b
-			public const int howclientlearnt_communitymobilizer = 2131165275;
+			// aapt resource value: 0x7f07006a
+			public const int hivstatus_unknownrefusedselfreported = 2131165290;
 			
-			// aapt resource value: 0x7f070056
-			public const int howclientlearnt_friendfamily = 2131165270;
-			
-			// aapt resource value: 0x7f070058
-			public const int howclientlearnt_healthworker = 2131165272;
-			
-			// aapt resource value: 0x7f07005a
-			public const int howclientlearnt_otherclient = 2131165274;
-			
-			// aapt resource value: 0x7f070057
-			public const int howclientlearnt_partnerspouse = 2131165271;
+			// aapt resource value: 0x7f07003c
+			public const int homecell = 2131165244;
 			
 			// aapt resource value: 0x7f070059
-			public const int howclientlearnt_posternewspaperleaflet = 2131165273;
+			public const int howclientlearnt_communitymobilizer = 2131165273;
 			
-			// aapt resource value: 0x7f07005c
-			public const int howclientlearnt_tvradio = 2131165276;
+			// aapt resource value: 0x7f070054
+			public const int howclientlearnt_friendfamily = 2131165268;
 			
-			// aapt resource value: 0x7f0700bc
-			public const int hydrocele_no = 2131165372;
+			// aapt resource value: 0x7f070056
+			public const int howclientlearnt_healthworker = 2131165270;
 			
-			// aapt resource value: 0x7f0700bb
-			public const int hydrocele_yes = 2131165371;
+			// aapt resource value: 0x7f070058
+			public const int howclientlearnt_otherclient = 2131165272;
 			
-			// aapt resource value: 0x7f0700b4
-			public const int hypospadiasis_no = 2131165364;
+			// aapt resource value: 0x7f070055
+			public const int howclientlearnt_partnerspouse = 2131165269;
 			
-			// aapt resource value: 0x7f0700b3
-			public const int hypospadiasis_yes = 2131165363;
+			// aapt resource value: 0x7f070057
+			public const int howclientlearnt_posternewspaperleaflet = 2131165271;
+			
+			// aapt resource value: 0x7f07005a
+			public const int howclientlearnt_tvradio = 2131165274;
+			
+			// aapt resource value: 0x7f0700ba
+			public const int hydrocele_no = 2131165370;
+			
+			// aapt resource value: 0x7f0700b9
+			public const int hydrocele_yes = 2131165369;
+			
+			// aapt resource value: 0x7f0700b2
+			public const int hypospadiasis_no = 2131165362;
+			
+			// aapt resource value: 0x7f0700b1
+			public const int hypospadiasis_yes = 2131165361;
 			
 			// aapt resource value: 0x7f070001
 			public const int imageView1 = 2131165185;
@@ -518,161 +530,161 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f07000a
 			public const int imageView4 = 2131165194;
 			
-			// aapt resource value: 0x7f07005d
-			public const int indiv_counse_hdr = 2131165277;
+			// aapt resource value: 0x7f07005b
+			public const int indiv_counse_hdr = 2131165275;
 			
-			// aapt resource value: 0x7f0700fb
-			public const int l_aesduringplacement = 2131165435;
+			// aapt resource value: 0x7f0700f9
+			public const int l_aesduringplacement = 2131165433;
 			
-			// aapt resource value: 0x7f07006e
-			public const int l_allergictomeds = 2131165294;
+			// aapt resource value: 0x7f07006c
+			public const int l_allergictomeds = 2131165292;
 			
-			// aapt resource value: 0x7f070041
-			public const int l_alternateaddresstype = 2131165249;
+			// aapt resource value: 0x7f07003f
+			public const int l_alternateaddresstype = 2131165247;
 			
-			// aapt resource value: 0x7f07010c
-			public const int l_anesthesia_analgesicreaction = 2131165452;
+			// aapt resource value: 0x7f07010a
+			public const int l_anesthesia_analgesicreaction = 2131165450;
 			
-			// aapt resource value: 0x7f0700d1
-			public const int l_balantis = 2131165393;
+			// aapt resource value: 0x7f0700cf
+			public const int l_balantis = 2131165391;
 			
-			// aapt resource value: 0x7f070106
-			public const int l_bleeding = 2131165446;
+			// aapt resource value: 0x7f070104
+			public const int l_bleeding = 2131165444;
 			
-			// aapt resource value: 0x7f0700e2
-			public const int l_circumcisionmethodchosen = 2131165410;
+			// aapt resource value: 0x7f0700e0
+			public const int l_circumcisionmethodchosen = 2131165408;
 			
-			// aapt resource value: 0x7f070083
-			public const int l_complaints = 2131165315;
+			// aapt resource value: 0x7f070081
+			public const int l_complaints = 2131165313;
 			
-			// aapt resource value: 0x7f070079
-			public const int l_currentlytakingmeds = 2131165305;
+			// aapt resource value: 0x7f070077
+			public const int l_currentlytakingmeds = 2131165303;
 			
-			// aapt resource value: 0x7f070112
-			public const int l_damagetopenis = 2131165458;
+			// aapt resource value: 0x7f070110
+			public const int l_damagetopenis = 2131165456;
 			
-			// aapt resource value: 0x7f0700c5
-			public const int l_dermatitisofthepenis = 2131165381;
+			// aapt resource value: 0x7f0700c3
+			public const int l_dermatitisofthepenis = 2131165379;
 			
-			// aapt resource value: 0x7f07011e
-			public const int l_devicemalfunction = 2131165470;
+			// aapt resource value: 0x7f07011c
+			public const int l_devicemalfunction = 2131165468;
 			
-			// aapt resource value: 0x7f070118
-			public const int l_difficultywithplacement = 2131165464;
+			// aapt resource value: 0x7f070116
+			public const int l_difficultywithplacement = 2131165462;
 			
-			// aapt resource value: 0x7f0700e6
-			public const int l_eligibleforprepex = 2131165414;
+			// aapt resource value: 0x7f0700e4
+			public const int l_eligibleforprepex = 2131165412;
 			
-			// aapt resource value: 0x7f0700ad
-			public const int l_epispadiasis = 2131165357;
+			// aapt resource value: 0x7f0700ab
+			public const int l_epispadiasis = 2131165355;
 			
-			// aapt resource value: 0x7f070073
-			public const int l_everdiagnosedwith = 2131165299;
+			// aapt resource value: 0x7f070071
+			public const int l_everdiagnosedwith = 2131165297;
 			
-			// aapt resource value: 0x7f0700d9
-			public const int l_foreskinattachedtotheglans = 2131165401;
+			// aapt resource value: 0x7f0700d7
+			public const int l_foreskinattachedtotheglans = 2131165399;
 			
-			// aapt resource value: 0x7f07008c
-			public const int l_generalcondition = 2131165324;
+			// aapt resource value: 0x7f07008a
+			public const int l_generalcondition = 2131165322;
 			
-			// aapt resource value: 0x7f0700c1
-			public const int l_genitalulcers = 2131165377;
+			// aapt resource value: 0x7f0700bf
+			public const int l_genitalulcers = 2131165375;
 			
-			// aapt resource value: 0x7f0700c9
-			public const int l_genitalwarts = 2131165385;
+			// aapt resource value: 0x7f0700c7
+			public const int l_genitalwarts = 2131165383;
 			
-			// aapt resource value: 0x7f07007e
-			public const int l_hadoperation = 2131165310;
+			// aapt resource value: 0x7f07007c
+			public const int l_hadoperation = 2131165308;
 			
-			// aapt resource value: 0x7f070068
-			public const int l_hivstatus = 2131165288;
+			// aapt resource value: 0x7f070066
+			public const int l_hivstatus = 2131165286;
 			
-			// aapt resource value: 0x7f070055
-			public const int l_howclientlearnt = 2131165269;
+			// aapt resource value: 0x7f070053
+			public const int l_howclientlearnt = 2131165267;
 			
-			// aapt resource value: 0x7f0700b9
-			public const int l_hydrocele = 2131165369;
+			// aapt resource value: 0x7f0700b7
+			public const int l_hydrocele = 2131165367;
 			
-			// aapt resource value: 0x7f0700b1
-			public const int l_hypospadiasis = 2131165361;
+			// aapt resource value: 0x7f0700af
+			public const int l_hypospadiasis = 2131165359;
 			
-			// aapt resource value: 0x7f070094
-			public const int l_lymphadenopathy = 2131165332;
+			// aapt resource value: 0x7f070092
+			public const int l_lymphadenopathy = 2131165330;
 			
-			// aapt resource value: 0x7f0700a5
-			public const int l_narrowprepuce = 2131165349;
+			// aapt resource value: 0x7f0700a3
+			public const int l_narrowprepuce = 2131165347;
 			
-			// aapt resource value: 0x7f07013a
-			public const int l_nosexualintercourse = 2131165498;
+			// aapt resource value: 0x7f070138
+			public const int l_nosexualintercourse = 2131165496;
 			
-			// aapt resource value: 0x7f070136
-			public const int l_notpullforeskin = 2131165494;
+			// aapt resource value: 0x7f070134
+			public const int l_notpullforeskin = 2131165492;
 			
-			// aapt resource value: 0x7f070126
-			public const int l_nottomovedevice = 2131165478;
+			// aapt resource value: 0x7f070124
+			public const int l_nottomovedevice = 2131165476;
 			
-			// aapt resource value: 0x7f070132
-			public const int l_onlydesignatedprovider = 2131165490;
+			// aapt resource value: 0x7f070130
+			public const int l_onlydesignatedprovider = 2131165488;
 			
-			// aapt resource value: 0x7f070143
-			public const int l_orlanalgesiagiven = 2131165507;
+			// aapt resource value: 0x7f070141
+			public const int l_orlanalgesiagiven = 2131165505;
 			
-			// aapt resource value: 0x7f0700dd
-			public const int l_others = 2131165405;
+			// aapt resource value: 0x7f0700db
+			public const int l_others = 2131165403;
 			
-			// aapt resource value: 0x7f0700b5
-			public const int l_otherurethralanomaly = 2131165365;
+			// aapt resource value: 0x7f0700b3
+			public const int l_otherurethralanomaly = 2131165363;
 			
-			// aapt resource value: 0x7f070100
-			public const int l_pain = 2131165440;
+			// aapt resource value: 0x7f0700fe
+			public const int l_pain = 2131165438;
 			
-			// aapt resource value: 0x7f070090
-			public const int l_pallor = 2131165328;
+			// aapt resource value: 0x7f07008e
+			public const int l_pallor = 2131165326;
 			
-			// aapt resource value: 0x7f0700a1
-			public const int l_paraphimosis = 2131165345;
+			// aapt resource value: 0x7f07009f
+			public const int l_paraphimosis = 2131165343;
 			
-			// aapt resource value: 0x7f07009d
-			public const int l_phimosis = 2131165341;
+			// aapt resource value: 0x7f07009b
+			public const int l_phimosis = 2131165339;
 			
-			// aapt resource value: 0x7f0700d5
-			public const int l_posthitis = 2131165397;
+			// aapt resource value: 0x7f0700d3
+			public const int l_posthitis = 2131165395;
 			
-			// aapt resource value: 0x7f0700ed
-			public const int l_prepexdevicesize = 2131165421;
+			// aapt resource value: 0x7f0700eb
+			public const int l_prepexdevicesize = 2131165419;
 			
-			// aapt resource value: 0x7f07005e
-			public const int l_primaryreasoncirc = 2131165278;
+			// aapt resource value: 0x7f07005c
+			public const int l_primaryreasoncirc = 2131165276;
 			
-			// aapt resource value: 0x7f07012e
-			public const int l_removalbefored7 = 2131165486;
+			// aapt resource value: 0x7f07012c
+			public const int l_removalbefored7 = 2131165484;
 			
-			// aapt resource value: 0x7f07012a
-			public const int l_removalond7 = 2131165482;
+			// aapt resource value: 0x7f070128
+			public const int l_removalond7 = 2131165480;
 			
-			// aapt resource value: 0x7f0700bd
-			public const int l_scrotalhernia = 2131165373;
+			// aapt resource value: 0x7f0700bb
+			public const int l_scrotalhernia = 2131165371;
 			
-			// aapt resource value: 0x7f07014b
-			public const int l_signed = 2131165515;
+			// aapt resource value: 0x7f070149
+			public const int l_signed = 2131165513;
 			
-			// aapt resource value: 0x7f0700a9
-			public const int l_tightfrenulum = 2131165353;
+			// aapt resource value: 0x7f0700a7
+			public const int l_tightfrenulum = 2131165351;
 			
-			// aapt resource value: 0x7f07004a
-			public const int l_typeofsite = 2131165258;
+			// aapt resource value: 0x7f070048
+			public const int l_typeofsite = 2131165256;
 			
-			// aapt resource value: 0x7f0700cd
-			public const int l_urethraldischarge = 2131165389;
+			// aapt resource value: 0x7f0700cb
+			public const int l_urethraldischarge = 2131165387;
 			
-			// aapt resource value: 0x7f070098
-			public const int l_wasting = 2131165336;
+			// aapt resource value: 0x7f070096
+			public const int l_wasting = 2131165334;
 			
-			// aapt resource value: 0x7f07013e
-			public const int l_writteninstructions = 2131165502;
+			// aapt resource value: 0x7f07013c
+			public const int l_writteninstructions = 2131165500;
 			
-			// aapt resource value: 0x7f070025
-			public const int layoutFinaliseOptions = 2131165221;
+			// aapt resource value: 0x7f070021
+			public const int layoutFinaliseOptions = 2131165217;
 			
 			// aapt resource value: 0x7f070000
 			public const int linearLayout1 = 2131165184;
@@ -686,338 +698,323 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070009
 			public const int linearLayout4 = 2131165193;
 			
-			// aapt resource value: 0x7f07002d
-			public const int linearLayout5 = 2131165229;
+			// aapt resource value: 0x7f070095
+			public const int lymphadenopathy_no = 2131165333;
 			
-			// aapt resource value: 0x7f070097
-			public const int lymphadenopathy_no = 2131165335;
+			// aapt resource value: 0x7f070094
+			public const int lymphadenopathy_yes = 2131165332;
 			
-			// aapt resource value: 0x7f070096
-			public const int lymphadenopathy_yes = 2131165334;
-			
-			// aapt resource value: 0x7f07003f
-			public const int mobilecell = 2131165247;
-			
-			// aapt resource value: 0x7f070023
-			public const int mySpacer = 2131165219;
-			
-			// aapt resource value: 0x7f070147
-			public const int nameoralanalgesiadrug = 2131165511;
-			
-			// aapt resource value: 0x7f0700a8
-			public const int narrowprepuce_no = 2131165352;
-			
-			// aapt resource value: 0x7f0700a7
-			public const int narrowprepuce_yes = 2131165351;
-			
-			// aapt resource value: 0x7f07013d
-			public const int nosexualintercourse_no = 2131165501;
-			
-			// aapt resource value: 0x7f07013c
-			public const int nosexualintercourse_yes = 2131165500;
-			
-			// aapt resource value: 0x7f070139
-			public const int notpullforeskin_no = 2131165497;
-			
-			// aapt resource value: 0x7f070138
-			public const int notpullforeskin_yes = 2131165496;
-			
-			// aapt resource value: 0x7f070129
-			public const int nottomovedevice_no = 2131165481;
-			
-			// aapt resource value: 0x7f070128
-			public const int nottomovedevice_yes = 2131165480;
-			
-			// aapt resource value: 0x7f070135
-			public const int onlydesignatedprovider_no = 2131165493;
-			
-			// aapt resource value: 0x7f070134
-			public const int onlydesignatedprovider_yes = 2131165492;
-			
-			// aapt resource value: 0x7f070146
-			public const int orlanalgesiagiven_no = 2131165510;
-			
-			// aapt resource value: 0x7f070145
-			public const int orlanalgesiagiven_yes = 2131165509;
-			
-			// aapt resource value: 0x7f0700e0
-			public const int others_no = 2131165408;
-			
-			// aapt resource value: 0x7f0700df
-			public const int others_yes = 2131165407;
-			
-			// aapt resource value: 0x7f0700b8
-			public const int otherurethralanomaly_no = 2131165368;
-			
-			// aapt resource value: 0x7f0700b7
-			public const int otherurethralanomaly_yes = 2131165367;
-			
-			// aapt resource value: 0x7f070102
-			public const int pain_mild = 2131165442;
-			
-			// aapt resource value: 0x7f070103
-			public const int pain_moderate = 2131165443;
-			
-			// aapt resource value: 0x7f070104
-			public const int pain_severe = 2131165444;
-			
-			// aapt resource value: 0x7f070105
-			public const int pain_severitynotclassified = 2131165445;
-			
-			// aapt resource value: 0x7f070093
-			public const int pallor_no = 2131165331;
-			
-			// aapt resource value: 0x7f070092
-			public const int pallor_yes = 2131165330;
-			
-			// aapt resource value: 0x7f0700a4
-			public const int paraphimosis_no = 2131165348;
-			
-			// aapt resource value: 0x7f0700a3
-			public const int paraphimosis_yes = 2131165347;
-			
-			// aapt resource value: 0x7f070037
-			public const int personaldetails_hdr = 2131165239;
-			
-			// aapt resource value: 0x7f0700a0
-			public const int phimosis_no = 2131165344;
-			
-			// aapt resource value: 0x7f07009f
-			public const int phimosis_yes = 2131165343;
-			
-			// aapt resource value: 0x7f070124
-			public const int postappassessmenthdr = 2131165476;
-			
-			// aapt resource value: 0x7f0700d8
-			public const int posthitis_no = 2131165400;
-			
-			// aapt resource value: 0x7f0700d7
-			public const int posthitis_yes = 2131165399;
-			
-			// aapt resource value: 0x7f0700ec
-			public const int prepex_proc_hdr = 2131165420;
-			
-			// aapt resource value: 0x7f0700eb
-			public const int prepexcircumcisionsection = 2131165419;
-			
-			// aapt resource value: 0x7f0700ef
-			public const int prepexdevicesize_sizea = 2131165423;
-			
-			// aapt resource value: 0x7f0700f0
-			public const int prepexdevicesize_sizeb = 2131165424;
-			
-			// aapt resource value: 0x7f0700f1
-			public const int prepexdevicesize_sizec = 2131165425;
-			
-			// aapt resource value: 0x7f0700f2
-			public const int prepexdevicesize_sized = 2131165426;
-			
-			// aapt resource value: 0x7f0700f3
-			public const int prepexdevicesize_sizee = 2131165427;
-			
-			// aapt resource value: 0x7f070063
-			public const int primaryreasoncirc_appearance = 2131165283;
-			
-			// aapt resource value: 0x7f070065
-			public const int primaryreasoncirc_culturalsocialreligious = 2131165285;
-			
-			// aapt resource value: 0x7f070064
-			public const int primaryreasoncirc_hygiene = 2131165284;
-			
-			// aapt resource value: 0x7f070062
-			public const int primaryreasoncirc_medical = 2131165282;
-			
-			// aapt resource value: 0x7f070066
-			public const int primaryreasoncirc_other = 2131165286;
-			
-			// aapt resource value: 0x7f07005f
-			public const int primaryreasoncirc_partialhivprotecction = 2131165279;
-			
-			// aapt resource value: 0x7f070060
-			public const int primaryreasoncirc_sexualpleasure = 2131165280;
-			
-			// aapt resource value: 0x7f070067
-			public const int primaryreasoncirc_specify = 2131165287;
-			
-			// aapt resource value: 0x7f070061
-			public const int primaryreasoncirc_stiprotection = 2131165281;
-			
-			// aapt resource value: 0x7f070020
-			public const int radioButton2 = 2131165216;
-			
-			// aapt resource value: 0x7f070021
-			public const int radioButton3 = 2131165217;
+			// aapt resource value: 0x7f07003d
+			public const int mobilecell = 2131165245;
 			
 			// aapt resource value: 0x7f07001f
-			public const int radioButton4 = 2131165215;
+			public const int mySpacer = 2131165215;
 			
-			// aapt resource value: 0x7f07001e
-			public const int radioGroup1 = 2131165214;
-			
-			// aapt resource value: 0x7f070131
-			public const int removalbefored7_no = 2131165489;
-			
-			// aapt resource value: 0x7f070130
-			public const int removalbefored7_yes = 2131165488;
-			
-			// aapt resource value: 0x7f07012d
-			public const int removalond7_no = 2131165485;
-			
-			// aapt resource value: 0x7f07012c
-			public const int removalond7_yes = 2131165484;
-			
-			// aapt resource value: 0x7f0700fc
-			public const int rg_aesduringplacement = 2131165436;
-			
-			// aapt resource value: 0x7f07006f
-			public const int rg_allergictomeds = 2131165295;
-			
-			// aapt resource value: 0x7f070042
-			public const int rg_alternateaddresstype = 2131165250;
-			
-			// aapt resource value: 0x7f07010d
-			public const int rg_anesthesia_analgesicreaction = 2131165453;
-			
-			// aapt resource value: 0x7f0700d2
-			public const int rg_balantis = 2131165394;
-			
-			// aapt resource value: 0x7f070107
-			public const int rg_bleeding = 2131165447;
-			
-			// aapt resource value: 0x7f0700e3
-			public const int rg_circumcisionmethodchosen = 2131165411;
-			
-			// aapt resource value: 0x7f07007a
-			public const int rg_currentlytakingmeds = 2131165306;
-			
-			// aapt resource value: 0x7f070113
-			public const int rg_damagetopenis = 2131165459;
-			
-			// aapt resource value: 0x7f0700c6
-			public const int rg_dermatitisofthepenis = 2131165382;
-			
-			// aapt resource value: 0x7f07011f
-			public const int rg_devicemalfunction = 2131165471;
-			
-			// aapt resource value: 0x7f070119
-			public const int rg_difficultywithplacement = 2131165465;
-			
-			// aapt resource value: 0x7f0700e7
-			public const int rg_eligibleforprepex = 2131165415;
-			
-			// aapt resource value: 0x7f0700ae
-			public const int rg_epispadiasis = 2131165358;
-			
-			// aapt resource value: 0x7f0700da
-			public const int rg_foreskinattachedtotheglans = 2131165402;
-			
-			// aapt resource value: 0x7f07008d
-			public const int rg_generalcondition = 2131165325;
-			
-			// aapt resource value: 0x7f0700c2
-			public const int rg_genitalulcers = 2131165378;
-			
-			// aapt resource value: 0x7f0700ca
-			public const int rg_genitalwarts = 2131165386;
-			
-			// aapt resource value: 0x7f07007f
-			public const int rg_hadoperation = 2131165311;
-			
-			// aapt resource value: 0x7f0700ba
-			public const int rg_hydrocele = 2131165370;
-			
-			// aapt resource value: 0x7f0700b2
-			public const int rg_hypospadiasis = 2131165362;
-			
-			// aapt resource value: 0x7f070095
-			public const int rg_lymphadenopathy = 2131165333;
+			// aapt resource value: 0x7f070145
+			public const int nameoralanalgesiadrug = 2131165509;
 			
 			// aapt resource value: 0x7f0700a6
-			public const int rg_narrowprepuce = 2131165350;
+			public const int narrowprepuce_no = 2131165350;
+			
+			// aapt resource value: 0x7f0700a5
+			public const int narrowprepuce_yes = 2131165349;
 			
 			// aapt resource value: 0x7f07013b
-			public const int rg_nosexualintercourse = 2131165499;
+			public const int nosexualintercourse_no = 2131165499;
+			
+			// aapt resource value: 0x7f07013a
+			public const int nosexualintercourse_yes = 2131165498;
 			
 			// aapt resource value: 0x7f070137
-			public const int rg_notpullforeskin = 2131165495;
+			public const int notpullforeskin_no = 2131165495;
+			
+			// aapt resource value: 0x7f070136
+			public const int notpullforeskin_yes = 2131165494;
 			
 			// aapt resource value: 0x7f070127
-			public const int rg_nottomovedevice = 2131165479;
+			public const int nottomovedevice_no = 2131165479;
+			
+			// aapt resource value: 0x7f070126
+			public const int nottomovedevice_yes = 2131165478;
 			
 			// aapt resource value: 0x7f070133
-			public const int rg_onlydesignatedprovider = 2131165491;
+			public const int onlydesignatedprovider_no = 2131165491;
+			
+			// aapt resource value: 0x7f070132
+			public const int onlydesignatedprovider_yes = 2131165490;
 			
 			// aapt resource value: 0x7f070144
-			public const int rg_orlanalgesiagiven = 2131165508;
+			public const int orlanalgesiagiven_no = 2131165508;
+			
+			// aapt resource value: 0x7f070143
+			public const int orlanalgesiagiven_yes = 2131165507;
 			
 			// aapt resource value: 0x7f0700de
-			public const int rg_others = 2131165406;
+			public const int others_no = 2131165406;
+			
+			// aapt resource value: 0x7f0700dd
+			public const int others_yes = 2131165405;
 			
 			// aapt resource value: 0x7f0700b6
-			public const int rg_otherurethralanomaly = 2131165366;
+			public const int otherurethralanomaly_no = 2131165366;
+			
+			// aapt resource value: 0x7f0700b5
+			public const int otherurethralanomaly_yes = 2131165365;
+			
+			// aapt resource value: 0x7f070100
+			public const int pain_mild = 2131165440;
 			
 			// aapt resource value: 0x7f070101
-			public const int rg_pain = 2131165441;
+			public const int pain_moderate = 2131165441;
+			
+			// aapt resource value: 0x7f070102
+			public const int pain_severe = 2131165442;
+			
+			// aapt resource value: 0x7f070103
+			public const int pain_severitynotclassified = 2131165443;
 			
 			// aapt resource value: 0x7f070091
-			public const int rg_pallor = 2131165329;
+			public const int pallor_no = 2131165329;
+			
+			// aapt resource value: 0x7f070090
+			public const int pallor_yes = 2131165328;
 			
 			// aapt resource value: 0x7f0700a2
-			public const int rg_paraphimosis = 2131165346;
+			public const int paraphimosis_no = 2131165346;
+			
+			// aapt resource value: 0x7f0700a1
+			public const int paraphimosis_yes = 2131165345;
+			
+			// aapt resource value: 0x7f070035
+			public const int personaldetails_hdr = 2131165237;
 			
 			// aapt resource value: 0x7f07009e
-			public const int rg_phimosis = 2131165342;
+			public const int phimosis_no = 2131165342;
+			
+			// aapt resource value: 0x7f07009d
+			public const int phimosis_yes = 2131165341;
+			
+			// aapt resource value: 0x7f070122
+			public const int postappassessmenthdr = 2131165474;
 			
 			// aapt resource value: 0x7f0700d6
-			public const int rg_posthitis = 2131165398;
+			public const int posthitis_no = 2131165398;
+			
+			// aapt resource value: 0x7f0700d5
+			public const int posthitis_yes = 2131165397;
+			
+			// aapt resource value: 0x7f0700ea
+			public const int prepex_proc_hdr = 2131165418;
+			
+			// aapt resource value: 0x7f0700e9
+			public const int prepexcircumcisionsection = 2131165417;
+			
+			// aapt resource value: 0x7f0700ed
+			public const int prepexdevicesize_sizea = 2131165421;
 			
 			// aapt resource value: 0x7f0700ee
-			public const int rg_prepexdevicesize = 2131165422;
+			public const int prepexdevicesize_sizeb = 2131165422;
+			
+			// aapt resource value: 0x7f0700ef
+			public const int prepexdevicesize_sizec = 2131165423;
+			
+			// aapt resource value: 0x7f0700f0
+			public const int prepexdevicesize_sized = 2131165424;
+			
+			// aapt resource value: 0x7f0700f1
+			public const int prepexdevicesize_sizee = 2131165425;
+			
+			// aapt resource value: 0x7f070061
+			public const int primaryreasoncirc_appearance = 2131165281;
+			
+			// aapt resource value: 0x7f070063
+			public const int primaryreasoncirc_culturalsocialreligious = 2131165283;
+			
+			// aapt resource value: 0x7f070062
+			public const int primaryreasoncirc_hygiene = 2131165282;
+			
+			// aapt resource value: 0x7f070060
+			public const int primaryreasoncirc_medical = 2131165280;
+			
+			// aapt resource value: 0x7f070064
+			public const int primaryreasoncirc_other = 2131165284;
+			
+			// aapt resource value: 0x7f07005d
+			public const int primaryreasoncirc_partialhivprotecction = 2131165277;
+			
+			// aapt resource value: 0x7f07005e
+			public const int primaryreasoncirc_sexualpleasure = 2131165278;
+			
+			// aapt resource value: 0x7f070065
+			public const int primaryreasoncirc_specify = 2131165285;
+			
+			// aapt resource value: 0x7f07005f
+			public const int primaryreasoncirc_stiprotection = 2131165279;
 			
 			// aapt resource value: 0x7f07012f
-			public const int rg_removalbefored7 = 2131165487;
+			public const int removalbefored7_no = 2131165487;
+			
+			// aapt resource value: 0x7f07012e
+			public const int removalbefored7_yes = 2131165486;
 			
 			// aapt resource value: 0x7f07012b
-			public const int rg_removalond7 = 2131165483;
+			public const int removalond7_no = 2131165483;
 			
-			// aapt resource value: 0x7f0700be
-			public const int rg_scrotalhernia = 2131165374;
+			// aapt resource value: 0x7f07012a
+			public const int removalond7_yes = 2131165482;
 			
-			// aapt resource value: 0x7f07014c
-			public const int rg_signed = 2131165516;
-			
-			// aapt resource value: 0x7f0700aa
-			public const int rg_tightfrenulum = 2131165354;
-			
-			// aapt resource value: 0x7f07004b
-			public const int rg_typeofsite = 2131165259;
-			
-			// aapt resource value: 0x7f0700ce
-			public const int rg_urethraldischarge = 2131165390;
-			
-			// aapt resource value: 0x7f070099
-			public const int rg_wasting = 2131165337;
-			
-			// aapt resource value: 0x7f07013f
-			public const int rg_writteninstructions = 2131165503;
+			// aapt resource value: 0x7f0700fa
+			public const int rg_aesduringplacement = 2131165434;
 			
 			// aapt resource value: 0x7f07006d
-			public const int screen_hdr = 2131165293;
+			public const int rg_allergictomeds = 2131165293;
+			
+			// aapt resource value: 0x7f070040
+			public const int rg_alternateaddresstype = 2131165248;
+			
+			// aapt resource value: 0x7f07010b
+			public const int rg_anesthesia_analgesicreaction = 2131165451;
+			
+			// aapt resource value: 0x7f0700d0
+			public const int rg_balantis = 2131165392;
+			
+			// aapt resource value: 0x7f070105
+			public const int rg_bleeding = 2131165445;
+			
+			// aapt resource value: 0x7f0700e1
+			public const int rg_circumcisionmethodchosen = 2131165409;
+			
+			// aapt resource value: 0x7f070078
+			public const int rg_currentlytakingmeds = 2131165304;
+			
+			// aapt resource value: 0x7f070111
+			public const int rg_damagetopenis = 2131165457;
+			
+			// aapt resource value: 0x7f0700c4
+			public const int rg_dermatitisofthepenis = 2131165380;
+			
+			// aapt resource value: 0x7f07011d
+			public const int rg_devicemalfunction = 2131165469;
+			
+			// aapt resource value: 0x7f070117
+			public const int rg_difficultywithplacement = 2131165463;
+			
+			// aapt resource value: 0x7f0700e5
+			public const int rg_eligibleforprepex = 2131165413;
+			
+			// aapt resource value: 0x7f0700ac
+			public const int rg_epispadiasis = 2131165356;
+			
+			// aapt resource value: 0x7f0700d8
+			public const int rg_foreskinattachedtotheglans = 2131165400;
+			
+			// aapt resource value: 0x7f07008b
+			public const int rg_generalcondition = 2131165323;
 			
 			// aapt resource value: 0x7f0700c0
-			public const int scrotalhernia_no = 2131165376;
+			public const int rg_genitalulcers = 2131165376;
 			
-			// aapt resource value: 0x7f0700bf
-			public const int scrotalhernia_yes = 2131165375;
+			// aapt resource value: 0x7f0700c8
+			public const int rg_genitalwarts = 2131165384;
+			
+			// aapt resource value: 0x7f07007d
+			public const int rg_hadoperation = 2131165309;
+			
+			// aapt resource value: 0x7f0700b8
+			public const int rg_hydrocele = 2131165368;
+			
+			// aapt resource value: 0x7f0700b0
+			public const int rg_hypospadiasis = 2131165360;
+			
+			// aapt resource value: 0x7f070093
+			public const int rg_lymphadenopathy = 2131165331;
+			
+			// aapt resource value: 0x7f0700a4
+			public const int rg_narrowprepuce = 2131165348;
+			
+			// aapt resource value: 0x7f070139
+			public const int rg_nosexualintercourse = 2131165497;
+			
+			// aapt resource value: 0x7f070135
+			public const int rg_notpullforeskin = 2131165493;
+			
+			// aapt resource value: 0x7f070125
+			public const int rg_nottomovedevice = 2131165477;
+			
+			// aapt resource value: 0x7f070131
+			public const int rg_onlydesignatedprovider = 2131165489;
+			
+			// aapt resource value: 0x7f070142
+			public const int rg_orlanalgesiagiven = 2131165506;
+			
+			// aapt resource value: 0x7f0700dc
+			public const int rg_others = 2131165404;
+			
+			// aapt resource value: 0x7f0700b4
+			public const int rg_otherurethralanomaly = 2131165364;
+			
+			// aapt resource value: 0x7f0700ff
+			public const int rg_pain = 2131165439;
+			
+			// aapt resource value: 0x7f07008f
+			public const int rg_pallor = 2131165327;
+			
+			// aapt resource value: 0x7f0700a0
+			public const int rg_paraphimosis = 2131165344;
+			
+			// aapt resource value: 0x7f07009c
+			public const int rg_phimosis = 2131165340;
+			
+			// aapt resource value: 0x7f0700d4
+			public const int rg_posthitis = 2131165396;
+			
+			// aapt resource value: 0x7f0700ec
+			public const int rg_prepexdevicesize = 2131165420;
+			
+			// aapt resource value: 0x7f07012d
+			public const int rg_removalbefored7 = 2131165485;
+			
+			// aapt resource value: 0x7f070129
+			public const int rg_removalond7 = 2131165481;
+			
+			// aapt resource value: 0x7f0700bc
+			public const int rg_scrotalhernia = 2131165372;
+			
+			// aapt resource value: 0x7f07014a
+			public const int rg_signed = 2131165514;
+			
+			// aapt resource value: 0x7f0700a8
+			public const int rg_tightfrenulum = 2131165352;
+			
+			// aapt resource value: 0x7f070049
+			public const int rg_typeofsite = 2131165257;
+			
+			// aapt resource value: 0x7f0700cc
+			public const int rg_urethraldischarge = 2131165388;
+			
+			// aapt resource value: 0x7f070097
+			public const int rg_wasting = 2131165335;
+			
+			// aapt resource value: 0x7f07013d
+			public const int rg_writteninstructions = 2131165501;
+			
+			// aapt resource value: 0x7f07006b
+			public const int screen_hdr = 2131165291;
+			
+			// aapt resource value: 0x7f0700be
+			public const int scrotalhernia_no = 2131165374;
+			
+			// aapt resource value: 0x7f0700bd
+			public const int scrotalhernia_yes = 2131165373;
+			
+			// aapt resource value: 0x7f07014c
+			public const int signed_no = 2131165516;
+			
+			// aapt resource value: 0x7f07014b
+			public const int signed_yes = 2131165515;
 			
 			// aapt resource value: 0x7f07014e
-			public const int signed_no = 2131165518;
-			
-			// aapt resource value: 0x7f07014d
-			public const int signed_yes = 2131165517;
-			
-			// aapt resource value: 0x7f070150
-			public const int space1 = 2131165520;
+			public const int space1 = 2131165518;
 			
 			// aapt resource value: 0x7f070014
 			public const int tExploreDbLabel = 2131165204;
@@ -1025,8 +1022,8 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070019
 			public const int tLoggedInUser = 2131165209;
 			
-			// aapt resource value: 0x7f07014f
-			public const int tPassCode = 2131165519;
+			// aapt resource value: 0x7f07014d
+			public const int tPassCode = 2131165517;
 			
 			// aapt resource value: 0x7f07000d
 			public const int tUserName = 2131165197;
@@ -1058,62 +1055,62 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f07000b
 			public const int textView4 = 2131165195;
 			
-			// aapt resource value: 0x7f0700ac
-			public const int tightfrenulum_no = 2131165356;
+			// aapt resource value: 0x7f0700aa
+			public const int tightfrenulum_no = 2131165354;
 			
-			// aapt resource value: 0x7f0700ab
-			public const int tightfrenulum_yes = 2131165355;
+			// aapt resource value: 0x7f0700a9
+			public const int tightfrenulum_yes = 2131165353;
+			
+			// aapt resource value: 0x7f07004a
+			public const int typeofsite_dedicatedsite = 2131165258;
 			
 			// aapt resource value: 0x7f07004c
-			public const int typeofsite_dedicatedsite = 2131165260;
-			
-			// aapt resource value: 0x7f07004e
-			public const int typeofsite_masssevent = 2131165262;
-			
-			// aapt resource value: 0x7f070051
-			public const int typeofsite_missionhospital = 2131165265;
-			
-			// aapt resource value: 0x7f07004d
-			public const int typeofsite_mobileoutreach = 2131165261;
-			
-			// aapt resource value: 0x7f070053
-			public const int typeofsite_other = 2131165267;
-			
-			// aapt resource value: 0x7f070052
-			public const int typeofsite_privateclinichospital = 2131165266;
-			
-			// aapt resource value: 0x7f070050
-			public const int typeofsite_publichospitalclinic = 2131165264;
+			public const int typeofsite_masssevent = 2131165260;
 			
 			// aapt resource value: 0x7f07004f
-			public const int typeofsite_routineservice = 2131165263;
+			public const int typeofsite_missionhospital = 2131165263;
 			
-			// aapt resource value: 0x7f070054
-			public const int typeofsite_specify = 2131165268;
+			// aapt resource value: 0x7f07004b
+			public const int typeofsite_mobileoutreach = 2131165259;
 			
-			// aapt resource value: 0x7f0700d0
-			public const int urethraldischarge_no = 2131165392;
+			// aapt resource value: 0x7f070051
+			public const int typeofsite_other = 2131165265;
 			
-			// aapt resource value: 0x7f0700cf
-			public const int urethraldischarge_yes = 2131165391;
+			// aapt resource value: 0x7f070050
+			public const int typeofsite_privateclinichospital = 2131165264;
 			
-			// aapt resource value: 0x7f07009b
-			public const int wasting_no = 2131165339;
+			// aapt resource value: 0x7f07004e
+			public const int typeofsite_publichospitalclinic = 2131165262;
 			
-			// aapt resource value: 0x7f07009a
-			public const int wasting_yes = 2131165338;
+			// aapt resource value: 0x7f07004d
+			public const int typeofsite_routineservice = 2131165261;
+			
+			// aapt resource value: 0x7f070052
+			public const int typeofsite_specify = 2131165266;
+			
+			// aapt resource value: 0x7f0700ce
+			public const int urethraldischarge_no = 2131165390;
+			
+			// aapt resource value: 0x7f0700cd
+			public const int urethraldischarge_yes = 2131165389;
+			
+			// aapt resource value: 0x7f070099
+			public const int wasting_no = 2131165337;
+			
+			// aapt resource value: 0x7f070098
+			public const int wasting_yes = 2131165336;
 			
 			// aapt resource value: 0x7f070018
 			public const int webView1 = 2131165208;
 			
-			// aapt resource value: 0x7f070040
-			public const int workcontactnumber = 2131165248;
+			// aapt resource value: 0x7f07003e
+			public const int workcontactnumber = 2131165246;
 			
-			// aapt resource value: 0x7f070141
-			public const int writteninstructions_no = 2131165505;
+			// aapt resource value: 0x7f07013f
+			public const int writteninstructions_no = 2131165503;
 			
-			// aapt resource value: 0x7f070140
-			public const int writteninstructions_yes = 2131165504;
+			// aapt resource value: 0x7f07013e
+			public const int writteninstructions_yes = 2131165502;
 			
 			static Id()
 			{

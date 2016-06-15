@@ -183,18 +183,16 @@ namespace ExcelToAndroidXML
         android:layout_height='wrap_content'>
         <Button
             android:id='@+id/" + buttonName + @"'
-            android:layout_width='wrap_content'
-            android:layout_height='45dp'
+            android:layout_width='150dp'
+            android:layout_height='55dp'
             android:text='@string/" + SYS_DATE_SELECT_TEXT + @"'/>
         <EditText
             android:text=''
             android:textColor='@android:color/holo_blue_dark'
-            android:minWidth='25dp'
-            android:minHeight='25dp'
-            android:layout_width='150dp'
-            android:layout_height='40dp'
+            android:layout_width='220dp'
+            android:layout_height='50dp'
             android:id='@+id/" + textName + @"'
-            android:textSize='30sp' />
+            android:textSize='25sp' />
     </LinearLayout>";
             return fieldXml.Replace("'", "\"");
         }

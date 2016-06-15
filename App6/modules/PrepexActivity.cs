@@ -6,7 +6,7 @@ using Android.Widget;
 using JhpDataSystem.model;
 using System.Linq;
 
-namespace JhpDataSystem.Modules.Prepex
+namespace JhpDataSystem.modules
 {
     [Activity(Label = "Prepex Manager", Icon = "@drawable/jhpiego_logo")]
     public class PrepexActivity : Activity
@@ -41,15 +41,30 @@ namespace JhpDataSystem.Modules.Prepex
             };
 
             //buttonAddNew
-            var buttonAddNew = FindViewById<Button>(Resource.Id.buttonAddNew);
-            buttonAddNew.Click += (sender, e) => {
-                showAddNewView(true);                                
-            };
+            //var buttonAddNew = FindViewById<Button>(Resource.Id.buttonAddNew);
+            //buttonAddNew.Click += (sender, e) => {
+            //    showAddNewView(true);                                
+            //};
 
             //buttonEditExisting
-            var buttonEditExisting = FindViewById<Button>(Resource.Id.buttonEditExisting);
-            buttonEditExisting.Click += (sender, e) => {
-                showEditExistingView();
+            var buttonClientEvaluation = FindViewById<Button>(Resource.Id.buttonClientEvaluation);
+            buttonClientEvaluation.Click += (sender, e) => {
+                showAddNewView(true);
+                //StartActivity(typeof(PrepexClientEvaluation));
+            };
+
+            var buttonUnscheduled = FindViewById<Button>(Resource.Id.buttonUnscheduled);
+            buttonUnscheduled.Click += (sender, e) => {
+                StartActivity(typeof(PrepexUnscheduleVisit));
+            };
+            var buttonDeviceRemovalVisit = FindViewById<Button>(Resource.Id.buttonDeviceRemovalVisit);
+            buttonDeviceRemovalVisit.Click += (sender, e) => {
+                StartActivity(typeof(PrepexDeviceRemoval));
+            };
+
+            var buttonPostRemovalVisit = FindViewById<Button>(Resource.Id.buttonPostRemovalVisit);
+            buttonPostRemovalVisit.Click += (sender, e) => {
+                StartActivity(typeof(PrepexPostRemovalVisit));
             };
 
             //buttonViewList
@@ -59,10 +74,35 @@ namespace JhpDataSystem.Modules.Prepex
             };
 
             //buttonClientsDueFor
-            var buttonClientsDueFor = FindViewById<Button>(Resource.Id.buttonClientsDueFor);
-            buttonClientsDueFor.Click += (sender, e) => {
-                showCliwentDueForView();                
+            var buttonClientsToCall = FindViewById<Button>(Resource.Id.buttonClientsToCall);
+            buttonClientsToCall.Click += (sender, e) => {
+                getClientsToCall();                
             };
+
+            var buttonClientsToSms = FindViewById<Button>(Resource.Id.buttonClientsToSms);
+            buttonClientsToSms.Click += (sender, e) => {
+                getClientsToSms();
+            };
+
+            var buttonSupplies = FindViewById<Button>(Resource.Id.buttonSupplies);
+            buttonSupplies.Click += (sender, e) => {
+                getPrepexSuppliesReport();
+            };
+        }
+
+        private void getPrepexSuppliesReport()
+        {
+            
+        }
+
+        private void getClientsToSms()
+        {
+           
+        }
+
+        private void getClientsToCall()
+        {
+            
         }
 
         private void showAddNewView(bool showNext)
