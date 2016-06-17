@@ -5,6 +5,10 @@ using Android.OS;
 using Android.Widget;
 using JhpDataSystem.model;
 using System.Linq;
+using Android.Views;
+using Newtonsoft.Json;
+using JhpDataSystem.store;
+using Android.Runtime;
 
 namespace JhpDataSystem.modules
 {
@@ -40,15 +44,12 @@ namespace JhpDataSystem.modules
                 StartActivity(typeof(LauncherActivity));
             };
 
-            //buttonAddNew
-            //var buttonAddNew = FindViewById<Button>(Resource.Id.buttonAddNew);
-            //buttonAddNew.Click += (sender, e) => {
-            //    showAddNewView(true);                                
-            //};
-
             //buttonEditExisting
             var buttonClientEvaluation = FindViewById<Button>(Resource.Id.buttonClientEvaluation);
             buttonClientEvaluation.Click += (sender, e) => {
+                //PrepexDataEntry
+                //StartActivity(typeof(PrepexDataEntry));
+
                 showAddNewView(true);
                 //StartActivity(typeof(PrepexClientEvaluation));
             };
@@ -116,6 +117,7 @@ namespace JhpDataSystem.modules
 
             addDefaultNavBehaviours();
             bindDateDialogEventsForView(page);
+            
         }
 
         private void bindDateDialogEventsForView(int viewId)
@@ -160,6 +162,79 @@ namespace JhpDataSystem.modules
             }
         }
 
+        private void getDataForView(int viewId)
+        {
+            //we get all the relevant fields for this view
+            var viewFields = GetFieldsForView(viewId);
+
+            //we find the date fields
+            var dataFields = (from field in viewFields
+                              where field.dataType == Constants.DATEPICKER
+                              || field.dataType == Constants.EDITTEXT
+                              || field.dataType == Constants.CHECKBOX
+                              || field.dataType == Constants.RADIOBUTTON
+                              select field).ToList();
+            var context = this;
+            var valueFields = new List<FieldValuePair>();
+            foreach (var field in dataFields)
+            {
+                var resultObject = new FieldValuePair() {Field = field, Value = string.Empty };
+                switch (field.dataType)
+                {
+                    case Constants.DATEPICKER:
+                        {
+                            var view = field.GetDataView<EditText>(this);
+                            if (string.IsNullOrWhiteSpace(view.Text))
+                                continue;
+
+                            resultObject.Value = view.Text;
+                           break;
+                        }
+                    case Constants.EDITTEXT:
+                        {
+                            var view = field.GetDataView<EditText>(this);
+                            if (string.IsNullOrWhiteSpace(view.Text))
+                                continue;
+
+                            resultObject.Value = view.Text;
+                            break;
+                        }
+                    case Constants.CHECKBOX:
+                        {
+                            var view = field.GetDataView<CheckBox>(this);
+                            if (!view.Checked)
+                            {
+                                continue;
+                            }
+                            resultObject.Value = Constants.DEFAULT_CHECKED;
+                            break;
+                        }
+                    case Constants.RADIOBUTTON:
+                        {
+                            var view = field.GetDataView<RadioButton>(this);
+                            if (!view.Checked)
+                            {
+                                continue;
+                            }
+                            resultObject.Value = Constants.DEFAULT_CHECKED;
+                            break;
+                        }
+                    default:
+                        {
+                            throw new ArgumentNullException("Could not find view for field " + field.name);
+                        }
+                }
+
+                if (string.IsNullOrWhiteSpace(resultObject.Value))
+                {
+                    throw new ArgumentNullException("Could not find view for field " + field.name);
+                }
+                valueFields.Add(resultObject);
+            }
+
+            AppInstance.Instance.TemporalViewData[viewId] = valueFields;
+        }
+
         private List<FieldItem> GetFieldsForView(int viewId)
         {
             var filterString = string.Empty;
@@ -184,21 +259,24 @@ namespace JhpDataSystem.modules
 
         private void showCliwentDueForView()
         {
-            SetContentView(Resource.Layout.prepexreg1);
+            //SetContentView(Resource.Layout.prepexreg1);
+            //ClientSummaryActivity
         }
 
         private void showViewList()
         {
-            SetContentView(Resource.Layout.prepexreg1);
+            //we show all the clients
+
         }
 
         private void showEditExistingView()
         {
-            SetContentView(Resource.Layout.prepexreg1);
-            //
+            //SetContentView(Resource.Layout.prepexreg1);
+            
         }
 
         int currentLayout = -1;
+
         int getNextPage(bool getNext)
         {
             int nextLayout = -1;
@@ -253,10 +331,32 @@ namespace JhpDataSystem.modules
 
         }
 
+        private void addDiscardFunctionality()
+        {
+            var buttonDiscard = FindViewById<Button>(Resource.Id.buttonDiscard);
+            buttonDiscard.Click += (sender, e) =>
+            {
+                //confirm and quit
+                new AlertDialog.Builder(this)
+                .SetTitle("Confirm Action")
+                .SetMessage("Are you sure you want to quit? Any changes will be lost")
+                .SetNegativeButton("Cancel", (senderAlert, args) =>
+                {
+                })
+                .SetPositiveButton("OK", (senderAlert, args) =>
+                {
+                    showPrepexHome();
+                })
+                .Create()
+                .Show();
+            };
+        }
+
         private void addDefaultNavBehaviours()
         {
             var buttonPrev = FindViewById<Button>(Resource.Id.buttonPrevious);
-            buttonPrev.Click += (sender, e) => {
+            buttonPrev.Click += (sender, e) =>
+            {
                 showAddNewView(false);
             };
 
@@ -265,44 +365,88 @@ namespace JhpDataSystem.modules
                 //add bahviours for Save, Finish and Add Another One
                 //buttonReview
                 var buttonReview = FindViewById<Button>(Resource.Id.buttonReview);
-                buttonReview.Click += (sender, e) => {
+                buttonReview.Click += (sender, e) =>
+                {
                     //present aall data in one list, perhaps as an html page
-                    var data = "";
+                    displayTemporalDataAvailable();
                 };
 
                 //buttonDiscard
-                var buttonDiscard = FindViewById<Button>(Resource.Id.buttonDiscard);
-                buttonDiscard.Click += (sender, e) => {
-                    //confirm and quit
-new AlertDialog.Builder(this)
-.SetTitle("Confirm Action")
-.SetMessage("Are you sure you want to quit? Any changes will be lost")
-.SetNegativeButton("Cancel", (senderAlert, args) => {  })
-.SetPositiveButton("OK", (senderAlert, args) => { showPrepexHome(); })
-.Create()
-.Show();
-
-                    //just quit
-                };
+                addDiscardFunctionality();
+                //just quit
 
                 //buttonFinalise
                 var buttonFinalise = FindViewById<Button>(Resource.Id.buttonFinalise);
-                buttonFinalise.Click += (sender, e) => {
+                buttonFinalise.Click += (sender, e) =>
+                {
                     //we get the data
-                    var data = "";
+                    var data = getFormData();
+                    var saveable = new PrepexDataSet()
+                    {                        
+                        Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
+                        FormName = Constants.KIND_PREPEX_CLIENTEVAL,
+                        FieldValues = data,
+                    };
 
                     //save to local db
+                    new DbSaveableEntity(saveable) { kindName = new KindName(saveable.FormName) }
+                    .Save();
 
-                    //an also to out db
+                    //and also to lookups db
+                    var lookupValues = AppInstance.Instance.FieldItems.Where(t => t.IsLookup)
+                    .Select(g => g.name);
+
+                    var lookupsProvider = new LookupProvider()
+                    { kind = new KindName(Constants.KIND_PREPEX) };
+
+                    foreach (var field in data)
+                    {
+                        if (lookupValues.Contains(field.Name))
+                        {
+                            lookupsProvider.Add(field.Name, field.Value);
+                        }
+                    }
+
+                    lookupsProvider.Save();
+
+                    //we close and show the prpex home page
+                    showPrepexHome();
                 };
             }
             else
             {
                 var buttonNext = FindViewById<Button>(Resource.Id.buttonNext);
-                buttonNext.Click += (sender, e) => {
+                var viewid = currentLayout;
+                buttonNext.Click += (sender, e) =>
+                {
+                    //we get the values
+                    getDataForView(viewid);
                     showAddNewView(true);
                 };
             }
+        }
+
+        List<NameValuePair> getFormData()
+        {
+            var fields = AppInstance.Instance.TemporalViewData;
+            return (from viewData in fields
+                    from fieldData in viewData.Value
+                    let rec = fieldData.AsNameValuePair()
+                    select rec).ToList();
+        }
+
+        private void displayTemporalDataAvailable()
+        {
+            var fields = AppInstance.Instance.TemporalViewData;
+            var nameValuePairs = getFormData();
+            var message = string.Join(
+            System.Environment.NewLine, getFormData());
+            new AlertDialog.Builder(this)
+.SetTitle("Confirm Action")
+.SetMessage(message)
+.SetPositiveButton("OK", (senderAlert, args) => { })
+.Create()
+.Show();
         }
 
         protected override void OnSaveInstanceState(Bundle outState)

@@ -5,6 +5,14 @@ using JhpDataSystem.model;
 
 namespace JhpDataSystem.store
 {
+    public class LookupsTableStore : TableStore
+    {
+        public LookupsTableStore(KindName kind):base(kind)
+        {
+
+        }
+    }
+
     public class TableStore
     {
         public ProcessLogger MainLogger

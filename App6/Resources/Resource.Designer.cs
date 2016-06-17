@@ -206,8 +206,8 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070024
 			public const int buttonFinalise = 2131165220;
 			
-			// aapt resource value: 0x7f07014f
-			public const int buttonLoginIn = 2131165519;
+			// aapt resource value: 0x7f070151
+			public const int buttonLoginIn = 2131165521;
 			
 			// aapt resource value: 0x7f070020
 			public const int buttonNext = 2131165216;
@@ -698,6 +698,9 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070009
 			public const int linearLayout4 = 2131165193;
 			
+			// aapt resource value: 0x7f07014e
+			public const int linearLayout5 = 2131165518;
+			
 			// aapt resource value: 0x7f070095
 			public const int lymphadenopathy_no = 2131165333;
 			
@@ -1013,8 +1016,8 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f07014b
 			public const int signed_yes = 2131165515;
 			
-			// aapt resource value: 0x7f07014e
-			public const int space1 = 2131165518;
+			// aapt resource value: 0x7f070150
+			public const int space1 = 2131165520;
 			
 			// aapt resource value: 0x7f070014
 			public const int tExploreDbLabel = 2131165204;
@@ -1022,8 +1025,8 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070019
 			public const int tLoggedInUser = 2131165209;
 			
-			// aapt resource value: 0x7f07014d
-			public const int tPassCode = 2131165517;
+			// aapt resource value: 0x7f07014f
+			public const int tPassCode = 2131165519;
 			
 			// aapt resource value: 0x7f07000d
 			public const int tUserName = 2131165197;
@@ -1039,6 +1042,9 @@ namespace JhpDataSystem
 			
 			// aapt resource value: 0x7f070010
 			public const int tUserPassCodeAgain = 2131165200;
+			
+			// aapt resource value: 0x7f07014d
+			public const int tabHost1 = 2131165517;
 			
 			// aapt resource value: 0x7f070015
 			public const int textLabel2 = 2131165205;
@@ -1162,7 +1168,10 @@ namespace JhpDataSystem
 			public const int prepexreg4 = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int UserLoginLayout = 2130903052;
+			public const int tab_layout_view = 2130903052;
+			
+			// aapt resource value: 0x7f03000d
+			public const int UserLoginLayout = 2130903053;
 			
 			static Layout()
 			{

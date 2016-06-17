@@ -1,11 +1,23 @@
+using Android.Views;
+using JhpDataSystem.model;
+
 namespace JhpDataSystem
 {
     internal static class Extensions
     {
-        //internal static void Click()
-        //{
+        internal static T GetDataView<T>(this FieldItem field, Android.App.Activity context) where T : Android.Views.View
+        {
+            //we convert these into int Ids
+            var fieldName = field.dataType == Constants.DATEPICKER ? 
+                Constants.DATE_TEXT_PREFIX + field.name :
+                field.name;
 
-        //}
+            int resourceId = context.Resources.GetIdentifier(
+                fieldName, "id", context.PackageName);
+            T view = null;
+            view = context.FindViewById<T>(resourceId);
+            return view;
+        }
 
         internal static string toText(this System.IO.Stream stream)
         {

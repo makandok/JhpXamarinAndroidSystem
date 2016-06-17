@@ -6,7 +6,10 @@ namespace JhpDataSystem
     {
         //tables in the database
         public const string KIND_APPUSERS = "appusers";
-        internal const string KIND_PREPEX = "prepexclients";
+        internal const string KIND_PREPEX = "pp_client";
+        internal const string KIND_PREPEX_CLIENTEVAL = "pp_client_eval";
+
+
         internal const string KIND_VMMC = "vmmcclients";
         public const string KIND_DEFAULT = "generalstore";
         public const string KIND_REGISTER = "kindRegister";
@@ -33,15 +36,21 @@ namespace JhpDataSystem
 
         internal const string FILE_PREPEX_FIELDS = "prepex_fields.json";
 
+        
         internal const string PP_VIEWS_1= "prepexreg1";
         internal const string PP_VIEWS_2 = "prepexreg2";
         internal const string PP_VIEWS_3 = "prepexreg3";
         internal const string PP_VIEWS_4 = "prepexreg4";
 
         internal const string DATEPICKER = "DatePicker";
+        internal const string EDITTEXT = "EditText";
+        internal const string CHECKBOX = "CheckBox";
+        internal const string RADIOBUTTON = "RadioButton";
 
         internal const string DATE_BUTTON_PREFIX = "dtbtn_";
         internal const string DATE_TEXT_PREFIX = "dttxt_";
         internal const string LABEL_PREFIX = "sylbl_";
+
+        internal const string DEFAULT_CHECKED = "1";
     }
 }

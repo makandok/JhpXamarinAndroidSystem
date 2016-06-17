@@ -227,12 +227,17 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <Compile Include="model\FieldItem.cs" />
+    <Compile Include="modules\ClientSummaryActivity.cs" />
     <Compile Include="modules\PrepexClientEvaluation.cs" />
+    <Compile Include="modules\PrepexDataEntry.cs" />
     <Compile Include="modules\PrepexDeviceRemoval.cs" />
     <Compile Include="modules\PrepexPostRemovalVisit.cs" />
     <Compile Include="modules\PrepexUnscheduleVisit.cs" />
     <Compile Include="SystemConfigActivity.cs" />
     <AndroidAsset Include="Assets\prepex_fields.json" />
+    <AndroidResource Include="Resources\layout\tab_layout_view.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />
@@ -306,8 +311,6 @@
   <ItemGroup>
     <Folder Include="communicator\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Resources\layout-sw1280dp-w1280dp-h800dp-large-land-mdpi-v19\" />
-    <Folder Include="Resources\layout-w800dp-h1280dp-normal-port-mdpi-v19\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>

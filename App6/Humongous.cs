@@ -27,9 +27,12 @@ namespace JhpDataSystem
             }
         }
 
+        public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
+
         public Dictionary<string, string> ApiAssets = null;
         public void InitialiseAppResources(AssetManager assets)
         {
+            TemporalViewData = new Dictionary<int, List<FieldValuePair>>();
             ApiAssets = new Dictionary<string, string>();
             //we read the api key file
             var inputStream = assets.Open(Constants.API_KEYFILE);
@@ -59,6 +62,11 @@ namespace JhpDataSystem
         public List<FieldItem> FieldItems = null;
 
         public UserSession CurrentUser { get; internal set; }
+
+        internal void SetTempDataForView(int viewId, List<FieldValuePair> valueFields)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class DatePickerFragment : DialogFragment,

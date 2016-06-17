@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace JhpDataSystem.model
 {
     public class AppUser : ISaveableEntity
@@ -7,6 +10,13 @@ namespace JhpDataSystem.model
         public string Names { get; set; }
         public string KnownBolg { get; set; }
         //public string MotherOfBolg { get; set; }
+    }
+
+    public class PrepexDataSet : ISaveableEntity
+    {
+        public KindKey Id { get; set; }
+        public string FormName { get; set; }
+        public List<NameValuePair> FieldValues { get; set; }
     }
 
     public class UserSession

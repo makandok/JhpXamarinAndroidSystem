@@ -33,7 +33,8 @@ namespace JhpDataSystem.store
             defaultTableStore = new TableStore(Constants.KIND_DEFAULT);
             defaultTableStore.build();
             new TableStore(Constants.KIND_APPUSERS).build();
-            new TableStore(Constants.KIND_PREPEX).build();
+            //new TableStore(Constants.KIND_PREPEX).build();
+            new TableStore(Constants.KIND_PREPEX_CLIENTEVAL).build();
             new TableStore(Constants.KIND_VMMC).build();
             new KindRegistryQuery().build();
             //new TableStore(Constants.KIND_VMMC_POSTOP).build();
@@ -77,6 +78,28 @@ namespace JhpDataSystem.store
         public List<KindItem> GetAllBlobs(KindName entityKind)
         {
             return new TableStore(entityKind).GetAllBlobs();
+        }
+    }
+
+    public class LookupProvider
+    {
+        public LookupProvider()
+        {
+            Lookups = new List<NameValuePair>();
+        }
+
+        public KindName kind { get; set; }
+
+        public List<NameValuePair> Lookups { get; set; }
+
+        internal void Add(string name, string value)
+        {
+            Lookups.Add(new NameValuePair() { Name = name, Value = value });
+        }
+
+        internal void Save()
+        {
+            
         }
     }
 }

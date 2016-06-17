@@ -1,15 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
 namespace JhpDataSystem.model
 {
     public class FieldItem
@@ -18,6 +6,24 @@ namespace JhpDataSystem.model
         public string name { get; set; }
         public string dataType { get; set; }
         public string pageName { get; set; }
+        public bool IsLookup { get; set; }
         //public List<string> options { get; set; }
+    }
+
+    public class FieldValuePair
+    {
+        public FieldItem Field { get; set; }
+        public string Value { get; set; }
+
+        public NameValuePair AsNameValuePair()
+        {
+            return new NameValuePair() { Name = Field.name, Value = Value };
+        }
+    }
+
+    public class NameValuePair
+    {
+        public string Name { get; set; }
+        public string Value { get; set; }
     }
 }
