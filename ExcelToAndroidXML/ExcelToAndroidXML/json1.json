@@ -12,7 +12,7 @@
     "Values": [
       "Dedicated Site",
       "Mobile Outreach",
-      "Masss Event",
+      "Mass Event",
       "Routine Service",
       "Public hospital/clinic",
       "Mission hospital",
@@ -100,11 +100,11 @@
   {
     "Name": "device_size",
     "Values": [
-      "Size A",
-      "Size B",
-      "Size C",
-      "Size D",
-      "Size E"
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
     ]
   },
   {

@@ -9,6 +9,160 @@
 <include layout="@layout/nextandprevbuttons" />
 
     <TextView
+        android:text="@string/facility_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/facility_hdr" />
+
+    <TextView
+android:text="@string/typeofsite"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceMedium"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_typeofsite" />
+<RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_typeofsite" >
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofsite_dedicatedsite"
+android:id="@+id/typeofsite_dedicatedsite" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofsite_mobileoutreach"
+android:id="@+id/typeofsite_mobileoutreach" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofsite_massevent"
+android:id="@+id/typeofsite_massevent" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofsite_routineservice"
+android:id="@+id/typeofsite_routineservice" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofsite_publichospitalclinic"
+android:id="@+id/typeofsite_publichospitalclinic" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofsite_missionhospital"
+android:id="@+id/typeofsite_missionhospital" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofsite_privateclinichospital"
+android:id="@+id/typeofsite_privateclinichospital" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofsite_other"
+android:id="@+id/typeofsite_other" /></RadioGroup >
+
+    <TextView
+        android:text="@string/typeofsite_specify"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/typeofsite_specify" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:id="@+id/typeofsite_specify"
+        android:hint="@string/typeofsite_specify" />
+
+    <TextView
+android:text="@string/howclientlearnt"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceMedium"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_howclientlearnt" /> <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/howclientlearnt_friendfamily"
+             android:id="@+id/howclientlearnt_friendfamily" />
+ <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/howclientlearnt_partnerspouse"
+             android:id="@+id/howclientlearnt_partnerspouse" />
+ <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/howclientlearnt_healthworker"
+             android:id="@+id/howclientlearnt_healthworker" />
+ <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/howclientlearnt_posternewspaperleaflet"
+             android:id="@+id/howclientlearnt_posternewspaperleaflet" />
+ <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/howclientlearnt_otherclient"
+             android:id="@+id/howclientlearnt_otherclient" />
+ <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/howclientlearnt_communitymobilizer"
+             android:id="@+id/howclientlearnt_communitymobilizer" />
+ <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/howclientlearnt_tvradio"
+             android:id="@+id/howclientlearnt_tvradio" />
+
+    <TextView
         android:text="@string/indiv_counse_hdr"
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/white"
@@ -20,7 +174,7 @@
     <TextView
 android:text="@string/primaryreasoncirc"
 android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+android:textAppearance="?android:attr/textAppearanceMedium"
         android:minWidth="25dp"
         android:minHeight="25dp"
         android:layout_width="match_parent"
@@ -91,518 +245,50 @@ android:textAppearance="?android:attr/textAppearanceSmall"
     <TextView
 android:text="@string/hivstatus"
 android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
+android:textAppearance="?android:attr/textAppearanceMedium"
         android:minWidth="25dp"
         android:minHeight="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/l_hivstatus" /> <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/hivstatus_positive"
-             android:id="@+id/hivstatus_positive" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/hivstatus_negative"
-             android:id="@+id/hivstatus_negative" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/hivstatus_indeterminate"
-             android:id="@+id/hivstatus_indeterminate" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/hivstatus_unknownrefusedselfreported"
-             android:id="@+id/hivstatus_unknownrefusedselfreported" />
-
-    <TextView
-        android:text="@string/screen_hdr"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/white"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/screen_hdr" />
-
-    <TextView
-android:text="@string/allergictomeds"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_allergictomeds" /><RadioGroup
+        android:id="@+id/l_hivstatus" />
+<RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rg_allergictomeds" >
+        android:id="@+id/rg_hivstatus" >
 <RadioButton
+            android:layout_marginStart="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-             android:text="@string/allergictomeds_yes"
-             android:id="@+id/allergictomeds_yes" />
-
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/allergictomeds_no"
-             android:id="@+id/allergictomeds_no" /></RadioGroup >
-
-    <TextView
-        android:text="@string/allergictomeds_specify"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/allergictomeds_specify" />
-    <EditText
-        android:layout_height="40dp"
-        android:layout_width="match_parent"
-        android:inputType="text"
-        android:id="@+id/allergictomeds_specify"
-        android:hint="@string/allergictomeds_specify" />
-
-    <TextView
-android:text="@string/everdiagnosedwith"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_everdiagnosedwith" /> <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/everdiagnosedwith_hemophiliableedingdisorder"
-             android:id="@+id/everdiagnosedwith_hemophiliableedingdisorder" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/everdiagnosedwith_diabetes"
-             android:id="@+id/everdiagnosedwith_diabetes" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/everdiagnosedwith_hypertension"
-             android:id="@+id/everdiagnosedwith_hypertension" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/everdiagnosedwith_cancer"
-             android:id="@+id/everdiagnosedwith_cancer" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/everdiagnosedwith_peripheralvasculardisease"
-             android:id="@+id/everdiagnosedwith_peripheralvasculardisease" />
-
-    <TextView
-android:text="@string/currentlytakingmeds"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_currentlytakingmeds" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_currentlytakingmeds" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/currentlytakingmeds_yes"
-             android:id="@+id/currentlytakingmeds_yes" />
+            android:text="@string/hivstatus_positive"
+android:id="@+id/hivstatus_positive" />
 
 <RadioButton
+            android:layout_marginStart="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-             android:text="@string/currentlytakingmeds_no"
-             android:id="@+id/currentlytakingmeds_no" /></RadioGroup >
-
-    <TextView
-        android:text="@string/currentlytakingmeds_specify"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/currentlytakingmeds_specify" />
-    <EditText
-        android:layout_height="40dp"
-        android:layout_width="match_parent"
-        android:inputType="text"
-        android:id="@+id/currentlytakingmeds_specify"
-        android:hint="@string/currentlytakingmeds_specify" />
-
-    <TextView
-android:text="@string/hadoperation"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_hadoperation" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_hadoperation" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/hadoperation_yes"
-             android:id="@+id/hadoperation_yes" />
+            android:text="@string/hivstatus_negative"
+android:id="@+id/hivstatus_negative" />
 
 <RadioButton
+            android:layout_marginStart="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-             android:text="@string/hadoperation_no"
-             android:id="@+id/hadoperation_no" /></RadioGroup >
-
-    <TextView
-        android:text="@string/hadoperation_specify"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/hadoperation_specify" />
-    <EditText
-        android:layout_height="40dp"
-        android:layout_width="match_parent"
-        android:inputType="text"
-        android:id="@+id/hadoperation_specify"
-        android:hint="@string/hadoperation_specify" />
-
-    <TextView
-android:text="@string/complaints"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_complaints" /> <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/complaints_urethraldischarge"
-             android:id="@+id/complaints_urethraldischarge" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/complaints_genitalsore"
-             android:id="@+id/complaints_genitalsore" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/complaints_painfulweakerection"
-             android:id="@+id/complaints_painfulweakerection" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/complaints_swellingofthescrotum"
-             android:id="@+id/complaints_swellingofthescrotum" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/complaints_painonurination"
-             android:id="@+id/complaints_painonurination" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/complaints_difficulltyinretractingforeskin"
-             android:id="@+id/complaints_difficulltyinretractingforeskin" />
- <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/complaints_other"
-             android:id="@+id/complaints_other" />
-
-    <TextView
-        android:text="@string/complaints_specify"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/complaints_specify" />
-    <EditText
-        android:layout_height="40dp"
-        android:layout_width="match_parent"
-        android:inputType="text"
-        android:id="@+id/complaints_specify"
-        android:hint="@string/complaints_specify" />
-
-    <TextView
-android:text="@string/generalcondition"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_generalcondition" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_generalcondition" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/generalcondition_healthy"
-             android:id="@+id/generalcondition_healthy" />
+            android:text="@string/hivstatus_indeterminate"
+android:id="@+id/hivstatus_indeterminate" />
 
 <RadioButton
+            android:layout_marginStart="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-             android:text="@string/generalcondition_illlooking"
-             android:id="@+id/generalcondition_illlooking" /></RadioGroup >
-
-    <TextView
-android:text="@string/pallor"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_pallor" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_pallor" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/pallor_yes"
-             android:id="@+id/pallor_yes" />
-
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/pallor_no"
-             android:id="@+id/pallor_no" /></RadioGroup >
-
-    <TextView
-android:text="@string/lymphadenopathy"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_lymphadenopathy" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_lymphadenopathy" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/lymphadenopathy_yes"
-             android:id="@+id/lymphadenopathy_yes" />
-
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/lymphadenopathy_no"
-             android:id="@+id/lymphadenopathy_no" /></RadioGroup >
-
-    <TextView
-android:text="@string/wasting"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_wasting" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_wasting" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/wasting_yes"
-             android:id="@+id/wasting_yes" />
-
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/wasting_no"
-             android:id="@+id/wasting_no" /></RadioGroup >
-
-    <TextView
-        android:text="@string/genital"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/white"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/genital" />
-
-    <TextView
-android:text="@string/phimosis"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_phimosis" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_phimosis" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/phimosis_yes"
-             android:id="@+id/phimosis_yes" />
-
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/phimosis_no"
-             android:id="@+id/phimosis_no" /></RadioGroup >
-
-    <TextView
-android:text="@string/paraphimosis"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_paraphimosis" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_paraphimosis" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/paraphimosis_yes"
-             android:id="@+id/paraphimosis_yes" />
-
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/paraphimosis_no"
-             android:id="@+id/paraphimosis_no" /></RadioGroup >
-
-    <TextView
-android:text="@string/narrowprepuce"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_narrowprepuce" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_narrowprepuce" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/narrowprepuce_yes"
-             android:id="@+id/narrowprepuce_yes" />
-
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/narrowprepuce_no"
-             android:id="@+id/narrowprepuce_no" /></RadioGroup >
-
-    <TextView
-android:text="@string/tightfrenulum"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_tightfrenulum" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_tightfrenulum" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/tightfrenulum_yes"
-             android:id="@+id/tightfrenulum_yes" />
-
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/tightfrenulum_no"
-             android:id="@+id/tightfrenulum_no" /></RadioGroup >
+            android:text="@string/hivstatus_unknownrefusedselfreported"
+android:id="@+id/hivstatus_unknownrefusedselfreported" /></RadioGroup >
 
 </LinearLayout>
 </ScrollView>

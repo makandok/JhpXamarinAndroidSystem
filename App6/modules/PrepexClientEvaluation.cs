@@ -61,6 +61,20 @@ namespace JhpDataSystem.modules
         }
     }
 
+    [Activity(Label = "Client Evaluation - Pt4")]
+    public class PP_ClientEval5 : PrepexFormsBase
+    {
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            // Create your application here
+            myView = Resource.Layout.prepexreg5;
+            myNavController = new PP_ClientEvalControl();
+            ShowMyView();
+        }
+    }
+
     [Activity(Label = "Client Evaluation - End")]
     public class PP_ClientEvalEnd : PrepexFormsBase
     {
@@ -82,6 +96,7 @@ namespace JhpDataSystem.modules
             { Resource.Layout.prepexreg2,typeof(PP_ClientEval2) },
             { Resource.Layout.prepexreg3,typeof(PP_ClientEval3) },
             { Resource.Layout.prepexreg4,typeof(PP_ClientEval4) },
+            { Resource.Layout.prepexreg5,typeof(PP_ClientEval5) },
             { Resource.Layout.PrepexDataEntryEnd,typeof(PP_ClientEvalEnd) }
             };
 
@@ -90,6 +105,7 @@ namespace JhpDataSystem.modules
                 Resource.Layout.prepexreg2,
                 Resource.Layout.prepexreg3,
                 Resource.Layout.prepexreg4,
+                Resource.Layout.prepexreg5,
                 Resource.Layout.PrepexDataEntryEnd
             };
 

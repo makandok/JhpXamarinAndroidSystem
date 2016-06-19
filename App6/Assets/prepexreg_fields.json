@@ -16,14 +16,6 @@
     "Label": "Date of Visit"
   },
   {
-    "name": "district",
-    "dataType": "EditText",
-    "pageName": "prepexreg1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "District"
-  },
-  {
     "name": "cardserialnumber",
     "dataType": "EditText",
     "pageName": "prepexreg1",
@@ -154,7 +146,7 @@
   {
     "name": "typeofsite_dedicatedsite",
     "dataType": "RadioButton",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Dedicated Site]"
@@ -162,23 +154,23 @@
   {
     "name": "typeofsite_mobileoutreach",
     "dataType": "RadioButton",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Mobile Outreach]"
   },
   {
-    "name": "typeofsite_masssevent",
+    "name": "typeofsite_massevent",
     "dataType": "RadioButton",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Masss Event]"
+    "Label": "Type of Site / Service (check only one) [Mass Event]"
   },
   {
     "name": "typeofsite_routineservice",
     "dataType": "RadioButton",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Routine Service]"
@@ -186,7 +178,7 @@
   {
     "name": "typeofsite_publichospitalclinic",
     "dataType": "RadioButton",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Public hospital/clinic]"
@@ -194,7 +186,7 @@
   {
     "name": "typeofsite_missionhospital",
     "dataType": "RadioButton",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Mission hospital]"
@@ -202,7 +194,7 @@
   {
     "name": "typeofsite_privateclinichospital",
     "dataType": "RadioButton",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Private clinic/hospital]"
@@ -210,7 +202,7 @@
   {
     "name": "typeofsite_other",
     "dataType": "RadioButton",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Other]"
@@ -218,7 +210,7 @@
   {
     "name": "typeofsite_specify",
     "dataType": "EditText",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Type of Site_Specify"
@@ -226,7 +218,7 @@
   {
     "name": "howclientlearnt_friendfamily",
     "dataType": "CheckBox",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "How did client leant about service [Friend/Family]"
@@ -234,7 +226,7 @@
   {
     "name": "howclientlearnt_partnerspouse",
     "dataType": "CheckBox",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "How did client leant about service [Partner/Spouse]"
@@ -242,7 +234,7 @@
   {
     "name": "howclientlearnt_healthworker",
     "dataType": "CheckBox",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "How did client leant about service [Health worker]"
@@ -250,7 +242,7 @@
   {
     "name": "howclientlearnt_posternewspaperleaflet",
     "dataType": "CheckBox",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "How did client leant about service [Poster/newspaper/leaflet]"
@@ -258,7 +250,7 @@
   {
     "name": "howclientlearnt_otherclient",
     "dataType": "CheckBox",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "How did client leant about service [Other Client]"
@@ -266,7 +258,7 @@
   {
     "name": "howclientlearnt_communitymobilizer",
     "dataType": "CheckBox",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "How did client leant about service [Community Mobilizer]"
@@ -274,7 +266,7 @@
   {
     "name": "howclientlearnt_tvradio",
     "dataType": "CheckBox",
-    "pageName": "prepexreg1",
+    "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "How did client leant about service [TV/radio]"
@@ -353,7 +345,7 @@
   },
   {
     "name": "hivstatus_positive",
-    "dataType": "CheckBox",
+    "dataType": "RadioButton",
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
@@ -361,7 +353,7 @@
   },
   {
     "name": "hivstatus_negative",
-    "dataType": "CheckBox",
+    "dataType": "RadioButton",
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
@@ -369,7 +361,7 @@
   },
   {
     "name": "hivstatus_indeterminate",
-    "dataType": "CheckBox",
+    "dataType": "RadioButton",
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
@@ -377,7 +369,7 @@
   },
   {
     "name": "hivstatus_unknownrefusedselfreported",
-    "dataType": "CheckBox",
+    "dataType": "RadioButton",
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
@@ -386,7 +378,7 @@
   {
     "name": "allergictomeds_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Are you allergic to any medicine, rubber or latex [Yes]"
@@ -394,7 +386,7 @@
   {
     "name": "allergictomeds_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Are you allergic to any medicine, rubber or latex [No]"
@@ -402,7 +394,7 @@
   {
     "name": "allergictomeds_specify",
     "dataType": "EditText",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Allergic to meds_Specify"
@@ -410,7 +402,7 @@
   {
     "name": "everdiagnosedwith_hemophiliableedingdisorder",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Hemophilia/bleeding disorder]"
@@ -418,7 +410,7 @@
   {
     "name": "everdiagnosedwith_diabetes",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Diabetes]"
@@ -426,7 +418,7 @@
   {
     "name": "everdiagnosedwith_hypertension",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Hypertension]"
@@ -434,7 +426,7 @@
   {
     "name": "everdiagnosedwith_cancer",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Cancer]"
@@ -442,7 +434,7 @@
   {
     "name": "everdiagnosedwith_peripheralvasculardisease",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Peripheral vascular disease]"
@@ -450,7 +442,7 @@
   {
     "name": "currentlytakingmeds_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Currently taking meds including STI tx [Yes]"
@@ -458,7 +450,7 @@
   {
     "name": "currentlytakingmeds_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Currently taking meds including STI tx [No]"
@@ -466,7 +458,7 @@
   {
     "name": "currentlytakingmeds_specify",
     "dataType": "EditText",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Currently taking meds_Specify"
@@ -474,7 +466,7 @@
   {
     "name": "hadoperation_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Had Operation [Yes]"
@@ -482,7 +474,7 @@
   {
     "name": "hadoperation_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Had Operation [No]"
@@ -490,7 +482,7 @@
   {
     "name": "hadoperation_specify",
     "dataType": "EditText",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Had Operation_Specify"
@@ -498,63 +490,63 @@
   {
     "name": "complaints_urethraldischarge",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have aany of the following complaints [Urethral discharge]"
+    "Label": "Do you have any of the following complaints [Urethral discharge]"
   },
   {
     "name": "complaints_genitalsore",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have aany of the following complaints [Genital sore]"
+    "Label": "Do you have any of the following complaints [Genital sore]"
   },
   {
     "name": "complaints_painfulweakerection",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have aany of the following complaints [Painful/weak erection]"
+    "Label": "Do you have any of the following complaints [Painful/weak erection]"
   },
   {
     "name": "complaints_swellingofthescrotum",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have aany of the following complaints [Swelling of the scrotum]"
+    "Label": "Do you have any of the following complaints [Swelling of the scrotum]"
   },
   {
     "name": "complaints_painonurination",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have aany of the following complaints [Pain on urination]"
+    "Label": "Do you have any of the following complaints [Pain on urination]"
   },
   {
     "name": "complaints_difficulltyinretractingforeskin",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have aany of the following complaints [Difficullty in retracting foreskin]"
+    "Label": "Do you have any of the following complaints [Difficullty in retracting foreskin]"
   },
   {
     "name": "complaints_other",
     "dataType": "CheckBox",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have aany of the following complaints [Other]"
+    "Label": "Do you have any of the following complaints [Other]"
   },
   {
     "name": "complaints_specify",
     "dataType": "EditText",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Other (specify)"
@@ -562,7 +554,7 @@
   {
     "name": "generalcondition_healthy",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "General condition [Healthy]"
@@ -570,7 +562,7 @@
   {
     "name": "generalcondition_illlooking",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "General condition [Ill Looking]"
@@ -578,7 +570,7 @@
   {
     "name": "pallor_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Pallor [Yes]"
@@ -586,7 +578,7 @@
   {
     "name": "pallor_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Pallor [No]"
@@ -594,7 +586,7 @@
   {
     "name": "lymphadenopathy_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Lymphadenopathy [Yes]"
@@ -602,7 +594,7 @@
   {
     "name": "lymphadenopathy_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Lymphadenopathy [No]"
@@ -610,7 +602,7 @@
   {
     "name": "wasting_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Wasting [Yes]"
@@ -618,7 +610,7 @@
   {
     "name": "wasting_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Wasting [No]"
@@ -626,7 +618,7 @@
   {
     "name": "phimosis_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Phimosis [Yes]"
@@ -634,7 +626,7 @@
   {
     "name": "phimosis_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Phimosis [No]"
@@ -642,7 +634,7 @@
   {
     "name": "paraphimosis_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Paraphimosis [Yes]"
@@ -650,7 +642,7 @@
   {
     "name": "paraphimosis_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Paraphimosis [No]"
@@ -658,7 +650,7 @@
   {
     "name": "narrowprepuce_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Narrow prepuce [Yes]"
@@ -666,7 +658,7 @@
   {
     "name": "narrowprepuce_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Narrow prepuce [No]"
@@ -674,7 +666,7 @@
   {
     "name": "tightfrenulum_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Tight frenulum [Yes]"
@@ -682,7 +674,7 @@
   {
     "name": "tightfrenulum_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg2",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Tight frenulum [No]"
@@ -690,7 +682,7 @@
   {
     "name": "epispadiasis_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Epispadiasis [Yes]"
@@ -698,7 +690,7 @@
   {
     "name": "epispadiasis_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Epispadiasis [No]"
@@ -706,7 +698,7 @@
   {
     "name": "hypospadiasis_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Hypospadiasis [Yes]"
@@ -714,7 +706,7 @@
   {
     "name": "hypospadiasis_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Hypospadiasis [No]"
@@ -722,7 +714,7 @@
   {
     "name": "otherurethralanomaly_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Other urethral anomaly [Yes]"
@@ -730,7 +722,7 @@
   {
     "name": "otherurethralanomaly_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Other urethral anomaly [No]"
@@ -738,7 +730,7 @@
   {
     "name": "hydrocele_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Hydrocele [Yes]"
@@ -746,7 +738,7 @@
   {
     "name": "hydrocele_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Hydrocele [No]"
@@ -754,7 +746,7 @@
   {
     "name": "scrotalhernia_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Scrotal hernia [Yes]"
@@ -762,7 +754,7 @@
   {
     "name": "scrotalhernia_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Scrotal hernia [No]"
@@ -770,7 +762,7 @@
   {
     "name": "genitalulcers_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Genital Ulcers [Yes]"
@@ -778,7 +770,7 @@
   {
     "name": "genitalulcers_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Genital Ulcers [No]"
@@ -786,7 +778,7 @@
   {
     "name": "dermatitisofthepenis_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Dermatitis  of the penis [Yes]"
@@ -794,7 +786,7 @@
   {
     "name": "dermatitisofthepenis_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Dermatitis  of the penis [No]"
@@ -802,7 +794,7 @@
   {
     "name": "genitalwarts_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Genital warts [Yes]"
@@ -810,7 +802,7 @@
   {
     "name": "genitalwarts_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Genital warts [No]"
@@ -818,7 +810,7 @@
   {
     "name": "urethraldischarge_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Urethral discharge [Yes]"
@@ -826,7 +818,7 @@
   {
     "name": "urethraldischarge_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Urethral discharge [No]"
@@ -834,7 +826,7 @@
   {
     "name": "balantis_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Balantis [Yes]"
@@ -842,7 +834,7 @@
   {
     "name": "balantis_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Balantis [No]"
@@ -850,7 +842,7 @@
   {
     "name": "posthitis_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Posthitis [Yes]"
@@ -858,7 +850,7 @@
   {
     "name": "posthitis_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Posthitis [No]"
@@ -866,7 +858,7 @@
   {
     "name": "foreskinattachedtotheglans_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Foreskin attached to the glans [Yes]"
@@ -874,7 +866,7 @@
   {
     "name": "foreskinattachedtotheglans_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Foreskin attached to the glans [No]"
@@ -882,7 +874,7 @@
   {
     "name": "others_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Others [Yes]"
@@ -890,7 +882,7 @@
   {
     "name": "others_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Others [No]"
@@ -898,23 +890,23 @@
   {
     "name": "circumcisionmethodchosen_surgicalcircumcision",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Circcumcision method chosen [Surgical Circumcision]"
+    "Label": "Circumcision method chosen [Surgical Circumcision]"
   },
   {
     "name": "circumcisionmethodchosen_prepexcircumcision",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Circcumcision method chosen [Prepex Circumcision]"
+    "Label": "Circumcision method chosen [Prepex Circumcision]"
   },
   {
     "name": "eligibleforprepex_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "If Prepex, is client eligible [Yes]"
@@ -922,7 +914,7 @@
   {
     "name": "eligibleforprepex_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "If Prepex, is client eligible [No]"
@@ -930,55 +922,55 @@
   {
     "name": "prepex_proc_hdr",
     "dataType": "EditText",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Prepex Placement Procedure"
   },
   {
-    "name": "prepexdevicesize_sizea",
+    "name": "prepexdevicesize_a",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [Size A]"
+    "Label": "Prepex Device Size [A]"
   },
   {
-    "name": "prepexdevicesize_sizeb",
+    "name": "prepexdevicesize_b",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [Size B]"
+    "Label": "Prepex Device Size [B]"
   },
   {
-    "name": "prepexdevicesize_sizec",
+    "name": "prepexdevicesize_c",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [Size C]"
+    "Label": "Prepex Device Size [C]"
   },
   {
-    "name": "prepexdevicesize_sized",
+    "name": "prepexdevicesize_d",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [Size D]"
+    "Label": "Prepex Device Size [D]"
   },
   {
-    "name": "prepexdevicesize_sizee",
+    "name": "prepexdevicesize_e",
     "dataType": "RadioButton",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [Size E]"
+    "Label": "Prepex Device Size [E]"
   },
   {
     "name": "devicebatchid",
     "dataType": "EditText",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Device Batch Id"
@@ -986,7 +978,7 @@
   {
     "name": "timelineofcircmarked",
     "dataType": "DatePicker",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Time Line of Circ Marked"
@@ -994,7 +986,7 @@
   {
     "name": "timeplacementringremoved",
     "dataType": "DatePicker",
-    "pageName": "prepexreg3",
+    "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Time Placement Ring Removed"
@@ -1010,7 +1002,7 @@
   {
     "name": "aesduringplacement_noadverseeventsdiagnosed",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "AES during placement [No Adverse events diagnosed]"
@@ -1018,7 +1010,7 @@
   {
     "name": "aesduringplacement_adverseeventsdiagnosed",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "AES during placement [Adverse events diagnosed]"
@@ -1026,7 +1018,7 @@
   {
     "name": "pain_mild",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Pain [Mild]"
@@ -1034,7 +1026,7 @@
   {
     "name": "pain_moderate",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Pain [Moderate]"
@@ -1042,7 +1034,7 @@
   {
     "name": "pain_severe",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Pain [Severe]"
@@ -1050,7 +1042,7 @@
   {
     "name": "pain_severitynotclassified",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Pain [Severity not classified]"
@@ -1058,7 +1050,7 @@
   {
     "name": "bleeding_mild",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Bleeding [Mild]"
@@ -1066,7 +1058,7 @@
   {
     "name": "bleeding_moderate",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Bleeding [Moderate]"
@@ -1074,7 +1066,7 @@
   {
     "name": "bleeding_severe",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Bleeding [Severe]"
@@ -1082,7 +1074,7 @@
   {
     "name": "bleeding_severitynotclassified",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Bleeding [Severity not classified]"
@@ -1090,7 +1082,7 @@
   {
     "name": "anesthesia_analgesicreaction_mild",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Anesthesia/analgesic reaction [Mild]"
@@ -1098,7 +1090,7 @@
   {
     "name": "anesthesia_analgesicreaction_moderate",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Anesthesia/analgesic reaction [Moderate]"
@@ -1106,7 +1098,7 @@
   {
     "name": "anesthesia_analgesicreaction_severe",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Anesthesia/analgesic reaction [Severe]"
@@ -1114,7 +1106,7 @@
   {
     "name": "anesthesia_analgesicreaction_severitynotclassified",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Anesthesia/analgesic reaction [Severity not classified]"
@@ -1122,7 +1114,7 @@
   {
     "name": "damagetopenis_mild",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Damage to penis [Mild]"
@@ -1130,7 +1122,7 @@
   {
     "name": "damagetopenis_moderate",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Damage to penis [Moderate]"
@@ -1138,7 +1130,7 @@
   {
     "name": "damagetopenis_severe",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Damage to penis [Severe]"
@@ -1146,7 +1138,7 @@
   {
     "name": "damagetopenis_severitynotclassified",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Damage to penis [Severity not classified]"
@@ -1154,7 +1146,7 @@
   {
     "name": "difficultywithplacement_mild",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Difficulty with placement [Mild]"
@@ -1162,7 +1154,7 @@
   {
     "name": "difficultywithplacement_moderate",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Difficulty with placement [Moderate]"
@@ -1170,7 +1162,7 @@
   {
     "name": "difficultywithplacement_severe",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Difficulty with placement [Severe]"
@@ -1178,7 +1170,7 @@
   {
     "name": "difficultywithplacement_severitynotclassified",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Difficulty with placement [Severity not classified]"
@@ -1186,7 +1178,7 @@
   {
     "name": "devicemalfunction_mild",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Device malfunction [Mild]"
@@ -1194,7 +1186,7 @@
   {
     "name": "devicemalfunction_moderate",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Device malfunction [Moderate]"
@@ -1202,7 +1194,7 @@
   {
     "name": "devicemalfunction_severe",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Device malfunction [Severe]"
@@ -1210,7 +1202,7 @@
   {
     "name": "devicemalfunction_severitynotclassified",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Device malfunction [Severity not classified]"
@@ -1218,7 +1210,7 @@
   {
     "name": "nottomovedevice_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Not to Move Device [Yes]"
@@ -1226,7 +1218,7 @@
   {
     "name": "nottomovedevice_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Not to Move Device [No]"
@@ -1234,7 +1226,7 @@
   {
     "name": "removalond7_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "To return for removal on Day7 [Yes]"
@@ -1242,7 +1234,7 @@
   {
     "name": "removalond7_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "To return for removal on Day7 [No]"
@@ -1250,7 +1242,7 @@
   {
     "name": "removalbefored7_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "To return if wants removal before D7 [Yes]"
@@ -1258,7 +1250,7 @@
   {
     "name": "removalbefored7_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "To return if wants removal before D7 [No]"
@@ -1266,7 +1258,7 @@
   {
     "name": "onlydesignatedprovider_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Only designated provider [Yes]"
@@ -1274,7 +1266,7 @@
   {
     "name": "onlydesignatedprovider_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Only designated provider [No]"
@@ -1282,7 +1274,7 @@
   {
     "name": "notpullforeskin_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Not to pull foreskin [Yes]"
@@ -1290,7 +1282,7 @@
   {
     "name": "notpullforeskin_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Not to pull foreskin [No]"
@@ -1298,7 +1290,7 @@
   {
     "name": "nosexualintercourse_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "No sexual intercourse or masturbation [Yes]"
@@ -1306,7 +1298,7 @@
   {
     "name": "nosexualintercourse_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "No sexual intercourse or masturbation [No]"
@@ -1314,31 +1306,31 @@
   {
     "name": "writteninstructions_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Client provided posst-procedural wwritten instructions [Yes]"
+    "Label": "Client provided post-procedural written instructions [Yes]"
   },
   {
     "name": "writteninstructions_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Client provided posst-procedural wwritten instructions [No]"
+    "Label": "Client provided post-procedural written instructions [No]"
   },
   {
     "name": "clientclinicaldisposition",
     "dataType": "EditText",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Clinical dispaosition of client"
+    "Label": "Clinical disposition of client"
   },
   {
     "name": "orlanalgesiagiven_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Orl analgesia given [Yes]"
@@ -1346,7 +1338,7 @@
   {
     "name": "orlanalgesiagiven_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Orl analgesia given [No]"
@@ -1354,7 +1346,7 @@
   {
     "name": "nameoralanalgesiadrug",
     "dataType": "EditText",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Oral Analgesia Drug"
@@ -1362,7 +1354,7 @@
   {
     "name": "scheduledremovaldate",
     "dataType": "DatePicker",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Scheduled removal date"
@@ -1370,7 +1362,7 @@
   {
     "name": "dischargedby",
     "dataType": "EditText",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Discharged by (Name)"
@@ -1378,7 +1370,7 @@
   {
     "name": "signed_yes",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Signed [Yes]"
@@ -1386,7 +1378,7 @@
   {
     "name": "signed_no",
     "dataType": "RadioButton",
-    "pageName": "prepexreg4",
+    "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Signed [No]"

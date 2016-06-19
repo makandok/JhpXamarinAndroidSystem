@@ -9,6 +9,7 @@ using JhpDataSystem.model;
 using JhpDataSystem.store;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace JhpDataSystem
 {
@@ -53,6 +54,7 @@ namespace JhpDataSystem
             var asString = prepexFieldsStream.toText();
 
             var fields = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FieldItem>>(asString);
+
             FieldItems = fields;
             //var inputStream = assets.Open(Constants.API_KEYFILE);
             //var jsonObject = System.Json.JsonValue.Load(inputStream);

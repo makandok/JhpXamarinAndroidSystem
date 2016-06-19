@@ -235,11 +235,11 @@
     <Compile Include="modules\PrepexPostRemovalVisit.cs" />
     <Compile Include="modules\PrepexUnscheduleVisit.cs" />
     <Compile Include="SystemConfigActivity.cs" />
-    <AndroidAsset Include="Assets\prepex_fields.json" />
     <AndroidResource Include="Resources\layout\tab_layout_view.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidAsset Include="Assets\prepexreg_fields.json" />
+    <AndroidResource Include="Resources\layout\prepexreg5.axml" />
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />

@@ -1,5 +1,6 @@
 ﻿[
   {
+    "GroupName": "General Summary",
     "ViewName": "generalsummary_hdr",
     "ViewType": "Label",
     "DisplayLabel": "General Summary",
@@ -8,9 +9,10 @@
     "Id": "1",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "facilityname",
     "ViewType": "Text",
     "DisplayLabel": "Facility",
@@ -19,9 +21,10 @@
     "Id": "2",
     "IsIndexed": "",
     "IsRequired": "1",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "dateofvisit",
     "ViewType": "Date",
     "DisplayLabel": "Date of Visit",
@@ -30,9 +33,10 @@
     "Id": "3",
     "IsIndexed": "1",
     "IsRequired": "1",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "district",
     "ViewType": "Text",
     "DisplayLabel": "District",
@@ -41,9 +45,10 @@
     "Id": "4",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "cardserialnumber",
     "ViewType": "int",
     "DisplayLabel": "Card Serial Number",
@@ -52,985 +57,1086 @@
     "Id": "5",
     "IsIndexed": "1",
     "IsRequired": "1",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "clientidnumber",
     "ViewType": "int",
     "DisplayLabel": "Client ID Number",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "5",
+    "Id": "6",
     "IsIndexed": "1",
     "IsRequired": "1",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "Personal Details",
     "ViewName": "personaldetails_hdr",
     "ViewType": "Label",
     "DisplayLabel": "Personal Details",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "6",
+    "Id": "7",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "clientname",
     "ViewType": "Text",
     "DisplayLabel": "Client Name",
     "ListName": "",
     "GridColumn": "1",
-    "Id": "7",
+    "Id": "8",
     "IsIndexed": "1",
     "IsRequired": "1",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "dob",
     "ViewType": "date",
     "DisplayLabel": "DOB",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "8",
+    "Id": "9",
     "IsIndexed": "1",
     "IsRequired": "1",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "ageinyears",
     "ViewType": "int",
     "DisplayLabel": "Age in Years",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "9",
+    "Id": "10",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "clientsphysicaladdress",
     "ViewType": "Text",
     "DisplayLabel": "Clients Physical Address",
     "ListName": "",
     "GridColumn": "1",
-    "Id": "10",
+    "Id": "11",
     "IsIndexed": "",
     "IsRequired": "1",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "clienttel",
     "ViewType": "Cell",
     "DisplayLabel": "Client Tel",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "11",
+    "Id": "12",
     "IsIndexed": "1",
     "IsRequired": "1",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "homecell",
     "ViewType": "Cell",
     "DisplayLabel": "Home Cell",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "12",
+    "Id": "13",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "mobilecell",
     "ViewType": "Cell",
     "DisplayLabel": "Mobile Cell",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "13",
+    "Id": "14",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "workcontactnumber",
     "ViewType": "Cell",
     "DisplayLabel": "Work Contact Number",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "14",
+    "Id": "15",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "alternateaddresstype",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Alternate Address Type",
     "ListName": "alternate_address_type",
     "GridColumn": "1",
-    "Id": "15",
+    "Id": "16",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "alternateaddress",
     "ViewType": "Text",
     "DisplayLabel": "Alternate Address",
     "ListName": "",
     "GridColumn": "1",
-    "Id": "16",
+    "Id": "17",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "alternatephone",
     "ViewType": "Text",
     "DisplayLabel": "Alternate Tel",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "17",
+    "Id": "18",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "",
     "ViewName": "friend_nextofkin",
     "ViewType": "Text",
     "DisplayLabel": "Name of Friend/Next of Kin",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "18",
+    "Id": "19",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "1"
   },
   {
+    "GroupName": "Facility",
     "ViewName": "facility_hdr",
     "ViewType": "Label",
     "DisplayLabel": "Facility",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "19",
+    "Id": "20",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "2"
   },
   {
+    "GroupName": "",
     "ViewName": "typeofsite",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Type of Site / Service (check only one)",
     "ListName": "type_of_site",
     "GridColumn": "1",
-    "Id": "20",
+    "Id": "21",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "2"
   },
   {
+    "GroupName": "",
     "ViewName": "typeofsite_specify",
     "ViewType": "Text",
     "DisplayLabel": "Type of Site_Specify",
     "ListName": "",
     "GridColumn": "1",
-    "Id": "21",
+    "Id": "22",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "2"
   },
   {
+    "GroupName": "",
     "ViewName": "howclientlearnt",
     "ViewType": "MultiSelect",
     "DisplayLabel": "How did client leant about service",
     "ListName": "how_client_learnt",
     "GridColumn": "2",
-    "Id": "22",
+    "Id": "23",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "2"
   },
   {
+    "GroupName": "Individual Counsellling",
     "ViewName": "indiv_counse_hdr",
     "ViewType": "Label",
     "DisplayLabel": "Individual Counsellling",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "23",
+    "Id": "24",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "2"
   },
   {
+    "GroupName": "",
     "ViewName": "primaryreasoncirc",
     "ViewType": "MultiSelect",
     "DisplayLabel": "Primary reason for circumcision",
     "ListName": "primary_reasons_mc",
     "GridColumn": "1",
-    "Id": "24",
+    "Id": "25",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "2"
   },
   {
+    "GroupName": "",
     "ViewName": "primaryreasoncirc_specify",
     "ViewType": "Text",
     "DisplayLabel": "Other (specify)",
     "ListName": "",
     "GridColumn": "1",
-    "Id": "25",
-    "IsIndexed": "",
-    "IsRequired": "",
-    "ViewPage": ""
-  },
-  {
-    "ViewName": "hivstatus",
-    "ViewType": "MultiSelect",
-    "DisplayLabel": "HIV Status",
-    "ListName": "hiv_status",
-    "GridColumn": "2",
     "Id": "26",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "2"
   },
   {
+    "GroupName": "",
+    "ViewName": "hivstatus",
+    "ViewType": "SingleSelect",
+    "DisplayLabel": "HIV Status",
+    "ListName": "hiv_status",
+    "GridColumn": "2",
+    "Id": "27",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage": "2"
+  },
+  {
+    "GroupName": "Medical Screening/Physical Examination",
     "ViewName": "screen_hdr",
     "ViewType": "Label",
     "DisplayLabel": "Medical Screening/Physical Examination",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "27",
+    "Id": "28",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "",
     "ViewName": "allergictomeds",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Are you allergic to any medicine, rubber or latex",
     "ListName": "yes_no",
     "GridColumn": "1",
-    "Id": "28",
+    "Id": "29",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "",
     "ViewName": "allergictomeds_specify",
     "ViewType": "Text",
     "DisplayLabel": "Allergic to meds_Specify",
     "ListName": "",
     "GridColumn": "1",
-    "Id": "29",
+    "Id": "30",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "",
     "ViewName": "everdiagnosedwith",
     "ViewType": "MultiSelect",
     "DisplayLabel": "Hav you ever been diagnosed with any of the following",
     "ListName": "med_history",
     "GridColumn": "2",
-    "Id": "30",
+    "Id": "31",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "",
     "ViewName": "currentlytakingmeds",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Currently taking meds including STI tx",
     "ListName": "yes_no",
     "GridColumn": "1",
-    "Id": "31",
+    "Id": "32",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "",
     "ViewName": "currentlytakingmeds_specify",
     "ViewType": "Text",
     "DisplayLabel": "Currently taking meds_Specify",
     "ListName": "",
     "GridColumn": "1",
-    "Id": "32",
+    "Id": "33",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "",
     "ViewName": "hadoperation",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Had Operation",
     "ListName": "yes_no",
     "GridColumn": "2",
-    "Id": "33",
+    "Id": "34",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "",
     "ViewName": "hadoperation_specify",
     "ViewType": "Text",
     "DisplayLabel": "Had Operation_Specify",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "34",
-    "IsIndexed": "",
-    "IsRequired": "",
-    "ViewPage": ""
-  },
-  {
-    "ViewName": "complaints",
-    "ViewType": "MultiSelect",
-    "DisplayLabel": "Do you have aany of the following complaints",
-    "ListName": "sti_complaints",
-    "GridColumn": "3",
     "Id": "35",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "",
+    "ViewName": "complaints",
+    "ViewType": "MultiSelect",
+    "DisplayLabel": "Do you have any of the following complaints",
+    "ListName": "sti_complaints",
+    "GridColumn": "3",
+    "Id": "36",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage": "3"
+  },
+  {
+    "GroupName": "",
     "ViewName": "complaints_specify",
     "ViewType": "Text",
     "DisplayLabel": "Other (specify)",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "36",
+    "Id": "37",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "",
     "ViewName": "generalcondition",
     "ViewType": "SingleSelect",
     "DisplayLabel": "General condition",
     "ListName": "general_condition",
     "GridColumn": "3",
-    "Id": "37",
+    "Id": "38",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "General Condition",
+    "ViewName": "clientgeneralcondition",
+    "ViewType": "Label",
+    "DisplayLabel": "Client General condition",
+    "ListName": "yes_no",
+    "GridColumn": "5",
+    "Id": "39",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage": "3"
+  },
+  {
+    "GroupName": "General Condition",
     "ViewName": "pallor",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Pallor",
     "ListName": "yes_no",
-    "GridColumn": "4",
-    "Id": "38",
+    "GridColumn": "5",
+    "Id": "40",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
+    "GroupName": "General Condition",
     "ViewName": "lymphadenopathy",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Lymphadenopathy",
     "ListName": "yes_no",
-    "GridColumn": "4",
-    "Id": "39",
-    "IsIndexed": "",
-    "IsRequired": "",
-    "ViewPage": ""
-  },
-  {
-    "ViewName": "wasting",
-    "ViewType": "SingleSelect",
-    "DisplayLabel": "Wasting",
-    "ListName": "yes_no",
-    "GridColumn": "4",
-    "Id": "40",
-    "IsIndexed": "",
-    "IsRequired": "",
-    "ViewPage": ""
-  },
-  {
-    "ViewName": "genital",
-    "ViewType": "Label",
-    "DisplayLabel": "Genital",
-    "ListName": "",
-    "GridColumn": "3",
+    "GridColumn": "5",
     "Id": "41",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
-    "ViewName": "phimosis",
+    "GroupName": "General Condition",
+    "ViewName": "wasting",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Phimosis",
+    "DisplayLabel": "Wasting",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "42",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "3"
   },
   {
-    "ViewName": "paraphimosis",
-    "ViewType": "SingleSelect",
-    "DisplayLabel": "Paraphimosis",
+    "GroupName": "Genital",
+    "ViewName": "genital",
+    "ViewType": "Label",
+    "DisplayLabel": "Genital",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "43",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "narrowprepuce",
+    "GroupName": "Genital",
+    "ViewName": "phimosis",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Narrow prepuce",
+    "DisplayLabel": "Phimosis",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "44",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "tightfrenulum",
+    "GroupName": "Genital",
+    "ViewName": "paraphimosis",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Tight frenulum",
+    "DisplayLabel": "Paraphimosis",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "45",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "epispadiasis",
+    "GroupName": "Genital",
+    "ViewName": "narrowprepuce",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Epispadiasis",
+    "DisplayLabel": "Narrow prepuce",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "46",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "hypospadiasis",
+    "GroupName": "Genital",
+    "ViewName": "tightfrenulum",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Hypospadiasis",
+    "DisplayLabel": "Tight frenulum",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "47",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "otherurethralanomaly",
+    "GroupName": "Genital",
+    "ViewName": "epispadiasis",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Other urethral anomaly",
+    "DisplayLabel": "Epispadiasis",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "48",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "hydrocele",
+    "GroupName": "Genital",
+    "ViewName": "hypospadiasis",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Hydrocele",
+    "DisplayLabel": "Hypospadiasis",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "49",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "scrotalhernia",
+    "GroupName": "Genital",
+    "ViewName": "otherurethralanomaly",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Scrotal hernia",
+    "DisplayLabel": "Other urethral anomaly",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "50",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "genitalulcers",
+    "GroupName": "Genital",
+    "ViewName": "hydrocele",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Genital Ulcers",
+    "DisplayLabel": "Hydrocele",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "51",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "dermatitisofthepenis",
+    "GroupName": "Genital",
+    "ViewName": "scrotalhernia",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Dermatitis  of the penis",
+    "DisplayLabel": "Scrotal hernia",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "52",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "genitalwarts",
+    "GroupName": "Genital",
+    "ViewName": "genitalulcers",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Genital warts",
+    "DisplayLabel": "Genital Ulcers",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "53",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "urethraldischarge",
+    "GroupName": "Genital",
+    "ViewName": "dermatitisofthepenis",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Urethral discharge",
+    "DisplayLabel": "Dermatitis  of the penis",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "54",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "balantis",
+    "GroupName": "Genital",
+    "ViewName": "genitalwarts",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Balantis",
+    "DisplayLabel": "Genital warts",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "55",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "posthitis",
+    "GroupName": "Genital",
+    "ViewName": "urethraldischarge",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Posthitis",
+    "DisplayLabel": "Urethral discharge",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "56",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "foreskinattachedtotheglans",
+    "GroupName": "Genital",
+    "ViewName": "balantis",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Foreskin attached to the glans",
+    "DisplayLabel": "Balantis",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "57",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
-    "ViewName": "others",
+    "GroupName": "Genital",
+    "ViewName": "posthitis",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Others",
+    "DisplayLabel": "Posthitis",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "58",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "Genital",
+    "ViewName": "foreskinattachedtotheglans",
+    "ViewType": "SingleSelect",
+    "DisplayLabel": "Foreskin attached to the glans",
+    "ListName": "yes_no",
+    "GridColumn": "5",
+    "Id": "59",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage": "4"
+  },
+  {
+    "GroupName": "Genital",
+    "ViewName": "others",
+    "ViewType": "SingleSelect",
+    "DisplayLabel": "Others",
+    "ListName": "yes_no",
+    "GridColumn": "5",
+    "Id": "60",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage": "4"
+  },
+  {
+    "GroupName": "Circumcision Method Eligibility and Selection",
     "ViewName": "circ_method_hdr",
     "ViewType": "Label",
     "DisplayLabel": "Circumcision Method Eligibility and Selection",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "59",
+    "Id": "61",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "circumcisionmethodchosen",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Circcumcision method chosen",
+    "DisplayLabel": "Circumcision method chosen",
     "ListName": "circumcision_method",
     "GridColumn": "3",
-    "Id": "60",
+    "Id": "62",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "eligibleforprepex",
     "ViewType": "SingleSelect",
     "DisplayLabel": "If Prepex, is client eligible",
     "ListName": "yes_no",
     "GridColumn": "3",
-    "Id": "61",
+    "Id": "63",
     "IsIndexed": "             ",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "eligibleforprepex_noreason",
     "ViewType": "Label",
     "DisplayLabel": "If No, Reason",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "62",
+    "Id": "64",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "PREPEX CIRCUMCISION",
     "ViewName": "prepexcircumcisionsection",
     "ViewType": "Label",
     "DisplayLabel": "PREPEX CIRCUMCISION SECTION",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "63",
+    "Id": "65",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "prepex_proc_hdr",
     "ViewType": "Text",
     "DisplayLabel": "Prepex Placement Procedure",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "64",
+    "Id": "66",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "prepexdevicesize",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Prepex Device Size",
     "ListName": "device_size",
     "GridColumn": "3",
-    "Id": "65",
+    "Id": "67",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "devicebatchid",
     "ViewType": "Text",
     "DisplayLabel": "Device Batch Id",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "66",
+    "Id": "68",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "timelineofcircmarked",
     "ViewType": "date",
     "DisplayLabel": "Time Line of Circ Marked",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "67",
+    "Id": "69",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "timeplacementringremoved",
     "ViewType": "date",
     "DisplayLabel": "Time Placement Ring Removed",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "68",
+    "Id": "70",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "comments",
     "ViewType": "Text",
     "DisplayLabel": "Comments",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "69",
+    "Id": "71",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "4"
   },
   {
+    "GroupName": "",
     "ViewName": "aesduringplacement_hdr",
     "ViewType": "Label",
     "DisplayLabel": "Adverse Events During Placement (before discharge)",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "70",
+    "Id": "72",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
+    "GroupName": "",
     "ViewName": "aesduringplacement",
     "ViewType": "SingleSelect",
     "DisplayLabel": "AES during placement",
     "ListName": "aes_duringplaccement",
     "GridColumn": "3",
-    "Id": "71",
-    "IsIndexed": "",
-    "IsRequired": "",
-    "ViewPage": ""
-  },
-  {
-    "ViewName": "aesdiagnosed_hdr",
-    "ViewType": "Label",
-    "DisplayLabel": "Adverse Events Diagnosed",
-    "ListName": "",
-    "GridColumn": "5",
-    "Id": "72",
-    "IsIndexed": "",
-    "IsRequired": "",
-    "ViewPage": ""
-  },
-  {
-    "ViewName": "pain",
-    "ViewType": "SingleSelect",
-    "DisplayLabel": "Pain",
-    "ListName": "ae_severity_placement",
-    "GridColumn": "5",
     "Id": "73",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "bleeding",
-    "ViewType": "SingleSelect",
-    "DisplayLabel": "Bleeding",
+    "GroupName": "AES Diagnosed",
+    "ViewName": "aesdiagnosed_hdr",
+    "ViewType": "Label",
+    "DisplayLabel": "Adverse Events Diagnosed",
     "ListName": "ae_severity_placement",
     "GridColumn": "5",
     "Id": "74",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "anesthesia_analgesicreaction",
+    "GroupName": "AES Diagnosed",
+    "ViewName": "pain",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Anesthesia/analgesic reaction",
+    "DisplayLabel": "Pain",
     "ListName": "ae_severity_placement",
     "GridColumn": "5",
     "Id": "75",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "damagetopenis",
+    "GroupName": "AES Diagnosed",
+    "ViewName": "bleeding",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Damage to penis",
+    "DisplayLabel": "Bleeding",
     "ListName": "ae_severity_placement",
     "GridColumn": "5",
     "Id": "76",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "difficultywithplacement",
+    "GroupName": "AES Diagnosed",
+    "ViewName": "anesthesia_analgesicreaction",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Difficulty with placement",
+    "DisplayLabel": "Anesthesia/analgesic reaction",
     "ListName": "ae_severity_placement",
     "GridColumn": "5",
     "Id": "77",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "devicemalfunction",
+    "GroupName": "AES Diagnosed",
+    "ViewName": "damagetopenis",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Device malfunction",
+    "DisplayLabel": "Damage to penis",
     "ListName": "ae_severity_placement",
     "GridColumn": "5",
     "Id": "78",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
+    "GroupName": "AES Diagnosed",
+    "ViewName": "difficultywithplacement",
+    "ViewType": "SingleSelect",
+    "DisplayLabel": "Difficulty with placement",
+    "ListName": "ae_severity_placement",
+    "GridColumn": "5",
+    "Id": "79",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage": "5"
+  },
+  {
+    "GroupName": "AES Diagnosed",
+    "ViewName": "devicemalfunction",
+    "ViewType": "SingleSelect",
+    "DisplayLabel": "Device malfunction",
+    "ListName": "ae_severity_placement",
+    "GridColumn": "5",
+    "Id": "80",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage": "5"
+  },
+  {
+    "GroupName": "",
     "ViewName": "postappassessmenthdr",
     "ViewType": "Label",
     "DisplayLabel": "Post Application Assessment (before discharge)",
     "ListName": "",
     "GridColumn": "3",
-    "Id": "79",
-    "IsIndexed": "",
-    "IsRequired": "",
-    "ViewPage": ""
-  },
-  {
-    "ViewName": "clientinstructedonhdr",
-    "ViewType": "Label",
-    "DisplayLabel": "Client Instructed On",
-    "ListName": "",
-    "GridColumn": "5",
-    "Id": "80",
-    "IsIndexed": "",
-    "IsRequired": "",
-    "ViewPage": ""
-  },
-  {
-    "ViewName": "nottomovedevice",
-    "ViewType": "SingleSelect",
-    "DisplayLabel": "Not to Move Device",
-    "ListName": "yes_no",
-    "GridColumn": "5",
     "Id": "81",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "removalond7",
-    "ViewType": "SingleSelect",
-    "DisplayLabel": "To return for removal on Day7",
+    "GroupName": "Client Instructed on",
+    "ViewName": "clientinstructedonhdr",
+    "ViewType": "Label",
+    "DisplayLabel": "Client Instructed On",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "82",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "removalbefored7",
+    "GroupName": "Client Instructed on",
+    "ViewName": "nottomovedevice",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "To return if wants removal before D7",
+    "DisplayLabel": "Not to Move Device",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "83",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "onlydesignatedprovider",
+    "GroupName": "Client Instructed on",
+    "ViewName": "removalond7",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Only designated provider",
+    "DisplayLabel": "To return for removal on Day7",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "84",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "notpullforeskin",
+    "GroupName": "Client Instructed on",
+    "ViewName": "removalbefored7",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Not to pull foreskin",
+    "DisplayLabel": "To return if wants removal before D7",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "85",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "nosexualintercourse",
+    "GroupName": "Client Instructed on",
+    "ViewName": "onlydesignatedprovider",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "No sexual intercourse or masturbation",
+    "DisplayLabel": "Only designated provider",
     "ListName": "yes_no",
     "GridColumn": "5",
     "Id": "86",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "writteninstructions",
+    "GroupName": "Client Instructed on",
+    "ViewName": "notpullforeskin",
     "ViewType": "SingleSelect",
-    "DisplayLabel": "Client provided posst-procedural wwritten instructions",
+    "DisplayLabel": "Not to pull foreskin",
     "ListName": "yes_no",
-    "GridColumn": "1",
+    "GridColumn": "5",
     "Id": "87",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
-    "ViewName": "clientclinicaldisposition",
-    "ViewType": "Text",
-    "DisplayLabel": "Clinical dispaosition of client",
-    "ListName": "",
-    "GridColumn": "1",
+    "GroupName": "Client Instructed on",
+    "ViewName": "nosexualintercourse",
+    "ViewType": "SingleSelect",
+    "DisplayLabel": "No sexual intercourse or masturbation",
+    "ListName": "yes_no",
+    "GridColumn": "5",
     "Id": "88",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
+    "GroupName": "",
+    "ViewName": "writteninstructions",
+    "ViewType": "SingleSelect",
+    "DisplayLabel": "Client provided post-procedural written instructions",
+    "ListName": "yes_no",
+    "GridColumn": "1",
+    "Id": "89",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage": "5"
+  },
+  {
+    "GroupName": "",
+    "ViewName": "clientclinicaldisposition",
+    "ViewType": "Text",
+    "DisplayLabel": "Clinical disposition of client",
+    "ListName": "",
+    "GridColumn": "1",
+    "Id": "90",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage": "5"
+  },
+  {
+    "GroupName": "",
     "ViewName": "orlanalgesiagiven",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Orl analgesia given",
     "ListName": "yes_no",
     "GridColumn": "2",
-    "Id": "89",
+    "Id": "91",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
+    "GroupName": "",
     "ViewName": "nameoralanalgesiadrug",
     "ViewType": "Text",
     "DisplayLabel": "Oral Analgesia Drug",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "90",
+    "Id": "92",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
+    "GroupName": "",
     "ViewName": "scheduledremovaldate",
     "ViewType": "Date",
     "DisplayLabel": "Scheduled removal date",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "91",
+    "Id": "93",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
+    "GroupName": "",
     "ViewName": "dischargedby",
     "ViewType": "Text",
     "DisplayLabel": "Discharged by (Name)",
     "ListName": "",
     "GridColumn": "2",
-    "Id": "92",
+    "Id": "94",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   },
   {
+    "GroupName": "",
     "ViewName": "signed",
     "ViewType": "SingleSelect",
     "DisplayLabel": "Signed",
     "ListName": "yes_no",
     "GridColumn": "2",
-    "Id": "93",
+    "Id": "95",
     "IsIndexed": "",
     "IsRequired": "",
-    "ViewPage": ""
+    "ViewPage": "5"
   }
 ]

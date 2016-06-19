@@ -31,6 +31,8 @@ namespace ExcelToAndroidXML
         public string pageName { get; set; }
         public List<FieldDefinition> ViewFields { get; set; }
         public MetaDataProvider metaDataProvider = null;
+        internal bool addDateTitleResource { get; set; }
+
         public ViewDefinitionBuilder()
         {
             ViewFields = new List<FieldDefinition>();
@@ -62,7 +64,10 @@ namespace ExcelToAndroidXML
 </ScrollView>
 ";
             metaDataProvider = new MetaDataProvider();
-            metaDataProvider.AddStringResource(SYS_DATE_SELECT_TEXT, "Select Date");
+            if (addDateTitleResource)
+            {
+                metaDataProvider.AddStringResource(SYS_DATE_SELECT_TEXT, "Select Date");
+            }
             var asString = getData(ViewFields);
 
             //we update the page names
@@ -118,11 +123,20 @@ namespace ExcelToAndroidXML
                     case "SingleSelect":
                     case "RadioGroup":
                         {
-                            fieldXml = (
-                                getXamlLabelDefForEnumeratedFields(field) +
-                                getXamlLabelDefForRadioGroup(field) +
-                                string.Join(Environment.NewLine, getXamlLabelDefForRadioButton(field))
-                                + @"</RadioGroup >");
+                            if (field.GridColumn == 5)
+                            {
+                                fieldXml = (getXamlLabelDefForRadioGroup(field) + 
+                                    getXamlLabelDefForEnumeratedFields(field) +                                        
+                                    string.Join(Environment.NewLine, getXamlLabelDefForRadioButton(field))
+                                    + "</RadioGroup >");
+                            }
+                            else
+                            {
+                                fieldXml = (getXamlLabelDefForEnumeratedFields(field) +
+                                    getXamlLabelDefForRadioGroup(field) +
+                                    string.Join(Environment.NewLine, getXamlLabelDefForRadioButton(field))
+                                    + "</RadioGroup >");
+                            }
                             break;
                         }
                     default:
@@ -135,23 +149,6 @@ namespace ExcelToAndroidXML
             }
             return builder.ToString();
         }
-
-//        string getXamlDefinitionForNumber(FieldDefinition field)
-//        {
-//            var stringsEntryText = field.DisplayLabel;
-//            var stringsEntryName = field.ViewName;
-//            var fieldXml = (@"
-//    <EditText
-//        android:inputType='number'
-//        android:layout_width='match_parent'
-//        android:layout_height='wrap_content'
-//        android:id='@+id/" + stringsEntryName + @"'
-//        android:hint='@string/" + stringsEntryName + @"' />
-//");
-//            metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "EditText", name = stringsEntryName });
-//            metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
-//            return fieldXml.Replace("'", "\"");
-//        }
 
         string getXamlDefinitionForDate(FieldDefinition field)
         {
@@ -236,7 +233,31 @@ namespace ExcelToAndroidXML
         {
             var stringsEntryText = field.DisplayLabel;
             var stringsEntryName = field.ViewName;
-            //        android:textStyle='bold'
+            var headerText = string.Empty;
+            if (field.GridColumn == 5 && field.FieldOptions.Values.Count > 0)
+            {
+                //this is a tale layout, which requires special logic to handle 
+                var headerLabels = new List<string>();
+                var isFirst = true;
+                foreach (var option in field.FieldOptions.Values)
+                {
+                    headerLabels.Add(getTableHeaderText(field, option, isFirst));
+                    isFirst = false;
+                }
+                var asString = string.Join(System.Environment.NewLine, headerLabels);
+                var headerFieldsContainer = @"
+    <LinearLayout
+        android:background='@color/colorTableHeader'
+        android:orientation='horizontal'
+        android:layout_width='match_parent'
+        android:layout_height='wrap_content'>
+        {0}
+    </LinearLayout>".Replace("'", "\"");
+
+                headerText =
+                    string.Format(headerFieldsContainer, asString);
+            }
+
             var fieldXml = (@"
     <TextView
         android:text='@string/" + stringsEntryName + @"'
@@ -245,9 +266,27 @@ namespace ExcelToAndroidXML
         android:textAppearance='?android:attr/textAppearanceLarge'
         android:layout_width='match_parent'
         android:layout_height='wrap_content'
-        android:id='@+id/" + stringsEntryName + @"' />");
+        android:id='@+id/" + stringsEntryName + @"' />").Replace("'", "\"");
+
             //metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "TextView", name = stringsEntryName });
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
+            return fieldXml + headerText;
+        }
+
+        private string getTableHeaderText(FieldDefinition field, string option, bool isFirst)
+        {
+            var optionName = field.ViewName + "_" + option.Clean();
+            var leftMargin = isFirst ? 350 : 10;
+            var fieldXml = @"
+        <TextView
+            android:textColor='@android:color/holo_blue_dark'
+            android:gravity='center_vertical'
+            android:layout_marginLeft='" + leftMargin + @"dp'
+            android:text='@string/" + optionName + @"'
+            android:layout_height='wrap_content'
+            android:layout_width='100dp'
+            android:textAppearance='?android:attr/textAppearanceMedium' />";
+            metaDataProvider.AddStringResource(optionName, option);
             return fieldXml.Replace("'", "\"");
         }
 
@@ -255,14 +294,16 @@ namespace ExcelToAndroidXML
         {
             var stringsEntryText = field.DisplayLabel;
             var stringsEntryName = field.ViewName;
+            var layoutWidth = field.GridColumn == 5 ? "350dp" : "match_parent";
+
             var fieldXml = (@"
     <TextView
 android:text='@string/" + stringsEntryName + @"'
 android:textColor='@android:color/holo_blue_dark'
-android:textAppearance='?android:attr/textAppearanceSmall'
+android:textAppearance='?android:attr/textAppearanceMedium'
         android:minWidth='25dp'
         android:minHeight='25dp'
-        android:layout_width='match_parent'
+        android:layout_width='" + layoutWidth + @"'
         android:layout_height='wrap_content'
         android:id='@+id/l_" + stringsEntryName + "' />");
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
@@ -272,7 +313,8 @@ android:textAppearance='?android:attr/textAppearanceSmall'
         string getXamlLabelDefForRadioGroup(FieldDefinition field)
         {
             var stringsEntryName = field.ViewName;
-            var fieldXml = (@"<RadioGroup
+            var fieldXml = (@"
+<RadioGroup
 android:orientation='horizontal'
         android:minWidth='25dp'
         android:minHeight='25dp'
@@ -310,19 +352,37 @@ android:orientation='horizontal'
 
         List<string> getXamlLabelDefForRadioButton(FieldDefinition field)
         {
-            //var fieldItem = new FieldItem() { dataType = "RadioGroup", name = optionName }
-            var fieldOptionDefinitions = new List<string>();
+           var fieldOptionDefinitions = new List<string>();
+            var isFirst = true;
             foreach (var option in field.FieldOptions.Values)
             {
                 var optionName = field.ViewName + "_" + option.Clean();
-                var fieldXml = (@"
+                var fieldXml = string.Empty;
+                if (field.GridColumn == 5)
+                {
+                    fieldXml = (@"
 <RadioButton
+    android:layout_marginStart='10dp'
+    android:layout_width='100dp'
+    android:layout_height='wrap_content'
+    android:checked='false'
+android:text=''
+android:id='@+id/" + optionName + @"' />"
+);
+                }
+                else
+                {
+                    fieldXml = (@"
+<RadioButton
+            android:layout_marginStart='30dp'
             android:layout_width='wrap_content'
             android:layout_height='wrap_content'
             android:checked='false'
-             android:text='@string/" + optionName + @"'
-             android:id='@+id/" + optionName + "' />"
-                 );
+            android:text='@string/" + optionName + @"'
+android:id='@+id/" + optionName + "' />"
+    );
+                    metaDataProvider.AddStringResource(optionName, option);
+                }
 
                 metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "RadioButton", name = optionName
                                     ,
@@ -330,7 +390,6 @@ android:orientation='horizontal'
                     IsRequired = field.IsIndexed == "1",
                     Label = field.DisplayLabel + " [" + option + "]"
                 });
-                metaDataProvider.AddStringResource(optionName, option);
 
                 fieldOptionDefinitions.Add(fieldXml.Replace("'", "\""));
             }
