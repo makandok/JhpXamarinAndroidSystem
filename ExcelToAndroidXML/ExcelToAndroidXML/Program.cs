@@ -98,47 +98,4 @@ namespace ExcelToAndroidXML
             Console.ReadLine();
         }
     }
-
-
-
-    static class Extensions
-    {
-        public static string getStringsEntry(this string stringsEntryName, string stringsEntryText)
-        {
-            return ("<string name='" + stringsEntryName + "'>" + stringsEntryText + "</string>").Replace("'", "\"");
-        }
-
-        public static string Clean(this string value)
-        {
-            //=SUBSTITUTE( SUBSTITUTE( LOWER(I7)," ",""),"/","_")
-            return Regex.Replace(value, "[^a-zA-Z0-9]", "").ToLowerInvariant();
-        }
-    }
-
-    public class FieldChoices
-    {
-        public string Name { get; set; }
-        public List<string> Values { get; set; }
-        public List<string> CleanValues { get; set; }
-    }
-
-    public class FieldItem
-    {
-        //public int fieldId { get; set; }
-        public string name { get; set; }
-        public string dataType { get; set; }
-        public string pageName { get; set; }
-        //public List<string> options { get; set; }
-    }
-
-    public class FieldDefinition
-    {
-        public string ViewName { get; set; }
-        public string ViewType { get; set; }
-        public string DisplayLabel { get; set; }
-        public string ListName { get; set; }
-        public int GridColumn { get; set; }
-        public int Id { get; set; }
-        public FieldChoices FieldOptions { get; set; }
-    }
 }

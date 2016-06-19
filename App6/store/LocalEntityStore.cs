@@ -33,7 +33,7 @@ namespace JhpDataSystem.store
             defaultTableStore = new TableStore(Constants.KIND_DEFAULT);
             defaultTableStore.build();
             new TableStore(Constants.KIND_APPUSERS).build();
-            //new TableStore(Constants.KIND_PREPEX).build();
+            new TableStore(Constants.KIND_PREPEX).build();
             new TableStore(Constants.KIND_PREPEX_CLIENTEVAL).build();
             new TableStore(Constants.KIND_VMMC).build();
             new KindRegistryQuery().build();

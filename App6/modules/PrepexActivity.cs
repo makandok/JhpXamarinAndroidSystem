@@ -266,6 +266,33 @@ namespace JhpDataSystem.modules
         private void showViewList()
         {
             //we show all the clients
+            var currentIndexes = LocalEntityStore.Instance
+                .GetAllBlobs(new KindName(Constants.KIND_PREPEX));
+            if(currentIndexes.Count()==1 && currentIndexes.FirstOrDefault().Value == Constants.DBSAVE_ERROR)
+            {
+                //means we couldn get this data, so we throw exeption
+                new ProcessLogger().Log("Could not load data from table "+Constants.KIND_PREPEX);
+                new AlertDialog.Builder(this)
+.SetTitle("List of clients")
+.SetMessage("Error retrieving list of clients")
+.SetPositiveButton("OK", (senderAlert, args) => { })
+.Create()
+.Show();
+                return;
+            }
+
+            var allClients = currentIndexes.Select(t=> DbSaveableEntity.fromJson<PrepexDataSet>(t));
+            //we display, perhaps in a listview
+            var allData = (from pp in allClients
+                           from field in pp.FieldValues
+                           select field.Name + ": " + field.Value).ToList();
+            var message = string.Join(System.Environment.NewLine, allData);
+            new AlertDialog.Builder(this)
+.SetTitle("List of clients")
+.SetMessage(message)
+.SetPositiveButton("OK", (senderAlert, args) => { })
+.Create()
+.Show();
 
         }
 
@@ -324,11 +351,6 @@ namespace JhpDataSystem.modules
                     }
             }
             return nextLayout;
-        }
-
-        void saveViewData()
-        {
-
         }
 
         private void addDiscardFunctionality()
@@ -393,21 +415,14 @@ namespace JhpDataSystem.modules
                     .Save();
 
                     //and also to lookups db
-                    var lookupValues = AppInstance.Instance.FieldItems.Where(t => t.IsLookup)
-                    .Select(g => g.name);
-
-                    var lookupsProvider = new LookupProvider()
-                    { kind = new KindName(Constants.KIND_PREPEX) };
-
-                    foreach (var field in data)
+                    var lookupEntry = new PrepexDataSet()
                     {
-                        if (lookupValues.Contains(field.Name))
-                        {
-                            lookupsProvider.Add(field.Name, field.Value);
-                        }
-                    }
-
-                    lookupsProvider.Save();
+                        Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
+                        FormName = Constants.KIND_PREPEX_CLIENTEVAL,
+                        FieldValues = getIndexedFormData(),
+                    };
+                    new DbSaveableEntity(lookupEntry) {
+                        kindName = new KindName(Constants.KIND_PREPEX) }.Save();
 
                     //we close and show the prpex home page
                     showPrepexHome();
@@ -426,21 +441,31 @@ namespace JhpDataSystem.modules
             }
         }
 
-        List<NameValuePair> getFormData()
+        List<NameValuePair> getIndexedFormData()
         {
             var fields = AppInstance.Instance.TemporalViewData;
             return (from viewData in fields
                     from fieldData in viewData.Value
+                    where fieldData.Field.IsIndexed
                     let rec = fieldData.AsNameValuePair()
+                    select rec).ToList();
+        }
+
+        List<NameValuePair> getFormData(bool useDisplayLabels = false)
+        {
+            var fields = AppInstance.Instance.TemporalViewData;
+            return (from viewData in fields
+                    from fieldData in viewData.Value
+                    let rec = useDisplayLabels?fieldData.AsLabelValuePair(): fieldData.AsNameValuePair()
                     select rec).ToList();
         }
 
         private void displayTemporalDataAvailable()
         {
             var fields = AppInstance.Instance.TemporalViewData;
-            var nameValuePairs = getFormData();
+            var nameValuePairs = getFormData(useDisplayLabels : true).Select(t => t.Name + ": " + t.Value);
             var message = string.Join(
-            System.Environment.NewLine, getFormData());
+            System.Environment.NewLine, nameValuePairs);
             new AlertDialog.Builder(this)
 .SetTitle("Confirm Action")
 .SetMessage(message)

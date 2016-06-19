@@ -6,7 +6,9 @@ namespace JhpDataSystem.model
         public string name { get; set; }
         public string dataType { get; set; }
         public string pageName { get; set; }
-        public bool IsLookup { get; set; }
+        public bool IsIndexed { get; set; }
+        public bool IsRequired { get; set; }
+        public string Label { get; set; }
         //public List<string> options { get; set; }
     }
 
@@ -18,6 +20,11 @@ namespace JhpDataSystem.model
         public NameValuePair AsNameValuePair()
         {
             return new NameValuePair() { Name = Field.name, Value = Value };
+        }
+
+        public NameValuePair AsLabelValuePair()
+        {
+            return new NameValuePair() { Name = Field.Label, Value = Value };
         }
     }
 

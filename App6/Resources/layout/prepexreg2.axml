@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <include layout="@layout/nextandprevbuttons" />
+
+    <TextView
+        android:text="@string/indiv_counse_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/indiv_counse_hdr" />
 
     <TextView
 android:text="@string/primaryreasoncirc"
@@ -592,33 +604,5 @@ android:orientation="horizontal"
              android:text="@string/tightfrenulum_no"
              android:id="@+id/tightfrenulum_no" /></RadioGroup >
 
-    <TextView
-android:text="@string/epispadiasis"
-android:textColor="@android:color/holo_blue_dark"
-android:textAppearance="?android:attr/textAppearanceSmall"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/l_epispadiasis" /><RadioGroup
-android:orientation="horizontal"
-        android:minWidth="25dp"
-        android:minHeight="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rg_epispadiasis" >
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/epispadiasis_yes"
-             android:id="@+id/epispadiasis_yes" />
-
-<RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-             android:text="@string/epispadiasis_no"
-             android:id="@+id/epispadiasis_no" /></RadioGroup >
-
 </LinearLayout>
+</ScrollView>

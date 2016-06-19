@@ -45,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataPage.cs" />
+    <Compile Include="FieldChoices.cs" />
+    <Compile Include="FieldDefinition.cs" />
+    <Compile Include="FieldItem.cs" />
+    <Compile Include="MyExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

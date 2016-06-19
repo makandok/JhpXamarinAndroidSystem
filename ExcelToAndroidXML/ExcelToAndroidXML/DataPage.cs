@@ -49,13 +49,17 @@ namespace ExcelToAndroidXML
             }
 
             var start = @"<?xml version='1.0' encoding='utf-8'?>
-<LinearLayout xmlns:android='http://schemas.android.com/apk/res/android'
+<ScrollView xmlns:android='http://schemas.android.com/apk/res/android'
+    android:layout_width='match_parent'
+    android:layout_height='match_parent'>
+<LinearLayout
     android:orientation='vertical'
     android:layout_width='match_parent'
     android:layout_height='wrap_content'>
 <include layout='@layout/nextandprevbuttons' />
 {0}
 </LinearLayout>
+</ScrollView>
 ";
             metaDataProvider = new MetaDataProvider();
             metaDataProvider.AddStringResource(SYS_DATE_SELECT_TEXT, "Select Date");
@@ -159,7 +163,10 @@ namespace ExcelToAndroidXML
             var fieldXml = getDateControlsDef(stringsEntryName);
             //we need this for the button label
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);            
-            metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "DatePicker", name = stringsEntryName });
+            metaDataProvider.ModelItems.Add(
+                new FieldItem() { dataType = "DatePicker", name = stringsEntryName
+                ,IsIndexed = field.IsIndexed=="1", IsRequired = field.IsIndexed == "1", Label = field.DisplayLabel
+                });
             return fieldXml;
         }
 
@@ -215,7 +222,12 @@ namespace ExcelToAndroidXML
         android:inputType='" + (isNumeric?"number":"text") + @"'
         android:id='@+id/" + stringsEntryName + @"'
         android:hint='@string/" + stringsEntryName + @"' />");
-            metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "EditText", name = stringsEntryName });
+            metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "EditText", name = stringsEntryName
+                                ,
+                IsIndexed = field.IsIndexed == "1",
+                IsRequired = field.IsIndexed == "1",
+                Label = field.DisplayLabel
+            });
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
             return fieldXml.Replace("'", "\"");
         }
@@ -283,7 +295,12 @@ android:orientation='horizontal'
              android:text='@string/" + optionName + @"'
              android:id='@+id/" + optionName + "' />"
              );
-                metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "CheckBox", name = optionName });
+                metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "CheckBox", name = optionName
+                                    ,
+                    IsIndexed = field.IsIndexed == "1",
+                    IsRequired = field.IsIndexed == "1",
+                    Label = field.DisplayLabel+" ["+ option+"]"
+                });
                 metaDataProvider.AddStringResource(optionName, option);
 
                 fieldOptionDefinitions.Add(fieldXml.Replace("'", "\""));
@@ -307,7 +324,12 @@ android:orientation='horizontal'
              android:id='@+id/" + optionName + "' />"
                  );
 
-                metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "RadioButton", name = optionName });
+                metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "RadioButton", name = optionName
+                                    ,
+                    IsIndexed = field.IsIndexed == "1",
+                    IsRequired = field.IsIndexed == "1",
+                    Label = field.DisplayLabel + " [" + option + "]"
+                });
                 metaDataProvider.AddStringResource(optionName, option);
 
                 fieldOptionDefinitions.Add(fieldXml.Replace("'", "\""));

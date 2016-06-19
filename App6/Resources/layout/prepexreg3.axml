@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <include layout="@layout/nextandprevbuttons" />
+
+    <TextView
+android:text="@string/epispadiasis"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceSmall"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_epispadiasis" /><RadioGroup
+android:orientation="horizontal"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_epispadiasis" >
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/epispadiasis_yes"
+             android:id="@+id/epispadiasis_yes" />
+
+<RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+             android:text="@string/epispadiasis_no"
+             android:id="@+id/epispadiasis_no" /></RadioGroup >
 
     <TextView
 android:text="@string/hypospadiasis"
@@ -529,18 +561,16 @@ android:orientation="horizontal"
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/dtbtn_timelineofcircmarked"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
             android:text="@string/sys_dateselect"/>
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:minWidth="25dp"
-            android:minHeight="25dp"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
             android:id="@+id/dttxt_timelineofcircmarked"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
     </LinearLayout>
 
     <TextView
@@ -556,32 +586,17 @@ android:orientation="horizontal"
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/dtbtn_timeplacementringremoved"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
             android:text="@string/sys_dateselect"/>
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:minWidth="25dp"
-            android:minHeight="25dp"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
             android:id="@+id/dttxt_timeplacementringremoved"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
     </LinearLayout>
 
-    <TextView
-        android:text="@string/comments"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/comments" />
-    <EditText
-        android:layout_height="40dp"
-        android:layout_width="match_parent"
-        android:inputType="text"
-        android:id="@+id/comments"
-        android:hint="@string/comments" />
-
 </LinearLayout>
+</ScrollView>

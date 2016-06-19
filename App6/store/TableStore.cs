@@ -5,13 +5,18 @@ using JhpDataSystem.model;
 
 namespace JhpDataSystem.store
 {
-    public class LookupsTableStore : TableStore
-    {
-        public LookupsTableStore(KindName kind):base(kind)
-        {
-
-        }
-    }
+    //public class FlatTableStore : TableStore
+    //{
+    //    new string createKindSql = "create table if not exists {0}(id nvarchar(32) primary key, datablob nvarchar(500));";
+    //    new string insertSql = "insert or replace into {0}(id, datablob) values (@id, @datablob)";
+    //    new string deleteSql = "delete from {0} where id = @id";
+    //    new string selectById = "select id, datablob from {0} where id = @id";
+    //    new string selectIdsForAll = "select id from {0}";
+    //    new string selectDatablobs = "select datablob from {0}";
+    //    public FlatTableStore(KindName kind):base(kind)
+    //    {
+    //    }
+    //}
 
     public class TableStore
     {
@@ -22,12 +27,12 @@ namespace JhpDataSystem.store
 
         KindName _tableName;
         LocalDB _db;        
-        const string createKindSql = "create table if not exists {0}(id nvarchar(32) primary key, datablob nvarchar(500));";
-        const string insertSql = "insert or replace into {0}(id, datablob) values (@id, @datablob)";
-        const string deleteSql = "delete from {0} where id = @id";
-        const string selectById = "select id, datablob from {0} where id = @id";
-        const string selectIdsForAll = "select id from {0}";
-        const string selectDatablobs = "select datablob from {0}";
+        protected const string createKindSql = "create table if not exists {0}(id nvarchar(32) primary key, datablob nvarchar(500));";
+        protected const string insertSql = "insert or replace into {0}(id, datablob) values (@id, @datablob)";
+        protected const string deleteSql = "delete from {0} where id = @id";
+        protected const string selectById = "select id, datablob from {0} where id = @id";
+        protected const string selectIdsForAll = "select id from {0}";
+        protected const string selectDatablobs = "select datablob from {0}";
 
         /// <summary>
         /// Creates new instance of a Kind store, which allows Get, Put, Delete and Update

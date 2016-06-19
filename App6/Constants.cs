@@ -34,6 +34,8 @@ namespace JhpDataSystem
 
         public static string SUPPORTADMIN_USERNAME = "support";
 
+        //prepexreg_fields
+        internal const string FILE_PREPEX_FIELDS_CLIENTEVAL = "prepexreg_fields.json";
         internal const string FILE_PREPEX_FIELDS = "prepex_fields.json";
 
         

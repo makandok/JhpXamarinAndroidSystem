@@ -238,6 +238,7 @@
     <AndroidResource Include="Resources\layout\tab_layout_view.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidAsset Include="Assets\prepexreg_fields.json" />
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />
