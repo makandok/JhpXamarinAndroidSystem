@@ -241,7 +241,7 @@ namespace JhpDataSystem.modules
         {
                 new AlertDialog.Builder(this)
 .SetTitle("Warning: Confirm action")
-.SetMessage("You'll llose all subsequent data entered. Are you sure you want to navigate backwards")
+.SetMessage("You'll lose all data entered if you navigate backwards. Are you sure you want to navigate backwards")
 .SetPositiveButton("OK", (senderAlert, args) => { base.OnBackPressed(); })
 .SetNegativeButton("Cancel", (senderAlert, args) => { })
 .Create()
