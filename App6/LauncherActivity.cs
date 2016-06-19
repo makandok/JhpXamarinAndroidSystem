@@ -60,7 +60,7 @@ namespace JhpDataSystem
 
             var showLoginButton = FindViewById<Button>(Resource.Id.buttonPrepexHome);
             //PrepexActivity
-            showLoginButton.Click += (x, y) => { StartActivity(typeof(PrepexActivity)); };
+            showLoginButton.Click += (x, y) => { StartActivity(typeof(PrepexHomeActivity)); };
 
 
             var buttonVmmcHome = FindViewById<Button>(Resource.Id.buttonVmmcHome);

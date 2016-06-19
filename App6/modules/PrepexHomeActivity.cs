@@ -13,14 +13,9 @@ using Android.Runtime;
 namespace JhpDataSystem.modules
 {
     [Activity(Label = "Prepex Manager", Icon = "@drawable/jhpiego_logo")]
-    public class PrepexActivity : Activity
+    public class PrepexHomeActivity : Activity
     {
-        List<int> allDataEntryViews = new List<int>() {
-                Resource.Layout.prepexreg1,
-                Resource.Layout.prepexreg2,
-                Resource.Layout.prepexreg3,
-                Resource.Layout.prepexreg4
-            };
+
 
         //TextView textView1, textView2;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -50,8 +45,8 @@ namespace JhpDataSystem.modules
                 //PrepexDataEntry
                 //StartActivity(typeof(PrepexDataEntry));
 
-                showAddNewView(true);
-                //StartActivity(typeof(PrepexClientEvaluation));
+                //showAddNewView(true);
+                StartActivity(typeof(PP_ClientEval1));
             };
 
             var buttonUnscheduled = FindViewById<Button>(Resource.Id.buttonUnscheduled);
@@ -298,8 +293,7 @@ namespace JhpDataSystem.modules
 
         private void showEditExistingView()
         {
-            //SetContentView(Resource.Layout.prepexreg1);
-            
+            //SetContentView(Resource.Layout.prepexreg1);            
         }
 
         int currentLayout = -1;

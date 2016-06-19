@@ -231,6 +231,7 @@
     <Compile Include="modules\PrepexClientEvaluation.cs" />
     <Compile Include="modules\PrepexDataEntry.cs" />
     <Compile Include="modules\PrepexDeviceRemoval.cs" />
+    <Compile Include="modules\PrepexFormsBase.cs" />
     <Compile Include="modules\PrepexPostRemovalVisit.cs" />
     <Compile Include="modules\PrepexUnscheduleVisit.cs" />
     <Compile Include="SystemConfigActivity.cs" />
@@ -245,7 +246,7 @@
     <Compile Include="model\AppUser.cs" />
     <Compile Include="model\EntityKey.cs" />
     <Compile Include="BrowserDataEntryActivity.cs" />
-    <Compile Include="modules\PrepexActivity.cs" />
+    <Compile Include="modules\PrepexHomeActivity.cs" />
     <Compile Include="Resources\layout\WebhostActivity.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
     <Compile Include="store\KindRegistryQuery.cs" />
