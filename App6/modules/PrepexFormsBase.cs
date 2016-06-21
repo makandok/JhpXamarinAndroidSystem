@@ -24,20 +24,6 @@ namespace JhpDataSystem.modules
         protected int myView = -1;
         protected IPP_NavController myNavController = null;
 
-        //protected void showAddNewView(bool showNext)
-        //{
-        //    var page = getNextPage(showNext);
-        //    if (page == currentLayout)
-        //        return;
-
-        //    currentLayout = page;
-        //    SetContentView(page);
-
-        //    addDefaultNavBehaviours();
-        //    bindDateDialogEventsForView(page);
-
-        //}
-
         protected void ShowMyView()
         {
             SetContentView(myView);
@@ -162,24 +148,12 @@ namespace JhpDataSystem.modules
 
         protected List<FieldItem> GetFieldsForView(int viewId)
         {
-            var filterString = string.Empty;
-            switch (viewId)
-            {
-                case Resource.Layout.prepexreg1:
-                    filterString = Constants.PP_VIEWS_1;
-                    break;
-                case Resource.Layout.prepexreg2:
-                    filterString = Constants.PP_VIEWS_2;
-                    break;
-                case Resource.Layout.prepexreg3:
-                    filterString = Constants.PP_VIEWS_3;
-                    break;
-                case Resource.Layout.prepexreg4:
-                    filterString = Constants.PP_VIEWS_4;
-                    break;
-            }
-            var fields = (AppInstance.Instance.FieldItems.Where(t => t.pageName == filterString)).ToList();
-            return fields;
+            return AppInstance.Instance.FieldItems.Where(t => t.PageId == viewId).ToList();
+            //var filterString = string.Empty;
+            //var name = Resources.GetResourceEntryName(viewId);
+            //filterString = name;
+            //var fields = (AppInstance.Instance.FieldItems.Where(t => t.pageName == filterString)).ToList();
+            //return fields;
         }
 
         protected void showViewList()
@@ -230,7 +204,7 @@ namespace JhpDataSystem.modules
                 .SetPositiveButton("OK", (senderAlert, args) =>
                 {
                     this.Finish();
-                    //showPrepexHome();
+                   //showPrepexHome();
                 })
                 .Create()
                 .Show();

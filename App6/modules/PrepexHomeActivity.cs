@@ -9,6 +9,7 @@ using Android.Views;
 using Newtonsoft.Json;
 using JhpDataSystem.store;
 using Android.Runtime;
+using Android.Content;
 
 namespace JhpDataSystem.modules
 {
@@ -51,16 +52,18 @@ namespace JhpDataSystem.modules
 
             var buttonUnscheduled = FindViewById<Button>(Resource.Id.buttonUnscheduled);
             buttonUnscheduled.Click += (sender, e) => {
-                StartActivity(typeof(PrepexUnscheduleVisit));
+                StartActivity(typeof(PP_Unscheduled1));
             };
             var buttonDeviceRemovalVisit = FindViewById<Button>(Resource.Id.buttonDeviceRemovalVisit);
             buttonDeviceRemovalVisit.Click += (sender, e) => {
-                StartActivity(typeof(PrepexDeviceRemoval));
+                StartActivity(typeof(PP_DeviceRemoval1));
             };
 
             var buttonPostRemovalVisit = FindViewById<Button>(Resource.Id.buttonPostRemovalVisit);
             buttonPostRemovalVisit.Click += (sender, e) => {
-                StartActivity(typeof(PrepexPostRemovalVisit));
+                var intent = new Intent(this, typeof(PP_PostRemovalVisit1));
+                //StartActivity(typeof(PP_PostRemovalVisit1));
+                StartActivity(intent);
             };
 
             //buttonViewList

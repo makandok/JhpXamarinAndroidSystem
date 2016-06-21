@@ -8,6 +8,7 @@ namespace ExcelToAndroidXML
 {
     public class FieldDefinition
     {
+        public string FormName { get; set; }
         public string GroupName { get; set; }
         public string ViewName { get; set; }
         public string ViewType { get; set; }

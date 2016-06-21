@@ -160,12 +160,12 @@
     "Label": "Type of Site / Service (check only one) [Mobile Outreach]"
   },
   {
-    "name": "typeofsite_massevent",
+    "name": "typeofsite_masssevent",
     "dataType": "RadioButton",
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Mass Event]"
+    "Label": "Type of Site / Service (check only one) [Masss Event]"
   },
   {
     "name": "typeofsite_routineservice",
@@ -1328,20 +1328,20 @@
     "Label": "Clinical disposition of client"
   },
   {
-    "name": "orlanalgesiagiven_yes",
+    "name": "oralanalgesiagiven_yes",
     "dataType": "RadioButton",
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Orl analgesia given [Yes]"
+    "Label": "Oral analgesia given [Yes]"
   },
   {
-    "name": "orlanalgesiagiven_no",
+    "name": "oralanalgesiagiven_no",
     "dataType": "RadioButton",
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Orl analgesia given [No]"
+    "Label": "Oral analgesia given [No]"
   },
   {
     "name": "nameoralanalgesiadrug",
@@ -1382,5 +1382,1821 @@
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Signed [No]"
+  },
+  {
+    "name": "facilityname",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Facility"
+  },
+  {
+    "name": "dateofvisit",
+    "dataType": "DatePicker",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Date of Visit"
+  },
+  {
+    "name": "cardserialnumber",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Card Serial Number"
+  },
+  {
+    "name": "clientidnumber",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client ID Number"
+  },
+  {
+    "name": "dateofplacement",
+    "dataType": "DatePicker",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Date of Placement"
+  },
+  {
+    "name": "clientname",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client Name"
+  },
+  {
+    "name": "clientsphysicaladdress",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Clients Physical Address"
+  },
+  {
+    "name": "clienttel",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client Tel"
+  },
+  {
+    "name": "typeofinteraction_removalproceddure",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Whether Removal Procedure or Follow up [RemovalProceddure]"
+  },
+  {
+    "name": "typeofinteraction_followuptelephone",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Whether Removal Procedure or Follow up [Followup telephone]"
+  },
+  {
+    "name": "timeforcepsapplied",
+    "dataType": "DatePicker",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Forceps applied (time)"
+  },
+  {
+    "name": "timeinnerringremoved",
+    "dataType": "DatePicker",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Inner ring removed (time)"
+  },
+  {
+    "name": "comments",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Comments"
+  },
+  {
+    "name": "aesduringdeviceremoval_noadverseeventsdiagnosed",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "AES during Device Removal [No Adverse events diagnosed]"
+  },
+  {
+    "name": "aesduringdeviceremoval_adverseeventsdiagnosed",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "AES during Device Removal [Adverse events diagnosed]"
+  },
+  {
+    "name": "pain_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Mild]"
+  },
+  {
+    "name": "pain_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Moderate]"
+  },
+  {
+    "name": "pain_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Severe]"
+  },
+  {
+    "name": "pain_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Severity not classified]"
+  },
+  {
+    "name": "bleeding_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Mild]"
+  },
+  {
+    "name": "bleeding_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Moderate]"
+  },
+  {
+    "name": "bleeding_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Severe]"
+  },
+  {
+    "name": "bleeding_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Severity not classified]"
+  },
+  {
+    "name": "damagetopenis_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Mild]"
+  },
+  {
+    "name": "damagetopenis_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Moderate]"
+  },
+  {
+    "name": "damagetopenis_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Severe]"
+  },
+  {
+    "name": "damagetopenis_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Severity not classified]"
+  },
+  {
+    "name": "infection_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Mild]"
+  },
+  {
+    "name": "infection_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Moderate]"
+  },
+  {
+    "name": "infection_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Severe]"
+  },
+  {
+    "name": "infection_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Severity not classified]"
+  },
+  {
+    "name": "hematoma_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Mild]"
+  },
+  {
+    "name": "hematoma_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Moderate]"
+  },
+  {
+    "name": "hematoma_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Severe]"
+  },
+  {
+    "name": "hematoma_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Severity not classified]"
+  },
+  {
+    "name": "edema_swelling_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema / Swelling [Mild]"
+  },
+  {
+    "name": "edema_swelling_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema / Swelling [Moderate]"
+  },
+  {
+    "name": "edema_swelling_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema / Swelling [Severe]"
+  },
+  {
+    "name": "edema_swelling_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema / Swelling [Severity not classified]"
+  },
+  {
+    "name": "problemsvoiding_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Mild]"
+  },
+  {
+    "name": "problemsvoiding_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Moderate]"
+  },
+  {
+    "name": "problemsvoiding_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Severe]"
+  },
+  {
+    "name": "problemsvoiding_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Severity not classified]"
+  },
+  {
+    "name": "psychological_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Mild]"
+  },
+  {
+    "name": "psychological_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Moderate]"
+  },
+  {
+    "name": "psychological_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Severe]"
+  },
+  {
+    "name": "psychological_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Severity not classified]"
+  },
+  {
+    "name": "requestingearlyremoval_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Requesting early removal [Mild]"
+  },
+  {
+    "name": "requestingearlyremoval_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Requesting early removal [Moderate]"
+  },
+  {
+    "name": "requestingearlyremoval_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Requesting early removal [Severe]"
+  },
+  {
+    "name": "requestingearlyremoval_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Requesting early removal [Severity not classified]"
+  },
+  {
+    "name": "devicemalfunction_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device malfunction [Mild]"
+  },
+  {
+    "name": "devicemalfunction_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device malfunction [Moderate]"
+  },
+  {
+    "name": "devicemalfunction_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device malfunction [Severe]"
+  },
+  {
+    "name": "devicemalfunction_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device malfunction [Severity not classified]"
+  },
+  {
+    "name": "devicedisplacement_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device displacement [Mild]"
+  },
+  {
+    "name": "devicedisplacement_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device displacement [Moderate]"
+  },
+  {
+    "name": "devicedisplacement_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device displacement [Severe]"
+  },
+  {
+    "name": "devicedisplacement_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device displacement [Severity not classified]"
+  },
+  {
+    "name": "prematuredifferentialsloughing_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Premature differential sloughing [Mild]"
+  },
+  {
+    "name": "prematuredifferentialsloughing_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Premature differential sloughing [Moderate]"
+  },
+  {
+    "name": "prematuredifferentialsloughing_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Premature differential sloughing [Severe]"
+  },
+  {
+    "name": "prematuredifferentialsloughing_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Premature differential sloughing [Severity not classified]"
+  },
+  {
+    "name": "dressingintact_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Dressing Intact [Yes]"
+  },
+  {
+    "name": "dressingintact_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Dressing Intact [No]"
+  },
+  {
+    "name": "clientprovidedppinstr_nospecify_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client provided post procedure written instructions [Yes]"
+  },
+  {
+    "name": "clientprovidedppinstr_nospecify_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client provided post procedure written instructions [No]"
+  },
+  {
+    "name": "clientprovidedppinstr",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "if no, Explain"
+  },
+  {
+    "name": "clinicaldisposition",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Clinical Disposition of Client"
+  },
+  {
+    "name": "oralanalgesiagiven_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Oral analgesia given [Yes]"
+  },
+  {
+    "name": "oralanalgesiagiven_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Oral analgesia given [No]"
+  },
+  {
+    "name": "nameoralanalgesiadrug",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Oral Analgesia Drug"
+  },
+  {
+    "name": "dischargedby",
+    "dataType": "EditText",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Discharged by (Name)"
+  },
+  {
+    "name": "signed_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Signed [Yes]"
+  },
+  {
+    "name": "signed_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexdevremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Signed [No]"
+  },
+  {
+    "name": "facilityname",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Facility"
+  },
+  {
+    "name": "dateofvisit",
+    "dataType": "DatePicker",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Date of Visit"
+  },
+  {
+    "name": "cardserialnumber",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Card Serial Number"
+  },
+  {
+    "name": "clientidnumber",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client ID Number"
+  },
+  {
+    "name": "dateofplacement",
+    "dataType": "DatePicker",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Date of Placement"
+  },
+  {
+    "name": "clientname",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client Name"
+  },
+  {
+    "name": "clientsphysicaladdress",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Clients Physical Address"
+  },
+  {
+    "name": "clienttel",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client Tel"
+  },
+  {
+    "name": "clinicalcourse",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Clinical course experienced / reported by client"
+  },
+  {
+    "name": "appearanceofwound_fullyhealed",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Appearance of Wound [Fully Healed]"
+  },
+  {
+    "name": "appearanceofwound_notfullyhealednocomplications",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Appearance of Wound [Not fully healed No Complications]"
+  },
+  {
+    "name": "appearanceofwound_notfullyhealedcomplicationsnoted",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Appearance of Wound [Not fully healed Complications Noted]"
+  },
+  {
+    "name": "careprovided",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Care Provided (if any)"
+  },
+  {
+    "name": "followupplan",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Follow-up plan (if additional visits needed)"
+  },
+  {
+    "name": "pain_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Mild]"
+  },
+  {
+    "name": "pain_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Moderate]"
+  },
+  {
+    "name": "pain_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Severe]"
+  },
+  {
+    "name": "pain_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Severity not classified]"
+  },
+  {
+    "name": "bleeding_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Mild]"
+  },
+  {
+    "name": "bleeding_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Moderate]"
+  },
+  {
+    "name": "bleeding_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Severe]"
+  },
+  {
+    "name": "bleeding_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Severity not classified]"
+  },
+  {
+    "name": "damagetopenis_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Mild]"
+  },
+  {
+    "name": "damagetopenis_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Moderate]"
+  },
+  {
+    "name": "damagetopenis_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Severe]"
+  },
+  {
+    "name": "damagetopenis_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Severity not classified]"
+  },
+  {
+    "name": "infection_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Mild]"
+  },
+  {
+    "name": "infection_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Moderate]"
+  },
+  {
+    "name": "infection_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Severe]"
+  },
+  {
+    "name": "infection_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Severity not classified]"
+  },
+  {
+    "name": "hematoma_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Mild]"
+  },
+  {
+    "name": "hematoma_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Moderate]"
+  },
+  {
+    "name": "hematoma_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Severe]"
+  },
+  {
+    "name": "hematoma_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Severity not classified]"
+  },
+  {
+    "name": "edema_swelling_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema_Swelling [Mild]"
+  },
+  {
+    "name": "edema_swelling_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema_Swelling [Moderate]"
+  },
+  {
+    "name": "edema_swelling_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema_Swelling [Severe]"
+  },
+  {
+    "name": "edema_swelling_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema_Swelling [Severity not classified]"
+  },
+  {
+    "name": "problemsvoiding_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Mild]"
+  },
+  {
+    "name": "problemsvoiding_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Moderate]"
+  },
+  {
+    "name": "problemsvoiding_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Severe]"
+  },
+  {
+    "name": "problemsvoiding_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Severity not classified]"
+  },
+  {
+    "name": "wounddehiscence_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Wound dehiscence [Mild]"
+  },
+  {
+    "name": "wounddehiscence_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Wound dehiscence [Moderate]"
+  },
+  {
+    "name": "wounddehiscence_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Wound dehiscence [Severe]"
+  },
+  {
+    "name": "wounddehiscence_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Wound dehiscence [Severity not classified]"
+  },
+  {
+    "name": "excessskinremoved_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Excess skin removed [Mild]"
+  },
+  {
+    "name": "excessskinremoved_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Excess skin removed [Moderate]"
+  },
+  {
+    "name": "excessskinremoved_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Excess skin removed [Severe]"
+  },
+  {
+    "name": "excessskinremoved_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Excess skin removed [Severity not classified]"
+  },
+  {
+    "name": "insufficiientskinremoved_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Insufficiient skin removed [Mild]"
+  },
+  {
+    "name": "insufficiientskinremoved_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Insufficiient skin removed [Moderate]"
+  },
+  {
+    "name": "insufficiientskinremoved_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Insufficiient skin removed [Severe]"
+  },
+  {
+    "name": "insufficiientskinremoved_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Insufficiient skin removed [Severity not classified]"
+  },
+  {
+    "name": "torsion_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Torsion [Mild]"
+  },
+  {
+    "name": "torsion_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Torsion [Moderate]"
+  },
+  {
+    "name": "torsion_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Torsion [Severe]"
+  },
+  {
+    "name": "torsion_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Torsion [Severity not classified]"
+  },
+  {
+    "name": "delayedwouldhealing_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Delayed would healing [Mild]"
+  },
+  {
+    "name": "delayedwouldhealing_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Delayed would healing [Moderate]"
+  },
+  {
+    "name": "delayedwouldhealing_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Delayed would healing [Severe]"
+  },
+  {
+    "name": "delayedwouldhealing_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Delayed would healing [Severity not classified]"
+  },
+  {
+    "name": "scarring_disfigurement_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Scarring_disfigurement [Mild]"
+  },
+  {
+    "name": "scarring_disfigurement_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Scarring_disfigurement [Moderate]"
+  },
+  {
+    "name": "scarring_disfigurement_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Scarring_disfigurement [Severe]"
+  },
+  {
+    "name": "scarring_disfigurement_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Scarring_disfigurement [Severity not classified]"
+  },
+  {
+    "name": "psychological_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Mild]"
+  },
+  {
+    "name": "psychological_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Moderate]"
+  },
+  {
+    "name": "psychological_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Severe]"
+  },
+  {
+    "name": "psychological_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Severity not classified]"
+  },
+  {
+    "name": "erectiledysfunction_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Erectile dysfunction [Mild]"
+  },
+  {
+    "name": "erectiledysfunction_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Erectile dysfunction [Moderate]"
+  },
+  {
+    "name": "erectiledysfunction_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Erectile dysfunction [Severe]"
+  },
+  {
+    "name": "erectiledysfunction_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Erectile dysfunction [Severity not classified]"
+  },
+  {
+    "name": "clinicaldisposition",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Clinical Disposition of Client"
+  },
+  {
+    "name": "dischargedby",
+    "dataType": "EditText",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Discharged by (Name)"
+  },
+  {
+    "name": "signed_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Signed [Yes]"
+  },
+  {
+    "name": "signed_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexpostremoval2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Signed [No]"
+  },
+  {
+    "name": "facilityname",
+    "dataType": "EditText",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Facility"
+  },
+  {
+    "name": "dateofvisit",
+    "dataType": "DatePicker",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Date of Visit"
+  },
+  {
+    "name": "cardserialnumber",
+    "dataType": "EditText",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Card Serial Number"
+  },
+  {
+    "name": "clientidnumber",
+    "dataType": "EditText",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client ID Number"
+  },
+  {
+    "name": "dateofplacement",
+    "dataType": "DatePicker",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Date of Placement"
+  },
+  {
+    "name": "clientname",
+    "dataType": "EditText",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client Name"
+  },
+  {
+    "name": "clientsphysicaladdress",
+    "dataType": "EditText",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Clients Physical Address"
+  },
+  {
+    "name": "clienttel",
+    "dataType": "EditText",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Client Tel"
+  },
+  {
+    "name": "isaplannedfupphonecall_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Planned Followup Call [Yes]"
+  },
+  {
+    "name": "isaplannedfupphonecall_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Planned Followup Call [No]"
+  },
+  {
+    "name": "clinicalcourse",
+    "dataType": "EditText",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Clinical course leading to"
+  },
+  {
+    "name": "careprovided",
+    "dataType": "EditText",
+    "pageName": "prepexunscheduled1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Care Provided (if any)"
+  },
+  {
+    "name": "aesswhilewearing_noadverseeventsdiagnosed",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Any Adverse Events during week of Device Wearing [No Adverse events diagnosed]"
+  },
+  {
+    "name": "aesswhilewearing_adverseeventsdiagnosed",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Any Adverse Events during week of Device Wearing [Adverse events diagnosed]"
+  },
+  {
+    "name": "pain_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Mild]"
+  },
+  {
+    "name": "pain_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Moderate]"
+  },
+  {
+    "name": "pain_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Severe]"
+  },
+  {
+    "name": "pain_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Severity not classified]"
+  },
+  {
+    "name": "bleeding_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Mild]"
+  },
+  {
+    "name": "bleeding_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Moderate]"
+  },
+  {
+    "name": "bleeding_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Severe]"
+  },
+  {
+    "name": "bleeding_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Severity not classified]"
+  },
+  {
+    "name": "damagetopenis_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Mild]"
+  },
+  {
+    "name": "damagetopenis_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Moderate]"
+  },
+  {
+    "name": "damagetopenis_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Severe]"
+  },
+  {
+    "name": "damagetopenis_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to penis [Severity not classified]"
+  },
+  {
+    "name": "infection_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Mild]"
+  },
+  {
+    "name": "infection_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Moderate]"
+  },
+  {
+    "name": "infection_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Severe]"
+  },
+  {
+    "name": "infection_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Infection [Severity not classified]"
+  },
+  {
+    "name": "hematoma_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Mild]"
+  },
+  {
+    "name": "hematoma_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Moderate]"
+  },
+  {
+    "name": "hematoma_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Severe]"
+  },
+  {
+    "name": "hematoma_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Hematoma [Severity not classified]"
+  },
+  {
+    "name": "edema_swelling_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema / Swelling [Mild]"
+  },
+  {
+    "name": "edema_swelling_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema / Swelling [Moderate]"
+  },
+  {
+    "name": "edema_swelling_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema / Swelling [Severe]"
+  },
+  {
+    "name": "edema_swelling_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Edema / Swelling [Severity not classified]"
+  },
+  {
+    "name": "problemsvoiding_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Mild]"
+  },
+  {
+    "name": "problemsvoiding_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Moderate]"
+  },
+  {
+    "name": "problemsvoiding_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Severe]"
+  },
+  {
+    "name": "problemsvoiding_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Problems voiding [Severity not classified]"
+  },
+  {
+    "name": "psychological_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Mild]"
+  },
+  {
+    "name": "psychological_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Moderate]"
+  },
+  {
+    "name": "psychological_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Severe]"
+  },
+  {
+    "name": "psychological_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Psychological [Severity not classified]"
+  },
+  {
+    "name": "requestingearlyremoval_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Requesting early removal [Mild]"
+  },
+  {
+    "name": "requestingearlyremoval_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Requesting early removal [Moderate]"
+  },
+  {
+    "name": "requestingearlyremoval_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Requesting early removal [Severe]"
+  },
+  {
+    "name": "requestingearlyremoval_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Requesting early removal [Severity not classified]"
+  },
+  {
+    "name": "devicemalfunction_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device malfunction [Mild]"
+  },
+  {
+    "name": "devicemalfunction_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device malfunction [Moderate]"
+  },
+  {
+    "name": "devicemalfunction_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device malfunction [Severe]"
+  },
+  {
+    "name": "devicemalfunction_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device malfunction [Severity not classified]"
+  },
+  {
+    "name": "devicedisplacement_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device displacement [Mild]"
+  },
+  {
+    "name": "devicedisplacement_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device displacement [Moderate]"
+  },
+  {
+    "name": "devicedisplacement_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device displacement [Severe]"
+  },
+  {
+    "name": "devicedisplacement_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Device displacement [Severity not classified]"
+  },
+  {
+    "name": "prematuredifferentialsloughing_mild",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Premature differential sloughing [Mild]"
+  },
+  {
+    "name": "prematuredifferentialsloughing_moderate",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Premature differential sloughing [Moderate]"
+  },
+  {
+    "name": "prematuredifferentialsloughing_severe",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Premature differential sloughing [Severe]"
+  },
+  {
+    "name": "prematuredifferentialsloughing_severitynotclassified",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Premature differential sloughing [Severity not classified]"
+  },
+  {
+    "name": "notmovedevice_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Not to move the device [Yes]"
+  },
+  {
+    "name": "notmovedevice_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Not to move the device [No]"
+  },
+  {
+    "name": "removalonday7_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "To return for removal on day 7 [Yes]"
+  },
+  {
+    "name": "removalonday7_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "To return for removal on day 7 [No]"
+  },
+  {
+    "name": "returnifwantsdeviceremoved_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "To return if he wants device removed before Day 7 [Yes]"
+  },
+  {
+    "name": "returnifwantsdeviceremoved_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "To return if he wants device removed before Day 7 [No]"
+  },
+  {
+    "name": "notremovedevice_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Not to remove the device or allow anyone to remove [Yes]"
+  },
+  {
+    "name": "notremovedevice_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Not to remove the device or allow anyone to remove [No]"
+  },
+  {
+    "name": "notpullforeskin_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Not to pull foreskin in case of partial detachment [Yes]"
+  },
+  {
+    "name": "notpullforeskin_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Not to pull foreskin in case of partial detachment [No]"
+  },
+  {
+    "name": "nosexmastrubation_yes",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "No sexual intercourse or masturbation [Yes]"
+  },
+  {
+    "name": "nosexmastrubation_no",
+    "dataType": "RadioButton",
+    "pageName": "prepexunscheduled2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "No sexual intercourse or masturbation [No]"
   }
 ]

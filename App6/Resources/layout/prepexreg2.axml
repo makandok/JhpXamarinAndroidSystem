@@ -54,8 +54,8 @@ android:id="@+id/typeofsite_mobileoutreach" />
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="@string/typeofsite_massevent"
-android:id="@+id/typeofsite_massevent" />
+            android:text="@string/typeofsite_masssevent"
+android:id="@+id/typeofsite_masssevent" />
 
 <RadioButton
             android:layout_marginStart="30dp"

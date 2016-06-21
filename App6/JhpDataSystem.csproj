@@ -233,13 +233,18 @@
     <Compile Include="modules\PrepexDeviceRemoval.cs" />
     <Compile Include="modules\PrepexFormsBase.cs" />
     <Compile Include="modules\PrepexPostRemovalVisit.cs" />
-    <Compile Include="modules\PrepexUnscheduleVisit.cs" />
     <Compile Include="SystemConfigActivity.cs" />
     <AndroidResource Include="Resources\layout\tab_layout_view.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidAsset Include="Assets\prepexreg_fields.json" />
     <AndroidResource Include="Resources\layout\prepexreg5.axml" />
+    <AndroidResource Include="Resources\layout\prepexdevremoval1.axml" />
+    <AndroidResource Include="Resources\layout\prepexdevremoval2.axml" />
+    <AndroidResource Include="Resources\layout\prepexpostremoval1.axml" />
+    <AndroidResource Include="Resources\layout\prepexpostremoval2.axml" />
+    <AndroidResource Include="Resources\layout\prepexunscheduled1.axml" />
+    <AndroidResource Include="Resources\layout\prepexunscheduled2.axml" />
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />

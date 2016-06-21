@@ -9,6 +9,7 @@ namespace JhpDataSystem.model
         public bool IsIndexed { get; set; }
         public bool IsRequired { get; set; }
         public string Label { get; set; }
+        public int PageId { get; set; }
         //public List<string> options { get; set; }
     }
 

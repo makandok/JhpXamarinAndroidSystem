@@ -31,7 +31,7 @@ namespace JhpDataSystem
         public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
 
         public Dictionary<string, string> ApiAssets = null;
-        public void InitialiseAppResources(AssetManager assets)
+        public void InitialiseAppResources(AssetManager assets, Activity context)
         {
             TemporalViewData = new Dictionary<int, List<FieldValuePair>>();
             ApiAssets = new Dictionary<string, string>();
@@ -56,9 +56,21 @@ namespace JhpDataSystem
             var fields = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FieldItem>>(asString);
 
             FieldItems = fields;
-            //var inputStream = assets.Open(Constants.API_KEYFILE);
-            //var jsonObject = System.Json.JsonValue.Load(inputStream);
+            Dictionary<int, FieldItem> viewFields = new Dictionary<int, FieldItem>();
+            var viewPages = fields.Select(t => t.pageName).Distinct().ToList();
 
+            var dictionary = new Dictionary<string, int>();
+            foreach (var page in viewPages)
+            {
+                var id = context.Resources.GetIdentifier(page, "layout", context.PackageName);
+                if (id == 0) throw new ArgumentOutOfRangeException("Could not determine Id for layout " + page);
+                dictionary[page] = id;
+            }
+
+            foreach(var field in fields)
+            {
+                field.PageId = dictionary[field.pageName];
+            }
         }
 
         public List<FieldItem> FieldItems = null;

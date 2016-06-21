@@ -12,7 +12,7 @@
     "Values": [
       "Dedicated Site",
       "Mobile Outreach",
-      "Mass Event",
+      "Masss Event",
       "Routine Service",
       "Public hospital/clinic",
       "Mission hospital",
@@ -108,19 +108,34 @@
     ]
   },
   {
-    "Name": "aes_duringplaccement",
+    "Name": "aes_diagnosed",
     "Values": [
       "No Adverse events diagnosed",
       "Adverse events diagnosed"
     ]
   },
   {
-    "Name": "ae_severity_placement",
+    "Name": "ae_severity",
     "Values": [
       "Mild",
       "Moderate",
       "Severe",
       "Severity not classified"
+    ]
+  },
+  {
+    "Name": "wound_appearance",
+    "Values": [
+      "Fully Healed",
+      "Not fully healed No Complications",
+      "Not fully healed Complications Noted"
+    ]
+  },
+  {
+    "Name": "interaction_type",
+    "Values": [
+      "RemovalProceddure",
+      "Followup telephone"
     ]
   }
 ]

@@ -32,8 +32,8 @@ namespace JhpDataSystem
        
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
-            AppInstance.Instance.InitialiseAppResources(Assets);
+            base.OnCreate(bundle);            
+            AppInstance.Instance.InitialiseAppResources(Assets, this);
             //we initialise the app key for our data store
             ProjectId = AppInstance.Instance.ApiAssets[Constants.ASSET_PROJECT_ID];
             DataStoreApplicationKey = AppInstance.Instance.ApiAssets[Constants.ASSET_DATASTORE_APPKEY];

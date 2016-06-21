@@ -11,14 +11,39 @@ namespace ExcelToAndroidXML
         {
             StringResourcesItems = new StringBuilder();
             ModelItems = new List<FieldItem>();
+            resources = new Dictionary<string, string>();
         }
+
+        Dictionary<string, string> resources;
 
         public void AddStringResource(string resourceName, string resourceValue)
         {
+            if (resources.ContainsKey(resourceName))
+                return;
+            resources[resourceName] = resourceValue;
             StringResourcesItems.AppendLine(string.Format("<string name=\"{0}\">{1}</string>", resourceName, resourceValue));
         }
         public StringBuilder StringResourcesItems { get; set; }
         public List<FieldItem> ModelItems { get; set; }
+    }
+
+    public class SharedInstance
+    {
+        static SharedInstance instance;
+        public static SharedInstance Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new SharedInstance();
+
+                }
+                return instance;
+            }
+        }
+
+        public MetaDataProvider metaDataProvider { get; set; }
     }
 
     public class ViewDefinitionBuilder
@@ -27,10 +52,11 @@ namespace ExcelToAndroidXML
         internal const string DATE_BUTTON_PREFIX = "dtbtn_";
         internal const string DATE_TEXT_PREFIX = "dttxt_";
         internal const string LABEL_PREFIX = "sylbl_";
+        internal MetaDataProvider metaDataProvider;
 
-        public string pageName { get; set; }
+        public string ViewPageName { get; set; }
         public List<FieldDefinition> ViewFields { get; set; }
-        public MetaDataProvider metaDataProvider = null;
+        
         internal bool addDateTitleResource { get; set; }
 
         public ViewDefinitionBuilder()
@@ -63,15 +89,11 @@ namespace ExcelToAndroidXML
 </LinearLayout>
 </ScrollView>
 ";
-            metaDataProvider = new MetaDataProvider();
-            if (addDateTitleResource)
-            {
-                metaDataProvider.AddStringResource(SYS_DATE_SELECT_TEXT, "Select Date");
-            }
-            var asString = getData(ViewFields);
+            //metaDataProvider = new MetaDataProvider();
 
-            //we update the page names
-            metaDataProvider.ModelItems.ForEach(t => t.pageName = pageName);
+            metaDataProvider.AddStringResource(SYS_DATE_SELECT_TEXT, "Select Date");
+            
+            var asString = getData(ViewFields);
 
             var builder = new StringBuilder()
             .AppendFormat(start.Replace("'", "\""), asString);
@@ -159,10 +181,16 @@ namespace ExcelToAndroidXML
             //Button hass text: Select Date [{Label}]
             var fieldXml = getDateControlsDef(stringsEntryName);
             //we need this for the button label
-            metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);            
+            metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
             metaDataProvider.ModelItems.Add(
-                new FieldItem() { dataType = "DatePicker", name = stringsEntryName
-                ,IsIndexed = field.IsIndexed=="1", IsRequired = field.IsIndexed == "1", Label = field.DisplayLabel
+                new FieldItem()
+                {
+                    dataType = "DatePicker",
+                    name = stringsEntryName,
+                    IsIndexed = field.IsIndexed == "1",
+                    IsRequired = field.IsIndexed == "1",
+                    Label = field.DisplayLabel,
+                    pageName = ViewPageName
                 });
             return fieldXml;
         }
@@ -219,12 +247,16 @@ namespace ExcelToAndroidXML
         android:inputType='" + (isNumeric?"number":"text") + @"'
         android:id='@+id/" + stringsEntryName + @"'
         android:hint='@string/" + stringsEntryName + @"' />");
-            metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "EditText", name = stringsEntryName
-                                ,
-                IsIndexed = field.IsIndexed == "1",
-                IsRequired = field.IsIndexed == "1",
-                Label = field.DisplayLabel
-            });
+            metaDataProvider.ModelItems.Add(
+                new FieldItem()
+                {
+                    dataType = "EditText",
+                    name = stringsEntryName,
+                    IsIndexed = field.IsIndexed == "1",
+                    IsRequired = field.IsIndexed == "1",
+                    Label = field.DisplayLabel,
+                    pageName = ViewPageName
+                });
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
             return fieldXml.Replace("'", "\"");
         }
@@ -337,12 +369,16 @@ android:orientation='horizontal'
              android:text='@string/" + optionName + @"'
              android:id='@+id/" + optionName + "' />"
              );
-                metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "CheckBox", name = optionName
-                                    ,
-                    IsIndexed = field.IsIndexed == "1",
-                    IsRequired = field.IsIndexed == "1",
-                    Label = field.DisplayLabel+" ["+ option+"]"
-                });
+                metaDataProvider.ModelItems.Add(
+                    new FieldItem()
+                    {
+                        dataType = "CheckBox",
+                        name = optionName,
+                        IsIndexed = field.IsIndexed == "1",
+                        IsRequired = field.IsIndexed == "1",
+                        Label = field.DisplayLabel + " [" + option + "]",
+                        pageName = ViewPageName
+                    });
                 metaDataProvider.AddStringResource(optionName, option);
 
                 fieldOptionDefinitions.Add(fieldXml.Replace("'", "\""));
@@ -384,12 +420,16 @@ android:id='@+id/" + optionName + "' />"
                     metaDataProvider.AddStringResource(optionName, option);
                 }
 
-                metaDataProvider.ModelItems.Add(new FieldItem() { dataType = "RadioButton", name = optionName
-                                    ,
-                    IsIndexed = field.IsIndexed == "1",
-                    IsRequired = field.IsIndexed == "1",
-                    Label = field.DisplayLabel + " [" + option + "]"
-                });
+                metaDataProvider.ModelItems.Add(
+                    new FieldItem()
+                    {
+                        dataType = "RadioButton",
+                        name = optionName,
+                        IsIndexed = field.IsIndexed == "1",
+                        IsRequired = field.IsIndexed == "1",
+                        Label = field.DisplayLabel + " [" + option + "]",
+                        pageName = ViewPageName
+                    });
 
                 fieldOptionDefinitions.Add(fieldXml.Replace("'", "\""));
             }
