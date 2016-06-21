@@ -96,7 +96,7 @@ namespace JhpDataSystem.modules
 
         private void getClientsToSms()
         {
-           
+            StartActivity(typeof(SmsActivity));
         }
 
         private void getClientsToCall()

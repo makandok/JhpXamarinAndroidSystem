@@ -163,7 +163,7 @@ namespace JhpDataSystem.modules
                 .GetAllBlobs(new KindName(Constants.KIND_PREPEX));
             if (currentIndexes.Count() == 1 && currentIndexes.FirstOrDefault().Value == Constants.DBSAVE_ERROR)
             {
-                //means we couldn get this data, so we throw exeption
+                //means we couldn't get this data, so we throw exeption
                 new ProcessLogger().Log("Could not load data from table " + Constants.KIND_PREPEX);
                 new AlertDialog.Builder(this)
 .SetTitle("List of clients")

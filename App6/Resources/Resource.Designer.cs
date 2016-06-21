@@ -230,8 +230,8 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070024
 			public const int buttonFinalise = 2131165220;
 			
-			// aapt resource value: 0x7f0701ef
-			public const int buttonLoginIn = 2131165679;
+			// aapt resource value: 0x7f0701f0
+			public const int buttonLoginIn = 2131165680;
 			
 			// aapt resource value: 0x7f070020
 			public const int buttonNext = 2131165216;
@@ -256,6 +256,9 @@ namespace JhpDataSystem
 			
 			// aapt resource value: 0x7f070011
 			public const int buttonSaveChanges = 2131165201;
+			
+			// aapt resource value: 0x7f0701eb
+			public const int buttonSendSms = 2131165675;
 			
 			// aapt resource value: 0x7f0700a7
 			public const int buttonSupplies = 2131165351;
@@ -959,8 +962,8 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070009
 			public const int linearLayout4 = 2131165193;
 			
-			// aapt resource value: 0x7f0701ec
-			public const int linearLayout5 = 2131165676;
+			// aapt resource value: 0x7f0701ed
+			public const int linearLayout5 = 2131165677;
 			
 			// aapt resource value: 0x7f07013a
 			public const int lymphadenopathy_no = 2131165498;
@@ -1460,8 +1463,8 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f07009c
 			public const int signed_yes = 2131165340;
 			
-			// aapt resource value: 0x7f0701ee
-			public const int space1 = 2131165678;
+			// aapt resource value: 0x7f0701ef
+			public const int space1 = 2131165679;
 			
 			// aapt resource value: 0x7f070014
 			public const int tExploreDbLabel = 2131165204;
@@ -1469,8 +1472,8 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070019
 			public const int tLoggedInUser = 2131165209;
 			
-			// aapt resource value: 0x7f0701ed
-			public const int tPassCode = 2131165677;
+			// aapt resource value: 0x7f0701ee
+			public const int tPassCode = 2131165678;
 			
 			// aapt resource value: 0x7f07000d
 			public const int tUserName = 2131165197;
@@ -1487,8 +1490,8 @@ namespace JhpDataSystem
 			// aapt resource value: 0x7f070010
 			public const int tUserPassCodeAgain = 2131165200;
 			
-			// aapt resource value: 0x7f0701eb
-			public const int tabHost1 = 2131165675;
+			// aapt resource value: 0x7f0701ec
+			public const int tabHost1 = 2131165676;
 			
 			// aapt resource value: 0x7f070015
 			public const int textLabel2 = 2131165205;
@@ -1666,10 +1669,13 @@ namespace JhpDataSystem
 			public const int prepexunscheduled2 = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int tab_layout_view = 2130903059;
+			public const int smscenter = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int UserLoginLayout = 2130903060;
+			public const int tab_layout_view = 2130903060;
+			
+			// aapt resource value: 0x7f030015
+			public const int UserLoginLayout = 2130903061;
 			
 			static Layout()
 			{
