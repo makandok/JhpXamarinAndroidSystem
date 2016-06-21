@@ -34,13 +34,13 @@
   </style>
   
   
-  <!--<style name="MyTheme.Base" parent="@Style/Theme.AppCompat.Light">
+  <style name="MyTheme.Base" parent="@android:style/Theme.DeviceDefault.Light">
   </style>
 
   <style name="MyTheme" parent="MyTheme.Base">
   </style>
   <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light">
-    <item name="android:windowBackground">@drawable/splash_screen</item>
+    <item name="android:windowBackground">@drawable/vicfalls</item>
     <item name="android:windowNoTitle">true</item>
-  </style>-->
+  </style>
 </resources>

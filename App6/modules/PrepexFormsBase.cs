@@ -165,7 +165,7 @@ namespace JhpDataSystem.modules
             {
                 //means we couldn't get this data, so we throw exeption
                 new ProcessLogger().Log("Could not load data from table " + Constants.KIND_PREPEX);
-                new AlertDialog.Builder(this)
+                new Android.App.AlertDialog.Builder(this)
 .SetTitle("List of clients")
 .SetMessage("Error retrieving list of clients")
 .SetPositiveButton("OK", (senderAlert, args) => { })

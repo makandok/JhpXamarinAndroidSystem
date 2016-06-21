@@ -74,7 +74,7 @@ namespace JhpDataSystem
 
         void showDialog(string title, string message)
         {
-            new AlertDialog.Builder(this)
+            new Android.App.AlertDialog.Builder(this)
             .SetTitle(title)
             .SetMessage(message)
             .SetPositiveButton("OK", (senderAlert, args) => { })
@@ -84,7 +84,7 @@ namespace JhpDataSystem
 
         private void showMenuLoggedInUser(object sender, EventArgs e)
         {
-            new AlertDialog.Builder(this)
+            new Android.App.AlertDialog.Builder(this)
                     .SetTitle("Confirm Action")
                     .SetMessage("Do you want to log out")
                     .SetPositiveButton("OK", (senderAlert, args) =>
