@@ -1,10 +1,25 @@
 using Android.Views;
 using JhpDataSystem.model;
+using System;
 
 namespace JhpDataSystem
 {
     internal static class Extensions
     {
+        internal static long toSafeDate(this DateTime dateValue)
+        {            
+            return (dateValue.Year * 100 + dateValue.Month) * 100 + dateValue.Day;
+        }
+
+        internal static DateTime fromSafeDate(this int safeDate)
+        {
+            var asString = safeDate.ToString();
+            var day = Convert.ToInt16(asString.Substring(5, 2));
+            var month = Convert.ToInt16(asString.Substring(3, 2));
+            var year = Convert.ToInt16(asString.Substring(0, 4));
+            return new DateTime(year, month, day);
+        }
+
         internal static T GetDataView<T>(this FieldItem field, Android.App.Activity context) where T : Android.Views.View
         {
             //we convert these into int Ids

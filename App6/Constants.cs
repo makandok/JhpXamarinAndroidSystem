@@ -8,7 +8,9 @@ namespace JhpDataSystem
         public const string KIND_APPUSERS = "appusers";
         internal const string KIND_PREPEX = "pp_client";
         internal const string KIND_PREPEX_CLIENTEVAL = "pp_client_eval";
-
+        internal const string KIND_PREPEX_DEVICEREMOVAL = "pp_client_devicerem";
+        internal const string KIND_PREPEX_POSTREMOVAL = "pp_client_postrem";
+        internal const string KIND_PREPEX_UNSCHEDULEDVISIT = "pp_client_unsched";
 
         internal const string KIND_VMMC = "vmmcclients";
         public const string KIND_DEFAULT = "generalstore";

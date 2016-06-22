@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using JhpDataSystem.store;
 using Android.Runtime;
 using Android.Content;
+using JhpDataSystem.Utilities;
 
 namespace JhpDataSystem.modules
 {
@@ -80,12 +81,31 @@ namespace JhpDataSystem.modules
 
             var buttonClientsToSms = FindViewById<Button>(Resource.Id.buttonClientsToSms);
             buttonClientsToSms.Click += (sender, e) => {
-                getClientsToSms();
+                new SmsSender()
+                { appContext = this, message = "Message from JHP", phoneNumber = "0977424090" }
+                .Send();
+
+               //getClientsToSms();
             };
 
             var buttonSupplies = FindViewById<Button>(Resource.Id.buttonSupplies);
             buttonSupplies.Click += (sender, e) => {
-                getPrepexSuppliesReport();
+                new EmailSender() {appContext=this, message="This is an email from phone" ,
+                    messageSubject="Test email 90965",receipients=new List<string>() {
+                        "makandok@gmail.com", "makandok@yahoo.com"
+                    } 
+                }.Send();
+                //getPrepexSuppliesReport();
+            };
+
+            var buttonServerSync = FindViewById<Button>(Resource.Id.buttonDatastoreSync);
+            buttonServerSync.Click += async (sender, e) =>
+            {
+                new DataStoreResync()
+                {
+
+                }
+                .Send();
             };
         }
 

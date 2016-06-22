@@ -267,6 +267,7 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <Compile Include="model\FieldItem.cs" />
+    <Compile Include="model\PrepexClientFollowUp.cs" />
     <Compile Include="modules\ClientSummaryActivity.cs" />
     <Compile Include="modules\PrepexClientEvaluation.cs" />
     <Compile Include="modules\PrepexDataEntry.cs" />
@@ -274,6 +275,7 @@
     <Compile Include="modules\PrepexFormsBase.cs" />
     <Compile Include="modules\PrepexPostRemovalVisit.cs" />
     <Compile Include="modules\SmsActivity.cs" />
+    <Compile Include="store\LookupProvider.cs" />
     <Compile Include="SystemConfigActivity.cs" />
     <AndroidAsset Include="Assets\prepexreg_fields.json" />
     <AndroidResource Include="Resources\layout\prepexreg5.axml" />
@@ -286,6 +288,7 @@
     <AndroidResource Include="Resources\layout\smscenter.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <Compile Include="Utilities\SmsSender.cs" />
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />
@@ -355,7 +358,6 @@
   <ItemGroup>
     <Folder Include="communicator\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserLoginLayout.axml">
