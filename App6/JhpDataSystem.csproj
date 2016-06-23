@@ -253,11 +253,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adapter\CustomListAdapter.cs" />
     <Compile Include="ApplicationSplashActivity.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="db\BigQueryAssist.cs" />
     <Compile Include="db\DefaultCredentialProvider.cs" />
     <Compile Include="db\GoogleCredential.cs" />
+    <Compile Include="GridDisplayActivity.cs" />
     <Compile Include="Humongous.cs" />
     <AndroidResource Include="Resources\layout\prepexreg1.axml" />
     <AndroidResource Include="Resources\layout\prepexreg2.axml" />
@@ -275,7 +277,11 @@
     <Compile Include="modules\PrepexFormsBase.cs" />
     <Compile Include="modules\PrepexPostRemovalVisit.cs" />
     <Compile Include="modules\SmsActivity.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="store\LocalDB3.cs" />
     <Compile Include="store\LookupProvider.cs" />
+    <Compile Include="store\SimpleORM.cs" />
     <Compile Include="SystemConfigActivity.cs" />
     <AndroidAsset Include="Assets\prepexreg_fields.json" />
     <AndroidResource Include="Resources\layout\prepexreg5.axml" />
@@ -289,6 +295,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <Compile Include="Utilities\SmsSender.cs" />
+    <AndroidResource Include="Resources\layout\griddisplay.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />

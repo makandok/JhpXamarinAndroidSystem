@@ -5,28 +5,15 @@ using JhpDataSystem.model;
 
 namespace JhpDataSystem.store
 {
-    //public class FlatTableStore : TableStore
-    //{
-    //    new string createKindSql = "create table if not exists {0}(id nvarchar(32) primary key, datablob nvarchar(500));";
-    //    new string insertSql = "insert or replace into {0}(id, datablob) values (@id, @datablob)";
-    //    new string deleteSql = "delete from {0} where id = @id";
-    //    new string selectById = "select id, datablob from {0} where id = @id";
-    //    new string selectIdsForAll = "select id from {0}";
-    //    new string selectDatablobs = "select datablob from {0}";
-    //    public FlatTableStore(KindName kind):base(kind)
-    //    {
-    //    }
-    //}
-
     public class TableStore
     {
         public ProcessLogger MainLogger
         {
             get;set;
         }
-
-        KindName _tableName;
-        LocalDB _db;        
+        protected string TableType = "blob";
+        protected KindName _tableName;
+        protected LocalDB _db;        
         protected const string createKindSql = "create table if not exists {0}(id nvarchar(32) primary key, datablob nvarchar(500));";
         protected const string insertSql = "insert or replace into {0}(id, datablob) values (@id, @datablob)";
         protected const string deleteSql = "delete from {0} where id = @id";

@@ -41,6 +41,9 @@ namespace JhpDataSystem.modules
                 StartActivity(typeof(LauncherActivity));
             };
 
+            var buttonViewListActivity = FindViewById<Button>(Resource.Id.buttonViewListActivity);
+            buttonViewListActivity.Click += (sender, e) => { StartActivity(typeof(GridDisplayActivity)); };
+
             //buttonEditExisting
             var buttonClientEvaluation = FindViewById<Button>(Resource.Id.buttonClientEvaluation);
             buttonClientEvaluation.Click += (sender, e) => {
@@ -124,19 +127,19 @@ namespace JhpDataSystem.modules
             
         }
 
-        private void showAddNewView(bool showNext)
-        {
-            var page = getNextPage(showNext);
-            if (page == currentLayout)
-                return;
+        //private void showAddNewView(bool showNext)
+        //{
+        //    var page = getNextPage(showNext);
+        //    if (page == currentLayout)
+        //        return;
 
-            currentLayout = page;
-            SetContentView(page);
+        //    currentLayout = page;
+        //    SetContentView(page);
 
-            addDefaultNavBehaviours();
-            bindDateDialogEventsForView(page);
+        //    addDefaultNavBehaviours();
+        //    bindDateDialogEventsForView(page);
             
-        }
+        //}
 
         private void bindDateDialogEventsForView(int viewId)
         {
@@ -391,72 +394,75 @@ namespace JhpDataSystem.modules
             };
         }
 
-        private void addDefaultNavBehaviours()
-        {
-            var buttonPrev = FindViewById<Button>(Resource.Id.buttonPrevious);
-            buttonPrev.Click += (sender, e) =>
-            {
-                showAddNewView(false);
-            };
+        //private void addDefaultNavBehaviours()
+        //{
+        //    var buttonPrev = FindViewById<Button>(Resource.Id.buttonPrevious);
+        //    buttonPrev.Click += (sender, e) =>
+        //    {
+        //        showAddNewView(false);
+        //    };
 
-            if (currentLayout == Resource.Layout.PrepexDataEntryEnd)
-            {
-                //add bahviours for Save, Finish and Add Another One
-                //buttonReview
-                var buttonReview = FindViewById<Button>(Resource.Id.buttonReview);
-                buttonReview.Click += (sender, e) =>
-                {
-                    //present aall data in one list, perhaps as an html page
-                    displayTemporalDataAvailable();
-                };
+        //    if (currentLayout == Resource.Layout.PrepexDataEntryEnd)
+        //    {
+        //        //add bahviours for Save, Finish and Add Another One
+        //        //buttonReview
+        //        var buttonReview = FindViewById<Button>(Resource.Id.buttonReview);
+        //        buttonReview.Click += (sender, e) =>
+        //        {
+        //            //present aall data in one list, perhaps as an html page
+        //            displayTemporalDataAvailable();
+        //        };
 
-                //buttonDiscard
-                addDiscardFunctionality();
-                //just quit
+        //        //buttonDiscard
+        //        addDiscardFunctionality();
+        //        //just quit
 
-                //buttonFinalise
-                var buttonFinalise = FindViewById<Button>(Resource.Id.buttonFinalise);
-                buttonFinalise.Click += (sender, e) =>
-                {
-                    //we get the data
-                    var data = getFormData();
-                    var saveable = new PrepexDataSet()
-                    {                        
-                        Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
-                        FormName = Constants.KIND_PREPEX_CLIENTEVAL,
-                        FieldValues = data,
-                    };
+        //        //buttonFinalise
+        //        var buttonFinalise = FindViewById<Button>(Resource.Id.buttonFinalise);
+        //        buttonFinalise.Click += (sender, e) =>
+        //        {
+        //            //we get the data
+        //            var data = getFormData();
+        //            var saveable = new PrepexDataSet()
+        //            {                        
+        //                Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
+        //                FormName = Constants.KIND_PREPEX_CLIENTEVAL,
+        //                FieldValues = data,
+        //            };
 
-                    //save to local db
-                    new DbSaveableEntity(saveable) { kindName = new KindName(saveable.FormName) }
-                    .Save();
+        //            //save to local db
+        //            new DbSaveableEntity(saveable) { kindName = new KindName(saveable.FormName) }
+        //            .Save();
 
-                    //and also to lookups db
-                    var lookupEntry = new PrepexDataSet()
-                    {
-                        Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
-                        FormName = Constants.KIND_PREPEX_CLIENTEVAL,
-                        FieldValues = getIndexedFormData(),
-                    };
-                    new DbSaveableEntity(lookupEntry) {
-                        kindName = new KindName(Constants.KIND_PREPEX) }.Save();
+        //            //and also to lookups db
+        //            var lookupEntry = new PrepexDataSet()
+        //            {
+        //                Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
+        //                FormName = Constants.KIND_PREPEX_CLIENTEVAL,
+        //                FieldValues = getIndexedFormData(),
+        //            };
 
-                    //we close and show the prpex home page
-                    showPrepexHome();
-                };
-            }
-            else
-            {
-                var buttonNext = FindViewById<Button>(Resource.Id.buttonNext);
-                var viewid = currentLayout;
-                buttonNext.Click += (sender, e) =>
-                {
-                    //we get the values
-                    getDataForView(viewid);
-                    showAddNewView(true);
-                };
-            }
-        }
+        //            var ppclient = new PrepexClientSummary().Load(lookupEntry);
+        //            new LocalDB3().DB.InsertOrReplace(ppclient);
+        //            //new DbSaveableEntity(lookupEntry) {
+        //            //    kindName = new KindName(Constants.KIND_PREPEX) }.Save();
+
+        //            //we close and show the prepex home page
+        //            showPrepexHome();
+        //        };
+        //    }
+        //    else
+        //    {
+        //        var buttonNext = FindViewById<Button>(Resource.Id.buttonNext);
+        //        var viewid = currentLayout;
+        //        buttonNext.Click += (sender, e) =>
+        //        {
+        //            //we get the values
+        //            getDataForView(viewid);
+        //            showAddNewView(true);
+        //        };
+        //    }
+        //}
 
         List<NameValuePair> getIndexedFormData()
         {

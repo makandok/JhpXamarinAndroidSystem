@@ -1,16 +1,23 @@
 using JhpDataSystem.model;
+using System.Collections.Generic;
 
 namespace JhpDataSystem
 {
     public class Constants
     {
         //tables in the database
+        internal static List<string> PP_IndexedFieldNames = new List<string> {
+                "dateofvisit", "cardserialnumber","clientidnumber","clientname","dob","clienttel",
+                "clientsphysicaladdress"};
+
         public const string KIND_APPUSERS = "appusers";
         internal const string KIND_PREPEX = "pp_client";
         internal const string KIND_PREPEX_CLIENTEVAL = "pp_client_eval";
         internal const string KIND_PREPEX_DEVICEREMOVAL = "pp_client_devicerem";
         internal const string KIND_PREPEX_POSTREMOVAL = "pp_client_postrem";
         internal const string KIND_PREPEX_UNSCHEDULEDVISIT = "pp_client_unsched";
+        internal const string KIND_PREPEX_CLIENTSUMMARY = "pp_clientsummary";
+        internal const string KIND_PREPEX_CLIENT = "pp_client_parts";
 
         internal const string KIND_VMMC = "vmmcclients";
         public const string KIND_DEFAULT = "generalstore";

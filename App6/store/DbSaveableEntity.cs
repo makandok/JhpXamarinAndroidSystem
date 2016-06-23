@@ -1,25 +1,10 @@
 using JhpDataSystem.model;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace JhpDataSystem.store
-{    
-    public class DbPrepexClient : ISaveableEntity
-    {
-        public KindKey Id { get; set; }
-        public string Names { get; set; }
-        public int ClientNumber { get; set; }
-        public int FormSerial { get; set; }
-        public long PlacementDate { get; set; }
-        public long Day3PhoneCallDate { get; set; }
-        public long Day6SmsReminderDate { get; set; }
-        public long Day7RemovalPhoneCall { get; set; }
-        public long Day9HomeVisitDate { get; set; }
-        public long Day14FollowupCallDate { get; set; }
-        public long Day49CallDate { get; set; }
-        public long Day56PhoneCall { get; set; }
-    }
-
+{
     public class DbSaveableEntity
     {
         ISaveableEntity wrappedEntity;

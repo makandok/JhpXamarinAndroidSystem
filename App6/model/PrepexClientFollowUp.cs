@@ -13,16 +13,16 @@ using JhpDataSystem.store;
 
 namespace JhpDataSystem.model
 {
-    public class PrepexClient
-    {
-        public PrepexClient Load(DbPrepexClient dbClient)
-        {
-            return this;
-        }
+    //public class PrepexClient
+    //{
+    //    public PrepexClient Load(DbPrepexClient dbClient)
+    //    {
+    //        return this;
+    //    }
 
-        public DbPrepexClient asDbPrepexClient()
-        {
-            return new DbPrepexClient();
-        }
-    }
+    //    public DbPrepexClient asDbPrepexClient()
+    //    {
+    //        return new DbPrepexClient();
+    //    }
+    //}
 }

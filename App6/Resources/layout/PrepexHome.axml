@@ -101,5 +101,10 @@
             android:id="@+id/buttonDatastoreSync"
             android:layout_width="400dp"
             android:layout_height="match_parent" />
+        <Button
+            android:text="Test View List Adapter"
+            android:id="@+id/buttonViewListActivity"
+            android:layout_width="400dp"
+            android:layout_height="match_parent" />
     </TableRow>
 </LinearLayout>

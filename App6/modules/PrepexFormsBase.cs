@@ -272,10 +272,9 @@ namespace JhpDataSystem.modules
                         FormName = Constants.KIND_PREPEX_CLIENTEVAL,
                         FieldValues = getIndexedFormData(),
                     };
-                    new DbSaveableEntity(lookupEntry)
-                    {
-                        kindName = new KindName(Constants.KIND_PREPEX)
-                    }.Save();
+
+                    var ppclient = new PrepexClientSummary().Load(lookupEntry);
+                    new LocalDB3().DB.InsertOrReplace(ppclient);
 
                     //we close and show the prpex home page
                     this.Finish();
@@ -302,6 +301,9 @@ namespace JhpDataSystem.modules
 
         protected List<NameValuePair> getIndexedFormData()
         {
+            var indexedFieldName = new List<string>() {
+                "dateofvisit", "cardserialnumber","clientidnumber","clientname","dob","clienttel",
+                "clientsphysicaladdress"};
             var fields = AppInstance.Instance.TemporalViewData;
             return (from viewData in fields
                     from fieldData in viewData.Value
