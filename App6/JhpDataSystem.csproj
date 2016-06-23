@@ -298,6 +298,10 @@
     <AndroidResource Include="Resources\layout\clientsummary.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\clientlist.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <Compile Include="WebFileDownloader.cs" />
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />

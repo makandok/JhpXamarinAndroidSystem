@@ -59,7 +59,7 @@ namespace JhpDataSystem.modules
             //buttonViewList
             var buttonViewList = FindViewById<Button>(Resource.Id.buttonViewList);
             buttonViewList.Click += (sender, e) => {
-                StartActivity(typeof(GridDisplayActivity));
+                StartActivity(typeof(FilteredGridDisplayActivity));
             };
 
             //buttonClientsDueFor
