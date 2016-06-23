@@ -17,18 +17,10 @@ namespace JhpDataSystem.modules
     [Activity(Label = "Prepex Manager", Icon = "@drawable/jhpiego_logo")]
     public class PrepexHomeActivity : Activity
     {
-
-
-        //TextView textView1, textView2;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Create your application here
             showPrepexHome();
-            //var 
-            //textView1 = FindViewById<TextView>(Resource.Id.textView1);
-            //textView2 = FindViewById<TextView>(Resource.Id.textView2);
         }
 
         void showPrepexHome()
@@ -41,15 +33,9 @@ namespace JhpDataSystem.modules
                 StartActivity(typeof(LauncherActivity));
             };
 
-            var buttonViewListActivity = FindViewById<Button>(Resource.Id.buttonViewListActivity);
-            buttonViewListActivity.Click += (sender, e) => { StartActivity(typeof(GridDisplayActivity)); };
-
-            //buttonEditExisting
             var buttonClientEvaluation = FindViewById<Button>(Resource.Id.buttonClientEvaluation);
-            buttonClientEvaluation.Click += (sender, e) => {
-                //PrepexDataEntry
-                //StartActivity(typeof(PrepexDataEntry));
-
+            buttonClientEvaluation.Click += (sender, e) =>
+            {
                 //showAddNewView(true);
                 StartActivity(typeof(PP_ClientEval1));
             };
@@ -73,7 +59,7 @@ namespace JhpDataSystem.modules
             //buttonViewList
             var buttonViewList = FindViewById<Button>(Resource.Id.buttonViewList);
             buttonViewList.Click += (sender, e) => {
-                showViewList();                
+                StartActivity(typeof(GridDisplayActivity));
             };
 
             //buttonClientsDueFor

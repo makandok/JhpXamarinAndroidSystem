@@ -83,6 +83,7 @@
         android:layout_width="match_parent"
         android:layout_height="120dp">
         <Button
+            android:background="@color/colorPrimary"
             android:text="View List of All Clients"
             android:id="@+id/buttonViewList"
             android:layout_width="400dp"
@@ -99,11 +100,6 @@
         <Button
             android:text="Upload Google Data"
             android:id="@+id/buttonDatastoreSync"
-            android:layout_width="400dp"
-            android:layout_height="match_parent" />
-        <Button
-            android:text="Test View List Adapter"
-            android:id="@+id/buttonViewListActivity"
             android:layout_width="400dp"
             android:layout_height="match_parent" />
     </TableRow>

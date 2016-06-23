@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:weightSum="6">
+    <Button
+        android:layout_weight="1"
+        android:text="Day 3 (Call)"
+        android:id="@+id/buttonCSummmCall3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <Button
+        android:layout_weight="1"
+        android:text="Day 6 (SMS)"
+        android:id="@+id/buttonCSummSms6"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <Button
+        android:layout_weight="1"
+        android:text="Day 7 (SMS or Call)"
+        android:id="@+id/buttonCSummSmsOrCall7"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <Button
+        android:layout_weight="1"
+        android:text="Day 14 (Call)"
+        android:id="@+id/buttonCSummCall14"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <Button
+        android:layout_weight="1"
+        android:text="Day 49 (Call)"
+        android:id="@+id/buttonCSummCall49"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <Button
+        android:layout_weight="1"
+        android:text="Day 56 (Call)"
+        android:id="@+id/buttonCSummCall56"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+</LinearLayout>

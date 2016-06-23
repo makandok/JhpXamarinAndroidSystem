@@ -270,12 +270,9 @@
     </AndroidResource>
     <Compile Include="model\FieldItem.cs" />
     <Compile Include="model\PrepexClientFollowUp.cs" />
-    <Compile Include="modules\ClientSummaryActivity.cs" />
     <Compile Include="modules\PrepexClientEvaluation.cs" />
-    <Compile Include="modules\PrepexDataEntry.cs" />
     <Compile Include="modules\PrepexDeviceRemoval.cs" />
     <Compile Include="modules\PrepexFormsBase.cs" />
-    <Compile Include="modules\PrepexPostRemovalVisit.cs" />
     <Compile Include="modules\SmsActivity.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
@@ -405,6 +402,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\vicfalls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\clientsummaryoptions.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
