@@ -298,6 +298,9 @@
     <AndroidResource Include="Resources\layout\griddisplay.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\clientsummary.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
     <None Include="Samples\Archive.cs" />
     <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />
