@@ -118,11 +118,6 @@ namespace JhpDataSystem
 
         private void buttonClicked(object sender, EventArgs e)
         {
-            //new got(Assets) { AplicationKey = "" }.unwrapAriaStark(ApiAssets);
-
-            new got(Assets) { AplicationKey = "" }.trainAriaStark_old(AppInstance.Instance.ApiAssets);
-
-            return;
             var bundle = new Bundle();
 
             var asButton = sender as Button;
