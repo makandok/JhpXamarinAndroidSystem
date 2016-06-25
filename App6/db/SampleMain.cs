@@ -8,6 +8,7 @@ using Google.Apis.Datastore.v1beta3.Data;
 using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace JhpDataSystem.db
 {
@@ -60,7 +61,7 @@ namespace JhpDataSystem.db
         }
 
 
-        public void unwrapAriaStark(Dictionary<string, string> assets)
+        public async void unwrapAriaStark(Dictionary<string, string> assets)
         {
             var projectId = assets[Constants.ASSET_PROJECT_ID];
 
@@ -77,7 +78,7 @@ namespace JhpDataSystem.db
                     ReadOptions = new ReadOptions() { }
                 }, projectId);
 
-            var response = res.Execute();
+            var response = await res.ExecuteAsync();// .Execute();
 
             var y = (
             from entityResult in response.Batch.EntityResults
@@ -88,11 +89,17 @@ namespace JhpDataSystem.db
         }
 
 
-        public void trainAriaStark(Dictionary<string, string> assets)
+        public async void trainAriaStark_old(Dictionary<string, string> assets)
         {
             var projectId = assets[Constants.ASSET_PROJECT_ID];            
             // Create the service.
             var datastore = GetDatastoreService(GetDefaultCredential(assets, _assetManager), assets);
+
+            var serialisedContent = "makando";
+            datastore.SetRequestSerailizedContent(
+                new System.Net.Http.HttpRequestMessage(),
+                serialisedContent
+                );
 
             //create the keys
             //assign ids
@@ -121,11 +128,15 @@ namespace JhpDataSystem.db
             //we figure out how to save
             var firstEntity = entities[0];
             var tr = new BeginTransactionRequest() {};
+           
             var trid= datastore.Projects.BeginTransaction(tr, projectId);
+            //BeginTransactionResponse
+            //TransactionResponse
             var transactionResponse = trid.Execute();
 
-
-            var mut = new Mutation() {Upsert=new Entity() };
+            var mut = new Mutation() {
+                Upsert =new Entity()
+            };
             var cr = new CommitRequest() { Mutations = entities };
 
             datastore.Projects.Commit(cr, projectId);
@@ -136,26 +147,54 @@ namespace JhpDataSystem.db
             var t = 0;
         }
 
-        //Key addTask(DatastoreService datastore, String description)
-        //{
-        //    var t = new Google.Apis.Datastore.v1beta3.Data.AllocateIdsRequest();
-        //    //new Google.Apis.Datastore.v1beta3.DatastoreBaseServiceRequest()
-        //    //t.Keys.Add("MKabila");
+        public async Task<Key> trainAriaStark()
+        {
+            var assets = AppInstance.Instance.ApiAssets;
+            var projectId = assets[Constants.ASSET_PROJECT_ID];
+            var datastore = GetDatastoreService(GetDefaultCredential(assets, _assetManager), assets);
+            return await trainAriaStark(datastore, projectId);
+            //return saveKey;
+        }
 
-        //   //Key key = datastore.allocateId(keyFactory.newKey());
-        //   // Entity task = new Entity();
-        //   // var props = task.Properties;
-        //   // props["description"] = new Value() { StringValue= description };
-        //   // props["created"] = new Value() { TimestampValue = DateTime.Now };
-        //   // props["done"] = new Value() { BooleanValue = false };
-        //   // props[""] = new Value() { StringValue = description };
+        public async Task<Key> trainAriaStark(DatastoreService datastore, string projectId)
+        {
+            //POST https://datastore.googleapis.com/v1beta3/projects/{projectId}:allocateIds
+            //POST https://datastore.googleapis.com/v1beta3/projects/jhpzmb-vmmc-odk:allocateIds?fields=keys&key={YOUR_API_KEY}
 
+            //POST https://datastore.googleapis.com/v1beta3/projects/{projectId}:beginTransaction
+            
+            var trxbody = new BeginTransactionRequest();
+            var beginTrxRequest = datastore.Projects.BeginTransaction(trxbody, projectId);
+            var res = await beginTrxRequest.ExecuteAsync();
+            var key = new Key() { };
+            //var allocateIdRequest = new AllocateIdsRequest();
+            //var key = datastore.Projects.AllocateIds(
+            //    allocateIdRequest, projectId);
+            //var keyRequest = await key.ExecuteAsync();
+            //var allocatedId = keyRequest.Keys.FirstOrDefault();            
 
-        //    //datastore.HttpClient.PutAsync();// .put(task);
-        //    return key;
-        //}
+            var trxid = res.Transaction;
+            var entity = new Entity();
+            entity.Key = key;
+            entity.Properties = new Dictionary<string, Value>();
+            entity.Properties["cardserial"] = new Value() { IntegerValue = 1357 };
+            entity.Properties["datablob"] = new Value() { StringValue = "I was once a blob" };
+            entity.Properties["registerno"] = new Value() { StringValue = "2468" };
 
+            var mutation = new Mutation()
+            {
+                Insert = entity
+            };
 
+            var commitRequest = new CommitRequest();
+            commitRequest.Mutations = new List<Mutation>() { mutation };
+            commitRequest.Transaction = trxid;
+            var commmitReq = datastore.Projects.Commit(commitRequest, projectId);
+
+            var commitExec = await commmitReq.ExecuteAsync();
+            var res1 = commitExec.MutationResults.FirstOrDefault();
+            return res1.Key;
+        }
 
         internal ServiceAccountCredential GetDefaultCredential(Dictionary<string,string> assets, AssetManager assetManager)
         {

@@ -9,6 +9,9 @@ using Google.Apis.Http;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using RestSharp;
+using Google.Apis.Drive.v3;
+using System;
+using System.Net.Http;
 
 namespace JhpDataSystem.db
 {
@@ -94,55 +97,67 @@ namespace JhpDataSystem.db
 
         void mediaUploader()
         {
-            ////https://developers.google.com/drive/v3/web/manage-uploads#exp-backoff
-            //var fileMetadata = new File();
-            //fileMetadata.Name = "My Report";
-            //fileMetadata.MimeType = "application/vnd.google-apps.spreadsheet";
-            //FilesResource.CreateMediaUpload request;
-            //using (var stream = new System.IO.FileStream("files/report.csv",
-            //                        System.IO.FileMode.Open))
-            //{
-            //    var driveService = new Google.Apis.Drive.v2.DriveService();
-            //    request = driveService.Files.Create(
-            //        fileMetadata, stream, "text/csv");
-            //    request.Fields = "id";
-            //    request.Upload();
-            //}
-            //var file = request.ResponseBody;
+            //https://developers.google.com/drive/v3/web/manage-uploads#exp-backoff
+            var fileMetadata = new Google.Apis.Drive.v3.Data.File();
+            fileMetadata.Name = "My Report";
+            fileMetadata.MimeType = "application/vnd.google-apps.spreadsheet";
+            FilesResource.CreateMediaUpload request;
+            using (var stream = new System.IO.FileStream("files/report.csv",
+                                    System.IO.FileMode.Open))
+            {
+                var driveService = new Google.Apis.Drive.v3.DriveService();
+                request = driveService.Files.Create(
+                    fileMetadata, stream, "text/csv");
+                request.Fields = "id";
+                request.Upload();
+            }
+            var file = request.ResponseBody;
+            var fileId = file.Id;
             //Console.WriteLine("File ID: " + file.Id);
-
         }
 
-        //private async Task RunUsingServiceAccount()
-        //{
-        //    var requestUri = "path to server resource we want";
+        private async Task RunUsingServiceAccount()
+        {
+            var requestUri = "path to server resource we want";
 
-        //    IAuthorizationCodeFlow authFLow = null;
-        //    var userId = "";
-        //    TokenResponse token = null;
-        //    var authUri = "";
-        //    ConfigurableMessageHandler messageHandler = new ConfigurableMessageHandler();
+            IAuthorizationCodeFlow authFLow = null;
+            var userId = "";
+            TokenResponse token = null;
+            var authUri = "";
+            ConfigurableMessageHandler messageHandler = new ConfigurableMessageHandler(
+                new MyHandler()
+                );
 
-        //    var cancellationToken = new CancellationToken();
-        //    cancellationToken.Register(() => { });
+            var cancellationToken = new CancellationToken();
+            cancellationToken.Register(() => { });
 
-        //    var credential = new UserCredential(authFLow, userId, token) { };
-        //    var accessToken = await credential.GetAccessTokenForRequestAsync(authUri, cancellationToken);
+            var credential = new UserCredential(authFLow, userId, token) { };
+            var accessToken = await credential.GetAccessTokenForRequestAsync(authUri, cancellationToken);
 
-        //    // Create the service.
-        //    var service = new Google.Apis.Datastore.v1beta3.DatastoreService(new BaseClientService.Initializer
-        //    {
-        //        ApplicationName = "Discovery Sample",
-        //        ApiKey = "[YOUR_API_KEY_HERE]",
+            // Create the service.
+            var service = new Google.Apis.Datastore.v1beta3.DatastoreService(new BaseClientService.Initializer
+            {
+                ApplicationName = "Discovery Sample",
+                ApiKey = "[YOUR_API_KEY_HERE]",
 
-        //    });
+            });
 
-        //    var httpClient = new ConfigurableHttpClient(messageHandler);
+            var httpClient = new ConfigurableHttpClient(messageHandler);
 
-        //    service.HttpClientInitializer.Initialize(httpClient);
+            service.HttpClientInitializer.Initialize(httpClient);
 
-        //    var res = await httpClient.GetAsync(requestUri);
-        //}
+            var res = await httpClient.GetAsync(requestUri);
+        }
+
+        class MyHandler : System.Net.Http.HttpMessageHandler
+        {
+            protected override Task<HttpResponseMessage> SendAsync(
+                HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                return null;
+                //throw new NotImplementedException();
+            }
+        }
 
     }
 }

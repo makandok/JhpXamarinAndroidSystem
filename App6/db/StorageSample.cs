@@ -33,7 +33,8 @@ using Google.Apis.Download;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
 using Google.Apis.Auth.OAuth2;
-
+using Google.Apis.Datastore.v1beta3;
+using Google.Apis.Datastore.v1beta3.Data;
 
 namespace JhpDataSystem.db
 {
@@ -41,44 +42,52 @@ namespace JhpDataSystem.db
     {
         public void DoNothing()
         {
-           // var serviceAccountEmail = "***.apps.googleusercontent.com";
+            var serviceAccountEmail = "***.apps.googleusercontent.com";
 
-           // var certificate = new X509Certificate2(
-           //     @"***-privatekey.p12", "notasecret", X509KeyStorageFlags.Exportable);
+            var certificate = new X509Certificate2(
+                @"***-privatekey.p12", "notasecret", X509KeyStorageFlags.Exportable);
 
 
-           // var t = Google.Apis.Auth.OAuth2.ServiceAccountCredential
+            //var t = Google.Apis.Auth.OAuth2.ServiceAccountCredential
 
-           // var credential = new ServiceAccountCredential( new ServiceAccountCredential.Initializer(serviceAccountEmail)
-           //    {
-           //        Scopes = new[] {
-           //Google.Apis.Datastore.v1beta1.DatastoreService.Scope.Datastore.ToString().ToLower()
-           //        }
-           //    }.FromCertificate(certificate));
+            var credential = new ServiceAccountCredential(new ServiceAccountCredential.Initializer(serviceAccountEmail)
+            {
+                Scopes = new[] {
+           Google.Apis.Datastore.v1beta3.DatastoreService.Scope.Datastore.ToString().ToLower()
+                }
+            }.FromCertificate(certificate));
 
-           // // Create the service.
-           // var service = new DatastoreService(new BaseClientService.Initializer()
-           // {
-           //     HttpClientInitializer = credential,
-           //     ApplicationName = "***",
-           // });
+            // Create the service.
+            var service = new DatastoreService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "***",
+            });
 
-           // var request = new GoogleData.BlindWriteRequest();
-           // var entity = new GoogleData.Entity();
-           // entity.Key = new GoogleData.Key();
-           // entity.Key.Path = new List<KeyPathElement>();
-           // entity.Key.Path.Add(new GoogleData.KeyPathElement { Kind = "KindTest", Name = "name" });
-           // var firstName = new GoogleData.Property();
-           // firstName.Values = new List<GoogleData.Value>();
-           // firstName.Values.Add(new GoogleData.Value { StringValue = "FName" });
-           // entity.Properties = new Dictionary<string, Property>();
+            var request = new Google.Apis.Datastore.v1beta3.Data
+                .BeginTransactionRequest();
+            // GoogleData.BlindWriteRequest();
+            var entity = new Entity();
+            entity.Key = new Google.Apis.Datastore.v1beta3.Data.Key();
+            entity.Key.Path = new List<Google.Apis.Datastore.v1beta3.Data.PathElement>();
+            entity.Key.Path.Add(new Google.Apis.Datastore.v1beta3.Data.PathElement() { Kind = "KindTest", Name = "name" });
+            var firstName = new Google.Apis.Datastore.v1beta3.Data.PropertyReference();//.Property();
+            //firstName.
+            //firstName.Values = new List<Google.Apis.Datastore.v1beta3.Data.Value>();
+            //firstName. .Values.Add(new Google.Apis.Datastore.v1beta3.Data.Value { StringValue = "FName" });
+            entity.Properties = new Dictionary<string, Google.Apis.Datastore.v1beta3.Data.Value>();
+            entity.Properties["firstName"] = new 
+                Google.Apis.Datastore.v1beta3.Data.Value { StringValue = "FName" };
 
-           // entity.Properties.Add("FirstName", firstName);
-           // request.Mutation = new GoogleData.Mutation();
-           // request.Mutation.Upsert = new List<GoogleData.Entity>();
-           // request.Mutation.Upsert.Add(entity);
+            entity.Properties.Add("FirstName", new
+                Google.Apis.Datastore.v1beta3.Data.Value
+            { StringValue = "FName" });
 
-           // var response = service.Datasets.BlindWrite(request, "***").Execute();
+            //request.Mutation = new Mutation();
+            //request.Mutation.Upsert = new List<Entity>();
+            //request.Mutation.Upsert.Add(entity);
+
+            //var response = service.Datasets.BlindWrite(request, "***").Execute();
         }
 
         public StorageService CreateStorageClient()

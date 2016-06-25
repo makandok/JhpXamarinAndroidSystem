@@ -259,6 +259,7 @@
     <Compile Include="db\BigQueryAssist.cs" />
     <Compile Include="db\DefaultCredentialProvider.cs" />
     <Compile Include="db\GoogleCredential.cs" />
+    <None Include="db\GoogleDataStoreNotCompiled.cs" />
     <Compile Include="GridDisplayActivity.cs" />
     <Compile Include="Humongous.cs" />
     <AndroidResource Include="Resources\layout\prepexreg1.axml" />
@@ -277,8 +278,6 @@
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="store\LocalDB3.cs" />
-    <Compile Include="store\LookupProvider.cs" />
-    <Compile Include="store\SimpleORM.cs" />
     <Compile Include="SystemConfigActivity.cs" />
     <AndroidAsset Include="Assets\prepexreg_fields.json" />
     <AndroidResource Include="Resources\layout\prepexreg5.axml" />
@@ -309,9 +308,7 @@
     <Compile Include="model\EntityKey.cs" />
     <Compile Include="BrowserDataEntryActivity.cs" />
     <Compile Include="modules\PrepexHomeActivity.cs" />
-    <Compile Include="Resources\layout\WebhostActivity.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
-    <Compile Include="store\KindRegistryQuery.cs" />
     <Compile Include="db\ServiceAccountCredentiaal.cs" />
     <Compile Include="db\SampleMain.cs" />
     <Compile Include="db\SHA256CryptoServiceProvider.cs" />

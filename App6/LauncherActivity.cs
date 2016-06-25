@@ -120,7 +120,7 @@ namespace JhpDataSystem
         {
             //new got(Assets) { AplicationKey = "" }.unwrapAriaStark(ApiAssets);
 
-            new got(Assets) { AplicationKey = "" }.trainAriaStark(AppInstance.Instance.ApiAssets);
+            new got(Assets) { AplicationKey = "" }.trainAriaStark_old(AppInstance.Instance.ApiAssets);
 
             return;
             var bundle = new Bundle();

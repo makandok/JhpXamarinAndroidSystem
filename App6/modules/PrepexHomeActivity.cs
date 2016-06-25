@@ -11,6 +11,7 @@ using JhpDataSystem.store;
 using Android.Runtime;
 using Android.Content;
 using JhpDataSystem.Utilities;
+using JhpDataSystem.db;
 
 namespace JhpDataSystem.modules
 {
@@ -90,11 +91,11 @@ namespace JhpDataSystem.modules
             var buttonServerSync = FindViewById<Button>(Resource.Id.buttonDatastoreSync);
             buttonServerSync.Click += async (sender, e) =>
             {
-                new DataStoreResync()
-                {
+                Toast.MakeText(this, "Performing action requested", Android.Widget.ToastLength.Short).Show();
 
-                }
-                .Send();
+                var res = await new got(Assets).trainAriaStark();
+                var resString = res == null ? "RES IS NULL" : res.ToString();
+                Toast.MakeText(this, "Save Results Received. Key: "+ resString, Android.Widget.ToastLength.Long).Show();
             };
         }
 
