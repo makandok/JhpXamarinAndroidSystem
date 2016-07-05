@@ -5,7 +5,13 @@
   <string name="DEFAULT_ERRORCODE">9999</string>
   <string name="login">Login</string>
   <string name="EditUser">Edit Users</string>
-
+  <string name="remembertocall">Please remember to call the clients indicated here</string>
+  <string name="sms_msgwithname">Hello {0}, You are \'Almost there\'! Tomorrow is day 7. REMEMBER to go for PrePex removal at Chingwere Clinic</string>
+  <string name="sms_confirmation">The Day 6 SMS reminder message will be sent out to {0} client{1} listed. Do you want to proceed?</string>
+  <string name="confirm_action">Confirm action</string>
+  <string name="noclients_tosms">No clients to SMS for this day</string>
+  <string name="sms_clientsalreadysmsd">Warning, a reminder message has already been sent. Do you still want to send the same message</string>
+  
   <string name="sys_dateselect">Select Date</string>
   <string name="generalsummary_hdr">General Summary</string>
   <string name="facilityname">Facility</string>

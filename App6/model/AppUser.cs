@@ -5,6 +5,12 @@ using System.Linq;
 
 namespace JhpDataSystem.model
 {
+    public class ContactNumber
+    {
+        public string name { get; set; }
+        public string phoneNumber { get; set; }
+    }
+
     //[SQLite.Table(Constants.KIND_PREPEX_CLIENT)]
     //public class PrepexClient: ISaveableEntity
     //{

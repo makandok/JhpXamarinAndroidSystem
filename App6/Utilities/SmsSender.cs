@@ -12,9 +12,48 @@ using Android.Widget;
 using System.Json;
 using System.Net;
 using System.Threading.Tasks;
+using JhpDataSystem.model;
+using System.Threading;
 
 namespace JhpDataSystem.Utilities
 {
+    public class BulkSmsSender
+    {
+        //public List<ContactNumber> contactNumbers { get; set; }
+        public List<PrepexClientSummary> contactNumbers { get; set; }
+
+        public string formattedText { get; set; }
+
+        public Context CurrentContext { get; set; }
+
+        public async Task<bool> Send()
+        {
+            foreach (var client in contactNumbers)
+            {
+                //client.Telephone = "0964260027";
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        new SmsSender()
+                        {
+                            message = string.Format(formattedText, client.Names),
+                            phoneNumber = client.Telephone
+                        }.Send();
+                        client.Day6SmsReminderDate = DateTime.Now;
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                });
+
+                await Task.Delay(TimeSpan.FromMilliseconds(2000));
+            }
+            return true;
+        }
+    }
+
     //https://developer.xamarin.com/recipes/android/networking/
     internal class SmsSender
     {
@@ -26,16 +65,9 @@ namespace JhpDataSystem.Utilities
             var smsHelper = Android.Telephony.SmsManager.Default;
             //pendingIntent
             smsHelper.SendTextMessage(phoneNumber, null, message, null, null);
-
-            //Open SMS appp to send message
-            //var dest = Android.Net.Uri.Parse("smsto:" + phoneNumber);
-            //var intent = new Intent(Intent.ActionSendto, dest);
-            //intent.PutExtra("sms_body", message);
-            //appContext.StartActivity(intent);
-            //Toast.MakeText(appContext, "Your message has been sent", ToastLength.Short).Show();
         }
     }
-
+    
     internal class EmailSender
     {
         public string message { get; set; }
