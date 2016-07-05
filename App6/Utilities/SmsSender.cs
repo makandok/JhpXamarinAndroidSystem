@@ -15,14 +15,6 @@ using System.Threading.Tasks;
 
 namespace JhpDataSystem.Utilities
 {
-    internal class DataStoreResync
-    {
-        public async void Send()
-        {
-
-        }
-    }
-
     //https://developer.xamarin.com/recipes/android/networking/
     internal class SmsSender
     {

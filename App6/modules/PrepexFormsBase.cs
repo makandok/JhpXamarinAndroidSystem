@@ -21,11 +21,26 @@ namespace JhpDataSystem.modules
 
     public class PrepexFormsBase : Activity
     {
+        protected bool _isRegistration = false;
         protected int myView = -1;
         protected IPP_NavController myNavController = null;
+        protected bool RequiresClient = true;
+        protected PrepexClientSummary CurrentClient { get; set; }
+
+        private PrepexClientSummary showClientSelectionDialog()
+        {
+            return null;
+        }
 
         protected void ShowMyView()
         {
+            //if requires selection of client, we show the client selection dialog
+            if (RequiresClient && CurrentClient == null)
+            {
+                //we show the client selection dialog
+                var selectedClient = showClientSelectionDialog();
+            }
+
             SetContentView(myView);
             addDefaultNavBehaviours();
             bindDateDialogEventsForView(myView);
@@ -149,11 +164,6 @@ namespace JhpDataSystem.modules
         protected List<FieldItem> GetFieldsForView(int viewId)
         {
             return AppInstance.Instance.FieldItems.Where(t => t.PageId == viewId).ToList();
-            //var filterString = string.Empty;
-            //var name = Resources.GetResourceEntryName(viewId);
-            //filterString = name;
-            //var fields = (AppInstance.Instance.FieldItems.Where(t => t.pageName == filterString)).ToList();
-            //return fields;
         }
 
         protected void showViewList()
@@ -254,28 +264,66 @@ namespace JhpDataSystem.modules
                 {
                     //we get the data
                     var data = getFormData();
+                    if (data.Count == 0)
+                    {
+                        return;
+                    }
+
+                    var kindKey = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId());
+                    var kindname = new KindName(Constants.KIND_PREPEX_CLIENTEVAL);
                     var saveable = new PrepexDataSet()
                     {
-                        Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
-                        FormName = Constants.KIND_PREPEX_CLIENTEVAL,
-                        FieldValues = data,
+                        Id = kindKey,
+                        FormName = kindname.Value,
+                        //FieldValues = data,
                     };
 
-                    //save to local db
-                    new DbSaveableEntity(saveable) { kindName = new KindName(saveable.FormName) }
-                    .Save();
-
-                    //and also to lookups db
-                    var lookupEntry = new PrepexDataSet()
+                    //save to lookups db
+                    if (this.GetType() == typeof(PP_ClientEvalEnd))
                     {
-                        Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
-                        FormName = Constants.KIND_PREPEX_CLIENTEVAL,
-                        FieldValues = getIndexedFormData(),
-                    };
+                        var entityId = new KindKey(kindKey.Value);
+                        saveable.EntityId = entityId;
+                        data.Add(new NameValuePair() {
+                            Name = Constants.FIELD_ENTITYID,
+                            Value = entityId.Value });
+                        //we get the device size
+                        var deviceSizeControl = data.Where(t => t.Name.Contains(Constants.FIELD_PREPEX_DEVSIZE_PREFIX)).FirstOrDefault();
+                        if (deviceSizeControl != null)
+                        {
+                            var deviceSize = deviceSizeControl.Name.Last().ToString().ToUpperInvariant();
+                            data.Add(new NameValuePair() { Name = Constants.FIELD_PREPEX_DEVSIZE, Value = deviceSize });
+                        }                       
+                    
+                        //we get the client lookup details and save these
+                    }
+                    else
+                    {
+                        //also update client details but only if they have changes
 
-                    var ppclient = new PrepexClientSummary().Load(lookupEntry);
+                        //consider passing along the client id
+                        //var clientid = getCurrentClientId();
+                        //data.Add(new NameValuePair() { Name = Constants.FIELD_ENTITYID, Value = clientid });
+                    }
+
+                    data.Add(new NameValuePair() { Name = Constants.FIELD_ID, Value = kindKey.Value });
+
+                    saveable.FieldValues = getIndexedFormData(data);
+                    var ppclient = new PrepexClientSummary().Load(saveable);
                     new LocalDB3().DB.InsertOrReplace(ppclient);
 
+                    //save to local db
+                    saveable.FieldValues = data;
+                    var saveableEntity = new DbSaveableEntity(saveable) { kindName = kindname };
+                    saveableEntity.Save();
+
+                    //fire and forget
+                    AppInstance.Instance.CloudDbInstance.AddToOutQueue(saveableEntity);
+                    AppInstance.Instance.TemporalViewData.Clear();
+
+                    //we show the splash screen and await results of the operation
+                    //todo: show dialog when beginning server sync and await excution
+                    AppInstance.Instance.CloudDbInstance.EnsureServerSync();
+                    
                     //we close and show the prpex home page
                     this.Finish();
                     //showPrepexHome();
@@ -299,18 +347,25 @@ namespace JhpDataSystem.modules
             }
         }
 
-        protected List<NameValuePair> getIndexedFormData()
+        protected List<NameValuePair> getIndexedFormData(List<NameValuePair> data)
         {
-            var indexedFieldName = new List<string>() {
-                "dateofvisit", "cardserialnumber","clientidnumber","clientname","dob","clienttel",
-                "clientsphysicaladdress"};
-            var fields = AppInstance.Instance.TemporalViewData;
-            return (from viewData in fields
-                    from fieldData in viewData.Value
-                    where fieldData.Field.IsIndexed
-                    let rec = fieldData.AsNameValuePair()
-                    select rec).ToList();
+            var indexFieldNames = Constants.PP_IndexedFieldNames;
+            return (data.Where(
+                t => indexFieldNames.Contains(t.Name))).ToList();
         }
+
+        //protected List<NameValuePair> getIndexedFormData()
+        //{
+        //    var indexedFieldName = new List<string>() {
+        //        Constants.FIELD_ENTITYID,"dateofvisit", "cardserialnumber","clientidnumber","clientname","dob","clienttel",
+        //        "clientsphysicaladdress"};
+        //    var fields = AppInstance.Instance.TemporalViewData;
+        //    return (from viewData in fields
+        //            from fieldData in viewData.Value
+        //            where fieldData.Field.IsIndexed
+        //            let rec = fieldData.AsNameValuePair()
+        //            select rec).ToList();
+        //}
 
         protected List<NameValuePair> getFormData(bool useDisplayLabels = false)
         {

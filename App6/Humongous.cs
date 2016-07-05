@@ -28,15 +28,18 @@ namespace JhpDataSystem
             }
         }
 
+        AssetManager _assetManager { get; set; }
+
         public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
 
         public Dictionary<string, string> ApiAssets = null;
-        public void InitialiseAppResources(AssetManager assets, Activity context)
+        public void InitialiseAppResources(AssetManager assetManager, Activity context)
         {
+            _assetManager = assetManager;
             TemporalViewData = new Dictionary<int, List<FieldValuePair>>();
             ApiAssets = new Dictionary<string, string>();
             //we read the api key file
-            var inputStream = assets.Open(Constants.API_KEYFILE);
+            var inputStream = assetManager.Open(Constants.API_KEYFILE);
             var jsonObject = System.Json.JsonValue.Load(inputStream);
 
             ApiAssets[Constants.ASSET_NAME_APPNAME] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_APPNAME);
@@ -50,7 +53,7 @@ namespace JhpDataSystem
             var cs = LocalEntityStore.Instance.ConnectionString;
 
             //we load the fields
-            var prepexFieldsStream = assets.Open(Constants.FILE_PREPEX_FIELDS_CLIENTEVAL);
+            var prepexFieldsStream = assetManager.Open(Constants.FILE_PREPEX_FIELDS_CLIENTEVAL);
             var asString = prepexFieldsStream.toText();
 
             var fields = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FieldItem>>(asString);
@@ -71,6 +74,8 @@ namespace JhpDataSystem
             {
                 field.PageId = dictionary[field.pageName];
             }
+
+            CloudDbInstance = new CloudDb(_assetManager);
         }
 
         public List<FieldItem> FieldItems = null;
@@ -80,6 +85,11 @@ namespace JhpDataSystem
         internal void SetTempDataForView(int viewId, List<FieldValuePair> valueFields)
         {
             throw new NotImplementedException();
+        }
+
+        public CloudDb CloudDbInstance
+        {
+            get;private set;
         }
     }
 

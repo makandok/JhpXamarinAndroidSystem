@@ -6,9 +6,19 @@ namespace JhpDataSystem
     public class Constants
     {
         //tables in the database
-        internal static List<string> PP_IndexedFieldNames = new List<string> {
-                "dateofvisit", "cardserialnumber","clientidnumber","clientname","dob","clienttel",
+        internal static List<string> PP_IndexedFieldNames = new List<string>() {
+                Constants.FIELD_PREPEX_DEVSIZE,
+                Constants.FIELD_ID,Constants.FIELD_ENTITYID,"dateofvisit",
+                "cardserialnumber","clientidnumber","clientname","dob","clienttel",
                 "clientsphysicaladdress"};
+
+        //internal static List<string> PP_IndexedFieldNames = new List<string> {
+        //        "dateofvisit", "cardserialnumber","clientidnumber","clientname","dob","clienttel",
+        //        "clientsphysicaladdress"};
+        internal const string FIELD_ENTITYID = "entityid";
+        internal const string FIELD_ID = "id";
+        internal const string FIELD_PREPEX_DEVSIZE = "ppxdevsize";
+        internal const string FIELD_PREPEX_DEVSIZE_PREFIX = "prepexdevicesize";
 
         public const string KIND_APPUSERS = "appusers";
         internal const string KIND_PREPEX = "pp_client";
@@ -17,6 +27,7 @@ namespace JhpDataSystem
         internal const string KIND_PREPEX_POSTREMOVAL = "pp_client_postrem";
         internal const string KIND_PREPEX_UNSCHEDULEDVISIT = "pp_client_unsched";
         internal const string KIND_PREPEX_CLIENTSUMMARY = "pp_clientsummary";
+        internal const string KIND_OUTTRANSPORT = "transport";
         internal const string KIND_PREPEX_CLIENT = "pp_client_parts";
 
         internal const string KIND_VMMC = "vmmcclients";
@@ -63,5 +74,6 @@ namespace JhpDataSystem
         internal const string LABEL_PREFIX = "sylbl_";
 
         internal const string DEFAULT_CHECKED = "1";
+
     }
 }

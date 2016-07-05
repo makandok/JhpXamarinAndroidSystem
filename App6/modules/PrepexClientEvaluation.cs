@@ -89,12 +89,6 @@ namespace JhpDataSystem.modules
         }
     }
 
-
-
-
-
-
-
     [Activity(Label = "A.2: Unscheduled or Follow-Up Prepex Assessment - 2")]
     public class PP_Unscheduled2 : PrepexFormsBase
     {
@@ -141,8 +135,9 @@ namespace JhpDataSystem.modules
     public class PP_ClientEval1 : PrepexFormsBase
     {        
         protected override void OnCreate(Bundle savedInstanceState)
-        {            
+        {
             base.OnCreate(savedInstanceState);
+            RequiresClient = false;
 
             // Create your application here
             myView = Resource.Layout.prepexreg1;
@@ -157,6 +152,7 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            RequiresClient = false;
 
             // Create your application here
             myView = Resource.Layout.prepexreg2;
@@ -171,6 +167,7 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            RequiresClient = false;
 
             // Create your application here
             myView = Resource.Layout.prepexreg3;
@@ -185,6 +182,7 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            RequiresClient = false;
 
             // Create your application here
             myView = Resource.Layout.prepexreg4;
@@ -199,6 +197,7 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            RequiresClient = false;
 
             // Create your application here
             myView = Resource.Layout.prepexreg5;
@@ -213,6 +212,7 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            RequiresClient = false;
 
             // Create your application here
             myView = Resource.Layout.PrepexDataEntryEnd;

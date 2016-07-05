@@ -48,12 +48,12 @@ namespace JhpDataSystem.Utilities
             Log.Debug(TAG, selectedDate.ToLongDateString());
             _dateSelectedHandler(selectedDate);
         }
-        void useAsFollows()
-        {
-            _dateDisplay = FindViewById<TextView>(Resource.Id.date_display);
-            _dateSelectButton = FindViewById<Button>(Resource.Id.date_select_button);
-            _dateSelectButton.Click += DateSelect_OnClick;
-        }
+        //void useAsFollows()
+        //{
+        //    _dateDisplay = FindViewById<TextView>(Resource.Id.date_display);
+        //    _dateSelectButton = FindViewById<Button>(Resource.Id.date_select_button);
+        //    _dateSelectButton.Click += DateSelect_OnClick;
+        //}
         void DateSelect_OnClick(object sender, EventArgs eventArgs)
         {
             DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)

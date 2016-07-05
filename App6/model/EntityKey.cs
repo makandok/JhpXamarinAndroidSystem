@@ -5,18 +5,29 @@ namespace JhpDataSystem.model
     public interface ISaveableEntity
     {
         KindKey Id { get; set; }
-        //KindName Kind { get; }
+        KindKey EntityId { get; set; }
     }
 
-    public class KindItem //: ISaveableEntity
+    public class KindEntity
+    {
+        public KindItem kindItem { get; set; }
+        public KindName kindName { get; set; }
+        public KindKey kindKey { get; set; }
+        //public KindEntity()
+        //{
+        //    //_kindItem = kindItem;
+        //    //_kindKey = kindKey;
+        //    //_kindName = kindName;
+        //}
+    }
+
+    public class KindItem
     {
         public KindItem(string value)
         {
             Value = value;
         }
         public string Value;
-
-        //public KindKey Id { get; set; }
     }
 
     public class KindKey

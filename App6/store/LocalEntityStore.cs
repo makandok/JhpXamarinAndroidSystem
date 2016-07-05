@@ -30,11 +30,11 @@ namespace JhpDataSystem.store
             _localDb = new LocalDB();
             ConnectionString = new LocalDB().ConnectionString;
 
-            var localdb3 = new JhpDataSystem.store.LocalDB3();
+            var localdb3 = new LocalDB3();
             var db = localdb3.DB;
-            db.CreateTable<KindRegisterItem>();
+            //db.CreateTable<KindRegisterItem>();
             db.CreateTable<PrepexClientSummary>();
-
+            db.CreateTable<OutEntity>();
             //new FlatTableStore(new KindName(Constants.KIND_REGISTER)).build<KindRegisterItem>();
 
             defaultTableStore = new TableStore(Constants.KIND_DEFAULT);

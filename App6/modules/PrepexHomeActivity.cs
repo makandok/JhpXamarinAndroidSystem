@@ -43,6 +43,7 @@ namespace JhpDataSystem.modules
 
             var buttonUnscheduled = FindViewById<Button>(Resource.Id.buttonUnscheduled);
             buttonUnscheduled.Click += (sender, e) => {
+                //var selectedClient = showClientSelectionDialog();
                 StartActivity(typeof(PP_Unscheduled1));
             };
             var buttonDeviceRemovalVisit = FindViewById<Button>(Resource.Id.buttonDeviceRemovalVisit);
@@ -70,7 +71,8 @@ namespace JhpDataSystem.modules
             };
 
             var buttonClientsToSms = FindViewById<Button>(Resource.Id.buttonClientsToSms);
-            buttonClientsToSms.Click += (sender, e) => {
+            buttonClientsToSms.Click += (sender, e) =>
+            {
                 new SmsSender()
                 { appContext = this, message = "Message from JHP", phoneNumber = "0977424090" }
                 .Send();
@@ -87,15 +89,17 @@ namespace JhpDataSystem.modules
                 }.Send();
                 //getPrepexSuppliesReport();
             };
-
+            //we get the number of unsync'd records
+            var unsyncdRecs = new CloudDb(Assets).GetRecordsToSync();
             var buttonServerSync = FindViewById<Button>(Resource.Id.buttonDatastoreSync);
+            buttonServerSync.Text = string.Format("Save to Server. {0} unsaved", unsyncdRecs.Count);
             buttonServerSync.Click += async (sender, e) =>
             {
                 Toast.MakeText(this, "Performing action requested", Android.Widget.ToastLength.Short).Show();
-
-                var res = await new got(Assets).trainAriaStark();
-                var resString = res == null ? "RES IS NULL" : res.ToString();
-                Toast.MakeText(this, "Save Results Received. Key: "+ resString, Android.Widget.ToastLength.Long).Show();
+                await AppInstance.Instance.CloudDbInstance.EnsureServerSync();
+                //var res = await new got(Assets).trainAriaStark();
+                //var resString = res == null ? "RES IS NULL" : res.ToString();
+                Toast.MakeText(this, "Sync completed", Android.Widget.ToastLength.Short).Show();
             };
         }
 

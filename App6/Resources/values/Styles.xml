@@ -39,8 +39,8 @@
 
   <style name="MyTheme" parent="MyTheme.Base">
   </style>
-  <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light">
+  <!--<style name="MyTheme.Splash" parent ="Theme.AppCompat.Light">
     <item name="android:windowBackground">@drawable/vicfalls</item>
     <item name="android:windowNoTitle">true</item>
-  </style>
+  </style>-->
 </resources>
