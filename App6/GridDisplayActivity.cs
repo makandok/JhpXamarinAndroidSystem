@@ -9,6 +9,7 @@ using Android.Widget;
 using JhpDataSystem.model;
 using JhpDataSystem.store;
 using System.Globalization;
+using Android.Support.Design.Widget;
 
 namespace JhpDataSystem
 {
@@ -99,26 +100,38 @@ namespace JhpDataSystem
         }
 
         void showClients4TMinus(int daysPast)
-        {             
+        {
+            //textCSummOptionsLabel   
+            var textCSummOptionsLabel = FindViewById<TextView>(Resource.Id.textCSummOptionsLabel);
             var listview = FindViewById<ListView>(Resource.Id.listviewClientList);
 
             //if someone clicks the button again, we show the full list
             var currentAdapter = listview.Adapter as ClientSummaryAdapter;
             if(currentAdapter!=null && currentAdapter.tMinus == daysPast)
             {
-                Android.Widget.Toast.MakeText(this, "Showing all clients", Android.Widget.ToastLength.Short).Show();
+                if (textCSummOptionsLabel != null)
+                    textCSummOptionsLabel.Text = "All Clients";
+
+                //Android.Widget.Toast.MakeText(this, "Showing all clients", Android.Widget.ToastLength.Short).Show();
                 listview.Adapter = _defaultAdapter;
                 return;
             }
 
             //else we filter based on choice
             var tMinus = DateTime.Now.Subtract(new TimeSpan(daysPast, 0, 0, 0));
-            Android.Widget.Toast.MakeText(this, "Showing clients for " + tMinus.ToShortDateString(), Android.Widget.ToastLength.Short).Show();
+
+            if (textCSummOptionsLabel != null)
+                textCSummOptionsLabel.Text = "Clients for " + tMinus.ToShortDateString();
+
+            //Android.Widget.Toast.MakeText(this, "Showing clients for " + tMinus.ToShortDateString(), Android.Widget.ToastLength.Short).Show();
             listview.Adapter = new ClientSummaryAdapter(this,
                 listview
                 , getClients4TMinus(daysPast)
                 )
             { tMinus = daysPast };
+
+            //we show the fab
+            //var fab = new FloatingActionButton(this, );
         }
 
         List<PrepexClientSummary> getClients4TMinus(int daysPast)
