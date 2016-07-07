@@ -5,13 +5,9 @@ using Android.OS;
 using Android.Widget;
 using JhpDataSystem.model;
 using System.Linq;
-using Android.Views;
-using Newtonsoft.Json;
 using JhpDataSystem.store;
-using Android.Runtime;
 using Android.Content;
 using JhpDataSystem.Utilities;
-using JhpDataSystem.db;
 
 namespace JhpDataSystem.modules
 {
@@ -26,7 +22,6 @@ namespace JhpDataSystem.modules
 
         void showPrepexHome()
         {
-            currentLayout = -1;
             SetContentView(Resource.Layout.PrepexHome);
             var closeButton = FindViewById<Button>(Resource.Id.buttonClose);
             closeButton.Click += (sender, e) => {
@@ -156,7 +151,7 @@ namespace JhpDataSystem.modules
                 if (dateSelectButton == null)
                     continue;
 
-                //create events for them and their accompanyinng text fields
+                //create events for them and their accompanying text fields
                 dateSelectButton.Click += (a, b) =>
                 {
                     var dateViewId = context.Resources.GetIdentifier(
@@ -164,7 +159,6 @@ namespace JhpDataSystem.modules
                     var sisterView = FindViewById<EditText>(dateViewId);
                     if (sisterView == null)
                         return;
-                    //sisterView.Text = "text set by date click";
                     var frag = DatePickerFragment.NewInstance((time) =>
                     {
                         sisterView.Text = time.ToLongDateString();
@@ -269,232 +263,9 @@ namespace JhpDataSystem.modules
             return fields;
         }
 
-        private void showCliwentDueForView()
-        {
-            //SetContentView(Resource.Layout.prepexreg1);
-            //ClientSummaryActivity
-        }
-
-        private void showViewList()
-        {
-            //we show all the clients
-            var currentIndexes = LocalEntityStore.Instance
-                .GetAllBlobs(new KindName(Constants.KIND_PREPEX));
-            if(currentIndexes.Count()==1 && currentIndexes.FirstOrDefault().Value == Constants.DBSAVE_ERROR)
-            {
-                //means we couldn get this data, so we throw exeption
-                new ProcessLogger().Log("Could not load data from table "+Constants.KIND_PREPEX);
-                new AlertDialog.Builder(this)
-.SetTitle("List of clients")
-.SetMessage("Error retrieving list of clients")
-.SetPositiveButton("OK", (senderAlert, args) => { })
-.Create()
-.Show();
-                return;
-            }
-
-            var allClients = currentIndexes.Select(t=> DbSaveableEntity.fromJson<PrepexDataSet>(t));
-            //we display, perhaps in a listview
-            var allData = (from pp in allClients
-                           from field in pp.FieldValues
-                           select field.Name + ": " + field.Value).ToList();
-            var message = string.Join(System.Environment.NewLine, allData);
-            new AlertDialog.Builder(this)
-.SetTitle("List of clients")
-.SetMessage(message)
-.SetPositiveButton("OK", (senderAlert, args) => { })
-.Create()
-.Show();
-
-        }
-
-        private void showEditExistingView()
-        {
-            //SetContentView(Resource.Layout.prepexreg1);            
-        }
-
-        int currentLayout = -1;
-
-        int getNextPage(bool getNext)
-        {
-            int nextLayout = -1;
-            switch (currentLayout)
-            {
-                case -1:
-                    nextLayout =
-                        getNext ?
-                        Resource.Layout.prepexreg1 :
-                        nextLayout = Resource.Layout.prepexreg1;
-                    break;
-                case Resource.Layout.prepexreg1:
-                    nextLayout =
-                    getNext ?
-                        Resource.Layout.prepexreg2 :
-                        nextLayout = Resource.Layout.prepexreg1;
-                    break;
-                case Resource.Layout.prepexreg2:
-                    nextLayout =
-                    getNext ?
-                        Resource.Layout.prepexreg3 :
-                        nextLayout = Resource.Layout.prepexreg1;
-                    break;
-                case Resource.Layout.prepexreg3:
-                    nextLayout =
-                    getNext ?
-                        Resource.Layout.prepexreg4 :
-                        nextLayout = Resource.Layout.prepexreg2;
-                    break;
-                case Resource.Layout.prepexreg4:
-                    nextLayout =
-                    getNext ?
-                        Resource.Layout.PrepexDataEntryEnd :
-                        nextLayout = Resource.Layout.prepexreg3;
-                    break;
-                case Resource.Layout.PrepexDataEntryEnd:
-                    nextLayout =
-                        getNext ?
-                        Resource.Layout.PrepexDataEntryEnd :
-                        nextLayout = Resource.Layout.prepexreg4;
-                    break;
-                default:
-                    {
-                        break;
-                    }
-            }
-            return nextLayout;
-        }
-
-        private void addDiscardFunctionality()
-        {
-            var buttonDiscard = FindViewById<Button>(Resource.Id.buttonDiscard);
-            buttonDiscard.Click += (sender, e) =>
-            {
-                //confirm and quit
-                new AlertDialog.Builder(this)
-                .SetTitle("Confirm Action")
-                .SetMessage("Are you sure you want to quit? Any changes will be lost")
-                .SetNegativeButton("Cancel", (senderAlert, args) =>
-                {
-                })
-                .SetPositiveButton("OK", (senderAlert, args) =>
-                {
-                    showPrepexHome();
-                })
-                .Create()
-                .Show();
-            };
-        }
-
-        //private void addDefaultNavBehaviours()
-        //{
-        //    var buttonPrev = FindViewById<Button>(Resource.Id.buttonPrevious);
-        //    buttonPrev.Click += (sender, e) =>
-        //    {
-        //        showAddNewView(false);
-        //    };
-
-        //    if (currentLayout == Resource.Layout.PrepexDataEntryEnd)
-        //    {
-        //        //add bahviours for Save, Finish and Add Another One
-        //        //buttonReview
-        //        var buttonReview = FindViewById<Button>(Resource.Id.buttonReview);
-        //        buttonReview.Click += (sender, e) =>
-        //        {
-        //            //present aall data in one list, perhaps as an html page
-        //            displayTemporalDataAvailable();
-        //        };
-
-        //        //buttonDiscard
-        //        addDiscardFunctionality();
-        //        //just quit
-
-        //        //buttonFinalise
-        //        var buttonFinalise = FindViewById<Button>(Resource.Id.buttonFinalise);
-        //        buttonFinalise.Click += (sender, e) =>
-        //        {
-        //            //we get the data
-        //            var data = getFormData();
-        //            var saveable = new PrepexDataSet()
-        //            {                        
-        //                Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
-        //                FormName = Constants.KIND_PREPEX_CLIENTEVAL,
-        //                FieldValues = data,
-        //            };
-
-        //            //save to local db
-        //            new DbSaveableEntity(saveable) { kindName = new KindName(saveable.FormName) }
-        //            .Save();
-
-        //            //and also to lookups db
-        //            var lookupEntry = new PrepexDataSet()
-        //            {
-        //                Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
-        //                FormName = Constants.KIND_PREPEX_CLIENTEVAL,
-        //                FieldValues = getIndexedFormData(),
-        //            };
-
-        //            var ppclient = new PrepexClientSummary().Load(lookupEntry);
-        //            new LocalDB3().DB.InsertOrReplace(ppclient);
-        //            //new DbSaveableEntity(lookupEntry) {
-        //            //    kindName = new KindName(Constants.KIND_PREPEX) }.Save();
-
-        //            //we close and show the prepex home page
-        //            showPrepexHome();
-        //        };
-        //    }
-        //    else
-        //    {
-        //        var buttonNext = FindViewById<Button>(Resource.Id.buttonNext);
-        //        var viewid = currentLayout;
-        //        buttonNext.Click += (sender, e) =>
-        //        {
-        //            //we get the values
-        //            getDataForView(viewid);
-        //            showAddNewView(true);
-        //        };
-        //    }
-        //}
-
-        List<NameValuePair> getIndexedFormData()
-        {
-            var fields = AppInstance.Instance.TemporalViewData;
-            return (from viewData in fields
-                    from fieldData in viewData.Value
-                    where fieldData.Field.IsIndexed
-                    let rec = fieldData.AsNameValuePair()
-                    select rec).ToList();
-        }
-
-        List<NameValuePair> getFormData(bool useDisplayLabels = false)
-        {
-            var fields = AppInstance.Instance.TemporalViewData;
-            return (from viewData in fields
-                    from fieldData in viewData.Value
-                    let rec = useDisplayLabels?fieldData.AsLabelValuePair(): fieldData.AsNameValuePair()
-                    select rec).ToList();
-        }
-
-        private void displayTemporalDataAvailable()
-        {
-            var fields = AppInstance.Instance.TemporalViewData;
-            var nameValuePairs = getFormData(useDisplayLabels : true).Select(t => t.Name + ": " + t.Value);
-            var message = string.Join(
-            System.Environment.NewLine, nameValuePairs);
-            new AlertDialog.Builder(this)
-.SetTitle("Confirm Action")
-.SetMessage(message)
-.SetPositiveButton("OK", (senderAlert, args) => { })
-.Create()
-.Show();
-        }
-
         protected override void OnSaveInstanceState(Bundle outState)
         {
             base.OnSaveInstanceState(outState);
-            //if (BigBundle != null)
-            //{
-            //    outState.PutBundle(ALL_VALUES, BigBundle);
-            //}
         }
     }
 }

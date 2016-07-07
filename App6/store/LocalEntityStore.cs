@@ -28,14 +28,12 @@ namespace JhpDataSystem.store
         private void Initialise()
         {
             _localDb = new LocalDB();
-            ConnectionString = new LocalDB().ConnectionString;
+            //ConnectionString = _localDb.ConnectionString;
 
             var localdb3 = new LocalDB3();
             var db = localdb3.DB;
-            //db.CreateTable<KindRegisterItem>();
             db.CreateTable<PrepexClientSummary>();
             db.CreateTable<OutEntity>();
-            //new FlatTableStore(new KindName(Constants.KIND_REGISTER)).build<KindRegisterItem>();
 
             defaultTableStore = new TableStore(Constants.KIND_DEFAULT);
             defaultTableStore.build();
@@ -47,9 +45,6 @@ namespace JhpDataSystem.store
             new TableStore(Constants.KIND_PREPEX_POSTREMOVAL).build();
             new TableStore(Constants.KIND_PREPEX_UNSCHEDULEDVISIT).build();
 
-            //new FlatTableStore(new KindName(Constants.KIND_PREPEX_CLIENT)).build<PrepexClient>();
-            //new FlatTableStore(new KindName(Constants.KIND_PREPEX_CLIENTSUMMARY)).build<PrepexClientSummary>();
-
             //VMMC
             new TableStore(Constants.KIND_VMMC).build();
         }
@@ -58,35 +53,20 @@ namespace JhpDataSystem.store
 
         public LocalDB InstanceLocalDb { get { return _localDb; } }
 
-        //internal KindKey Put(KindName entityKind, KindItem dataToSave)
-        //{
-        //    return new TableStore(entityKind).Put(dataToSave);
-        //}
-
         internal KindKey Save(KindKey entityId, KindName entityKind, KindItem dataToSave)
         {
             //we save to both kindregister and entity table
             return new TableStore(entityKind).Update(entityId, dataToSave);
         }
 
-        public List<KindKey> GetKeys(KindName entityKind)
-        {
-            return new TableStore(entityKind).GetKeys();
-        }
-
-        public List<KindItem> Get(KindKey entityId, KindName entityKind)
-        {
-            return new TableStore(entityKind).Get(entityId);
-        }
-
-        //public List<KindItem> Get(KindKey entityId)
+        //public List<KindKey> GetKeys(KindName entityKind)
         //{
-        //    var register = new KindRegistryQuery().GetKindForKey(entityId);
-        //    if (register.Value != Constants.DBSAVE_ERROR)
-        //    {
-        //        return Get(entityId);
-        //    }
-        //    return null;
+        //    return new TableStore(entityKind).GetKeys();
+        //}
+
+        //public List<KindItem> Get(KindKey entityId, KindName entityKind)
+        //{
+        //    return new TableStore(entityKind).Get(entityId);
         //}
 
         public List<KindItem> GetAllBlobs(KindName entityKind)
@@ -94,6 +74,4 @@ namespace JhpDataSystem.store
             return new TableStore(entityKind).GetAllBlobs();
         }
     }
-
-
 }

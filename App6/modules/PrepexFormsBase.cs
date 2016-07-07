@@ -166,38 +166,38 @@ namespace JhpDataSystem.modules
             return AppInstance.Instance.FieldItems.Where(t => t.PageId == viewId).ToList();
         }
 
-        protected void showViewList()
-        {
-            //we show all the clients
-            var currentIndexes = LocalEntityStore.Instance
-                .GetAllBlobs(new KindName(Constants.KIND_PREPEX));
-            if (currentIndexes.Count() == 1 && currentIndexes.FirstOrDefault().Value == Constants.DBSAVE_ERROR)
-            {
-                //means we couldn't get this data, so we throw exeption
-                new ProcessLogger().Log("Could not load data from table " + Constants.KIND_PREPEX);
-                new Android.App.AlertDialog.Builder(this)
-.SetTitle("List of clients")
-.SetMessage("Error retrieving list of clients")
-.SetPositiveButton("OK", (senderAlert, args) => { })
-.Create()
-.Show();
-                return;
-            }
+//        protected void showViewList()
+//        {
+//            //we show all the clients
+//            var currentIndexes = LocalEntityStore.Instance
+//                .GetAllBlobs(new KindName(Constants.KIND_PREPEX));
+//            if (currentIndexes.Count() == 1 && currentIndexes.FirstOrDefault().Value == Constants.DBSAVE_ERROR)
+//            {
+//                //means we couldn't get this data, so we throw exeption
+//                new ProcessLogger().Log("Could not load data from table " + Constants.KIND_PREPEX);
+//                new Android.App.AlertDialog.Builder(this)
+//.SetTitle("List of clients")
+//.SetMessage("Error retrieving list of clients")
+//.SetPositiveButton("OK", (senderAlert, args) => { })
+//.Create()
+//.Show();
+//                return;
+//            }
 
-            var allClients = currentIndexes.Select(t => DbSaveableEntity.fromJson<PrepexDataSet>(t));
-            //we display, perhaps in a listview
-            var allData = (from pp in allClients
-                           from field in pp.FieldValues
-                           select field.Name + ": " + field.Value).ToList();
-            var message = string.Join(System.Environment.NewLine, allData);
-            new AlertDialog.Builder(this)
-.SetTitle("List of clients")
-.SetMessage(message)
-.SetPositiveButton("OK", (senderAlert, args) => { })
-.Create()
-.Show();
+//            var allClients = currentIndexes.Select(t => DbSaveableEntity.fromJson<PrepexDataSet>(t));
+//            //we display, perhaps in a listview
+//            var allData = (from pp in allClients
+//                           from field in pp.FieldValues
+//                           select field.Name + ": " + field.Value).ToList();
+//            var message = string.Join(System.Environment.NewLine, allData);
+//            new AlertDialog.Builder(this)
+//.SetTitle("List of clients")
+//.SetMessage(message)
+//.SetPositiveButton("OK", (senderAlert, args) => { })
+//.Create()
+//.Show();
 
-        }
+//        }
 
         protected void addDiscardFunctionality()
         {

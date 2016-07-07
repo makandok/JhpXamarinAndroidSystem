@@ -42,6 +42,12 @@ namespace JhpDataSystem.Utilities
                         }.Send();
                         client.Day6SmsReminderDate = DateTime.Now;
                     }
+                    catch (Java.Lang.IllegalArgumentException argex)
+                    {
+                        //means the number is not valid
+                        //we prompt, log or fail silent
+                        AppInstance.Instance.LogActionItem(string.Format("Error sending SMS. Phone number {0} for {1} is invalid", client.Telephone, client.Names));
+                    }
                     catch (Exception ex)
                     {
 

@@ -12,9 +12,6 @@ namespace JhpDataSystem
                 "cardserialnumber","clientidnumber","clientname","dob","clienttel",
                 "clientsphysicaladdress"};
 
-        //internal static List<string> PP_IndexedFieldNames = new List<string> {
-        //        "dateofvisit", "cardserialnumber","clientidnumber","clientname","dob","clienttel",
-        //        "clientsphysicaladdress"};
         internal const string FIELD_ENTITYID = "entityid";
         internal const string FIELD_ID = "id";
         internal const string FIELD_PREPEX_DEVSIZE = "ppxdevsize";
@@ -33,7 +30,7 @@ namespace JhpDataSystem
         internal const string KIND_VMMC = "vmmcclients";
         public const string KIND_DEFAULT = "generalstore";
         public const string KIND_REGISTER = "kindRegister";
-
+        //encryptionkey
         internal const string ASSET_NAME_APPNAME = "applicationname";
         internal const string ASSET_PROJECT_ID = "projectid";
         internal const string ASSET_NAME_SVC_ACCTEMAIL = "serviceaccountemail";
@@ -41,6 +38,14 @@ namespace JhpDataSystem
         internal const string ASSET_DATASTORE_APPKEY = "datastore_appkey";
         internal const string ASSET_P12KEYFILE = "p12keyfile";
         internal const string ASSET_ADMIN_HASH = "adminhash";
+        internal const string ASSET_ADMIN_ENCRYPTIONKEY = "encryptionkey";
+
+        internal static readonly List<string> ASSET_LIST = new List<string>(){
+            ASSET_NAME_APPNAME , ASSET_PROJECT_ID, ASSET_NAME_SVC_ACCTEMAIL,
+            //ASSET_API_KEYFILE,
+            ASSET_DATASTORE_APPKEY,
+            ASSET_P12KEYFILE,ASSET_ADMIN_HASH,ASSET_ADMIN_ENCRYPTIONKEY
+        };
         //
         internal const string API_KEYFILE = "api_keys.json";
         internal static System.Collections.Generic.List<string> 

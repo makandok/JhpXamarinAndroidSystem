@@ -29,6 +29,8 @@ namespace JhpDataSystem
         }
 
         AssetManager _assetManager { get; set; }
+        LocalEntityStore _localEntityStoreInstance { get; set; }
+
 
         public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
 
@@ -42,15 +44,21 @@ namespace JhpDataSystem
             var inputStream = assetManager.Open(Constants.API_KEYFILE);
             var jsonObject = System.Json.JsonValue.Load(inputStream);
 
-            ApiAssets[Constants.ASSET_NAME_APPNAME] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_APPNAME);
-            ApiAssets[Constants.ASSET_PROJECT_ID] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_PROJECT_ID);
-            ApiAssets[Constants.ASSET_NAME_SVC_ACCTEMAIL] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_SVC_ACCTEMAIL);
-            ApiAssets[Constants.ASSET_DATASTORE_APPKEY] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_DATASTORE_APPKEY);
-            ApiAssets[Constants.ASSET_P12KEYFILE] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_P12KEYFILE);
-            ApiAssets[Constants.ASSET_ADMIN_HASH] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_ADMIN_HASH);
+            foreach(var assetName in Constants.ASSET_LIST)
+            {
+                ApiAssets[assetName] = 
+                    jsonObject.decryptAndGetApiSetting(assetName);
+            }
+
+            //ApiAssets[Constants.ASSET_NAME_APPNAME] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_APPNAME);
+            //ApiAssets[Constants.ASSET_PROJECT_ID] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_PROJECT_ID);
+            //ApiAssets[Constants.ASSET_NAME_SVC_ACCTEMAIL] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_SVC_ACCTEMAIL);
+            //ApiAssets[Constants.ASSET_DATASTORE_APPKEY] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_DATASTORE_APPKEY);
+            //ApiAssets[Constants.ASSET_P12KEYFILE] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_P12KEYFILE);
+            //ApiAssets[Constants.ASSET_ADMIN_HASH] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_ADMIN_HASH);
 
             //we need to have this class initialised
-            var cs = LocalEntityStore.Instance.ConnectionString;
+            _localEntityStoreInstance = LocalEntityStore.Instance;
 
             //we load the fields
             var prepexFieldsStream = assetManager.Open(Constants.FILE_PREPEX_FIELDS_CLIENTEVAL);
@@ -76,6 +84,12 @@ namespace JhpDataSystem
             }
 
             CloudDbInstance = new CloudDb(_assetManager);
+        }
+
+        internal void LogActionItem(string v)
+        {
+            //todo: implement LogActionItem in AppInstance
+            //throw new NotImplementedException();
         }
 
         public List<FieldItem> FieldItems = null;

@@ -42,7 +42,6 @@
             android:text="Upload"
             android:layout_width="200dp"
             android:layout_height="match_parent"
-            android:id="@+id/fetchData"
-            android:onClick="getWebResource" />
+            android:id="@+id/fetchData" />
     </TableRow>
 </LinearLayout>

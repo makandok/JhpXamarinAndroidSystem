@@ -8,53 +8,17 @@ using Google.Apis.Datastore.v1beta3.Data;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using JhpDataSystem.model;
-using Java.Util.Logging;
 
 namespace JhpDataSystem.store
 {
     public class CloudDb
     {
         AssetManager _assetManager { get; set; }
-        //public string AplicationKey { get; internal set; }
         public CloudDb(AssetManager assetManager)
         {
             _assetManager = assetManager;
         }
-
-        //private DatastoreService CreateDataStoreClient(Dictionary<string, string> assets)
-        //{
-        //    var credentials = Google.Apis.Auth.OAuth2.GoogleCredential.GetApplicationDefaultAsync().Result;
-        //    if (credentials.IsCreateScopedRequired)
-        //    {
-        //        credentials = credentials.CreateScoped(new[] {
-        //            DatastoreService.Scope.Datastore,
-        //            //DatastoreService.Scope.CloudPlatform
-        //        });
-        //    }
-
-        //    var serviceInitializer = new BaseClientService.Initializer()
-        //    {
-        //        ApplicationName = assets[Constants.ASSET_NAME_APPNAME],
-        //        HttpClientInitializer = credentials
-        //    };
-
-        //    return new DatastoreService(serviceInitializer);
-        //}
-
-        //Key getKey(string kind)
-        //{
-        //    return new Key() { Path = new[] { new PathElement() { Kind = kind } } };
-        //}
-
-        //List<Key> allocateIds(DatastoreService datasstore, List<Key> keys, string projectId)
-        //{
-        //    var alloc = new AllocateIdsRequest() { Keys = keys };
-        //    var worker = datasstore.Projects.AllocateIds(alloc, projectId);
-        //    var res = worker.Execute();
-        //    return keys;
-        //}
 
         public async void GetCloudEntities(Dictionary<string, string> assets)
         {
@@ -82,31 +46,6 @@ namespace JhpDataSystem.store
 
             var batch = response.Batch.EntityResults;
         }
-
-        //public async Task<Key> Save(Entity entity)
-        //{
-        //    var assets = AppInstance.Instance.ApiAssets;
-        //    var projectId = assets[Constants.ASSET_PROJECT_ID];
-        //    entity = entity?? new Entity()
-        //    {
-        //        Key = new Key()
-        //        {
-        //            PartitionId = new PartitionId() { NamespaceId = "", ProjectId = projectId },
-        //            Path = new List<PathElement>() { new PathElement() { Kind = "jhpsystems",
-        //                Name = "A8CFCA9D-0B3C-43F7-B7AD-DA21AE79C92F" } }
-        //        },
-        //        Properties = new Dictionary<string, Value>()
-        //        {
-
-        //            {"cardserial", new Value() { IntegerValue = 2022 } },
-        //            {"datablob", new Value() { StringValue = "I was once a blob" } },
-        //            {"registerno", new Value() { IntegerValue = 666 } }
-        //        }
-        //    };
-
-        //    var datastore = GetDatastoreService(GetDefaultCredential(assets, _assetManager), assets);
-        //    return await SaveToCloud(datastore, projectId, entity);
-        //}
 
         public async Task<Key> Save(DbSaveableEntity saveableEntity)
         {
@@ -175,7 +114,7 @@ namespace JhpDataSystem.store
             });
         }
 
-        internal void AddToOutQueue(DbSaveableEntity saveableEntity)
+        public void AddToOutQueue(DbSaveableEntity saveableEntity)
         {
             var asString = saveableEntity.getJson();
             //var rnd = new Random(DateTime.Now.Millisecond).Next(1000000, 99999999);
@@ -183,13 +122,13 @@ namespace JhpDataSystem.store
             new OutDb().DB.InsertOrReplace(outEntity);
         }
 
-        internal List<OutEntity> GetRecordsToSync()
+        public List<OutEntity> GetRecordsToSync()
         {
             return new OutDb().DB.Table<OutEntity>().ToList();
         }
 
         int isRunning = 0;
-        internal async Task<int> EnsureServerSync()
+        public async Task<int> EnsureServerSync()
         {
             if (isRunning == 1)
                 return 0;
@@ -216,60 +155,29 @@ namespace JhpDataSystem.store
                     }
                     catch (Google.GoogleApiException gex)
                     {
-
+                        //todo: mark this record as bad to prevent it blocking for life
                     }
                     catch(Exception ex)
                     {
+                        //todo: mark this record as bad to prevent it blocking for life
                         //Android.Util.Log.Debug();
                         var ixx = 9;
                     }
                     finally { }
                     if (saved)
+                    {
                         break;
+                    }
+                    else
+                    {
+                        //lets add a 2 second delay in case it failed the first time
+                        await Task.Delay(TimeSpan.FromMilliseconds(2000));
+                    }
                 }
                 recIndex--;
             }
             isRunning = 0;
             return 0;
         }
-
-        //public void manyFacedGod(Dictionary<string, string> assets)
-        //{
-        //    var projectId = assets[Constants.ASSET_PROJECT_ID];
-        //    var credential = GetDefaultCredential(assets, _assetManager);
-        //    // Create the service.
-        //    var datastore = GetDatastoreService(credential, assets);
-        //    //create the keys
-        //    //assign ids
-        //    var keys = allocateIds(datastore,
-        //        new List<Key> { getKey("jhpsystems"), getKey("jhpsystems"), getKey("jhpsystems") },
-        //        projectId
-        //        );
-        //    //select __key__, cardserial, registerno From jhpsystems
-        //    //assign to entities
-        //    var entities = new List<Mutation>();
-        //    var x = 1;
-        //    foreach (var key in keys)
-        //    {
-        //        x++;
-        //        var entity = new Entity() { Key = key };
-        //        entity.Properties = new Dictionary<string, Value>() {
-        //            {"cardserial", new Value() { IntegerValue = 20*x }},
-        //            {"datablob", new Value() { StringValue = "This is a blob "+ x }},
-        //            {"registerno", new Value() { IntegerValue = 330 + x }},
-        //            {"dateadded", new Value() { TimestampValue = DateTime.Now }}
-        //        };
-        //        entities.Add(new Mutation() { Upsert = entity });
-        //    }
-        //    //we figure out how to save
-        //    var tr = new BeginTransactionRequest() { };
-        //    var trid = datastore.Projects.BeginTransaction(tr, projectId);
-        //    var mut = new Mutation() { Upsert = new Entity() };
-        //    var cr = new CommitRequest() { Mutations = entities };
-        //    datastore.Projects.Commit(cr, projectId);
-        //    //perhaps we save to the local database
-        //    //alert that we are done saving
-        //    var t = 0;
-        //}
     }
 }

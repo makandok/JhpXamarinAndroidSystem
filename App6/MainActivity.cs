@@ -15,19 +15,11 @@ namespace JhpDataSystem
         //Theme = "@android:style/Theme.DeviceDefault.Dialog.NoActionBar", 
         string ProjectId = string.Empty;
         string DataStoreApplicationKey = string.Empty;
-        Bundle BigBundle = null;
         const string ALL_VALUES = "allValues";
-        string[] DATA_CONTROLs_ARRAY = new[] { "text3",
-                "text4", "text1","text2","datePicker1","jumbo1"
-            };
         
         protected override void OnSaveInstanceState(Bundle outState)
         {
             base.OnSaveInstanceState(outState);
-            if (BigBundle != null)
-            {
-                outState.PutBundle(ALL_VALUES, BigBundle);
-            }
         }
        
         protected override void OnCreate(Bundle bundle)
