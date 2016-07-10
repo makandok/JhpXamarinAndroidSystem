@@ -13,7 +13,7 @@ namespace JhpDataSystem
                 .Table<PPClientSummary>()
                 .OrderBy(t => t.PlacementDate)
                 .ToList();
-            all.ForEach(t => t.Id = new KindKey(t.KindKey));
+            all.ForEach(t => { t.Id = new KindKey(t.KindKey); t.EntityId = new KindKey(t.KindKey); });
             return all;
         }
 

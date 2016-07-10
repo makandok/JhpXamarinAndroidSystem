@@ -14,6 +14,7 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_POSTREMOVAL);
             myView = Resource.Layout.PrepexDataEntryEnd;
             myNavController = new PP_PostRemovalControl();
             ShowMyView();
@@ -28,6 +29,7 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_POSTREMOVAL);
             myView = Resource.Layout.prepexpostremoval2;
             myNavController = new PP_PostRemovalControl();
             ShowMyView();
@@ -43,6 +45,7 @@ namespace JhpDataSystem.modules
 
             // Create your application here
             IsFirstPage = true;
+            _kindName = new KindName(Constants.KIND_PPX_POSTREMOVAL);
             myView = Resource.Layout.prepexpostremoval1;
             myNavController = new PP_PostRemovalControl();
             ShowMyView();
@@ -57,6 +60,7 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_DEVICEREMOVAL);
             myView = Resource.Layout.PrepexDataEntryEnd;
             myNavController = new PP_DeviceRemovalControl();
             ShowMyView();
@@ -71,6 +75,7 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_DEVICEREMOVAL);
             myView = Resource.Layout.prepexdevremoval2;
             myNavController = new PP_DeviceRemovalControl();
             ShowMyView();
@@ -86,6 +91,7 @@ namespace JhpDataSystem.modules
 
             // Create your application here
             IsFirstPage = true;
+            _kindName = new KindName(Constants.KIND_PPX_DEVICEREMOVAL);
             myView = Resource.Layout.prepexdevremoval1;
             myNavController = new PP_DeviceRemovalControl();
             ShowMyView();
@@ -100,6 +106,7 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_UNSCHEDULEDVISIT);
             myView = Resource.Layout.prepexunscheduled2;
             myNavController = new PP_UnscheduledVisitControl() { };
             ShowMyView();
@@ -115,6 +122,7 @@ namespace JhpDataSystem.modules
 
             // Create your application here
             IsFirstPage = true;
+            _kindName = new KindName(Constants.KIND_PPX_UNSCHEDULEDVISIT);
             myView = Resource.Layout.prepexunscheduled1;
             myNavController = new PP_UnscheduledVisitControl() {  };
             ShowMyView();
@@ -129,6 +137,7 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_UNSCHEDULEDVISIT);
             myView = Resource.Layout.PrepexDataEntryEnd;
             myNavController = new PP_UnscheduledVisitControl();
             ShowMyView();
@@ -144,6 +153,7 @@ namespace JhpDataSystem.modules
 
             // Create your application here
             IsFirstPage = true;
+            _kindName = new KindName(Constants.KIND_PPX_CLIENTEVAL);
             myView = Resource.Layout.prepexreg1;
             myNavController = new PP_ClientEvalControl();
             ShowMyView();
@@ -157,6 +167,7 @@ namespace JhpDataSystem.modules
         {
             base.OnCreate(savedInstanceState);
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_CLIENTEVAL);
             myView = Resource.Layout.prepexreg2;
             myNavController = new PP_ClientEvalControl();
             ShowMyView();
@@ -170,6 +181,7 @@ namespace JhpDataSystem.modules
         {
             base.OnCreate(savedInstanceState);
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_CLIENTEVAL);
             myView = Resource.Layout.prepexreg3;
             myNavController = new PP_ClientEvalControl();
             ShowMyView();
@@ -183,6 +195,7 @@ namespace JhpDataSystem.modules
         {
             base.OnCreate(savedInstanceState);
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_CLIENTEVAL);
             myView = Resource.Layout.prepexreg4;
             myNavController = new PP_ClientEvalControl();
             ShowMyView();
@@ -196,6 +209,7 @@ namespace JhpDataSystem.modules
         {
             base.OnCreate(savedInstanceState);
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_CLIENTEVAL);
             myView = Resource.Layout.prepexreg5;
             myNavController = new PP_ClientEvalControl();
             ShowMyView();
@@ -209,6 +223,7 @@ namespace JhpDataSystem.modules
         {
             base.OnCreate(savedInstanceState);
             // Create your application here
+            _kindName = new KindName(Constants.KIND_PPX_CLIENTEVAL);
             myView = Resource.Layout.PrepexDataEntryEnd;
             myNavController = new PP_ClientEvalControl();
             ShowMyView();

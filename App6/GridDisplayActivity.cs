@@ -73,6 +73,7 @@ namespace JhpDataSystem
             var asString = Newtonsoft.Json.JsonConvert.SerializeObject(_selectedClient);
             var intent = new Intent().PutExtra(Constants.BUNDLE_SELECTEDCLIENT, asString);
             intent.PutExtra(Constants.KIND_PPX_NEXTVIEW, NEXT_TYPE);
+            //intent.SetFlags(ActivityFlags.NewTask);
             SetResult(Result.Ok, intent);
             Finish();
         }

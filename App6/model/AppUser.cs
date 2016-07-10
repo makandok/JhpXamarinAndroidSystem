@@ -109,9 +109,9 @@ namespace JhpDataSystem.model
 
         internal List<NameValuePair> ToValuesList()
         {
-            //var expectedFields = Constants.PP_IndexedFieldNames;
             var toReturn = new List<NameValuePair>()
             {
+                new NameValuePair() {Name=Constants.FIELD_ENTITYID,Value = EntityId.Value },
                 new NameValuePair() {Name=Constants.FIELD_ID,Value = Id.Value },
                 new NameValuePair() {Name=Constants.FIELD_PLACEMENTDATE,
                     Value = PlacementDate.ToString(CultureInfo.InvariantCulture) },
@@ -140,14 +140,10 @@ namespace JhpDataSystem.model
                 }
             }
 
-            //data.Add(new NameValuePair()
-            //{
-            //    Name = Constants.FIELD_ENTITYID,
-            //    Value = entityId.Value
-            //});
-
-            this.EntityId = new KindKey(allFields[Constants.FIELD_ENTITYID]);
+            this.KindKey = lookupEntry.Id.Value;
+            this.EntityId = new KindKey(KindKey);
             this.Id = lookupEntry.Id;
+
             var deviceSize = string.Empty;
             if(allFields.TryGetValue(Constants.FIELD_PPX_DEVSIZE, out deviceSize))
             {
@@ -158,45 +154,10 @@ namespace JhpDataSystem.model
             this.FormSerial = Convert.ToInt32(allFields["cardserialnumber"]);
             this.Names = allFields["clientname"];
             this.ClientNumber = Convert.ToInt32(allFields["clientidnumber"]);
-            this.KindKey = Id.Value;
             this.Telephone = allFields["clienttel"];
             this.Address = allFields["clientsphysicaladdress"];
             return this;
         }
-
-        //internal PPDataSet GetPPDataSet()
-        //{
-        //    var lookupEntry = new PPDataSet();
-
-        //    var expectedFields = Constants.PP_IndexedFieldNames;
-        //    var fieldValues = lookupEntry.FieldValues;
-        //    var allFields = (from field in lookupEntry.FieldValues
-        //                     where expectedFields.Contains(field.Name)
-        //                     select field).ToDictionary(x => x.Name, y => y.Value);
-        //    foreach (var field in expectedFields)
-        //    {
-        //        if (!allFields.ContainsKey(field))
-        //        {
-        //            allFields[field] = "";
-        //        }
-        //    }
-
-        //    this.Id = lookupEntry.Id;
-        //    var deviceSize = string.Empty;
-        //    if (allFields.TryGetValue(Constants.FIELD_PPX_DEVSIZE, out deviceSize))
-        //    {
-        //        this.DeviceSize = deviceSize;
-        //    }
-
-        //    this.PlacementDate = Convert.ToDateTime(allFields["dateofvisit"]);
-        //    this.FormSerial = Convert.ToInt32(allFields["cardserialnumber"]);
-        //    this.Names = allFields["clientname"];
-        //    this.ClientNumber = Convert.ToInt32(allFields["clientidnumber"]);
-        //    this.KindKey = Id.Value;
-        //    this.Telephone = allFields["clienttel"];
-        //    this.Address = allFields["clientsphysicaladdress"];
-        //    return this;
-        //}
     }
 
     public class AppUser : ISaveableEntity
@@ -224,6 +185,8 @@ namespace JhpDataSystem.model
             var id = FieldValues.FirstOrDefault(t => t.Name == Constants.FIELD_ID);
             Id = new KindKey(id.Value);
             var entityId = FieldValues.FirstOrDefault(t => t.Name == Constants.FIELD_ENTITYID);
+            if (entityId == null && pp.FormName == Constants.KIND_PPX_CLIENTEVAL)
+                entityId = id;
             EntityId = new KindKey(entityId.Value);
             return this;
         }

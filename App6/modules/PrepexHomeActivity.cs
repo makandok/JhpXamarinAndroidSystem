@@ -25,6 +25,7 @@ namespace JhpDataSystem.modules
             var returnTypeString = Newtonsoft.Json.JsonConvert.SerializeObject(resultActivity);
             var intent = new Intent(this, activityType);
             intent.PutExtra(Constants.KIND_PPX_NEXTVIEW, returnTypeString);
+            intent.SetFlags(ActivityFlags.ClearTop);
             StartActivityForResult(intent, 0);
         }
 

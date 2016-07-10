@@ -6,6 +6,7 @@ using Android.Widget;
 using JhpDataSystem.model;
 using System.Linq;
 using JhpDataSystem.store;
+using Android.Content;
 
 namespace JhpDataSystem.modules
 {
@@ -23,10 +24,13 @@ namespace JhpDataSystem.modules
         protected IPP_NavController myNavController = null;
         protected bool IsFirstPage = false;
         protected PPClientSummary CurrentClient { get; set; }
+        protected KindName _kindName { get; set; }
 
         void showPrepexHome()
         {
-            
+            var intent = new Intent(this, typeof(PrepexHomeActivity));
+            intent.AddFlags(ActivityFlags.ClearTop);
+            StartActivityForResult(intent, 0);
         }
 
         private PPClientSummary loadClientFromIntent()
@@ -49,11 +53,12 @@ namespace JhpDataSystem.modules
             SetContentView(myView);
             addDefaultNavBehaviours();
             bindDateDialogEventsForView(myView);
+            loadClientFromIntent();
 
-            if (IsFirstPage)
+            if (IsFirstPage && CurrentClient != null)
             {
                 //if requires selection of client, we show the client selection dialog 
-                loadClientFromIntent();
+                //loadClientFromIntent();
 
                 //load client information if it has any indexed fields
                 var viewFields = GetFieldsForView(myView);
@@ -298,11 +303,11 @@ namespace JhpDataSystem.modules
                     }
 
                     var kindKey = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId());
-                    var kindname = new KindName(Constants.KIND_PPX_CLIENTEVAL);
+                    data.Add(new NameValuePair() { Name = Constants.FIELD_ID, Value = kindKey.Value });
                     var saveable = new PPDataSet()
                     {
                         Id = kindKey,
-                        FormName = kindname.Value,
+                        FormName = _kindName.Value,
                         //FieldValues = data,
                     };
 
@@ -320,28 +325,27 @@ namespace JhpDataSystem.modules
                         {
                             var deviceSize = deviceSizeControl.Name.Last().ToString().ToUpperInvariant();
                             data.Add(new NameValuePair() { Name = Constants.FIELD_PPX_DEVSIZE, Value = deviceSize });
-                        }                       
-                    
+                        }
                         //we get the client lookup details and save these
+                        saveClientSummary(data, saveable.EntityId);
                     }
                     else
                     {
                         //also update client details but only if they have changes
-
-                        //consider passing along the client id
-                        //var clientid = getCurrentClientId();
-                        //data.Add(new NameValuePair() { Name = Constants.FIELD_ENTITYID, Value = clientid });
+                        saveable.EntityId = CurrentClient.EntityId;
+                        data.Add(new NameValuePair()
+                        {
+                            Name = Constants.FIELD_ENTITYID,
+                            Value = CurrentClient.EntityId.Value
+                        });
                     }
 
-                    data.Add(new NameValuePair() { Name = Constants.FIELD_ID, Value = kindKey.Value });
-
-                    saveable.FieldValues = getIndexedFormData(data);
-                    var ppclient = new PPClientSummary().Load(saveable);
-                    new LocalDB3().DB.InsertOrReplace(ppclient);
+                    //we compute the indexed data and save
+                    //saveClientSummary(data, saveable.EntityId);
 
                     //save to local db
                     saveable.FieldValues = data;
-                    var saveableEntity = new DbSaveableEntity(saveable) { kindName = kindname };
+                    var saveableEntity = new DbSaveableEntity(saveable) { kindName = _kindName };
                     saveableEntity.Save();
 
                     //fire and forget
@@ -351,10 +355,10 @@ namespace JhpDataSystem.modules
                     //we show the splash screen and await results of the operation
                     //todo: show dialog when beginning server sync and await excution
                     AppInstance.Instance.CloudDbInstance.EnsureServerSync();
-                    
+
                     //we close and show the prpex home page
                     this.Finish();
-                    //showPrepexHome();
+                    showPrepexHome();
                 };
             }
             else
@@ -370,9 +374,27 @@ namespace JhpDataSystem.modules
                     if (myView == next)
                         return;
                     var nextActivity = myNavController.GetActivityForLayout(next);
-                    StartActivity(nextActivity);
+
+                    var clientString = Newtonsoft.Json.JsonConvert.SerializeObject(CurrentClient);
+                    var intent = new Intent(this, nextActivity);
+                    //myView == Resource.Layout.PrepexDataEntryEnd
+                    intent.PutExtra(Constants.BUNDLE_SELECTEDCLIENT, clientString);
+                    StartActivityForResult(intent, 0);
                 };
             }
+        }
+
+        private void saveClientSummary(List<NameValuePair> data, KindKey clientId)
+        {
+            var clientSummary = new PPDataSet()
+            {
+                Id = clientId,
+                FormName = _kindName.Value,
+                EntityId = clientId,
+                FieldValues = getIndexedFormData(data)
+            };
+            var ppclient = new PPClientSummary().Load(clientSummary);
+            new LocalDB3().DB.InsertOrReplace(ppclient);
         }
 
         protected List<NameValuePair> getIndexedFormData(List<NameValuePair> data)
