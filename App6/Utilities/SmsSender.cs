@@ -20,7 +20,7 @@ namespace JhpDataSystem.Utilities
     public class BulkSmsSender
     {
         //public List<ContactNumber> contactNumbers { get; set; }
-        public List<PrepexClientSummary> contactNumbers { get; set; }
+        public List<PPClientSummary> contactNumbers { get; set; }
 
         public string formattedText { get; set; }
 

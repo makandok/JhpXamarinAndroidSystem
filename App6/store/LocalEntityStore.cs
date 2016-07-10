@@ -32,7 +32,7 @@ namespace JhpDataSystem.store
 
             var localdb3 = new LocalDB3();
             var db = localdb3.DB;
-            db.CreateTable<PrepexClientSummary>();
+            db.CreateTable<PPClientSummary>();
             db.CreateTable<OutEntity>();
 
             defaultTableStore = new TableStore(Constants.KIND_DEFAULT);
@@ -40,10 +40,10 @@ namespace JhpDataSystem.store
             new TableStore(Constants.KIND_APPUSERS).build();
 
             //prepex clients
-            new TableStore(Constants.KIND_PREPEX_CLIENTEVAL).build();
-            new TableStore(Constants.KIND_PREPEX_DEVICEREMOVAL).build();
-            new TableStore(Constants.KIND_PREPEX_POSTREMOVAL).build();
-            new TableStore(Constants.KIND_PREPEX_UNSCHEDULEDVISIT).build();
+            new TableStore(Constants.KIND_PPX_CLIENTEVAL).build();
+            new TableStore(Constants.KIND_PPX_DEVICEREMOVAL).build();
+            new TableStore(Constants.KIND_PPX_POSTREMOVAL).build();
+            new TableStore(Constants.KIND_PPX_UNSCHEDULEDVISIT).build();
 
             //VMMC
             new TableStore(Constants.KIND_VMMC).build();

@@ -5,10 +5,7 @@ using Android.OS;
 using Android.Widget;
 using JhpDataSystem.model;
 using System.Linq;
-using Android.Views;
-using Newtonsoft.Json;
 using JhpDataSystem.store;
-using Android.Runtime;
 
 namespace JhpDataSystem.modules
 {
@@ -24,26 +21,57 @@ namespace JhpDataSystem.modules
         protected bool _isRegistration = false;
         protected int myView = -1;
         protected IPP_NavController myNavController = null;
-        protected bool RequiresClient = true;
-        protected PrepexClientSummary CurrentClient { get; set; }
+        protected bool IsFirstPage = false;
+        protected PPClientSummary CurrentClient { get; set; }
 
-        private PrepexClientSummary showClientSelectionDialog()
+        void showPrepexHome()
         {
+            
+        }
+
+        private PPClientSummary loadClientFromIntent()
+        {
+            //load default data or client if is first
+            var intent = this.Intent;
+            if (intent.Extras != null && intent.Extras.ContainsKey(Constants.BUNDLE_SELECTEDCLIENT))
+            {
+                var clientString = intent.Extras.GetString(Constants.BUNDLE_SELECTEDCLIENT);
+                var ppclientSummary = Newtonsoft.Json.
+                    JsonConvert.DeserializeObject<PPClientSummary>(clientString);
+                CurrentClient = ppclientSummary;
+                return ppclientSummary;
+            }
             return null;
         }
 
         protected void ShowMyView()
-        {
-            //if requires selection of client, we show the client selection dialog
-            if (RequiresClient && CurrentClient == null)
-            {
-                //we show the client selection dialog
-                var selectedClient = showClientSelectionDialog();
-            }
-
+        {                       
             SetContentView(myView);
             addDefaultNavBehaviours();
             bindDateDialogEventsForView(myView);
+
+            if (IsFirstPage)
+            {
+                //if requires selection of client, we show the client selection dialog 
+                loadClientFromIntent();
+
+                //load client information if it has any indexed fields
+                var viewFields = GetFieldsForView(myView);
+                var indexedData = CurrentClient.ToValuesList();
+
+                List<FieldValuePair> fvp = new List<FieldValuePair>();
+                foreach (var value in indexedData)
+                {
+                    var field = viewFields
+                        .Where(t => t.name == value.Name && t.name != Constants.FIELD_DATEOFVISIT)
+                        .FirstOrDefault();
+                    if (field == null)
+                        continue;
+
+                    fvp.Add(new FieldValuePair() { Field = field, Value = value.Value });
+                }
+                setViewData(fvp);
+            }
         }
 
         protected void bindDateDialogEventsForView(int viewId)
@@ -85,6 +113,39 @@ namespace JhpDataSystem.modules
                     });
                     frag.Show(FragmentManager, DatePickerFragment.TAG);
                 };
+            }
+        }
+
+        protected void setViewData(List<FieldValuePair> clientInfo)
+        {
+            var context = this;
+            foreach (var fvp in clientInfo)
+            {
+                if (string.IsNullOrWhiteSpace(fvp.Value))
+                    continue;
+
+                var field = fvp.Field;
+                switch (field.dataType)
+                {
+                    case Constants.DATEPICKER:
+                    case Constants.EDITTEXT:
+                        {
+                            var view = field.GetDataView<EditText>(this);
+                            view.Text = fvp.Value;
+                            break;
+                        }
+                    case Constants.CHECKBOX:
+                    case Constants.RADIOBUTTON:
+                        {
+                            var view = field.GetDataView<CheckBox>(this);
+                            view.Checked = fvp.Value == "1";
+                            break;
+                        }
+                    default:
+                        {
+                            throw new ArgumentNullException("Could not find view for field " + field.name);
+                        }
+                }
             }
         }
 
@@ -166,39 +227,6 @@ namespace JhpDataSystem.modules
             return AppInstance.Instance.FieldItems.Where(t => t.PageId == viewId).ToList();
         }
 
-//        protected void showViewList()
-//        {
-//            //we show all the clients
-//            var currentIndexes = LocalEntityStore.Instance
-//                .GetAllBlobs(new KindName(Constants.KIND_PREPEX));
-//            if (currentIndexes.Count() == 1 && currentIndexes.FirstOrDefault().Value == Constants.DBSAVE_ERROR)
-//            {
-//                //means we couldn't get this data, so we throw exeption
-//                new ProcessLogger().Log("Could not load data from table " + Constants.KIND_PREPEX);
-//                new Android.App.AlertDialog.Builder(this)
-//.SetTitle("List of clients")
-//.SetMessage("Error retrieving list of clients")
-//.SetPositiveButton("OK", (senderAlert, args) => { })
-//.Create()
-//.Show();
-//                return;
-//            }
-
-//            var allClients = currentIndexes.Select(t => DbSaveableEntity.fromJson<PrepexDataSet>(t));
-//            //we display, perhaps in a listview
-//            var allData = (from pp in allClients
-//                           from field in pp.FieldValues
-//                           select field.Name + ": " + field.Value).ToList();
-//            var message = string.Join(System.Environment.NewLine, allData);
-//            new AlertDialog.Builder(this)
-//.SetTitle("List of clients")
-//.SetMessage(message)
-//.SetPositiveButton("OK", (senderAlert, args) => { })
-//.Create()
-//.Show();
-
-//        }
-
         protected void addDiscardFunctionality()
         {
             var buttonDiscard = FindViewById<Button>(Resource.Id.buttonDiscard);
@@ -270,8 +298,8 @@ namespace JhpDataSystem.modules
                     }
 
                     var kindKey = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId());
-                    var kindname = new KindName(Constants.KIND_PREPEX_CLIENTEVAL);
-                    var saveable = new PrepexDataSet()
+                    var kindname = new KindName(Constants.KIND_PPX_CLIENTEVAL);
+                    var saveable = new PPDataSet()
                     {
                         Id = kindKey,
                         FormName = kindname.Value,
@@ -287,11 +315,11 @@ namespace JhpDataSystem.modules
                             Name = Constants.FIELD_ENTITYID,
                             Value = entityId.Value });
                         //we get the device size
-                        var deviceSizeControl = data.Where(t => t.Name.Contains(Constants.FIELD_PREPEX_DEVSIZE_PREFIX)).FirstOrDefault();
+                        var deviceSizeControl = data.Where(t => t.Name.Contains(Constants.FIELD_PPX_DEVSIZE_PREFIX)).FirstOrDefault();
                         if (deviceSizeControl != null)
                         {
                             var deviceSize = deviceSizeControl.Name.Last().ToString().ToUpperInvariant();
-                            data.Add(new NameValuePair() { Name = Constants.FIELD_PREPEX_DEVSIZE, Value = deviceSize });
+                            data.Add(new NameValuePair() { Name = Constants.FIELD_PPX_DEVSIZE, Value = deviceSize });
                         }                       
                     
                         //we get the client lookup details and save these
@@ -308,7 +336,7 @@ namespace JhpDataSystem.modules
                     data.Add(new NameValuePair() { Name = Constants.FIELD_ID, Value = kindKey.Value });
 
                     saveable.FieldValues = getIndexedFormData(data);
-                    var ppclient = new PrepexClientSummary().Load(saveable);
+                    var ppclient = new PPClientSummary().Load(saveable);
                     new LocalDB3().DB.InsertOrReplace(ppclient);
 
                     //save to local db

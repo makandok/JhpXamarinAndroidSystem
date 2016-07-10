@@ -140,7 +140,7 @@ namespace JhpDataSystem.store
             {
                 var outEntity = recs[recIndex];
                 var formSerial = outEntity.FormSerial;
-                var prepexDs = new PrepexDataSet().fromJson(new KindItem(outEntity.DataBlob));
+                var prepexDs = new PPDataSet().fromJson(new KindItem(outEntity.DataBlob));
                 var saveable = new DbSaveableEntity(prepexDs) {
                     kindName = new KindName(prepexDs.FormName) };
                 var saved = false;

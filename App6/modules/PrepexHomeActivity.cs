@@ -20,6 +20,31 @@ namespace JhpDataSystem.modules
             showPrepexHome();
         }
 
+        public void StartActivity(Type activityType, Type resultActivity)
+        {
+            var returnTypeString = Newtonsoft.Json.JsonConvert.SerializeObject(resultActivity);
+            var intent = new Intent(this, activityType);
+            intent.PutExtra(Constants.KIND_PPX_NEXTVIEW, returnTypeString);
+            StartActivityForResult(intent, 0);
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (resultCode == Result.Ok && data != null && data.HasExtra(Constants.BUNDLE_SELECTEDCLIENT))
+            {
+                var nextResultActivity = data.GetStringExtra(Constants.KIND_PPX_NEXTVIEW);
+                var nextResultType = Newtonsoft.Json.JsonConvert.DeserializeObject<Type>(nextResultActivity);
+
+                var clientString = data.GetStringExtra(Constants.BUNDLE_SELECTEDCLIENT);
+
+                var intent = new Intent(this, nextResultType);
+                intent.PutExtra(Constants.BUNDLE_SELECTEDCLIENT, clientString);
+
+                StartActivityForResult(intent, 0);
+            }
+        }
+
         void showPrepexHome()
         {
             SetContentView(Resource.Layout.PrepexHome);
@@ -37,20 +62,19 @@ namespace JhpDataSystem.modules
             };
 
             var buttonUnscheduled = FindViewById<Button>(Resource.Id.buttonUnscheduled);
-            buttonUnscheduled.Click += (sender, e) => {
-                //var selectedClient = showClientSelectionDialog();
-                StartActivity(typeof(PP_Unscheduled1));
+            buttonUnscheduled.Click += (sender, e) =>
+            {
+                StartActivity(typeof(ClientSelectionActivity), typeof(PP_Unscheduled1));
             };
             var buttonDeviceRemovalVisit = FindViewById<Button>(Resource.Id.buttonDeviceRemovalVisit);
-            buttonDeviceRemovalVisit.Click += (sender, e) => {
-                StartActivity(typeof(PP_DeviceRemoval1));
+            buttonDeviceRemovalVisit.Click += (sender, e) =>
+            {
+                StartActivity(typeof(ClientSelectionActivity), typeof(PP_DeviceRemoval1));
             };
 
             var buttonPostRemovalVisit = FindViewById<Button>(Resource.Id.buttonPostRemovalVisit);
             buttonPostRemovalVisit.Click += (sender, e) => {
-                var intent = new Intent(this, typeof(PP_PostRemovalVisit1));
-                //StartActivity(typeof(PP_PostRemovalVisit1));
-                StartActivity(intent);
+                StartActivity(typeof(ClientSelectionActivity), typeof(PP_PostRemovalVisit1));
             };
 
             //buttonViewList
@@ -61,28 +85,32 @@ namespace JhpDataSystem.modules
 
             //buttonClientsDueFor
             var buttonClientsToCall = FindViewById<Button>(Resource.Id.buttonClientsToCall);
-            buttonClientsToCall.Click += (sender, e) => {
-                getClientsToCall();                
-            };
+            if (buttonClientsToCall != null)
+            {
+                //buttonClientsToCall.Click += (sender, e) =>
+                //{
+                //    getClientsToCall();
+                //};
+            }
 
             var buttonClientsToSms = FindViewById<Button>(Resource.Id.buttonClientsToSms);
-            buttonClientsToSms.Click += (sender, e) =>
+            if (buttonClientsToSms != null)
             {
-                new SmsSender()
-                { appContext = this, message = "Message from JHP", phoneNumber = "0977424090" }
-                .Send();
-
-               //getClientsToSms();
-            };
+                //buttonClientsToSms.Click += (sender, e) =>{
+                //new SmsSender()
+                //{
+                //    appContext = this,
+                //    message = "Message from JHP",
+                //    phoneNumber = "0977424090"
+                //}.Send();
+                // //getClientsToSms();
+                //};
+            }
 
             var buttonSupplies = FindViewById<Button>(Resource.Id.buttonSupplies);
-            buttonSupplies.Click += (sender, e) => {
-                new EmailSender() {appContext=this, message="This is an email from phone" ,
-                    messageSubject="Test email 90965",receipients=new List<string>() {
-                        "makandok@gmail.com", "makandok@yahoo.com"
-                    } 
-                }.Send();
-                //getPrepexSuppliesReport();
+            buttonSupplies.Click += (sender, e) => 
+            {
+                getPrepexSuppliesReport();
             };
             //we get the number of unsync'd records
             var unsyncdRecs = new CloudDb(Assets).GetRecordsToSync();
@@ -98,9 +126,50 @@ namespace JhpDataSystem.modules
             };
         }
 
+        List<PPDeviceSizes> getPPDeviceSizes()
+        {
+            var allClients = new ClientSummaryLoader().Get();
+            var allSizes = new Dictionary<int, PPDeviceSizes>();
+            foreach (var client in allClients)
+            {
+                PPDeviceSizes current = null;
+                var dayId = client.PlacementDate.DayOfYear;
+                if (!allSizes.TryGetValue(dayId, out current))
+                {
+                    current = new PPDeviceSizes(dayId);
+                    allSizes[dayId] = current;
+                }
+                current.Add(client.DeviceSize);
+            }
+            var toReturn = new List<PPDeviceSizes>();
+            toReturn.AddRange(allSizes.Values);
+            return toReturn;
+        }
+
         private void getPrepexSuppliesReport()
         {
-            
+            //StartActivity(typeof(FilteredGridDisplayActivity));
+            //we get all clients
+            var allSizes = getPPDeviceSizes();            
+            var resList = new List<string>();
+            resList.Add(PPDeviceSizes.getHeader());
+            foreach (var dayUsage in allSizes)
+            {
+                resList.Add(dayUsage.toDisplay());
+            }
+
+            var asString = string.Join(System.Environment.NewLine, resList);
+
+            //compute summary of device usage
+            //show the results
+            new EmailSender()
+            {
+                appContext = this,
+                receipients = new List<string>() {
+                        "makandok@gmail.com", "makandok@yahoo.com" },
+                messageSubject = "PP Device Usage Summary",
+                message = asString
+            }.Send();
         }
 
         private void getClientsToSms()
@@ -112,20 +181,6 @@ namespace JhpDataSystem.modules
         {
             
         }
-
-        //private void showAddNewView(bool showNext)
-        //{
-        //    var page = getNextPage(showNext);
-        //    if (page == currentLayout)
-        //        return;
-
-        //    currentLayout = page;
-        //    SetContentView(page);
-
-        //    addDefaultNavBehaviours();
-        //    bindDateDialogEventsForView(page);
-            
-        //}
 
         private void bindDateDialogEventsForView(int viewId)
         {

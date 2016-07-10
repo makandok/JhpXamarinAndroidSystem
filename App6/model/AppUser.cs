@@ -1,10 +1,54 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace JhpDataSystem.model
 {
+    public class PPDeviceSizes
+    {
+        public PPDeviceSizes(int dayId)
+        {
+            DayId = dayId;
+            A = B = C = D = E = 0;
+        }
+        public int DayId { get; set; }
+        public int A { get; set; }
+        public int B { get; set; }
+        public int C { get; set; }
+        public int D { get; set; }
+        public int E { get; set; }
+
+        public static string getHeader()
+        {
+            return "Day,\tA,\tB,\tC,\tD,\tE";
+        }
+
+        public string toDisplay()
+        {
+            return string.Format("{0},\t{1},\t{2},\t{3},\t{4},\t{5}", DayId, A, B, C, D, E);
+        }
+
+        internal void Add(string deviceSize)
+        {
+            if (string.IsNullOrWhiteSpace(deviceSize))
+                return;
+
+            var asLower = deviceSize.ToLowerInvariant();
+            if (asLower == "a")
+                A += 1;
+            else if (asLower == "b")
+                B += 1;
+            else if (asLower == "c")
+                C += 1;
+            else if (asLower == "d")
+                D += 1;
+            else if (asLower == "e")
+                E += 1;
+        }
+    }
+
     public class ContactNumber
     {
         public string name { get; set; }
@@ -19,8 +63,8 @@ namespace JhpDataSystem.model
         public string DataBlob { get; set; }
     }
 
-    [SQLite.Table(Constants.KIND_PREPEX_CLIENTSUMMARY)]
-    public class PrepexClientSummary: ISaveableEntity
+    [SQLite.Table(Constants.KIND_PPX_CLIENTSUMMARY)]
+    public class PPClientSummary: ISaveableEntity
     {
         [SQLite.PrimaryKey]
         public int FormSerial { get; set; }
@@ -62,8 +106,26 @@ namespace JhpDataSystem.model
         public DateTime Day14FollowupCallDate { get; set; }
         public DateTime Day49CallDate { get; set; }
         public DateTime Day56PhoneCall { get; set; }
-        
-        internal PrepexClientSummary Load(PrepexDataSet lookupEntry)
+
+        internal List<NameValuePair> ToValuesList()
+        {
+            //var expectedFields = Constants.PP_IndexedFieldNames;
+            var toReturn = new List<NameValuePair>()
+            {
+                new NameValuePair() {Name=Constants.FIELD_ID,Value = Id.Value },
+                new NameValuePair() {Name=Constants.FIELD_PLACEMENTDATE,
+                    Value = PlacementDate.ToString(CultureInfo.InvariantCulture) },
+                new NameValuePair() {Name=Constants.FIELD_CARD_SERIAL,Value = FormSerial.ToString() },
+                new NameValuePair() {Name=Constants.FIELD_CLIENTNAME,Value =Names },
+                //new NameValuePair() {Name=Constants.FIELD_CARD_SERIAL,Value = FormSerial.ToString() },
+                new NameValuePair() {Name=Constants.FIELD_CLIENTIDNUMBER,Value =ClientNumber.ToString() },
+                new NameValuePair() {Name=Constants.FIELD_CLIENTTEL,Value = Telephone },
+                new NameValuePair() {Name=Constants.FIELD_CLIENTPHYSICALADDR,Value = Address }
+            };
+            return toReturn;
+        }
+
+        internal PPClientSummary Load(PPDataSet lookupEntry)
         {
             var expectedFields = Constants.PP_IndexedFieldNames;
             var fieldValues = lookupEntry.FieldValues;
@@ -78,9 +140,16 @@ namespace JhpDataSystem.model
                 }
             }
 
+            //data.Add(new NameValuePair()
+            //{
+            //    Name = Constants.FIELD_ENTITYID,
+            //    Value = entityId.Value
+            //});
+
+            this.EntityId = new KindKey(allFields[Constants.FIELD_ENTITYID]);
             this.Id = lookupEntry.Id;
             var deviceSize = string.Empty;
-            if(allFields.TryGetValue(Constants.FIELD_PREPEX_DEVSIZE, out deviceSize))
+            if(allFields.TryGetValue(Constants.FIELD_PPX_DEVSIZE, out deviceSize))
             {
                 this.DeviceSize = deviceSize;
             }
@@ -94,6 +163,40 @@ namespace JhpDataSystem.model
             this.Address = allFields["clientsphysicaladdress"];
             return this;
         }
+
+        //internal PPDataSet GetPPDataSet()
+        //{
+        //    var lookupEntry = new PPDataSet();
+
+        //    var expectedFields = Constants.PP_IndexedFieldNames;
+        //    var fieldValues = lookupEntry.FieldValues;
+        //    var allFields = (from field in lookupEntry.FieldValues
+        //                     where expectedFields.Contains(field.Name)
+        //                     select field).ToDictionary(x => x.Name, y => y.Value);
+        //    foreach (var field in expectedFields)
+        //    {
+        //        if (!allFields.ContainsKey(field))
+        //        {
+        //            allFields[field] = "";
+        //        }
+        //    }
+
+        //    this.Id = lookupEntry.Id;
+        //    var deviceSize = string.Empty;
+        //    if (allFields.TryGetValue(Constants.FIELD_PPX_DEVSIZE, out deviceSize))
+        //    {
+        //        this.DeviceSize = deviceSize;
+        //    }
+
+        //    this.PlacementDate = Convert.ToDateTime(allFields["dateofvisit"]);
+        //    this.FormSerial = Convert.ToInt32(allFields["cardserialnumber"]);
+        //    this.Names = allFields["clientname"];
+        //    this.ClientNumber = Convert.ToInt32(allFields["clientidnumber"]);
+        //    this.KindKey = Id.Value;
+        //    this.Telephone = allFields["clienttel"];
+        //    this.Address = allFields["clientsphysicaladdress"];
+        //    return this;
+        //}
     }
 
     public class AppUser : ISaveableEntity
@@ -105,7 +208,7 @@ namespace JhpDataSystem.model
         public string KnownBolg { get; set; }
     }
 
-    public class PrepexDataSet : ISaveableEntity
+    public class PPDataSet : ISaveableEntity
     {
         public KindKey Id { get; set; }
         public KindKey EntityId { get; set; }
@@ -113,9 +216,9 @@ namespace JhpDataSystem.model
         public string FormName { get; set; }
         public List<NameValuePair> FieldValues { get; set; }
 
-        public PrepexDataSet fromJson(KindItem prepexDatasetString)
+        public PPDataSet fromJson(KindItem prepexDatasetString)
         {
-            var pp = JsonConvert.DeserializeObject<PrepexDataSet>(prepexDatasetString.Value);
+            var pp = JsonConvert.DeserializeObject<PPDataSet>(prepexDatasetString.Value);
             FormName = pp.FormName;
             FieldValues = pp.FieldValues;
             var id = FieldValues.FirstOrDefault(t => t.Name == Constants.FIELD_ID);

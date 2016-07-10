@@ -2,6 +2,7 @@ using System;
 using Android.App;
 using Android.OS;
 using System.Collections.Generic;
+using JhpDataSystem.model;
 
 namespace JhpDataSystem.modules
 {
@@ -41,6 +42,7 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            IsFirstPage = true;
             myView = Resource.Layout.prepexpostremoval1;
             myNavController = new PP_PostRemovalControl();
             ShowMyView();
@@ -83,6 +85,7 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            IsFirstPage = true;
             myView = Resource.Layout.prepexdevremoval1;
             myNavController = new PP_DeviceRemovalControl();
             ShowMyView();
@@ -111,6 +114,7 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            IsFirstPage = true;
             myView = Resource.Layout.prepexunscheduled1;
             myNavController = new PP_UnscheduledVisitControl() {  };
             ShowMyView();
@@ -137,9 +141,9 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            RequiresClient = false;
 
             // Create your application here
+            IsFirstPage = true;
             myView = Resource.Layout.prepexreg1;
             myNavController = new PP_ClientEvalControl();
             ShowMyView();
@@ -152,8 +156,6 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            RequiresClient = false;
-
             // Create your application here
             myView = Resource.Layout.prepexreg2;
             myNavController = new PP_ClientEvalControl();
@@ -167,8 +169,6 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            RequiresClient = false;
-
             // Create your application here
             myView = Resource.Layout.prepexreg3;
             myNavController = new PP_ClientEvalControl();
@@ -182,8 +182,6 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            RequiresClient = false;
-
             // Create your application here
             myView = Resource.Layout.prepexreg4;
             myNavController = new PP_ClientEvalControl();
@@ -197,8 +195,6 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            RequiresClient = false;
-
             // Create your application here
             myView = Resource.Layout.prepexreg5;
             myNavController = new PP_ClientEvalControl();
@@ -212,8 +208,6 @@ namespace JhpDataSystem.modules
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            RequiresClient = false;
-
             // Create your application here
             myView = Resource.Layout.PrepexDataEntryEnd;
             myNavController = new PP_ClientEvalControl();

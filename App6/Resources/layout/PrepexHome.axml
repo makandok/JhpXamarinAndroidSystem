@@ -38,12 +38,12 @@
             android:layout_column="1"
             android:id="@+id/linearLayout2">
             <Button
-                android:text="Client Evaluation and Procedure Record"
+                android:text="A1. Client Evaluation and Procedure Record"
                 android:id="@+id/buttonClientEvaluation"
                 android:layout_width="200dp"
                 android:layout_height="120dp" />
             <Button
-                android:text="Unscheduled or Followup Assessment"
+                android:text="A2. Unscheduled or Followup Assessment"
                 android:id="@+id/buttonUnscheduled"
                 android:layout_width="200dp"
                 android:layout_height="120dp" />
@@ -54,18 +54,19 @@
             android:minHeight="25px"
             android:layout_column="1">
             <Button
-                android:text="Device Removal Visit"
+                android:text="A3. Device Removal Visit"
                 android:id="@+id/buttonDeviceRemovalVisit"
                 android:layout_width="200dp"
                 android:layout_height="120dp" />
             <Button
-                android:text="Post Removal Visit"
+                android:text="A4. Post Removal Visit"
                 android:id="@+id/buttonPostRemovalVisit"
                 android:layout_width="200dp"
                 android:layout_height="120dp" />
         </LinearLayout>
     </TableRow>
     <TableRow
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="120dp">
         <Button
@@ -83,7 +84,6 @@
         android:layout_width="match_parent"
         android:layout_height="120dp">
         <Button
-            android:background="@color/colorPrimary"
             android:text="View List of All Clients"
             android:id="@+id/buttonViewList"
             android:layout_width="400dp"

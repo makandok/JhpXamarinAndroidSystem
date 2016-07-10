@@ -215,6 +215,7 @@
   <ItemGroup>
     <Compile Include="ApplicationSplashActivity.cs" />
     <Compile Include="ashared\Crypto.cs" />
+    <Compile Include="ClientSummaryLoader.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="db\BigQueryAssist.cs" />
     <Compile Include="db\DefaultCredentialProvider.cs" />

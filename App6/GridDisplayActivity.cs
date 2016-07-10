@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Android.App;
 using Android.OS;
 using Android.Views;
@@ -9,57 +8,81 @@ using Android.Widget;
 using JhpDataSystem.model;
 using JhpDataSystem.store;
 using System.Globalization;
-using Android.Support.Design.Widget;
 using JhpDataSystem.Utilities;
 using System.Threading.Tasks;
+using Android.Content;
 
 namespace JhpDataSystem
 {
-    public class ClientSummaryLoader
+    [Activity(Label = "Client List")]
+    public class ClientSelectionActivity : Activity, ListView.IOnItemClickListener
     {
-        public List<PrepexClientSummary>  Get()
+        ClientSummaryAdapter _defaultAdapter = null;
+        List<PPClientSummary> _allPrepexClients;
+        PPClientSummary _selectedClient = null;
+        string NEXT_TYPE = string.Empty;
+        public void OnItemClick(AdapterView parent, View view, int position, long id)
         {
-            var all = new LocalDB3().DB
-                .Table<PrepexClientSummary>()
-                .OrderBy(t => t.PlacementDate)
-                .ToList();
-            all.ForEach(t => t.Id = new KindKey(t.KindKey));
-            return all;
+            //we get the selected client and return
+            var t = _allPrepexClients[position];
+            _selectedClient = t;
+            Android.Widget.Toast.MakeText(this, t.Names, Android.Widget.ToastLength.Short).Show();
         }
 
-        public int Update(List<PrepexClientSummary> clients)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            var all = new LocalDB3().DB
-                .UpdateAll(clients);
-            return all;
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.clientlist);
+            
+            if (this.Intent.Extras!=null && this.Intent.Extras.ContainsKey(Constants.KIND_PPX_NEXTVIEW))
+            {
+                //KIND_PP_NEXTVIEW
+                NEXT_TYPE = this.Intent.Extras.GetString(Constants.KIND_PPX_NEXTVIEW);
+            }
+
+            var listview = FindViewById<ListView>(Resource.Id.listviewClientList);
+            listview.FastScrollEnabled = true;
+            listview.FastScrollAlwaysVisible = true;
+
+            listview.OnItemClickListener = this;
+
+            _allPrepexClients = new ClientSummaryLoader().Get();
+            _defaultAdapter = new ClientSummaryAdapter(this, listview, _allPrepexClients);
+
+            listview.Adapter = _defaultAdapter;
+
+            //we hide the client summary options
+            var rgroupCSOptions = FindViewById<RadioGroup>(Resource.Id.rgroupCSOptions);
+            rgroupCSOptions.Visibility = ViewStates.Gone;
+
+            var buttonPerformAction = FindViewById<Button>(Resource.Id.buttonPerformAction);
+            buttonPerformAction.Text = "Use Selected Client";
+            buttonPerformAction.Click += performActionSpecified;
+        }
+
+        void performActionSpecified(object sender, EventArgs e)
+        {
+            if (_selectedClient == null)
+            {
+                Android.Widget.Toast.MakeText(this,
+                    "No clients selected. Please select a client.",
+                    Android.Widget.ToastLength.Long).Show();
+                return;
+            }
+
+            var asString = Newtonsoft.Json.JsonConvert.SerializeObject(_selectedClient);
+            var intent = new Intent().PutExtra(Constants.BUNDLE_SELECTEDCLIENT, asString);
+            intent.PutExtra(Constants.KIND_PPX_NEXTVIEW, NEXT_TYPE);
+            SetResult(Result.Ok, intent);
+            Finish();
         }
     }
-
-    //[Activity(Label = "Client List")]
-    //public class GridDisplayActivity : ListActivity
-    //{
-    //    List<PrepexClientSummary> _allPrepexClients;
-    //    protected override void OnCreate(Bundle savedInstanceState)
-    //    {
-    //        base.OnCreate(savedInstanceState);
-    //        ListView.FastScrollEnabled = true;
-    //        _allPrepexClients = new ClientSummaryLoader().Get();
-    //        var adapter = new ClientSummaryAdapter(this, ListView, _allPrepexClients);
-    //        ListAdapter = adapter;
-    //    }
-
-    //    protected override void OnListItemClick(ListView l, View v, int position, long id)
-    //    {
-    //        var t = _allPrepexClients[position];
-    //        Android.Widget.Toast.MakeText(this, t.Names, Android.Widget.ToastLength.Short).Show();
-    //    }
-    //}
 
     [Activity(Label = "Client List")]
     public class FilteredGridDisplayActivity : Activity, ListView.IOnItemClickListener
     {
         ClientSummaryAdapter _defaultAdapter = null;
-        List<PrepexClientSummary> _allPrepexClients;
+        List<PPClientSummary> _allPrepexClients;
         //Dictionary<int, EventHandler> _behaviours;
         List<int> _listOptions = null;
         public void OnItemClick(AdapterView parent, View view, int position, long id)
@@ -164,7 +187,7 @@ clients.Count, clients.Count == 1 ? "" : "s"))
             }
         }
 
-        void showSendSmsDialog(List<PrepexClientSummary> clients)
+        void showSendSmsDialog(List<PPClientSummary> clients)
         {
             new AlertDialog.Builder(this)
 .SetTitle(Resources.GetString(Resource.String.confirm_action))
@@ -181,14 +204,14 @@ await updateDay6DateAndSave(clients, DateTime.Now);
         }
 
         //saveClientSummary
-        async Task<bool> updateDay6DateAndSave(List<PrepexClientSummary> clients, DateTime dateSmsd)
+        async Task<bool> updateDay6DateAndSave(List<PPClientSummary> clients, DateTime dateSmsd)
         {
             clients.ForEach(t => t.Day6SmsReminderDate = dateSmsd);
             new LocalDB3().DB.UpdateAll(clients);
             return true;
         }
 
-        async Task<bool> sendSms(List<PrepexClientSummary> clients)
+        async Task<bool> sendSms(List<PPClientSummary> clients)
         {
             //we send           
             Toast.MakeText(this, "Started sending messages", ToastLength.Short).Show();
@@ -277,7 +300,7 @@ await updateDay6DateAndSave(clients, DateTime.Now);
             //var fab = new FloatingActionButton(this, );
         }
 
-        List<PrepexClientSummary> getClients4TMinus(int daysPast)
+        List<PPClientSummary> getClients4TMinus(int daysPast)
         {
             var tMinus = DateTime.Now.Subtract(new TimeSpan(daysPast, 0, 0, 0));
             return _allPrepexClients.Where(t =>
@@ -319,19 +342,19 @@ await updateDay6DateAndSave(clients, DateTime.Now);
         }        
     }
 
-    public class ClientSummaryAdapter : BaseAdapter<PrepexClientSummary>
+    public class ClientSummaryAdapter : BaseAdapter<PPClientSummary>
     {
-       List<PrepexClientSummary> _myList;
+       List<PPClientSummary> _myList;
         Activity _context;
         public int tMinus { get; set; }
-        public ClientSummaryAdapter(Activity context, ListView listview, List<PrepexClientSummary> clientList)
+        public ClientSummaryAdapter(Activity context, ListView listview, List<PPClientSummary> clientList)
         {
             tMinus = -1;
             _context = context;
             _myList = clientList;
         }
 
-        public override PrepexClientSummary this[int position]
+        public override PPClientSummary this[int position]
         {
             get
             {

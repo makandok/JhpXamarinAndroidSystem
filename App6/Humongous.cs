@@ -61,7 +61,7 @@ namespace JhpDataSystem
             _localEntityStoreInstance = LocalEntityStore.Instance;
 
             //we load the fields
-            var prepexFieldsStream = assetManager.Open(Constants.FILE_PREPEX_FIELDS_CLIENTEVAL);
+            var prepexFieldsStream = assetManager.Open(Constants.FILE_PPX_FIELDS_CLIENTEVAL);
             var asString = prepexFieldsStream.toText();
 
             var fields = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FieldItem>>(asString);

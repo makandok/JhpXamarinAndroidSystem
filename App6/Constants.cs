@@ -7,25 +7,37 @@ namespace JhpDataSystem
     {
         //tables in the database
         internal static List<string> PP_IndexedFieldNames = new List<string>() {
-                Constants.FIELD_PREPEX_DEVSIZE,
-                Constants.FIELD_ID,Constants.FIELD_ENTITYID,"dateofvisit",
-                "cardserialnumber","clientidnumber","clientname","dob","clienttel",
-                "clientsphysicaladdress"};
+            //FIELD_PLACEMENTDATE,
+                FIELD_PPX_DEVSIZE,
+                FIELD_ID,FIELD_ENTITYID,FIELD_DATEOFVISIT,
+                FIELD_CARD_SERIAL,FIELD_CLIENTIDNUMBER,FIELD_CLIENTNAME,FIELD_DOB,FIELD_CLIENTTEL,
+                FIELD_CLIENTPHYSICALADDR};
+
+        internal const string BUNDLE_SELECTEDCLIENT = "bundl_client";
 
         internal const string FIELD_ENTITYID = "entityid";
         internal const string FIELD_ID = "id";
-        internal const string FIELD_PREPEX_DEVSIZE = "ppxdevsize";
-        internal const string FIELD_PREPEX_DEVSIZE_PREFIX = "prepexdevicesize";
+        internal const string FIELD_PPX_DEVSIZE = "ppxdevsize";
+        internal const string FIELD_PPX_DEVSIZE_PREFIX = "prepexdevicesize";
+        internal const string FIELD_DATEOFVISIT = "dateofvisit";
+        internal const string FIELD_CARD_SERIAL = "cardserialnumber";
+        internal const string FIELD_CLIENTIDNUMBER = "clientidnumber";
+        internal const string FIELD_CLIENTNAME = "clientname";
+        internal const string FIELD_DOB = "dob";
+        internal const string FIELD_CLIENTTEL = "clienttel";
+        internal const string FIELD_CLIENTPHYSICALADDR = "clientsphysicaladdress";
+        internal const string FIELD_PLACEMENTDATE = "dateofplacement";
 
         public const string KIND_APPUSERS = "appusers";
-        internal const string KIND_PREPEX = "pp_client";
-        internal const string KIND_PREPEX_CLIENTEVAL = "pp_client_eval";
-        internal const string KIND_PREPEX_DEVICEREMOVAL = "pp_client_devicerem";
-        internal const string KIND_PREPEX_POSTREMOVAL = "pp_client_postrem";
-        internal const string KIND_PREPEX_UNSCHEDULEDVISIT = "pp_client_unsched";
-        internal const string KIND_PREPEX_CLIENTSUMMARY = "pp_clientsummary";
+        internal const string KIND_PPX = "pp_client";
+        internal const string KIND_PPX_CLIENTEVAL = "pp_client_eval";
+        internal const string KIND_PPX_DEVICEREMOVAL = "pp_client_devicerem";
+        internal const string KIND_PPX_POSTREMOVAL = "pp_client_postrem";
+        internal const string KIND_PPX_UNSCHEDULEDVISIT = "pp_client_unsched";
+        internal const string KIND_PPX_CLIENTSUMMARY = "pp_clientsummary";
         internal const string KIND_OUTTRANSPORT = "transport";
-        internal const string KIND_PREPEX_CLIENT = "pp_client_parts";
+        internal const string KIND_PPX_CLIENT = "pp_client_parts";
+        internal const string KIND_PPX_NEXTVIEW = "pp_nextview";
 
         internal const string KIND_VMMC = "vmmcclients";
         public const string KIND_DEFAULT = "generalstore";
@@ -60,8 +72,8 @@ namespace JhpDataSystem
         public static string SUPPORTADMIN_USERNAME = "support";
 
         //prepexreg_fields
-        internal const string FILE_PREPEX_FIELDS_CLIENTEVAL = "prepexreg_fields.json";
-        internal const string FILE_PREPEX_FIELDS = "prepex_fields.json";
+        internal const string FILE_PPX_FIELDS_CLIENTEVAL = "prepexreg_fields.json";
+        internal const string FILE_PPX_FIELDS = "prepex_fields.json";
 
         
         internal const string PP_VIEWS_1= "prepexreg1";
