@@ -66,7 +66,12 @@ namespace JhpDataSystem.store
                     {"id", new Value() { StringValue = saveableEntity.Id.Value  } },
                     {"entityid", new Value() { StringValue = saveableEntity.EntityId.Value } },
                     {"dateadded", new Value() { TimestampValue = DateTime.Now } },
-                    {"datablob", new Value() {ExcludeFromIndexes=true, StringValue =saveableEntity.getJson()} }
+                    {"datablob", new Value() {ExcludeFromIndexes=true,
+                        StringValue =saveableEntity
+                    .getJson()
+                    .Encrypt()
+                    .Value}
+                    }
                 }
             };
             var datastore = GetDatastoreService(GetDefaultCredential(assets, _assetManager), assets);
@@ -140,7 +145,10 @@ namespace JhpDataSystem.store
             {
                 var outEntity = recs[recIndex];
                 var formSerial = outEntity.FormSerial;
-                var prepexDs = new PPDataSet().fromJson(new KindItem(outEntity.DataBlob));
+                var prepexDs = new PPDataSet().fromJson(new KindItem(outEntity.DataBlob
+                    //todo:remove this decryption here. Just test
+                    //.Decrypt().Value
+                    ));
                 var saveable = new DbSaveableEntity(prepexDs) {
                     kindName = new KindName(prepexDs.FormName) };
                 var saved = false;

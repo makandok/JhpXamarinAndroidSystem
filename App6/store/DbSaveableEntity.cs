@@ -24,6 +24,18 @@ namespace JhpDataSystem.store
             return JsonConvert.SerializeObject(wrappedEntity);
         }
 
+        public string getEncryptedJson()
+        {
+            return getEncryptedEntity().Value.Value;
+        }
+
+        public EncryptedKindEntity getEncryptedEntity()
+        {
+            var asString = JsonConvert.SerializeObject(wrappedEntity);
+            var encrypted = asString.Encrypt();
+            return new EncryptedKindEntity(encrypted);
+        }
+
         public static T fromJson<T>(KindItem jsonString) where T : ISaveableEntity
         {
             return JsonConvert.DeserializeObject<T>(jsonString.Value);
