@@ -17,7 +17,7 @@ namespace JhpDataSystem.modules
         System.Type GetActivityForLayout(int targetLayout);
     }
 
-    public class PrepexFormsBase : Activity
+    public class PPXFormsBase : Activity
     {
         protected bool _isRegistration = false;
         protected int myView = -1;
@@ -26,7 +26,7 @@ namespace JhpDataSystem.modules
         protected PPClientSummary CurrentClient { get; set; }
         protected KindName _kindName { get; set; }
 
-        void showPrepexHome()
+        void showHome()
         {
             var intent = new Intent(this, typeof(PPXHomeActivity));
             intent.AddFlags(ActivityFlags.ClearTop);
@@ -68,7 +68,7 @@ namespace JhpDataSystem.modules
                 foreach (var value in indexedData)
                 {
                     var field = viewFields
-                        .Where(t => t.name == value.Name && t.name != Constants.FIELD_DATEOFVISIT)
+                        .Where(t => t.name == value.Name && t.name != Constants.FIELD_PPX_DATEOFVISIT)
                         .FirstOrDefault();
                     if (field == null)
                         continue;
@@ -358,7 +358,7 @@ namespace JhpDataSystem.modules
 
                     //we close and show the prpex home page
                     this.Finish();
-                    showPrepexHome();
+                    showHome();
                 };
             }
             else

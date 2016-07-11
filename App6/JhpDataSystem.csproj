@@ -231,10 +231,13 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <Compile Include="model\FieldItem.cs" />
-    <Compile Include="model\PrepexClientFollowUp.cs" />
-    <Compile Include="modules\PrepexClientEvaluation.cs" />
-    <Compile Include="modules\PrepexFormsBase.cs" />
+    <Compile Include="modules\PPXActivities.cs" />
+    <Compile Include="modules\PPXFormsBase.cs" />
     <Compile Include="modules\SmsActivity.cs" />
+    <Compile Include="projects\ppx\ClientSummaryLoader.cs" />
+    <Compile Include="projects\ppx\PPXConstants.cs" />
+    <Compile Include="projects\ppx\VmmcConstants.cs" />
+    <Compile Include="projects\vmmc\ClientSummaryLoader.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="store\CloudDb.cs" />
@@ -263,12 +266,11 @@
     </AndroidResource>
     <Compile Include="WebFileDownloader.cs" />
     <None Include="Samples\Archive.cs" />
-    <Compile Include="IApplicationModule.cs" />
     <Compile Include="LauncherActivity.cs" />
     <Compile Include="model\AppUser.cs" />
     <Compile Include="model\EntityKey.cs" />
     <Compile Include="BrowserDataEntryActivity.cs" />
-    <Compile Include="modules\PrepexHomeActivity.cs" />
+    <Compile Include="modules\PPXHomeActivity.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
     <Compile Include="db\ServiceAccountCredentiaal.cs" />
     <Compile Include="db\SampleMain.cs" />

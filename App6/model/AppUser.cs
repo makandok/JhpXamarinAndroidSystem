@@ -113,14 +113,14 @@ namespace JhpDataSystem.model
             {
                 new NameValuePair() {Name=Constants.FIELD_ENTITYID,Value = EntityId.Value },
                 new NameValuePair() {Name=Constants.FIELD_ID,Value = Id.Value },
-                new NameValuePair() {Name=Constants.FIELD_PLACEMENTDATE,
+                new NameValuePair() {Name=Constants.FIELD_PPX_PLACEMENTDATE,
                     Value = PlacementDate.ToString(CultureInfo.InvariantCulture) },
-                new NameValuePair() {Name=Constants.FIELD_CARD_SERIAL,Value = FormSerial.ToString() },
-                new NameValuePair() {Name=Constants.FIELD_CLIENTNAME,Value =Names },
+                new NameValuePair() {Name=Constants.FIELD_PPX_CARD_SERIAL,Value = FormSerial.ToString() },
+                new NameValuePair() {Name=Constants.FIELD_PPX_CLIENTNAME,Value =Names },
                 //new NameValuePair() {Name=Constants.FIELD_CARD_SERIAL,Value = FormSerial.ToString() },
-                new NameValuePair() {Name=Constants.FIELD_CLIENTIDNUMBER,Value =ClientNumber.ToString() },
-                new NameValuePair() {Name=Constants.FIELD_CLIENTTEL,Value = Telephone },
-                new NameValuePair() {Name=Constants.FIELD_CLIENTPHYSICALADDR,Value = Address }
+                new NameValuePair() {Name=Constants.FIELD_PPX_CLIENTIDNUMBER,Value =ClientNumber.ToString() },
+                new NameValuePair() {Name=Constants.FIELD_PPX_CLIENTTEL,Value = Telephone },
+                new NameValuePair() {Name=Constants.FIELD_PPX_CLIENTPHYSICALADDR,Value = Address }
             };
             return toReturn;
         }
@@ -197,5 +197,96 @@ namespace JhpDataSystem.model
         public KindKey Id { get; set; }
         public string AuthorisationToken { get; set; }
         public AppUser User { get; set; }
+    }
+
+    [SQLite.Table(Constants.KIND_VMMC_CLIENTSUMMARY)]
+    public class VmmcClientSummary : ISaveableEntity
+    {
+        [SQLite.PrimaryKey]
+        public int FormSerial { get; set; }
+
+        private long _itemid = -1L;
+        [SQLite.Ignore]
+        public long itemId { get { return _itemid; } set { _itemid = value; } }
+
+        [SQLite.Ignore]
+        public KindKey Id { get; set; }
+
+        [SQLite.Ignore]
+        public KindKey EntityId { get; set; }
+
+        public long getItemId()
+        {
+            if (_itemid == -1L && Id != null)
+            {
+                _itemid = Id.Value.GetHashCode();
+            }
+            return _itemid;
+        }
+
+        public string KindKey { get; set; }
+
+        public string Names { get; set; }
+        public int ClientNumber { get; set; }
+
+        public DateTime DateOfBirth { get; set; }
+
+        public DateTime MCDate { get; set; }
+        public string Telephone { get; set; }
+
+        public string Address { get; set; }
+
+        internal List<NameValuePair> ToValuesList()
+        {
+            var toReturn = new List<NameValuePair>()
+            {
+                new NameValuePair() {Name=Constants.FIELD_ENTITYID,Value = EntityId.Value },
+                new NameValuePair() {Name=Constants.FIELD_ID,Value = Id.Value },
+                new NameValuePair() {Name=Constants.FIELD_VMMC_MCDATE,
+                    Value = MCDate.ToString(CultureInfo.InvariantCulture) },
+
+                new NameValuePair() {Name=Constants.FIELD_PPX_CARD_SERIAL,Value = FormSerial.ToString() },
+                new NameValuePair() {Name=Constants.FIELD_PPX_CLIENTNAME,Value =Names },
+                new NameValuePair() {Name=Constants.FIELD_VMMC_DOB,Value = DateOfBirth.ToString(CultureInfo.InvariantCulture) },
+                new NameValuePair() {Name=Constants.FIELD_PPX_CLIENTIDNUMBER,Value =ClientNumber.ToString() },
+                new NameValuePair() {Name=Constants.FIELD_PPX_CLIENTTEL,Value = Telephone },
+                new NameValuePair() {Name=Constants.FIELD_PPX_CLIENTPHYSICALADDR,Value = Address }
+            };
+            return toReturn;
+        }
+
+        internal VmmcClientSummary Load(PPDataSet lookupEntry)
+        {
+            var expectedFields = Constants.PP_IndexedFieldNames;
+            var fieldValues = lookupEntry.FieldValues;
+            var allFields = (from field in lookupEntry.FieldValues
+                             where expectedFields.Contains(field.Name)
+                             select field).ToDictionary(x => x.Name, y => y.Value);
+            foreach (var field in expectedFields)
+            {
+                if (!allFields.ContainsKey(field))
+                {
+                    allFields[field] = "";
+                }
+            }
+
+            this.KindKey = lookupEntry.Id.Value;
+            this.EntityId = new KindKey(KindKey);
+            this.Id = lookupEntry.Id;
+
+            //var deviceSize = string.Empty;
+            //if (allFields.TryGetValue(Constants.FIELD_PPX_DEVSIZE, out deviceSize))
+            //{
+            //    this.DeviceSize = deviceSize;
+            //}
+
+            //this.PlacementDate = Convert.ToDateTime(allFields["dateofvisit"]);
+            this.FormSerial = Convert.ToInt32(allFields["cardserialnumber"]);
+            this.Names = allFields["clientname"];
+            this.ClientNumber = Convert.ToInt32(allFields["clientidnumber"]);
+            this.Telephone = allFields["clienttel"];
+            this.Address = allFields["clientsphysicaladdress"];
+            return this;
+        }
     }
 }

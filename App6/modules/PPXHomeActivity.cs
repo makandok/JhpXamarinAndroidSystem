@@ -8,6 +8,7 @@ using System.Linq;
 using JhpDataSystem.store;
 using Android.Content;
 using JhpDataSystem.Utilities;
+using JhpDataSystem.projects.ppx;
 
 namespace JhpDataSystem.modules
 {
@@ -173,151 +174,141 @@ namespace JhpDataSystem.modules
             }.Send();
         }
 
-        private void getClientsToSms()
-        {
-            StartActivity(typeof(SmsActivity));
-        }
+        //private void bindDateDialogEventsForView(int viewId)
+        //{
+        //    //we get all the relevant fields for this view
+        //    var viewFields = GetFieldsForView(viewId);
 
-        private void getClientsToCall()
-        {
-            
-        }
+        //    //we find the date fields
+        //    var dateFields = (from field in viewFields
+        //                      where field.dataType == Constants.DATEPICKER
+        //                      select field).ToList();
+        //    var context = this;
+        //    //Android.Content.Res.Resources res = context.Resources;
+        //    //string recordTable = res.GetString(Resource.String.RecordsTable);
+        //    foreach (var field in dateFields)
+        //    {
+        //        //we convert these into int Ids
+        //        int resID = context.Resources.GetIdentifier(
+        //            Constants.DATE_BUTTON_PREFIX + field.name, "id", context.PackageName);
+        //        if (resID == 0)
+        //            continue;
 
-        private void bindDateDialogEventsForView(int viewId)
-        {
-            //we get all the relevant fields for this view
-            var viewFields = GetFieldsForView(viewId);
+        //        var dateSelectButton = FindViewById<Button>(resID);
+        //        if (dateSelectButton == null)
+        //            continue;
 
-            //we find the date fields
-            var dateFields = (from field in viewFields
-                              where field.dataType == Constants.DATEPICKER
-                              select field).ToList();
-            var context = this;
-            //Android.Content.Res.Resources res = context.Resources;
-            //string recordTable = res.GetString(Resource.String.RecordsTable);
-            foreach (var field in dateFields)
-            {
-                //we convert these into int Ids
-                int resID = context.Resources.GetIdentifier(
-                    Constants.DATE_BUTTON_PREFIX + field.name, "id", context.PackageName);
-                if (resID == 0)
-                    continue;
+        //        //create events for them and their accompanying text fields
+        //        dateSelectButton.Click += (a, b) =>
+        //        {
+        //            var dateViewId = context.Resources.GetIdentifier(
+        //                Constants.DATE_TEXT_PREFIX + field.name, "id", context.PackageName);
+        //            var sisterView = FindViewById<EditText>(dateViewId);
+        //            if (sisterView == null)
+        //                return;
+        //            var frag = DatePickerFragment.NewInstance((time) =>
+        //            {
+        //                sisterView.Text = time.ToLongDateString();
+        //            });
+        //            frag.Show(FragmentManager, DatePickerFragment.TAG);
+        //        };
+        //    }
+        //}
 
-                var dateSelectButton = FindViewById<Button>(resID);
-                if (dateSelectButton == null)
-                    continue;
+        //private void getDataForView(int viewId)
+        //{
+        //    //we get all the relevant fields for this view
+        //    var viewFields = GetFieldsForView(viewId);
 
-                //create events for them and their accompanying text fields
-                dateSelectButton.Click += (a, b) =>
-                {
-                    var dateViewId = context.Resources.GetIdentifier(
-                        Constants.DATE_TEXT_PREFIX + field.name, "id", context.PackageName);
-                    var sisterView = FindViewById<EditText>(dateViewId);
-                    if (sisterView == null)
-                        return;
-                    var frag = DatePickerFragment.NewInstance((time) =>
-                    {
-                        sisterView.Text = time.ToLongDateString();
-                    });
-                    frag.Show(FragmentManager, DatePickerFragment.TAG);
-                };
-            }
-        }
+        //    //we find the date fields
+        //    var dataFields = (from field in viewFields
+        //                      where field.dataType == Constants.DATEPICKER
+        //                      || field.dataType == Constants.EDITTEXT
+        //                      || field.dataType == Constants.CHECKBOX
+        //                      || field.dataType == Constants.RADIOBUTTON
+        //                      select field).ToList();
+        //    var context = this;
+        //    var valueFields = new List<FieldValuePair>();
+        //    foreach (var field in dataFields)
+        //    {
+        //        var resultObject = new FieldValuePair() {Field = field, Value = string.Empty };
+        //        switch (field.dataType)
+        //        {
+        //            case Constants.DATEPICKER:
+        //                {
+        //                    var view = field.GetDataView<EditText>(this);
+        //                    if (string.IsNullOrWhiteSpace(view.Text))
+        //                        continue;
 
-        private void getDataForView(int viewId)
-        {
-            //we get all the relevant fields for this view
-            var viewFields = GetFieldsForView(viewId);
+        //                    resultObject.Value = view.Text;
+        //                   break;
+        //                }
+        //            case Constants.EDITTEXT:
+        //                {
+        //                    var view = field.GetDataView<EditText>(this);
+        //                    if (string.IsNullOrWhiteSpace(view.Text))
+        //                        continue;
 
-            //we find the date fields
-            var dataFields = (from field in viewFields
-                              where field.dataType == Constants.DATEPICKER
-                              || field.dataType == Constants.EDITTEXT
-                              || field.dataType == Constants.CHECKBOX
-                              || field.dataType == Constants.RADIOBUTTON
-                              select field).ToList();
-            var context = this;
-            var valueFields = new List<FieldValuePair>();
-            foreach (var field in dataFields)
-            {
-                var resultObject = new FieldValuePair() {Field = field, Value = string.Empty };
-                switch (field.dataType)
-                {
-                    case Constants.DATEPICKER:
-                        {
-                            var view = field.GetDataView<EditText>(this);
-                            if (string.IsNullOrWhiteSpace(view.Text))
-                                continue;
+        //                    resultObject.Value = view.Text;
+        //                    break;
+        //                }
+        //            case Constants.CHECKBOX:
+        //                {
+        //                    var view = field.GetDataView<CheckBox>(this);
+        //                    if (!view.Checked)
+        //                    {
+        //                        continue;
+        //                    }
+        //                    resultObject.Value = Constants.DEFAULT_CHECKED;
+        //                    break;
+        //                }
+        //            case Constants.RADIOBUTTON:
+        //                {
+        //                    var view = field.GetDataView<RadioButton>(this);
+        //                    if (!view.Checked)
+        //                    {
+        //                        continue;
+        //                    }
+        //                    resultObject.Value = Constants.DEFAULT_CHECKED;
+        //                    break;
+        //                }
+        //            default:
+        //                {
+        //                    throw new ArgumentNullException("Could not find view for field " + field.name);
+        //                }
+        //        }
 
-                            resultObject.Value = view.Text;
-                           break;
-                        }
-                    case Constants.EDITTEXT:
-                        {
-                            var view = field.GetDataView<EditText>(this);
-                            if (string.IsNullOrWhiteSpace(view.Text))
-                                continue;
+        //        if (string.IsNullOrWhiteSpace(resultObject.Value))
+        //        {
+        //            throw new ArgumentNullException("Could not find view for field " + field.name);
+        //        }
+        //        valueFields.Add(resultObject);
+        //    }
 
-                            resultObject.Value = view.Text;
-                            break;
-                        }
-                    case Constants.CHECKBOX:
-                        {
-                            var view = field.GetDataView<CheckBox>(this);
-                            if (!view.Checked)
-                            {
-                                continue;
-                            }
-                            resultObject.Value = Constants.DEFAULT_CHECKED;
-                            break;
-                        }
-                    case Constants.RADIOBUTTON:
-                        {
-                            var view = field.GetDataView<RadioButton>(this);
-                            if (!view.Checked)
-                            {
-                                continue;
-                            }
-                            resultObject.Value = Constants.DEFAULT_CHECKED;
-                            break;
-                        }
-                    default:
-                        {
-                            throw new ArgumentNullException("Could not find view for field " + field.name);
-                        }
-                }
+        //    AppInstance.Instance.TemporalViewData[viewId] = valueFields;
+        //}
 
-                if (string.IsNullOrWhiteSpace(resultObject.Value))
-                {
-                    throw new ArgumentNullException("Could not find view for field " + field.name);
-                }
-                valueFields.Add(resultObject);
-            }
-
-            AppInstance.Instance.TemporalViewData[viewId] = valueFields;
-        }
-
-        private List<FieldItem> GetFieldsForView(int viewId)
-        {
-            var filterString = string.Empty;
-            switch (viewId)
-            {
-                case Resource.Layout.prepexreg1:
-                    filterString = Constants.PP_VIEWS_1;
-                    break;
-                case Resource.Layout.prepexreg2:
-                    filterString = Constants.PP_VIEWS_2;
-                    break;
-                case Resource.Layout.prepexreg3:
-                    filterString = Constants.PP_VIEWS_3;
-                    break;
-                case Resource.Layout.prepexreg4:
-                    filterString = Constants.PP_VIEWS_4;
-                    break;
-            }
-            var fields = (AppInstance.Instance.PPXFieldItems.Where(t => t.pageName == filterString)).ToList();
-            return fields;
-        }
+        //private List<FieldItem> GetFieldsForView(int viewId)
+        //{
+        //    var filterString = string.Empty;
+        //    switch (viewId)
+        //    {
+        //        case Resource.Layout.prepexreg1:
+        //            filterString = Constants.PP_VIEWS_1;
+        //            break;
+        //        case Resource.Layout.prepexreg2:
+        //            filterString = Constants.PP_VIEWS_2;
+        //            break;
+        //        case Resource.Layout.prepexreg3:
+        //            filterString = Constants.PP_VIEWS_3;
+        //            break;
+        //        case Resource.Layout.prepexreg4:
+        //            filterString = Constants.PP_VIEWS_4;
+        //            break;
+        //    }
+        //    var fields = (AppInstance.Instance.PPXFieldItems.Where(t => t.pageName == filterString)).ToList();
+        //    return fields;
+        //}
 
         protected override void OnSaveInstanceState(Bundle outState)
         {
