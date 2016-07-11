@@ -233,7 +233,6 @@
     <Compile Include="model\FieldItem.cs" />
     <Compile Include="model\PrepexClientFollowUp.cs" />
     <Compile Include="modules\PrepexClientEvaluation.cs" />
-    <Compile Include="modules\PrepexDeviceRemoval.cs" />
     <Compile Include="modules\PrepexFormsBase.cs" />
     <Compile Include="modules\SmsActivity.cs" />
     <Compile Include="SQLite.cs" />
@@ -241,7 +240,7 @@
     <Compile Include="store\CloudDb.cs" />
     <Compile Include="store\LocalDB3.cs" />
     <Compile Include="SystemConfigActivity.cs" />
-    <AndroidAsset Include="Assets\prepexreg_fields.json" />
+    <AndroidAsset Include="Assets\ppx_fields.json" />
     <AndroidResource Include="Resources\layout\prepexreg5.axml" />
     <AndroidResource Include="Resources\layout\prepexdevremoval1.axml" />
     <AndroidResource Include="Resources\layout\prepexdevremoval2.axml" />

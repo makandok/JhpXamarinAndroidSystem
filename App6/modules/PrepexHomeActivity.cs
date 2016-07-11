@@ -11,13 +11,13 @@ using JhpDataSystem.Utilities;
 
 namespace JhpDataSystem.modules
 {
-    [Activity(Label = "Prepex Manager", Icon = "@drawable/jhpiego_logo")]
-    public class PrepexHomeActivity : Activity
+    [Activity(Label = "@string/ppx_activitylabel", Icon = "@drawable/jhpiego_logo")]
+    public class PPXHomeActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            showPrepexHome();
+            showPPXHome();
         }
 
         public void StartActivity(Type activityType, Type resultActivity)
@@ -46,7 +46,7 @@ namespace JhpDataSystem.modules
             }
         }
 
-        void showPrepexHome()
+        void showPPXHome()
         {
             SetContentView(Resource.Layout.PrepexHome);
             var closeButton = FindViewById<Button>(Resource.Id.buttonClose);
@@ -315,7 +315,7 @@ namespace JhpDataSystem.modules
                     filterString = Constants.PP_VIEWS_4;
                     break;
             }
-            var fields = (AppInstance.Instance.FieldItems.Where(t => t.pageName == filterString)).ToList();
+            var fields = (AppInstance.Instance.PPXFieldItems.Where(t => t.pageName == filterString)).ToList();
             return fields;
         }
 

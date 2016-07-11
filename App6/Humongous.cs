@@ -29,8 +29,8 @@ namespace JhpDataSystem
         }
 
         AssetManager _assetManager { get; set; }
+        Activity _mainContext;
         LocalEntityStore _localEntityStoreInstance { get; set; }
-
 
         public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
 
@@ -38,6 +38,7 @@ namespace JhpDataSystem
         public void InitialiseAppResources(AssetManager assetManager, Activity context)
         {
             _assetManager = assetManager;
+            _mainContext = context;
             TemporalViewData = new Dictionary<int, List<FieldValuePair>>();
             ApiAssets = new Dictionary<string, string>();
             //we read the api key file
@@ -50,24 +51,21 @@ namespace JhpDataSystem
                     jsonObject.decryptAndGetApiSetting(assetName);
             }
 
-            //ApiAssets[Constants.ASSET_NAME_APPNAME] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_APPNAME);
-            //ApiAssets[Constants.ASSET_PROJECT_ID] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_PROJECT_ID);
-            //ApiAssets[Constants.ASSET_NAME_SVC_ACCTEMAIL] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_NAME_SVC_ACCTEMAIL);
-            //ApiAssets[Constants.ASSET_DATASTORE_APPKEY] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_DATASTORE_APPKEY);
-            //ApiAssets[Constants.ASSET_P12KEYFILE] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_P12KEYFILE);
-            //ApiAssets[Constants.ASSET_ADMIN_HASH] = jsonObject.decryptAndGetApiSetting(Constants.ASSET_ADMIN_HASH);
-
             //we need to have this class initialised
             _localEntityStoreInstance = LocalEntityStore.Instance;
 
+            CloudDbInstance = new CloudDb(_assetManager);
+        }
+
+        List<FieldItem> readFields(string fieldsAssetName, AssetManager assetManager, Activity context)
+        {
             //we load the fields
-            var prepexFieldsStream = assetManager.Open(Constants.FILE_PPX_FIELDS_CLIENTEVAL);
-            var asString = prepexFieldsStream.toText();
+            var fieldStream = assetManager.Open(fieldsAssetName);
+
+            var asString = fieldStream.toText();
 
             var fields = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FieldItem>>(asString);
 
-            FieldItems = fields;
-            Dictionary<int, FieldItem> viewFields = new Dictionary<int, FieldItem>();
             var viewPages = fields.Select(t => t.pageName).Distinct().ToList();
 
             var dictionary = new Dictionary<string, int>();
@@ -78,12 +76,12 @@ namespace JhpDataSystem
                 dictionary[page] = id;
             }
 
-            foreach(var field in fields)
+            foreach (var field in fields)
             {
                 field.PageId = dictionary[field.pageName];
             }
 
-            CloudDbInstance = new CloudDb(_assetManager);
+            return fields;
         }
 
         internal void LogActionItem(string v)
@@ -92,7 +90,29 @@ namespace JhpDataSystem
             //throw new NotImplementedException();
         }
 
-        public List<FieldItem> FieldItems = null;
+        List<FieldItem> _vmmcFieldItems = null;
+        public List<FieldItem> VmmcFieldItems
+        {
+            get
+            {
+                if (_vmmcFieldItems == null)
+                    _vmmcFieldItems =
+                        readFields(Constants.FILE_VMMC_FIELDS, _assetManager, _mainContext);
+                return _vmmcFieldItems;
+            }
+        }
+
+        List<FieldItem> _ppxFieldItems = null;
+        public List<FieldItem> PPXFieldItems
+        {
+            get
+            {
+                if (_ppxFieldItems == null)
+                    _ppxFieldItems =
+                        readFields(Constants.FILE_PPX_FIELDS, _assetManager, _mainContext);
+                return _ppxFieldItems;
+            }
+        }
 
         public UserSession CurrentUser { get; internal set; }
 

@@ -28,6 +28,8 @@ namespace JhpDataSystem
         internal const string FIELD_CLIENTPHYSICALADDR = "clientsphysicaladdress";
         internal const string FIELD_PLACEMENTDATE = "dateofplacement";
 
+        internal const string LABEL_PPX_ACTIVITYLABEL = "Prepex Manager";
+
         public const string KIND_APPUSERS = "appusers";
         internal const string KIND_PPX = "pp_client";
         internal const string KIND_PPX_CLIENTEVAL = "pp_client_eval";
@@ -72,8 +74,10 @@ namespace JhpDataSystem
         public static string SUPPORTADMIN_USERNAME = "support";
 
         //prepexreg_fields
-        internal const string FILE_PPX_FIELDS_CLIENTEVAL = "prepexreg_fields.json";
-        internal const string FILE_PPX_FIELDS = "prepex_fields.json";
+        internal const string FILE_PPX_FIELDS = "ppx_fields.json";
+        internal const string FILE_VMMC_FIELDS = "ihpvmmc_fields.json";
+
+        //internal const string FILE_PPX_FIELDS = "";
 
         
         internal const string PP_VIEWS_1= "prepexreg1";

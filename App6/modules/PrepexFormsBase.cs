@@ -28,7 +28,7 @@ namespace JhpDataSystem.modules
 
         void showPrepexHome()
         {
-            var intent = new Intent(this, typeof(PrepexHomeActivity));
+            var intent = new Intent(this, typeof(PPXHomeActivity));
             intent.AddFlags(ActivityFlags.ClearTop);
             StartActivityForResult(intent, 0);
         }
@@ -229,7 +229,7 @@ namespace JhpDataSystem.modules
 
         protected List<FieldItem> GetFieldsForView(int viewId)
         {
-            return AppInstance.Instance.FieldItems.Where(t => t.PageId == viewId).ToList();
+            return AppInstance.Instance.PPXFieldItems.Where(t => t.PageId == viewId).ToList();
         }
 
         protected void addDiscardFunctionality()
