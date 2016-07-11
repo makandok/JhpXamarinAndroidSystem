@@ -10,7 +10,7 @@ using Android.Content;
 using JhpDataSystem.Utilities;
 using JhpDataSystem.projects.ppx;
 
-namespace JhpDataSystem.modules
+namespace JhpDataSystem.projects.ppx
 {
     [Activity(Label = "@string/ppx_activitylabel", Icon = "@drawable/jhpiego_logo")]
     public class PPXHomeActivity : Activity

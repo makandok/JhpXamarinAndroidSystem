@@ -4,7 +4,7 @@ using Android.OS;
 using System.Collections.Generic;
 using JhpDataSystem.model;
 
-namespace JhpDataSystem.modules
+namespace JhpDataSystem.projects.ppx
 {
     [Activity(Label = "A.4: Post-Removal Visit Assessment - End")]
     public class PP_PostRemovalVisitEnd : PPXFormsBase

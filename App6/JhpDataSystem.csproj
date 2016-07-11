@@ -231,12 +231,13 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <Compile Include="model\FieldItem.cs" />
-    <Compile Include="modules\PPXActivities.cs" />
-    <Compile Include="modules\PPXFormsBase.cs" />
+    <Compile Include="projects\ppx\GridDisplayActivity.cs" />
+    <Compile Include="projects\ppx\PPXActivities.cs" />
+    <Compile Include="projects\ppx\PPXFormsBase.cs" />
     <Compile Include="modules\SmsActivity.cs" />
     <Compile Include="projects\ppx\ClientSummaryLoader.cs" />
     <Compile Include="projects\ppx\PPXConstants.cs" />
-    <Compile Include="projects\ppx\VmmcConstants.cs" />
+    <Compile Include="projects\vmmc\VmmcConstants.cs" />
     <Compile Include="projects\vmmc\ClientSummaryLoader.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
@@ -270,7 +271,7 @@
     <Compile Include="model\AppUser.cs" />
     <Compile Include="model\EntityKey.cs" />
     <Compile Include="BrowserDataEntryActivity.cs" />
-    <Compile Include="modules\PPXHomeActivity.cs" />
+    <Compile Include="projects\ppx\PPXHomeActivity.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
     <Compile Include="db\ServiceAccountCredentiaal.cs" />
     <Compile Include="db\SampleMain.cs" />

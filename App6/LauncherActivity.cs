@@ -38,7 +38,7 @@ namespace JhpDataSystem
             loggedInUserText.Click += showMenuLoggedInUser;
 
             var buttonPrepexHome = FindViewById<Button>(Resource.Id.buttonPrepexHome);
-            buttonPrepexHome.Click += (x, y) => { StartActivity(typeof(PPXHomeActivity)); };
+            buttonPrepexHome.Click += (x, y) => { StartActivity(typeof(JhpDataSystem.projects.ppx.PPXHomeActivity)); };
 
             var buttonVmmcHome = FindViewById<Button>(Resource.Id.buttonVmmcHome);
             buttonVmmcHome.Click += (x, y) => {

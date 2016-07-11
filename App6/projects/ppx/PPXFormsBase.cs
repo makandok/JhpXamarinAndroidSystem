@@ -8,7 +8,7 @@ using System.Linq;
 using JhpDataSystem.store;
 using Android.Content;
 
-namespace JhpDataSystem.modules
+namespace JhpDataSystem.projects.ppx
 {
     public interface IPP_NavController
     {
