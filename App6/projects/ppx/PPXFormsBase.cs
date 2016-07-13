@@ -340,13 +340,44 @@ namespace JhpDataSystem.projects.ppx
                         });
                     }
 
-                    //we compute the indexed data and save
-                    //saveClientSummary(data, saveable.EntityId);
+                    var dateEdited = DateTime.Now;
+                    var creationDate = data.Where(t => t.Name.Contains(Constants.SYS_FIELD_DATECREATED)).FirstOrDefault();
+                    if (creationDate == null)
+                    {
+                        data.Add(new NameValuePair(){
+                            Name = Constants.SYS_FIELD_DATECREATED,
+                            Value = dateEdited.ToString(System.Globalization.CultureInfo.InvariantCulture)
+                        });
+                    }
+
+                    var editDate = data.Where(t => t.Name.Contains(Constants.SYS_FIELD_DATEEDITED)).FirstOrDefault();
+                    if (editDate == null)
+                    {
+                        data.Add(new NameValuePair()
+                        {
+                            Name = Constants.SYS_FIELD_DATEEDITED,
+                            Value = dateEdited.ToString(System.Globalization.CultureInfo.InvariantCulture)
+                        });
+                    }
+                    else
+                    {
+                        //create an audit entry.
+                        //skip for now
+                    }
 
                     //save to local db
                     saveable.FieldValues = data;
                     var saveableEntity = new DbSaveableEntity(saveable) { kindName = _kindName };
                     saveableEntity.Save();
+
+                    //save to record summmary
+                    new LocalDB3().DB.InsertOrReplace(new RecordSummary()
+                    {
+                        Id = saveable.Id.Value,
+                        EntityId = saveable.EntityId.Value,
+                        VisitDate = dateEdited,
+                        KindName = _kindName.Value
+                    });
 
                     //fire and forget
                     AppInstance.Instance.CloudDbInstance.AddToOutQueue(saveableEntity);

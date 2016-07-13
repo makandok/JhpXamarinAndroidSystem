@@ -12,6 +12,7 @@
   <string name="noclients_tosms">No clients to SMS for this day</string>
   <string name="sms_clientsalreadysmsd">Warning, a reminder message has already been sent. Do you still want to send the same message</string>
   <string name="ppx_activitylabel">Prepex Manager</string>
+  <string name="ppx_noclientselected">No client selected</string>
   
   
   <string name="sys_dateselect">Select Date</string>

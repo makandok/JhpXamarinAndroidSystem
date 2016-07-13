@@ -14,7 +14,131 @@ using Android.Content;
 
 namespace JhpDataSystem.projects.ppx
 {
-    [Activity(Label = "Client List")]
+    [Activity(Label = "Select Record")]
+    public class SelectRecordsActivity : Activity, ListView.IOnItemClickListener
+    {
+        List<DisplayRecordSummary> _allItem;
+        RecordSummary _selectedItem = null;
+
+        public string DisplayName { get; set; }
+
+        public void OnItemClick(AdapterView parent, View view, int position, long id)
+        {
+            //we get the selected client and return
+            _selectedItem = _allItem[position].Wrapped;
+        }
+
+        List<DisplayRecordSummary> getRecordsForClient(string entityId)
+        {
+            //we get entityid from the intent
+            var res = new LocalDB3().DB.Query<RecordSummary>(
+               string.Format("select * from {0} where EntityId = @entityid",
+               Constants.SYS_KIND_RECORDSUMMARY), entityId);
+            return (from table in res select new DisplayRecordSummary(table)).ToList();
+        }
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            if (this.Intent.Extras == null)
+                return;
+
+            SetContentView(Resource.Layout.clientlist);
+
+            var clientString = this.Intent.Extras
+    .GetString(Constants.BUNDLE_SELECTEDCLIENT);
+            var client = Newtonsoft.Json.JsonConvert
+                .DeserializeObject<PPClientSummary>(clientString);
+            var entityId = client.EntityId.Value;
+
+            var listview = FindViewById<ListView>(Resource.Id.listviewClientList);
+            listview.FastScrollEnabled = true;
+            listview.FastScrollAlwaysVisible = true;
+            listview.OnItemClickListener = this;
+
+            //LocalEntityStore.Instance.updateRecordSummaryTable();
+
+            var recordSummaries = getRecordsForClient(entityId);
+
+            _allItem = recordSummaries;
+            var adapter = new RecordSummaryAdapter(this, listview, recordSummaries);
+            listview.Adapter = adapter;
+
+            //we hide the client summary options
+            var rgroupCSOptions = FindViewById<RadioGroup>(Resource.Id.rgroupCSOptions);
+            rgroupCSOptions.Visibility = ViewStates.Gone;
+
+            var buttonPerformAction = FindViewById<Button>(Resource.Id.buttonPerformAction);
+            buttonPerformAction.Text = "Edit Selected Record";
+            buttonPerformAction.Click += performActionSpecified;
+        }
+
+        void performActionSpecified(object sender, EventArgs e)
+        {
+            if (_selectedItem == null)
+            {
+                Android.Widget.Toast.MakeText(this,
+                    "No clients selected. Please select a client.",
+                    Android.Widget.ToastLength.Long).Show();
+                return;
+            }
+
+            var intent = new Intent()
+                .PutExtra(Constants.BUNDLE_SELECTEDCLIENT,
+                    this.Intent.Extras.GetString(Constants.BUNDLE_SELECTEDCLIENT))
+                .PutExtra(Constants.BUNDLE_SELECTEDRECORD_ID, _selectedItem.Id)
+                .PutExtra(Constants.BUNDLE_SELECTEDRECORD,
+                Newtonsoft.Json.JsonConvert.SerializeObject(_selectedItem));
+            SetResult(Result.Ok, intent);
+            Finish();
+        }
+    }
+
+    public class RecordSummaryAdapter : BaseAdapter<DisplayRecordSummary>
+    {
+        List<DisplayRecordSummary> _myList;
+        Activity _context;
+        public RecordSummaryAdapter(Activity context, ListView listview, List<DisplayRecordSummary> clientRecords)
+        {
+            _context = context;            
+            _myList = clientRecords;
+        }
+
+        public override DisplayRecordSummary this[int position]
+        {
+            get
+            {
+                return _myList[position];
+            }
+        }
+
+        public override int Count
+        {
+            get
+            {
+                return _myList.Count;
+            }
+        }
+
+        public override long GetItemId(int position)
+        {
+            return _myList[position].Wrapped.getItemId();
+        }
+
+        public override View GetView(int position, View convertView, ViewGroup parent)
+        {
+            var record = _myList[position];
+            var myView = convertView ??
+                 _context.LayoutInflater.Inflate(Resource.Layout.recordsummaryview, parent, false);
+            myView.FindViewById<TextView>(Resource.Id.recordVisitType)
+                .Text = string.Format(
+                "{0} - {1}", record.DisplayKindName, record.Wrapped.VisitDate.ToShortDateString()
+                );
+            return myView;
+        }
+    }
+
+    [Activity(Label = "Client Selector")]
     public class ClientSelectionActivity : Activity, ListView.IOnItemClickListener
     {
         ClientSummaryAdapter _defaultAdapter = null;
@@ -84,12 +208,12 @@ namespace JhpDataSystem.projects.ppx
     {
         ClientSummaryAdapter _defaultAdapter = null;
         List<PPClientSummary> _allPrepexClients;
-        //Dictionary<int, EventHandler> _behaviours;
+        PPClientSummary _selectedClient = null;
         List<int> _listOptions = null;
         public void OnItemClick(AdapterView parent, View view, int position, long id)
         {
-            var t = _allPrepexClients[position];
-            Android.Widget.Toast.MakeText(this, t.Names, Android.Widget.ToastLength.Short).Show();
+            _selectedClient = _allPrepexClients[position];
+            Android.Widget.Toast.MakeText(this, _selectedClient.Names, Android.Widget.ToastLength.Short).Show();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -123,7 +247,20 @@ namespace JhpDataSystem.projects.ppx
             buttonPerformAction.Click += performActionSpecified;
         }
 
-        void performActionSpecified(object sender, EventArgs e)
+        //void startClientRecordEdit(object sender, EventArgs e)
+        //{
+        //    //get selected client
+        //    if (_selectedClient == null)
+        //    {
+        //        Toast.MakeText(this, Resource.String.ppx_noclientselected, Android.Widget.ToastLength.Long).Show();
+        //        return;
+        //    }
+        //    //get list of forms for this client
+        //    //allow user to pick the form to edit
+        //    //show editor
+        //}
+
+            void performActionSpecified(object sender, EventArgs e)
         {
             var rgroup = FindViewById<RadioGroup>(Resource.Id.rgroupCSOptions);
             if (rgroup != null)

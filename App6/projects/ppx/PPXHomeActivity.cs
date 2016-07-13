@@ -4,11 +4,10 @@ using Android.App;
 using Android.OS;
 using Android.Widget;
 using JhpDataSystem.model;
-using System.Linq;
 using JhpDataSystem.store;
 using Android.Content;
 using JhpDataSystem.Utilities;
-using JhpDataSystem.projects.ppx;
+using System.Linq;
 
 namespace JhpDataSystem.projects.ppx
 {
@@ -19,6 +18,13 @@ namespace JhpDataSystem.projects.ppx
         {
             base.OnCreate(savedInstanceState);
             showPPXHome();
+        }
+
+        PPClientSummary getClientFromIntent(Intent data)
+        {
+            var clientString = data.GetStringExtra(Constants.BUNDLE_SELECTEDCLIENT);
+            return Newtonsoft.Json.JsonConvert
+                .DeserializeObject<PPClientSummary>(clientString);
         }
 
         public void StartActivity(Type activityType, Type resultActivity)
@@ -33,8 +39,36 @@ namespace JhpDataSystem.projects.ppx
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            if (resultCode == Result.Ok && data != null && data.HasExtra(Constants.BUNDLE_SELECTEDCLIENT))
+            if (resultCode != Result.Ok || data == null)
+                return;
+
+            if (data.HasExtra(Constants.BUNDLE_SELECTEDRECORD))
             {
+                //result is from RecordSelector
+                //we get the selected record id and client
+                var recSummaryStr = data.Extras.GetString(Constants.BUNDLE_SELECTEDRECORD);
+                var recSumm = Newtonsoft.Json.JsonConvert
+                    .DeserializeObject<RecordSummary>(recSummaryStr);
+
+                //selectedRecordSummary
+                var clientString = data.Extras.GetString(Constants.BUNDLE_SELECTEDCLIENT);
+
+                //we load the record
+                var jsonRecord = new TableStore(recSumm.KindName).Get(new KindKey(recSumm.Id)).FirstOrDefault();
+                if (jsonRecord == null)
+                    return;
+
+                var kindActivityType = getActivityForKind(recSumm.KindName);
+                var intent = new Intent(this, kindActivityType);
+                intent.PutExtra(Constants.BUNDLE_SELECTEDCLIENT, clientString);
+                intent.PutExtra(Constants.BUNDLE_DATATOEDIT, jsonRecord.Value);
+                //var dataset = new PPDataSet().fromJson(jsonRecord);
+                intent.SetFlags(ActivityFlags.ClearTop);
+                StartActivityForResult(intent, 0);
+            }
+            else if (data.HasExtra(Constants.BUNDLE_SELECTEDCLIENT))
+            {
+                //result is from client selector
                 var nextResultActivity = data.GetStringExtra(Constants.KIND_PPX_NEXTVIEW);
                 var nextResultType = Newtonsoft.Json.JsonConvert.DeserializeObject<Type>(nextResultActivity);
 
@@ -45,6 +79,11 @@ namespace JhpDataSystem.projects.ppx
 
                 StartActivityForResult(intent, 0);
             }
+        }
+
+        private Type getActivityForKind(string viewName)
+        {
+            return typeof(PP_DeviceRemoval1);
         }
 
         void showPPXHome()
@@ -83,6 +122,12 @@ namespace JhpDataSystem.projects.ppx
             var buttonViewList = FindViewById<Button>(Resource.Id.buttonViewList);
             buttonViewList.Click += (sender, e) => {
                 StartActivity(typeof(FilteredGridDisplayActivity));
+            };
+
+            //buttonViewList
+            var buttonEditRecords = FindViewById<Button>(Resource.Id.buttonEditRecords);
+            buttonEditRecords.Click += (sender, e) => {
+                StartActivity(typeof(ClientSelectionActivity), typeof(SelectRecordsActivity));
             };
 
             //buttonClientsDueFor

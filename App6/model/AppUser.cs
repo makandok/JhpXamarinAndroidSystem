@@ -6,6 +6,11 @@ using System.Linq;
 
 namespace JhpDataSystem.model
 {
+    //public enum RecordEditStage
+    //{
+    //    None = 1, Start, ShowAvailableRecords, ShowEditRecordView,
+    //}
+
     public class PPDeviceSizes
     {
         public PPDeviceSizes(int dayId)
@@ -61,6 +66,51 @@ namespace JhpDataSystem.model
         [SQLite.PrimaryKey, SQLite.AutoIncrement]
         public int FormSerial { get; set; }
         public string DataBlob { get; set; }
+    }
+
+    public class DisplayRecordSummary
+    {
+        public DisplayRecordSummary(RecordSummary wrapped)
+        {
+            Wrapped = wrapped;
+            DisplayKindName =
+                //wrapped.KindName;
+                Constants.PPX_KIND_DISPLAYNAMES[wrapped.KindName];
+        }
+
+        public RecordSummary Wrapped { get; private set; }
+        public string DisplayKindName { get; set; }
+    }
+
+    [SQLite.Table(Constants.SYS_KIND_RECORDSUMMARY)]
+    public class RecordSummary
+    {
+        public RecordSummary()
+        {
+
+        }
+
+        private long _itemid = -1L;
+        [SQLite.Ignore]
+        public long itemId { get { return _itemid; } set { _itemid = value; } }
+
+        public long getItemId()
+        {
+            if (_itemid == -1L && Id != null)
+            {
+                _itemid = Id.GetHashCode();
+            }
+            return _itemid;
+        }
+
+        [SQLite.PrimaryKey]
+        [SQLite.Unique]
+        public string Id { get; set; }
+
+        public string EntityId { get; set; }
+
+        public string KindName { get; set; }
+        public DateTime VisitDate { get; set; }
     }
 
     [SQLite.Table(Constants.KIND_PPX_CLIENTSUMMARY)]
@@ -182,12 +232,36 @@ namespace JhpDataSystem.model
             var pp = JsonConvert.DeserializeObject<PPDataSet>(prepexDatasetString.Value);
             FormName = pp.FormName;
             FieldValues = pp.FieldValues;
-            var id = FieldValues.FirstOrDefault(t => t.Name == Constants.FIELD_ID);
-            Id = new KindKey(id.Value);
-            var entityId = FieldValues.FirstOrDefault(t => t.Name == Constants.FIELD_ENTITYID);
-            if (entityId == null && pp.FormName == Constants.KIND_PPX_CLIENTEVAL)
-                entityId = id;
-            EntityId = new KindKey(entityId.Value);
+            Id = pp.Id;
+            EntityId = pp.EntityId;
+
+            if (pp.Id ==null)
+            {
+                var id = FieldValues.FirstOrDefault(t => t.Name == Constants.FIELD_ID);
+                if (id != null)
+                {
+                    Id = new KindKey(id.Value);
+                }
+                else
+                {
+                    //we skip this record
+                }
+            }
+
+            if (pp.EntityId == null)
+            {
+                var entityId = FieldValues.FirstOrDefault(t => t.Name == Constants.FIELD_ENTITYID);
+                if (entityId != null)
+                {
+                    EntityId = new KindKey(entityId.Value);
+                }
+                else
+                {
+                    //we skip this record
+                    if (pp.FormName == Constants.KIND_PPX_CLIENTEVAL)
+                        EntityId = new KindKey(Id.Value);
+                }
+            }
             return this;
         }
     }

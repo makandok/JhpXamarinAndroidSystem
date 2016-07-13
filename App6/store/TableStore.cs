@@ -5,6 +5,30 @@ using JhpDataSystem.model;
 
 namespace JhpDataSystem.store
 {
+    public class MultiTableStore
+    {
+        protected LocalDB _db;
+        public List<KindName> Kinds { get; set; }
+
+        public MultiTableStore()
+        {
+            _db = new LocalDB();
+        }
+
+        public List<KindItem> getRecordBlobs()
+        {
+            if (Kinds == null) return null;
+
+            var toReturn = new List<KindItem>();
+            foreach (var table in Kinds)
+            {
+                var res = new TableStore(table).GetAllBlobs();
+                toReturn.AddRange(res);
+            }
+            return toReturn;
+        }     
+    }
+
     public class TableStore
     {
         public ProcessLogger MainLogger
@@ -17,10 +41,11 @@ namespace JhpDataSystem.store
         protected const string createKindSql = "create table if not exists {0}(id nvarchar(32) primary key, datablob nvarchar(500));";
         protected const string insertSql = "insert or replace into {0}(id, datablob) values (@id, @datablob)";
         protected const string deleteSql = "delete from {0} where id = @id";
-        protected const string selectById = "select id, datablob from {0} where id = @id";
-        protected const string selectIdsForAll = "select id from {0}";
-        protected const string selectDatablobs = "select datablob from {0}";
 
+        protected const string selectIdsForAll = "select id from {0}";
+
+        protected const string selectDatablobs = "select datablob from {0}";
+        protected const string selectDatablobsById = "select datablob from {0} where id = @id";
         /// <summary>
         /// Creates new instance of a Kind store, which allows Get, Put, Delete and Update
         /// </summary>
@@ -154,7 +179,7 @@ namespace JhpDataSystem.store
                     }
                     else
                     {
-                        command.CommandText = string.Format(selectById, _tableName.Value);
+                        command.CommandText = string.Format(selectDatablobsById, _tableName.Value);
                         command.Parameters.AddWithValue("@id", entityId.Value);
                     }
                     var reader = command.ExecuteReader();

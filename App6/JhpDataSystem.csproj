@@ -237,6 +237,7 @@
     <Compile Include="modules\SmsActivity.cs" />
     <Compile Include="projects\ppx\ClientSummaryLoader.cs" />
     <Compile Include="projects\ppx\PPXConstants.cs" />
+    <Compile Include="RecordSummary.cs" />
     <Compile Include="projects\vmmc\VmmcConstants.cs" />
     <Compile Include="projects\vmmc\ClientSummaryLoader.cs" />
     <Compile Include="SQLite.cs" />
@@ -266,6 +267,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <Compile Include="WebFileDownloader.cs" />
+    <AndroidResource Include="Resources\layout\recordsummaryview.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
     <None Include="Samples\Archive.cs" />
     <Compile Include="LauncherActivity.cs" />
     <Compile Include="model\AppUser.cs" />

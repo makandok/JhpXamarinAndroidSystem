@@ -1,6 +1,7 @@
 using JhpDataSystem.model;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace JhpDataSystem.store
 {
@@ -34,6 +35,9 @@ namespace JhpDataSystem.store
             var db = localdb3.DB;
             db.CreateTable<PPClientSummary>();
             db.CreateTable<OutEntity>();
+
+            //db.DeleteAll<RecordSummary>();
+            db.CreateTable<RecordSummary>();
 
             defaultTableStore = new TableStore(Constants.KIND_DEFAULT);
             defaultTableStore.build();
@@ -72,6 +76,50 @@ namespace JhpDataSystem.store
         public List<KindItem> GetAllBlobs(KindName entityKind)
         {
             return new TableStore(entityKind).GetAllBlobs();
+        }
+
+        public void updateRecordSummaryTable()
+        {
+            var allBlobs = GetAllBobs();
+            var clientRecords = (from record in allBlobs
+                                 select new PPDataSet().fromJson(record));
+            var allRecords =(
+                from record in clientRecords
+                let val = record.FieldValues
+                    .FirstOrDefault(f => f.Name == Constants.FIELD_PPX_DATEOFVISIT)
+                where val != null
+                let visitDate = string.IsNullOrWhiteSpace(val.Value) ? DateTime.MinValue : Convert.ToDateTime(val.Value)
+                select new RecordSummary()
+                {
+                    Id = record.Id.Value,
+                    EntityId = record.EntityId.Value,
+                    KindName = record.FormName,
+                    //Constants.PPX_KIND_DISPLAYNAMES[record.FormName],
+                    VisitDate = visitDate
+                }).ToList();
+
+            var db = new LocalDB3().DB;
+            allRecords.ForEach(t => db.InsertOrReplace(t));
+            var allSaved = db.Table<RecordSummary>().ToList();            
+        }
+
+        public List<KindItem> GetAllBobs()
+        {
+            var tables = new List<string>() {
+                    Constants.KIND_PPX_CLIENTEVAL,
+                    Constants.KIND_PPX_DEVICEREMOVAL,
+                    Constants.KIND_PPX_POSTREMOVAL,
+                    Constants.KIND_PPX_UNSCHEDULEDVISIT
+                };
+            var store = new MultiTableStore()
+            {
+                //DisplayKindNameMap = Constants.PPX_KIND_DISPLAYNAMES,
+                Kinds =
+                (from table in tables select new KindName(table)).ToList()
+            };
+
+            var allBlobs = store.getRecordBlobs();
+            return allBlobs; 
         }
     }
 }

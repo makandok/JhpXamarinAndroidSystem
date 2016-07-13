@@ -11,7 +11,12 @@ namespace JhpDataSystem
 
     public class Constants
     {
+        //internal const string BUNDLE_ENTITYID = "bundl_entityid";
+        internal const string BUNDLE_DATATOEDIT = "bundl_datatoedit";
+        //internal const string BUNDLE_RECEDITSTAGE = "bundl_editstage";
         internal const string BUNDLE_SELECTEDCLIENT = "bundl_client";
+        internal const string BUNDLE_SELECTEDRECORD_ID = "bundl_recordid";
+        internal const string BUNDLE_SELECTEDRECORD = "bundl_recordsummary";
         internal const string FIELD_ENTITYID = "entityid";
         internal const string FIELD_ID = "id";
 
@@ -46,13 +51,24 @@ namespace JhpDataSystem
         internal const string FIELD_PPX_CLIENTPHYSICALADDR = "clientsphysicaladdress";
         internal const string FIELD_PPX_PLACEMENTDATE = "dateofplacement";
 
-        internal const string LABEL_PPX_ACTIVITYLABEL = "Prepex Manager";        
+        internal const string LABEL_PPX_ACTIVITYLABEL = "Prepex Manager";
 
+        internal const string SYS_KIND_RECORDSUMMARY = "recordsummary";
         internal const string KIND_PPX = "pp_client";
+
         internal const string KIND_PPX_CLIENTEVAL = "pp_client_eval";
         internal const string KIND_PPX_DEVICEREMOVAL = "pp_client_devicerem";
         internal const string KIND_PPX_POSTREMOVAL = "pp_client_postrem";
         internal const string KIND_PPX_UNSCHEDULEDVISIT = "pp_client_unsched";
+
+        internal static Dictionary<string, string> PPX_KIND_DISPLAYNAMES =
+            new Dictionary<string, string>() {
+                { KIND_PPX_CLIENTEVAL,"A1. Client Evaluation" },
+                 { KIND_PPX_DEVICEREMOVAL,"A3. Device Removal Visit" },
+                  { KIND_PPX_POSTREMOVAL,"A4. Post Removal" },
+                   { KIND_PPX_UNSCHEDULEDVISIT,"A2. Unscheduled Visit" }
+            };
+
         internal const string KIND_PPX_CLIENTSUMMARY = "pp_clientsummary";
         
         internal const string KIND_PPX_CLIENT = "pp_client_parts";
@@ -113,6 +129,9 @@ namespace JhpDataSystem
         internal const string LABEL_PREFIX = "sylbl_";
 
         internal const string DEFAULT_CHECKED = "1";
+        internal const string SYS_FIELD_DATEEDITED = "sys_editdate";
+        internal const string SYS_FIELD_DATECREATED = "sys_datecreated";
 
+        //internal static 
     }
 }

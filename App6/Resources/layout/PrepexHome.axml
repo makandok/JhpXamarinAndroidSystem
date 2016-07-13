@@ -66,6 +66,16 @@
         </LinearLayout>
     </TableRow>
     <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <Button
+            android:layout_gravity="right"
+            android:text="Edit Records"
+            android:id="@+id/buttonEditRecords"
+            android:layout_width="400dp"
+            android:layout_height="match_parent" />
+    </TableRow>
+    <TableRow
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="120dp">
