@@ -5,7 +5,7 @@ using JhpDataSystem.store;
 
 namespace JhpDataSystem.projects.vmmc
 {
-    public class ClientSummaryLoader
+    public class VmmcClientLookupHelper
     {
         public List<VmmcClientSummary> Get()
         {

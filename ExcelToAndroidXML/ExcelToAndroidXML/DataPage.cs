@@ -106,44 +106,54 @@ namespace ExcelToAndroidXML
             foreach (var field in viewFields)
             {
                 var fieldXml = string.Empty;
-                switch (field.ViewType)
+                switch (field.ViewType.ToLowerInvariant())
                 {
                     case "int":
-                    case "Cell":
-                    case "Number":
+                    case "integer":
+                    case "cell":
+                    case "cellnumber":
+                    case "number":
                         {
                             fieldXml = getXamlDefinitionForTextField(field, true);
                             break;
                         }
-                    case "Date":
                     case "date":
-                    case "DatePicker":
+                    case "time":
+                    case "today":
+                    case "datepicker":
                         {
                             fieldXml = getXamlDefinitionForDate(field);
                             break;
                         }
-                    case "Text":
-                    case "EditText":
+                    case "text":
+                    case "edittext":
                         {
                             fieldXml = getXamlDefinitionForTextField(field, false);
                             break;
                         }
-                    case "Label":
-                    case "TextView":
+                    case "label":
+                    case "image":
+                    case "start group":
+                    case "block label":
+                    case "labelbig":
+                    case "textview":
                         {
                             fieldXml = getXamlDefinitionForLabel(field);
                             break;
                         }
-                    case "MultiSelect":
-                    case "CheckBox":
+                    case "multiselect":
+                    case "single multiple":
+                    case "checkbox":
                         {
                             fieldXml = (
                                 getXamlLabelDefForEnumeratedFields(field) + 
                                 string.Join(Environment.NewLine, getXamlLabelDefForCheckBox(field)) + @"");
                             break;
                         }
-                    case "SingleSelect":
-                    case "RadioGroup":
+                        
+                    case "singleselect":
+                    case "single select":
+                    case "radiogroup":
                         {
                             if (field.GridColumn == 5)
                             {
@@ -164,7 +174,7 @@ namespace ExcelToAndroidXML
                     default:
                         {
                             var fieldype = field.ViewType;
-                            throw new ArgumentNullException("Pleasse addlogic for " + field.ViewType);
+                            throw new ArgumentNullException("Please addlogic for " + field.ViewType);
                         }
                 }
                 builder.AppendLine(fieldXml);

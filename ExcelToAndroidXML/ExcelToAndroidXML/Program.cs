@@ -56,20 +56,17 @@ namespace ExcelToAndroidXML
 
         static void Main(string[] args)
         {
+            bool ProcessingForVMMC = true;
+            var projectHelper = ProcessingForVMMC ? 
+                new vmmcHelper() as ProjectInfo: 
+                new ppxHelper();
+
             var instance = SharedInstance.Instance;
             instance.metaDataProvider = new MetaDataProvider();
-            //.metaDataProvider
-            var XML_FORMAT = "axml";
-            var moduleNamePrefixes = new Dictionary<string, string>()
-            {
-                {"A1 Client Evaluation and Registration","prepexreg"},
-                {"A3 Device Removal Visit or Follow Up","prepexdevremoval"},
-                {"A4 Post Removal Visit Assessment","prepexpostremoval"},
-                {"A2 Unscheduled or Follow-up Prepex Form","prepexunscheduled"}
-            };
+            var moduleNamePrefixes = projectHelper.moduleNamePrefixes;
 
-            
-            var text = File.ReadAllText("LookupChoices.json");
+
+            var text = File.ReadAllText(projectHelper.LookupChoicesFile);
             var lookups = JsonConvert.DeserializeObject<List<FieldChoices>>(text);
             lookups.ForEach(
                 t =>
@@ -82,12 +79,21 @@ namespace ExcelToAndroidXML
                 }
                 );
 
-            var fields = JsonConvert.DeserializeObject<List<FieldDefinition>>(File.ReadAllText("FieldDictionary.json"));
-            if (fields.Count != 208)
-                throw new ArgumentOutOfRangeException("Expected 210 fields");
+            var fields = JsonConvert.DeserializeObject<List<FieldDefinition>>(
+                File.ReadAllText(projectHelper.FieldDictionaryFile));
+            if (ProcessingForVMMC)
+            {
+                if (fields.Count != 147)
+                    throw new ArgumentOutOfRangeException("Expected 210 fields");
+            }
+            else
+            {
+                if (fields.Count != 208)
+                    throw new ArgumentOutOfRangeException("Expected 210 fields");
+            }
 
             //fields.RemoveAll(t=>t.)
-            var fieldsToIgnore = new List<string>() { "district" };
+            var fieldsToIgnore = new List<string>() { "district", "vm_province" , "vm_district"};
             foreach (var fieldname in fieldsToIgnore)
             {
                 fields.RemoveAll(t => t.ViewName == fieldname);
@@ -124,19 +130,29 @@ namespace ExcelToAndroidXML
             }
 
             //var pagedFieldDefinitions = autoCreatePages();
-            var fieldsLookup = "prepex".ToLowerInvariant() + "_fields.json";
-            var stringResoures = "prepex".ToLowerInvariant() + "_string.json";
+            //projectHelper.LookupChoicesFile
+            var fieldsLookup = projectHelper.Prefix.ToLowerInvariant() + "_fields.json";
+            var stringResoures = projectHelper.Prefix.ToLowerInvariant() + "_string.json";
             var isFirst = true;
             //var addDateTitleResource = true;
+            if (!Directory.Exists("output//" + projectHelper.Prefix))
+                Directory.CreateDirectory("output//" + projectHelper.Prefix);
+
             foreach (var page in viewPages.Values)
             {
                 //page.metaDataProvider = SharedInstance.Instance.metaDataProvider;
                 var pageContents = page.build();
-                File.WriteAllText(page.ViewPageName.ToLowerInvariant() + ".axml", pageContents);
-                File.WriteAllText(page.ViewPageName.ToLowerInvariant() + ".xml", pageContents);                
+                File.WriteAllText(
+                    "output//" + projectHelper.Prefix + "//" +
+                    page.ViewPageName.ToLowerInvariant() + ".axml", pageContents);
+                File.WriteAllText(
+                    "output//" + projectHelper.Prefix + "//" +
+                    page.ViewPageName.ToLowerInvariant() + ".xml", pageContents);                
             }
 
-            File.WriteAllText(stringResoures, SharedInstance.Instance.metaDataProvider.StringResourcesItems.ToString());
+            File.WriteAllText(
+                "output//" + projectHelper.Prefix + "//" +
+                stringResoures, SharedInstance.Instance.metaDataProvider.StringResourcesItems.ToString());
 
             //we write the field dictionary
             //process after FieldDef.build()
@@ -148,7 +164,8 @@ namespace ExcelToAndroidXML
                 throw new ArgumentNullException("Page name not defined for one of the field items");
             }
 
-            File.WriteAllText(fieldsLookup, JsonConvert.SerializeObject(allFields));
+            File.WriteAllText("output//" + projectHelper.Prefix + "//" + fieldsLookup, 
+                JsonConvert.SerializeObject(allFields));
 
             //kipeto
             Console.WriteLine("Import completed, press any key to return");

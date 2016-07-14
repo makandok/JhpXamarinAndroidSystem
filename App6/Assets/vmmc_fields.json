@@ -1,0 +1,1866 @@
+[
+  {
+    "name": "vm_intakeform_serial",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Intake Form Serial"
+  },
+  {
+    "name": "vm_date_firstedited",
+    "dataType": "DatePicker",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Date of Data Entry"
+  },
+  {
+    "name": "vm_data_entered_by",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Data Entry By"
+  },
+  {
+    "name": "vm_facility_name",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Facility Name"
+  },
+  {
+    "name": "vm_outreach_name",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Outreach Name"
+  },
+  {
+    "name": "vm_facility_type_outreach",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Outreach Name (if site is not a health center) [Outreach]"
+  },
+  {
+    "name": "vm_facility_type_static",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Outreach Name (if site is not a health center) [Static]"
+  },
+  {
+    "name": "vm_mc_number",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client ID / Register Number"
+  },
+  {
+    "name": "vm_registration_date",
+    "dataType": "DatePicker",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Registration Date"
+  },
+  {
+    "name": "vm_last_name",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client Last Name"
+  },
+  {
+    "name": "vm_first_name",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client First Name"
+  },
+  {
+    "name": "vm_date_of_birth",
+    "dataType": "DatePicker",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Date of Birth"
+  },
+  {
+    "name": "vm_age_units_mo",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Age Units [Mo.]"
+  },
+  {
+    "name": "vm_age_units_yrs",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Age Units [Yrs]"
+  },
+  {
+    "name": "vm_age",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Age"
+  },
+  {
+    "name": "vm_nrc_passport",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "NRC / Passport"
+  },
+  {
+    "name": "vm_phone_number",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Contact Phone Nummber"
+  },
+  {
+    "name": "vm_next_of_kin",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Next of Kin Names"
+  },
+  {
+    "name": "vm_phone_nextofkin",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Next of Kin Phone Nunber"
+  },
+  {
+    "name": "vm_tribe",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Tribe"
+  },
+  {
+    "name": "vm_religion_christian",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Religion [Christian]"
+  },
+  {
+    "name": "vm_religion_islam",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Religion [Islam]"
+  },
+  {
+    "name": "vm_religion_other",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Religion [Other]"
+  },
+  {
+    "name": "vm_religion_other",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Other Religion, Specify"
+  },
+  {
+    "name": "vm_house_plotno",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "House / Plot No"
+  },
+  {
+    "name": "vm_street",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Street"
+  },
+  {
+    "name": "vm_township",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Township"
+  },
+  {
+    "name": "vm_village",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "If Rural, Village"
+  },
+  {
+    "name": "vm_chief",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Chief"
+  },
+  {
+    "name": "vm_marital_status_single",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Marital Status [Single]"
+  },
+  {
+    "name": "vm_marital_status_divorced",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Marital Status [Divorced]"
+  },
+  {
+    "name": "vm_marital_status_married",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Marital Status [Married]"
+  },
+  {
+    "name": "vm_marital_status_widower",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Marital Status [Widower]"
+  },
+  {
+    "name": "vm_marital_status_cohabiting",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Marital Status [Co-habiting]"
+  },
+  {
+    "name": "vm_mmc_reasons_partialhivprotection",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Primary reasons for seeking circumcision services [Partial HIV Protection]"
+  },
+  {
+    "name": "vm_mmc_reasons_religious",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Primary reasons for seeking circumcision services [Religious]"
+  },
+  {
+    "name": "vm_mmc_reasons_medicalprotection",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Primary reasons for seeking circumcision services [Medical Protection]"
+  },
+  {
+    "name": "vm_mmc_reasons_sexualenhancement",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Primary reasons for seeking circumcision services [Sexual Enhancement]"
+  },
+  {
+    "name": "vm_mmc_reasons_hygiene",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Primary reasons for seeking circumcision services [Hygiene]"
+  },
+  {
+    "name": "vm_mmc_reasons_cultural",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Primary reasons for seeking circumcision services [Cultural]"
+  },
+  {
+    "name": "vm_mmc_reasons_other",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Primary reasons for seeking circumcision services [Other]"
+  },
+  {
+    "name": "vm_mmc_reasons_other",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Other, Specify"
+  },
+  {
+    "name": "vm_how_client_learnt_mmc_friendfamily",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "How did the client learn that MC service is offered here [Friend / Family]"
+  },
+  {
+    "name": "vm_how_client_learnt_mmc_partnerspouse",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "How did the client learn that MC service is offered here [Partner / Spouse]"
+  },
+  {
+    "name": "vm_how_client_learnt_mmc_vehiclepasystem",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "How did the client learn that MC service is offered here [Vehicle PA System]"
+  },
+  {
+    "name": "vm_how_client_learnt_mmc_socialmedia",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "How did the client learn that MC service is offered here [Social Media]"
+  },
+  {
+    "name": "vm_how_client_learnt_mmc_printmaterialposterleaflet",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "How did the client learn that MC service is offered here [Print Material/Poster/Leaflet]"
+  },
+  {
+    "name": "vm_how_client_learnt_mmc_radiotv",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "How did the client learn that MC service is offered here [Radio / TV]"
+  },
+  {
+    "name": "vm_how_client_learnt_mmc_communitymobilizer",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "How did the client learn that MC service is offered here [Community Mobilizer]"
+  },
+  {
+    "name": "vm_how_client_learnt_mmc_communitymeeting",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "How did the client learn that MC service is offered here [Community Meeting]"
+  },
+  {
+    "name": "vm_how_client_learnt_mmc_healthfacility",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "How did the client learn that MC service is offered here [Health Facility]"
+  },
+  {
+    "name": "vm_known_status_reactive",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Known Status  (with evidence) [Reactive]"
+  },
+  {
+    "name": "vm_known_status_nonreactive",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Known Status  (with evidence) [Non-reactive]"
+  },
+  {
+    "name": "vm_services_offered_counseling",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Services offered [Counseling]"
+  },
+  {
+    "name": "vm_services_offered_hivtesting",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Services offered [HIV Testing]"
+  },
+  {
+    "name": "vm_services_offered_resultscollected",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Services offered [Results Collected]"
+  },
+  {
+    "name": "vm_hiv_test_result_reactive",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "HIV Test Result (if tested) [Reactive]"
+  },
+  {
+    "name": "vm_hiv_test_result_nonreactive",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "HIV Test Result (if tested) [Non-reactive]"
+  },
+  {
+    "name": "vm_hiv_test_result_indeterminate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "HIV Test Result (if tested) [Indeterminate]"
+  },
+  {
+    "name": "vm_sexual_past_3_mos_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Did client have sexual intercourse in the past 3 months [Yes]"
+  },
+  {
+    "name": "vm_sexual_past_3_mos_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Did client have sexual intercourse in the past 3 months [No]"
+  },
+  {
+    "name": "vm_did_client_use_condom_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Did Client use a condom [Yes]"
+  },
+  {
+    "name": "vm_did_client_use_condom_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Did Client use a condom [No]"
+  },
+  {
+    "name": "vm_client_health_cond_haemophilia",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Does client have any of these conditions? [Haemophilia]"
+  },
+  {
+    "name": "vm_client_health_cond_hypertension",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Does client have any of these conditions? [Hypertension]"
+  },
+  {
+    "name": "vm_client_health_cond_diabetessugardiseases",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Does client have any of these conditions? [Diabetes/Sugar Diseases]"
+  },
+  {
+    "name": "vm_client_health_cond_sicklecell",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Does client have any of these conditions? [Sickle cell]"
+  },
+  {
+    "name": "vm_client_health_cond_bleedingnosemouth",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Does client have any of these conditions? [Bleeding Nose/Mouth]"
+  },
+  {
+    "name": "vm_bleeding_probs_fam_mbrs_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Do other members of the family have Bleeding problems [Yes]"
+  },
+  {
+    "name": "vm_bleeding_probs_fam_mbrs_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Do other members of the family have Bleeding problems [No]"
+  },
+  {
+    "name": "vm_client_had_surgops_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Has client had any surgical operations in the past [Yes]"
+  },
+  {
+    "name": "vm_client_had_surgops_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Has client had any surgical operations in the past [No]"
+  },
+  {
+    "name": "vm_client_surgops_spec",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Yes, specify:"
+  },
+  {
+    "name": "vm_client_surgops_comp",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Any complications:"
+  },
+  {
+    "name": "vm_client_allergic_to_meds_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Is Client allergic to any medications [Yes]"
+  },
+  {
+    "name": "vm_client_allergic_to_meds_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Is Client allergic to any medications [No]"
+  },
+  {
+    "name": "vm_meds_client_allergic_to",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Yes, specify:"
+  },
+  {
+    "name": "vm_client_taking_meds_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Is Client currently taking medications [Yes]"
+  },
+  {
+    "name": "vm_client_taking_meds_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Is Client currently taking medications [No]"
+  },
+  {
+    "name": "vm_meds_client_taking",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Yes, specify:"
+  },
+  {
+    "name": "vm_penile_discharge_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Penile Discharge [Yes]"
+  },
+  {
+    "name": "vm_penile_discharge_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Penile Discharge [No]"
+  },
+  {
+    "name": "vm_genital_sore_ulcer_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Genital sore (Ulcer) [Yes]"
+  },
+  {
+    "name": "vm_genital_sore_ulcer_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Genital sore (Ulcer) [No]"
+  },
+  {
+    "name": "vm_pain_on_erection_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain on erection [Yes]"
+  },
+  {
+    "name": "vm_pain_on_erection_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain on erection [No]"
+  },
+  {
+    "name": "vm_swelling_of_scrotum_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Swelling of the scrotum [Yes]"
+  },
+  {
+    "name": "vm_swelling_of_scrotum_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Swelling of the scrotum [No]"
+  },
+  {
+    "name": "vm_pain_on_urination_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain on urination [Yes]"
+  },
+  {
+    "name": "vm_pain_on_urination_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain on urination [No]"
+  },
+  {
+    "name": "vm_diff_retracting_fskin_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Difficulty in retracting foreskin [Yes]"
+  },
+  {
+    "name": "vm_diff_retracting_fskin_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Difficulty in retracting foreskin [No]"
+  },
+  {
+    "name": "vm_frequent_urination_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Frequent Urination [Yes]"
+  },
+  {
+    "name": "vm_frequent_urination_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Frequent Urination [No]"
+  },
+  {
+    "name": "vm_client_other_sti_symp_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Other [Yes]"
+  },
+  {
+    "name": "vm_client_other_sti_symp_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Other [No]"
+  },
+  {
+    "name": "vm_other_sti_symptoms",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Other, Specify"
+  },
+  {
+    "name": "vm_treated_stis_last_3mos_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Was client treated for any STIs in the last 3 months [Yes]"
+  },
+  {
+    "name": "vm_treated_stis_last_3mos_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Was client treated for any STIs in the last 3 months [No]"
+  },
+  {
+    "name": "vm_pallor_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pallor [Yes]"
+  },
+  {
+    "name": "vm_pallor_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pallor [No]"
+  },
+  {
+    "name": "vm_jaundice_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Jaundice [Yes]"
+  },
+  {
+    "name": "vm_jaundice_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Jaundice [No]"
+  },
+  {
+    "name": "vm_febrile_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Febrile [Yes]"
+  },
+  {
+    "name": "vm_febrile_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc3",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Febrile [No]"
+  },
+  {
+    "name": "vm_pulserate",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pulse Rate (beats/min)"
+  },
+  {
+    "name": "vm_temp",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Temperature"
+  },
+  {
+    "name": "vm_weight_kg",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Weight (Kg)"
+  },
+  {
+    "name": "vm_bp_systolic",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "BP - Systolic"
+  },
+  {
+    "name": "vm_bp_diastolic",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "BP - Diastolic"
+  },
+  {
+    "name": "vm_gexam_scrotum_normal",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Scrotum [Normal]"
+  },
+  {
+    "name": "vm_gexam_scrotum_abnormal",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Scrotum [Abnormal]"
+  },
+  {
+    "name": "vm_gexam_lymph_nodes_normal",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Lymph Nodes [Normal]"
+  },
+  {
+    "name": "vm_gexam_lymph_nodes_abnormal",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Lymph Nodes [Abnormal]"
+  },
+  {
+    "name": "vm_gexam_penis_normal",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Penis [Normal]"
+  },
+  {
+    "name": "vm_gexam_penis_abnormal",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Penis [Abnormal]"
+  },
+  {
+    "name": "vm_gexam_abnormal_penis_phimosis",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If penis is abnormal, Tick appropriate condition [Phimosis]"
+  },
+  {
+    "name": "vm_gexam_abnormal_penis_paraphimosis",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If penis is abnormal, Tick appropriate condition [Paraphimosis]"
+  },
+  {
+    "name": "vm_gexam_abnormal_penis_genitalulcerdisease",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If penis is abnormal, Tick appropriate condition [Genital Ulcer Disease]"
+  },
+  {
+    "name": "vm_gexam_abnormal_penis_genitalwarts",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If penis is abnormal, Tick appropriate condition [Genital Warts]"
+  },
+  {
+    "name": "vm_gexam_abnormal_penis_discharge",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If penis is abnormal, Tick appropriate condition [Discharge]"
+  },
+  {
+    "name": "vm_gexam_abnormal_penis_epispadiasis",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If penis is abnormal, Tick appropriate condition [Epispadiasis]"
+  },
+  {
+    "name": "vm_gexam_abnormal_penis_hypospadiasis",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If penis is abnormal, Tick appropriate condition [Hypospadiasis]"
+  },
+  {
+    "name": "vm_gexam_abnormal_penis_other",
+    "dataType": "CheckBox",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If penis is abnormal, Tick appropriate condition [Other]"
+  },
+  {
+    "name": "vm_ge_otherabnormal_penis",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Other, specify"
+  },
+  {
+    "name": "vm_referred_to",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Referred to"
+  },
+  {
+    "name": "vm_referral_penile_abnorm_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Penile abnormalities [Yes]"
+  },
+  {
+    "name": "vm_referral_penile_abnorm_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Penile abnormalities [No]"
+  },
+  {
+    "name": "vm_referral_hiv_care_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "HIV Care [Yes]"
+  },
+  {
+    "name": "vm_referral_hiv_care_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "HIV Care [No]"
+  },
+  {
+    "name": "vm_referral_sti_tx_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "STI Treatment [Yes]"
+  },
+  {
+    "name": "vm_referral_sti_tx_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "STI Treatment [No]"
+  },
+  {
+    "name": "vm_referral_othermedical_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Other Medical Conditions [Yes]"
+  },
+  {
+    "name": "vm_referral_othermedical_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Other Medical Conditions [No]"
+  },
+  {
+    "name": "vm_other_reasons_referral",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Other medical condtitions, specify:"
+  },
+  {
+    "name": "vm_eligible_for_mmc_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Is Client eligible for MMC [Yes]"
+  },
+  {
+    "name": "vm_eligible_for_mmc_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc4",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Is Client eligible for MMC [No]"
+  },
+  {
+    "name": "vm_mc_date",
+    "dataType": "DatePicker",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "MC Date"
+  },
+  {
+    "name": "vm_mc_provider_name",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "MC Provider"
+  },
+  {
+    "name": "vm_assistant",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Assistant"
+  },
+  {
+    "name": "vm_mmc_performed_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Circumcision Performed [Yes]"
+  },
+  {
+    "name": "vm_mmc_performed_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Circumcision Performed [No]"
+  },
+  {
+    "name": "vm_mmc_start_time",
+    "dataType": "DatePicker",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Start Time"
+  },
+  {
+    "name": "vm_mmc_end_time",
+    "dataType": "DatePicker",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "End Time"
+  },
+  {
+    "name": "vm_skin_preparation_povudine",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Skin Preparation [Povudine]"
+  },
+  {
+    "name": "vm_skin_preparation_other",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Skin Preparation [Other]"
+  },
+  {
+    "name": "vm_other_skin_preparation",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Skin Preparation, Other"
+  },
+  {
+    "name": "vm_type_local_anaes_lignocaine",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Local Anaesthesia - Type [Lignocaine]"
+  },
+  {
+    "name": "vm_type_local_anaes_bupivacaine",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Local Anaesthesia - Type [Bupivacaine]"
+  },
+  {
+    "name": "vm_lignocaine_conc_001",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Lignocaine Concentration [0.01]"
+  },
+  {
+    "name": "vm_lignocaine_conc_002",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Lignocaine Concentration [0.02]"
+  },
+  {
+    "name": "vm_local_anaes_amt",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Local Anaesthesia - Amount"
+  },
+  {
+    "name": "vm_type_of_procedure_dorsalslit",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Type of Procedure [Dorsal Slit]"
+  },
+  {
+    "name": "vm_type_of_procedure_shangring",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Type of Procedure [Shang ring]"
+  },
+  {
+    "name": "vm_type_of_procedure_prepex",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Type of Procedure [Prepex]"
+  },
+  {
+    "name": "vm_type_of_procedure_other",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Type of Procedure [Other]"
+  },
+  {
+    "name": "vm_other_type_of_procedure",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Other, Specify"
+  },
+  {
+    "name": "vm_type_of_suture_chromiccatgut",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Suture [Chromic Catgut]"
+  },
+  {
+    "name": "vm_type_of_suture_vicryl",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Suture [Vicryl]"
+  },
+  {
+    "name": "vm_type_of_suture_other",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Suture [Other]"
+  },
+  {
+    "name": "vm_other_type_suture",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Other, Specify"
+  },
+  {
+    "name": "vm_complic_dur_surg_none",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Any Complications during surgery [None]"
+  },
+  {
+    "name": "vm_complic_dur_surg_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Any Complications during surgery [Yes]"
+  },
+  {
+    "name": "vm_complic_pain_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Moderate]"
+  },
+  {
+    "name": "vm_complic_pain_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain [Severe]"
+  },
+  {
+    "name": "vm_complic_excsv_bleeding_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Excessive Bleeding [Moderate]"
+  },
+  {
+    "name": "vm_complic_excsv_bleeding_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Excessive Bleeding [Severe]"
+  },
+  {
+    "name": "vm_complic_anaes_related_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Anaesthetic related event [Moderate]"
+  },
+  {
+    "name": "vm_complic_anaes_related_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Anaesthetic related event [Severe]"
+  },
+  {
+    "name": "vm_complic_excsv_skin_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Excessive skin removed [Moderate]"
+  },
+  {
+    "name": "vm_complic_excsv_skin_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Excessive skin removed [Severe]"
+  },
+  {
+    "name": "vm_complic_dmg_penis_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to the penis [Moderate]"
+  },
+  {
+    "name": "vm_complic_dmg_penis_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Damage to the penis [Severe]"
+  },
+  {
+    "name": "vm_complic_other_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Other [Moderate]"
+  },
+  {
+    "name": "vm_complic_other_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Other [Severe]"
+  },
+  {
+    "name": "vm_complic_other_spec",
+    "dataType": "EditText",
+    "pageName": "vmmc_regandproc5",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Complications during surgery, Other"
+  },
+  {
+    "name": "vm_intakeform_serial",
+    "dataType": "EditText",
+    "pageName": "vmmc_postop1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Intake Form Serial"
+  },
+  {
+    "name": "vm_mc_number",
+    "dataType": "EditText",
+    "pageName": "vmmc_postop1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client ID / Register Number"
+  },
+  {
+    "name": "vm_type_of_review_02daysreview",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Review Type [0 - 2 days Review]"
+  },
+  {
+    "name": "vm_type_of_review_37daysreview",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Review Type [3 - 7 days Review]"
+  },
+  {
+    "name": "vm_type_of_review_16weeksreview",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Review Type [1 - 6 weeks Review]"
+  },
+  {
+    "name": "vm_postop_data_entry_date",
+    "dataType": "DatePicker",
+    "pageName": "vmmc_postop1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Date of Data Entry"
+  },
+  {
+    "name": "vm_postop_data_entered_by",
+    "dataType": "EditText",
+    "pageName": "vmmc_postop1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Data Entry By"
+  },
+  {
+    "name": "vm_reviewer_name",
+    "dataType": "EditText",
+    "pageName": "vmmc_postop1",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "MC Provider/Reviewer Name"
+  },
+  {
+    "name": "vm_date_of_review",
+    "dataType": "DatePicker",
+    "pageName": "vmmc_postop1",
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Date of Review"
+  },
+  {
+    "name": "vm_cc_fever_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Fever [Yes]"
+  },
+  {
+    "name": "vm_cc_fever_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Fever [No]"
+  },
+  {
+    "name": "vm_cc_pain_on_wound_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain on wound [Yes]"
+  },
+  {
+    "name": "vm_cc_pain_on_wound_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain on wound [No]"
+  },
+  {
+    "name": "vm_cc_bleeding_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [Yes]"
+  },
+  {
+    "name": "vm_cc_bleeding_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Bleeding [No]"
+  },
+  {
+    "name": "vm_cc_pain_passing_urine_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain passing urine [Yes]"
+  },
+  {
+    "name": "vm_cc_pain_passing_urine_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pain passing urine [No]"
+  },
+  {
+    "name": "vm_cc_swelling_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Swelling [Yes]"
+  },
+  {
+    "name": "vm_cc_swelling_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Swelling [No]"
+  },
+  {
+    "name": "vm_cc_gaping_wound_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Gaping wound [Yes]"
+  },
+  {
+    "name": "vm_cc_gaping_wound_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Gaping wound [No]"
+  },
+  {
+    "name": "vm_cc_pus_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pus [Yes]"
+  },
+  {
+    "name": "vm_cc_pus_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Pus [No]"
+  },
+  {
+    "name": "vm_cc_other_complaint_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Other [Yes]"
+  },
+  {
+    "name": "vm_cc_other_complaint_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Other [No]"
+  },
+  {
+    "name": "vm_cc_other_complaint_spec",
+    "dataType": "EditText",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "If Other, specify"
+  },
+  {
+    "name": "vm_any_adverse_events_yes",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Any Adverse events [Yes]"
+  },
+  {
+    "name": "vm_any_adverse_events_no",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Any Adverse events [No]"
+  },
+  {
+    "name": "vm_ae_anaesthetic_related_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "a. Anaesthetic related event  [Moderate]"
+  },
+  {
+    "name": "vm_ae_anaesthetic_related_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "a. Anaesthetic related event  [Severe]"
+  },
+  {
+    "name": "vm_ae_excessive_bleeding_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "b. Excessive Bleeding [Moderate]"
+  },
+  {
+    "name": "vm_ae_excessive_bleeding_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "b. Excessive Bleeding [Severe]"
+  },
+  {
+    "name": "vm_ae_insuff_skin_rem_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "c. Insufficient skin removed  [Moderate]"
+  },
+  {
+    "name": "vm_ae_insuff_skin_rem_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "c. Insufficient skin removed  [Severe]"
+  },
+  {
+    "name": "vm_ae_dmg_to_penis_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "d. Damage or injury to penis [Moderate]"
+  },
+  {
+    "name": "vm_ae_dmg_to_penis_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "d. Damage or injury to penis [Severe]"
+  },
+  {
+    "name": "vm_ae_pain_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "e. Pain [Moderate]"
+  },
+  {
+    "name": "vm_ae_pain_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "e. Pain [Severe]"
+  },
+  {
+    "name": "vm_ae_swelling_hematoma_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "f. Swelling or Hematoma  [Moderate]"
+  },
+  {
+    "name": "vm_ae_swelling_hematoma_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "f. Swelling or Hematoma  [Severe]"
+  },
+  {
+    "name": "vm_ae_infection_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "g. Infection [Moderate]"
+  },
+  {
+    "name": "vm_ae_infection_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "g. Infection [Severe]"
+  },
+  {
+    "name": "vm_ae_excsv_skin_rem_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "h. Excessive skin removed  [Moderate]"
+  },
+  {
+    "name": "vm_ae_excsv_skin_rem_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "h. Excessive skin removed  [Severe]"
+  },
+  {
+    "name": "vm_ae_delayed_wound_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "i. Delayed wound healing [Moderate]"
+  },
+  {
+    "name": "vm_ae_delayed_wound_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "i. Delayed wound healing [Severe]"
+  },
+  {
+    "name": "vm_ae_wound_dehiscence_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "j. Wound dehiscence [Moderate]"
+  },
+  {
+    "name": "vm_ae_wound_dehiscence_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "j. Wound dehiscence [Severe]"
+  },
+  {
+    "name": "vm_ae_difficulty_urinating_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "k. Difficulty Urinating [Moderate]"
+  },
+  {
+    "name": "vm_ae_difficulty_urinating_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "k. Difficulty Urinating [Severe]"
+  },
+  {
+    "name": "vm_ae_torsion_of_penis_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "l. Torsion of penis [Moderate]"
+  },
+  {
+    "name": "vm_ae_torsion_of_penis_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "l. Torsion of penis [Severe]"
+  },
+  {
+    "name": "vm_ae_erectile_dysfunction_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "m. Erectile dysfunction [Moderate]"
+  },
+  {
+    "name": "vm_ae_erectile_dysfunction_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "m. Erectile dysfunction [Severe]"
+  },
+  {
+    "name": "vm_ae_psycho_behav_iss_moderate",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "n. Psycho-behavioral issues [Moderate]"
+  },
+  {
+    "name": "vm_ae_psycho_behav_iss_severe",
+    "dataType": "RadioButton",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "n. Psycho-behavioral issues [Severe]"
+  },
+  {
+    "name": "vm_tx_and_other_clinnotes",
+    "dataType": "EditText",
+    "pageName": "vmmc_postop2",
+    "IsIndexed": false,
+    "IsRequired": false,
+    "Label": "Treatment and Other Clinical Notes"
+  }
+]

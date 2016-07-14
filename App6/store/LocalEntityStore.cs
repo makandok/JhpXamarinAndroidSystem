@@ -35,6 +35,7 @@ namespace JhpDataSystem.store
             var db = localdb3.DB;
             db.CreateTable<PPClientSummary>();
             db.CreateTable<OutEntity>();
+            db.CreateTable<VmmcClientSummary>();
 
             //db.DeleteAll<RecordSummary>();
             db.CreateTable<RecordSummary>();
@@ -50,7 +51,8 @@ namespace JhpDataSystem.store
             new TableStore(Constants.KIND_PPX_UNSCHEDULEDVISIT).build();
 
             //VMMC
-            new TableStore(Constants.KIND_VMMC).build();
+            new TableStore(Constants.KIND_VMMC_POSTOP).build();
+            new TableStore(Constants.KIND_VMMC_REGANDPROCEDURE).build();
         }
 
         internal TableStore defaultTableStore { get; set; }

@@ -8,9 +8,9 @@ using System.Linq;
 using JhpDataSystem.store;
 using Android.Content;
 
-namespace JhpDataSystem.projects.ppx
+namespace JhpDataSystem.projects.vmmc
 {
-    public class PPXFormsBase : Activity
+    public class VmmcFormsBase : Activity
     {
         protected bool _isRegistration = false;
         protected int myView = -1;
@@ -21,7 +21,7 @@ namespace JhpDataSystem.projects.ppx
 
         void showHome()
         {
-            var intent = new Intent(this, typeof(PPXHomeActivity));
+            var intent = new Intent(this, typeof(VmmcHomeActivity));
             intent.AddFlags(ActivityFlags.ClearTop);
             StartActivityForResult(intent, 0);
         }
@@ -305,7 +305,7 @@ namespace JhpDataSystem.projects.ppx
                     };
 
                     //save to lookups db
-                    if (this.GetType() == typeof(PP_ClientEvalEnd))
+                    if (this.GetType() == typeof(VmmcRegAndProc1))
                     {
                         var entityId = new KindKey(kindKey.Value);
                         saveable.EntityId = entityId;

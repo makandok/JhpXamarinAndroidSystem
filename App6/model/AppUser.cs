@@ -306,6 +306,9 @@ namespace JhpDataSystem.model
         public DateTime DateOfBirth { get; set; }
 
         public DateTime MCDate { get; set; }
+
+        public DateTime PlacementDate { get; set; }
+        
         public string Telephone { get; set; }
 
         public string Address { get; set; }
@@ -354,7 +357,7 @@ namespace JhpDataSystem.model
             //    this.DeviceSize = deviceSize;
             //}
 
-            //this.PlacementDate = Convert.ToDateTime(allFields["dateofvisit"]);
+            this.PlacementDate = Convert.ToDateTime(allFields["dateofvisit"]);
             this.FormSerial = Convert.ToInt32(allFields["cardserialnumber"]);
             this.Names = allFields["clientname"];
             this.ClientNumber = Convert.ToInt32(allFields["clientidnumber"]);

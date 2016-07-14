@@ -8,7 +8,7 @@ using System.Linq;
 using JhpDataSystem.store;
 using Android.Content;
 
-namespace JhpDataSystem.projects.ppx
+namespace JhpDataSystem.projects.sample
 {
     public class PPXFormsBase : Activity
     {

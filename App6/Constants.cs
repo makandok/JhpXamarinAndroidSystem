@@ -74,12 +74,20 @@ namespace JhpDataSystem
         internal const string KIND_PPX_CLIENT = "pp_client_parts";
         internal const string KIND_PPX_NEXTVIEW = "pp_nextview";
 
-        internal const string KIND_VMMC_CLIENTSUMMARY = "pp_clientsummary";
+        internal const string KIND_VMMC_CLIENTSUMMARY = "vmmc_clientsummary";
+        internal const string KIND_VMMC_POSTOP = "vmmc_postop";
+        internal const string KIND_VMMC_REGANDPROCEDURE = "vmmc_regandproc";
+        internal static Dictionary<string, string> VMMC_KIND_DISPLAYNAMES =
+                new Dictionary<string, string>() {
+                    { KIND_VMMC_POSTOP,"Post Operation" },
+                     { KIND_VMMC_REGANDPROCEDURE,"Registration and Procedure" }
+                };
+        //internal const string KIND_VMMC = "vmmcclients";
 
         public const string KIND_APPUSERS = "appusers";
         internal const string KIND_OUTTRANSPORT = "transport";
 
-        internal const string KIND_VMMC = "vmmcclients";
+        
         public const string KIND_DEFAULT = "generalstore";
         public const string KIND_REGISTER = "kindRegister";
         //encryptionkey

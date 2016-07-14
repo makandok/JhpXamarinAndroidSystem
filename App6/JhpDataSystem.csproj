@@ -220,6 +220,7 @@
     <Compile Include="db\BigQueryAssist.cs" />
     <Compile Include="db\DefaultCredentialProvider.cs" />
     <Compile Include="db\GoogleCredential.cs" />
+    <AndroidAsset Include="Assets\vmmc_fields.json" />
     <None Include="db\GoogleDataStoreNotCompiled.cs" />
     <Compile Include="GridDisplayActivity.cs" />
     <Compile Include="Humongous.cs" />
@@ -231,14 +232,25 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <Compile Include="model\FieldItem.cs" />
+    <Compile Include="projects\BaseWorkflowController.cs" />
+    <None Include="projects\sample\summaryloader.cs" />
+    <None Include="projects\sample\GridDisplayActivity.cs" />
+    <None Include="projects\sample\PPXActivities.cs" />
+    <None Include="projects\sample\PPXFormsBase.cs" />
+    <None Include="projects\sample\PPXHomeActivity.cs" />
     <Compile Include="projects\ppx\GridDisplayActivity.cs" />
     <Compile Include="projects\ppx\PPXActivities.cs" />
     <Compile Include="projects\ppx\PPXFormsBase.cs" />
     <Compile Include="modules\SmsActivity.cs" />
     <Compile Include="projects\ppx\ClientSummaryLoader.cs" />
-    <Compile Include="projects\ppx\PPXConstants.cs" />
+    <None Include="projects\sample\workflow\moduleworkflowcontrollers.cs" />
+    <Compile Include="projects\vmmc\GridDisplayActivity.cs" />
+    <Compile Include="projects\vmmc\VmmcHomeActivity.cs" />
+    <Compile Include="projects\vmmc\VmmcActivities.cs" />
+    <Compile Include="projects\vmmc\VmmcFormsBase.cs" />
+    <Compile Include="projects\vmmc\workflow\VmmcRegAndProcControl.cs" />
+    <Compile Include="projects\vmmc\workflow\VmmcPostOperationControl.cs" />
     <Compile Include="RecordSummary.cs" />
-    <Compile Include="projects\vmmc\VmmcConstants.cs" />
     <Compile Include="projects\vmmc\ClientSummaryLoader.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
@@ -268,6 +280,16 @@
     </AndroidResource>
     <Compile Include="WebFileDownloader.cs" />
     <AndroidResource Include="Resources\layout\recordsummaryview.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\vmmc_regandproc5.axml" />
+    <AndroidResource Include="Resources\layout\vmmc_postop1.axml" />
+    <AndroidResource Include="Resources\layout\vmmc_postop2.axml" />
+    <AndroidResource Include="Resources\layout\vmmc_regandproc1.axml" />
+    <AndroidResource Include="Resources\layout\vmmc_regandproc2.axml" />
+    <AndroidResource Include="Resources\layout\vmmc_regandproc3.axml" />
+    <AndroidResource Include="Resources\layout\vmmc_regandproc4.axml" />
+    <AndroidResource Include="Resources\layout\DataEntryEnd.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <None Include="Samples\Archive.cs" />
@@ -337,6 +359,7 @@
     <Folder Include="adapter\" />
     <Folder Include="communicator\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="projects\vmmc\activities\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserLoginLayout.axml">
@@ -365,6 +388,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\clientsummaryoptions.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="projects\sample\Adding a Module.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
