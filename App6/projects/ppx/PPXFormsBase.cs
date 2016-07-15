@@ -286,7 +286,7 @@ namespace JhpDataSystem.projects.ppx
 
                 //buttonFinalise
                 var buttonFinalise = FindViewById<Button>(Resource.Id.buttonFinalise);
-                buttonFinalise.Click += (sender, e) =>
+                buttonFinalise.Click += async (sender, e) =>
                 {
                     //we get the data
                     var data = getFormData();
@@ -378,7 +378,7 @@ namespace JhpDataSystem.projects.ppx
 
                     //we show the splash screen and await results of the operation
                     //todo: show dialog when beginning server sync and await excution
-                    AppInstance.Instance.CloudDbInstance.EnsureServerSync();
+                    var syncRes = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(sendToast);
 
                     //we close and show the prpex home page
                     this.Finish();
@@ -406,6 +406,11 @@ namespace JhpDataSystem.projects.ppx
                     StartActivityForResult(intent, 0);
                 };
             }
+        }
+
+        void sendToast(string message, ToastLength length)
+        {
+            Toast.MakeText(this, message, length).Show();
         }
 
         private void saveClientSummary(List<NameValuePair> data, KindKey clientId)

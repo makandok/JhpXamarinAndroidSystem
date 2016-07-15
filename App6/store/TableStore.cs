@@ -2,6 +2,7 @@ using System;
 using Mono.Data.Sqlite;
 using System.Collections.Generic;
 using JhpDataSystem.model;
+using System.Threading.Tasks;
 
 namespace JhpDataSystem.store
 {
@@ -26,7 +27,20 @@ namespace JhpDataSystem.store
                 toReturn.AddRange(res);
             }
             return toReturn;
-        }     
+        }
+
+        internal List<NameValuePair> getAllBobsCount()
+        {
+            if (Kinds == null) return new List<NameValuePair>();
+
+            var toReturn = new List<NameValuePair>();
+            foreach (var table in Kinds)
+            {
+                var res = new TableStore(table).Count();
+                toReturn.Add(new NameValuePair() { Name = table.Value, Value = res.Result.ToString() });
+            }
+            return toReturn;
+        }
     }
 
     public class TableStore
@@ -43,7 +57,7 @@ namespace JhpDataSystem.store
         protected const string deleteSql = "delete from {0} where id = @id";
 
         protected const string selectIdsForAll = "select id from {0}";
-
+        protected const string selectCountForAll = "select count(id) from {0}";
         protected const string selectDatablobs = "select datablob from {0}";
         protected const string selectDatablobsById = "select datablob from {0} where id = @id";
         /// <summary>
@@ -334,6 +348,47 @@ namespace JhpDataSystem.store
                 }
             }
             return saveStatus;
+        }
+
+        public async Task<int> Count()
+        {
+            int toReturn = -1;
+            using (var conn = new SqliteConnection(_db.ConnectionString))
+            {
+                try
+                {
+                    await conn.OpenAsync();
+                }
+                catch (SqliteException ex)
+                {
+                    if (MainLogger != null)
+                        MainLogger.Log(string.Format(
+                            "Error opening database connection{0}{1}", Environment.NewLine, ex.ToString()));
+                    return -1; // new NameValuePair() { Name = _tableName.Value, Value = Constants.DBSAVE_ERROR };
+                }
+
+                try
+                {
+                    //check if our table tables, create if it doesn't
+                    var command = conn.CreateCommand();
+                    command.CommandText = string.Format(selectCountForAll, _tableName.Value);
+                    var reader = await command.ExecuteScalarAsync();
+                    var res = Convert.ToInt32(reader);
+                    toReturn = res; // new NameValuePair() { Name = _tableName.Value, Value = res };
+                }
+                catch (SqliteException ex)
+                {
+                    if (MainLogger != null)
+                        MainLogger.Log(string.Format(
+                            "Error reading data from database{0}{1}", Environment.NewLine, ex.ToString()));
+                    return -1; // new NameValuePair() { Name = _tableName.Value, Value = Constants.DBSAVE_ERROR };
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return toReturn;
         }
     }
 }

@@ -11,9 +11,16 @@ namespace JhpDataSystem.projects.ppx
         {
             var all = new LocalDB3().DB
                 .Table<PPClientSummary>()
-                .OrderBy(t => t.PlacementDate)
+                .ThenByDescending(t => t.PlacementDate)
                 .ToList();
             all.ForEach(t => { t.Id = new KindKey(t.KindKey); t.EntityId = new KindKey(t.KindKey); });
+            return all;
+        }
+
+        public int GetCount()
+        {
+            var all = new LocalDB3().DB
+                .ExecuteScalar<int>("select count(*) from " + Constants.KIND_PPX_CLIENTSUMMARY);
             return all;
         }
 

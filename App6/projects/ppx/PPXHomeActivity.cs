@@ -8,6 +8,7 @@ using JhpDataSystem.store;
 using Android.Content;
 using JhpDataSystem.Utilities;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace JhpDataSystem.projects.ppx
 {
@@ -159,6 +160,38 @@ namespace JhpDataSystem.projects.ppx
             {
                 getPrepexSuppliesReport();
             };
+
+            var buttonViewRecordSummaries = FindViewById<Button>(Resource.Id.buttonViewRecordSummaries);
+            buttonViewRecordSummaries.Click += async (sender, e) =>
+            {
+                await getClientSummaryReport();
+            };
+
+            var buttonSendReport = FindViewById<Button>(Resource.Id.buttonSendReport);
+            buttonSendReport.Click += (sender, e) =>
+            {
+                var textRecordSummaries = FindViewById<TextView>(Resource.Id.textRecordSummaries);
+                if (textRecordSummaries == null)
+                    return;
+
+                if (string.IsNullOrWhiteSpace(textRecordSummaries.Text) ||
+                            textRecordSummaries.Text ==
+                            Resources.GetString(Resource.String.sys_not_updated))
+                {
+                    sendToast("No data to send. Run a report first", ToastLength.Long);
+                    return;
+                }
+
+                new EmailSender()
+                {
+                    appContext = this,
+                    receipients = new List<string>() {
+                            "makando.kabila@jhpiego.org"},
+                    messageSubject = "Summary Report",
+                    message = textRecordSummaries.Text
+                }.Send();
+            };
+
             //we get the number of unsync'd records
             var unsyncdRecs = new CloudDb(Assets).GetRecordsToSync();
             var buttonServerSync = FindViewById<Button>(Resource.Id.buttonDatastoreSync);
@@ -166,11 +199,16 @@ namespace JhpDataSystem.projects.ppx
             buttonServerSync.Click += async (sender, e) =>
             {
                 Toast.MakeText(this, "Performing action requested", Android.Widget.ToastLength.Short).Show();
-                await AppInstance.Instance.CloudDbInstance.EnsureServerSync();
+                var res2 = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(sendToast);
                 //var res = await new got(Assets).trainAriaStark();
                 //var resString = res == null ? "RES IS NULL" : res.ToString();
                 Toast.MakeText(this, "Sync completed", Android.Widget.ToastLength.Short).Show();
             };
+        }
+
+        void sendToast(string message, ToastLength length)
+        {
+            Toast.MakeText(this, message, length).Show();
         }
 
         List<PPDeviceSizes> getPPDeviceSizes()
@@ -180,25 +218,67 @@ namespace JhpDataSystem.projects.ppx
             foreach (var client in allClients)
             {
                 PPDeviceSizes current = null;
-                var dayId = client.PlacementDate.DayOfYear;
+                var dayId = (client.PlacementDate.Year * 1000) + client.PlacementDate.DayOfYear;
                 if (!allSizes.TryGetValue(dayId, out current))
                 {
-                    current = new PPDeviceSizes(dayId);
+                    current = new PPDeviceSizes(client.PlacementDate);
                     allSizes[dayId] = current;
                 }
                 current.Add(client.DeviceSize);
             }
+
             var toReturn = new List<PPDeviceSizes>();
             toReturn.AddRange(allSizes.Values);
             return toReturn;
         }
 
+        private async Task<int> getClientSummaryReport()
+        {
+            var countRes = LocalEntityStore.Instance.GetAllBobsCount();
+
+            var asList = (from item in countRes
+                          let displayItem = new NameValuePair()
+                          {
+                              Name = Constants.PPX_KIND_DISPLAYNAMES[item.Name],
+                              Value = item.Value
+                          }
+                          select displayItem.toDisplayText()).ToList();
+            var resList = new List<string>() {
+                Resources.GetString(Resource.String.sys_summary_blobcount),
+                NameValuePair.getHeaderText() };
+            resList.AddRange(asList);
+
+            //also add client summary
+            var recCount = new ClientSummaryLoader().GetCount();
+            var clientSummaryCount = new NameValuePair()
+            {
+                Name = "ppx Client Summary",
+                Value = recCount.ToString()
+            };
+            resList.Add(clientSummaryCount.toDisplayText());
+
+            var summaryInfo = new LocalDB3().DB.Query<NameValuePair>(
+                                string.Format(
+                "select KindName as Name, count(*) as Value from {0} group by KindName",
+                Constants.SYS_KIND_RECORDSUMMARY)
+                );
+            resList.Add(System.Environment.NewLine);
+            resList.Add("Summary of Records in "+ Constants.SYS_KIND_RECORDSUMMARY);
+            var asStringList = (from nvp in summaryInfo
+                                select nvp.toDisplayText()).ToList();
+            resList.AddRange(asStringList);
+            var asText = string.Join(System.Environment.NewLine, resList);
+            setTextResults(asText);
+            return 0;
+        }
+
         private void getPrepexSuppliesReport()
         {
-            //StartActivity(typeof(FilteredGridDisplayActivity));
             //we get all clients
             var allSizes = getPPDeviceSizes();            
             var resList = new List<string>();
+            resList.Add(Resources.GetString(Resource.String.ppx_sys_deviceusage));
+            resList.Add(System.Environment.NewLine);
             resList.Add(PPDeviceSizes.getHeader());
             foreach (var dayUsage in allSizes)
             {
@@ -206,17 +286,16 @@ namespace JhpDataSystem.projects.ppx
             }
 
             var asString = string.Join(System.Environment.NewLine, resList);
+            setTextResults(asString);
+        }
 
-            //compute summary of device usage
-            //show the results
-            new EmailSender()
+        void setTextResults(string asString)
+        {
+            var textRecordSummaries = FindViewById<TextView>(Resource.Id.textRecordSummaries);
+            if (textRecordSummaries != null)
             {
-                appContext = this,
-                receipients = new List<string>() {
-                        "makandok@gmail.com", "makandok@yahoo.com" },
-                messageSubject = "PP Device Usage Summary",
-                message = asString
-            }.Send();
+                textRecordSummaries.Text = asString;
+            }
         }
 
         //private void bindDateDialogEventsForView(int viewId)

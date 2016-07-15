@@ -148,11 +148,16 @@ namespace JhpDataSystem.projects.vmmc
             buttonServerSync.Click += async (sender, e) =>
             {
                 Toast.MakeText(this, "Performing action requested", Android.Widget.ToastLength.Short).Show();
-                await AppInstance.Instance.CloudDbInstance.EnsureServerSync();
+                var res2 = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(sendToast);
                 //var res = await new got(Assets).trainAriaStark();
                 //var resString = res == null ? "RES IS NULL" : res.ToString();
                 Toast.MakeText(this, "Sync completed", Android.Widget.ToastLength.Short).Show();
             };
+        }
+
+        void sendToast(string message, ToastLength length)
+        {
+            Toast.MakeText(this, message, length).Show();
         }
 
         private void getSuppliesReport()

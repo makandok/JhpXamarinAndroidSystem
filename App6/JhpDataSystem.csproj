@@ -239,6 +239,7 @@
     <None Include="projects\sample\PPXFormsBase.cs" />
     <None Include="projects\sample\PPXHomeActivity.cs" />
     <Compile Include="projects\ppx\GridDisplayActivity.cs" />
+    <Compile Include="projects\ppx\PPDeviceSizes.cs" />
     <Compile Include="projects\ppx\PPXActivities.cs" />
     <Compile Include="projects\ppx\PPXFormsBase.cs" />
     <Compile Include="modules\SmsActivity.cs" />

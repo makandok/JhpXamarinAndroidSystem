@@ -34,6 +34,7 @@ namespace JhpDataSystem.store
             var localdb3 = new LocalDB3();
             var db = localdb3.DB;
             db.CreateTable<PPClientSummary>();
+            //db.DropTable<OutEntity>();
             db.CreateTable<OutEntity>();
             db.CreateTable<VmmcClientSummary>();
 
@@ -80,6 +81,32 @@ namespace JhpDataSystem.store
             return new TableStore(entityKind).GetAllBlobs();
         }
 
+        //public void updateRecordSummaryTable()
+        //{
+        //    var query = "select count(*) from {0}";
+        //    var allBlobs = GetAllBobs();
+        //    var clientRecords = (from record in allBlobs
+        //                         select new PPDataSet().fromJson(record));
+        //    var allRecords = (
+        //        from record in clientRecords
+        //        let val = record.FieldValues
+        //            .FirstOrDefault(f => f.Name == Constants.FIELD_PPX_DATEOFVISIT)
+        //        where val != null
+        //        let visitDate = string.IsNullOrWhiteSpace(val.Value) ? DateTime.MinValue : Convert.ToDateTime(val.Value)
+        //        select new RecordSummary()
+        //        {
+        //            Id = record.Id.Value,
+        //            EntityId = record.EntityId.Value,
+        //            KindName = record.FormName,
+        //            //Constants.PPX_KIND_DISPLAYNAMES[record.FormName],
+        //            VisitDate = visitDate
+        //        }).ToList();
+
+        //    var db = new LocalDB3().DB;
+        //    allRecords.ForEach(t => db.InsertOrReplace(t));
+        //    var allSaved = db.Table<RecordSummary>().ToList();
+        //}
+
         public void updateRecordSummaryTable()
         {
             var allBlobs = GetAllBobs();
@@ -103,6 +130,24 @@ namespace JhpDataSystem.store
             var db = new LocalDB3().DB;
             allRecords.ForEach(t => db.InsertOrReplace(t));
             var allSaved = db.Table<RecordSummary>().ToList();            
+        }
+
+        public List<NameValuePair> GetAllBobsCount()
+        {
+            var tables = new List<string>() {
+                    Constants.KIND_PPX_CLIENTEVAL,
+                    Constants.KIND_PPX_DEVICEREMOVAL,
+                    Constants.KIND_PPX_POSTREMOVAL,
+                    Constants.KIND_PPX_UNSCHEDULEDVISIT
+                };
+            var store = new MultiTableStore()
+            {
+                Kinds =
+                (from table in tables select new KindName(table)).ToList()
+            };
+
+            var allBlobs = store.getAllBobsCount();
+            return allBlobs;
         }
 
         public List<KindItem> GetAllBobs()

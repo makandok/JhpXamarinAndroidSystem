@@ -9,6 +9,8 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using JhpDataSystem.model;
+using System.Net;
+using Android.Widget;
 
 namespace JhpDataSystem.store
 {
@@ -119,12 +121,16 @@ namespace JhpDataSystem.store
             });
         }
 
-        public void AddToOutQueue(DbSaveableEntity saveableEntity)
+        public int AddToOutQueue(DbSaveableEntity saveableEntity)
         {
             var asString = saveableEntity.getJson();
-            //var rnd = new Random(DateTime.Now.Millisecond).Next(1000000, 99999999);
-            var outEntity = new OutEntity() { DataBlob = asString };
-            new OutDb().DB.InsertOrReplace(outEntity);
+            var outEntity = new OutEntity()
+            {
+                Id = saveableEntity.Id.Value,
+                DataBlob = asString
+            };
+            var res = new OutDb().DB.InsertOrReplace(outEntity);
+            return res;
         }
 
         public List<OutEntity> GetRecordsToSync()
@@ -132,25 +138,61 @@ namespace JhpDataSystem.store
             return new OutDb().DB.Table<OutEntity>().ToList();
         }
 
-        int isRunning = 0;
-        public async Task<int> EnsureServerSync()
+        public async Task<bool> checkConnection()
         {
+            var googleUrl = "https://google.co.zm";
+            var toReturn = false;
+            try
+            {
+                var request = (HttpWebRequest)WebRequest.Create(googleUrl);
+                request.Timeout = 5000;
+                WebResponse response;
+                response = await request.GetResponseAsync();
+                response.Close();
+                return true;
+            }
+            catch (WebException ex)
+            {
+                toReturn = false;
+            }
+            catch (Exception e)
+            {
+                toReturn = false;
+            }
+            return toReturn;
+        }
+
+        int isRunning = 0;
+        public async Task<int> EnsureServerSync(Action<string, ToastLength> makeToast)
+        {
+            //void sendToast(string message, ToastLength length)
             if (isRunning == 1)
                 return 0;
             isRunning = 1;
+            var hasConnection = await checkConnection();
+            if (!hasConnection)
+            {
+                isRunning = 0;
+                if (makeToast != null)
+                {
+                    makeToast("No connection detected", ToastLength.Long);
+                }
+                return 0;
+            }
+            makeToast("Connected tested", ToastLength.Short);
             var cloudDb = new OutDb().DB;
             var recs = GetRecordsToSync();
             var recIndex = recs.Count - 1;
             while (recIndex >= 0)
             {
                 var outEntity = recs[recIndex];
-                var formSerial = outEntity.FormSerial;
                 var prepexDs = new PPDataSet().fromJson(new KindItem(outEntity.DataBlob
-                    //todo:remove this decryption here. Just test
-                    //.Decrypt().Value
                     ));
-                var saveable = new DbSaveableEntity(prepexDs) {
-                    kindName = new KindName(prepexDs.FormName) };
+                var saveable = new DbSaveableEntity(prepexDs)
+                {
+                    //Id = new KindKey(outEntity.Id),
+                    kindName = new KindName(prepexDs.FormName)
+                };
                 var saved = false;
                 for (int i = 0; i < 4; i++)
                 {
@@ -158,14 +200,14 @@ namespace JhpDataSystem.store
                     {
                         await Save(saveable);
                         //we remove this key from the database
-                        cloudDb.Delete<OutEntity>(formSerial);
+                        var deleted = cloudDb.Delete<OutEntity>(saveable.Id.Value);
                         saved = true;
                     }
                     catch (Google.GoogleApiException gex)
                     {
                         //todo: mark this record as bad to prevent it blocking for life
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         //todo: mark this record as bad to prevent it blocking for life
                         //Android.Util.Log.Debug();

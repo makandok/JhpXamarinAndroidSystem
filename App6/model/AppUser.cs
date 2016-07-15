@@ -6,54 +6,6 @@ using System.Linq;
 
 namespace JhpDataSystem.model
 {
-    //public enum RecordEditStage
-    //{
-    //    None = 1, Start, ShowAvailableRecords, ShowEditRecordView,
-    //}
-
-    public class PPDeviceSizes
-    {
-        public PPDeviceSizes(int dayId)
-        {
-            DayId = dayId;
-            A = B = C = D = E = 0;
-        }
-        public int DayId { get; set; }
-        public int A { get; set; }
-        public int B { get; set; }
-        public int C { get; set; }
-        public int D { get; set; }
-        public int E { get; set; }
-
-        public static string getHeader()
-        {
-            return "Day,\tA,\tB,\tC,\tD,\tE";
-        }
-
-        public string toDisplay()
-        {
-            return string.Format("{0},\t{1},\t{2},\t{3},\t{4},\t{5}", DayId, A, B, C, D, E);
-        }
-
-        internal void Add(string deviceSize)
-        {
-            if (string.IsNullOrWhiteSpace(deviceSize))
-                return;
-
-            var asLower = deviceSize.ToLowerInvariant();
-            if (asLower == "a")
-                A += 1;
-            else if (asLower == "b")
-                B += 1;
-            else if (asLower == "c")
-                C += 1;
-            else if (asLower == "d")
-                D += 1;
-            else if (asLower == "e")
-                E += 1;
-        }
-    }
-
     public class ContactNumber
     {
         public string name { get; set; }
@@ -63,8 +15,8 @@ namespace JhpDataSystem.model
     [SQLite.Table(Constants.KIND_OUTTRANSPORT)]
     public class OutEntity
     {
-        [SQLite.PrimaryKey, SQLite.AutoIncrement]
-        public int FormSerial { get; set; }
+        [SQLite.PrimaryKey]
+        public string Id { get; set; }
         public string DataBlob { get; set; }
     }
 
