@@ -9,6 +9,7 @@ using Android.Content;
 using JhpDataSystem.Utilities;
 using System.Linq;
 using System.Threading.Tasks;
+using JhpDataSystem.projects.ppx.activity;
 
 namespace JhpDataSystem.projects.ppx
 {
@@ -106,17 +107,17 @@ namespace JhpDataSystem.projects.ppx
             var buttonUnscheduled = FindViewById<Button>(Resource.Id.buttonUnscheduled);
             buttonUnscheduled.Click += (sender, e) =>
             {
-                StartActivity(typeof(ClientSelectionActivity), typeof(PP_Unscheduled1));
+                StartActivity(typeof(PpxClientSelectionActivity), typeof(PP_Unscheduled1));
             };
             var buttonDeviceRemovalVisit = FindViewById<Button>(Resource.Id.buttonDeviceRemovalVisit);
             buttonDeviceRemovalVisit.Click += (sender, e) =>
             {
-                StartActivity(typeof(ClientSelectionActivity), typeof(PP_DeviceRemoval1));
+                StartActivity(typeof(PpxClientSelectionActivity), typeof(PP_DeviceRemoval1));
             };
 
             var buttonPostRemovalVisit = FindViewById<Button>(Resource.Id.buttonPostRemovalVisit);
             buttonPostRemovalVisit.Click += (sender, e) => {
-                StartActivity(typeof(ClientSelectionActivity), typeof(PP_PostRemovalVisit1));
+                StartActivity(typeof(PpxClientSelectionActivity), typeof(PP_PostRemovalVisit1));
             };
 
             //buttonViewList
@@ -128,7 +129,7 @@ namespace JhpDataSystem.projects.ppx
             //buttonViewList
             var buttonEditRecords = FindViewById<Button>(Resource.Id.buttonEditRecords);
             buttonEditRecords.Click += (sender, e) => {
-                StartActivity(typeof(ClientSelectionActivity), typeof(SelectRecordsActivity));
+                StartActivity(typeof(PpxClientSelectionActivity), typeof(PpxRecordSelectorActivity));
             };
 
             //buttonClientsDueFor

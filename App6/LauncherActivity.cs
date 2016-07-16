@@ -44,8 +44,9 @@ namespace JhpDataSystem
             var buttonVmmcHome = FindViewById<Button>(Resource.Id.buttonVmmcHome);
             buttonVmmcHome.Click += (x, y) => {
                 //we disable PPX
+                //StartActivity(typeof(projects.vmmc.VmmcHomeActivity));
 
-                StartActivity(typeof(projects.vmmc.VmmcHomeActivity));
+
                 //var uri = Android.Net.Uri.Parse("http://www.xamarin.com");
                 //var intent = new Intent(Intent.ActionView, uri);
                 //StartActivity(intent);
