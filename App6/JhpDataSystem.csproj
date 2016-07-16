@@ -221,7 +221,6 @@
     <Compile Include="db\GoogleCredential.cs" />
     <AndroidAsset Include="Assets\vmmc_fields.json" />
     <None Include="db\GoogleDataStoreNotCompiled.cs" />
-    <Compile Include="GridDisplayActivity.cs" />
     <Compile Include="Humongous.cs" />
     <AndroidResource Include="Resources\layout\prepexreg1.axml" />
     <AndroidResource Include="Resources\layout\prepexreg2.axml" />
@@ -242,10 +241,10 @@
     <Compile Include="projects\ppx\PPDeviceSizes.cs" />
     <Compile Include="projects\ppx\PPXActivities.cs" />
     <Compile Include="projects\ppx\PpxClientSummaryAdapter.cs" />
-    <Compile Include="projects\ppx\PPXDisplayRecordSummary.cs" />
     <Compile Include="projects\ppx\PPXFormsBase.cs" />
     <Compile Include="modules\SmsActivity.cs" />
-    <Compile Include="projects\ppx\ClientSummaryLoader.cs" />
+    <Compile Include="projects\ppx\PpxLookupProvider.cs" />
+    <Compile Include="projects\ppx\wfcontrollers\WorkflowControllers.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="store\CloudDb.cs" />

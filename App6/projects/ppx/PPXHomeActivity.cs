@@ -123,7 +123,7 @@ namespace JhpDataSystem.projects.ppx
             //buttonViewList
             var buttonViewList = FindViewById<Button>(Resource.Id.buttonViewList);
             buttonViewList.Click += (sender, e) => {
-                StartActivity(typeof(FilteredGridDisplayActivity));
+                StartActivity(typeof(PpxFilteredGridDisplayActivity));
             };
 
             //buttonViewList

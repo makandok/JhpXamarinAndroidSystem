@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace JhpDataSystem.projects.ppx
 {
     [Activity(Label = "Client List")]
-    public class FilteredGridDisplayActivity : Activity, ListView.IOnItemClickListener
+    public class PpxFilteredGridDisplayActivity : Activity, ListView.IOnItemClickListener
     {
         PpxClientSummaryAdapter _defaultAdapter = null;
         List<PPClientSummary> _allPrepexClients;
