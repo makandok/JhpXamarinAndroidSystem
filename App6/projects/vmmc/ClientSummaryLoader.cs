@@ -1,27 +1,11 @@
-using System.Collections.Generic;
-using System.Linq;
 using JhpDataSystem.model;
-using JhpDataSystem.store;
 
 namespace JhpDataSystem.projects.vmmc
 {
-    public class VmmcClientLookupHelper
+    public class VmmcLookupProvider : ClientLookupProvider<VmmcClientSummary>
     {
-        public List<VmmcClientSummary> Get()
+        public VmmcLookupProvider() : base(Constants.KIND_VMMC_CLIENTSUMMARY)
         {
-            var all = new LocalDB3().DB
-                .Table<VmmcClientSummary>()
-                .OrderBy(t => t.MCDate)
-                .ToList();
-            all.ForEach(t => { t.Id = new KindKey(t.KindKey); t.EntityId = new KindKey(t.KindKey); });
-            return all;
-        }
-
-        public int Update(List<VmmcClientSummary> clients)
-        {
-            var all = new LocalDB3().DB
-                .UpdateAll(clients);
-            return all;
         }
     }
 }

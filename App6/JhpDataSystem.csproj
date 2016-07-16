@@ -215,7 +215,6 @@
   <ItemGroup>
     <Compile Include="ApplicationSplashActivity.cs" />
     <Compile Include="ashared\Crypto.cs" />
-    <Compile Include="ClientSummaryLoader.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="db\BigQueryAssist.cs" />
     <Compile Include="db\DefaultCredentialProvider.cs" />
@@ -232,19 +231,14 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <Compile Include="model\FieldItem.cs" />
+    <Compile Include="ClientLookupProvider.cs" />
     <Compile Include="projects\BaseWorkflowController.cs" />
-    <None Include="projects\sample\summaryloader.cs" />
-    <None Include="projects\sample\GridDisplayActivity.cs" />
-    <None Include="projects\sample\PPXActivities.cs" />
-    <None Include="projects\sample\PPXFormsBase.cs" />
-    <None Include="projects\sample\PPXHomeActivity.cs" />
     <Compile Include="projects\ppx\GridDisplayActivity.cs" />
     <Compile Include="projects\ppx\PPDeviceSizes.cs" />
     <Compile Include="projects\ppx\PPXActivities.cs" />
     <Compile Include="projects\ppx\PPXFormsBase.cs" />
     <Compile Include="modules\SmsActivity.cs" />
     <Compile Include="projects\ppx\ClientSummaryLoader.cs" />
-    <None Include="projects\sample\workflow\moduleworkflowcontrollers.cs" />
     <Compile Include="projects\vmmc\GridDisplayActivity.cs" />
     <Compile Include="projects\vmmc\VmmcHomeActivity.cs" />
     <Compile Include="projects\vmmc\VmmcActivities.cs" />
@@ -391,7 +385,7 @@
     <AndroidResource Include="Resources\layout\clientsummaryoptions.axml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="projects\sample\Adding a Module.txt">
+    <None Include="Adding a Module.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

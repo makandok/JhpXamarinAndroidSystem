@@ -170,7 +170,7 @@ namespace JhpDataSystem.projects.ppx
 
             listview.OnItemClickListener = this;
 
-            _allPrepexClients = new ClientSummaryLoader().Get();
+            _allPrepexClients = new PpxLookupProvider().Get();
             _defaultAdapter = new ClientSummaryAdapter(this, listview, _allPrepexClients);
 
             listview.Adapter = _defaultAdapter;
@@ -227,7 +227,7 @@ namespace JhpDataSystem.projects.ppx
 
             listview.OnItemClickListener = this;
 
-            _allPrepexClients = new ClientSummaryLoader().Get();
+            _allPrepexClients = new PpxLookupProvider().Get();
             _defaultAdapter = new ClientSummaryAdapter(this, listview, _allPrepexClients);
 
             listview.Adapter = _defaultAdapter;

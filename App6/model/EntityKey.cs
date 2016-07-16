@@ -2,6 +2,12 @@ using System;
 
 namespace JhpDataSystem.model
 {
+    public interface ILocalDbEntity: ISaveableEntity
+    {
+        DateTime CoreActivityDate { get; set; }
+        ISaveableEntity build();
+    }
+
     public interface ISaveableEntity
     {
         KindKey Id { get; set; }
@@ -25,12 +31,6 @@ namespace JhpDataSystem.model
         public KindItem kindItem { get; set; }
         public KindName kindName { get; set; }
         public KindKey kindKey { get; set; }
-        //public KindEntity()
-        //{
-        //    //_kindItem = kindItem;
-        //    //_kindKey = kindKey;
-        //    //_kindName = kindName;
-        //}
     }
 
     public class KindItem

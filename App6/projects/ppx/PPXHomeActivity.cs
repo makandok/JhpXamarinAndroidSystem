@@ -213,7 +213,7 @@ namespace JhpDataSystem.projects.ppx
 
         List<PPDeviceSizes> getPPDeviceSizes()
         {
-            var allClients = new ClientSummaryLoader().Get();
+            var allClients = new PpxLookupProvider().Get();
             var allSizes = new Dictionary<int, PPDeviceSizes>();
             foreach (var client in allClients)
             {
@@ -249,7 +249,7 @@ namespace JhpDataSystem.projects.ppx
             resList.AddRange(asList);
 
             //also add client summary
-            var recCount = new ClientSummaryLoader().GetCount();
+            var recCount = new PpxLookupProvider().GetCount();
             var clientSummaryCount = new NameValuePair()
             {
                 Name = "ppx Client Summary",

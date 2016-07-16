@@ -66,8 +66,23 @@ namespace JhpDataSystem.model
     }
 
     [SQLite.Table(Constants.KIND_PPX_CLIENTSUMMARY)]
-    public class PPClientSummary: ISaveableEntity
+    public class PPClientSummary: ILocalDbEntity
     {
+        public const string KindName = Constants.KIND_PPX_CLIENTSUMMARY;
+
+        [SQLite.Ignore]
+        public KindKey Id { get; set; }
+        [SQLite.Ignore]
+        public KindKey EntityId { get; set; }
+
+        public DateTime CoreActivityDate { get; set; }
+        public ISaveableEntity build()
+        {
+            Id = new KindKey(KindKey); EntityId = new KindKey(KindKey);
+            CoreActivityDate = PlacementDate;
+            return this;
+        }
+
         [SQLite.PrimaryKey]
         public int FormSerial { get; set; }
 
@@ -75,10 +90,7 @@ namespace JhpDataSystem.model
         [SQLite.Ignore]
         public long itemId { get { return _itemid; } set { _itemid = value; } }
 
-        [SQLite.Ignore]
-        public KindKey Id { get; set; }
-        [SQLite.Ignore]
-        public KindKey EntityId { get; set; }
+        public string KindKey { get; set; }
 
         public long getItemId()
         {
@@ -90,8 +102,6 @@ namespace JhpDataSystem.model
         }
 
         public string DeviceSize { get; set; }
-
-        public string KindKey { get; set; }
 
         public string Names { get; set; }
         public int ClientNumber { get; set; }
@@ -166,9 +176,14 @@ namespace JhpDataSystem.model
     {
         public KindKey Id { get; set; }
         public KindKey EntityId { get; set; }
+
         public string UserId { get; set; }
         public string Names { get; set; }
         public string KnownBolg { get; set; }
+        //public ISaveableEntity build()
+        //{
+        //    return this;
+        //}
     }
 
     public class PPDataSet : ISaveableEntity
@@ -178,7 +193,10 @@ namespace JhpDataSystem.model
 
         public string FormName { get; set; }
         public List<NameValuePair> FieldValues { get; set; }
-
+        //public ISaveableEntity build()
+        //{
+        //    return this;
+        //}
         public PPDataSet fromJson(KindItem prepexDatasetString)
         {
             var pp = JsonConvert.DeserializeObject<PPDataSet>(prepexDatasetString.Value);
@@ -221,25 +239,36 @@ namespace JhpDataSystem.model
     public class UserSession
     {
         public KindKey Id { get; set; }
+
         public string AuthorisationToken { get; set; }
         public AppUser User { get; set; }
     }
 
     [SQLite.Table(Constants.KIND_VMMC_CLIENTSUMMARY)]
-    public class VmmcClientSummary : ISaveableEntity
+    public class VmmcClientSummary : ILocalDbEntity
     {
+        [SQLite.Ignore]
+        public KindKey Id { get; set; }
+        [SQLite.Ignore]
+        public KindKey EntityId { get; set; }
+
+        public DateTime CoreActivityDate { get; set; }
+        public static string KindName { get { return Constants.KIND_PPX_CLIENTSUMMARY; } }
+
+        public ISaveableEntity build()
+        {
+            Id = new KindKey(KindKey); EntityId = new KindKey(KindKey);
+            CoreActivityDate = MCDate;
+            return this;
+        }
+
+
         [SQLite.PrimaryKey]
         public int FormSerial { get; set; }
 
         private long _itemid = -1L;
         [SQLite.Ignore]
         public long itemId { get { return _itemid; } set { _itemid = value; } }
-
-        [SQLite.Ignore]
-        public KindKey Id { get; set; }
-
-        [SQLite.Ignore]
-        public KindKey EntityId { get; set; }
 
         public long getItemId()
         {

@@ -170,7 +170,7 @@ namespace JhpDataSystem.projects.vmmc
 
             listview.OnItemClickListener = this;
 
-            _allPrepexClients = new VmmcClientLookupHelper().Get();
+            _allPrepexClients = new VmmcLookupProvider().Get();
             _defaultAdapter = new ClientSummaryAdapter(this, listview, _allPrepexClients);
 
             listview.Adapter = _defaultAdapter;
@@ -227,7 +227,7 @@ namespace JhpDataSystem.projects.vmmc
 
             listview.OnItemClickListener = this;
 
-            _allClients = new VmmcClientLookupHelper().Get();
+            _allClients = new VmmcLookupProvider().Get();
             _defaultAdapter = new ClientSummaryAdapter(this, listview, _allClients);
 
             listview.Adapter = _defaultAdapter;
