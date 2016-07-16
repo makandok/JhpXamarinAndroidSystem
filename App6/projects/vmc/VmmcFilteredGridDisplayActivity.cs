@@ -10,12 +10,12 @@ using JhpDataSystem.store;
 using JhpDataSystem.Utilities;
 using System.Threading.Tasks;
 
-namespace JhpDataSystem.projects.ppx
+namespace JhpDataSystem.projects.vmc
 {
     [Activity(Label = "Client List")]
-    public class PpxFilteredGridDisplayActivity : Activity, ListView.IOnItemClickListener
+    public class VmmcFilteredGridDisplayActivity : Activity, ListView.IOnItemClickListener
     {
-        PpxClientSummaryAdapter _defaultAdapter = null;
+        VmmcClientSummaryAdapter _defaultAdapter = null;
         List<PPClientSummary> _allPrepexClients;
         PPClientSummary _selectedClient = null;
         List<int> _listOptions = null;
@@ -36,8 +36,8 @@ namespace JhpDataSystem.projects.ppx
 
             listview.OnItemClickListener = this;
 
-            _allPrepexClients = new PpxLookupProvider().Get();
-            _defaultAdapter = new PpxClientSummaryAdapter(this, listview, _allPrepexClients);
+            _allPrepexClients = new VmmcLookupProvider().Get();
+            _defaultAdapter = new VmmcClientSummaryAdapter(this, listview, _allPrepexClients);
 
             listview.Adapter = _defaultAdapter;
 
@@ -220,7 +220,7 @@ namespace JhpDataSystem.projects.ppx
             var listview = FindViewById<ListView>(Resource.Id.listviewClientList);
 
             //if someone clicks the button again, we show the full list
-            var currentAdapter = listview.Adapter as PpxClientSummaryAdapter;
+            var currentAdapter = listview.Adapter as VmmcClientSummaryAdapter;
             if (daysPast == -1)
             {
                 if (textCSummOptionsLabel != null)
@@ -238,7 +238,7 @@ namespace JhpDataSystem.projects.ppx
                 textCSummOptionsLabel.Text = "Clients for " + tMinus.ToShortDateString();
 
             //Android.Widget.Toast.MakeText(this, "Showing clients for " + tMinus.ToShortDateString(), Android.Widget.ToastLength.Short).Show();
-            listview.Adapter = new PpxClientSummaryAdapter(this,
+            listview.Adapter = new VmmcClientSummaryAdapter(this,
                 listview
                 , getClients4TMinus(daysPast)
                 )

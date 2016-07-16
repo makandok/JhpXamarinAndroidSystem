@@ -55,6 +55,13 @@ namespace JhpDataSystem
             _localEntityStoreInstance = LocalEntityStore.Instance;
 
             CloudDbInstance = new CloudDb(_assetManager);
+            CurrentProjectContext = ProjectContext.None;
+        }
+
+        internal ProjectContext CurrentProjectContext { get; private set; }
+        internal void SetProjectContext(ProjectContext ppx)
+        {
+            CurrentProjectContext = ppx;
         }
 
         List<FieldItem> readFields(string fieldsAssetName, AssetManager assetManager, Activity context)

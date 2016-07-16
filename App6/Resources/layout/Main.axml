@@ -10,6 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="75dp">
         <Button
+            android:layout_alignParentLeft="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/holo_blue_dark"
+            android:id="@+id/buttonCloseApp"
+            android:text="Close App" />
+        <Button
             android:layout_alignParentRight="true"
             margin_right="5dp"
             android:textAppearance="?android:attr/textAppearanceSmall"

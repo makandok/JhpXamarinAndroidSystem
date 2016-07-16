@@ -18,7 +18,8 @@
   <string name="sys_not_updated">Run a report</string>
   <string name="sys_summary_blobcount">Summary count of all records</string>  
   <string name="ppx_sys_deviceusage">Usage by Device Size</string>
-
+  <string name="vmc_activitylabel">VMMC Manager</string>
+  
   <!-- STRINGS FOR PPX-->
   <string name="generalsummary_hdr">General Summary</string>
   <string name="facilityname">Facility</string>

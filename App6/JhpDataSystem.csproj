@@ -234,6 +234,7 @@
     <Compile Include="model\RecordSummary.cs" />
     <Compile Include="modules\RecordSelectorBase.cs" />
     <Compile Include="modules\RecordSummaryAdapter.cs" />
+    <Compile Include="ProjectContext.cs" />
     <Compile Include="projects\BaseWorkflowController.cs" />
     <Compile Include="projects\ppx\activity\PpxClientSelectionActivity.cs" />
     <Compile Include="projects\ppx\activity\PpxRecordSelectorActivity.cs" />
@@ -245,6 +246,25 @@
     <Compile Include="modules\SmsActivity.cs" />
     <Compile Include="projects\ppx\PpxLookupProvider.cs" />
     <Compile Include="projects\ppx\wfcontrollers\WorkflowControllers.cs" />
+    <Compile Include="projects\vmc\activity\VmmcClientSelectionActivity.cs" />
+    <Compile Include="projects\vmc\activity\VmmcRecordSelectorActivity.cs" />
+    <Compile Include="projects\vmc\VmmcFilteredGridDisplayActivity.cs" />
+    <Compile Include="projects\vmc\PPDeviceSizes.cs" />
+    <Compile Include="projects\vmc\VmmcClientSummaryAdapter.cs" />
+    <Compile Include="projects\vmc\VmmcFormsBase.cs" />
+    <Compile Include="projects\vmc\VmmcHomeActivity.cs" />
+    <Compile Include="projects\vmc\VmmcLookupProvider.cs" />
+    <Compile Include="projects\vmc\VmmcActivities.cs" />
+    <Compile Include="projects\vmc\wfcontrollers\VmmcPostOperationControl.cs" />
+    <Compile Include="projects\vmc\wfcontrollers\VmmcRegAndProcControl.cs" />
+    <Compile Include="projects\vmc\wfcontrollers\WorkflowControllers.cs" />
+    <None Include="projects\vmmc\ClientSummaryLoader.cs" />
+    <None Include="projects\vmmc\GridDisplayActivity.cs" />
+    <None Include="projects\vmmc\VmmcActivities.cs" />
+    <None Include="projects\vmmc\VmmcFormsBase.cs" />
+    <None Include="projects\vmmc\VmmcHomeActivity.cs" />
+    <None Include="projects\vmmc\workflow\VmmcPostOperationControl.cs" />
+    <None Include="projects\vmmc\workflow\VmmcRegAndProcControl.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="store\CloudDb.cs" />
@@ -352,6 +372,7 @@
     <Folder Include="adapter\" />
     <Folder Include="communicator\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="projects\vmmc\activities\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserLoginLayout.axml">

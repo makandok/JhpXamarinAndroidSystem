@@ -1,9 +1,7 @@
 using System;
 using Android.App;
-using Android.Content;
 using Android.Widget;
 using Android.OS;
-using JhpDataSystem.modules;
 
 namespace JhpDataSystem
 {
@@ -29,6 +27,20 @@ namespace JhpDataSystem
         void showHomePage()
         {
             SetContentView(Resource.Layout.Main);
+            //buttonCloseApp
+            var buttonCloseApp = FindViewById<Button>(Resource.Id.buttonCloseApp);
+            buttonCloseApp.Click += (x, y) =>
+            {
+                //throw new Exception();
+                //this.FinishAffinity();
+                //Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+                //return;
+
+                //Device.BeginInvokeOnMainThread(() => { Android.OS.Process.KillProcess(Android.OS.Process.MyPid()); });
+
+                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+            };
+
             var loggedInUserText = FindViewById<Button>(Resource.Id.tLoggedInUser);
             if (AppInstance.Instance.CurrentUser != null)
             {
@@ -38,18 +50,34 @@ namespace JhpDataSystem
             loggedInUserText.Click += showMenuLoggedInUser;
 
             var buttonPrepexHome = FindViewById<Button>(Resource.Id.buttonPrepexHome);
-            buttonPrepexHome.Click += (x, y) => {
-                StartActivity(typeof(JhpDataSystem.projects.ppx.PPXHomeActivity)); };
+            buttonPrepexHome.Click += (x, y) =>
+            {
+                var currCtxt = AppInstance.Instance.CurrentProjectContext;
+                if (currCtxt == ProjectContext.None || currCtxt == ProjectContext.Ppx)
+                {
+                    AppInstance.Instance.SetProjectContext(ProjectContext.Ppx);
+                    StartActivity(typeof(JhpDataSystem.projects.ppx.PPXHomeActivity));
+                }
+                else
+                {
+                    Toast.MakeText(this, "Restart the app to switch projects", 
+                        Android.Widget.ToastLength.Long).Show();
+                }
+            };
 
             var buttonVmmcHome = FindViewById<Button>(Resource.Id.buttonVmmcHome);
             buttonVmmcHome.Click += (x, y) => {
-                //we disable PPX
-                //StartActivity(typeof(projects.vmmc.VmmcHomeActivity));
-
-
-                //var uri = Android.Net.Uri.Parse("http://www.xamarin.com");
-                //var intent = new Intent(Intent.ActionView, uri);
-                //StartActivity(intent);
+                var currCtxt = AppInstance.Instance.CurrentProjectContext;
+                if (currCtxt == ProjectContext.None || currCtxt == ProjectContext.Vmmc)
+                {
+                    AppInstance.Instance.SetProjectContext(ProjectContext.Vmmc);
+                    StartActivity(typeof(projects.vmc.VmmcHomeActivity));
+                }
+                else
+                {
+                    Toast.MakeText(this, "Restart the app to switch projects",
+                        Android.Widget.ToastLength.Long).Show();
+                }
             };
         }
 

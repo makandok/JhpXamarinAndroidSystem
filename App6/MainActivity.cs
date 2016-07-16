@@ -48,6 +48,10 @@ namespace JhpDataSystem
 
         private void doLoginIn_Click(object sender, EventArgs e)
         {
+            //throw new Exception();
+            //this.FinishAffinity();
+            //Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+            //return;
             var fuser = new UserAuthenticator().Authenticate("mkabila", 123456);
             AppInstance.Instance.CurrentUser = fuser;
             StartActivity(typeof(LauncherActivity));
