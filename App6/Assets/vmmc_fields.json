@@ -184,7 +184,7 @@
     "Label": "Religion [Other]"
   },
   {
-    "name": "vm_religion_other",
+    "name": "vm_other_religion_specified",
     "dataType": "EditText",
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
@@ -328,7 +328,7 @@
     "Label": "Primary reasons for seeking circumcision services [Other]"
   },
   {
-    "name": "vm_mmc_reasons_other",
+    "name": "vm_other_mmc_reasons",
     "dataType": "EditText",
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,

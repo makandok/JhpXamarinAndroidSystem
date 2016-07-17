@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace JhpDataSystem.model
 {
@@ -6,6 +7,8 @@ namespace JhpDataSystem.model
     {
         DateTime CoreActivityDate { get; set; }
         ISaveableEntity build();
+        List<NameValuePair> ToValuesList();
+        ILocalDbEntity Load(GeneralEntityDataset clientSummary);
     }
 
     public interface ISaveableEntity

@@ -232,13 +232,16 @@
     <Compile Include="model\FieldItem.cs" />
     <Compile Include="ClientLookupProvider.cs" />
     <Compile Include="model\RecordSummary.cs" />
+    <Compile Include="modules\ClientSelectorBase.cs" />
     <Compile Include="modules\RecordSelectorBase.cs" />
     <Compile Include="modules\RecordSummaryAdapter.cs" />
     <Compile Include="ProjectContext.cs" />
     <Compile Include="projects\BaseWorkflowController.cs" />
+    <Compile Include="projects\DataFormsBase.cs" />
     <Compile Include="projects\ppx\activity\PpxClientSelectionActivity.cs" />
     <Compile Include="projects\ppx\activity\PpxRecordSelectorActivity.cs" />
     <Compile Include="projects\ppx\GridDisplayActivity.cs" />
+    <Compile Include="projects\ppx\PPClientSummary.cs" />
     <Compile Include="projects\ppx\PPDeviceSizes.cs" />
     <Compile Include="projects\ppx\PPXActivities.cs" />
     <Compile Include="projects\ppx\PpxClientSummaryAdapter.cs" />
@@ -248,6 +251,7 @@
     <Compile Include="projects\ppx\wfcontrollers\WorkflowControllers.cs" />
     <Compile Include="projects\vmc\activity\VmmcClientSelectionActivity.cs" />
     <Compile Include="projects\vmc\activity\VmmcRecordSelectorActivity.cs" />
+    <Compile Include="projects\vmc\VmmcClientSummary.cs" />
     <Compile Include="projects\vmc\VmmcFilteredGridDisplayActivity.cs" />
     <Compile Include="projects\vmc\PPDeviceSizes.cs" />
     <Compile Include="projects\vmc\VmmcClientSummaryAdapter.cs" />
@@ -257,7 +261,6 @@
     <Compile Include="projects\vmc\VmmcActivities.cs" />
     <Compile Include="projects\vmc\wfcontrollers\VmmcPostOperationControl.cs" />
     <Compile Include="projects\vmc\wfcontrollers\VmmcRegAndProcControl.cs" />
-    <Compile Include="projects\vmc\wfcontrollers\WorkflowControllers.cs" />
     <None Include="projects\vmmc\ClientSummaryLoader.cs" />
     <None Include="projects\vmmc\GridDisplayActivity.cs" />
     <None Include="projects\vmmc\VmmcActivities.cs" />

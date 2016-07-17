@@ -22,11 +22,11 @@ namespace JhpDataSystem.projects.vmc
             showPPXHome();
         }
 
-        PPClientSummary getClientFromIntent(Intent data)
+        VmmcClientSummary getClientFromIntent(Intent data)
         {
             var clientString = data.GetStringExtra(Constants.BUNDLE_SELECTEDCLIENT);
             return Newtonsoft.Json.JsonConvert
-                .DeserializeObject<PPClientSummary>(clientString);
+                .DeserializeObject<VmmcClientSummary>(clientString);
         }
 
         public void StartActivity(Type activityType, Type resultActivity)
@@ -127,6 +127,7 @@ namespace JhpDataSystem.projects.vmc
             //buttonViewList
             var buttonViewList = FindViewById<Button>(Resource.Id.buttonViewList);
             buttonViewList.Click += (sender, e) => {
+                //StartActivity(typeof(VmmcRecordSelectorActivity));
                 StartActivity(typeof(VmmcFilteredGridDisplayActivity));
             };
 
@@ -218,20 +219,20 @@ namespace JhpDataSystem.projects.vmc
 
         List<PPDeviceSizes> getPPDeviceSizes()
         {
+            return new List<PPDeviceSizes>();
             var allClients = new VmmcLookupProvider().Get();
             var allSizes = new Dictionary<int, PPDeviceSizes>();
-            foreach (var client in allClients)
-            {
-                PPDeviceSizes current = null;
-                var dayId = (client.PlacementDate.Year * 1000) + client.PlacementDate.DayOfYear;
-                if (!allSizes.TryGetValue(dayId, out current))
-                {
-                    current = new PPDeviceSizes(client.PlacementDate);
-                    allSizes[dayId] = current;
-                }
-                current.Add(client.DeviceSize);
-            }
-
+            //foreach (var client in allClients)
+            //{
+            //    PPDeviceSizes current = null;
+            //    var dayId = (client.MCDate.Year * 1000) + client.PlacementDate.DayOfYear;
+            //    if (!allSizes.TryGetValue(dayId, out current))
+            //    {
+            //        current = new PPDeviceSizes(client.PlacementDate);
+            //        allSizes[dayId] = current;
+            //    }
+            //    //current.Add(client.DeviceSize);
+            //}
             var toReturn = new List<PPDeviceSizes>();
             toReturn.AddRange(allSizes.Values);
             return toReturn;
@@ -244,7 +245,7 @@ namespace JhpDataSystem.projects.vmc
             var asList = (from item in countRes
                           let displayItem = new NameValuePair()
                           {
-                              Name = Constants.PPX_KIND_DISPLAYNAMES[item.Name],
+                              Name = Constants.VMMC_KIND_DISPLAYNAMES[item.Name],
                               Value = item.Value
                           }
                           select displayItem.toDisplayText()).ToList();
@@ -257,7 +258,7 @@ namespace JhpDataSystem.projects.vmc
             var recCount = new VmmcLookupProvider().GetCount();
             var clientSummaryCount = new NameValuePair()
             {
-                Name = "ppx Client Summary",
+                Name = "VMMC Client Summary",
                 Value = recCount.ToString()
             };
             resList.Add(clientSummaryCount.toDisplayText());

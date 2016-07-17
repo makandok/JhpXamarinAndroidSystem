@@ -23,13 +23,5 @@ namespace JhpDataSystem.projects.ppx.activity
             var client = Newtonsoft.Json.JsonConvert.DeserializeObject<PPClientSummary>(clientString);
             return client.EntityId.Value;
         }
-
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-            if (this.Intent.Extras == null)
-                return;
-            doOnCreate(savedInstanceState);
-        }
     }
 }

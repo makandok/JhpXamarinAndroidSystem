@@ -16,7 +16,7 @@ namespace JhpDataSystem.projects.ppx
 
             // Create your application here
             _kindName = new KindName(Constants.KIND_PPX_POSTREMOVAL);
-            myView = Resource.Layout.PrepexDataEntryEnd;
+            myView = Resource.Layout.DataEntryEnd;
             myNavController = new PP_PostRemovalControl();
             ShowMyView();
         }
@@ -62,7 +62,7 @@ namespace JhpDataSystem.projects.ppx
 
             // Create your application here
             _kindName = new KindName(Constants.KIND_PPX_DEVICEREMOVAL);
-            myView = Resource.Layout.PrepexDataEntryEnd;
+            myView = Resource.Layout.DataEntryEnd;
             myNavController = new PP_DeviceRemovalControl();
             ShowMyView();
         }
@@ -139,7 +139,7 @@ namespace JhpDataSystem.projects.ppx
 
             // Create your application here
             _kindName = new KindName(Constants.KIND_PPX_UNSCHEDULEDVISIT);
-            myView = Resource.Layout.PrepexDataEntryEnd;
+            myView = Resource.Layout.DataEntryEnd;
             myNavController = new PP_UnscheduledVisitControl();
             ShowMyView();
         }
@@ -220,12 +220,16 @@ namespace JhpDataSystem.projects.ppx
     [Activity(Label = "Client Evaluation - End")]
     public class PP_ClientEvalEnd : PPXFormsBase
     {
+        protected override bool IsRegistrationEndPage()
+        {
+            return true;
+        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Create your application here
             _kindName = new KindName(Constants.KIND_PPX_CLIENTEVAL);
-            myView = Resource.Layout.PrepexDataEntryEnd;
+            myView = Resource.Layout.DataEntryEnd;
             myNavController = new PP_ClientEvalControl();
             ShowMyView();
         }

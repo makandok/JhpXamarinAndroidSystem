@@ -74,12 +74,12 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:labelFor="@+id/vm_mmc_reasons_other" />
+        android:labelFor="@+id/vm_other_mmc_reasons" />
     <EditText
         android:layout_height="40dp"
         android:layout_width="match_parent"
         android:inputType="text"
-        android:id="@+id/vm_mmc_reasons_other"
+        android:id="@+id/vm_other_mmc_reasons"
         android:hint="@string/vm_mmc_reasons_other" />
 
     <TextView

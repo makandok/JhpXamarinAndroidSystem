@@ -38,9 +38,15 @@ namespace JhpDataSystem.modules
 
         protected virtual string getCurrentClientId(string clientString)
         {
-            var client = Newtonsoft.Json.JsonConvert.DeserializeObject<PPClientSummary>(clientString);
-            var entityId = client.EntityId.Value;
-            return entityId;
+            return null;
+        }
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            if (this.Intent.Extras == null)
+                return;
+            doOnCreate(savedInstanceState);
         }
 
         protected void doOnCreate(Bundle savedInstanceState)

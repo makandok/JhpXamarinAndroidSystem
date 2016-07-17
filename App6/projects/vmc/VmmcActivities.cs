@@ -116,6 +116,11 @@ namespace JhpDataSystem.projects.vmc
     [Activity(Label = "Registration and Procedure - End")]
     public class VmmcRegAndProcEnd : VmmcFormsBase
     {
+        protected override bool IsRegistrationEndPage()
+        {
+            return true;
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

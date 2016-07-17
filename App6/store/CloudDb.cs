@@ -186,7 +186,7 @@ namespace JhpDataSystem.store
             while (recIndex >= 0)
             {
                 var outEntity = recs[recIndex];
-                var prepexDs = new PPDataSet().fromJson(new KindItem(outEntity.DataBlob
+                var prepexDs = new GeneralEntityDataset().fromJson(new KindItem(outEntity.DataBlob
                     ));
                 var saveable = new DbSaveableEntity(prepexDs)
                 {

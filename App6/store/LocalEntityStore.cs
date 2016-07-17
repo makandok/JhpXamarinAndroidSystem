@@ -33,10 +33,9 @@ namespace JhpDataSystem.store
 
             var localdb3 = new LocalDB3();
             var db = localdb3.DB;
-            db.CreateTable<PPClientSummary>();
-            //db.DropTable<OutEntity>();
+            db.CreateTable<projects.ppx.PPClientSummary>();
             db.CreateTable<OutEntity>();
-            db.CreateTable<VmmcClientSummary>();
+            db.CreateTable<projects.vmc.VmmcClientSummary>();
 
             //db.DeleteAll<RecordSummary>();
             db.CreateTable<RecordSummary>();
@@ -111,7 +110,7 @@ namespace JhpDataSystem.store
         {
             var allBlobs = GetAllBobs();
             var clientRecords = (from record in allBlobs
-                                 select new PPDataSet().fromJson(record));
+                                 select new GeneralEntityDataset().fromJson(record));
             var allRecords =(
                 from record in clientRecords
                 let val = record.FieldValues

@@ -8,19 +8,19 @@ using System.Globalization;
 
 namespace JhpDataSystem.projects.vmc
 {
-    public class VmmcClientSummaryAdapter : BaseAdapter<PPClientSummary>
+    public class VmmcClientSummaryAdapter : BaseAdapter<VmmcClientSummary>
     {
-        List<PPClientSummary> _myList;
+        List<VmmcClientSummary> _myList;
         Activity _context;
         public int tMinus { get; set; }
-        public VmmcClientSummaryAdapter(Activity context, ListView listview, List<PPClientSummary> clientList)
+        public VmmcClientSummaryAdapter(Activity context, ListView listview, List<VmmcClientSummary> clientList)
         {
             tMinus = -1;
             _context = context;
             _myList = clientList;
         }
 
-        public override PPClientSummary this[int position]
+        public override VmmcClientSummary this[int position]
         {
             get
             {
@@ -47,20 +47,20 @@ namespace JhpDataSystem.projects.vmc
             var myView = convertView ??
                  _context.LayoutInflater.Inflate(Resource.Layout.clientsummary, parent, false);
             //clientSummaryTDate
-            var placementDate = client.PlacementDate;
+            var placementDate = client.MCDate;
             var daysElapsed = DateTime.Now.Subtract(placementDate).TotalDays;
             myView.FindViewById<TextView>(Resource.Id.clientSummaryTDate)
                 .Text = Convert.ToString("Day " + Math.Floor(daysElapsed));
             myView.FindViewById<TextView>(Resource.Id.clientSummaryNames)
-                .Text = Convert.ToString(client.Names);
+                .Text = Convert.ToString(client.FirstName + " " + client.LastName);
             myView.FindViewById<TextView>(Resource.Id.clientSummaryCardSerial)
-                .Text = "Card Id: " + Convert.ToString(client.FormSerial);
+                .Text = "Card Id: " + Convert.ToString(client.CardSerial);
             myView.FindViewById<TextView>(Resource.Id.clientSummaryMCNumber)
-                .Text = "MC #: " + Convert.ToString(client.ClientNumber);
+                .Text = "MC #: " + Convert.ToString(client.MCNumber);
             myView.FindViewById<TextView>(Resource.Id.clientSummaryPlacementDate)
-                .Text = client.PlacementDate.ToString("d MMM, yyyy", CultureInfo.InvariantCulture);
+                .Text = client.MCDate.ToString("d MMM, yyyy", CultureInfo.InvariantCulture);
             myView.FindViewById<TextView>(Resource.Id.clientSummaryTelephone)
-                .Text = Convert.ToString(client.Telephone);
+                .Text = Convert.ToString(client.ClientTel);
             return myView;
         }
     }

@@ -3,12 +3,6 @@ using System.Collections.Generic;
 
 namespace JhpDataSystem
 {
-    public class PXConstants
-    {
-
-
-    }
-
     public class Constants
     {
         //internal const string BUNDLE_ENTITYID = "bundl_entityid";
@@ -21,23 +15,28 @@ namespace JhpDataSystem
         internal const string FIELD_ID = "id";
 
         //VMMC
-        internal const string FIELD_VMMC_DOB = "dob";
-        internal const string FIELD_VMMC_MCDATE = "mcdate";
-        internal const string FIELD_VMMC_DATEOFVISIT = "dateofvisit";
-        internal const string FIELD_VMMC_CARD_SERIAL = "cardserialnumber";
-        internal const string FIELD_VMMC_MCNUMBER = "clientidnumber";
-        internal const string FIELD_VMMC_CLIENTNAME = "clientname";
-        internal const string FIELD_VMMC_CLIENTTEL = "clienttel";
-        internal const string FIELD_VMMC_CLIENTPHYSICALADDR = "clientsphysicaladdress";
+        internal const string FIELD_VMMC_DOB = "vm_date_of_birth";
+        internal const string FIELD_VMMC_MCDATE = "vm_mc_date";
+        internal const string FIELD_VMMC_DATEOFVISIT = "vm_registration_date";
+        internal const string FIELD_VMMC_CARD_SERIAL = "vm_intakeform_serial";
+        internal const string FIELD_VMMC_MCNUMBER = "vm_mc_number";
+
+        internal const string FIELD_VMMC_CLIENTLASTNAME = "vm_last_name";
+        internal const string FIELD_VMMC_CLIENTFIRSTNAME = "vm_first_name";
+
+        internal const string FIELD_VMMC_CLIENTTEL = "vm_phone_number";
+        //internal const string FIELD_VMMC_CLIENTPHYSICALADDR = "clientsphysicaladdress";
+
+        internal static List<string> VMMC_IndexedFieldNames = new List<string>() {
+                FIELD_VMMC_CLIENTLASTNAME,FIELD_VMMC_CLIENTFIRSTNAME,
+                FIELD_VMMC_MCDATE,FIELD_VMMC_DOB,
+                FIELD_ID,FIELD_ENTITYID,FIELD_VMMC_DATEOFVISIT,
+                FIELD_VMMC_CARD_SERIAL,FIELD_VMMC_MCNUMBER,FIELD_VMMC_CLIENTTEL,
+                //FIELD_VMMC_CLIENTPHYSICALADDR
+        };
 
 
         //tables in the database
-        internal static List<string> PP_IndexedFieldNames = new List<string>() {
-            //FIELD_PLACEMENTDATE,
-                FIELD_PPX_DEVSIZE,
-                FIELD_ID,FIELD_ENTITYID,FIELD_PPX_DATEOFVISIT,
-                FIELD_PPX_CARD_SERIAL,FIELD_PPX_CLIENTIDNUMBER,FIELD_PPX_CLIENTNAME,FIELD_PPX_DOB,FIELD_PPX_CLIENTTEL,
-                FIELD_PPX_CLIENTPHYSICALADDR}; 
 
         internal const string FIELD_PPX_DEVSIZE = "ppxdevsize";
         internal const string FIELD_PPX_DEVSIZE_PREFIX = "prepexdevicesize";
@@ -50,6 +49,12 @@ namespace JhpDataSystem
         internal const string FIELD_PPX_CLIENTTEL = "clienttel";
         internal const string FIELD_PPX_CLIENTPHYSICALADDR = "clientsphysicaladdress";
         internal const string FIELD_PPX_PLACEMENTDATE = "dateofplacement";
+        internal static List<string> PP_IndexedFieldNames = new List<string>() {
+            //FIELD_PLACEMENTDATE,
+                FIELD_PPX_DEVSIZE,
+                FIELD_ID,FIELD_ENTITYID,FIELD_PPX_DATEOFVISIT,
+                FIELD_PPX_CARD_SERIAL,FIELD_PPX_CLIENTIDNUMBER,FIELD_PPX_CLIENTNAME,FIELD_PPX_DOB,FIELD_PPX_CLIENTTEL,
+                FIELD_PPX_CLIENTPHYSICALADDR};
 
         internal const string LABEL_PPX_ACTIVITYLABEL = "Prepex Manager";
 
@@ -120,7 +125,7 @@ namespace JhpDataSystem
 
         //prepexreg_fields
         internal const string FILE_PPX_FIELDS = "ppx_fields.json";
-        internal const string FILE_VMMC_FIELDS = "ihpvmmc_fields.json";
+        internal const string FILE_VMMC_FIELDS = "vmmc_fields.json";
 
         internal const string PP_VIEWS_1= "prepexreg1";
         internal const string PP_VIEWS_2 = "prepexreg2";

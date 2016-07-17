@@ -2,9 +2,9 @@ using JhpDataSystem.model;
 
 namespace JhpDataSystem.projects.vmc
 {
-    public class VmmcLookupProvider: ClientLookupProvider<PPClientSummary>
+    public class VmmcLookupProvider: ClientLookupProvider<VmmcClientSummary>
     {
-        public VmmcLookupProvider():base(Constants.KIND_PPX_CLIENTSUMMARY)
+        public VmmcLookupProvider():base(Constants.KIND_VMMC_CLIENTSUMMARY)
         {
         }
     }
