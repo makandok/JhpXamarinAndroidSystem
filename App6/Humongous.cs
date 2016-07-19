@@ -1,10 +1,5 @@
 using Android.App;
-using Android.Content;
 using Android.Content.Res;
-using Android.OS;
-using Android.Util;
-using Android.Widget;
-using Java.Util;
 using JhpDataSystem.model;
 using JhpDataSystem.store;
 using System;
@@ -30,13 +25,14 @@ namespace JhpDataSystem
 
         AssetManager _assetManager { get; set; }
         Activity _mainContext;
-        LocalEntityStore _localEntityStoreInstance { get; set; }
+        public LocalEntityStore LocalEntityStoreInstance { get; private set; }
 
         public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
 
         public Dictionary<string, string> ApiAssets = null;
         public void InitialiseAppResources(AssetManager assetManager, Activity context)
         {
+            ContextManager = null;
             _assetManager = assetManager;
             _mainContext = context;
             TemporalViewData = new Dictionary<int, List<FieldValuePair>>();
@@ -45,23 +41,21 @@ namespace JhpDataSystem
             var inputStream = assetManager.Open(Constants.API_KEYFILE);
             var jsonObject = System.Json.JsonValue.Load(inputStream);
 
-            foreach(var assetName in Constants.ASSET_LIST)
+            foreach (var assetName in Constants.ASSET_LIST)
             {
-                ApiAssets[assetName] = 
+                ApiAssets[assetName] =
                     jsonObject.decryptAndGetApiSetting(assetName);
             }
 
             //we need to have this class initialised
-            _localEntityStoreInstance = LocalEntityStore.Instance;
-
+            LocalEntityStoreInstance = new LocalEntityStore();
             CloudDbInstance = new CloudDb(_assetManager);
-            CurrentProjectContext = ProjectContext.None;
         }
 
-        internal ProjectContext CurrentProjectContext { get; private set; }
-        internal void SetProjectContext(ProjectContext ppx)
+        public projects.BaseContextManager ContextManager {get;private set;}
+        internal void SetProjectContext(projects.BaseContextManager ctxt)
         {
-            CurrentProjectContext = ppx;
+            ContextManager = ctxt;
         }
 
         List<FieldItem> readFields(string fieldsAssetName, AssetManager assetManager, Activity context)
@@ -97,27 +91,23 @@ namespace JhpDataSystem
             //throw new NotImplementedException();
         }
 
-        List<FieldItem> _vmmcFieldItems = null;
         public List<FieldItem> VmmcFieldItems
         {
             get
             {
-                if (_vmmcFieldItems == null)
-                    _vmmcFieldItems =
-                        readFields(Constants.FILE_VMMC_FIELDS, _assetManager, _mainContext);
-                return _vmmcFieldItems;
+                if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Vmmc)
+                    return ContextManager.FieldItems;
+                throw new ArgumentNullException("Project context not defined");
             }
         }
 
-        List<FieldItem> _ppxFieldItems = null;
         public List<FieldItem> PPXFieldItems
         {
             get
             {
-                if (_ppxFieldItems == null)
-                    _ppxFieldItems =
-                        readFields(Constants.FILE_PPX_FIELDS, _assetManager, _mainContext);
-                return _ppxFieldItems;
+                if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Ppx)
+                    return ContextManager.FieldItems;
+                throw new ArgumentNullException("Project context not defined");
             }
         }
 
@@ -131,41 +121,6 @@ namespace JhpDataSystem
         public CloudDb CloudDbInstance
         {
             get;private set;
-        }
-    }
-
-    public class DatePickerFragment : DialogFragment,
-                                      DatePickerDialog.IOnDateSetListener
-    {
-        //https://developer.xamarin.com/guides/android/user_interface/date_picker/
-        public static readonly string TAG = "X:" + typeof(DatePickerFragment).Name.ToUpper();
-        Action<DateTime> _dateSelectedHandler = delegate { };
-        public static DatePickerFragment NewInstance(Action<DateTime> onDateSelected)
-        {
-            return new DatePickerFragment()
-            {
-                _dateSelectedHandler = onDateSelected
-            };
-        }
-
-        public override Dialog OnCreateDialog(Bundle savedInstanceState)
-        {
-            DateTime currently = DateTime.Now;
-            DatePickerDialog dialog = 
-                new DatePickerDialog(Activity,
-                                                           this,
-                                                           currently.Year,
-                                                           currently.Month,
-                                                           currently.Day);
-            return dialog;
-        }
-
-        public void OnDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
-        {
-            // Note: monthOfYear is a value between 0 and 11, not 1 and 12!
-            DateTime selectedDate = new DateTime(year, monthOfYear + 1, dayOfMonth);
-            Log.Debug(TAG, selectedDate.ToLongDateString());
-            _dateSelectedHandler(selectedDate);
         }
     }
 }

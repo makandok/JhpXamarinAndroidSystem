@@ -216,6 +216,7 @@
     <Compile Include="ApplicationSplashActivity.cs" />
     <Compile Include="ashared\Crypto.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="DatePickerFragment.cs" />
     <Compile Include="db\BigQueryAssist.cs" />
     <Compile Include="db\DefaultCredentialProvider.cs" />
     <Compile Include="db\GoogleCredential.cs" />
@@ -236,10 +237,12 @@
     <Compile Include="modules\RecordSelectorBase.cs" />
     <Compile Include="modules\RecordSummaryAdapter.cs" />
     <Compile Include="ProjectContext.cs" />
+    <Compile Include="projects\BaseContextManager.cs" />
     <Compile Include="projects\BaseWorkflowController.cs" />
     <Compile Include="projects\DataFormsBase.cs" />
     <Compile Include="projects\ppx\activity\PpxClientSelectionActivity.cs" />
     <Compile Include="projects\ppx\activity\PpxRecordSelectorActivity.cs" />
+    <Compile Include="projects\ppx\PpxContextManager.cs" />
     <Compile Include="projects\ppx\GridDisplayActivity.cs" />
     <Compile Include="projects\ppx\PPClientSummary.cs" />
     <Compile Include="projects\ppx\PPDeviceSizes.cs" />
@@ -251,6 +254,7 @@
     <Compile Include="projects\ppx\wfcontrollers\WorkflowControllers.cs" />
     <Compile Include="projects\vmc\activity\VmmcClientSelectionActivity.cs" />
     <Compile Include="projects\vmc\activity\VmmcRecordSelectorActivity.cs" />
+    <Compile Include="projects\vmc\VmmcContextManager.cs" />
     <Compile Include="projects\vmc\VmmcClientSummary.cs" />
     <Compile Include="projects\vmc\VmmcFilteredGridDisplayActivity.cs" />
     <Compile Include="projects\vmc\PPDeviceSizes.cs" />

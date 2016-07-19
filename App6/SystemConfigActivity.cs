@@ -93,7 +93,7 @@ namespace JhpDataSystem
                 //means we're ading a new user
                 user = new AppUser()
                 {
-                    Id = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId()),
+                    Id = new KindKey(AppInstance.Instance.LocalEntityStoreInstance.InstanceLocalDb.newId()),
                     UserId = uname,
                     Names = tNames.Text.ToUpperInvariant(),
                     KnownBolg = hash

@@ -2,6 +2,7 @@ using System;
 using Android.App;
 using Android.Widget;
 using Android.OS;
+using JhpDataSystem.projects;
 
 namespace JhpDataSystem
 {
@@ -38,7 +39,8 @@ namespace JhpDataSystem
 
                 //Device.BeginInvokeOnMainThread(() => { Android.OS.Process.KillProcess(Android.OS.Process.MyPid()); });
 
-                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+                this.FinishAffinity();
+                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());                
             };
 
             var loggedInUserText = FindViewById<Button>(Resource.Id.tLoggedInUser);
@@ -52,31 +54,34 @@ namespace JhpDataSystem
             var buttonPrepexHome = FindViewById<Button>(Resource.Id.buttonPrepexHome);
             buttonPrepexHome.Click += (x, y) =>
             {
-                var currCtxt = AppInstance.Instance.CurrentProjectContext;
-                if (currCtxt == ProjectContext.None || currCtxt == ProjectContext.Ppx)
+                var contextManager = new PpxContextManager(this.Assets, this);
+                if (AppInstance.Instance.ContextManager == null || AppInstance.Instance.ContextManager.ProjectCtxt == ProjectContext.Ppx)
                 {
-                    AppInstance.Instance.SetProjectContext(ProjectContext.Ppx);
+                    AppInstance.Instance.SetProjectContext(contextManager);
                     StartActivity(typeof(JhpDataSystem.projects.ppx.PPXHomeActivity));
                 }
                 else
                 {
-                    Toast.MakeText(this, "Restart the app to switch projects", 
-                        Android.Widget.ToastLength.Long).Show();
+                    Toast.MakeText(this,
+                        "Restart the app to switch projects",
+                            Android.Widget.ToastLength.Long).Show();
                 }
             };
 
             var buttonVmmcHome = FindViewById<Button>(Resource.Id.buttonVmmcHome);
-            buttonVmmcHome.Click += (x, y) => {
-                var currCtxt = AppInstance.Instance.CurrentProjectContext;
-                if (currCtxt == ProjectContext.None || currCtxt == ProjectContext.Vmmc)
+            buttonVmmcHome.Click += (x, y) => 
+            {
+                var contextManager = new VmmcContextManager(this.Assets, this);
+                if (AppInstance.Instance.ContextManager == null || AppInstance.Instance.ContextManager.ProjectCtxt == ProjectContext.Vmmc)
                 {
-                    AppInstance.Instance.SetProjectContext(ProjectContext.Vmmc);
-                    StartActivity(typeof(projects.vmc.VmmcHomeActivity));
+                    AppInstance.Instance.SetProjectContext(contextManager);
+                    StartActivity(typeof(JhpDataSystem.projects.vmc.VmmcHomeActivity));
                 }
                 else
                 {
-                    Toast.MakeText(this, "Restart the app to switch projects",
-                        Android.Widget.ToastLength.Long).Show();
+                    Toast.MakeText(this,
+                        "Restart the app to switch projects",
+                            Android.Widget.ToastLength.Long).Show();
                 }
             };
         }

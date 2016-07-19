@@ -52,7 +52,7 @@ namespace JhpDataSystem.store
         {
             if (wrappedEntity == null)
                 throw new ArgumentNullException("Wrapped entity can not be null");
-            LocalEntityStore.Instance.Save(wrappedEntity.Id, kindName, kindItem);
+            AppInstance.Instance.LocalEntityStoreInstance.Save(wrappedEntity.Id, kindName, kindItem);
         }
     }
 }

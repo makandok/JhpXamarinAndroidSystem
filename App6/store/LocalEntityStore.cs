@@ -2,25 +2,18 @@ using JhpDataSystem.model;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using Android.Widget;
 
 namespace JhpDataSystem.store
 {
     public class LocalEntityStore
     {
         public string ConnectionString;
-        static LocalEntityStore _instance;
         LocalDB _localDb;
-        public static LocalEntityStore Instance
+
+        public LocalEntityStore()
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new LocalEntityStore();
-                    _instance.Initialise();
-                }
-                return _instance;
-            }
+            Initialise();
         }
 
         /// <summary>
@@ -29,7 +22,6 @@ namespace JhpDataSystem.store
         private void Initialise()
         {
             _localDb = new LocalDB();
-            //ConnectionString = _localDb.ConnectionString;
 
             var localdb3 = new LocalDB3();
             var db = localdb3.DB;
@@ -64,16 +56,6 @@ namespace JhpDataSystem.store
             //we save to both kindregister and entity table
             return new TableStore(entityKind).Update(entityId, dataToSave);
         }
-
-        //public List<KindKey> GetKeys(KindName entityKind)
-        //{
-        //    return new TableStore(entityKind).GetKeys();
-        //}
-
-        //public List<KindItem> Get(KindKey entityId, KindName entityKind)
-        //{
-        //    return new TableStore(entityKind).Get(entityId);
-        //}
 
         public List<KindItem> GetAllBlobs(KindName entityKind)
         {
@@ -122,7 +104,6 @@ namespace JhpDataSystem.store
                     Id = record.Id.Value,
                     EntityId = record.EntityId.Value,
                     KindName = record.FormName,
-                    //Constants.PPX_KIND_DISPLAYNAMES[record.FormName],
                     VisitDate = visitDate
                 }).ToList();
 
@@ -133,12 +114,7 @@ namespace JhpDataSystem.store
 
         public List<NameValuePair> GetAllBobsCount()
         {
-            var tables = new List<string>() {
-                    Constants.KIND_PPX_CLIENTEVAL,
-                    Constants.KIND_PPX_DEVICEREMOVAL,
-                    Constants.KIND_PPX_POSTREMOVAL,
-                    Constants.KIND_PPX_UNSCHEDULEDVISIT
-                };
+            var tables = Constants.PPX_KIND_DISPLAYNAMES.Keys.ToList();
             var store = new MultiTableStore()
             {
                 Kinds =
@@ -151,15 +127,9 @@ namespace JhpDataSystem.store
 
         public List<KindItem> GetAllBobs()
         {
-            var tables = new List<string>() {
-                    Constants.KIND_PPX_CLIENTEVAL,
-                    Constants.KIND_PPX_DEVICEREMOVAL,
-                    Constants.KIND_PPX_POSTREMOVAL,
-                    Constants.KIND_PPX_UNSCHEDULEDVISIT
-                };
+            var tables = Constants.PPX_KIND_DISPLAYNAMES.Keys.ToList();
             var store = new MultiTableStore()
             {
-                //DisplayKindNameMap = Constants.PPX_KIND_DISPLAYNAMES,
                 Kinds =
                 (from table in tables select new KindName(table)).ToList()
             };

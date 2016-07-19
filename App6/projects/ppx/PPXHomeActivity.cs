@@ -235,7 +235,7 @@ namespace JhpDataSystem.projects.ppx
 
         private async Task<int> getClientSummaryReport()
         {
-            var countRes = LocalEntityStore.Instance.GetAllBobsCount();
+            var countRes = AppInstance.Instance.LocalEntityStoreInstance.GetAllBobsCount();
 
             var asList = (from item in countRes
                           let displayItem = new NameValuePair()

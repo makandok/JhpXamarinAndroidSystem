@@ -312,7 +312,7 @@ namespace JhpDataSystem.projects
                         return;
                     }
 
-                    var kindKey = new KindKey(LocalEntityStore.Instance.InstanceLocalDb.newId());
+                    var kindKey = new KindKey(AppInstance.Instance.LocalEntityStoreInstance.InstanceLocalDb.newId());
                     data.Add(new NameValuePair() { Name = Constants.FIELD_ID, Value = kindKey.Value });
                     var saveable = new GeneralEntityDataset()
                     {
