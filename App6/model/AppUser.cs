@@ -80,6 +80,14 @@ namespace JhpDataSystem.model
             }
             return this;
         }
+
+        internal NameValuePair GetValue(string fieldName)
+        {
+            var toReturn = FieldValues
+                .Where(t => t.Name.Contains(fieldName))
+                .FirstOrDefault();
+            return toReturn;
+        }
     }
 
     public class UserSession

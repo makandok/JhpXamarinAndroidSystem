@@ -119,7 +119,9 @@ namespace JhpDataSystem.projects.ppx
             resList.Add(Resources.GetString(Resource.String.ppx_sys_deviceusage));
             resList.Add(System.Environment.NewLine);
             resList.Add(PPDeviceSizes.getHeader());
-            foreach (var dayUsage in allSizes)
+
+            var ordered = allSizes.OrderByDescending(t=>t.PlacementDate);
+            foreach (var dayUsage in ordered)
             {
                 resList.Add(dayUsage.toDisplay());
             }

@@ -25,12 +25,12 @@ namespace JhpDataSystem.projects.ppx
 
         public static string getHeader()
         {
-            return "Date,           \t\tA,\tB,\tC,\tD,\tE,\tUnk";
+            return "Date,           \t\tA,\tB,\tC,\tD,\tE,\tUnk,\t\t\tTotal";
         }
 
         public string toDisplay()
         {
-            return string.Format("{0},\t\t{1},\t{2},\t{3},\t{4},\t{5},\t{6}", ddMMyyy, A, B, C, D, E, Unk);
+            return string.Format("{0},\t\t{1},\t{2},\t{3},\t{4},\t{5},\t{6},\t\t\t\t{7}", ddMMyyy, A, B, C, D, E, Unk, (A + B + C + D + E + Unk));
         }
 
         internal void Add(string deviceSize)

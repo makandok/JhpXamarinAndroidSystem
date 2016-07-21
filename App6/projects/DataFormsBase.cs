@@ -96,6 +96,17 @@ namespace JhpDataSystem.projects
         //    return string.Empty;
         //}
 
+        bool hasBundle(string bundleName)
+        {
+            return this.Intent.Extras != null && this.Intent.Extras.ContainsKey(bundleName);
+        }
+
+        bool isInEditMode()
+        {
+            return hasBundle(Constants.BUNDLE_DATATOEDIT);
+            //return this.Intent.Extras != null && this.Intent.Extras.ContainsKey(Constants.BUNDLE_DATATOEDIT);
+        }
+
         protected void ShowMyView()
         {
             SetContentView(myView);
@@ -103,9 +114,9 @@ namespace JhpDataSystem.projects
             bindDateDialogEventsForView(myView);
             loadClientFromIntent();
 
-            if(this.Intent.Extras!=null && this.Intent.Extras.ContainsKey(Constants.BUNDLE_DATATOEDIT))
+            if(isInEditMode())
             {
-                //means we have dat to edit
+                //means we have data to edit
                 var jsonRecord = this.Intent.GetStringExtra(Constants.BUNDLE_DATATOEDIT);
                 var saveableEntity = JsonConvert
                     .DeserializeObject<GeneralEntityDataset>(jsonRecord);
@@ -114,6 +125,7 @@ namespace JhpDataSystem.projects
                     var viewFields = GetFieldsForView(myView);
                     var indexedData = saveableEntity.FieldValues;
                     var fvp = getNameValuePairs(viewFields, indexedData);
+
                     setViewData(fvp);
                 }
                 else
@@ -130,6 +142,11 @@ namespace JhpDataSystem.projects
                 var viewFields = GetFieldsForView(myView);
                 var indexedData = CurrentClient.ToValuesList();
                 var fvp = getNameValuePairs(viewFields, indexedData);
+
+                //remove date of visit field
+                fvp.RemoveAll(t => t.Field.name == Constants.FIELD_PPX_DATEOFVISIT
+                || t.Field.name == Constants.FIELD_VMMC_DATEOFVISIT
+                );
                 setViewData(fvp);
             }
         }
@@ -140,9 +157,11 @@ namespace JhpDataSystem.projects
             foreach (var value in fieldValues)
             {
                 //t.name != Constants.FIELD_VMMC_DATEOFVISIT || 
-                var field = viewFields
-                    .Where(t => t.name == value.Name && (t.name != Constants.FIELD_PPX_DATEOFVISIT))
-                    .FirstOrDefault();
+                // && (t.name != Constants.FIELD_PPX_DATEOFVISIT)
+                var field = viewFields.FirstOrDefault(t => t.name == value.Name);
+                //var field = viewFields
+                //    .Where(t => t.name == value.Name)
+                //    .FirstOrDefault();
                 if (field == null)
                     continue;
                 fvp.Add(new FieldValuePair() { Field = field, Value = value.Value });
@@ -204,6 +223,11 @@ namespace JhpDataSystem.projects
                 switch (field.dataType)
                 {
                     case Constants.DATEPICKER:
+                        {
+                            var view = field.GetDataView<EditText>(this);
+                            view.Text = fvp.Value;
+                            break;
+                        }
                     case Constants.EDITTEXT:
                         {
                             var view = field.GetDataView<EditText>(this);
@@ -323,6 +347,7 @@ namespace JhpDataSystem.projects
                 .SetPositiveButton("OK", (senderAlert, args) =>
                 {
                     this.Finish();
+                    showHome();
                     //showPrepexHome();
                 })
                 .Create()
@@ -384,13 +409,28 @@ namespace JhpDataSystem.projects
                         return;
                     }
 
-                    var kindKey = new KindKey(AppInstance.Instance.LocalEntityStoreInstance.InstanceLocalDb.newId());
+                    KindKey kindKey = null;
+                    NameValuePair creationDate = null;
+                    //we check if we are in an edit context and read values from there
+                    if (isInEditMode())
+                    {
+                        var jsonOldRecord = this.Intent.GetStringExtra(Constants.BUNDLE_DATATOEDIT);
+                        var oldRecordEntity = JsonConvert
+                            .DeserializeObject<GeneralEntityDataset>(jsonOldRecord);
+                        kindKey = new KindKey(oldRecordEntity.Id.Value);
+
+                        creationDate = oldRecordEntity.GetValue(Constants.SYS_FIELD_DATECREATED);
+                    }
+                    else
+                    {
+                        kindKey = new KindKey(AppInstance.Instance.LocalEntityStoreInstance.InstanceLocalDb.newId());
+                    }
+
                     data.Add(new NameValuePair() { Name = Constants.FIELD_ID, Value = kindKey.Value });
                     var saveable = new GeneralEntityDataset()
                     {
                         Id = kindKey,
                         FormName = _kindName.Value,
-                        //FieldValues = data,
                     };
 
                     //save to lookups db
@@ -423,7 +463,6 @@ namespace JhpDataSystem.projects
                     }
 
                     var dateEdited = DateTime.Now;
-                    var creationDate = data.Where(t => t.Name.Contains(Constants.SYS_FIELD_DATECREATED)).FirstOrDefault();
                     if (creationDate == null)
                     {
                         data.Add(new NameValuePair()
@@ -433,7 +472,9 @@ namespace JhpDataSystem.projects
                         });
                     }
 
-                    var editDate = data.Where(t => t.Name.Contains(Constants.SYS_FIELD_DATEEDITED)).FirstOrDefault();
+                    var editDate = data
+                    .Where(t => t.Name.Contains(Constants.SYS_FIELD_DATEEDITED))
+                    .FirstOrDefault();
                     if (editDate == null)
                     {
                         data.Add(new NameValuePair()
@@ -478,7 +519,6 @@ namespace JhpDataSystem.projects
             else
             {
                 var buttonNext = FindViewById<Button>(Resource.Id.buttonNext);
-                //var viewid = currentLayout;
                 buttonNext.Click += (sender, e) =>
                 {
                     //we get the values
@@ -491,10 +531,31 @@ namespace JhpDataSystem.projects
 
                     var clientString = Newtonsoft.Json.JsonConvert.SerializeObject(CurrentClient);
                     var intent = new Intent(this, nextActivity);
-                    //myView == Resource.Layout.PrepexDataEntryEnd
                     intent.PutExtra(Constants.BUNDLE_SELECTEDCLIENT, clientString);
+
+                    ifEditTransferRecord(intent);
+
                     StartActivityForResult(intent, 0);
                 };
+            }
+        }
+
+        void ifEditTransferRecord(Intent intentTo)
+        {
+            var bundleName = Constants.BUNDLE_DATATOEDIT;
+            if (hasBundle(bundleName))
+            {
+                var editedData = this.Intent.GetStringExtra(bundleName);
+                intentTo.PutExtra(bundleName, editedData);
+            }
+        }
+
+        void transferIntentString(string bundleName, Intent intentTo)
+        {
+            if (hasBundle(bundleName))
+            {
+                var editedData = this.Intent.GetStringExtra(bundleName);
+                intentTo.PutExtra(Constants.BUNDLE_DATATOEDIT, editedData);
             }
         }
 
