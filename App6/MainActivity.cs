@@ -2,9 +2,6 @@
 using Android.App;
 using Android.Widget;
 using Android.OS;
-using System.Linq;
-using JhpDataSystem.store;
-using JhpDataSystem.model;
 using JhpDataSystem.Security;
 
 namespace JhpDataSystem

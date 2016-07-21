@@ -8,17 +8,45 @@ using Android.OS;
 using Android.Widget;
 using JhpDataSystem.model;
 using JhpDataSystem.store;
+using Newtonsoft.Json;
 
 namespace JhpDataSystem.projects
 {
-    public class DataFormsBase<T>: Activity where T : class, ILocalDbEntity, new()
-    {        
+    public class DataFormsBaseAttributes: Activity
+    {
         protected bool _isRegistration = false;
         protected int myView = -1;
         protected IPP_NavController myNavController = null;
-        protected bool IsFirstPage = false;
+        protected bool IsFirstPage = false;        
+        public KindName _kindName { get; set; }
+        //public bool AllowShowView = true;
+        public DataFormsBaseAttributes InitialiseAttributes()
+        {
+            doPreCreate(null);
+            return this;
+        }
+
+        protected virtual void doPreCreate(Bundle savedInstanceState)
+        {
+            _kindName = null; // new KindName(Constants.KIND_PPX_UNSCHEDULEDVISIT);
+            myView = -1; // Resource.Layout.prepexunscheduled2;
+            myNavController = null; // new PP_UnscheduledVisitControl() { };
+        }
+    }
+
+    public class DataFormsBase<T>: DataFormsBaseAttributes where T : class, ILocalDbEntity, new()
+    {
         protected T CurrentClient { get; set; }
-        protected KindName _kindName { get; set; }
+        protected override void OnCreate(Bundle savedInstanceState)
+        {           
+            //call base
+            base.OnCreate(savedInstanceState);
+
+            //calling thiss here to set activity attributes
+            doPreCreate(savedInstanceState);
+            ShowMyView();
+        }
+
 
         protected virtual bool IsRegistrationEndPage()
         {
@@ -52,6 +80,22 @@ namespace JhpDataSystem.projects
             return null;
         }
 
+        //protected void addToIntent(Intent targetIntent, string bundleName, string bundleValue)
+        //{
+        //    targetIntent.PutExtra(bundleName, bundleValue);
+        //}
+
+        //protected string loadFromIntent(string bundleName)
+        //{
+        //    //load default data or client if is first
+        //    var intent = this.Intent;
+        //    if (intent.Extras != null && intent.Extras.ContainsKey(bundleName))
+        //    {
+        //        return intent.Extras.GetString(bundleName);
+        //    }
+        //    return string.Empty;
+        //}
+
         protected void ShowMyView()
         {
             SetContentView(myView);
@@ -59,7 +103,25 @@ namespace JhpDataSystem.projects
             bindDateDialogEventsForView(myView);
             loadClientFromIntent();
 
-            if (IsFirstPage && CurrentClient != null)
+            if(this.Intent.Extras!=null && this.Intent.Extras.ContainsKey(Constants.BUNDLE_DATATOEDIT))
+            {
+                //means we have dat to edit
+                var jsonRecord = this.Intent.GetStringExtra(Constants.BUNDLE_DATATOEDIT);
+                var saveableEntity = JsonConvert
+                    .DeserializeObject<GeneralEntityDataset>(jsonRecord);
+                if (saveableEntity != null)
+                {
+                    var viewFields = GetFieldsForView(myView);
+                    var indexedData = saveableEntity.FieldValues;
+                    var fvp = getNameValuePairs(viewFields, indexedData);
+                    setViewData(fvp);
+                }
+                else
+                {
+                    //we abort and show the home page
+                }
+            }
+            else if (IsFirstPage && CurrentClient != null)
             {
                 //if requires selection of client, we show the client selection dialog 
                 //loadClientFromIntent();
@@ -67,20 +129,25 @@ namespace JhpDataSystem.projects
                 //load client information if it has any indexed fields
                 var viewFields = GetFieldsForView(myView);
                 var indexedData = CurrentClient.ToValuesList();
-
-                List<FieldValuePair> fvp = new List<FieldValuePair>();
-                foreach (var value in indexedData)
-                {
-                    var field = viewFields
-                        .Where(t => t.name == value.Name && t.name != Constants.FIELD_PPX_DATEOFVISIT)
-                        .FirstOrDefault();
-                    if (field == null)
-                        continue;
-
-                    fvp.Add(new FieldValuePair() { Field = field, Value = value.Value });
-                }
+                var fvp = getNameValuePairs(viewFields, indexedData);
                 setViewData(fvp);
             }
+        }
+
+        List<FieldValuePair> getNameValuePairs(List<FieldItem> viewFields, List<NameValuePair> fieldValues)
+        {
+            List<FieldValuePair> fvp = new List<FieldValuePair>();
+            foreach (var value in fieldValues)
+            {
+                //t.name != Constants.FIELD_VMMC_DATEOFVISIT || 
+                var field = viewFields
+                    .Where(t => t.name == value.Name && (t.name != Constants.FIELD_PPX_DATEOFVISIT))
+                    .FirstOrDefault();
+                if (field == null)
+                    continue;
+                fvp.Add(new FieldValuePair() { Field = field, Value = value.Value });
+            }
+            return fvp;
         }
 
         protected void bindDateDialogEventsForView(int viewId)
@@ -143,8 +210,13 @@ namespace JhpDataSystem.projects
                             view.Text = fvp.Value;
                             break;
                         }
-                    case Constants.CHECKBOX:
                     case Constants.RADIOBUTTON:
+                        {
+                            var view = field.GetDataView<RadioButton>(this);
+                            view.Checked = fvp.Value == "1";
+                            break;
+                        }
+                    case Constants.CHECKBOX:
                         {
                             var view = field.GetDataView<CheckBox>(this);
                             view.Checked = fvp.Value == "1";

@@ -29,6 +29,27 @@ namespace JhpDataSystem.model
         public EncryptedText Value;
     }
 
+    public class KindViewDefinition
+    {
+        public int ViewId { get; set; }
+        //List<FieldItem> ViewFields { get; set; }
+        public Type ViewActivity { get; set; }
+    }
+
+    public class KindDefinition
+    {
+        public KindName _kindName { get; set; }
+        public KindViewDefinition[] KindViews { get; set; }
+        public bool Matches(string kindname)
+        {
+            return _kindName.Value == kindname;
+        }
+        public bool Matches(KindName kindName)
+        {
+            return Matches(kindName.Value); 
+        }
+    }
+
     public class KindEntity
     {
         public KindItem kindItem { get; set; }

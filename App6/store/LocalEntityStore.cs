@@ -2,7 +2,6 @@ using JhpDataSystem.model;
 using System.Collections.Generic;
 using System;
 using System.Linq;
-using Android.Widget;
 
 namespace JhpDataSystem.store
 {
@@ -22,7 +21,6 @@ namespace JhpDataSystem.store
         private void Initialise()
         {
             _localDb = new LocalDB();
-
             var localdb3 = new LocalDB3();
             var db = localdb3.DB;
             db.CreateTable<projects.ppx.PPClientSummary>();
@@ -114,6 +112,7 @@ namespace JhpDataSystem.store
 
         public List<NameValuePair> GetAllBobsCount()
         {
+            //AppInstance.Instance.ContextManager.ViewIdDictionary
             var tables = Constants.PPX_KIND_DISPLAYNAMES.Keys.ToList();
             var store = new MultiTableStore()
             {

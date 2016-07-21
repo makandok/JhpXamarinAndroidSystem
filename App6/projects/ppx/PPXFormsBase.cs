@@ -42,5 +42,4 @@ namespace JhpDataSystem.projects.ppx
             return AppInstance.Instance.PPXFieldItems.Where(t => t.PageId == viewId).ToList();
         }
     }
-
 }
