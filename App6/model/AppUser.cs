@@ -28,10 +28,6 @@ namespace JhpDataSystem.model
         public string UserId { get; set; }
         public string Names { get; set; }
         public string KnownBolg { get; set; }
-        //public ISaveableEntity build()
-        //{
-        //    return this;
-        //}
     }
 
     public class GeneralEntityDataset : ISaveableEntity

@@ -75,7 +75,7 @@ namespace JhpDataSystem.projects.vmc
             var buttonViewRecordSummaries = FindViewById<Button>(Resource.Id.buttonViewRecordSummaries);
             buttonViewRecordSummaries.Click += async (sender, e) =>
             {
-                await getClientSummaryReport(new VmmcLookupProvider(), Constants.PPX_KIND_DISPLAYNAMES);
+                await getClientSummaryReport(new VmmcLookupProvider(), Constants.VMMC_KIND_DISPLAYNAMES);
             };
         }
     }

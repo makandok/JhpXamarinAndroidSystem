@@ -241,6 +241,8 @@
     <Compile Include="projects\BaseHomeActivity.cs" />
     <Compile Include="projects\BaseWorkflowController.cs" />
     <Compile Include="projects\DataFormsBase.cs" />
+    <Compile Include="projects\DataFormsBaseAttributes.cs" />
+    <Compile Include="projects\IPP_NavController.cs" />
     <Compile Include="projects\ppx\activity\PpxClientSelectionActivity.cs" />
     <Compile Include="projects\ppx\activity\PpxRecordSelectorActivity.cs" />
     <Compile Include="projects\ppx\PpxContextManager.cs" />
@@ -262,18 +264,10 @@
     <Compile Include="projects\vmc\VmmcClientSummaryAdapter.cs" />
     <Compile Include="projects\vmc\VmmcFormsBase.cs" />
     <Compile Include="projects\vmc\VmmcHomeActivity.cs" />
-    <Compile Include="projects\vmc\VmmcHomeActivity2.cs" />
     <Compile Include="projects\vmc\VmmcLookupProvider.cs" />
     <Compile Include="projects\vmc\VmmcActivities.cs" />
     <Compile Include="projects\vmc\wfcontrollers\VmmcPostOperationControl.cs" />
     <Compile Include="projects\vmc\wfcontrollers\VmmcRegAndProcControl.cs" />
-    <None Include="projects\vmmc\ClientSummaryLoader.cs" />
-    <None Include="projects\vmmc\GridDisplayActivity.cs" />
-    <None Include="projects\vmmc\VmmcActivities.cs" />
-    <None Include="projects\vmmc\VmmcFormsBase.cs" />
-    <None Include="projects\vmmc\VmmcHomeActivity.cs" />
-    <None Include="projects\vmmc\workflow\VmmcPostOperationControl.cs" />
-    <None Include="projects\vmmc\workflow\VmmcRegAndProcControl.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="store\CloudDb.cs" />
@@ -381,7 +375,6 @@
     <Folder Include="adapter\" />
     <Folder Include="communicator\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="projects\vmmc\activities\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserLoginLayout.axml">

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -12,28 +12,6 @@ using Newtonsoft.Json;
 
 namespace JhpDataSystem.projects
 {
-    public class DataFormsBaseAttributes: Activity
-    {
-        protected bool _isRegistration = false;
-        protected int myView = -1;
-        protected IPP_NavController myNavController = null;
-        protected bool IsFirstPage = false;        
-        public KindName _kindName { get; set; }
-        //public bool AllowShowView = true;
-        public DataFormsBaseAttributes InitialiseAttributes()
-        {
-            doPreCreate(null);
-            return this;
-        }
-
-        protected virtual void doPreCreate(Bundle savedInstanceState)
-        {
-            _kindName = null; // new KindName(Constants.KIND_PPX_UNSCHEDULEDVISIT);
-            myView = -1; // Resource.Layout.prepexunscheduled2;
-            myNavController = null; // new PP_UnscheduledVisitControl() { };
-        }
-    }
-
     public class DataFormsBase<T>: DataFormsBaseAttributes where T : class, ILocalDbEntity, new()
     {
         protected T CurrentClient { get; set; }
@@ -46,7 +24,6 @@ namespace JhpDataSystem.projects
             doPreCreate(savedInstanceState);
             ShowMyView();
         }
-
 
         protected virtual bool IsRegistrationEndPage()
         {
@@ -402,115 +379,8 @@ namespace JhpDataSystem.projects
                 var buttonFinalise = FindViewById<Button>(Resource.Id.buttonFinalise);
                 buttonFinalise.Click += async (sender, e) =>
                 {
-                    //we get the data
-                    var data = getFormData();
-                    if (data.Count == 0)
-                    {
-                        return;
-                    }
-
-                    KindKey kindKey = null;
-                    NameValuePair creationDate = null;
-                    //we check if we are in an edit context and read values from there
-                    if (isInEditMode())
-                    {
-                        var jsonOldRecord = this.Intent.GetStringExtra(Constants.BUNDLE_DATATOEDIT);
-                        var oldRecordEntity = JsonConvert
-                            .DeserializeObject<GeneralEntityDataset>(jsonOldRecord);
-                        kindKey = new KindKey(oldRecordEntity.Id.Value);
-
-                        creationDate = oldRecordEntity.GetValue(Constants.SYS_FIELD_DATECREATED);
-                    }
-                    else
-                    {
-                        kindKey = new KindKey(AppInstance.Instance.LocalEntityStoreInstance.InstanceLocalDb.newId());
-                    }
-
-                    data.Add(new NameValuePair() { Name = Constants.FIELD_ID, Value = kindKey.Value });
-                    var saveable = new GeneralEntityDataset()
-                    {
-                        Id = kindKey,
-                        FormName = _kindName.Value,
-                    };
-
-                    //save to lookups db
-                    if (IsRegistrationEndPage())
-                    {
-                        var entityId = new KindKey(kindKey.Value);
-                        saveable.EntityId = entityId;
-                        data.Add(new NameValuePair()
-                        {
-                            Name = Constants.FIELD_ENTITYID,
-                            Value = entityId.Value
-                        });
-
-                        //we get the device size
-                        var moduleClientSummaries = getModuleClientSummaries(data);
-                        data.AddRange(moduleClientSummaries);
-
-                        //we get the client lookup details and save these
-                        saveClientSummary(data, saveable.EntityId);
-                    }
-                    else
-                    {
-                        //also update client details but only if they have changes
-                        saveable.EntityId = CurrentClient.EntityId;
-                        data.Add(new NameValuePair()
-                        {
-                            Name = Constants.FIELD_ENTITYID,
-                            Value = CurrentClient.EntityId.Value
-                        });
-                    }
-
-                    var dateEdited = DateTime.Now;
-                    if (creationDate == null)
-                    {
-                        data.Add(new NameValuePair()
-                        {
-                            Name = Constants.SYS_FIELD_DATECREATED,
-                            Value = dateEdited.ToString(System.Globalization.CultureInfo.InvariantCulture)
-                        });
-                    }
-
-                    var editDate = data
-                    .Where(t => t.Name.Contains(Constants.SYS_FIELD_DATEEDITED))
-                    .FirstOrDefault();
-                    if (editDate == null)
-                    {
-                        data.Add(new NameValuePair()
-                        {
-                            Name = Constants.SYS_FIELD_DATEEDITED,
-                            Value = dateEdited.ToString(System.Globalization.CultureInfo.InvariantCulture)
-                        });
-                    }
-                    else
-                    {
-                        //create an audit entry.
-                        //skip for now
-                    }
-
-                    //save to local db
-                    saveable.FieldValues = data;
-                    var saveableEntity = new DbSaveableEntity(saveable) { kindName = _kindName };
-                    saveableEntity.Save();
-
-                    //save to record summmary
-                    new LocalDB3().DB.InsertOrReplace(new RecordSummary()
-                    {
-                        Id = saveable.Id.Value,
-                        EntityId = saveable.EntityId.Value,
-                        VisitDate = dateEdited,
-                        KindName = _kindName.Value
-                    });
-
-                    //fire and forget
-                    AppInstance.Instance.CloudDbInstance.AddToOutQueue(saveableEntity);
-                    AppInstance.Instance.TemporalViewData.Clear();
-
-                    //we show the splash screen and await results of the operation
-                    //todo: show dialog when beginning server sync and await excution
-                    var syncRes = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(sendToast);
-
+                    var saved = await doFinalise();                    
+                    //END
                     //we close and show the prpex home page
                     this.Finish();
                     showHome();
@@ -538,6 +408,126 @@ namespace JhpDataSystem.projects
                     StartActivityForResult(intent, 0);
                 };
             }
+        }
+
+        public GeneralEntityDataset getEntityDataset(List<NameValuePair> data, DateTime dateEdited)
+        {
+            KindKey kindKey = null;
+            NameValuePair creationDate = null;
+            //we check if we are in an edit context and read values from there
+            if (isInEditMode())
+            {
+                var jsonOldRecord = this.Intent.GetStringExtra(Constants.BUNDLE_DATATOEDIT);
+                var oldRecordEntity = JsonConvert
+                    .DeserializeObject<GeneralEntityDataset>(jsonOldRecord);
+                kindKey = new KindKey(oldRecordEntity.Id.Value);
+                creationDate = oldRecordEntity.GetValue(Constants.SYS_FIELD_DATECREATED);
+            }
+            else
+            {
+                kindKey = new KindKey(AppInstance.Instance
+                    .LocalEntityStoreInstance.InstanceLocalDb.newId());
+            }
+
+            KindKey entityId = null;
+            if (IsRegistrationEndPage())
+            {
+                //assign a key
+                entityId = new KindKey(kindKey.Value);
+                //we get the device size
+                var moduleClientSummaries = getModuleClientSummaries(data);
+                data.AddRange(moduleClientSummaries);
+            }
+            else
+            {
+                //also update client details but only if they have changes
+                entityId = new KindKey(CurrentClient.EntityId.Value);
+            }
+
+            if (creationDate == null)
+            {
+                data.Add(new NameValuePair()
+                {
+                    Name = Constants.SYS_FIELD_DATECREATED,
+                    Value = dateEdited.ToString(System.Globalization.CultureInfo.InvariantCulture)
+                });
+            }
+
+            var editDate = data
+            .Where(t => t.Name.Contains(Constants.SYS_FIELD_DATEEDITED))
+            .FirstOrDefault();
+            if (editDate == null)
+            {
+                data.Add(new NameValuePair()
+                {
+                    Name = Constants.SYS_FIELD_DATEEDITED,
+                    Value = dateEdited.ToString(System.Globalization.CultureInfo.InvariantCulture)
+                });
+            }
+            data.Add(new NameValuePair()
+            {
+                Name = Constants.FIELD_ID,
+                Value = kindKey.Value
+            });
+            data.Add(new NameValuePair()
+            {
+                Name = Constants.FIELD_ENTITYID,
+                Value = entityId.Value
+            });
+
+            var saveable = new GeneralEntityDataset()
+            {
+                Id = kindKey,
+                EntityId = entityId,
+                FormName = _kindName.Value,
+                FieldValues = data
+            };
+            return saveable;
+        }
+
+        private async Task<int> doFinalise()
+        {
+            //we get the data
+            var data = getFormData();
+            if (data.Count == 0)
+            {
+                return 0;
+            }
+            var dateEdited = DateTime.Now;
+            var saveable = getEntityDataset(data, dateEdited);
+            //we start the saving business
+            //:)
+            //
+            //1. Save to module specific lookup tables, if on registration page
+            if (IsRegistrationEndPage())
+            {
+                saveClientSummary(saveable.FieldValues, saveable.EntityId);
+            }
+
+            //2. Save the whole record to the local blob db
+            var saveableEntity = new DbSaveableEntity(saveable) { kindName = _kindName };
+            saveableEntity.Save();
+
+            //3. Extract record header and save to Record Summary
+            new LocalDB3().DB.InsertOrReplace(new RecordSummary()
+            {
+                Id = saveable.Id.Value,
+                EntityId = saveable.EntityId.Value,
+                VisitDate = dateEdited,
+                KindName = saveable.FormName
+            });
+
+            //4. Save to OutDb, which is used for weeb uploading
+            //fire and forget
+            AppInstance.Instance.CloudDbInstance.AddToOutQueue(saveableEntity);
+            AppInstance.Instance.TemporalViewData.Clear();
+
+
+            //5. Initiate Server Sync. Ideally, this should be non-blocking
+            //we show the splash screen and await results of the operation
+            //todo: show dialog when beginning server sync and await excution
+            var syncRes = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(sendToast);
+            return syncRes;
         }
 
         void ifEditTransferRecord(Intent intentTo)

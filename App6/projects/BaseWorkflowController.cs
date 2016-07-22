@@ -3,13 +3,6 @@ using System.Collections.Generic;
 
 namespace JhpDataSystem.projects
 {
-    public interface IPP_NavController
-    {
-        System.Type GetNextActivity(int currentLayout, bool moveForward);
-        int GetNextLayout(int currentLayout, bool moveForward);
-        System.Type GetActivityForLayout(int targetLayout);
-    }
-
     public class BaseWorkflowController : IPP_NavController
     {
         public Dictionary<int, Type> MyActivities;

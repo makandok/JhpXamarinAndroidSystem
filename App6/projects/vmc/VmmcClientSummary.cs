@@ -34,7 +34,7 @@ namespace JhpDataSystem.projects.vmc
         public ISaveableEntity build()
         {
             Id = new KindKey(KindKey); EntityId = new KindKey(KindKey);
-            CoreActivityDate = MCDate;
+            //CoreActivityDate = MCDate;
             return this;
         }
 
