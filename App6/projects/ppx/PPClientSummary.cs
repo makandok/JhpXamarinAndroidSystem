@@ -20,7 +20,6 @@ namespace JhpDataSystem.projects.ppx
         public ISaveableEntity build()
         {
             Id = new KindKey(KindKey); EntityId = new KindKey(KindKey);
-            CoreActivityDate = PlacementDate;
             return this;
         }
 
@@ -68,6 +67,10 @@ namespace JhpDataSystem.projects.ppx
                 new NameValuePair() {Name=Constants.FIELD_ID,Value = Id.Value },
                 new NameValuePair() {Name=Constants.FIELD_PPX_PLACEMENTDATE,
                     Value = PlacementDate.ToString(CultureInfo.InvariantCulture) },
+
+                new NameValuePair() {Name=Constants.FIELD_PPX_DATEOFVISIT,
+                    Value = CoreActivityDate.ToString(CultureInfo.InvariantCulture) },
+
                 new NameValuePair() {Name=Constants.FIELD_PPX_CARD_SERIAL,Value = FormSerial.ToString() },
                 new NameValuePair() {Name=Constants.FIELD_PPX_CLIENTNAME,Value =Names },
                 //new NameValuePair() {Name=Constants.FIELD_CARD_SERIAL,Value = FormSerial.ToString() },
@@ -104,6 +107,8 @@ namespace JhpDataSystem.projects.ppx
             }
 
             this.PlacementDate = Convert.ToDateTime(allFields["dateofvisit"]);
+            CoreActivityDate = PlacementDate;
+
             this.FormSerial = Convert.ToInt32(allFields["cardserialnumber"]);
             this.Names = allFields["clientname"];
             this.ClientNumber = Convert.ToInt32(allFields["clientidnumber"]);

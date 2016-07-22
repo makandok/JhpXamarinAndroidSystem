@@ -28,6 +28,11 @@ namespace JhpDataSystem.projects
                 readFields(_fieldJsonFile, _assetManager, _mainContext);
         }
 
+        public Dictionary<string, string> KindDisplayNames
+        {
+            get; protected set;
+        }
+
         public ProjectContext ProjectCtxt { get; set; }
         public List<FieldItem> FieldItems
         {
@@ -35,6 +40,8 @@ namespace JhpDataSystem.projects
         }
 
         public Dictionary<string, int> ViewIdDictionary { get; private set; }
+
+        public string FIELD_VISITDATE { get; protected set; }
 
         List<FieldItem> readFields(string fieldsAssetName, AssetManager assetManager, Activity context)
         {

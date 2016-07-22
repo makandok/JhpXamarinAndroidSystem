@@ -39,7 +39,7 @@ namespace JhpDataSystem.projects.ppx
 
         protected override List<FieldItem> GetFieldsForView(int viewId)
         {
-            return AppInstance.Instance.PPXFieldItems.Where(t => t.PageId == viewId).ToList();
+            return AppInstance.Instance.ModuleContext.ContextManager.FieldItems.Where(t => t.PageId == viewId).ToList();
         }
     }
 }

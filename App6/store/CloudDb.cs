@@ -183,7 +183,7 @@ namespace JhpDataSystem.store
             var cloudDb = new OutDb().DB;
             var recs = GetRecordsToSync();
             var recIndex = recs.Count - 1;
-            while (recIndex >= 0)
+            while (recIndex >= 0 && hasConnection)
             {
                 var outEntity = recs[recIndex];
                 var prepexDs = new GeneralEntityDataset().fromJson(new KindItem(outEntity.DataBlob
@@ -200,22 +200,28 @@ namespace JhpDataSystem.store
                     {
                         await Save(saveable);
                         //we remove this key from the database
-                        var deleted = cloudDb.Delete<OutEntity>(saveable.Id.Value);
                         saved = true;
                     }
                     catch (Google.GoogleApiException gex)
                     {
-                        //todo: mark this record as bad to prevent it blocking for life
+                        //todo: mark this record as bad to prevent it blocking for life                        
                     }
                     catch (Exception ex)
                     {
                         //todo: mark this record as bad to prevent it blocking for life
                         //Android.Util.Log.Debug();
-                        var ixx = 9;
                     }
                     finally { }
                     if (saved)
                     {
+                        try
+                        {
+                            var deleted = cloudDb.Delete<OutEntity>(saveable.Id.Value);
+                        }
+                        catch
+                        {
+
+                        }
                         break;
                     }
                     else
@@ -224,6 +230,7 @@ namespace JhpDataSystem.store
                         await Task.Delay(TimeSpan.FromMilliseconds(2000));
                     }
                 }
+                hasConnection = await checkConnection();
                 recIndex--;
             }
             isRunning = 0;

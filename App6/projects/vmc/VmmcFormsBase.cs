@@ -26,7 +26,7 @@ namespace JhpDataSystem.projects.vmc
 
         protected override List<FieldItem> GetFieldsForView(int viewId)
         {
-            return AppInstance.Instance.VmmcFieldItems.Where(t => t.PageId == viewId).ToList();
+            return AppInstance.Instance.ModuleContext.ContextManager.FieldItems.Where(t => t.PageId == viewId).ToList();
         }
     }
 }

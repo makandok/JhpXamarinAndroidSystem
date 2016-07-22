@@ -32,7 +32,8 @@ namespace JhpDataSystem
         public Dictionary<string, string> ApiAssets = null;
         public void InitialiseAppResources(AssetManager assetManager, Activity context)
         {
-            ContextManager = null;
+            //ContextManager = null;
+            ModuleContext = null;
             _assetManager = assetManager;
             _mainContext = context;
             TemporalViewData = new Dictionary<int, List<FieldValuePair>>();
@@ -48,14 +49,17 @@ namespace JhpDataSystem
             }
 
             //we need to have this class initialised
+            LocalEntityStore.buildTables();
             LocalEntityStoreInstance = new LocalEntityStore();
             CloudDbInstance = new CloudDb(_assetManager);
         }
 
-        public projects.BaseContextManager ContextManager {get;private set;}
+        //ContextLocalEntityStore
+        public projects.ContextLocalEntityStore ModuleContext { get; set; }
+
         internal void SetProjectContext(projects.BaseContextManager ctxt)
         {
-            ContextManager = ctxt;
+            ModuleContext = new projects.ContextLocalEntityStore(ctxt);
         }
 
         List<FieldItem> readFields(string fieldsAssetName, AssetManager assetManager, Activity context)
@@ -91,25 +95,28 @@ namespace JhpDataSystem
             //throw new NotImplementedException();
         }
 
-        public List<FieldItem> VmmcFieldItems
-        {
-            get
-            {
-                if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Vmmc)
-                    return ContextManager.FieldItems;
-                throw new ArgumentNullException("Project context not defined");
-            }
-        }
+        //public List<FieldItem> VmmcFieldItems
+        //{
+        //    get
+        //    {
+        //        if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Vmmc)
 
-        public List<FieldItem> PPXFieldItems
-        {
-            get
-            {
-                if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Ppx)
-                    return ContextManager.FieldItems;
-                throw new ArgumentNullException("Project context not defined");
-            }
-        }
+        //            return ModuleContext.ContextManager.FieldItems;
+        //        if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Vmmc)
+        //            return ContextManager.FieldItems;
+        //        throw new ArgumentNullException("Project context not defined");
+        //    }
+        //}
+
+        //public List<FieldItem> PPXFieldItems
+        //{
+        //    get
+        //    {
+        //        if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Ppx)
+        //            return ContextManager.FieldItems;
+        //        throw new ArgumentNullException("Project context not defined");
+        //    }
+        //}
 
         public UserSession CurrentUser { get; internal set; }
 

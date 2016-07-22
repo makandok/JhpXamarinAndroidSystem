@@ -55,34 +55,40 @@ namespace JhpDataSystem
             buttonPrepexHome.Click += (x, y) =>
             {
                 var contextManager = new PpxContextManager(this.Assets, this);
-                if (AppInstance.Instance.ContextManager == null || AppInstance.Instance.ContextManager.ProjectCtxt == ProjectContext.Ppx)
-                {
-                    AppInstance.Instance.SetProjectContext(contextManager);
-                    StartActivity(typeof(JhpDataSystem.projects.ppx.PPXHomeActivity));
-                }
-                else
-                {
-                    Toast.MakeText(this,
-                        "Restart the app to switch projects",
-                            Android.Widget.ToastLength.Long).Show();
-                }
+                AppInstance.Instance.SetProjectContext(contextManager);
+                StartActivity(typeof(JhpDataSystem.projects.ppx.PPXHomeActivity));
+
+                //if (AppInstance.Instance.ContextManager == null || AppInstance.Instance.ContextManager.ProjectCtxt == ProjectContext.Ppx)
+                //{
+                //    AppInstance.Instance.SetProjectContext(contextManager);
+                //    StartActivity(typeof(JhpDataSystem.projects.ppx.PPXHomeActivity));
+                //}
+                //else
+                //{
+                //    Toast.MakeText(this,
+                //        "Restart the app to switch projects",
+                //            Android.Widget.ToastLength.Long).Show();
+                //}
             };
 
             var buttonVmmcHome = FindViewById<Button>(Resource.Id.buttonVmmcHome);
             buttonVmmcHome.Click += (x, y) => 
             {
                 var contextManager = new VmmcContextManager(this.Assets, this);
-                if (AppInstance.Instance.ContextManager == null || AppInstance.Instance.ContextManager.ProjectCtxt == ProjectContext.Vmmc)
-                {
-                    AppInstance.Instance.SetProjectContext(contextManager);
-                    StartActivity(typeof(JhpDataSystem.projects.vmc.VmmcHomeActivity));
-                }
-                else
-                {
-                    Toast.MakeText(this,
-                        "Restart the app to switch projects",
-                            Android.Widget.ToastLength.Long).Show();
-                }
+                AppInstance.Instance.SetProjectContext(contextManager);
+                StartActivity(typeof(JhpDataSystem.projects.vmc.VmmcHomeActivity));
+
+                //if (AppInstance.Instance.ContextManager == null || AppInstance.Instance.ContextManager.ProjectCtxt == ProjectContext.Vmmc)
+                //{
+                //    AppInstance.Instance.SetProjectContext(contextManager);
+                //    StartActivity(typeof(JhpDataSystem.projects.vmc.VmmcHomeActivity));
+                //}
+                //else
+                //{
+                //    Toast.MakeText(this,
+                //        "Restart the app to switch projects",
+                //            Android.Widget.ToastLength.Long).Show();
+                //}
             };
         }
 

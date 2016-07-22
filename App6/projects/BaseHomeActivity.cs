@@ -203,8 +203,7 @@ namespace JhpDataSystem.projects
         protected async Task<int> getClientSummaryReport(ClientLookupProvider<T> lookupProvider
             , Dictionary<string, string> kindDisplayNames)
         {
-            var countRes = AppInstance.Instance.LocalEntityStoreInstance.GetAllBobsCount();
-
+            var countRes = AppInstance.Instance.ModuleContext.GetAllBobsCount();
             var asList = (from item in countRes
                           let displayItem = new NameValuePair()
                           {

@@ -9,6 +9,8 @@ namespace JhpDataSystem.projects
             : base(Constants.FILE_PPX_FIELDS, assetManager, mainContext)
         {
             ProjectCtxt = ProjectContext.Ppx;
+            KindDisplayNames = Constants.PPX_KIND_DISPLAYNAMES;
+            FIELD_VISITDATE = Constants.FIELD_PPX_DATEOFVISIT;
         }
     }
 }

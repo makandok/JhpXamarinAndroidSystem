@@ -240,6 +240,7 @@
     <Compile Include="projects\BaseContextManager.cs" />
     <Compile Include="projects\BaseHomeActivity.cs" />
     <Compile Include="projects\BaseWorkflowController.cs" />
+    <Compile Include="projects\ContextLocalEntityStore.cs" />
     <Compile Include="projects\DataFormsBase.cs" />
     <Compile Include="projects\DataFormsBaseAttributes.cs" />
     <Compile Include="projects\IPP_NavController.cs" />
