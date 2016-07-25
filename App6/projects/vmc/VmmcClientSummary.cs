@@ -22,8 +22,10 @@ namespace JhpDataSystem.projects.vmc
             return _itemid;
         }
 
+        //[SQLite.PrimaryKey]
+        public int FormSerial { get; set; }
+
         [SQLite.PrimaryKey]
-        public string FormSerial { get; set; }
         public string KindKey { get; set; }
 
         [SQLite.Ignore]
@@ -42,7 +44,8 @@ namespace JhpDataSystem.projects.vmc
         public string FirstName { get; set; }
         public DateTime MCDate { get; set; }
         //public DateTime VisitDate { get; set; }
-        public int CardSerial { get; set; }
+        //public int CardSerial { get; set; }
+
         public int MCNumber { get; set; }
         public string ClientTel { get; set; }
         public DateTime DateOfBirth { get; set; }
@@ -57,7 +60,7 @@ namespace JhpDataSystem.projects.vmc
                 new NameValuePair() {Name=Constants.FIELD_VMMC_MCDATE,
                     Value = MCDate.ToString(CultureInfo.InvariantCulture) },
 
-                new NameValuePair() {Name=Constants.FIELD_VMMC_CARD_SERIAL,Value = CardSerial.ToString() },
+                new NameValuePair() {Name=Constants.FIELD_VMMC_CARD_SERIAL,Value = FormSerial.ToString() },
                  new NameValuePair() {Name=Constants.FIELD_VMMC_MCNUMBER,Value = MCNumber.ToString() },
                 new NameValuePair() {Name=Constants.FIELD_VMMC_CLIENTFIRSTNAME,Value =FirstName },
                 new NameValuePair() {Name=Constants.FIELD_VMMC_CLIENTLASTNAME,Value =LastName },
@@ -86,6 +89,8 @@ namespace JhpDataSystem.projects.vmc
             this.EntityId = new KindKey(KindKey);
             this.Id = new KindKey(KindKey);
 
+            //this.FormSerial = lookupEntry.Id.Value;
+
             var dateStr = allFields[Constants.FIELD_VMMC_DATEOFVISIT];
             DateTime coreActivityDate;
             if (DateTime.TryParse(dateStr, out coreActivityDate))
@@ -102,7 +107,7 @@ namespace JhpDataSystem.projects.vmc
 
             this.LastName = allFields[Constants.FIELD_VMMC_CLIENTLASTNAME];
             this.FirstName = allFields[Constants.FIELD_VMMC_CLIENTFIRSTNAME];
-            this.CardSerial = Convert.ToInt32(allFields[Constants.FIELD_VMMC_CARD_SERIAL]);
+            this.FormSerial = Convert.ToInt32(allFields[Constants.FIELD_VMMC_CARD_SERIAL]);
             this.MCNumber = Convert.ToInt32(allFields[Constants.FIELD_VMMC_MCNUMBER]);
             this.ClientTel = allFields[Constants.FIELD_VMMC_CLIENTTEL];
 

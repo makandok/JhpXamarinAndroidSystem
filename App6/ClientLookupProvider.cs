@@ -29,6 +29,13 @@ namespace JhpDataSystem
                 .UpdateAll(clients);
             return all;
         }
+        public int InsertOrReplace(List<T> clients)
+        {
+            var db = new LocalDB3().DB;
+            foreach(var client in clients)
+                db.InsertOrReplace(client);
+            return 0;
+        }
 
         public int GetCount()
         {

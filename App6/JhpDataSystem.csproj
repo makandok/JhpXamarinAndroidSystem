@@ -295,6 +295,7 @@
     <AndroidResource Include="Resources\layout\clientlist.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <Compile Include="WaitDialogHelper.cs" />
     <Compile Include="WebFileDownloader.cs" />
     <AndroidResource Include="Resources\layout\recordsummaryview.axml">
       <SubType>AndroidResource</SubType>

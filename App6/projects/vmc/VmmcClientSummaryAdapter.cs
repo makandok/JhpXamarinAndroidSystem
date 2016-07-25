@@ -54,7 +54,7 @@ namespace JhpDataSystem.projects.vmc
             myView.FindViewById<TextView>(Resource.Id.clientSummaryNames)
                 .Text = Convert.ToString(client.FirstName + " " + client.LastName);
             myView.FindViewById<TextView>(Resource.Id.clientSummaryCardSerial)
-                .Text = "Card Id: " + Convert.ToString(client.CardSerial);
+                .Text = "Card Id: " + Convert.ToString(client.FormSerial);
             myView.FindViewById<TextView>(Resource.Id.clientSummaryMCNumber)
                 .Text = "MC #: " + Convert.ToString(client.MCNumber);
             myView.FindViewById<TextView>(Resource.Id.clientSummaryPlacementDate)

@@ -52,9 +52,8 @@ namespace JhpDataSystem.projects
             buttonServerSync.Click += async (sender, e) =>
             {
                 Toast.MakeText(this, "Performing action requested", Android.Widget.ToastLength.Short).Show();
-                var res2 = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(sendToast);
-                //var res = await new got(Assets).trainAriaStark();
-                //var resString = res == null ? "RES IS NULL" : res.ToString();
+                await AppInstance.Instance.CloudDbInstance.EnsureServerSync(
+                    new WaitDialogHelper(this, sendToast));
                 Toast.MakeText(this, "Sync completed", Android.Widget.ToastLength.Short).Show();
             };
         }
@@ -134,7 +133,8 @@ namespace JhpDataSystem.projects
 
         protected void sendToast(string message, ToastLength length)
         {
-            Toast.MakeText(this, message, length).Show();
+            this.RunOnUiThread(()=> Toast.MakeText(this, message, length).Show());
+            //Toast.MakeText(this, message, length).Show();
         }
 
         protected List<KindDefinition> getKindDefinition(List<BaseWorkflowController> workflowControllers)

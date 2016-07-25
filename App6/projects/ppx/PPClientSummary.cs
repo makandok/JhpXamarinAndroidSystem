@@ -23,13 +23,14 @@ namespace JhpDataSystem.projects.ppx
             return this;
         }
 
-        [SQLite.PrimaryKey]
+        
         public int FormSerial { get; set; }
 
         private long _itemid = -1L;
         [SQLite.Ignore]
         public long itemId { get { return _itemid; } set { _itemid = value; } }
 
+        [SQLite.PrimaryKey]
         public string KindKey { get; set; }
 
         public long getItemId()
@@ -106,14 +107,37 @@ namespace JhpDataSystem.projects.ppx
                 this.DeviceSize = deviceSize;
             }
 
-            this.PlacementDate = Convert.ToDateTime(allFields["dateofvisit"]);
+            var dateStr = allFields[Constants.FIELD_PPX_DATEOFVISIT];
+            if (!string.IsNullOrWhiteSpace(dateStr))
+            {
+                this.PlacementDate = Convert.ToDateTime(dateStr);
+            }
+            else
+                this.PlacementDate = DateTime.MinValue;
+
             CoreActivityDate = PlacementDate;
 
-            this.FormSerial = Convert.ToInt32(allFields["cardserialnumber"]);
-            this.Names = allFields["clientname"];
-            this.ClientNumber = Convert.ToInt32(allFields["clientidnumber"]);
-            this.Telephone = allFields["clienttel"];
-            this.Address = allFields["clientsphysicaladdress"];
+            var serial = allFields[Constants.FIELD_PPX_CARD_SERIAL];
+
+            if (!string.IsNullOrWhiteSpace(serial))
+            {
+                this.FormSerial = Convert.ToInt32(serial);
+            }
+            else
+                this.FormSerial = -1;
+
+            this.Names = allFields[Constants.FIELD_PPX_CLIENTNAME];
+            var mcnumber = allFields[Constants.FIELD_PPX_CLIENTIDNUMBER];
+            
+            if (!string.IsNullOrWhiteSpace(mcnumber))
+            {
+                this.ClientNumber = Convert.ToInt32(mcnumber);
+            }
+            else
+                this.ClientNumber = -1;
+
+            this.Telephone = allFields[Constants.FIELD_PPX_CLIENTTEL];
+            this.Address = allFields[Constants.FIELD_PPX_CLIENTPHYSICALADDR];
             return this;
         }
     }

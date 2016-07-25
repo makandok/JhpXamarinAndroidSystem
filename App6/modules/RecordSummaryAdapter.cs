@@ -43,10 +43,11 @@ namespace JhpDataSystem.modules
             var record = _myList[position];
             var myView = convertView ??
                  _context.LayoutInflater.Inflate(Resource.Layout.recordsummaryview, parent, false);
-            myView.FindViewById<TextView>(Resource.Id.recordVisitType)
-                .Text = string.Format(
+            var labelText = string.Format(
                 "{0} - {1}", record.NiceKindName, record.Wrapped.VisitDate.ToShortDateString()
                 );
+            var view = myView.FindViewById<TextView>(Resource.Id.recordVisitType);
+            view.Text = labelText;
             return myView;
         }
     }

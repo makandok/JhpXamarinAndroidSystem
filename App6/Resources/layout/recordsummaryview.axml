@@ -5,16 +5,16 @@
     android:layout_height="match_parent">
     <Space
         android:text="Select"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="45sp" />
     <TextView
         android:text="Visit Type"
-        android:layout_width="600dp"
+        android:layout_width="700dp"
         android:layout_height="45dp"
         android:textSize="35sp"
         android:id="@+id/recordVisitType" />
     <Space
         android:text="Select"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="45sp" />
 </LinearLayout>

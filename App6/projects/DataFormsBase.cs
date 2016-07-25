@@ -526,7 +526,8 @@ namespace JhpDataSystem.projects
             //5. Initiate Server Sync. Ideally, this should be non-blocking
             //we show the splash screen and await results of the operation
             //todo: show dialog when beginning server sync and await excution
-            var syncRes = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(sendToast);
+            var syncRes = await AppInstance.Instance.
+                CloudDbInstance.EnsureServerSync(new WaitDialogHelper(this, sendToast));
             return syncRes;
         }
 
@@ -551,7 +552,8 @@ namespace JhpDataSystem.projects
 
         void sendToast(string message, ToastLength length)
         {
-            Toast.MakeText(this, message, length).Show();
+            this.RunOnUiThread(() => Toast.MakeText(this, message, length).Show());
+            //Toast.MakeText(this, message, length).Show();
         }
 
         protected virtual void saveClientSummary(List<NameValuePair> data, KindKey clientId)

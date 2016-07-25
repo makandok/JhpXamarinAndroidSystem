@@ -163,12 +163,20 @@ namespace JhpDataSystem.store
         }
 
         int isRunning = 0;
-        public async Task<int> EnsureServerSync(Action<string, ToastLength> makeToast)
+        public async Task<int> EnsureServerSync(WaitDialogHelper myDialog)
         {
-            //void sendToast(string message, ToastLength length)
             if (isRunning == 1)
                 return 0;
             isRunning = 1;
+
+            await myDialog.showDialog(doServerSync);
+
+            isRunning = 0;
+            return 0;
+        }
+
+        async Task<int> doServerSync(Action<string, ToastLength> makeToast)
+        {
             var hasConnection = await checkConnection();
             if (!hasConnection)
             {
@@ -232,8 +240,7 @@ namespace JhpDataSystem.store
                 }
                 hasConnection = await checkConnection();
                 recIndex--;
-            }
-            isRunning = 0;
+            }            
             return 0;
         }
     }
