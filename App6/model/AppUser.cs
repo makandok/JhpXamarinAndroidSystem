@@ -20,6 +20,20 @@ namespace JhpDataSystem.model
         public string DataBlob { get; set; }
     }
 
+    [SQLite.Table(Constants.KIND_FAILEDOUTTRANSPORT)]
+    public class OutEntityUnsynced
+    {
+        [SQLite.PrimaryKey]
+        public string Id { get; set; }
+        public string DataBlob { get; set; }
+        public OutEntityUnsynced load(OutEntity initial)
+        {
+            Id = initial.Id;
+            DataBlob = initial.DataBlob;
+            return this;
+        }
+    }
+
     public class KindMetaData
     {
         public string devid { get; set; }
@@ -49,6 +63,26 @@ namespace JhpDataSystem.model
         public string KnownBolg { get; set; }
 
         public string KindMetaData { get; set; }
+        public GeneralEntityDataset asGeneralEntity(KindName name)
+        {
+            return new GeneralEntityDataset()
+            {
+                Id = this.Id,
+                EntityId = this.EntityId,
+
+                KindMetaData = this.KindMetaData,
+
+                FormName = name.Value,
+                FieldValues = new List<NameValuePair>() {
+                    new NameValuePair() {Name=Constants.FIELD_ID, Value=this.Id.Value },
+                    new NameValuePair() {Name=Constants.FIELD_ENTITYID, Value=this.EntityId.Value },
+
+                    new NameValuePair() {Name=Constants.SYS_FIELD_USERID, Value=this.UserId },
+                    new NameValuePair() {Name=Constants.SYS_FIELD_USERNAMES, Value=this.Names},
+                    new NameValuePair() {Name=Constants.SYS_FIELD_PASSWDHASH, Value=this.KnownBolg },
+                }
+            };
+        }
     }
 
     public class GeneralEntityDataset : ISaveableEntity

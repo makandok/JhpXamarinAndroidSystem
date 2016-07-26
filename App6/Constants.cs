@@ -11,8 +11,17 @@ namespace JhpDataSystem
         internal const string BUNDLE_SELECTEDCLIENT = "bundl_client";
         internal const string BUNDLE_SELECTEDRECORD_ID = "bundl_recordid";
         internal const string BUNDLE_SELECTEDRECORD = "bundl_recordsummary";
+
         internal const string FIELD_ENTITYID = "entityid";
         internal const string FIELD_ID = "id";
+
+        internal const string SYS_FIELD_USERID = "sys_userid";
+        internal const string SYS_FIELD_USERNAMES = "sys_usernames";
+        internal const string SYS_FIELD_PASSWDHASH = "sys_pwdhash";
+
+        internal const string SYS_FIELD_DATEEDITED = "sys_editdate";
+        internal const string SYS_FIELD_DATECREATED = "sys_datecreated";
+        internal const string SYS_FIELD_METADATA = "sys_metadata";
 
         //VMMC
         internal const string FIELD_VMMC_DOB = "vm_date_of_birth";
@@ -60,6 +69,12 @@ namespace JhpDataSystem
         
         internal const string SYS_KIND_DEVCONF = "sysdevconf";
         internal const string SYS_KIND_RECORDSUMMARY = "recordsummary";
+        //UserId
+        //Names
+        //KnownBolg
+        //
+
+
         internal const string KIND_PPX = "pp_client";
 
         internal const string KIND_PPX_CLIENTEVAL = "pp_client_eval";
@@ -92,8 +107,9 @@ namespace JhpDataSystem
 
         public const string KIND_APPUSERS = "appusers";
         internal const string KIND_OUTTRANSPORT = "transport";
+        //KIND_FAILEDOUTTRANSPORT
+        internal const string KIND_FAILEDOUTTRANSPORT = "badtransport";
 
-        
         public const string KIND_DEFAULT = "generalstore";
         public const string KIND_REGISTER = "kindRegister";
         //encryptionkey
@@ -143,9 +159,6 @@ namespace JhpDataSystem
         internal const string LABEL_PREFIX = "sylbl_";
 
         internal const string DEFAULT_CHECKED = "1";
-        internal const string SYS_FIELD_DATEEDITED = "sys_editdate";
-        internal const string SYS_FIELD_DATECREATED = "sys_datecreated";
-        internal const string SYS_FIELD_METADATA = "sys_metadata";
         //internal static 
     }
 }

@@ -200,6 +200,7 @@ namespace JhpDataSystem.store
                 {
                     kindName = new KindName(ppdataset.FormName)
                 };
+
                 var saved = false;
                 for (int i = 0; i < 4; i++)
                 {
@@ -211,12 +212,20 @@ namespace JhpDataSystem.store
                     }
                     catch (Google.GoogleApiException gex)
                     {
-                        //todo: mark this record as bad to prevent it blocking for life                        
+                        //todo: mark this record as bad to prevent it blocking for life
+
+                        //cloudDb.InsertOrReplace(new OutEntityUnsynced().load(outEntity));
+                        //cloudDb.Delete<OutEntity>(saveable.Id.Value);
+                        //break;
+                    }
+                    catch (System.Net.WebException wex)
+                    {
+                        //perhaps lost connection
+                        //we alllow it to spin for now
                     }
                     catch (Exception ex)
                     {
-                        //todo: mark this record as bad to prevent it blocking for life
-                        //Android.Util.Log.Debug();
+                        //unknown exception
                     }
                     finally { }
                     if (saved)
@@ -237,8 +246,8 @@ namespace JhpDataSystem.store
                         await Task.Delay(TimeSpan.FromMilliseconds(2000));
                     }
                 }
-                hasConnection = await checkConnection();
                 recIndex--;
+                hasConnection = await checkConnection();                
             }            
             return 0;
         }

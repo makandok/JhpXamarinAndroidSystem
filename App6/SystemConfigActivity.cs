@@ -123,7 +123,7 @@ namespace JhpDataSystem
             showDialog("Current Users", asOne);
         }
 
-        private void SaveUserOptions_Click(object sender, EventArgs e)
+        private async void SaveUserOptions_Click(object sender, EventArgs e)
         {
             var userAuthenticator = new UserAuthenticator();
             var userCreds = userAuthenticator.LoadCredentials();
@@ -200,13 +200,25 @@ namespace JhpDataSystem
 
             //we save to the database
             Toast.MakeText(this, "Saving to database", ToastLength.Long);
-            new DbSaveableEntity(user) { kindName = UserAuthenticator.KindName }.Save();
+            var saveableEntity = new DbSaveableEntity(user) { kindName = UserAuthenticator.KindName };
+            saveableEntity.Save();
+
             Toast.MakeText(this, "Changes saved", ToastLength.Long);
             //we reset the form
             tNames.Text = "";
             tusername.Text = "";
             tpasscode.Text = "";
             tpasscodAgain.Text = "";
+
+            //save to cloud
+            var dbentity = new DbSaveableEntity(user.asGeneralEntity(UserAuthenticator.KindName)) { kindName = UserAuthenticator.KindName };
+            AppInstance.Instance.CloudDbInstance.AddToOutQueue(dbentity);
+            await AppInstance.Instance.CloudDbInstance.EnsureServerSync(new WaitDialogHelper(this, sendToast));
+        }
+
+        void sendToast(string message, ToastLength length)
+        {
+            this.RunOnUiThread(() => Toast.MakeText(this, message, length).Show());
         }
 
         void showDialog(string title, string message)
@@ -218,7 +230,5 @@ namespace JhpDataSystem
             .Create()
             .Show();
         }
-
-
     }
 }

@@ -112,7 +112,9 @@ namespace JhpDataSystem.store
             var localdb3 = new LocalDB3();
             var db = localdb3.DB;
             db.CreateTable<projects.ppx.PPClientSummary>();
-            db.CreateTable<OutEntity>();           
+            db.CreateTable<OutEntity>();
+            db.CreateTable<OutEntityUnsynced>();
+
             db.CreateTable<projects.vmc.VmmcClientSummary>();
             db.CreateTable<RecordSummary>();
 
