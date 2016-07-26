@@ -20,6 +20,25 @@ namespace JhpDataSystem.model
         public string DataBlob { get; set; }
     }
 
+    public class KindMetaData
+    {
+        public string devid { get; set; }
+        public int chksum { get; set; }
+        public int facidx { get; set; }
+        public string getJson()
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this);
+        }
+        public KindMetaData fromJson(KindItem jsonValue)
+        {
+            var obj = JsonConvert.DeserializeObject<KindMetaData>(jsonValue.Value);
+            devid = obj.devid;
+            chksum = obj.chksum;
+            facidx = obj.facidx;
+            return this;
+        }
+    }
+
     public class AppUser : ISaveableEntity
     {
         public KindKey Id { get; set; }
@@ -28,6 +47,8 @@ namespace JhpDataSystem.model
         public string UserId { get; set; }
         public string Names { get; set; }
         public string KnownBolg { get; set; }
+
+        public string KindMetaData { get; set; }
     }
 
     public class GeneralEntityDataset : ISaveableEntity
@@ -35,15 +56,19 @@ namespace JhpDataSystem.model
         public KindKey Id { get; set; }
         public KindKey EntityId { get; set; }
 
+        public string KindMetaData { get; set; }
+
         public string FormName { get; set; }
         public List<NameValuePair> FieldValues { get; set; }
-        public GeneralEntityDataset fromJson(KindItem jsonKindItem)
+
+        public GeneralEntityDataset fromJson_DONOTUSE(KindItem jsonKindItem)
         {
             var pp = JsonConvert.DeserializeObject<GeneralEntityDataset>(jsonKindItem.Value);
             FormName = pp.FormName;
             FieldValues = pp.FieldValues;
             Id = pp.Id;
             EntityId = pp.EntityId;
+            KindMetaData = pp.KindMetaData;
 
             if (pp.Id ==null)
             {

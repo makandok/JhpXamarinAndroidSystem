@@ -52,9 +52,12 @@ namespace JhpDataSystem
             LocalEntityStore.buildTables();
             LocalEntityStoreInstance = new LocalEntityStore();
             CloudDbInstance = new CloudDb(_assetManager);
+
+            //Android.OS.Build.Serial
+            var configuration = new LocalDB3().DB.Table<DeviceConfiguration>().FirstOrDefault();
+            Configuration = configuration;
         }
 
-        //ContextLocalEntityStore
         public projects.ContextLocalEntityStore ModuleContext { get; set; }
 
         internal void SetProjectContext(projects.BaseContextManager ctxt)
@@ -129,5 +132,18 @@ namespace JhpDataSystem
         {
             get;private set;
         }
+        public DeviceConfiguration Configuration { get; internal set; }
+
+        //public class MyAppConfiguration
+        //{
+        //    public int DeviceId
+        //    {
+        //        get;set;
+        //    }
+        //    public int FacilityIndex
+        //    {
+        //        get; set;
+        //    }
+        //}
     }
 }

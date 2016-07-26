@@ -6,22 +6,22 @@ namespace JhpDataSystem.store
 {
     public class DbSaveableEntity
     {
-        ISaveableEntity wrappedEntity;
+        public ISaveableEntity Entity { get; set; }
+
         public DbSaveableEntity(ISaveableEntity entity)
         {
-            wrappedEntity = entity;
+            Entity = entity;
         }
 
         public KindName kindName { get; set; }
 
-        public KindKey Id { get { return wrappedEntity.Id; } set { wrappedEntity.Id = value; } }
+        public KindKey Id { get { return Entity.Id; } set { Entity.Id = value; } }
 
-        public KindKey EntityId { get { return wrappedEntity.EntityId; } set { wrappedEntity.EntityId = value; } }
+        public KindKey EntityId { get { return Entity.EntityId; } set { Entity.EntityId = value; } }
 
-        //public KindKey Key { get { return wrappedEntity.Id; } set { wrappedEntity.Id = value; } }
         public string getJson()
         {
-            return JsonConvert.SerializeObject(wrappedEntity);
+            return JsonConvert.SerializeObject(Entity);
         }
 
         public string getEncryptedJson()
@@ -31,7 +31,7 @@ namespace JhpDataSystem.store
 
         public EncryptedKindEntity getEncryptedEntity()
         {
-            var asString = JsonConvert.SerializeObject(wrappedEntity);
+            var asString = JsonConvert.SerializeObject(Entity);
             var encrypted = asString.Encrypt();
             return new EncryptedKindEntity(encrypted);
         }
@@ -43,16 +43,16 @@ namespace JhpDataSystem.store
 
         public void Save()
         {
-            if (wrappedEntity == null)
+            if (Entity == null)
                 throw new ArgumentNullException("Wrapped entity can not be null");
             Save(new KindItem(getJson()));
         }
 
         public void Save(KindItem kindItem)
         {
-            if (wrappedEntity == null)
+            if (Entity == null)
                 throw new ArgumentNullException("Wrapped entity can not be null");
-            AppInstance.Instance.LocalEntityStoreInstance.Save(wrappedEntity.Id, kindName, kindItem);
+            AppInstance.Instance.LocalEntityStoreInstance.Save(Entity.Id, kindName, kindItem);
         }
     }
 }

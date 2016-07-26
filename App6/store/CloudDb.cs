@@ -73,7 +73,8 @@ namespace JhpDataSystem.store
                     .getJson()
                     .Encrypt()
                     .Value}
-                    }
+                    },
+                    {"kindmetadata", new Value() { StringValue = saveableEntity.Entity.KindMetaData??string.Empty } }
                 }
             };
             var datastore = GetDatastoreService(GetDefaultCredential(assets, _assetManager), assets);
@@ -194,12 +195,10 @@ namespace JhpDataSystem.store
             while (recIndex >= 0 && hasConnection)
             {
                 var outEntity = recs[recIndex];
-                var prepexDs = new GeneralEntityDataset().fromJson(new KindItem(outEntity.DataBlob
-                    ));
-                var saveable = new DbSaveableEntity(prepexDs)
+                var ppdataset = DbSaveableEntity.fromJson<GeneralEntityDataset>(new KindItem(outEntity.DataBlob));
+                var saveable = new DbSaveableEntity(ppdataset)
                 {
-                    //Id = new KindKey(outEntity.Id),
-                    kindName = new KindName(prepexDs.FormName)
+                    kindName = new KindName(ppdataset.FormName)
                 };
                 var saved = false;
                 for (int i = 0; i < 4; i++)

@@ -23,6 +23,12 @@ namespace JhpDataSystem
         {
             base.OnCreate(bundle);            
             AppInstance.Instance.InitialiseAppResources(Assets, this);
+            if (AppInstance.Instance.Configuration == null)
+            {
+                //we need this
+                showDialog("Device not yet set up","Please log in as Admin first and set up the device");
+            }
+
             //we initialise the app key for our data store
             ProjectId = AppInstance.Instance.ApiAssets[Constants.ASSET_PROJECT_ID];
             DataStoreApplicationKey = AppInstance.Instance.ApiAssets[Constants.ASSET_DATASTORE_APPKEY];
@@ -76,7 +82,15 @@ namespace JhpDataSystem
                 else
                 {
                     //load the main view and update current user options
-                    StartActivity(typeof(LauncherActivity));
+                    if (AppInstance.Instance.Configuration != null)
+                    {
+                        StartActivity(typeof(LauncherActivity));
+                    }
+                    else
+                    {
+                        showDialog("Login Unsuccessful", 
+                            "Please log in as Admin and set up the device");
+                    }
                 }
             }
             else

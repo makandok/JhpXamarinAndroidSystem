@@ -14,6 +14,15 @@
         android:layout_height="match_parent"
         android:id="@+id/linearLayout2"
         android:layout_weight="45">
+        <Button
+            android:text="View Users"
+            android:layout_width="match_parent"
+            android:layout_height="55.0dp"
+            android:id="@+id/buttonAdminViewUsers"
+            android:textColor="@android:color/holo_blue_dark" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
         <TextView
             android:text="Add / Edit Users"
             android:layout_width="match_parent"
@@ -57,6 +66,35 @@
             android:layout_height="60dp"
             padding_left="50dp"
             android:id="@+id/buttonSaveChanges" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+        <TextView
+            android:text="Device Setup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="24dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55.0dp"
+            android:id="@+id/tDeviceSerial"
+            android:hint="device serial number"
+            android:textSize="24dp"
+            style="@android:style/Widget.Holo.Light.EditText" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35.0dp"
+            android:id="@+id/tDeviceUUID"
+            android:hint="unique identifier"
+            android:textSize="24dp"
+            style="@android:style/Widget.Holo.Light.EditText" />
+        <Button
+            android:text="Save Changes"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            padding_left="50dp"
+            android:id="@+id/buttonSaveDeviceConf" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -75,24 +113,11 @@
             android:id="@+id/linearLayout3"
             android:gravity="right">
             <Button
-                android:text="View Users"
-                android:layout_width="120dp"
-                android:layout_height="match_parent"
-                android:id="@+id/buttonAdminViewUsers"
-                android:textColor="@android:color/holo_blue_dark" />
-            <Button
                 android:text="Log Out"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:id="@+id/buttonAdminLogOut"
                 android:textColor="@android:color/holo_blue_dark" />
         </LinearLayout>
-        <TextView
-            android:text="Explore Database"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tExploreDbLabel"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="25dp" />
     </LinearLayout>
 </LinearLayout>

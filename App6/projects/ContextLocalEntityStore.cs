@@ -49,7 +49,9 @@ namespace JhpDataSystem.projects
         {
             var allBlobs = GetAllBobs();
             var clientRecords = (from record in allBlobs
-                                 select new GeneralEntityDataset().fromJson(record));
+                                 select DbSaveableEntity.fromJson<GeneralEntityDataset>(record)
+                                 //select new GeneralEntityDataset().fromJson(record)
+                ).ToList();
             var allRecords = (
                 from record in clientRecords
                 let val = record.FieldValues

@@ -22,7 +22,6 @@ namespace JhpDataSystem.projects.vmc
             return _itemid;
         }
 
-        //[SQLite.PrimaryKey]
         public int FormSerial { get; set; }
 
         [SQLite.PrimaryKey]
@@ -32,6 +31,9 @@ namespace JhpDataSystem.projects.vmc
         public KindKey Id { get; set; }
         [SQLite.Ignore]
         public KindKey EntityId { get; set; }
+        [SQLite.Ignore]
+        public string KindMetaData { get; set; }
+
         public DateTime CoreActivityDate { get; set; }
         public ISaveableEntity build()
         {
@@ -88,7 +90,7 @@ namespace JhpDataSystem.projects.vmc
             this.KindKey = lookupEntry.Id.Value;
             this.EntityId = new KindKey(KindKey);
             this.Id = new KindKey(KindKey);
-
+            this.KindMetaData = lookupEntry.KindMetaData;
             //this.FormSerial = lookupEntry.Id.Value;
 
             var dateStr = allFields[Constants.FIELD_VMMC_DATEOFVISIT];

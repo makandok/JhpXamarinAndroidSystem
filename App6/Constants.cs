@@ -57,7 +57,8 @@ namespace JhpDataSystem
                 FIELD_PPX_CLIENTPHYSICALADDR};
 
         internal const string LABEL_PPX_ACTIVITYLABEL = "Prepex Manager";
-
+        
+        internal const string SYS_KIND_DEVCONF = "sysdevconf";
         internal const string SYS_KIND_RECORDSUMMARY = "recordsummary";
         internal const string KIND_PPX = "pp_client";
 
@@ -144,7 +145,7 @@ namespace JhpDataSystem
         internal const string DEFAULT_CHECKED = "1";
         internal const string SYS_FIELD_DATEEDITED = "sys_editdate";
         internal const string SYS_FIELD_DATECREATED = "sys_datecreated";
-
+        internal const string SYS_FIELD_METADATA = "sys_metadata";
         //internal static 
     }
 }

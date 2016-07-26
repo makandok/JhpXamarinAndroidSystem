@@ -95,14 +95,15 @@ namespace JhpDataSystem.projects
             {
                 //means we have data to edit
                 var jsonRecord = this.Intent.GetStringExtra(Constants.BUNDLE_DATATOEDIT);
-                var saveableEntity = JsonConvert
-                    .DeserializeObject<GeneralEntityDataset>(jsonRecord);
+                var saveableEntity = DbSaveableEntity
+                    .fromJson<GeneralEntityDataset>(new KindItem(jsonRecord));
+                //var saveableEntity = JsonConvert
+                //    .DeserializeObject<GeneralEntityDataset>(jsonRecord);
                 if (saveableEntity != null)
                 {
                     var viewFields = GetFieldsForView(myView);
                     var indexedData = saveableEntity.FieldValues;
                     var fvp = getNameValuePairs(viewFields, indexedData);
-
                     setViewData(fvp);
                 }
                 else
@@ -403,17 +404,26 @@ namespace JhpDataSystem.projects
                     var intent = new Intent(this, nextActivity);
                     intent.PutExtra(Constants.BUNDLE_SELECTEDCLIENT, clientString);
 
-                    ifEditTransferRecord(intent);
+                    //ifEditTransferRecord(intent);
+                    transferIntentString(Constants.BUNDLE_DATATOEDIT, intent);
+                    //transferIntentString(Constants.SYS_FIELD_METADATA, intent);
 
                     StartActivityForResult(intent, 0);
                 };
             }
         }
 
-        public GeneralEntityDataset getEntityDataset(List<NameValuePair> data, DateTime dateEdited)
+        private GeneralEntityDataset getEntityDataset(List<NameValuePair> data, DateTime dateEdited)
         {
             KindKey kindKey = null;
             NameValuePair creationDate = null;
+            var metaData = new KindMetaData()
+            {
+                chksum = 1,
+                devid = AppInstance.Instance.Configuration.Serial,
+                facidx = 0
+            };
+
             //we check if we are in an edit context and read values from there
             if (isInEditMode())
             {
@@ -422,6 +432,11 @@ namespace JhpDataSystem.projects
                     .DeserializeObject<GeneralEntityDataset>(jsonOldRecord);
                 kindKey = new KindKey(oldRecordEntity.Id.Value);
                 creationDate = oldRecordEntity.GetValue(Constants.SYS_FIELD_DATECREATED);
+                if (!string.IsNullOrWhiteSpace(oldRecordEntity.KindMetaData))
+                {
+                    var oldMetaData = new KindMetaData().fromJson(new KindItem(oldRecordEntity.KindMetaData));
+                    metaData.chksum = oldMetaData.chksum + 1;
+                }
             }
             else
             {
@@ -480,7 +495,8 @@ namespace JhpDataSystem.projects
                 Id = kindKey,
                 EntityId = entityId,
                 FormName = _kindName.Value,
-                FieldValues = data
+                FieldValues = data,
+                KindMetaData = metaData.getJson()
             };
             return saveable;
         }
@@ -493,6 +509,20 @@ namespace JhpDataSystem.projects
             {
                 return 0;
             }
+
+           //if (isInEditMode())
+            //{
+            //    //means we have data to edit
+            //    var jsonRecord = this.Intent.GetStringExtra(Constants.BUNDLE_DATATOEDIT);
+            //    var oldRec = DbSaveableEntity
+            //        .fromJson<GeneralEntityDataset>(new KindItem(jsonRecord));
+            //    if (!string.IsNullOrWhiteSpace(oldRec.KindMetaData))
+            //    {
+            //        var oldMetaData = new KindMetaData().fromJson(new KindItem(oldRec.KindMetaData));
+            //        metaData.chksum = oldMetaData.chksum + 1;
+            //    }
+            //}
+
             var dateEdited = DateTime.Now;
             var saveable = getEntityDataset(data, dateEdited);
             //we start the saving business
@@ -517,11 +547,10 @@ namespace JhpDataSystem.projects
                 KindName = saveable.FormName
             });
 
-            //4. Save to OutDb, which is used for weeb uploading
+            //4. Save to OutDb, which is used for web uploading
             //fire and forget
             AppInstance.Instance.CloudDbInstance.AddToOutQueue(saveableEntity);
             AppInstance.Instance.TemporalViewData.Clear();
-
 
             //5. Initiate Server Sync. Ideally, this should be non-blocking
             //we show the splash screen and await results of the operation
@@ -531,22 +560,17 @@ namespace JhpDataSystem.projects
             return syncRes;
         }
 
-        void ifEditTransferRecord(Intent intentTo)
-        {
-            var bundleName = Constants.BUNDLE_DATATOEDIT;
-            if (hasBundle(bundleName))
-            {
-                var editedData = this.Intent.GetStringExtra(bundleName);
-                intentTo.PutExtra(bundleName, editedData);
-            }
-        }
+        //void ifEditTransferRecord(Intent intentTo)
+        //{
+        //    transferIntentString(Constants.BUNDLE_DATATOEDIT, intentTo);
+        //}
 
         void transferIntentString(string bundleName, Intent intentTo)
         {
             if (hasBundle(bundleName))
             {
                 var editedData = this.Intent.GetStringExtra(bundleName);
-                intentTo.PutExtra(Constants.BUNDLE_DATATOEDIT, editedData);
+                intentTo.PutExtra(bundleName, editedData);
             }
         }
 

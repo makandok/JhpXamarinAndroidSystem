@@ -116,6 +116,7 @@ namespace JhpDataSystem.store
             db.CreateTable<projects.vmc.VmmcClientSummary>();
             db.CreateTable<RecordSummary>();
 
+            db.CreateTable<DeviceConfiguration>();
             //we load from kinds
             if (RebuildIndexes)
             {

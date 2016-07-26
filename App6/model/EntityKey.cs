@@ -15,6 +15,7 @@ namespace JhpDataSystem.model
     {
         KindKey Id { get; set; }
         KindKey EntityId { get; set; }
+        string KindMetaData { get; set; }
     }
 
     public class EncryptedKindEntity

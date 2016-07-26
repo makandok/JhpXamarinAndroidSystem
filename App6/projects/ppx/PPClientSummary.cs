@@ -15,6 +15,8 @@ namespace JhpDataSystem.projects.ppx
         public KindKey Id { get; set; }
         [SQLite.Ignore]
         public KindKey EntityId { get; set; }
+        [SQLite.Ignore]
+        public string KindMetaData { get; set; }
 
         public DateTime CoreActivityDate { get; set; }
         public ISaveableEntity build()
@@ -22,8 +24,7 @@ namespace JhpDataSystem.projects.ppx
             Id = new KindKey(KindKey); EntityId = new KindKey(KindKey);
             return this;
         }
-
-        
+                
         public int FormSerial { get; set; }
 
         private long _itemid = -1L;
@@ -100,6 +101,7 @@ namespace JhpDataSystem.projects.ppx
             this.KindKey = lookupEntry.Id.Value;
             this.EntityId = new KindKey(KindKey);
             this.Id = lookupEntry.Id;
+            this.KindMetaData = lookupEntry.KindMetaData;
 
             var deviceSize = string.Empty;
             if (allFields.TryGetValue(Constants.FIELD_PPX_DEVSIZE, out deviceSize))

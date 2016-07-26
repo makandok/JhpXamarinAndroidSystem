@@ -24,6 +24,33 @@ namespace JhpDataSystem
         {
             SetContentView(Resource.Layout.AdminOptionsLayout);
 
+            var currentSettings = new LocalDB3().DB.Table<DeviceConfiguration>().FirstOrDefault();
+            if (currentSettings == null)
+            {
+                var uuid = Guid.NewGuid().ToString("N");
+                var tDeviceUUID = FindViewById<TextView>(Resource.Id.tDeviceUUID);
+                tDeviceUUID.Text = uuid;
+
+                var buttonSaveDeviceConf = FindViewById<Button>(Resource.Id.buttonSaveDeviceConf);
+                buttonSaveDeviceConf.Click += buttonSaveDeviceConf_Click;
+            }
+            else
+            {
+                //hide the save button
+                var buttonSaveDeviceConf = FindViewById<Button>(Resource.Id.buttonSaveDeviceConf);
+                buttonSaveDeviceConf.Visibility = Android.Views.ViewStates.Gone;
+
+                var tDeviceSerial = FindViewById<EditText>(Resource.Id.tDeviceSerial);
+                tDeviceSerial.Text = currentSettings.Serial;
+
+                var tDeviceUUID = FindViewById<TextView>(Resource.Id.tDeviceUUID);
+                tDeviceUUID.Text = currentSettings.UUID;
+            }
+
+            //we dont want the user to do anything else if device is not yet set up
+            if (currentSettings == null)
+                return;
+
             var buttonSaveChanges = FindViewById<Button>(Resource.Id.buttonSaveChanges);
             buttonSaveChanges.Click += SaveUserOptions_Click;
 
@@ -35,6 +62,38 @@ namespace JhpDataSystem
             //buttonAdminViewUsers
             var buttonAdminViewUsers = FindViewById<Button>(Resource.Id.buttonAdminViewUsers);
             buttonAdminViewUsers.Click += buttonAdminViewUsers_Click;
+
+
+        }
+
+        private void buttonSaveDeviceConf_Click(object sender, EventArgs e)
+        {
+            var tDeviceUUID = FindViewById<TextView>(Resource.Id.tDeviceUUID);
+            var tDeviceSerial = FindViewById<EditText>(Resource.Id.tDeviceSerial);
+            if(string.IsNullOrWhiteSpace(tDeviceSerial.Text))
+            {
+                showDialog("Device Serial is needed", "Please enter the device serial");
+                return;
+            }
+            else
+            {
+                var devconf = new DeviceConfiguration()
+                {
+                    Serial = tDeviceSerial.Text,
+                    UUID = tDeviceUUID.Text
+                };
+                new LocalDB3().DB.InsertOrReplace(devconf);
+                AppInstance.Instance.Configuration = 
+                    new LocalDB3().DB.Table<DeviceConfiguration>().FirstOrDefault();
+                if (AppInstance.Instance.Configuration != null)
+                {
+                    var buttonSaveDeviceConf = FindViewById<Button>(Resource.Id.buttonSaveDeviceConf);
+                    buttonSaveDeviceConf.Visibility = Android.Views.ViewStates.Gone;
+                    showDialog("Success", "You can log out and start using the app");
+                }
+                else
+                    showDialog("Error", "Could not configure the device.");
+            }
         }
 
         private void doLogOut()
@@ -58,7 +117,7 @@ namespace JhpDataSystem
             var userCreds = (new UserAuthenticator().LoadCredentials()
                 .Select(t => t.UserId + " (" + t.Names + ")")).ToList();
             userCreds.Sort();
-            var asOne = string.Join(" | ", userCreds);
+            var asOne = string.Join(System.Environment.NewLine, userCreds);
 
             //and show in a grid or alert
             showDialog("Current Users", asOne);
@@ -91,24 +150,63 @@ namespace JhpDataSystem
             if (matchingCred == null)
             {
                 //means we're ading a new user
+                Toast.MakeText(this, "Creating new user", ToastLength.Long);
+                var id = AppInstance.Instance.LocalEntityStoreInstance.InstanceLocalDb.newId();
                 user = new AppUser()
                 {
-                    Id = new KindKey(AppInstance.Instance.LocalEntityStoreInstance.InstanceLocalDb.newId()),
+                    Id = new KindKey(id),
+                    EntityId = new KindKey(id),
                     UserId = uname,
                     Names = tNames.Text.ToUpperInvariant(),
-                    KnownBolg = hash
+                    KnownBolg = hash,
+                    KindMetaData =
+                    (new KindMetaData()
+                    {
+                        chksum = 1,
+                        devid = AppInstance.Instance.Configuration.Serial,
+                        facidx = 0
+                    }
+                    ).getJson()
                 };
             }
             else
             {
                 //confirm with the user
+                Toast.MakeText(this, "User found. Updating record", ToastLength.Long);
                 user = matchingCred;
                 user.KnownBolg = hash;
                 user.Names = tNames.Text.ToUpperInvariant();
+                if (user.EntityId == null)
+                    user.EntityId = user.Id;
+
+                if (string.IsNullOrWhiteSpace(user.KindMetaData))
+                {
+                    user.KindMetaData =
+                    (new KindMetaData()
+                    {
+                        chksum = 1,
+                        devid = AppInstance.Instance.Configuration.Serial,
+                        facidx = 0
+                    }
+                    ).getJson();
+                }
+                else
+                {
+                    var metadata = new KindMetaData().fromJson(new KindItem(user.KindMetaData));
+                    metadata.chksum += 1;
+                    user.KindMetaData = metadata.getJson();
+                }
             }
 
             //we save to the database
+            Toast.MakeText(this, "Saving to database", ToastLength.Long);
             new DbSaveableEntity(user) { kindName = UserAuthenticator.KindName }.Save();
+            Toast.MakeText(this, "Changes saved", ToastLength.Long);
+            //we reset the form
+            tNames.Text = "";
+            tusername.Text = "";
+            tpasscode.Text = "";
+            tpasscodAgain.Text = "";
         }
 
         void showDialog(string title, string message)

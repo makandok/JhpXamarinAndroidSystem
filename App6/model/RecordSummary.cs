@@ -6,6 +6,16 @@ using System.Linq;
 
 namespace JhpDataSystem.model
 {
+    [SQLite.Table(Constants.SYS_KIND_DEVCONF)]
+    public class DeviceConfiguration
+    {
+        [SQLite.PrimaryKey]
+        public string Serial { get; set; }
+        [SQLite.Unique]
+        [SQLite.NotNull]
+        public string UUID { get; set; }
+    }
+
     [SQLite.Table(Constants.SYS_KIND_RECORDSUMMARY)]
     public class RecordSummary
     {
