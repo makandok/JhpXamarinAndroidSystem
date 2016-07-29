@@ -49,8 +49,6 @@ namespace JhpDataSystem.Security
             return null;
         }
 
-        //var rootUser = new AppUser() { Id = new KindKey("root"), Names = "JHP Admin", UserId = Constants.ADMIN_USERNAME };
-
         internal List<AppUser> LoadCredentials()
         {
             var allCreds = new TableStore(KindName).GetAllBlobs();

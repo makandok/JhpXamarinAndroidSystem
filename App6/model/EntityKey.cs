@@ -9,6 +9,7 @@ namespace JhpDataSystem.model
         ISaveableEntity build();
         List<NameValuePair> ToValuesList();
         ILocalDbEntity Load(GeneralEntityDataset clientSummary);
+        long getItemId();
     }
 
     public interface ISaveableEntity
@@ -33,7 +34,6 @@ namespace JhpDataSystem.model
     public class KindViewDefinition
     {
         public int ViewId { get; set; }
-        //List<FieldItem> ViewFields { get; set; }
         public Type ViewActivity { get; set; }
     }
 

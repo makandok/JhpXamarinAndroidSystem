@@ -13,7 +13,7 @@ namespace JhpDataSystem
             _kindName = kindName;
         }
 
-        public List<T> Get()
+        public virtual List<T> Get()
         {
             var all = new LocalDB3().DB
                 .Table<T>()
@@ -23,13 +23,13 @@ namespace JhpDataSystem
             all.ForEach(t => { t.build(); });
             return all;
         }
-        public int Update(List<T> clients)
+        public virtual int Update(List<T> clients)
         {
             var all = new LocalDB3().DB
                 .UpdateAll(clients);
             return all;
         }
-        public int InsertOrReplace(List<T> clients)
+        public virtual int InsertOrReplace(List<T> clients)
         {
             var db = new LocalDB3().DB;
             foreach(var client in clients)
@@ -37,7 +37,7 @@ namespace JhpDataSystem
             return 0;
         }
 
-        public int GetCount()
+        public virtual int GetCount()
         {
             var all = new LocalDB3().DB
                 .ExecuteScalar<int>("select count(*) from " + _kindName);

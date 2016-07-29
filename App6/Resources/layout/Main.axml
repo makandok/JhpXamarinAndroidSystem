@@ -42,10 +42,10 @@
             android:layout_height="match_parent"
             android:text="Prepex" />
         <Button
-            android:id="@+id/SaveData"
+            android:id="@+id/buttonSiteSession"
             android:layout_width="200dp"
             android:layout_height="match_parent"
-            android:text="Save" />
+            android:text="@string/sys_managessession" />
         <Button
             android:text="Upload"
             android:layout_width="200dp"

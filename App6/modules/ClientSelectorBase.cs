@@ -1,12 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using JhpDataSystem.model;
@@ -66,10 +63,6 @@ namespace JhpDataSystem.modules
 
             _allPrepexClients = getClientSummaries();
             setClientSummaryAdapter(listview, _allPrepexClients);            
-
-            //_allPrepexClients = new PpxLookupProvider().Get();
-            //_defaultAdapter = new PpxClientSummaryAdapter(this, listview, _allPrepexClients);
-            //listview.Adapter = _defaultAdapter;
 
             //we hide the client summary options
             var rgroupCSOptions = FindViewById<RadioGroup>(Resource.Id.rgroupCSOptions);

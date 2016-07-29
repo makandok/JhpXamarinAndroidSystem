@@ -138,6 +138,9 @@ namespace JhpDataSystem.store
             new TableStore(Constants.KIND_DEFAULT).build();
             new TableStore(Constants.KIND_APPUSERS).build();
 
+            //new TableStore(Constants.KIND_SITEPROVIDER).build();
+            new TableStore(Constants.KIND_SITESESSION).build();
+
             //prepex clients
             new TableStore(Constants.KIND_PPX_CLIENTEVAL).build();
             new TableStore(Constants.KIND_PPX_DEVICEREMOVAL).build();

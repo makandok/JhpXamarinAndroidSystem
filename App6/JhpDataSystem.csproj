@@ -233,6 +233,7 @@
     <Compile Include="model\FieldItem.cs" />
     <Compile Include="ClientLookupProvider.cs" />
     <Compile Include="model\RecordSummary.cs" />
+    <Compile Include="model\SiteProvider.cs" />
     <Compile Include="modules\ClientSelectorBase.cs" />
     <Compile Include="modules\RecordSelectorBase.cs" />
     <Compile Include="modules\RecordSummaryAdapter.cs" />
@@ -256,12 +257,17 @@
     <Compile Include="modules\SmsActivity.cs" />
     <Compile Include="projects\ppx\PpxLookupProvider.cs" />
     <Compile Include="projects\ppx\wfcontrollers\WorkflowControllers.cs" />
+    <Compile Include="projects\session\activity\SessionHomeActivity.cs" />
+    <Compile Include="projects\session\activity\SessionActivities.cs" />
+    <Compile Include="projects\session\activity\SessionEditor.cs" />
+    <Compile Include="projects\session\SiteSession.cs" />
+    <Compile Include="projects\session\SessionSummaryAdapter.cs" />
+    <Compile Include="projects\session\SessionLookupProvider.cs" />
     <Compile Include="projects\vmc\activity\VmmcClientSelectionActivity.cs" />
     <Compile Include="projects\vmc\activity\VmmcRecordSelectorActivity.cs" />
     <Compile Include="projects\vmc\VmmcContextManager.cs" />
     <Compile Include="projects\vmc\VmmcClientSummary.cs" />
     <Compile Include="projects\vmc\VmmcFilteredGridDisplayActivity.cs" />
-    <Compile Include="projects\vmc\PPDeviceSizes.cs" />
     <Compile Include="projects\vmc\VmmcClientSummaryAdapter.cs" />
     <Compile Include="projects\vmc\VmmcFormsBase.cs" />
     <Compile Include="projects\vmc\VmmcHomeActivity.cs" />
@@ -269,6 +275,7 @@
     <Compile Include="projects\vmc\VmmcActivities.cs" />
     <Compile Include="projects\vmc\wfcontrollers\VmmcPostOperationControl.cs" />
     <Compile Include="projects\vmc\wfcontrollers\VmmcRegAndProcControl.cs" />
+    <Compile Include="projects\DefaultLookupProvider.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="store\CloudDb.cs" />

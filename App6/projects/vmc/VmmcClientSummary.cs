@@ -45,8 +45,6 @@ namespace JhpDataSystem.projects.vmc
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public DateTime MCDate { get; set; }
-        //public DateTime VisitDate { get; set; }
-        //public int CardSerial { get; set; }
 
         public int MCNumber { get; set; }
         public string ClientTel { get; set; }

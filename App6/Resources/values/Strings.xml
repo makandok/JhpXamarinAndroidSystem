@@ -15,6 +15,8 @@
   <string name="ppx_activitylabel">Prepex Manager</string>
   <string name="ppx_noclientselected">No client selected</string>
   <string name="sys_dateselect">Select Date</string>
+  <string name="sys_manageprov">Manage Site Providers</string>
+  <string name="sys_managessession">Manage Site Sessions</string>
   <string name="sys_not_updated">Run a report</string>
   <string name="sys_summary_blobcount">Summary count of all records</string>  
   <string name="ppx_sys_deviceusage">Usage by Device Size</string>

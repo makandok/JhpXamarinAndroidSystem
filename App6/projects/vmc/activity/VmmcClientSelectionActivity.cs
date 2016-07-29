@@ -1,11 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Android.App;
-using Android.OS;
-using Android.Views;
 using Android.Widget;
-using JhpDataSystem.model;
-using Android.Content;
 using JhpDataSystem.modules;
 
 namespace JhpDataSystem.projects.vmc.activity

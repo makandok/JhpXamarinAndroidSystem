@@ -23,6 +23,15 @@ namespace JhpDataSystem
         internal const string SYS_FIELD_DATECREATED = "sys_datecreated";
         internal const string SYS_FIELD_METADATA = "sys_metadata";
 
+        public static string SYS_FIELD_FirstName = "sys_fname";
+        internal static string SYS_FIELD_SurName = "sys_surname";
+        internal static string SYS_FIELD_MaidenName = "sys_maidenname";
+        internal static string SYS_FIELD_NRC = "sys_nrc";
+        internal static string SYS_FIELD_ContactNumber = "sys_cellnumb";
+        internal static string SYS_FIELD_HomeFacilityName = "sys_facname";
+        internal static string SYS_FIELD_FACILITYID = "sys_facilityid";
+        internal static string SYS_FIELD_SESSIONDATE = "sys_sessiondate";
+        
         //VMMC
         internal const string FIELD_VMMC_DOB = "vm_date_of_birth";
         internal const string FIELD_VMMC_MCDATE = "vm_mc_date";
@@ -103,11 +112,12 @@ namespace JhpDataSystem
                     { KIND_VMMC_POSTOP,"Post Operation" },
                      { KIND_VMMC_REGANDPROCEDURE,"Registration and Procedure" }
                 };
-        //internal const string KIND_VMMC = "vmmcclients";
 
-        public const string KIND_APPUSERS = "appusers";
+        internal const string KIND_SITESESSION = "sitesession";
+        internal const string KIND_SITEPROVIDER = "siteprovider";
+
+        internal const string KIND_APPUSERS = "appusers";
         internal const string KIND_OUTTRANSPORT = "transport";
-        //KIND_FAILEDOUTTRANSPORT
         internal const string KIND_FAILEDOUTTRANSPORT = "badtransport";
 
         public const string KIND_DEFAULT = "generalstore";
@@ -159,6 +169,9 @@ namespace JhpDataSystem
         internal const string LABEL_PREFIX = "sylbl_";
 
         internal const string DEFAULT_CHECKED = "1";
+
+
+
         //internal static 
     }
 }
