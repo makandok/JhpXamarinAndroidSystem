@@ -59,18 +59,18 @@ namespace JhpDataSystem.projects.session
         }
     }
 
-    public class ServiceProvider
-    {
-        public KindKey Id { get; set; }
-        public string FirstName { get; set; }
-        public string SurName { get; set; }
-        public string MaidenName { get; set; }
-        public string NRC { get; set; }
-        public string ContactNumber { get; set; }
-        public string HomeFacility { get; set; }
-    }
+    //public class ServiceProvider
+    //{
+    //    public KindKey Id { get; set; }
+    //    public string FirstName { get; set; }
+    //    public string SurName { get; set; }
+    //    public string MaidenName { get; set; }
+    //    public string NRC { get; set; }
+    //    public string ContactNumber { get; set; }
+    //    public string HomeFacility { get; set; }
+    //}
 
-    public class SiteProvider : ISaveableEntity
+    public class SiteProvider : ILocalDbEntity
     {
         public KindKey Id { get; set; }
         public KindKey EntityId { get; set; }
@@ -84,6 +84,9 @@ namespace JhpDataSystem.projects.session
 
         public string ContactNumber { get; set; }
         public string HomeFacility { get; set; }
+
+        public DateTime CoreActivityDate { get; set; }
+
         public GeneralEntityDataset asGeneralEntity(KindName name)
         {
             return new GeneralEntityDataset()
@@ -92,7 +95,23 @@ namespace JhpDataSystem.projects.session
                 EntityId = this.EntityId,
                 KindMetaData = this.KindMetaData,
                 FormName = name.Value,
-                FieldValues = new List<NameValuePair>() {
+                FieldValues = ToValuesList()
+            };
+        }
+
+        public long getItemId()
+        {
+            return Id == null ? -1L : Id.GetHashCode();
+        }
+
+        public ISaveableEntity build()
+        {
+            return this;
+        }
+
+        public List<NameValuePair> ToValuesList()
+        {
+            return new List<NameValuePair>() {
                     new NameValuePair() {Name=Constants.FIELD_ID, Value=this.Id.Value },
                     new NameValuePair() {Name=Constants.FIELD_ENTITYID, Value=this.EntityId.Value },
                     new NameValuePair() {Name=Constants.SYS_FIELD_FirstName, Value=this.FirstName },
@@ -101,9 +120,12 @@ namespace JhpDataSystem.projects.session
                     new NameValuePair() {Name=Constants.SYS_FIELD_NRC, Value=this.NRC },
                     new NameValuePair() {Name=Constants.SYS_FIELD_ContactNumber, Value=this.ContactNumber},
                     new NameValuePair() {Name=Constants.SYS_FIELD_HomeFacilityName, Value=this.HomeFacility },
-                }
-            };
+                };
+        }
+
+        public ILocalDbEntity Load(GeneralEntityDataset clientSummary)
+        {
+            return this;
         }
     }
-
 }

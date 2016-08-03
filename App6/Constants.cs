@@ -11,6 +11,7 @@ namespace JhpDataSystem
         internal const string BUNDLE_SELECTEDCLIENT = "bundl_client";
         internal const string BUNDLE_SELECTEDRECORD_ID = "bundl_recordid";
         internal const string BUNDLE_SELECTEDRECORD = "bundl_recordsummary";
+        internal const string BUNDLE_NEXTACTIVITY_TYPE = "bundl_nxtactvty";
 
         internal const string FIELD_ENTITYID = "entityid";
         internal const string FIELD_ID = "id";
@@ -77,14 +78,9 @@ namespace JhpDataSystem
         internal const string LABEL_PPX_ACTIVITYLABEL = "Prepex Manager";
         
         internal const string SYS_KIND_DEVCONF = "sysdevconf";
-        internal const string SYS_KIND_RECORDSUMMARY = "recordsummary";
-        //UserId
-        //Names
-        //KnownBolg
-        //
+        internal const string KIND_DERIVED_RECORDSUMMARY = "recordsummary";
 
-
-        internal const string KIND_PPX = "pp_client";
+        //internal const string KIND_PPX = "pp_client";
 
         internal const string KIND_PPX_CLIENTEVAL = "pp_client_eval";
         internal const string KIND_PPX_DEVICEREMOVAL = "pp_client_devicerem";
@@ -99,12 +95,9 @@ namespace JhpDataSystem
                    { KIND_PPX_UNSCHEDULEDVISIT,"A2. Unscheduled Visit" }
             };
 
-        internal const string KIND_PPX_CLIENTSUMMARY = "pp_clientsummary";
-        
-        internal const string KIND_PPX_CLIENT = "pp_client_parts";
-        internal const string KIND_PPX_NEXTVIEW = "pp_nextview";
+        internal const string KIND_DERIVED_PPX_CLIENTSUMMARY = "pp_clientsummary";         
 
-        internal const string KIND_VMMC_CLIENTSUMMARY = "vmmc_clientsummary";
+        internal const string KIND_DERIVED_VMMC_CLIENTSUMMARY = "vmmc_clientsummary";
         internal const string KIND_VMMC_POSTOP = "vmmc_postop";
         internal const string KIND_VMMC_REGANDPROCEDURE = "vmmc_regandproc";
         internal static Dictionary<string, string> VMMC_KIND_DISPLAYNAMES =

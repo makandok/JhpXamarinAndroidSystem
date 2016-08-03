@@ -16,7 +16,7 @@ namespace JhpDataSystem.model
         public string UUID { get; set; }
     }
 
-    [SQLite.Table(Constants.SYS_KIND_RECORDSUMMARY)]
+    [SQLite.Table(Constants.KIND_DERIVED_RECORDSUMMARY)]
     public class RecordSummary
     {
         public RecordSummary()

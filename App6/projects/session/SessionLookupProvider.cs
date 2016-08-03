@@ -1,14 +1,16 @@
-using JhpDataSystem.model;
+//namespace JhpDataSystem.projects.session
+//{
+//    public class SessionLookupProvider : TablestoreLookupProvider<SiteSession>
+//    {
+//        public SessionLookupProvider() : base(Constants.KIND_SITESESSION)
+//        {
+//        }
+//    }
 
-namespace JhpDataSystem.projects.session
-{
-    public class SessionLookupProvider : ClientLookupProvider<SiteSession>
-    {
-
-        public SessionLookupProvider() : base(Constants.KIND_SITESESSION)
-        {
-            //todo add logic for everything to dbsaveentity and tablestore
-            int y = 6;
-        }
-    }
-}
+//    public class ProvidersLookupProvider : TablestoreLookupProvider<SiteProvider>
+//    {
+//        public ProvidersLookupProvider() : base(Constants.KIND_SITEPROVIDER)
+//        {
+//        }
+//    }
+//}

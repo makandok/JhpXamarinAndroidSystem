@@ -1,9 +1,8 @@
 using Android.App;
 using Android.OS;
 using JhpDataSystem.model;
-using JhpDataSystem.projects.vmc.workflow;
 
-namespace JhpDataSystem.projects.session
+namespace JhpDataSystem.projects.session.activity
 {
     //[Activity(Label = "Post Operation - End")]
     //public class VmmcPostOpEnd : VmmcFormsBase

@@ -63,6 +63,10 @@ namespace JhpDataSystem.model
         public string KnownBolg { get; set; }
 
         public string KindMetaData { get; set; }
+        public long getItemId()
+        {
+            return Id == null ? -1L : Id.GetHashCode();
+        }
         public GeneralEntityDataset asGeneralEntity(KindName name)
         {
             return new GeneralEntityDataset()
@@ -89,52 +93,10 @@ namespace JhpDataSystem.model
     {
         public KindKey Id { get; set; }
         public KindKey EntityId { get; set; }
-
         public string KindMetaData { get; set; }
 
         public string FormName { get; set; }
         public List<NameValuePair> FieldValues { get; set; }
-
-        public GeneralEntityDataset fromJson_DONOTUSE(KindItem jsonKindItem)
-        {
-            var pp = JsonConvert.DeserializeObject<GeneralEntityDataset>(jsonKindItem.Value);
-            FormName = pp.FormName;
-            FieldValues = pp.FieldValues;
-            Id = pp.Id;
-            EntityId = pp.EntityId;
-            KindMetaData = pp.KindMetaData;
-
-            if (pp.Id ==null)
-            {
-                var id = FieldValues.FirstOrDefault(t => t.Name == Constants.FIELD_ID);
-                if (id != null)
-                {
-                    Id = new KindKey(id.Value);
-                }
-                else
-                {
-                    //we skip this record
-                }
-            }
-
-            if (pp.EntityId == null)
-            {
-                var entityId = FieldValues.FirstOrDefault(t => t.Name == Constants.FIELD_ENTITYID);
-                if (entityId != null)
-                {
-                    EntityId = new KindKey(entityId.Value);
-                }
-                else
-                {
-                    //we skip this record
-                    if (pp.FormName == Constants.KIND_PPX_CLIENTEVAL
-                        || pp.FormName == Constants.KIND_VMMC_REGANDPROCEDURE
-                        )
-                        EntityId = new KindKey(Id.Value);
-                }
-            }
-            return this;
-        }
 
         internal NameValuePair GetValue(string fieldName)
         {
@@ -142,6 +104,10 @@ namespace JhpDataSystem.model
                 .Where(t => t.Name.Contains(fieldName))
                 .FirstOrDefault();
             return toReturn;
+        }
+        public long getItemId()
+        {
+            return Id == null ? -1L : Id.GetHashCode();
         }
     }
 

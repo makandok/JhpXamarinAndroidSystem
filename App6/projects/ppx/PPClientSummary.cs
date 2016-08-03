@@ -6,10 +6,10 @@ using System.Globalization;
 
 namespace JhpDataSystem.projects.ppx
 {
-    [SQLite.Table(Constants.KIND_PPX_CLIENTSUMMARY)]
+    [SQLite.Table(Constants.KIND_DERIVED_PPX_CLIENTSUMMARY)]
     public class PPClientSummary : ILocalDbEntity
     {
-        public const string KindName = Constants.KIND_PPX_CLIENTSUMMARY;
+        public const string KindName = Constants.KIND_DERIVED_PPX_CLIENTSUMMARY;
 
         [SQLite.Ignore]
         public KindKey Id { get; set; }

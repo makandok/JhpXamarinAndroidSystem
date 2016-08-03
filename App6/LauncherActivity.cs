@@ -54,14 +54,20 @@ namespace JhpDataSystem
                 AppInstance.Instance.SetProjectContext(contextManager);
                 StartActivity(typeof(JhpDataSystem.projects.vmc.VmmcHomeActivity));
             };
+            //fetchData
+            var fetchData = FindViewById<Button>(Resource.Id.fetchData);
+            fetchData.Visibility = Android.Views.ViewStates.Invisible;
+
 
             var buttonSiteSession = FindViewById<Button>(Resource.Id.buttonSiteSession);
             buttonSiteSession.Click += (x, y) =>
             {
+                
                 //var contextManager = new VmmcContextManager(this.Assets, this);
                 //AppInstance.Instance.SetProjectContext(contextManager);
                 StartActivity(typeof(JhpDataSystem.projects.session.SessionHomeActivity));
-            };            
+            };
+            buttonSiteSession.Visibility = Android.Views.ViewStates.Invisible;
         }
 
         void showDialog(string title, string message)

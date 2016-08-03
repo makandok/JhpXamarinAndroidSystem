@@ -6,10 +6,10 @@ using System.Globalization;
 
 namespace JhpDataSystem.projects.vmc
 {
-    [SQLite.Table(Constants.KIND_VMMC_CLIENTSUMMARY)]
+    [SQLite.Table(Constants.KIND_DERIVED_VMMC_CLIENTSUMMARY)]
     public class VmmcClientSummary : ILocalDbEntity
     {
-        public static string KindName { get { return Constants.KIND_PPX_CLIENTSUMMARY; } }
+        public static string KindName { get { return Constants.KIND_DERIVED_PPX_CLIENTSUMMARY; } }
         private long _itemid = -1L;
         [SQLite.Ignore]
         public long itemId { get { return _itemid; } set { _itemid = value; } }

@@ -62,7 +62,7 @@ namespace JhpDataSystem.projects
         {
             var returnTypeString = Newtonsoft.Json.JsonConvert.SerializeObject(resultActivity);
             var intent = new Intent(this, activityType);
-            intent.PutExtra(Constants.KIND_PPX_NEXTVIEW, returnTypeString);
+            intent.PutExtra(Constants.BUNDLE_NEXTACTIVITY_TYPE, returnTypeString);
             intent.SetFlags(ActivityFlags.ClearTop);
             StartActivityForResult(intent, 0);
         }
@@ -114,7 +114,7 @@ namespace JhpDataSystem.projects
             else if (data.HasExtra(Constants.BUNDLE_SELECTEDCLIENT))
             {
                 //result is from client selector
-                var nextResultActivity = data.GetStringExtra(Constants.KIND_PPX_NEXTVIEW);
+                var nextResultActivity = data.GetStringExtra(Constants.BUNDLE_NEXTACTIVITY_TYPE);
                 var nextResultType = Newtonsoft.Json.JsonConvert.DeserializeObject<Type>(nextResultActivity);
 
                 var clientString = data.GetStringExtra(Constants.BUNDLE_SELECTEDCLIENT);
@@ -228,10 +228,10 @@ namespace JhpDataSystem.projects
             var summaryInfo = new LocalDB3().DB.Query<NameValuePair>(
                                 string.Format(
                 "select KindName as Name, count(*) as Value from {0} group by KindName",
-                Constants.SYS_KIND_RECORDSUMMARY)
+                Constants.KIND_DERIVED_RECORDSUMMARY)
                 );
             resList.Add(System.Environment.NewLine);
-            resList.Add("Summary of Records in " + Constants.SYS_KIND_RECORDSUMMARY);
+            resList.Add("Summary of Records in " + Constants.KIND_DERIVED_RECORDSUMMARY);
             var asStringList = (from nvp in summaryInfo
                                 select nvp.toDisplayText()).ToList();
             resList.AddRange(asStringList);

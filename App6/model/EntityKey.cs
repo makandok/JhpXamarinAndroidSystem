@@ -9,7 +9,7 @@ namespace JhpDataSystem.model
         ISaveableEntity build();
         List<NameValuePair> ToValuesList();
         ILocalDbEntity Load(GeneralEntityDataset clientSummary);
-        long getItemId();
+        //GeneralEntityDataset asGeneralEntityDataset(KindName kindName);       
     }
 
     public interface ISaveableEntity
@@ -17,6 +17,7 @@ namespace JhpDataSystem.model
         KindKey Id { get; set; }
         KindKey EntityId { get; set; }
         string KindMetaData { get; set; }
+        long getItemId();
     }
 
     public class EncryptedKindEntity

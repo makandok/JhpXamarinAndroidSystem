@@ -28,7 +28,7 @@ namespace JhpDataSystem.modules
             //we get entityid from the intent
             return new LocalDB3().DB.Query<RecordSummary>(
                string.Format("select * from {0} where EntityId = @entityid",
-               Constants.SYS_KIND_RECORDSUMMARY), entityId);
+               Constants.KIND_DERIVED_RECORDSUMMARY), entityId);
         }
 
         protected virtual List<VisitSummary> getRecordsForClient(string entityId)

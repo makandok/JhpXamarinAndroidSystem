@@ -49,10 +49,10 @@ namespace JhpDataSystem.modules
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.clientlist);
 
-            if (this.Intent.Extras != null && this.Intent.Extras.ContainsKey(Constants.KIND_PPX_NEXTVIEW))
+            if (this.Intent.Extras != null && this.Intent.Extras.ContainsKey(Constants.BUNDLE_NEXTACTIVITY_TYPE))
             {
                 //KIND_PP_NEXTVIEW
-                NEXT_TYPE = this.Intent.Extras.GetString(Constants.KIND_PPX_NEXTVIEW);
+                NEXT_TYPE = this.Intent.Extras.GetString(Constants.BUNDLE_NEXTACTIVITY_TYPE);
             }
 
             var listview = FindViewById<ListView>(Resource.Id.listviewClientList);
@@ -85,7 +85,7 @@ namespace JhpDataSystem.modules
 
             var asString = Newtonsoft.Json.JsonConvert.SerializeObject(_selectedClient);
             var intent = new Intent().PutExtra(Constants.BUNDLE_SELECTEDCLIENT, asString);
-            intent.PutExtra(Constants.KIND_PPX_NEXTVIEW, NEXT_TYPE);
+            intent.PutExtra(Constants.BUNDLE_NEXTACTIVITY_TYPE, NEXT_TYPE);
             //intent.SetFlags(ActivityFlags.NewTask);
             SetResult(Result.Ok, intent);
             Finish();

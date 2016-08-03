@@ -257,12 +257,14 @@
     <Compile Include="modules\SmsActivity.cs" />
     <Compile Include="projects\ppx\PpxLookupProvider.cs" />
     <Compile Include="projects\ppx\wfcontrollers\WorkflowControllers.cs" />
-    <Compile Include="projects\session\activity\SessionHomeActivity.cs" />
+    <Compile Include="projects\session\activity\ProviderSummaryAdapter.cs" />
+    <Compile Include="projects\session\SessionHomeActivity.cs" />
     <Compile Include="projects\session\activity\SessionActivities.cs" />
     <Compile Include="projects\session\activity\SessionEditor.cs" />
     <Compile Include="projects\session\SiteSession.cs" />
     <Compile Include="projects\session\SessionSummaryAdapter.cs" />
     <Compile Include="projects\session\SessionLookupProvider.cs" />
+    <Compile Include="projects\session\activity\ProviderGridDisplayActivity.cs" />
     <Compile Include="projects\vmc\activity\VmmcClientSelectionActivity.cs" />
     <Compile Include="projects\vmc\activity\VmmcRecordSelectorActivity.cs" />
     <Compile Include="projects\vmc\VmmcContextManager.cs" />
@@ -315,6 +317,9 @@
     <AndroidResource Include="Resources\layout\vmmc_regandproc3.axml" />
     <AndroidResource Include="Resources\layout\vmmc_regandproc4.axml" />
     <AndroidResource Include="Resources\layout\DataEntryEnd.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\sessionditor.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <None Include="Samples\Archive.cs" />

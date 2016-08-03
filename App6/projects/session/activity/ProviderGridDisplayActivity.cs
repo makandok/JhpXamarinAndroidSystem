@@ -1,31 +1,25 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using JhpDataSystem.model;
-using JhpDataSystem.store;
-using JhpDataSystem.Utilities;
-using System.Threading.Tasks;
-using System.Globalization;
 
 namespace JhpDataSystem.projects.session.activity
 {
-    [Activity(Label = "Session Editor")]
-    public class SessionEditor : Activity, ListView.IOnItemClickListener
+    [Activity(Label = "Provider List")]
+    public class ProviderGridDisplayActivity : Activity, ListView.IOnItemClickListener
     {
-        SessionSummaryAdapter _defaultAdapter = null;
-        List<SiteSession> _allPrepexClients;
-        SiteSession _selectedClient = null;
+        ProviderSummaryAdapter _defaultAdapter = null;
+        List<SiteProvider> _allPrepexClients;
+        SiteProvider _selectedClient = null;
         List<int> _listOptions = null;
         public void OnItemClick(AdapterView parent, View view, int position, long id)
         {
             _selectedClient = _allPrepexClients[position];
             Android.Widget.Toast.MakeText(this,
-                _selectedClient.Id + " " + _selectedClient
-                .SessionDate.ToString(CultureInfo.InvariantCulture),
+                _selectedClient.FirstName +
+                (string.IsNullOrWhiteSpace(_selectedClient.MaidenName) ? "" : (" " + _selectedClient.MaidenName))
+                + " " + _selectedClient.SurName,
                 Android.Widget.ToastLength.Short).Show();
         }
 
@@ -39,11 +33,11 @@ namespace JhpDataSystem.projects.session.activity
             listview.FastScrollAlwaysVisible = true;
 
             listview.OnItemClickListener = this;
-            
+
             _allPrepexClients = new
-                TablestoreLookupProvider<SiteSession>(Constants.KIND_SITESESSION)
+                TablestoreLookupProvider<SiteProvider>(Constants.KIND_SITEPROVIDER)
                 .Get();
-            _defaultAdapter = new SessionSummaryAdapter(this, listview, _allPrepexClients);
+            _defaultAdapter = new ProviderSummaryAdapter(this, listview, _allPrepexClients);
 
             listview.Adapter = _defaultAdapter;
 
@@ -60,9 +54,10 @@ namespace JhpDataSystem.projects.session.activity
         {
             var t = _allPrepexClients[position];
             Android.Widget.Toast.MakeText(this,
-                    _selectedClient.Id + " " + _selectedClient.SessionDate
-                    .ToString(CultureInfo.InvariantCulture),
-                    Android.Widget.ToastLength.Short).Show();
-        }     
+                                t.FirstName +
+                (string.IsNullOrWhiteSpace(t.MaidenName) ? "" : (" " + t.MaidenName))
+                + " " + t.SurName
+                , Android.Widget.ToastLength.Short).Show();
+        }        
     }
 }

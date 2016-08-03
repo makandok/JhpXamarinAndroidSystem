@@ -5291,34 +5291,37 @@ namespace JhpDataSystem
 			public const int select_dialog_singlechoice_material = 2130903110;
 			
 			// aapt resource value: 0x7f030047
-			public const int smscenter = 2130903111;
+			public const int sessionditor = 2130903111;
 			
 			// aapt resource value: 0x7f030048
-			public const int support_simple_spinner_dropdown_item = 2130903112;
+			public const int smscenter = 2130903112;
 			
 			// aapt resource value: 0x7f030049
-			public const int UserLoginLayout = 2130903113;
+			public const int support_simple_spinner_dropdown_item = 2130903113;
 			
 			// aapt resource value: 0x7f03004a
-			public const int vmmc_postop1 = 2130903114;
+			public const int UserLoginLayout = 2130903114;
 			
 			// aapt resource value: 0x7f03004b
-			public const int vmmc_postop2 = 2130903115;
+			public const int vmmc_postop1 = 2130903115;
 			
 			// aapt resource value: 0x7f03004c
-			public const int vmmc_regandproc1 = 2130903116;
+			public const int vmmc_postop2 = 2130903116;
 			
 			// aapt resource value: 0x7f03004d
-			public const int vmmc_regandproc2 = 2130903117;
+			public const int vmmc_regandproc1 = 2130903117;
 			
 			// aapt resource value: 0x7f03004e
-			public const int vmmc_regandproc3 = 2130903118;
+			public const int vmmc_regandproc2 = 2130903118;
 			
 			// aapt resource value: 0x7f03004f
-			public const int vmmc_regandproc4 = 2130903119;
+			public const int vmmc_regandproc3 = 2130903119;
 			
 			// aapt resource value: 0x7f030050
-			public const int vmmc_regandproc5 = 2130903120;
+			public const int vmmc_regandproc4 = 2130903120;
+			
+			// aapt resource value: 0x7f030051
+			public const int vmmc_regandproc5 = 2130903121;
 			
 			static Layout()
 			{

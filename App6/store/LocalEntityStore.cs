@@ -93,28 +93,13 @@ namespace JhpDataSystem.store
             new U().InsertOrReplace(allSummaries);
         }
 
-        //protected virtual void saveClientSummary(List<NameValuePair> data, KindKey clientId)
-        //{
-        //    var clientSummary = new GeneralEntityDataset()
-        //    {
-        //        Id = clientId,
-        //        FormName = _kindName.Value,
-        //        EntityId = clientId,
-        //        FieldValues = getIndexedFormData(data)
-        //    };
-
-        //    var ppclient = new T().Load(clientSummary) as T;
-        //    new LocalDB3().DB.InsertOrReplace(ppclient);
-        //}
-
         public static void buildTables()
         {
-            var localdb3 = new LocalDB3();
-            var db = localdb3.DB;
-            db.CreateTable<projects.ppx.PPClientSummary>();
+            var db = new LocalDB3().DB;
             db.CreateTable<OutEntity>();
             db.CreateTable<OutEntityUnsynced>();
 
+            db.CreateTable<projects.ppx.PPClientSummary>();
             db.CreateTable<projects.vmc.VmmcClientSummary>();
             db.CreateTable<RecordSummary>();
 
@@ -140,6 +125,7 @@ namespace JhpDataSystem.store
 
             //new TableStore(Constants.KIND_SITEPROVIDER).build();
             new TableStore(Constants.KIND_SITESESSION).build();
+            new TableStore(Constants.KIND_SITEPROVIDER).build();
 
             //prepex clients
             new TableStore(Constants.KIND_PPX_CLIENTEVAL).build();
