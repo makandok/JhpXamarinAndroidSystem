@@ -19,7 +19,6 @@ namespace JhpDataSystem.projects.session.activity
         SessionSummaryAdapter _defaultAdapter = null;
         List<SiteSession> _allPrepexClients;
         SiteSession _selectedClient = null;
-        List<int> _listOptions = null;
         public void OnItemClick(AdapterView parent, View view, int position, long id)
         {
             _selectedClient = _allPrepexClients[position];

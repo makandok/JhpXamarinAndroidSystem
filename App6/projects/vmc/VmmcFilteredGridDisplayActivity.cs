@@ -18,7 +18,6 @@ namespace JhpDataSystem.projects.vmc
         VmmcClientSummaryAdapter _defaultAdapter = null;
         List<VmmcClientSummary> _allPrepexClients;
         VmmcClientSummary _selectedClient = null;
-        List<int> _listOptions = null;
         public void OnItemClick(AdapterView parent, View view, int position, long id)
         {
             _selectedClient = _allPrepexClients[position];

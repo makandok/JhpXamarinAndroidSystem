@@ -62,9 +62,6 @@ namespace JhpDataSystem
             var buttonSiteSession = FindViewById<Button>(Resource.Id.buttonSiteSession);
             buttonSiteSession.Click += (x, y) =>
             {
-                
-                //var contextManager = new VmmcContextManager(this.Assets, this);
-                //AppInstance.Instance.SetProjectContext(contextManager);
                 StartActivity(typeof(JhpDataSystem.projects.session.SessionHomeActivity));
             };
             buttonSiteSession.Visibility = Android.Views.ViewStates.Invisible;
