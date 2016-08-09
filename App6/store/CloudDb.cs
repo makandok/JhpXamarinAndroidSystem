@@ -139,6 +139,11 @@ namespace JhpDataSystem.store
             return new OutDb().DB.Table<OutEntity>().ToList();
         }
 
+        //public int GetRecordsToSyncCount()
+        //{
+        //    return new OutDb().DB.Table<OutEntity>().Count();
+        //}
+
         public async Task<bool> checkConnection()
         {
             var googleUrl = "https://google.co.zm";
@@ -178,6 +183,14 @@ namespace JhpDataSystem.store
 
         async Task<int> doServerSync(Action<string, ToastLength> makeToast)
         {
+            //var recCount = GetRecordsToSyncCount();
+            var recs = GetRecordsToSync();
+            if (recs.Count == 0)
+            {
+                makeToast("No unsynced records", ToastLength.Short);
+                return 0;
+            }
+
             var hasConnection = await checkConnection();
             if (!hasConnection)
             {
@@ -190,7 +203,7 @@ namespace JhpDataSystem.store
             }
             makeToast("Connected tested", ToastLength.Short);
             var cloudDb = new OutDb().DB;
-            var recs = GetRecordsToSync();
+            
             var recIndex = recs.Count - 1;
             while (recIndex >= 0 && hasConnection)
             {

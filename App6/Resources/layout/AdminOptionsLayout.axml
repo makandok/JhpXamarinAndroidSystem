@@ -119,5 +119,28 @@
                 android:id="@+id/buttonAdminLogOut"
                 android:textColor="@android:color/holo_blue_dark" />
         </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+        <TextView
+            android:text="Clear all client data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="24dp" />
+        <EditText
+            android:inputType="numberPassword"
+            android:layout_width="match_parent"
+            android:layout_height="55.0dp"
+            android:id="@+id/tAuthorizationCode"
+            android:hint="Type authorization code"
+            android:textSize="24dp"
+            style="@android:style/Widget.Holo.Light.EditText" />
+        <Button
+            android:text="Clear Client Data"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            padding_left="60dp"
+            android:id="@+id/buttonClearClientData" />
     </LinearLayout>
 </LinearLayout>

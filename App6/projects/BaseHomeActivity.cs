@@ -54,7 +54,7 @@ namespace JhpDataSystem.projects
                 Toast.MakeText(this, "Performing action requested", Android.Widget.ToastLength.Short).Show();
                 await AppInstance.Instance.CloudDbInstance.EnsureServerSync(
                     new WaitDialogHelper(this, sendToast));
-                Toast.MakeText(this, "Sync completed", Android.Widget.ToastLength.Short).Show();
+                Toast.MakeText(this, "Completed performing action requested", Android.Widget.ToastLength.Short).Show();
             };
         }
 

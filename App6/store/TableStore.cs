@@ -55,6 +55,7 @@ namespace JhpDataSystem.store
         protected const string createKindSql = "create table if not exists {0}(id nvarchar(32) primary key, datablob nvarchar(500));";
         protected const string insertSql = "insert or replace into {0}(id, datablob) values (@id, @datablob)";
         protected const string deleteSql = "delete from {0} where id = @id";
+        protected const string deleteAllSql = "delete from {0}";
 
         protected const string selectIdsForAll = "select id from {0}";
         protected const string selectCountForAll = "select count(id) from {0}";
@@ -117,6 +118,48 @@ namespace JhpDataSystem.store
             }
             return saveStatus;
         }
+
+        internal bool DeleteAll()
+        {
+            var saveStatus = false;
+            using (var conn = new SqliteConnection(_db.ConnectionString))
+            {
+                try
+                {
+                    conn.Open();
+                }
+                catch (SqliteException ex)
+                {
+                    if (MainLogger != null)
+                        MainLogger.Log(string.Format(
+                            "Error opening database connection{0}{1}", Environment.NewLine, ex.ToString()));
+                    return false;
+                }
+
+                try
+                {
+                    //check if our table tables, create if it doesn't
+
+                    var command = conn.CreateCommand();
+                    command.CommandText = string.Format(deleteAllSql, _tableName.Value);
+                    command.ExecuteNonQuery();
+                    saveStatus = true;
+                }
+                catch (SqliteException ex)
+                {
+                    if (MainLogger != null)
+                        MainLogger.Log(string.Format(
+                            "Error deleting records from database table {2}{0}{1}", Environment.NewLine, ex.ToString(), _tableName.Value));
+                    return false;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return saveStatus;
+        }
+
         /// <summary>
         /// Replaces record in database if it exists or inserts a new one if it doesn't exist. Maintains key supplied
         /// </summary>

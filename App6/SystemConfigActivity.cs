@@ -63,7 +63,32 @@ namespace JhpDataSystem
             var buttonAdminViewUsers = FindViewById<Button>(Resource.Id.buttonAdminViewUsers);
             buttonAdminViewUsers.Click += buttonAdminViewUsers_Click;
 
+            //buttonClearClientData
+            var buttonClearClientData = FindViewById<Button>(Resource.Id.buttonClearClientData);
+            buttonClearClientData.Click += buttonClearClientData_Click;
+        }
 
+        private void buttonClearClientData_Click(object sender, EventArgs e)
+        {
+            var tAuthorizationCode = FindViewById<EditText>(Resource.Id.tAuthorizationCode);
+            var authText = tAuthorizationCode.Text;
+            if (string.IsNullOrWhiteSpace(authText))
+            {
+                sendToast("Please enter the authorisation code", ToastLength.Long);
+                return;
+            }
+
+            int intValue = 0;
+            if(!int.TryParse(authText, out intValue) || intValue != 3043808)
+            {
+                sendToast("Incorrect authorisation code", ToastLength.Long);
+                return;
+            }
+            AppInstance.Instance.LocalEntityStoreInstance.ClearAllData();
+
+            //we clear and indicate that deletion is complete
+            tAuthorizationCode.Text = "";
+            sendToast("All provider and client records cleared.", ToastLength.Long);
         }
 
         private void buttonSaveDeviceConf_Click(object sender, EventArgs e)

@@ -93,6 +93,40 @@ namespace JhpDataSystem.store
             new U().InsertOrReplace(allSummaries);
         }
 
+        internal void ClearAllData()
+        {
+            clearTables();
+        }
+
+        private static void clearTables()
+        {
+            buildTables();
+
+            var db = new LocalDB3().DB;
+            db.DeleteAll<OutEntity>();
+            db.DeleteAll<OutEntityUnsynced>();
+
+            db.DeleteAll<projects.ppx.PPClientSummary>();
+            db.DeleteAll<projects.vmc.VmmcClientSummary>();
+            db.DeleteAll<RecordSummary>();
+
+            new TableStore(Constants.KIND_DEFAULT).DeleteAll();
+            //new TableStore(Constants.KIND_APPUSERS).build();
+
+            new TableStore(Constants.KIND_SITESESSION).DeleteAll();
+            new TableStore(Constants.KIND_SITEPROVIDER).DeleteAll();
+
+            //prepex clients
+            new TableStore(Constants.KIND_PPX_CLIENTEVAL).DeleteAll();
+            new TableStore(Constants.KIND_PPX_DEVICEREMOVAL).DeleteAll();
+            new TableStore(Constants.KIND_PPX_POSTREMOVAL).DeleteAll();
+            new TableStore(Constants.KIND_PPX_UNSCHEDULEDVISIT).DeleteAll();
+
+            //VMMC
+            new TableStore(Constants.KIND_VMMC_POSTOP).DeleteAll();
+            new TableStore(Constants.KIND_VMMC_REGANDPROCEDURE).DeleteAll();
+        }
+
         public static void buildTables()
         {
             var db = new LocalDB3().DB;
