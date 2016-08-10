@@ -56,7 +56,7 @@ namespace ExcelToAndroidXML
 
         static void Main(string[] args)
         {
-            bool ProcessingForVMMC = true;
+            bool ProcessingForVMMC = false;
             var projectHelper = ProcessingForVMMC ? 
                 new vmmcHelper() as ProjectInfo: 
                 new ppxHelper();

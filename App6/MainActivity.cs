@@ -37,6 +37,7 @@ namespace JhpDataSystem
             SetContentView(Resource.Layout.UserLoginLayout);
             var loginFormButton = FindViewById<Button>(Resource.Id.buttonLoginIn);
             loginFormButton.Click += doLoginIn_Click;
+            this.ActionBar.Title = "Jhpiego Zambia"+" v"+ AppInstance.Instance.AppVersion;
         }
 
         void showDialog(string title, string message)

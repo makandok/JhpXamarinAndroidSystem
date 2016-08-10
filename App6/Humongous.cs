@@ -17,7 +17,11 @@ namespace JhpDataSystem
             {
                 if (_instance == null)
                 {
-                    _instance = new AppInstance();
+                    _instance = new AppInstance()
+                    {
+                        AppVersion = "1.0"
+                    }
+                        ;
                 }
                 return _instance;
             }
@@ -133,6 +137,7 @@ namespace JhpDataSystem
             get;private set;
         }
         public DeviceConfiguration Configuration { get; internal set; }
+        public string AppVersion { get; internal set; }
 
         //public class MyAppConfiguration
         //{

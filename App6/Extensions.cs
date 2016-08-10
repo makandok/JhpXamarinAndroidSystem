@@ -23,7 +23,9 @@ namespace JhpDataSystem
         internal static T GetDataView<T>(this FieldItem field, Android.App.Activity context) where T : Android.Views.View
         {
             //we convert these into int Ids
-            var fieldName = field.dataType == Constants.DATEPICKER ? 
+            var fieldName = 
+                (field.dataType == Constants.DATEPICKER || field.dataType == Constants.TIMEPICKER)
+                ? 
                 Constants.DATE_TEXT_PREFIX + field.name :
                 field.name;
 

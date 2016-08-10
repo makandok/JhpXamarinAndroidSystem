@@ -5,7 +5,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Facility"
+    "Label": "Facility",
+    "fieldType": "Text"
   },
   {
     "name": "dateofvisit",
@@ -13,7 +14,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Date of Visit"
+    "Label": "Date of Visit",
+    "fieldType": "Date"
   },
   {
     "name": "cardserialnumber",
@@ -21,7 +23,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Card Serial Number"
+    "Label": "Card Serial Number",
+    "fieldType": "int"
   },
   {
     "name": "clientidnumber",
@@ -29,7 +32,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Client ID Number"
+    "Label": "Client ID Number",
+    "fieldType": "int"
   },
   {
     "name": "clientname",
@@ -37,7 +41,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Client Name"
+    "Label": "Client Name",
+    "fieldType": "Text"
   },
   {
     "name": "dob",
@@ -45,7 +50,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "DOB"
+    "Label": "DOB",
+    "fieldType": "date"
   },
   {
     "name": "ageinyears",
@@ -53,15 +59,17 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Age in Years"
+    "Label": "Age in Years",
+    "fieldType": "int"
   },
   {
     "name": "clientsphysicaladdress",
     "dataType": "EditText",
     "pageName": "prepexreg1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Clients Physical Address"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Clients Physical Address",
+    "fieldType": "Text"
   },
   {
     "name": "clienttel",
@@ -69,7 +77,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Client Tel"
+    "Label": "Client Tel",
+    "fieldType": "Cell"
   },
   {
     "name": "homecell",
@@ -77,7 +86,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Home Cell"
+    "Label": "Home Cell",
+    "fieldType": "Cell"
   },
   {
     "name": "mobilecell",
@@ -85,7 +95,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Mobile Cell"
+    "Label": "Mobile Cell",
+    "fieldType": "Cell"
   },
   {
     "name": "workcontactnumber",
@@ -93,7 +104,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Work Contact Number"
+    "Label": "Work Contact Number",
+    "fieldType": "Cell"
   },
   {
     "name": "alternateaddresstype_work",
@@ -101,7 +113,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Alternate Address Type [Work]"
+    "Label": "Alternate Address Type [Work]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "alternateaddresstype_school",
@@ -109,7 +122,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Alternate Address Type [School]"
+    "Label": "Alternate Address Type [School]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "alternateaddresstype_friendnextofkin",
@@ -117,7 +131,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Alternate Address Type [Friend/Next of Kin]"
+    "Label": "Alternate Address Type [Friend/Next of Kin]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "alternateaddress",
@@ -125,7 +140,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Alternate Address"
+    "Label": "Alternate Address",
+    "fieldType": "Text"
   },
   {
     "name": "alternatephone",
@@ -133,7 +149,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Alternate Tel"
+    "Label": "Alternate Tel",
+    "fieldType": "Text"
   },
   {
     "name": "friend_nextofkin",
@@ -141,7 +158,8 @@
     "pageName": "prepexreg1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Name of Friend/Next of Kin"
+    "Label": "Name of Friend/Next of Kin",
+    "fieldType": "Text"
   },
   {
     "name": "typeofsite_dedicatedsite",
@@ -149,7 +167,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Dedicated Site]"
+    "Label": "Type of Site / Service (check only one) [Dedicated Site]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "typeofsite_mobileoutreach",
@@ -157,7 +176,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Mobile Outreach]"
+    "Label": "Type of Site / Service (check only one) [Mobile Outreach]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "typeofsite_masssevent",
@@ -165,7 +185,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Masss Event]"
+    "Label": "Type of Site / Service (check only one) [Masss Event]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "typeofsite_routineservice",
@@ -173,7 +194,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Routine Service]"
+    "Label": "Type of Site / Service (check only one) [Routine Service]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "typeofsite_publichospitalclinic",
@@ -181,7 +203,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Public hospital/clinic]"
+    "Label": "Type of Site / Service (check only one) [Public hospital/clinic]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "typeofsite_missionhospital",
@@ -189,7 +212,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Mission hospital]"
+    "Label": "Type of Site / Service (check only one) [Mission hospital]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "typeofsite_privateclinichospital",
@@ -197,7 +221,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Private clinic/hospital]"
+    "Label": "Type of Site / Service (check only one) [Private clinic/hospital]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "typeofsite_other",
@@ -205,7 +230,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site / Service (check only one) [Other]"
+    "Label": "Type of Site / Service (check only one) [Other]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "typeofsite_specify",
@@ -213,7 +239,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Site_Specify"
+    "Label": "Type of Site_Specify",
+    "fieldType": "Text"
   },
   {
     "name": "howclientlearnt_friendfamily",
@@ -221,7 +248,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did client leant about service [Friend/Family]"
+    "Label": "How did client leant about service [Friend/Family]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "howclientlearnt_partnerspouse",
@@ -229,7 +257,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did client leant about service [Partner/Spouse]"
+    "Label": "How did client leant about service [Partner/Spouse]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "howclientlearnt_healthworker",
@@ -237,7 +266,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did client leant about service [Health worker]"
+    "Label": "How did client leant about service [Health worker]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "howclientlearnt_posternewspaperleaflet",
@@ -245,7 +275,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did client leant about service [Poster/newspaper/leaflet]"
+    "Label": "How did client leant about service [Poster/newspaper/leaflet]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "howclientlearnt_otherclient",
@@ -253,7 +284,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did client leant about service [Other Client]"
+    "Label": "How did client leant about service [Other Client]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "howclientlearnt_communitymobilizer",
@@ -261,7 +293,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did client leant about service [Community Mobilizer]"
+    "Label": "How did client leant about service [Community Mobilizer]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "howclientlearnt_tvradio",
@@ -269,7 +302,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did client leant about service [TV/radio]"
+    "Label": "How did client leant about service [TV/radio]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "primaryreasoncirc_partialhivprotecction",
@@ -277,7 +311,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reason for circumcision [Partial Hiv protecction]"
+    "Label": "Primary reason for circumcision [Partial Hiv protecction]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "primaryreasoncirc_sexualpleasure",
@@ -285,7 +320,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reason for circumcision [Sexual pleasure]"
+    "Label": "Primary reason for circumcision [Sexual pleasure]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "primaryreasoncirc_stiprotection",
@@ -293,7 +329,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reason for circumcision [STI protection]"
+    "Label": "Primary reason for circumcision [STI protection]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "primaryreasoncirc_medical",
@@ -301,7 +338,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reason for circumcision [Medical]"
+    "Label": "Primary reason for circumcision [Medical]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "primaryreasoncirc_appearance",
@@ -309,7 +347,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reason for circumcision [Appearance]"
+    "Label": "Primary reason for circumcision [Appearance]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "primaryreasoncirc_hygiene",
@@ -317,7 +356,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reason for circumcision [Hygiene]"
+    "Label": "Primary reason for circumcision [Hygiene]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "primaryreasoncirc_culturalsocialreligious",
@@ -325,7 +365,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reason for circumcision [Cultural/social/religious]"
+    "Label": "Primary reason for circumcision [Cultural/social/religious]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "primaryreasoncirc_other",
@@ -333,7 +374,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reason for circumcision [Other]"
+    "Label": "Primary reason for circumcision [Other]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "primaryreasoncirc_specify",
@@ -341,7 +383,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other (specify)"
+    "Label": "Other (specify)",
+    "fieldType": "Text"
   },
   {
     "name": "hivstatus_positive",
@@ -349,7 +392,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "HIV Status [Positive]"
+    "Label": "HIV Status [Positive]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hivstatus_negative",
@@ -357,7 +401,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "HIV Status [Negative]"
+    "Label": "HIV Status [Negative]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hivstatus_indeterminate",
@@ -365,7 +410,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "HIV Status [Indeterminate]"
+    "Label": "HIV Status [Indeterminate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hivstatus_unknownrefusedselfreported",
@@ -373,7 +419,8 @@
     "pageName": "prepexreg2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "HIV Status [Unknown/refused/self-reported]"
+    "Label": "HIV Status [Unknown/refused/self-reported]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "allergictomeds_yes",
@@ -381,7 +428,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Are you allergic to any medicine, rubber or latex [Yes]"
+    "Label": "Are you allergic to any medicine, rubber or latex [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "allergictomeds_no",
@@ -389,7 +437,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Are you allergic to any medicine, rubber or latex [No]"
+    "Label": "Are you allergic to any medicine, rubber or latex [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "allergictomeds_specify",
@@ -397,7 +446,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Allergic to meds_Specify"
+    "Label": "Allergic to meds_Specify",
+    "fieldType": "Text"
   },
   {
     "name": "everdiagnosedwith_hemophiliableedingdisorder",
@@ -405,7 +455,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hav you ever been diagnosed with any of the following [Hemophilia/bleeding disorder]"
+    "Label": "Hav you ever been diagnosed with any of the following [Hemophilia/bleeding disorder]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "everdiagnosedwith_diabetes",
@@ -413,7 +464,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hav you ever been diagnosed with any of the following [Diabetes]"
+    "Label": "Hav you ever been diagnosed with any of the following [Diabetes]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "everdiagnosedwith_hypertension",
@@ -421,7 +473,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hav you ever been diagnosed with any of the following [Hypertension]"
+    "Label": "Hav you ever been diagnosed with any of the following [Hypertension]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "everdiagnosedwith_cancer",
@@ -429,7 +482,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hav you ever been diagnosed with any of the following [Cancer]"
+    "Label": "Hav you ever been diagnosed with any of the following [Cancer]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "everdiagnosedwith_peripheralvasculardisease",
@@ -437,7 +491,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hav you ever been diagnosed with any of the following [Peripheral vascular disease]"
+    "Label": "Hav you ever been diagnosed with any of the following [Peripheral vascular disease]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "currentlytakingmeds_yes",
@@ -445,7 +500,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Currently taking meds including STI tx [Yes]"
+    "Label": "Currently taking meds including STI tx [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "currentlytakingmeds_no",
@@ -453,7 +509,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Currently taking meds including STI tx [No]"
+    "Label": "Currently taking meds including STI tx [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "currentlytakingmeds_specify",
@@ -461,7 +518,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Currently taking meds_Specify"
+    "Label": "Currently taking meds_Specify",
+    "fieldType": "Text"
   },
   {
     "name": "hadoperation_yes",
@@ -469,7 +527,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Had Operation [Yes]"
+    "Label": "Had Operation [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hadoperation_no",
@@ -477,7 +536,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Had Operation [No]"
+    "Label": "Had Operation [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hadoperation_specify",
@@ -485,7 +545,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Had Operation_Specify"
+    "Label": "Had Operation_Specify",
+    "fieldType": "Text"
   },
   {
     "name": "complaints_urethraldischarge",
@@ -493,7 +554,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have any of the following complaints [Urethral discharge]"
+    "Label": "Do you have any of the following complaints [Urethral discharge]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "complaints_genitalsore",
@@ -501,7 +563,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have any of the following complaints [Genital sore]"
+    "Label": "Do you have any of the following complaints [Genital sore]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "complaints_painfulweakerection",
@@ -509,7 +572,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have any of the following complaints [Painful/weak erection]"
+    "Label": "Do you have any of the following complaints [Painful/weak erection]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "complaints_swellingofthescrotum",
@@ -517,7 +581,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have any of the following complaints [Swelling of the scrotum]"
+    "Label": "Do you have any of the following complaints [Swelling of the scrotum]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "complaints_painonurination",
@@ -525,7 +590,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have any of the following complaints [Pain on urination]"
+    "Label": "Do you have any of the following complaints [Pain on urination]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "complaints_difficulltyinretractingforeskin",
@@ -533,7 +599,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have any of the following complaints [Difficullty in retracting foreskin]"
+    "Label": "Do you have any of the following complaints [Difficullty in retracting foreskin]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "complaints_other",
@@ -541,7 +608,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do you have any of the following complaints [Other]"
+    "Label": "Do you have any of the following complaints [Other]",
+    "fieldType": "MultiSelect"
   },
   {
     "name": "complaints_specify",
@@ -549,7 +617,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other (specify)"
+    "Label": "Other (specify)",
+    "fieldType": "Text"
   },
   {
     "name": "generalcondition_healthy",
@@ -557,7 +626,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "General condition [Healthy]"
+    "Label": "General condition [Healthy]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "generalcondition_illlooking",
@@ -565,7 +635,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "General condition [Ill Looking]"
+    "Label": "General condition [Ill Looking]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pallor_yes",
@@ -573,7 +644,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pallor [Yes]"
+    "Label": "Pallor [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pallor_no",
@@ -581,7 +653,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pallor [No]"
+    "Label": "Pallor [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "lymphadenopathy_yes",
@@ -589,7 +662,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Lymphadenopathy [Yes]"
+    "Label": "Lymphadenopathy [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "lymphadenopathy_no",
@@ -597,7 +671,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Lymphadenopathy [No]"
+    "Label": "Lymphadenopathy [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "wasting_yes",
@@ -605,7 +680,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Wasting [Yes]"
+    "Label": "Wasting [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "wasting_no",
@@ -613,7 +689,8 @@
     "pageName": "prepexreg3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Wasting [No]"
+    "Label": "Wasting [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "phimosis_yes",
@@ -621,7 +698,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Phimosis [Yes]"
+    "Label": "Phimosis [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "phimosis_no",
@@ -629,7 +707,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Phimosis [No]"
+    "Label": "Phimosis [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "paraphimosis_yes",
@@ -637,7 +716,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Paraphimosis [Yes]"
+    "Label": "Paraphimosis [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "paraphimosis_no",
@@ -645,7 +725,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Paraphimosis [No]"
+    "Label": "Paraphimosis [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "narrowprepuce_yes",
@@ -653,7 +734,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Narrow prepuce [Yes]"
+    "Label": "Narrow prepuce [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "narrowprepuce_no",
@@ -661,7 +743,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Narrow prepuce [No]"
+    "Label": "Narrow prepuce [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "tightfrenulum_yes",
@@ -669,7 +752,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Tight frenulum [Yes]"
+    "Label": "Tight frenulum [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "tightfrenulum_no",
@@ -677,7 +761,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Tight frenulum [No]"
+    "Label": "Tight frenulum [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "epispadiasis_yes",
@@ -685,7 +770,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Epispadiasis [Yes]"
+    "Label": "Epispadiasis [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "epispadiasis_no",
@@ -693,7 +779,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Epispadiasis [No]"
+    "Label": "Epispadiasis [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hypospadiasis_yes",
@@ -701,7 +788,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hypospadiasis [Yes]"
+    "Label": "Hypospadiasis [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hypospadiasis_no",
@@ -709,7 +797,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hypospadiasis [No]"
+    "Label": "Hypospadiasis [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "otherurethralanomaly_yes",
@@ -717,7 +806,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other urethral anomaly [Yes]"
+    "Label": "Other urethral anomaly [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "otherurethralanomaly_no",
@@ -725,7 +815,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other urethral anomaly [No]"
+    "Label": "Other urethral anomaly [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hydrocele_yes",
@@ -733,7 +824,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hydrocele [Yes]"
+    "Label": "Hydrocele [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hydrocele_no",
@@ -741,7 +833,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hydrocele [No]"
+    "Label": "Hydrocele [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "scrotalhernia_yes",
@@ -749,7 +842,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Scrotal hernia [Yes]"
+    "Label": "Scrotal hernia [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "scrotalhernia_no",
@@ -757,7 +851,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Scrotal hernia [No]"
+    "Label": "Scrotal hernia [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "genitalulcers_yes",
@@ -765,7 +860,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Genital Ulcers [Yes]"
+    "Label": "Genital Ulcers [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "genitalulcers_no",
@@ -773,7 +869,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Genital Ulcers [No]"
+    "Label": "Genital Ulcers [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "dermatitisofthepenis_yes",
@@ -781,7 +878,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Dermatitis  of the penis [Yes]"
+    "Label": "Dermatitis  of the penis [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "dermatitisofthepenis_no",
@@ -789,7 +887,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Dermatitis  of the penis [No]"
+    "Label": "Dermatitis  of the penis [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "genitalwarts_yes",
@@ -797,7 +896,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Genital warts [Yes]"
+    "Label": "Genital warts [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "genitalwarts_no",
@@ -805,7 +905,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Genital warts [No]"
+    "Label": "Genital warts [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "urethraldischarge_yes",
@@ -813,7 +914,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Urethral discharge [Yes]"
+    "Label": "Urethral discharge [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "urethraldischarge_no",
@@ -821,7 +923,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Urethral discharge [No]"
+    "Label": "Urethral discharge [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "balantis_yes",
@@ -829,7 +932,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Balantis [Yes]"
+    "Label": "Balantis [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "balantis_no",
@@ -837,7 +941,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Balantis [No]"
+    "Label": "Balantis [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "posthitis_yes",
@@ -845,7 +950,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Posthitis [Yes]"
+    "Label": "Posthitis [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "posthitis_no",
@@ -853,7 +959,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Posthitis [No]"
+    "Label": "Posthitis [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "foreskinattachedtotheglans_yes",
@@ -861,7 +968,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Foreskin attached to the glans [Yes]"
+    "Label": "Foreskin attached to the glans [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "foreskinattachedtotheglans_no",
@@ -869,7 +977,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Foreskin attached to the glans [No]"
+    "Label": "Foreskin attached to the glans [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "others_yes",
@@ -877,7 +986,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Others [Yes]"
+    "Label": "Others [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "others_no",
@@ -885,7 +995,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Others [No]"
+    "Label": "Others [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "circumcisionmethodchosen_surgicalcircumcision",
@@ -893,7 +1004,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Circumcision method chosen [Surgical Circumcision]"
+    "Label": "Circumcision method chosen [Surgical Circumcision]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "circumcisionmethodchosen_prepexcircumcision",
@@ -901,7 +1013,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Circumcision method chosen [Prepex Circumcision]"
+    "Label": "Circumcision method chosen [Prepex Circumcision]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "eligibleforprepex_yes",
@@ -909,7 +1022,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Prepex, is client eligible [Yes]"
+    "Label": "If Prepex, is client eligible [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "eligibleforprepex_no",
@@ -917,7 +1031,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Prepex, is client eligible [No]"
+    "Label": "If Prepex, is client eligible [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prepex_proc_hdr",
@@ -925,7 +1040,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Placement Procedure"
+    "Label": "Prepex Placement Procedure",
+    "fieldType": "Text"
   },
   {
     "name": "prepexdevicesize_a",
@@ -933,7 +1049,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [A]"
+    "Label": "Prepex Device Size [A]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prepexdevicesize_b",
@@ -941,7 +1058,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [B]"
+    "Label": "Prepex Device Size [B]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prepexdevicesize_c",
@@ -949,7 +1067,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [C]"
+    "Label": "Prepex Device Size [C]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prepexdevicesize_d",
@@ -957,7 +1076,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [D]"
+    "Label": "Prepex Device Size [D]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prepexdevicesize_e",
@@ -965,7 +1085,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Prepex Device Size [E]"
+    "Label": "Prepex Device Size [E]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicebatchid",
@@ -973,23 +1094,26 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device Batch Id"
+    "Label": "Device Batch Id",
+    "fieldType": "Text"
   },
   {
     "name": "timelineofcircmarked",
-    "dataType": "DatePicker",
+    "dataType": "TimePicker",
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Time Line of Circ Marked"
+    "Label": "Time Line of Circ Marked",
+    "fieldType": "Time"
   },
   {
     "name": "timeplacementringremoved",
-    "dataType": "DatePicker",
+    "dataType": "TimePicker",
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Time Placement Ring Removed"
+    "Label": "Time Placement Ring Removed",
+    "fieldType": "Time"
   },
   {
     "name": "comments",
@@ -997,7 +1121,8 @@
     "pageName": "prepexreg4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Comments"
+    "Label": "Comments",
+    "fieldType": "Text"
   },
   {
     "name": "aesduringplacement_noadverseeventsdiagnosed",
@@ -1005,7 +1130,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "AES during placement [No Adverse events diagnosed]"
+    "Label": "AES during placement [No Adverse events diagnosed]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "aesduringplacement_adverseeventsdiagnosed",
@@ -1013,7 +1139,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "AES during placement [Adverse events diagnosed]"
+    "Label": "AES during placement [Adverse events diagnosed]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_mild",
@@ -1021,7 +1148,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Mild]"
+    "Label": "Pain [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_moderate",
@@ -1029,7 +1157,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Moderate]"
+    "Label": "Pain [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_severe",
@@ -1037,7 +1166,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Severe]"
+    "Label": "Pain [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_severitynotclassified",
@@ -1045,7 +1175,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Severity not classified]"
+    "Label": "Pain [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_mild",
@@ -1053,7 +1184,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Mild]"
+    "Label": "Bleeding [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_moderate",
@@ -1061,7 +1193,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Moderate]"
+    "Label": "Bleeding [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_severe",
@@ -1069,7 +1202,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Severe]"
+    "Label": "Bleeding [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_severitynotclassified",
@@ -1077,7 +1211,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Severity not classified]"
+    "Label": "Bleeding [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "anesthesia_analgesicreaction_mild",
@@ -1085,7 +1220,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Anesthesia/analgesic reaction [Mild]"
+    "Label": "Anesthesia/analgesic reaction [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "anesthesia_analgesicreaction_moderate",
@@ -1093,7 +1229,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Anesthesia/analgesic reaction [Moderate]"
+    "Label": "Anesthesia/analgesic reaction [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "anesthesia_analgesicreaction_severe",
@@ -1101,7 +1238,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Anesthesia/analgesic reaction [Severe]"
+    "Label": "Anesthesia/analgesic reaction [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "anesthesia_analgesicreaction_severitynotclassified",
@@ -1109,7 +1247,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Anesthesia/analgesic reaction [Severity not classified]"
+    "Label": "Anesthesia/analgesic reaction [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_mild",
@@ -1117,7 +1256,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Mild]"
+    "Label": "Damage to penis [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_moderate",
@@ -1125,7 +1265,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Moderate]"
+    "Label": "Damage to penis [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_severe",
@@ -1133,7 +1274,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Severe]"
+    "Label": "Damage to penis [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_severitynotclassified",
@@ -1141,7 +1283,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Severity not classified]"
+    "Label": "Damage to penis [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "difficultywithplacement_mild",
@@ -1149,7 +1292,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Difficulty with placement [Mild]"
+    "Label": "Difficulty with placement [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "difficultywithplacement_moderate",
@@ -1157,7 +1301,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Difficulty with placement [Moderate]"
+    "Label": "Difficulty with placement [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "difficultywithplacement_severe",
@@ -1165,7 +1310,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Difficulty with placement [Severe]"
+    "Label": "Difficulty with placement [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "difficultywithplacement_severitynotclassified",
@@ -1173,7 +1319,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Difficulty with placement [Severity not classified]"
+    "Label": "Difficulty with placement [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_mild",
@@ -1181,7 +1328,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Mild]"
+    "Label": "Device malfunction [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_moderate",
@@ -1189,7 +1337,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Moderate]"
+    "Label": "Device malfunction [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_severe",
@@ -1197,7 +1346,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Severe]"
+    "Label": "Device malfunction [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_severitynotclassified",
@@ -1205,7 +1355,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Severity not classified]"
+    "Label": "Device malfunction [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "nottomovedevice_yes",
@@ -1213,7 +1364,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to Move Device [Yes]"
+    "Label": "Not to Move Device [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "nottomovedevice_no",
@@ -1221,7 +1373,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to Move Device [No]"
+    "Label": "Not to Move Device [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "removalond7_yes",
@@ -1229,7 +1382,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "To return for removal on Day7 [Yes]"
+    "Label": "To return for removal on Day7 [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "removalond7_no",
@@ -1237,7 +1391,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "To return for removal on Day7 [No]"
+    "Label": "To return for removal on Day7 [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "removalbefored7_yes",
@@ -1245,7 +1400,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "To return if wants removal before D7 [Yes]"
+    "Label": "To return if wants removal before D7 [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "removalbefored7_no",
@@ -1253,7 +1409,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "To return if wants removal before D7 [No]"
+    "Label": "To return if wants removal before D7 [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "onlydesignatedprovider_yes",
@@ -1261,7 +1418,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Only designated provider [Yes]"
+    "Label": "Only designated provider [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "onlydesignatedprovider_no",
@@ -1269,7 +1427,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Only designated provider [No]"
+    "Label": "Only designated provider [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "notpullforeskin_yes",
@@ -1277,7 +1436,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to pull foreskin [Yes]"
+    "Label": "Not to pull foreskin [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "notpullforeskin_no",
@@ -1285,7 +1445,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to pull foreskin [No]"
+    "Label": "Not to pull foreskin [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "nosexualintercourse_yes",
@@ -1293,7 +1454,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "No sexual intercourse or masturbation [Yes]"
+    "Label": "No sexual intercourse or masturbation [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "nosexualintercourse_no",
@@ -1301,7 +1463,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "No sexual intercourse or masturbation [No]"
+    "Label": "No sexual intercourse or masturbation [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "writteninstructions_yes",
@@ -1309,7 +1472,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Client provided post-procedural written instructions [Yes]"
+    "Label": "Client provided post-procedural written instructions [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "writteninstructions_no",
@@ -1317,7 +1481,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Client provided post-procedural written instructions [No]"
+    "Label": "Client provided post-procedural written instructions [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "clientclinicaldisposition",
@@ -1325,7 +1490,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Clinical disposition of client"
+    "Label": "Clinical disposition of client",
+    "fieldType": "Text"
   },
   {
     "name": "oralanalgesiagiven_yes",
@@ -1333,7 +1499,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Oral analgesia given [Yes]"
+    "Label": "Oral analgesia given [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "oralanalgesiagiven_no",
@@ -1341,7 +1508,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Oral analgesia given [No]"
+    "Label": "Oral analgesia given [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "nameoralanalgesiadrug",
@@ -1349,7 +1517,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Oral Analgesia Drug"
+    "Label": "Oral Analgesia Drug",
+    "fieldType": "Text"
   },
   {
     "name": "scheduledremovaldate",
@@ -1357,7 +1526,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Scheduled removal date"
+    "Label": "Scheduled removal date",
+    "fieldType": "Date"
   },
   {
     "name": "dischargedby",
@@ -1365,7 +1535,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Discharged by (Name)"
+    "Label": "Discharged by (Name)",
+    "fieldType": "Text"
   },
   {
     "name": "signed_yes",
@@ -1373,7 +1544,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Signed [Yes]"
+    "Label": "Signed [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "signed_no",
@@ -1381,7 +1553,8 @@
     "pageName": "prepexreg5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Signed [No]"
+    "Label": "Signed [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "facilityname",
@@ -1389,31 +1562,35 @@
     "pageName": "prepexdevremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Facility"
+    "Label": "Facility",
+    "fieldType": "Text"
   },
   {
     "name": "dateofvisit",
     "dataType": "DatePicker",
     "pageName": "prepexdevremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Date of Visit"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Date of Visit",
+    "fieldType": "Date"
   },
   {
     "name": "cardserialnumber",
     "dataType": "EditText",
     "pageName": "prepexdevremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Card Serial Number"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Card Serial Number",
+    "fieldType": "int"
   },
   {
     "name": "clientidnumber",
     "dataType": "EditText",
     "pageName": "prepexdevremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Client ID Number"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client ID Number",
+    "fieldType": "int"
   },
   {
     "name": "dateofplacement",
@@ -1421,31 +1598,35 @@
     "pageName": "prepexdevremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Date of Placement"
+    "Label": "Date of Placement",
+    "fieldType": "Date"
   },
   {
     "name": "clientname",
     "dataType": "EditText",
     "pageName": "prepexdevremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Client Name"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client Name",
+    "fieldType": "Text"
   },
   {
     "name": "clientsphysicaladdress",
     "dataType": "EditText",
     "pageName": "prepexdevremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Clients Physical Address"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Clients Physical Address",
+    "fieldType": "Text"
   },
   {
     "name": "clienttel",
     "dataType": "EditText",
     "pageName": "prepexdevremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Client Tel"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client Tel",
+    "fieldType": "Cell"
   },
   {
     "name": "typeofinteraction_removalproceddure",
@@ -1453,7 +1634,8 @@
     "pageName": "prepexdevremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Whether Removal Procedure or Follow up [RemovalProceddure]"
+    "Label": "Whether Removal Procedure or Follow up [RemovalProceddure]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "typeofinteraction_followuptelephone",
@@ -1461,7 +1643,8 @@
     "pageName": "prepexdevremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Whether Removal Procedure or Follow up [Followup telephone]"
+    "Label": "Whether Removal Procedure or Follow up [Followup telephone]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "timeforcepsapplied",
@@ -1469,7 +1652,8 @@
     "pageName": "prepexdevremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Forceps applied (time)"
+    "Label": "Forceps applied (time)",
+    "fieldType": "date"
   },
   {
     "name": "timeinnerringremoved",
@@ -1477,7 +1661,8 @@
     "pageName": "prepexdevremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Inner ring removed (time)"
+    "Label": "Inner ring removed (time)",
+    "fieldType": "date"
   },
   {
     "name": "comments",
@@ -1485,7 +1670,8 @@
     "pageName": "prepexdevremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Comments"
+    "Label": "Comments",
+    "fieldType": "Text"
   },
   {
     "name": "aesduringdeviceremoval_noadverseeventsdiagnosed",
@@ -1493,7 +1679,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "AES during Device Removal [No Adverse events diagnosed]"
+    "Label": "AES during Device Removal [No Adverse events diagnosed]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "aesduringdeviceremoval_adverseeventsdiagnosed",
@@ -1501,7 +1688,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "AES during Device Removal [Adverse events diagnosed]"
+    "Label": "AES during Device Removal [Adverse events diagnosed]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_mild",
@@ -1509,7 +1697,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Mild]"
+    "Label": "Pain [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_moderate",
@@ -1517,7 +1706,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Moderate]"
+    "Label": "Pain [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_severe",
@@ -1525,7 +1715,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Severe]"
+    "Label": "Pain [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_severitynotclassified",
@@ -1533,7 +1724,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Severity not classified]"
+    "Label": "Pain [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_mild",
@@ -1541,7 +1733,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Mild]"
+    "Label": "Bleeding [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_moderate",
@@ -1549,7 +1742,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Moderate]"
+    "Label": "Bleeding [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_severe",
@@ -1557,7 +1751,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Severe]"
+    "Label": "Bleeding [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_severitynotclassified",
@@ -1565,7 +1760,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Severity not classified]"
+    "Label": "Bleeding [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_mild",
@@ -1573,7 +1769,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Mild]"
+    "Label": "Damage to penis [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_moderate",
@@ -1581,7 +1778,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Moderate]"
+    "Label": "Damage to penis [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_severe",
@@ -1589,7 +1787,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Severe]"
+    "Label": "Damage to penis [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_severitynotclassified",
@@ -1597,7 +1796,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Severity not classified]"
+    "Label": "Damage to penis [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_mild",
@@ -1605,7 +1805,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Mild]"
+    "Label": "Infection [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_moderate",
@@ -1613,7 +1814,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Moderate]"
+    "Label": "Infection [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_severe",
@@ -1621,7 +1823,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Severe]"
+    "Label": "Infection [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_severitynotclassified",
@@ -1629,7 +1832,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Severity not classified]"
+    "Label": "Infection [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_mild",
@@ -1637,7 +1841,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Mild]"
+    "Label": "Hematoma [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_moderate",
@@ -1645,7 +1850,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Moderate]"
+    "Label": "Hematoma [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_severe",
@@ -1653,7 +1859,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Severe]"
+    "Label": "Hematoma [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_severitynotclassified",
@@ -1661,7 +1868,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Severity not classified]"
+    "Label": "Hematoma [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_mild",
@@ -1669,7 +1877,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema / Swelling [Mild]"
+    "Label": "Edema / Swelling [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_moderate",
@@ -1677,7 +1886,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema / Swelling [Moderate]"
+    "Label": "Edema / Swelling [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_severe",
@@ -1685,7 +1895,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema / Swelling [Severe]"
+    "Label": "Edema / Swelling [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_severitynotclassified",
@@ -1693,7 +1904,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema / Swelling [Severity not classified]"
+    "Label": "Edema / Swelling [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_mild",
@@ -1701,7 +1913,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Mild]"
+    "Label": "Problems voiding [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_moderate",
@@ -1709,7 +1922,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Moderate]"
+    "Label": "Problems voiding [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_severe",
@@ -1717,7 +1931,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Severe]"
+    "Label": "Problems voiding [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_severitynotclassified",
@@ -1725,7 +1940,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Severity not classified]"
+    "Label": "Problems voiding [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_mild",
@@ -1733,7 +1949,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Mild]"
+    "Label": "Psychological [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_moderate",
@@ -1741,7 +1958,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Moderate]"
+    "Label": "Psychological [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_severe",
@@ -1749,7 +1967,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Severe]"
+    "Label": "Psychological [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_severitynotclassified",
@@ -1757,7 +1976,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Severity not classified]"
+    "Label": "Psychological [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "requestingearlyremoval_mild",
@@ -1765,7 +1985,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Requesting early removal [Mild]"
+    "Label": "Requesting early removal [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "requestingearlyremoval_moderate",
@@ -1773,7 +1994,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Requesting early removal [Moderate]"
+    "Label": "Requesting early removal [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "requestingearlyremoval_severe",
@@ -1781,7 +2003,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Requesting early removal [Severe]"
+    "Label": "Requesting early removal [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "requestingearlyremoval_severitynotclassified",
@@ -1789,7 +2012,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Requesting early removal [Severity not classified]"
+    "Label": "Requesting early removal [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_mild",
@@ -1797,7 +2021,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Mild]"
+    "Label": "Device malfunction [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_moderate",
@@ -1805,7 +2030,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Moderate]"
+    "Label": "Device malfunction [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_severe",
@@ -1813,7 +2039,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Severe]"
+    "Label": "Device malfunction [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_severitynotclassified",
@@ -1821,7 +2048,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Severity not classified]"
+    "Label": "Device malfunction [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicedisplacement_mild",
@@ -1829,7 +2057,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device displacement [Mild]"
+    "Label": "Device displacement [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicedisplacement_moderate",
@@ -1837,7 +2066,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device displacement [Moderate]"
+    "Label": "Device displacement [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicedisplacement_severe",
@@ -1845,7 +2075,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device displacement [Severe]"
+    "Label": "Device displacement [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicedisplacement_severitynotclassified",
@@ -1853,7 +2084,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device displacement [Severity not classified]"
+    "Label": "Device displacement [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prematuredifferentialsloughing_mild",
@@ -1861,7 +2093,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Premature differential sloughing [Mild]"
+    "Label": "Premature differential sloughing [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prematuredifferentialsloughing_moderate",
@@ -1869,7 +2102,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Premature differential sloughing [Moderate]"
+    "Label": "Premature differential sloughing [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prematuredifferentialsloughing_severe",
@@ -1877,7 +2111,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Premature differential sloughing [Severe]"
+    "Label": "Premature differential sloughing [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prematuredifferentialsloughing_severitynotclassified",
@@ -1885,7 +2120,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Premature differential sloughing [Severity not classified]"
+    "Label": "Premature differential sloughing [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "dressingintact_yes",
@@ -1893,7 +2129,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Dressing Intact [Yes]"
+    "Label": "Dressing Intact [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "dressingintact_no",
@@ -1901,7 +2138,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Dressing Intact [No]"
+    "Label": "Dressing Intact [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "clientprovidedppinstr_nospecify_yes",
@@ -1909,7 +2147,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Client provided post procedure written instructions [Yes]"
+    "Label": "Client provided post procedure written instructions [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "clientprovidedppinstr_nospecify_no",
@@ -1917,7 +2156,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Client provided post procedure written instructions [No]"
+    "Label": "Client provided post procedure written instructions [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "clientprovidedppinstr",
@@ -1925,7 +2165,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "if no, Explain"
+    "Label": "if no, Explain",
+    "fieldType": "Text"
   },
   {
     "name": "clinicaldisposition",
@@ -1933,7 +2174,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Clinical Disposition of Client"
+    "Label": "Clinical Disposition of Client",
+    "fieldType": "Text"
   },
   {
     "name": "oralanalgesiagiven_yes",
@@ -1941,7 +2183,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Oral analgesia given [Yes]"
+    "Label": "Oral analgesia given [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "oralanalgesiagiven_no",
@@ -1949,7 +2192,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Oral analgesia given [No]"
+    "Label": "Oral analgesia given [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "nameoralanalgesiadrug",
@@ -1957,7 +2201,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Oral Analgesia Drug"
+    "Label": "Oral Analgesia Drug",
+    "fieldType": "Text"
   },
   {
     "name": "dischargedby",
@@ -1965,7 +2210,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Discharged by (Name)"
+    "Label": "Discharged by (Name)",
+    "fieldType": "Text"
   },
   {
     "name": "signed_yes",
@@ -1973,7 +2219,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Signed [Yes]"
+    "Label": "Signed [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "signed_no",
@@ -1981,7 +2228,8 @@
     "pageName": "prepexdevremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Signed [No]"
+    "Label": "Signed [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "facilityname",
@@ -1989,31 +2237,35 @@
     "pageName": "prepexpostremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Facility"
+    "Label": "Facility",
+    "fieldType": "Text"
   },
   {
     "name": "dateofvisit",
     "dataType": "DatePicker",
     "pageName": "prepexpostremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Date of Visit"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Date of Visit",
+    "fieldType": "Date"
   },
   {
     "name": "cardserialnumber",
     "dataType": "EditText",
     "pageName": "prepexpostremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Card Serial Number"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Card Serial Number",
+    "fieldType": "int"
   },
   {
     "name": "clientidnumber",
     "dataType": "EditText",
     "pageName": "prepexpostremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Client ID Number"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client ID Number",
+    "fieldType": "int"
   },
   {
     "name": "dateofplacement",
@@ -2021,31 +2273,35 @@
     "pageName": "prepexpostremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Date of Placement"
+    "Label": "Date of Placement",
+    "fieldType": "Date"
   },
   {
     "name": "clientname",
     "dataType": "EditText",
     "pageName": "prepexpostremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Client Name"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client Name",
+    "fieldType": "Text"
   },
   {
     "name": "clientsphysicaladdress",
     "dataType": "EditText",
     "pageName": "prepexpostremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Clients Physical Address"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Clients Physical Address",
+    "fieldType": "Text"
   },
   {
     "name": "clienttel",
     "dataType": "EditText",
     "pageName": "prepexpostremoval1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Client Tel"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client Tel",
+    "fieldType": "Cell"
   },
   {
     "name": "clinicalcourse",
@@ -2053,7 +2309,8 @@
     "pageName": "prepexpostremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Clinical course experienced / reported by client"
+    "Label": "Clinical course experienced / reported by client",
+    "fieldType": "Text"
   },
   {
     "name": "appearanceofwound_fullyhealed",
@@ -2061,7 +2318,8 @@
     "pageName": "prepexpostremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Appearance of Wound [Fully Healed]"
+    "Label": "Appearance of Wound [Fully Healed]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "appearanceofwound_notfullyhealednocomplications",
@@ -2069,7 +2327,8 @@
     "pageName": "prepexpostremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Appearance of Wound [Not fully healed No Complications]"
+    "Label": "Appearance of Wound [Not fully healed No Complications]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "appearanceofwound_notfullyhealedcomplicationsnoted",
@@ -2077,7 +2336,8 @@
     "pageName": "prepexpostremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Appearance of Wound [Not fully healed Complications Noted]"
+    "Label": "Appearance of Wound [Not fully healed Complications Noted]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "careprovided",
@@ -2085,7 +2345,8 @@
     "pageName": "prepexpostremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Care Provided (if any)"
+    "Label": "Care Provided (if any)",
+    "fieldType": "Text"
   },
   {
     "name": "followupplan",
@@ -2093,7 +2354,8 @@
     "pageName": "prepexpostremoval1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Follow-up plan (if additional visits needed)"
+    "Label": "Follow-up plan (if additional visits needed)",
+    "fieldType": "Text"
   },
   {
     "name": "pain_mild",
@@ -2101,7 +2363,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Mild]"
+    "Label": "Pain [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_moderate",
@@ -2109,7 +2372,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Moderate]"
+    "Label": "Pain [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_severe",
@@ -2117,7 +2381,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Severe]"
+    "Label": "Pain [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_severitynotclassified",
@@ -2125,7 +2390,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Severity not classified]"
+    "Label": "Pain [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_mild",
@@ -2133,7 +2399,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Mild]"
+    "Label": "Bleeding [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_moderate",
@@ -2141,7 +2408,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Moderate]"
+    "Label": "Bleeding [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_severe",
@@ -2149,7 +2417,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Severe]"
+    "Label": "Bleeding [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_severitynotclassified",
@@ -2157,7 +2426,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Severity not classified]"
+    "Label": "Bleeding [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_mild",
@@ -2165,7 +2435,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Mild]"
+    "Label": "Damage to penis [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_moderate",
@@ -2173,7 +2444,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Moderate]"
+    "Label": "Damage to penis [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_severe",
@@ -2181,7 +2453,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Severe]"
+    "Label": "Damage to penis [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_severitynotclassified",
@@ -2189,7 +2462,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Severity not classified]"
+    "Label": "Damage to penis [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_mild",
@@ -2197,7 +2471,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Mild]"
+    "Label": "Infection [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_moderate",
@@ -2205,7 +2480,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Moderate]"
+    "Label": "Infection [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_severe",
@@ -2213,7 +2489,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Severe]"
+    "Label": "Infection [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_severitynotclassified",
@@ -2221,7 +2498,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Severity not classified]"
+    "Label": "Infection [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_mild",
@@ -2229,7 +2507,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Mild]"
+    "Label": "Hematoma [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_moderate",
@@ -2237,7 +2516,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Moderate]"
+    "Label": "Hematoma [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_severe",
@@ -2245,7 +2525,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Severe]"
+    "Label": "Hematoma [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_severitynotclassified",
@@ -2253,7 +2534,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Severity not classified]"
+    "Label": "Hematoma [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_mild",
@@ -2261,7 +2543,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema_Swelling [Mild]"
+    "Label": "Edema_Swelling [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_moderate",
@@ -2269,7 +2552,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema_Swelling [Moderate]"
+    "Label": "Edema_Swelling [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_severe",
@@ -2277,7 +2561,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema_Swelling [Severe]"
+    "Label": "Edema_Swelling [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_severitynotclassified",
@@ -2285,7 +2570,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema_Swelling [Severity not classified]"
+    "Label": "Edema_Swelling [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_mild",
@@ -2293,7 +2579,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Mild]"
+    "Label": "Problems voiding [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_moderate",
@@ -2301,7 +2588,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Moderate]"
+    "Label": "Problems voiding [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_severe",
@@ -2309,7 +2597,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Severe]"
+    "Label": "Problems voiding [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_severitynotclassified",
@@ -2317,7 +2606,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Severity not classified]"
+    "Label": "Problems voiding [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "wounddehiscence_mild",
@@ -2325,7 +2615,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Wound dehiscence [Mild]"
+    "Label": "Wound dehiscence [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "wounddehiscence_moderate",
@@ -2333,7 +2624,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Wound dehiscence [Moderate]"
+    "Label": "Wound dehiscence [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "wounddehiscence_severe",
@@ -2341,7 +2633,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Wound dehiscence [Severe]"
+    "Label": "Wound dehiscence [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "wounddehiscence_severitynotclassified",
@@ -2349,7 +2642,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Wound dehiscence [Severity not classified]"
+    "Label": "Wound dehiscence [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "excessskinremoved_mild",
@@ -2357,7 +2651,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Excess skin removed [Mild]"
+    "Label": "Excess skin removed [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "excessskinremoved_moderate",
@@ -2365,7 +2660,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Excess skin removed [Moderate]"
+    "Label": "Excess skin removed [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "excessskinremoved_severe",
@@ -2373,7 +2669,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Excess skin removed [Severe]"
+    "Label": "Excess skin removed [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "excessskinremoved_severitynotclassified",
@@ -2381,7 +2678,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Excess skin removed [Severity not classified]"
+    "Label": "Excess skin removed [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "insufficiientskinremoved_mild",
@@ -2389,7 +2687,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Insufficiient skin removed [Mild]"
+    "Label": "Insufficiient skin removed [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "insufficiientskinremoved_moderate",
@@ -2397,7 +2696,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Insufficiient skin removed [Moderate]"
+    "Label": "Insufficiient skin removed [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "insufficiientskinremoved_severe",
@@ -2405,7 +2705,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Insufficiient skin removed [Severe]"
+    "Label": "Insufficiient skin removed [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "insufficiientskinremoved_severitynotclassified",
@@ -2413,7 +2714,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Insufficiient skin removed [Severity not classified]"
+    "Label": "Insufficiient skin removed [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "torsion_mild",
@@ -2421,7 +2723,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Torsion [Mild]"
+    "Label": "Torsion [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "torsion_moderate",
@@ -2429,7 +2732,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Torsion [Moderate]"
+    "Label": "Torsion [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "torsion_severe",
@@ -2437,7 +2741,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Torsion [Severe]"
+    "Label": "Torsion [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "torsion_severitynotclassified",
@@ -2445,7 +2750,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Torsion [Severity not classified]"
+    "Label": "Torsion [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "delayedwouldhealing_mild",
@@ -2453,7 +2759,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Delayed would healing [Mild]"
+    "Label": "Delayed would healing [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "delayedwouldhealing_moderate",
@@ -2461,7 +2768,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Delayed would healing [Moderate]"
+    "Label": "Delayed would healing [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "delayedwouldhealing_severe",
@@ -2469,7 +2777,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Delayed would healing [Severe]"
+    "Label": "Delayed would healing [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "delayedwouldhealing_severitynotclassified",
@@ -2477,7 +2786,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Delayed would healing [Severity not classified]"
+    "Label": "Delayed would healing [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "scarring_disfigurement_mild",
@@ -2485,7 +2795,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Scarring_disfigurement [Mild]"
+    "Label": "Scarring_disfigurement [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "scarring_disfigurement_moderate",
@@ -2493,7 +2804,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Scarring_disfigurement [Moderate]"
+    "Label": "Scarring_disfigurement [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "scarring_disfigurement_severe",
@@ -2501,7 +2813,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Scarring_disfigurement [Severe]"
+    "Label": "Scarring_disfigurement [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "scarring_disfigurement_severitynotclassified",
@@ -2509,7 +2822,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Scarring_disfigurement [Severity not classified]"
+    "Label": "Scarring_disfigurement [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_mild",
@@ -2517,7 +2831,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Mild]"
+    "Label": "Psychological [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_moderate",
@@ -2525,7 +2840,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Moderate]"
+    "Label": "Psychological [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_severe",
@@ -2533,7 +2849,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Severe]"
+    "Label": "Psychological [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_severitynotclassified",
@@ -2541,7 +2858,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Severity not classified]"
+    "Label": "Psychological [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "erectiledysfunction_mild",
@@ -2549,7 +2867,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Erectile dysfunction [Mild]"
+    "Label": "Erectile dysfunction [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "erectiledysfunction_moderate",
@@ -2557,7 +2876,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Erectile dysfunction [Moderate]"
+    "Label": "Erectile dysfunction [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "erectiledysfunction_severe",
@@ -2565,7 +2885,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Erectile dysfunction [Severe]"
+    "Label": "Erectile dysfunction [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "erectiledysfunction_severitynotclassified",
@@ -2573,7 +2894,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Erectile dysfunction [Severity not classified]"
+    "Label": "Erectile dysfunction [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "clinicaldisposition",
@@ -2581,7 +2903,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Clinical Disposition of Client"
+    "Label": "Clinical Disposition of Client",
+    "fieldType": "Text"
   },
   {
     "name": "dischargedby",
@@ -2589,7 +2912,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Discharged by (Name)"
+    "Label": "Discharged by (Name)",
+    "fieldType": "Text"
   },
   {
     "name": "signed_yes",
@@ -2597,7 +2921,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Signed [Yes]"
+    "Label": "Signed [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "signed_no",
@@ -2605,7 +2930,8 @@
     "pageName": "prepexpostremoval2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Signed [No]"
+    "Label": "Signed [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "facilityname",
@@ -2613,31 +2939,35 @@
     "pageName": "prepexunscheduled1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Facility"
+    "Label": "Facility",
+    "fieldType": "Text"
   },
   {
     "name": "dateofvisit",
     "dataType": "DatePicker",
     "pageName": "prepexunscheduled1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Date of Visit"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Date of Visit",
+    "fieldType": "Date"
   },
   {
     "name": "cardserialnumber",
     "dataType": "EditText",
     "pageName": "prepexunscheduled1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Card Serial Number"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Card Serial Number",
+    "fieldType": "int"
   },
   {
     "name": "clientidnumber",
     "dataType": "EditText",
     "pageName": "prepexunscheduled1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Client ID Number"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client ID Number",
+    "fieldType": "int"
   },
   {
     "name": "dateofplacement",
@@ -2645,31 +2975,35 @@
     "pageName": "prepexunscheduled1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Date of Placement"
+    "Label": "Date of Placement",
+    "fieldType": "Date"
   },
   {
     "name": "clientname",
     "dataType": "EditText",
     "pageName": "prepexunscheduled1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Client Name"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client Name",
+    "fieldType": "Text"
   },
   {
     "name": "clientsphysicaladdress",
     "dataType": "EditText",
     "pageName": "prepexunscheduled1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Clients Physical Address"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Clients Physical Address",
+    "fieldType": "Text"
   },
   {
     "name": "clienttel",
     "dataType": "EditText",
     "pageName": "prepexunscheduled1",
-    "IsIndexed": false,
-    "IsRequired": false,
-    "Label": "Client Tel"
+    "IsIndexed": true,
+    "IsRequired": true,
+    "Label": "Client Tel",
+    "fieldType": "Cell"
   },
   {
     "name": "isaplannedfupphonecall_yes",
@@ -2677,7 +3011,8 @@
     "pageName": "prepexunscheduled1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Planned Followup Call [Yes]"
+    "Label": "Planned Followup Call [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "isaplannedfupphonecall_no",
@@ -2685,7 +3020,8 @@
     "pageName": "prepexunscheduled1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Planned Followup Call [No]"
+    "Label": "Planned Followup Call [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "clinicalcourse",
@@ -2693,7 +3029,8 @@
     "pageName": "prepexunscheduled1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Clinical course leading to"
+    "Label": "Clinical course leading to",
+    "fieldType": "Text"
   },
   {
     "name": "careprovided",
@@ -2701,7 +3038,8 @@
     "pageName": "prepexunscheduled1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Care Provided (if any)"
+    "Label": "Care Provided (if any)",
+    "fieldType": "Text"
   },
   {
     "name": "aesswhilewearing_noadverseeventsdiagnosed",
@@ -2709,7 +3047,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Any Adverse Events during week of Device Wearing [No Adverse events diagnosed]"
+    "Label": "Any Adverse Events during week of Device Wearing [No Adverse events diagnosed]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "aesswhilewearing_adverseeventsdiagnosed",
@@ -2717,7 +3056,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Any Adverse Events during week of Device Wearing [Adverse events diagnosed]"
+    "Label": "Any Adverse Events during week of Device Wearing [Adverse events diagnosed]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_mild",
@@ -2725,7 +3065,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Mild]"
+    "Label": "Pain [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_moderate",
@@ -2733,7 +3074,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Moderate]"
+    "Label": "Pain [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_severe",
@@ -2741,7 +3083,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Severe]"
+    "Label": "Pain [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "pain_severitynotclassified",
@@ -2749,7 +3092,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Severity not classified]"
+    "Label": "Pain [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_mild",
@@ -2757,7 +3101,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Mild]"
+    "Label": "Bleeding [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_moderate",
@@ -2765,7 +3110,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Moderate]"
+    "Label": "Bleeding [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_severe",
@@ -2773,7 +3119,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Severe]"
+    "Label": "Bleeding [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "bleeding_severitynotclassified",
@@ -2781,7 +3128,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Severity not classified]"
+    "Label": "Bleeding [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_mild",
@@ -2789,7 +3137,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Mild]"
+    "Label": "Damage to penis [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_moderate",
@@ -2797,7 +3146,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Moderate]"
+    "Label": "Damage to penis [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_severe",
@@ -2805,7 +3155,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Severe]"
+    "Label": "Damage to penis [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "damagetopenis_severitynotclassified",
@@ -2813,7 +3164,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to penis [Severity not classified]"
+    "Label": "Damage to penis [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_mild",
@@ -2821,7 +3173,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Mild]"
+    "Label": "Infection [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_moderate",
@@ -2829,7 +3182,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Moderate]"
+    "Label": "Infection [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_severe",
@@ -2837,7 +3191,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Severe]"
+    "Label": "Infection [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "infection_severitynotclassified",
@@ -2845,7 +3200,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Infection [Severity not classified]"
+    "Label": "Infection [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_mild",
@@ -2853,7 +3209,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Mild]"
+    "Label": "Hematoma [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_moderate",
@@ -2861,7 +3218,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Moderate]"
+    "Label": "Hematoma [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_severe",
@@ -2869,7 +3227,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Severe]"
+    "Label": "Hematoma [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "hematoma_severitynotclassified",
@@ -2877,7 +3236,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Hematoma [Severity not classified]"
+    "Label": "Hematoma [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_mild",
@@ -2885,7 +3245,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema / Swelling [Mild]"
+    "Label": "Edema / Swelling [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_moderate",
@@ -2893,7 +3254,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema / Swelling [Moderate]"
+    "Label": "Edema / Swelling [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_severe",
@@ -2901,7 +3263,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema / Swelling [Severe]"
+    "Label": "Edema / Swelling [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "edema_swelling_severitynotclassified",
@@ -2909,7 +3272,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Edema / Swelling [Severity not classified]"
+    "Label": "Edema / Swelling [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_mild",
@@ -2917,7 +3281,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Mild]"
+    "Label": "Problems voiding [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_moderate",
@@ -2925,7 +3290,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Moderate]"
+    "Label": "Problems voiding [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_severe",
@@ -2933,7 +3299,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Severe]"
+    "Label": "Problems voiding [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "problemsvoiding_severitynotclassified",
@@ -2941,7 +3308,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Problems voiding [Severity not classified]"
+    "Label": "Problems voiding [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_mild",
@@ -2949,7 +3317,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Mild]"
+    "Label": "Psychological [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_moderate",
@@ -2957,7 +3326,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Moderate]"
+    "Label": "Psychological [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_severe",
@@ -2965,7 +3335,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Severe]"
+    "Label": "Psychological [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "psychological_severitynotclassified",
@@ -2973,7 +3344,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Psychological [Severity not classified]"
+    "Label": "Psychological [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "requestingearlyremoval_mild",
@@ -2981,7 +3353,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Requesting early removal [Mild]"
+    "Label": "Requesting early removal [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "requestingearlyremoval_moderate",
@@ -2989,7 +3362,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Requesting early removal [Moderate]"
+    "Label": "Requesting early removal [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "requestingearlyremoval_severe",
@@ -2997,7 +3371,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Requesting early removal [Severe]"
+    "Label": "Requesting early removal [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "requestingearlyremoval_severitynotclassified",
@@ -3005,7 +3380,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Requesting early removal [Severity not classified]"
+    "Label": "Requesting early removal [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_mild",
@@ -3013,7 +3389,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Mild]"
+    "Label": "Device malfunction [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_moderate",
@@ -3021,7 +3398,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Moderate]"
+    "Label": "Device malfunction [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_severe",
@@ -3029,7 +3407,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Severe]"
+    "Label": "Device malfunction [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicemalfunction_severitynotclassified",
@@ -3037,7 +3416,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device malfunction [Severity not classified]"
+    "Label": "Device malfunction [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicedisplacement_mild",
@@ -3045,7 +3425,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device displacement [Mild]"
+    "Label": "Device displacement [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicedisplacement_moderate",
@@ -3053,7 +3434,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device displacement [Moderate]"
+    "Label": "Device displacement [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicedisplacement_severe",
@@ -3061,7 +3443,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device displacement [Severe]"
+    "Label": "Device displacement [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "devicedisplacement_severitynotclassified",
@@ -3069,7 +3452,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Device displacement [Severity not classified]"
+    "Label": "Device displacement [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prematuredifferentialsloughing_mild",
@@ -3077,7 +3461,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Premature differential sloughing [Mild]"
+    "Label": "Premature differential sloughing [Mild]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prematuredifferentialsloughing_moderate",
@@ -3085,7 +3470,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Premature differential sloughing [Moderate]"
+    "Label": "Premature differential sloughing [Moderate]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prematuredifferentialsloughing_severe",
@@ -3093,7 +3479,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Premature differential sloughing [Severe]"
+    "Label": "Premature differential sloughing [Severe]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "prematuredifferentialsloughing_severitynotclassified",
@@ -3101,7 +3488,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Premature differential sloughing [Severity not classified]"
+    "Label": "Premature differential sloughing [Severity not classified]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "notmovedevice_yes",
@@ -3109,7 +3497,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to move the device [Yes]"
+    "Label": "Not to move the device [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "notmovedevice_no",
@@ -3117,7 +3506,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to move the device [No]"
+    "Label": "Not to move the device [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "removalonday7_yes",
@@ -3125,7 +3515,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "To return for removal on day 7 [Yes]"
+    "Label": "To return for removal on day 7 [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "removalonday7_no",
@@ -3133,7 +3524,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "To return for removal on day 7 [No]"
+    "Label": "To return for removal on day 7 [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "returnifwantsdeviceremoved_yes",
@@ -3141,7 +3533,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "To return if he wants device removed before Day 7 [Yes]"
+    "Label": "To return if he wants device removed before Day 7 [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "returnifwantsdeviceremoved_no",
@@ -3149,7 +3542,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "To return if he wants device removed before Day 7 [No]"
+    "Label": "To return if he wants device removed before Day 7 [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "notremovedevice_yes",
@@ -3157,7 +3551,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to remove the device or allow anyone to remove [Yes]"
+    "Label": "Not to remove the device or allow anyone to remove [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "notremovedevice_no",
@@ -3165,7 +3560,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to remove the device or allow anyone to remove [No]"
+    "Label": "Not to remove the device or allow anyone to remove [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "notpullforeskin_yes",
@@ -3173,7 +3569,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to pull foreskin in case of partial detachment [Yes]"
+    "Label": "Not to pull foreskin in case of partial detachment [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "notpullforeskin_no",
@@ -3181,7 +3578,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Not to pull foreskin in case of partial detachment [No]"
+    "Label": "Not to pull foreskin in case of partial detachment [No]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "nosexmastrubation_yes",
@@ -3189,7 +3587,8 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "No sexual intercourse or masturbation [Yes]"
+    "Label": "No sexual intercourse or masturbation [Yes]",
+    "fieldType": "SingleSelect"
   },
   {
     "name": "nosexmastrubation_no",
@@ -3197,6 +3596,7 @@
     "pageName": "prepexunscheduled2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "No sexual intercourse or masturbation [No]"
+    "Label": "No sexual intercourse or masturbation [No]",
+    "fieldType": "SingleSelect"
   }
 ]

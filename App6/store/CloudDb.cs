@@ -183,7 +183,6 @@ namespace JhpDataSystem.store
 
         async Task<int> doServerSync(Action<string, ToastLength> makeToast)
         {
-            //var recCount = GetRecordsToSyncCount();
             var recs = GetRecordsToSync();
             if (recs.Count == 0)
             {

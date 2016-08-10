@@ -107,7 +107,6 @@ namespace JhpDataSystem.projects
                 var intent = new Intent(this, kindActivityType);
                 intent.PutExtra(Constants.BUNDLE_SELECTEDCLIENT, clientString);
                 intent.PutExtra(Constants.BUNDLE_DATATOEDIT, jsonRecord.Value);
-                //var dataset = new PPDataSet().fromJson(jsonRecord);
                 intent.SetFlags(ActivityFlags.ClearTop);
                 StartActivityForResult(intent, 0);
             }

@@ -15,6 +15,7 @@ namespace ExcelToAndroidXML
         public bool IsIndexed { get; set; }
         public bool IsRequired { get; set; }
         public string Label { get; set; }
+        public string fieldType { get; set; }
         //public List<string> options { get; set; }
     }
 }

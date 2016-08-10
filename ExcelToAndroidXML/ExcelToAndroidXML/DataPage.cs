@@ -117,12 +117,20 @@ namespace ExcelToAndroidXML
                             fieldXml = getXamlDefinitionForTextField(field, true);
                             break;
                         }
-                    case "date":
                     case "time":
+                        {
+                            fieldXml = getXamlDefinitionForDate(field, "TimePicker");
+                            break;
+                        }
                     case "today":
+                    //{
+                    //    fieldXml = getXamlDefinitionForDate(field, "DatePicker");
+                    //    break;
+                    //}
+                    case "date":
                     case "datepicker":
                         {
-                            fieldXml = getXamlDefinitionForDate(field);
+                            fieldXml = getXamlDefinitionForDate(field, "DatePicker");
                             break;
                         }
                     case "text":
@@ -182,7 +190,7 @@ namespace ExcelToAndroidXML
             return builder.ToString();
         }
 
-        string getXamlDefinitionForDate(FieldDefinition field)
+        string getXamlDefinitionForDate(FieldDefinition field, string dataTypeLabel)
         {
             var stringsEntryText = field.DisplayLabel;
             var stringsEntryName = field.ViewName;
@@ -195,12 +203,13 @@ namespace ExcelToAndroidXML
             metaDataProvider.ModelItems.Add(
                 new FieldItem()
                 {
-                    dataType = "DatePicker",
+                    dataType = dataTypeLabel,
                     name = stringsEntryName,
                     IsIndexed = field.IsIndexed == "1",
                     IsRequired = field.IsIndexed == "1",
                     Label = field.DisplayLabel,
                     pageName = ViewPageName
+                    ,fieldType = field.ViewType
                 });
             return fieldXml;
         }
@@ -266,6 +275,9 @@ namespace ExcelToAndroidXML
                     IsRequired = field.IsIndexed == "1",
                     Label = field.DisplayLabel,
                     pageName = ViewPageName
+                                        ,
+                    fieldType = field.ViewType
+
                 });
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
             return fieldXml.Replace("'", "\"");
@@ -387,7 +399,9 @@ android:orientation='horizontal'
                         IsIndexed = field.IsIndexed == "1",
                         IsRequired = field.IsIndexed == "1",
                         Label = field.DisplayLabel + " [" + option + "]",
-                        pageName = ViewPageName
+                        pageName = ViewPageName,
+                        fieldType = field.ViewType
+
                     });
                 metaDataProvider.AddStringResource(optionName, option);
 
@@ -438,7 +452,9 @@ android:id='@+id/" + optionName + "' />"
                         IsIndexed = field.IsIndexed == "1",
                         IsRequired = field.IsIndexed == "1",
                         Label = field.DisplayLabel + " [" + option + "]",
-                        pageName = ViewPageName
+                        pageName = ViewPageName,
+                        fieldType = field.ViewType
+
                     });
 
                 fieldOptionDefinitions.Add(fieldXml.Replace("'", "\""));

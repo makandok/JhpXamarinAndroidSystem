@@ -317,7 +317,7 @@
   {
     "FormName": "Registration and MC Procedure",
     "GroupName": "Client Information",
-    "ViewName": "vm_religion_other",
+    "ViewName": "vm_other_religion_specified",
     "ViewType": "Text",
     "DisplayLabel": "If Other Religion, Specify",
     "ListName": "",
@@ -451,7 +451,7 @@
   {
     "FormName": "Registration and MC Procedure",
     "GroupName": "Client Information",
-    "ViewName": "vm_mmc_reasons_other",
+    "ViewName": "vm_other_mmc_reasons",
     "ViewType": "Text",
     "DisplayLabel": "If Other, Specify",
     "ListName": "",

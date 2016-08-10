@@ -5,7 +5,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Intake Form Serial"
+    "Label": "Intake Form Serial",
+    "fieldType": "Integer"
   },
   {
     "name": "vm_date_firstedited",
@@ -13,7 +14,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Date of Data Entry"
+    "Label": "Date of Data Entry",
+    "fieldType": "today"
   },
   {
     "name": "vm_data_entered_by",
@@ -21,7 +23,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Data Entry By"
+    "Label": "Data Entry By",
+    "fieldType": "Text"
   },
   {
     "name": "vm_facility_name",
@@ -29,7 +32,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Facility Name"
+    "Label": "Facility Name",
+    "fieldType": "Text"
   },
   {
     "name": "vm_outreach_name",
@@ -37,7 +41,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Outreach Name"
+    "Label": "Outreach Name",
+    "fieldType": "Text"
   },
   {
     "name": "vm_facility_type_outreach",
@@ -45,7 +50,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Outreach Name (if site is not a health center) [Outreach]"
+    "Label": "Outreach Name (if site is not a health center) [Outreach]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_facility_type_static",
@@ -53,7 +59,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Outreach Name (if site is not a health center) [Static]"
+    "Label": "Outreach Name (if site is not a health center) [Static]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_mc_number",
@@ -61,7 +68,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Client ID / Register Number"
+    "Label": "Client ID / Register Number",
+    "fieldType": "Integer"
   },
   {
     "name": "vm_registration_date",
@@ -69,7 +77,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Registration Date"
+    "Label": "Registration Date",
+    "fieldType": "Date"
   },
   {
     "name": "vm_last_name",
@@ -77,7 +86,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Client Last Name"
+    "Label": "Client Last Name",
+    "fieldType": "Text"
   },
   {
     "name": "vm_first_name",
@@ -85,7 +95,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Client First Name"
+    "Label": "Client First Name",
+    "fieldType": "Text"
   },
   {
     "name": "vm_date_of_birth",
@@ -93,7 +104,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Date of Birth"
+    "Label": "Date of Birth",
+    "fieldType": "Date"
   },
   {
     "name": "vm_age_units_mo",
@@ -101,7 +113,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Age Units [Mo.]"
+    "Label": "Age Units [Mo.]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_age_units_yrs",
@@ -109,7 +122,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Age Units [Yrs]"
+    "Label": "Age Units [Yrs]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_age",
@@ -117,7 +131,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Age"
+    "Label": "Age",
+    "fieldType": "Integer"
   },
   {
     "name": "vm_nrc_passport",
@@ -125,7 +140,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "NRC / Passport"
+    "Label": "NRC / Passport",
+    "fieldType": "Text"
   },
   {
     "name": "vm_phone_number",
@@ -133,7 +149,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Contact Phone Nummber"
+    "Label": "Contact Phone Nummber",
+    "fieldType": "CellNumber"
   },
   {
     "name": "vm_next_of_kin",
@@ -141,7 +158,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Next of Kin Names"
+    "Label": "Next of Kin Names",
+    "fieldType": "Text"
   },
   {
     "name": "vm_phone_nextofkin",
@@ -149,7 +167,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Next of Kin Phone Nunber"
+    "Label": "Next of Kin Phone Nunber",
+    "fieldType": "CellNumber"
   },
   {
     "name": "vm_tribe",
@@ -157,7 +176,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Tribe"
+    "Label": "Tribe",
+    "fieldType": "Text"
   },
   {
     "name": "vm_religion_christian",
@@ -165,7 +185,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Religion [Christian]"
+    "Label": "Religion [Christian]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_religion_islam",
@@ -173,7 +194,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Religion [Islam]"
+    "Label": "Religion [Islam]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_religion_other",
@@ -181,7 +203,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Religion [Other]"
+    "Label": "Religion [Other]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_other_religion_specified",
@@ -189,7 +212,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Other Religion, Specify"
+    "Label": "If Other Religion, Specify",
+    "fieldType": "Text"
   },
   {
     "name": "vm_house_plotno",
@@ -197,7 +221,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "House / Plot No"
+    "Label": "House / Plot No",
+    "fieldType": "Text"
   },
   {
     "name": "vm_street",
@@ -205,7 +230,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Street"
+    "Label": "Street",
+    "fieldType": "Text"
   },
   {
     "name": "vm_township",
@@ -213,7 +239,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Township"
+    "Label": "Township",
+    "fieldType": "Text"
   },
   {
     "name": "vm_village",
@@ -221,7 +248,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "If Rural, Village"
+    "Label": "If Rural, Village",
+    "fieldType": "Text"
   },
   {
     "name": "vm_chief",
@@ -229,7 +257,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Chief"
+    "Label": "Chief",
+    "fieldType": "Text"
   },
   {
     "name": "vm_marital_status_single",
@@ -237,7 +266,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Marital Status [Single]"
+    "Label": "Marital Status [Single]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_marital_status_divorced",
@@ -245,7 +275,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Marital Status [Divorced]"
+    "Label": "Marital Status [Divorced]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_marital_status_married",
@@ -253,7 +284,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Marital Status [Married]"
+    "Label": "Marital Status [Married]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_marital_status_widower",
@@ -261,7 +293,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Marital Status [Widower]"
+    "Label": "Marital Status [Widower]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_marital_status_cohabiting",
@@ -269,7 +302,8 @@
     "pageName": "vmmc_regandproc1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Marital Status [Co-habiting]"
+    "Label": "Marital Status [Co-habiting]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_mmc_reasons_partialhivprotection",
@@ -277,7 +311,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reasons for seeking circumcision services [Partial HIV Protection]"
+    "Label": "Primary reasons for seeking circumcision services [Partial HIV Protection]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_mmc_reasons_religious",
@@ -285,7 +320,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reasons for seeking circumcision services [Religious]"
+    "Label": "Primary reasons for seeking circumcision services [Religious]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_mmc_reasons_medicalprotection",
@@ -293,7 +329,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reasons for seeking circumcision services [Medical Protection]"
+    "Label": "Primary reasons for seeking circumcision services [Medical Protection]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_mmc_reasons_sexualenhancement",
@@ -301,7 +338,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reasons for seeking circumcision services [Sexual Enhancement]"
+    "Label": "Primary reasons for seeking circumcision services [Sexual Enhancement]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_mmc_reasons_hygiene",
@@ -309,7 +347,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reasons for seeking circumcision services [Hygiene]"
+    "Label": "Primary reasons for seeking circumcision services [Hygiene]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_mmc_reasons_cultural",
@@ -317,7 +356,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reasons for seeking circumcision services [Cultural]"
+    "Label": "Primary reasons for seeking circumcision services [Cultural]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_mmc_reasons_other",
@@ -325,7 +365,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Primary reasons for seeking circumcision services [Other]"
+    "Label": "Primary reasons for seeking circumcision services [Other]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_other_mmc_reasons",
@@ -333,7 +374,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Other, Specify"
+    "Label": "If Other, Specify",
+    "fieldType": "Text"
   },
   {
     "name": "vm_how_client_learnt_mmc_friendfamily",
@@ -341,7 +383,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did the client learn that MC service is offered here [Friend / Family]"
+    "Label": "How did the client learn that MC service is offered here [Friend / Family]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_how_client_learnt_mmc_partnerspouse",
@@ -349,7 +392,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did the client learn that MC service is offered here [Partner / Spouse]"
+    "Label": "How did the client learn that MC service is offered here [Partner / Spouse]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_how_client_learnt_mmc_vehiclepasystem",
@@ -357,7 +401,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did the client learn that MC service is offered here [Vehicle PA System]"
+    "Label": "How did the client learn that MC service is offered here [Vehicle PA System]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_how_client_learnt_mmc_socialmedia",
@@ -365,7 +410,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did the client learn that MC service is offered here [Social Media]"
+    "Label": "How did the client learn that MC service is offered here [Social Media]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_how_client_learnt_mmc_printmaterialposterleaflet",
@@ -373,7 +419,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did the client learn that MC service is offered here [Print Material/Poster/Leaflet]"
+    "Label": "How did the client learn that MC service is offered here [Print Material/Poster/Leaflet]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_how_client_learnt_mmc_radiotv",
@@ -381,7 +428,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did the client learn that MC service is offered here [Radio / TV]"
+    "Label": "How did the client learn that MC service is offered here [Radio / TV]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_how_client_learnt_mmc_communitymobilizer",
@@ -389,7 +437,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did the client learn that MC service is offered here [Community Mobilizer]"
+    "Label": "How did the client learn that MC service is offered here [Community Mobilizer]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_how_client_learnt_mmc_communitymeeting",
@@ -397,7 +446,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did the client learn that MC service is offered here [Community Meeting]"
+    "Label": "How did the client learn that MC service is offered here [Community Meeting]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_how_client_learnt_mmc_healthfacility",
@@ -405,7 +455,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "How did the client learn that MC service is offered here [Health Facility]"
+    "Label": "How did the client learn that MC service is offered here [Health Facility]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_known_status_reactive",
@@ -413,7 +464,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Known Status  (with evidence) [Reactive]"
+    "Label": "Known Status  (with evidence) [Reactive]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_known_status_nonreactive",
@@ -421,7 +473,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Known Status  (with evidence) [Non-reactive]"
+    "Label": "Known Status  (with evidence) [Non-reactive]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_services_offered_counseling",
@@ -429,7 +482,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Services offered [Counseling]"
+    "Label": "Services offered [Counseling]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_services_offered_hivtesting",
@@ -437,7 +491,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Services offered [HIV Testing]"
+    "Label": "Services offered [HIV Testing]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_services_offered_resultscollected",
@@ -445,7 +500,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Services offered [Results Collected]"
+    "Label": "Services offered [Results Collected]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_hiv_test_result_reactive",
@@ -453,7 +509,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "HIV Test Result (if tested) [Reactive]"
+    "Label": "HIV Test Result (if tested) [Reactive]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_hiv_test_result_nonreactive",
@@ -461,7 +518,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "HIV Test Result (if tested) [Non-reactive]"
+    "Label": "HIV Test Result (if tested) [Non-reactive]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_hiv_test_result_indeterminate",
@@ -469,7 +527,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "HIV Test Result (if tested) [Indeterminate]"
+    "Label": "HIV Test Result (if tested) [Indeterminate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_sexual_past_3_mos_yes",
@@ -477,7 +536,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Did client have sexual intercourse in the past 3 months [Yes]"
+    "Label": "Did client have sexual intercourse in the past 3 months [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_sexual_past_3_mos_no",
@@ -485,7 +545,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Did client have sexual intercourse in the past 3 months [No]"
+    "Label": "Did client have sexual intercourse in the past 3 months [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_did_client_use_condom_yes",
@@ -493,7 +554,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Did Client use a condom [Yes]"
+    "Label": "Did Client use a condom [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_did_client_use_condom_no",
@@ -501,7 +563,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Did Client use a condom [No]"
+    "Label": "Did Client use a condom [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_client_health_cond_haemophilia",
@@ -509,7 +572,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Does client have any of these conditions? [Haemophilia]"
+    "Label": "Does client have any of these conditions? [Haemophilia]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_client_health_cond_hypertension",
@@ -517,7 +581,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Does client have any of these conditions? [Hypertension]"
+    "Label": "Does client have any of these conditions? [Hypertension]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_client_health_cond_diabetessugardiseases",
@@ -525,7 +590,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Does client have any of these conditions? [Diabetes/Sugar Diseases]"
+    "Label": "Does client have any of these conditions? [Diabetes/Sugar Diseases]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_client_health_cond_sicklecell",
@@ -533,7 +599,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Does client have any of these conditions? [Sickle cell]"
+    "Label": "Does client have any of these conditions? [Sickle cell]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_client_health_cond_bleedingnosemouth",
@@ -541,7 +608,8 @@
     "pageName": "vmmc_regandproc2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Does client have any of these conditions? [Bleeding Nose/Mouth]"
+    "Label": "Does client have any of these conditions? [Bleeding Nose/Mouth]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_bleeding_probs_fam_mbrs_yes",
@@ -549,7 +617,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do other members of the family have Bleeding problems [Yes]"
+    "Label": "Do other members of the family have Bleeding problems [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_bleeding_probs_fam_mbrs_no",
@@ -557,7 +626,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Do other members of the family have Bleeding problems [No]"
+    "Label": "Do other members of the family have Bleeding problems [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_client_had_surgops_yes",
@@ -565,7 +635,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Has client had any surgical operations in the past [Yes]"
+    "Label": "Has client had any surgical operations in the past [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_client_had_surgops_no",
@@ -573,7 +644,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Has client had any surgical operations in the past [No]"
+    "Label": "Has client had any surgical operations in the past [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_client_surgops_spec",
@@ -581,7 +653,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Yes, specify:"
+    "Label": "If Yes, specify:",
+    "fieldType": "Text"
   },
   {
     "name": "vm_client_surgops_comp",
@@ -589,7 +662,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Any complications:"
+    "Label": "Any complications:",
+    "fieldType": "Text"
   },
   {
     "name": "vm_client_allergic_to_meds_yes",
@@ -597,7 +671,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Is Client allergic to any medications [Yes]"
+    "Label": "Is Client allergic to any medications [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_client_allergic_to_meds_no",
@@ -605,7 +680,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Is Client allergic to any medications [No]"
+    "Label": "Is Client allergic to any medications [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_meds_client_allergic_to",
@@ -613,7 +689,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Yes, specify:"
+    "Label": "If Yes, specify:",
+    "fieldType": "Text"
   },
   {
     "name": "vm_client_taking_meds_yes",
@@ -621,7 +698,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Is Client currently taking medications [Yes]"
+    "Label": "Is Client currently taking medications [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_client_taking_meds_no",
@@ -629,7 +707,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Is Client currently taking medications [No]"
+    "Label": "Is Client currently taking medications [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_meds_client_taking",
@@ -637,7 +716,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Yes, specify:"
+    "Label": "If Yes, specify:",
+    "fieldType": "Text"
   },
   {
     "name": "vm_penile_discharge_yes",
@@ -645,7 +725,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Penile Discharge [Yes]"
+    "Label": "Penile Discharge [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_penile_discharge_no",
@@ -653,7 +734,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Penile Discharge [No]"
+    "Label": "Penile Discharge [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_genital_sore_ulcer_yes",
@@ -661,7 +743,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Genital sore (Ulcer) [Yes]"
+    "Label": "Genital sore (Ulcer) [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_genital_sore_ulcer_no",
@@ -669,7 +752,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Genital sore (Ulcer) [No]"
+    "Label": "Genital sore (Ulcer) [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_pain_on_erection_yes",
@@ -677,7 +761,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain on erection [Yes]"
+    "Label": "Pain on erection [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_pain_on_erection_no",
@@ -685,7 +770,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain on erection [No]"
+    "Label": "Pain on erection [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_swelling_of_scrotum_yes",
@@ -693,7 +779,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Swelling of the scrotum [Yes]"
+    "Label": "Swelling of the scrotum [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_swelling_of_scrotum_no",
@@ -701,7 +788,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Swelling of the scrotum [No]"
+    "Label": "Swelling of the scrotum [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_pain_on_urination_yes",
@@ -709,7 +797,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain on urination [Yes]"
+    "Label": "Pain on urination [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_pain_on_urination_no",
@@ -717,7 +806,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain on urination [No]"
+    "Label": "Pain on urination [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_diff_retracting_fskin_yes",
@@ -725,7 +815,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Difficulty in retracting foreskin [Yes]"
+    "Label": "Difficulty in retracting foreskin [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_diff_retracting_fskin_no",
@@ -733,7 +824,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Difficulty in retracting foreskin [No]"
+    "Label": "Difficulty in retracting foreskin [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_frequent_urination_yes",
@@ -741,7 +833,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Frequent Urination [Yes]"
+    "Label": "Frequent Urination [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_frequent_urination_no",
@@ -749,7 +842,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Frequent Urination [No]"
+    "Label": "Frequent Urination [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_client_other_sti_symp_yes",
@@ -757,7 +851,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other [Yes]"
+    "Label": "Other [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_client_other_sti_symp_no",
@@ -765,7 +860,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other [No]"
+    "Label": "Other [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_other_sti_symptoms",
@@ -773,7 +869,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Other, Specify"
+    "Label": "If Other, Specify",
+    "fieldType": "Text"
   },
   {
     "name": "vm_treated_stis_last_3mos_yes",
@@ -781,7 +878,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Was client treated for any STIs in the last 3 months [Yes]"
+    "Label": "Was client treated for any STIs in the last 3 months [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_treated_stis_last_3mos_no",
@@ -789,7 +887,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Was client treated for any STIs in the last 3 months [No]"
+    "Label": "Was client treated for any STIs in the last 3 months [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_pallor_yes",
@@ -797,7 +896,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pallor [Yes]"
+    "Label": "Pallor [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_pallor_no",
@@ -805,7 +905,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pallor [No]"
+    "Label": "Pallor [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_jaundice_yes",
@@ -813,7 +914,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Jaundice [Yes]"
+    "Label": "Jaundice [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_jaundice_no",
@@ -821,7 +923,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Jaundice [No]"
+    "Label": "Jaundice [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_febrile_yes",
@@ -829,7 +932,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Febrile [Yes]"
+    "Label": "Febrile [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_febrile_no",
@@ -837,7 +941,8 @@
     "pageName": "vmmc_regandproc3",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Febrile [No]"
+    "Label": "Febrile [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_pulserate",
@@ -845,7 +950,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pulse Rate (beats/min)"
+    "Label": "Pulse Rate (beats/min)",
+    "fieldType": "Integer"
   },
   {
     "name": "vm_temp",
@@ -853,7 +959,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Temperature"
+    "Label": "Temperature",
+    "fieldType": "Number"
   },
   {
     "name": "vm_weight_kg",
@@ -861,7 +968,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Weight (Kg)"
+    "Label": "Weight (Kg)",
+    "fieldType": "Number"
   },
   {
     "name": "vm_bp_systolic",
@@ -869,7 +977,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "BP - Systolic"
+    "Label": "BP - Systolic",
+    "fieldType": "Integer"
   },
   {
     "name": "vm_bp_diastolic",
@@ -877,7 +986,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "BP - Diastolic"
+    "Label": "BP - Diastolic",
+    "fieldType": "Integer"
   },
   {
     "name": "vm_gexam_scrotum_normal",
@@ -885,7 +995,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Scrotum [Normal]"
+    "Label": "Scrotum [Normal]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_gexam_scrotum_abnormal",
@@ -893,7 +1004,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Scrotum [Abnormal]"
+    "Label": "Scrotum [Abnormal]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_gexam_lymph_nodes_normal",
@@ -901,7 +1013,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Lymph Nodes [Normal]"
+    "Label": "Lymph Nodes [Normal]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_gexam_lymph_nodes_abnormal",
@@ -909,7 +1022,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Lymph Nodes [Abnormal]"
+    "Label": "Lymph Nodes [Abnormal]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_gexam_penis_normal",
@@ -917,7 +1031,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Penis [Normal]"
+    "Label": "Penis [Normal]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_gexam_penis_abnormal",
@@ -925,7 +1040,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Penis [Abnormal]"
+    "Label": "Penis [Abnormal]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_gexam_abnormal_penis_phimosis",
@@ -933,7 +1049,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If penis is abnormal, Tick appropriate condition [Phimosis]"
+    "Label": "If penis is abnormal, Tick appropriate condition [Phimosis]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_gexam_abnormal_penis_paraphimosis",
@@ -941,7 +1058,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If penis is abnormal, Tick appropriate condition [Paraphimosis]"
+    "Label": "If penis is abnormal, Tick appropriate condition [Paraphimosis]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_gexam_abnormal_penis_genitalulcerdisease",
@@ -949,7 +1067,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If penis is abnormal, Tick appropriate condition [Genital Ulcer Disease]"
+    "Label": "If penis is abnormal, Tick appropriate condition [Genital Ulcer Disease]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_gexam_abnormal_penis_genitalwarts",
@@ -957,7 +1076,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If penis is abnormal, Tick appropriate condition [Genital Warts]"
+    "Label": "If penis is abnormal, Tick appropriate condition [Genital Warts]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_gexam_abnormal_penis_discharge",
@@ -965,7 +1085,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If penis is abnormal, Tick appropriate condition [Discharge]"
+    "Label": "If penis is abnormal, Tick appropriate condition [Discharge]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_gexam_abnormal_penis_epispadiasis",
@@ -973,7 +1094,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If penis is abnormal, Tick appropriate condition [Epispadiasis]"
+    "Label": "If penis is abnormal, Tick appropriate condition [Epispadiasis]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_gexam_abnormal_penis_hypospadiasis",
@@ -981,7 +1103,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If penis is abnormal, Tick appropriate condition [Hypospadiasis]"
+    "Label": "If penis is abnormal, Tick appropriate condition [Hypospadiasis]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_gexam_abnormal_penis_other",
@@ -989,7 +1112,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If penis is abnormal, Tick appropriate condition [Other]"
+    "Label": "If penis is abnormal, Tick appropriate condition [Other]",
+    "fieldType": "Single Multiple"
   },
   {
     "name": "vm_ge_otherabnormal_penis",
@@ -997,7 +1121,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Other, specify"
+    "Label": "If Other, specify",
+    "fieldType": "Text"
   },
   {
     "name": "vm_referred_to",
@@ -1005,7 +1130,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Referred to"
+    "Label": "Referred to",
+    "fieldType": "Text"
   },
   {
     "name": "vm_referral_penile_abnorm_yes",
@@ -1013,7 +1139,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Penile abnormalities [Yes]"
+    "Label": "Penile abnormalities [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_referral_penile_abnorm_no",
@@ -1021,7 +1148,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Penile abnormalities [No]"
+    "Label": "Penile abnormalities [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_referral_hiv_care_yes",
@@ -1029,7 +1157,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "HIV Care [Yes]"
+    "Label": "HIV Care [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_referral_hiv_care_no",
@@ -1037,7 +1166,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "HIV Care [No]"
+    "Label": "HIV Care [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_referral_sti_tx_yes",
@@ -1045,7 +1175,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "STI Treatment [Yes]"
+    "Label": "STI Treatment [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_referral_sti_tx_no",
@@ -1053,7 +1184,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "STI Treatment [No]"
+    "Label": "STI Treatment [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_referral_othermedical_yes",
@@ -1061,7 +1193,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other Medical Conditions [Yes]"
+    "Label": "Other Medical Conditions [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_referral_othermedical_no",
@@ -1069,7 +1202,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other Medical Conditions [No]"
+    "Label": "Other Medical Conditions [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_other_reasons_referral",
@@ -1077,7 +1211,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Other medical condtitions, specify:"
+    "Label": "If Other medical condtitions, specify:",
+    "fieldType": "Text"
   },
   {
     "name": "vm_eligible_for_mmc_yes",
@@ -1085,7 +1220,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Is Client eligible for MMC [Yes]"
+    "Label": "Is Client eligible for MMC [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_eligible_for_mmc_no",
@@ -1093,7 +1229,8 @@
     "pageName": "vmmc_regandproc4",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Is Client eligible for MMC [No]"
+    "Label": "Is Client eligible for MMC [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_mc_date",
@@ -1101,7 +1238,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "MC Date"
+    "Label": "MC Date",
+    "fieldType": "Date"
   },
   {
     "name": "vm_mc_provider_name",
@@ -1109,7 +1247,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "MC Provider"
+    "Label": "MC Provider",
+    "fieldType": "Text"
   },
   {
     "name": "vm_assistant",
@@ -1117,7 +1256,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Assistant"
+    "Label": "Assistant",
+    "fieldType": "Text"
   },
   {
     "name": "vm_mmc_performed_yes",
@@ -1125,7 +1265,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Circumcision Performed [Yes]"
+    "Label": "Circumcision Performed [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_mmc_performed_no",
@@ -1133,23 +1274,26 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Circumcision Performed [No]"
+    "Label": "Circumcision Performed [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_mmc_start_time",
-    "dataType": "DatePicker",
+    "dataType": "TimePicker",
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Start Time"
+    "Label": "Start Time",
+    "fieldType": "Time"
   },
   {
     "name": "vm_mmc_end_time",
-    "dataType": "DatePicker",
+    "dataType": "TimePicker",
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "End Time"
+    "Label": "End Time",
+    "fieldType": "Time"
   },
   {
     "name": "vm_skin_preparation_povudine",
@@ -1157,7 +1301,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Skin Preparation [Povudine]"
+    "Label": "Skin Preparation [Povudine]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_skin_preparation_other",
@@ -1165,7 +1310,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Skin Preparation [Other]"
+    "Label": "Skin Preparation [Other]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_other_skin_preparation",
@@ -1173,7 +1319,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Skin Preparation, Other"
+    "Label": "Skin Preparation, Other",
+    "fieldType": "Text"
   },
   {
     "name": "vm_type_local_anaes_lignocaine",
@@ -1181,7 +1328,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Local Anaesthesia - Type [Lignocaine]"
+    "Label": "Local Anaesthesia - Type [Lignocaine]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_type_local_anaes_bupivacaine",
@@ -1189,7 +1337,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Local Anaesthesia - Type [Bupivacaine]"
+    "Label": "Local Anaesthesia - Type [Bupivacaine]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_lignocaine_conc_001",
@@ -1197,7 +1346,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Lignocaine Concentration [0.01]"
+    "Label": "Lignocaine Concentration [0.01]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_lignocaine_conc_002",
@@ -1205,7 +1355,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Lignocaine Concentration [0.02]"
+    "Label": "Lignocaine Concentration [0.02]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_local_anaes_amt",
@@ -1213,7 +1364,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Local Anaesthesia - Amount"
+    "Label": "Local Anaesthesia - Amount",
+    "fieldType": "Number"
   },
   {
     "name": "vm_type_of_procedure_dorsalslit",
@@ -1221,7 +1373,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Procedure [Dorsal Slit]"
+    "Label": "Type of Procedure [Dorsal Slit]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_type_of_procedure_shangring",
@@ -1229,7 +1382,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Procedure [Shang ring]"
+    "Label": "Type of Procedure [Shang ring]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_type_of_procedure_prepex",
@@ -1237,7 +1391,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Procedure [Prepex]"
+    "Label": "Type of Procedure [Prepex]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_type_of_procedure_other",
@@ -1245,7 +1400,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Type of Procedure [Other]"
+    "Label": "Type of Procedure [Other]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_other_type_of_procedure",
@@ -1253,7 +1409,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Other, Specify"
+    "Label": "If Other, Specify",
+    "fieldType": "Text"
   },
   {
     "name": "vm_type_of_suture_chromiccatgut",
@@ -1261,7 +1418,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Suture [Chromic Catgut]"
+    "Label": "Suture [Chromic Catgut]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_type_of_suture_vicryl",
@@ -1269,7 +1427,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Suture [Vicryl]"
+    "Label": "Suture [Vicryl]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_type_of_suture_other",
@@ -1277,7 +1436,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Suture [Other]"
+    "Label": "Suture [Other]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_other_type_suture",
@@ -1285,7 +1445,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Other, Specify"
+    "Label": "If Other, Specify",
+    "fieldType": "Text"
   },
   {
     "name": "vm_complic_dur_surg_none",
@@ -1293,7 +1454,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Any Complications during surgery [None]"
+    "Label": "Any Complications during surgery [None]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_dur_surg_yes",
@@ -1301,7 +1463,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Any Complications during surgery [Yes]"
+    "Label": "Any Complications during surgery [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_pain_moderate",
@@ -1309,7 +1472,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Moderate]"
+    "Label": "Pain [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_pain_severe",
@@ -1317,7 +1481,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain [Severe]"
+    "Label": "Pain [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_excsv_bleeding_moderate",
@@ -1325,7 +1490,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Excessive Bleeding [Moderate]"
+    "Label": "Excessive Bleeding [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_excsv_bleeding_severe",
@@ -1333,7 +1499,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Excessive Bleeding [Severe]"
+    "Label": "Excessive Bleeding [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_anaes_related_moderate",
@@ -1341,7 +1508,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Anaesthetic related event [Moderate]"
+    "Label": "Anaesthetic related event [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_anaes_related_severe",
@@ -1349,7 +1517,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Anaesthetic related event [Severe]"
+    "Label": "Anaesthetic related event [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_excsv_skin_moderate",
@@ -1357,7 +1526,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Excessive skin removed [Moderate]"
+    "Label": "Excessive skin removed [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_excsv_skin_severe",
@@ -1365,7 +1535,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Excessive skin removed [Severe]"
+    "Label": "Excessive skin removed [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_dmg_penis_moderate",
@@ -1373,7 +1544,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to the penis [Moderate]"
+    "Label": "Damage to the penis [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_dmg_penis_severe",
@@ -1381,7 +1553,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Damage to the penis [Severe]"
+    "Label": "Damage to the penis [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_other_moderate",
@@ -1389,7 +1562,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other [Moderate]"
+    "Label": "Other [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_other_severe",
@@ -1397,7 +1571,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other [Severe]"
+    "Label": "Other [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_complic_other_spec",
@@ -1405,7 +1580,8 @@
     "pageName": "vmmc_regandproc5",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Complications during surgery, Other"
+    "Label": "Complications during surgery, Other",
+    "fieldType": "Text"
   },
   {
     "name": "vm_intakeform_serial",
@@ -1413,7 +1589,8 @@
     "pageName": "vmmc_postop1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Intake Form Serial"
+    "Label": "Intake Form Serial",
+    "fieldType": "Integer"
   },
   {
     "name": "vm_mc_number",
@@ -1421,7 +1598,8 @@
     "pageName": "vmmc_postop1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Client ID / Register Number"
+    "Label": "Client ID / Register Number",
+    "fieldType": "Integer"
   },
   {
     "name": "vm_type_of_review_02daysreview",
@@ -1429,7 +1607,8 @@
     "pageName": "vmmc_postop1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Review Type [0 - 2 days Review]"
+    "Label": "Review Type [0 - 2 days Review]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_type_of_review_37daysreview",
@@ -1437,7 +1616,8 @@
     "pageName": "vmmc_postop1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Review Type [3 - 7 days Review]"
+    "Label": "Review Type [3 - 7 days Review]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_type_of_review_16weeksreview",
@@ -1445,7 +1625,8 @@
     "pageName": "vmmc_postop1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Review Type [1 - 6 weeks Review]"
+    "Label": "Review Type [1 - 6 weeks Review]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_postop_data_entry_date",
@@ -1453,7 +1634,8 @@
     "pageName": "vmmc_postop1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Date of Data Entry"
+    "Label": "Date of Data Entry",
+    "fieldType": "Date"
   },
   {
     "name": "vm_postop_data_entered_by",
@@ -1461,7 +1643,8 @@
     "pageName": "vmmc_postop1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Data Entry By"
+    "Label": "Data Entry By",
+    "fieldType": "Text"
   },
   {
     "name": "vm_reviewer_name",
@@ -1469,7 +1652,8 @@
     "pageName": "vmmc_postop1",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "MC Provider/Reviewer Name"
+    "Label": "MC Provider/Reviewer Name",
+    "fieldType": "Text"
   },
   {
     "name": "vm_date_of_review",
@@ -1477,7 +1661,8 @@
     "pageName": "vmmc_postop1",
     "IsIndexed": true,
     "IsRequired": true,
-    "Label": "Date of Review"
+    "Label": "Date of Review",
+    "fieldType": "Date"
   },
   {
     "name": "vm_cc_fever_yes",
@@ -1485,7 +1670,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Fever [Yes]"
+    "Label": "Fever [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_fever_no",
@@ -1493,7 +1679,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Fever [No]"
+    "Label": "Fever [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_pain_on_wound_yes",
@@ -1501,7 +1688,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain on wound [Yes]"
+    "Label": "Pain on wound [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_pain_on_wound_no",
@@ -1509,7 +1697,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain on wound [No]"
+    "Label": "Pain on wound [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_bleeding_yes",
@@ -1517,7 +1706,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [Yes]"
+    "Label": "Bleeding [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_bleeding_no",
@@ -1525,7 +1715,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Bleeding [No]"
+    "Label": "Bleeding [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_pain_passing_urine_yes",
@@ -1533,7 +1724,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain passing urine [Yes]"
+    "Label": "Pain passing urine [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_pain_passing_urine_no",
@@ -1541,7 +1733,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pain passing urine [No]"
+    "Label": "Pain passing urine [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_swelling_yes",
@@ -1549,7 +1742,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Swelling [Yes]"
+    "Label": "Swelling [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_swelling_no",
@@ -1557,7 +1751,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Swelling [No]"
+    "Label": "Swelling [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_gaping_wound_yes",
@@ -1565,7 +1760,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Gaping wound [Yes]"
+    "Label": "Gaping wound [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_gaping_wound_no",
@@ -1573,7 +1769,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Gaping wound [No]"
+    "Label": "Gaping wound [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_pus_yes",
@@ -1581,7 +1778,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pus [Yes]"
+    "Label": "Pus [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_pus_no",
@@ -1589,7 +1787,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Pus [No]"
+    "Label": "Pus [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_other_complaint_yes",
@@ -1597,7 +1796,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other [Yes]"
+    "Label": "Other [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_other_complaint_no",
@@ -1605,7 +1805,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Other [No]"
+    "Label": "Other [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_cc_other_complaint_spec",
@@ -1613,7 +1814,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "If Other, specify"
+    "Label": "If Other, specify",
+    "fieldType": "Text"
   },
   {
     "name": "vm_any_adverse_events_yes",
@@ -1621,7 +1823,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Any Adverse events [Yes]"
+    "Label": "Any Adverse events [Yes]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_any_adverse_events_no",
@@ -1629,7 +1832,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Any Adverse events [No]"
+    "Label": "Any Adverse events [No]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_anaesthetic_related_moderate",
@@ -1637,7 +1841,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "a. Anaesthetic related event  [Moderate]"
+    "Label": "a. Anaesthetic related event  [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_anaesthetic_related_severe",
@@ -1645,7 +1850,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "a. Anaesthetic related event  [Severe]"
+    "Label": "a. Anaesthetic related event  [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_excessive_bleeding_moderate",
@@ -1653,7 +1859,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "b. Excessive Bleeding [Moderate]"
+    "Label": "b. Excessive Bleeding [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_excessive_bleeding_severe",
@@ -1661,7 +1868,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "b. Excessive Bleeding [Severe]"
+    "Label": "b. Excessive Bleeding [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_insuff_skin_rem_moderate",
@@ -1669,7 +1877,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "c. Insufficient skin removed  [Moderate]"
+    "Label": "c. Insufficient skin removed  [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_insuff_skin_rem_severe",
@@ -1677,7 +1886,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "c. Insufficient skin removed  [Severe]"
+    "Label": "c. Insufficient skin removed  [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_dmg_to_penis_moderate",
@@ -1685,7 +1895,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "d. Damage or injury to penis [Moderate]"
+    "Label": "d. Damage or injury to penis [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_dmg_to_penis_severe",
@@ -1693,7 +1904,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "d. Damage or injury to penis [Severe]"
+    "Label": "d. Damage or injury to penis [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_pain_moderate",
@@ -1701,7 +1913,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "e. Pain [Moderate]"
+    "Label": "e. Pain [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_pain_severe",
@@ -1709,7 +1922,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "e. Pain [Severe]"
+    "Label": "e. Pain [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_swelling_hematoma_moderate",
@@ -1717,7 +1931,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "f. Swelling or Hematoma  [Moderate]"
+    "Label": "f. Swelling or Hematoma  [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_swelling_hematoma_severe",
@@ -1725,7 +1940,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "f. Swelling or Hematoma  [Severe]"
+    "Label": "f. Swelling or Hematoma  [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_infection_moderate",
@@ -1733,7 +1949,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "g. Infection [Moderate]"
+    "Label": "g. Infection [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_infection_severe",
@@ -1741,7 +1958,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "g. Infection [Severe]"
+    "Label": "g. Infection [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_excsv_skin_rem_moderate",
@@ -1749,7 +1967,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "h. Excessive skin removed  [Moderate]"
+    "Label": "h. Excessive skin removed  [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_excsv_skin_rem_severe",
@@ -1757,7 +1976,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "h. Excessive skin removed  [Severe]"
+    "Label": "h. Excessive skin removed  [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_delayed_wound_moderate",
@@ -1765,7 +1985,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "i. Delayed wound healing [Moderate]"
+    "Label": "i. Delayed wound healing [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_delayed_wound_severe",
@@ -1773,7 +1994,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "i. Delayed wound healing [Severe]"
+    "Label": "i. Delayed wound healing [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_wound_dehiscence_moderate",
@@ -1781,7 +2003,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "j. Wound dehiscence [Moderate]"
+    "Label": "j. Wound dehiscence [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_wound_dehiscence_severe",
@@ -1789,7 +2012,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "j. Wound dehiscence [Severe]"
+    "Label": "j. Wound dehiscence [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_difficulty_urinating_moderate",
@@ -1797,7 +2021,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "k. Difficulty Urinating [Moderate]"
+    "Label": "k. Difficulty Urinating [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_difficulty_urinating_severe",
@@ -1805,7 +2030,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "k. Difficulty Urinating [Severe]"
+    "Label": "k. Difficulty Urinating [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_torsion_of_penis_moderate",
@@ -1813,7 +2039,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "l. Torsion of penis [Moderate]"
+    "Label": "l. Torsion of penis [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_torsion_of_penis_severe",
@@ -1821,7 +2048,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "l. Torsion of penis [Severe]"
+    "Label": "l. Torsion of penis [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_erectile_dysfunction_moderate",
@@ -1829,7 +2057,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "m. Erectile dysfunction [Moderate]"
+    "Label": "m. Erectile dysfunction [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_erectile_dysfunction_severe",
@@ -1837,7 +2066,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "m. Erectile dysfunction [Severe]"
+    "Label": "m. Erectile dysfunction [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_psycho_behav_iss_moderate",
@@ -1845,7 +2075,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "n. Psycho-behavioral issues [Moderate]"
+    "Label": "n. Psycho-behavioral issues [Moderate]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_ae_psycho_behav_iss_severe",
@@ -1853,7 +2084,8 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "n. Psycho-behavioral issues [Severe]"
+    "Label": "n. Psycho-behavioral issues [Severe]",
+    "fieldType": "Single Select"
   },
   {
     "name": "vm_tx_and_other_clinnotes",
@@ -1861,6 +2093,7 @@
     "pageName": "vmmc_postop2",
     "IsIndexed": false,
     "IsRequired": false,
-    "Label": "Treatment and Other Clinical Notes"
+    "Label": "Treatment and Other Clinical Notes",
+    "fieldType": "Text"
   }
 ]

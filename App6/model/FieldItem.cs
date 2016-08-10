@@ -1,10 +1,7 @@
-using System;
-
 namespace JhpDataSystem.model
 {
     public class FieldItem
     {
-        //public int fieldId { get; set; }
         public string name { get; set; }
         public string dataType { get; set; }
         public string pageName { get; set; }
@@ -12,7 +9,7 @@ namespace JhpDataSystem.model
         public bool IsRequired { get; set; }
         public string Label { get; set; }
         public int PageId { get; set; }
-        //public List<string> options { get; set; }
+        public string fieldType { get; set; }
     }
 
     public class FieldValuePair

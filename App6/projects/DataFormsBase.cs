@@ -154,7 +154,9 @@ namespace JhpDataSystem.projects
 
             //we find the date fields
             var dateFields = (from field in viewFields
-                              where field.dataType == Constants.DATEPICKER
+                              where 
+                              field.dataType == Constants.DATEPICKER ||
+                              field.dataType == Constants.TIMEPICKER
                               select field).ToList();
             var context = this;
             //Android.Content.Res.Resources res = context.Resources;
@@ -171,6 +173,15 @@ namespace JhpDataSystem.projects
                 if (dateSelectButton == null)
                     continue;
 
+                //we make the date field read only
+                var viewName = context.Resources.GetIdentifier(
+    Constants.DATE_TEXT_PREFIX + field.name, "id", context.PackageName);
+                var dateView = FindViewById<EditText>(viewName);
+                if (dateView == null)
+                    return;
+                else
+                    dateView.Enabled = false;
+
                 //create events for them and their accompanyinng text fields
                 dateSelectButton.Click += (a, b) =>
                 {
@@ -179,12 +190,23 @@ namespace JhpDataSystem.projects
                     var sisterView = FindViewById<EditText>(dateViewId);
                     if (sisterView == null)
                         return;
-                    //sisterView.Text = "text set by date click";
-                    var frag = DatePickerFragment.NewInstance((time) =>
+                    var now = DateTime.Now;
+                    if (field.dataType==Constants.TIMEPICKER)
                     {
-                        sisterView.Text = time.ToLongDateString();
-                    });
-                    frag.Show(FragmentManager, DatePickerFragment.TAG);
+                        var tp = new TimePickerDialog(this, (sender, e) =>
+                        {
+                            sisterView.Text = e.HourOfDay + ":" + e.Minute;
+                        }, now.Hour, now.Minute, false);
+                        tp.Show();
+                    }
+                    else
+                    {
+                        var frag = DatePickerFragment.NewInstance((time) =>
+                        {
+                            sisterView.Text = time.ToLongDateString();
+                        });
+                        frag.Show(FragmentManager, DatePickerFragment.TAG);
+                    }
                 };
             }
         }
@@ -200,18 +222,20 @@ namespace JhpDataSystem.projects
                 var field = fvp.Field;
                 switch (field.dataType)
                 {
+                    case Constants.TIMEPICKER:
                     case Constants.DATEPICKER:
-                        {
-                            var view = field.GetDataView<EditText>(this);
-                            view.Text = fvp.Value;
-                            break;
-                        }
                     case Constants.EDITTEXT:
                         {
                             var view = field.GetDataView<EditText>(this);
                             view.Text = fvp.Value;
                             break;
                         }
+                    //case Constants.EDITTEXT:
+                    //    {
+                    //        var view = field.GetDataView<EditText>(this);
+                    //        view.Text = fvp.Value;
+                    //        break;
+                    //    }
                     case Constants.RADIOBUTTON:
                         {
                             var view = field.GetDataView<RadioButton>(this);
@@ -239,7 +263,9 @@ namespace JhpDataSystem.projects
 
             //we find the date fields
             var dataFields = (from field in viewFields
-                              where field.dataType == Constants.DATEPICKER
+                              where
+                              field.dataType == Constants.TIMEPICKER
+                              || field.dataType == Constants.DATEPICKER
                               || field.dataType == Constants.EDITTEXT
                               || field.dataType == Constants.CHECKBOX
                               || field.dataType == Constants.RADIOBUTTON
@@ -251,6 +277,7 @@ namespace JhpDataSystem.projects
                 var resultObject = new FieldValuePair() { Field = field, Value = string.Empty };
                 switch (field.dataType)
                 {
+                    case Constants.TIMEPICKER:
                     case Constants.DATEPICKER:
                         {
                             var view = field.GetDataView<EditText>(this);
@@ -301,7 +328,6 @@ namespace JhpDataSystem.projects
                 }
                 valueFields.Add(resultObject);
             }
-
             AppInstance.Instance.TemporalViewData[viewId] = valueFields;
         }
 
@@ -336,7 +362,7 @@ namespace JhpDataSystem.projects
         public override void OnBackPressed()
         {
             new AlertDialog.Builder(this)
-                .SetTitle("Warning: Confirm action")
+                .SetTitle("Warning")
                 .SetMessage("You'll lose all data entered if you navigate backwards. Are you sure you want to navigate backwards")
                 .SetPositiveButton("OK", (senderAlert, args) => { base.OnBackPressed(); })
                 .SetNegativeButton("Cancel", (senderAlert, args) => { })

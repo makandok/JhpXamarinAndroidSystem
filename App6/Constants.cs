@@ -152,6 +152,7 @@ namespace JhpDataSystem
         internal const string PP_VIEWS_3 = "prepexreg3";
         internal const string PP_VIEWS_4 = "prepexreg4";
 
+        internal const string TIMEPICKER = "TimePicker";
         internal const string DATEPICKER = "DatePicker";
         internal const string EDITTEXT = "EditText";
         internal const string CHECKBOX = "CheckBox";
@@ -162,9 +163,5 @@ namespace JhpDataSystem
         internal const string LABEL_PREFIX = "sylbl_";
 
         internal const string DEFAULT_CHECKED = "1";
-
-
-
-        //internal static 
     }
 }
