@@ -89,6 +89,8 @@ namespace JhpDataSystem.projects
             SetContentView(myView);
             addDefaultNavBehaviours();
             bindDateDialogEventsForView(myView);
+
+            setDefaultValuesForView(myView);
             loadClientFromIntent();
 
             if(isInEditMode())
@@ -134,17 +136,42 @@ namespace JhpDataSystem.projects
             List<FieldValuePair> fvp = new List<FieldValuePair>();
             foreach (var value in fieldValues)
             {
-                //t.name != Constants.FIELD_VMMC_DATEOFVISIT || 
-                // && (t.name != Constants.FIELD_PPX_DATEOFVISIT)
                 var field = viewFields.FirstOrDefault(t => t.name == value.Name);
-                //var field = viewFields
-                //    .Where(t => t.name == value.Name)
-                //    .FirstOrDefault();
                 if (field == null)
                     continue;
                 fvp.Add(new FieldValuePair() { Field = field, Value = value.Value });
             }
             return fvp;
+        }
+
+        protected void setDefaultValuesForView(int viewId)
+        {
+            var viewFields = GetFieldsForView(viewId);
+            var sysFields = (from field in viewFields
+                              where
+                              field.fieldType == Constants.SYS_FIELD_TODAY ||
+                              field.fieldType == Constants.SYS_FIELD_USERNAME
+                             select field).ToList();
+            var context = this;
+            foreach (var field in sysFields)
+            {
+                var dataView = field.GetDataView<EditText>(context);
+                if (field.fieldType == Constants.SYS_FIELD_TODAY)
+                {
+                    //we set the current date
+                    var today = DateTime.Now.ToLongDateString();
+                    dataView.Text = today;
+                }
+                else if (field.fieldType == Constants.SYS_FIELD_USERNAME)
+                {
+                    //we set the user id
+                    var userId = AppInstance.Instance.CurrentUser.User.UserId;
+                    dataView.Text = userId;
+                }
+
+                //prevent edits
+                dataView.Enabled = false;
+            }
         }
 
         protected void bindDateDialogEventsForView(int viewId)
@@ -163,6 +190,10 @@ namespace JhpDataSystem.projects
             //string recordTable = res.GetString(Resource.String.RecordsTable);
             foreach (var field in dateFields)
             {
+                //we skip for sys fields
+                if (field.fieldType == Constants.SYS_FIELD_TODAY)
+                    continue;
+
                 //we convert these into int Ids
                 int resID = context.Resources.GetIdentifier(
                     Constants.DATE_BUTTON_PREFIX + field.name, "id", context.PackageName);
@@ -195,7 +226,10 @@ namespace JhpDataSystem.projects
                     {
                         var tp = new TimePickerDialog(this, (sender, e) =>
                         {
-                            sisterView.Text = e.HourOfDay + ":" + e.Minute;
+                            sisterView.Text =
+                            (e.HourOfDay < 10 ? ("0" + e.HourOfDay) : e.HourOfDay.ToString())
+                             + ":" +
+                            (e.Minute<10?("0"+ e.Minute):e.Minute.ToString());
                         }, now.Hour, now.Minute, false);
                         tp.Show();
                     }
