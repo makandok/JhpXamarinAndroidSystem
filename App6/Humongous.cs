@@ -76,7 +76,8 @@ namespace JhpDataSystem
 
             var asString = fieldStream.toText();
 
-            var fields = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FieldItem>>(asString);
+            var fields = Newtonsoft.Json.JsonConvert.
+                DeserializeObject<List<FieldItem>>(asString);
 
             var viewPages = fields.Select(t => t.pageName).Distinct().ToList();
 

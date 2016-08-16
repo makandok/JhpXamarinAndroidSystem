@@ -33,11 +33,11 @@ namespace JhpDataSystem.model
         public string Name { get; set; }
         public string Value { get; set; }
 
-        internal string toDisplayText()
+        public string toDisplayText()
         {
             return Name + ",\t" + Value;
         }
-        internal static string getHeaderText()
+        public static string getHeaderText()
         {
             return "Name,\tValue";
         }

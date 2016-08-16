@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+
 namespace JhpDataSystem
 {
     public static class EncryptionHelper

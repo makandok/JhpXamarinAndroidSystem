@@ -12,7 +12,7 @@ namespace JhpDataSystem.model
         public string FormName { get; set; }
         public List<NameValuePair> FieldValues { get; set; }
 
-        internal NameValuePair GetValue(string fieldName)
+        public NameValuePair GetValue(string fieldName)
         {
             var toReturn = FieldValues
                 .Where(t => t.Name.Contains(fieldName))
