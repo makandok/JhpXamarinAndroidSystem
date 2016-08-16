@@ -24,7 +24,7 @@
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Data Entry By",
-    "fieldType": "Text"
+    "fieldType": "username"
   },
   {
     "name": "vm_facility_name",
@@ -1635,7 +1635,7 @@
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Date of Data Entry",
-    "fieldType": "Date"
+    "fieldType": "today"
   },
   {
     "name": "vm_postop_data_entered_by",
@@ -1644,7 +1644,7 @@
     "IsIndexed": false,
     "IsRequired": false,
     "Label": "Data Entry By",
-    "fieldType": "Text"
+    "fieldType": "username"
   },
   {
     "name": "vm_reviewer_name",

@@ -123,16 +123,13 @@ namespace ExcelToAndroidXML
                             break;
                         }
                     case "today":
-                    //{
-                    //    fieldXml = getXamlDefinitionForDate(field, "DatePicker");
-                    //    break;
-                    //}
                     case "date":
                     case "datepicker":
                         {
                             fieldXml = getXamlDefinitionForDate(field, "DatePicker");
                             break;
                         }
+                    case "username":
                     case "text":
                     case "edittext":
                         {

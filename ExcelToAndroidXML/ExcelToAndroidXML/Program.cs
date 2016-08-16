@@ -88,7 +88,7 @@ namespace ExcelToAndroidXML
             }
             else
             {
-                if (fields.Count != 208)
+                if (fields.Count != 216)
                     throw new ArgumentOutOfRangeException("Expected 210 fields");
             }
 

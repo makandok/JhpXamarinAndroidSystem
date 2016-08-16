@@ -21,8 +21,11 @@
   <string name="sys_summary_blobcount">Summary count of all records</string>  
   <string name="ppx_sys_deviceusage">Usage by Device Size</string>
   <string name="vmc_activitylabel">VMMC Manager</string>
-  
+
   <!-- STRINGS FOR PPX-->
+  <string name="date_firstedited">Date of Data Entry</string>
+  <string name="data_entered_by">Data Entry By</string>
+  
   <string name="generalsummary_hdr">General Summary</string>
   <string name="facilityname">Facility</string>
   <string name="dateofvisit">Date of Visit</string>
@@ -253,8 +256,6 @@
   <string name="notremovedevice">Not to remove the device or allow anyone to remove</string>
   <string name="nosexmastrubation">No sexual intercourse or masturbation</string>
 
-
-
   <!-- STRINGS FOR VMMC-->
   <string name="vm_svc_loc_details_hdr">Service Location Details</string>
   <string name="vm_intakeform_serial">Intake Form Serial</string>
@@ -277,9 +278,9 @@
   <string name="vm_age_units_yrs">Yrs</string>
   <string name="vm_age">Age</string>
   <string name="vm_nrc_passport">NRC / Passport</string>
-  <string name="vm_phone_number">Contact Phone Nummber</string>
+  <string name="vm_phone_number">Contact Phone Number</string>
   <string name="vm_next_of_kin">Next of Kin Names</string>
-  <string name="vm_phone_nextofkin">Next of Kin Phone Nunber</string>
+  <string name="vm_phone_nextofkin">Next of Kin Phone Number</string>
   <string name="vm_tribe">Tribe</string>
   <string name="vm_religion">Religion</string>
   <string name="vm_religion_christian">Christian</string>

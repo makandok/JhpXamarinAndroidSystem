@@ -111,7 +111,6 @@ namespace JhpDataSystem.store
             db.DeleteAll<RecordSummary>();
 
             new TableStore(Constants.KIND_DEFAULT).DeleteAll();
-            //new TableStore(Constants.KIND_APPUSERS).build();
 
             new TableStore(Constants.KIND_SITESESSION).DeleteAll();
             new TableStore(Constants.KIND_SITEPROVIDER).DeleteAll();

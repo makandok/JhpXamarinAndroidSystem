@@ -18,45 +18,6 @@
         android:id="@+id/generalsummary_hdr" />
 
     <TextView
-        android:text="@string/date_firstedited"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/dttxt_date_firstedited" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/dtbtn_date_firstedited"
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-            android:text="@string/sys_dateselect"/>
-        <EditText
-            android:text=""
-            android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:id="@+id/dttxt_date_firstedited"
-            android:textSize="25sp" />
-    </LinearLayout>
-
-    <TextView
-        android:text="@string/data_entered_by"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/data_entered_by" />
-    <EditText
-        android:layout_height="40dp"
-        android:layout_width="match_parent"
-        android:inputType="text"
-        android:id="@+id/data_entered_by"
-        android:hint="@string/data_entered_by" />
-
-    <TextView
         android:text="@string/facilityname"
         android:textColor="@android:color/holo_blue_dark"
         android:textAppearance="?android:attr/textAppearanceMedium"

@@ -1,23 +1,5 @@
 [
   {
-    "name": "date_firstedited",
-    "dataType": "DatePicker",
-    "pageName": "prepexreg1",
-    "IsIndexed": true,
-    "IsRequired": true,
-    "Label": "Date of Data Entry",
-    "fieldType": "today"
-  },
-  {
-    "name": "data_entered_by",
-    "dataType": "EditText",
-    "pageName": "prepexreg1",
-    "IsIndexed": true,
-    "IsRequired": true,
-    "Label": "Data Entry By",
-    "fieldType": "username"
-  },
-  {
     "name": "facilityname",
     "dataType": "EditText",
     "pageName": "prepexreg1",
@@ -1575,24 +1557,6 @@
     "fieldType": "SingleSelect"
   },
   {
-    "name": "date_firstedited",
-    "dataType": "DatePicker",
-    "pageName": "prepexdevremoval1",
-    "IsIndexed": true,
-    "IsRequired": true,
-    "Label": "Date of Data Entry",
-    "fieldType": "today"
-  },
-  {
-    "name": "data_entered_by",
-    "dataType": "EditText",
-    "pageName": "prepexdevremoval1",
-    "IsIndexed": true,
-    "IsRequired": true,
-    "Label": "Data Entry By",
-    "fieldType": "username"
-  },
-  {
     "name": "facilityname",
     "dataType": "EditText",
     "pageName": "prepexdevremoval1",
@@ -2266,24 +2230,6 @@
     "IsRequired": false,
     "Label": "Signed [No]",
     "fieldType": "SingleSelect"
-  },
-  {
-    "name": "date_firstedited",
-    "dataType": "DatePicker",
-    "pageName": "prepexpostremoval1",
-    "IsIndexed": true,
-    "IsRequired": true,
-    "Label": "Date of Data Entry",
-    "fieldType": "today"
-  },
-  {
-    "name": "data_entered_by",
-    "dataType": "EditText",
-    "pageName": "prepexpostremoval1",
-    "IsIndexed": true,
-    "IsRequired": true,
-    "Label": "Data Entry By",
-    "fieldType": "username"
   },
   {
     "name": "facilityname",
@@ -2986,24 +2932,6 @@
     "IsRequired": false,
     "Label": "Signed [No]",
     "fieldType": "SingleSelect"
-  },
-  {
-    "name": "date_firstedited",
-    "dataType": "DatePicker",
-    "pageName": "prepexunscheduled1",
-    "IsIndexed": true,
-    "IsRequired": true,
-    "Label": "Date of Data Entry",
-    "fieldType": "today"
-  },
-  {
-    "name": "data_entered_by",
-    "dataType": "EditText",
-    "pageName": "prepexunscheduled1",
-    "IsIndexed": true,
-    "IsRequired": true,
-    "Label": "Data Entry By",
-    "fieldType": "username"
   },
   {
     "name": "facilityname",

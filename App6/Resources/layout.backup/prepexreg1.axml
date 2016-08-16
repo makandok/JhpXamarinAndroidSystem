@@ -18,45 +18,6 @@
         android:id="@+id/generalsummary_hdr" />
 
     <TextView
-        android:text="@string/date_firstedited"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/dttxt_date_firstedited" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/dtbtn_date_firstedited"
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-            android:text="@string/sys_dateselect"/>
-        <EditText
-            android:text=""
-            android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:id="@+id/dttxt_date_firstedited"
-            android:textSize="25sp" />
-    </LinearLayout>
-
-    <TextView
-        android:text="@string/data_entered_by"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/data_entered_by" />
-    <EditText
-        android:layout_height="40dp"
-        android:layout_width="match_parent"
-        android:inputType="text"
-        android:id="@+id/data_entered_by"
-        android:hint="@string/data_entered_by" />
-
-    <TextView
         android:text="@string/facilityname"
         android:textColor="@android:color/holo_blue_dark"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -124,31 +85,6 @@
         android:hint="@string/clientidnumber" />
 
     <TextView
-        android:text="@string/dateofplacement"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/dttxt_dateofplacement" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/dtbtn_dateofplacement"
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-            android:text="@string/sys_dateselect"/>
-        <EditText
-            android:text=""
-            android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:id="@+id/dttxt_dateofplacement"
-            android:textSize="25sp" />
-    </LinearLayout>
-
-    <TextView
         android:text="@string/personaldetails_hdr"
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/white"
@@ -170,6 +106,45 @@
         android:inputType="text"
         android:id="@+id/clientname"
         android:hint="@string/clientname" />
+
+    <TextView
+        android:text="@string/dob"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/dttxt_dob" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/dtbtn_dob"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:text="@string/sys_dateselect"/>
+        <EditText
+            android:text=""
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:id="@+id/dttxt_dob"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/ageinyears"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/ageinyears" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:id="@+id/ageinyears"
+        android:hint="@string/ageinyears" />
 
     <TextView
         android:text="@string/clientsphysicaladdress"
@@ -200,109 +175,128 @@
         android:hint="@string/clienttel" />
 
     <TextView
-        android:text="@string/removalprocedure_hdr"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/white"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/homecell"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/removalprocedure_hdr" />
+        android:labelFor="@+id/homecell" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:id="@+id/homecell"
+        android:hint="@string/homecell" />
 
     <TextView
-android:text="@string/typeofinteraction"
+        android:text="@string/mobilecell"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/mobilecell" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:id="@+id/mobilecell"
+        android:hint="@string/mobilecell" />
+
+    <TextView
+        android:text="@string/workcontactnumber"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/workcontactnumber" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:id="@+id/workcontactnumber"
+        android:hint="@string/workcontactnumber" />
+
+    <TextView
+android:text="@string/alternateaddresstype"
 android:textColor="@android:color/holo_blue_dark"
 android:textAppearance="?android:attr/textAppearanceMedium"
         android:minWidth="25dp"
         android:minHeight="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/l_typeofinteraction" />
+        android:id="@+id/l_alternateaddresstype" />
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rg_typeofinteraction" >
+        android:id="@+id/rg_alternateaddresstype" >
 <RadioButton
             android:layout_marginStart="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="@string/typeofinteraction_removalproceddure"
-android:id="@+id/typeofinteraction_removalproceddure" />
+            android:text="@string/alternateaddresstype_work"
+android:id="@+id/alternateaddresstype_work" />
 
 <RadioButton
             android:layout_marginStart="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="@string/typeofinteraction_followuptelephone"
-android:id="@+id/typeofinteraction_followuptelephone" /></RadioGroup >
+            android:text="@string/alternateaddresstype_school"
+android:id="@+id/alternateaddresstype_school" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/alternateaddresstype_friendnextofkin"
+android:id="@+id/alternateaddresstype_friendnextofkin" /></RadioGroup >
 
     <TextView
-        android:text="@string/timeforcepsapplied"
+        android:text="@string/alternateaddress"
         android:textColor="@android:color/holo_blue_dark"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:labelFor="@+id/dttxt_timeforcepsapplied" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/dtbtn_timeforcepsapplied"
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-            android:text="@string/sys_dateselect"/>
-        <EditText
-            android:text=""
-            android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:id="@+id/dttxt_timeforcepsapplied"
-            android:textSize="25sp" />
-    </LinearLayout>
-
-    <TextView
-        android:text="@string/timeinnerringremoved"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/dttxt_timeinnerringremoved" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/dtbtn_timeinnerringremoved"
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-            android:text="@string/sys_dateselect"/>
-        <EditText
-            android:text=""
-            android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:id="@+id/dttxt_timeinnerringremoved"
-            android:textSize="25sp" />
-    </LinearLayout>
-
-    <TextView
-        android:text="@string/comments"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/comments" />
+        android:labelFor="@+id/alternateaddress" />
     <EditText
         android:layout_height="40dp"
         android:layout_width="match_parent"
         android:inputType="text"
-        android:id="@+id/comments"
-        android:hint="@string/comments" />
+        android:id="@+id/alternateaddress"
+        android:hint="@string/alternateaddress" />
+
+    <TextView
+        android:text="@string/alternatephone"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/alternatephone" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:id="@+id/alternatephone"
+        android:hint="@string/alternatephone" />
+
+    <TextView
+        android:text="@string/friend_nextofkin"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/friend_nextofkin" />
+    <EditText
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:id="@+id/friend_nextofkin"
+        android:hint="@string/friend_nextofkin" />
 
 </LinearLayout>
 </ScrollView>

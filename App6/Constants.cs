@@ -16,11 +16,14 @@ namespace JhpDataSystem
         internal const string FIELD_ENTITYID = "entityid";
         internal const string FIELD_ID = "id";
 
+        internal const string SYS_FIELD_USERNAME = "username";
         internal const string SYS_FIELD_USERID = "sys_userid";
         internal const string SYS_FIELD_USERNAMES = "sys_usernames";
         internal const string SYS_FIELD_PASSWDHASH = "sys_pwdhash";
 
+
         internal const string SYS_FIELD_DATEEDITED = "sys_editdate";
+
         internal const string SYS_FIELD_DATECREATED = "sys_datecreated";
         internal const string SYS_FIELD_METADATA = "sys_metadata";
 
@@ -32,7 +35,9 @@ namespace JhpDataSystem
         internal static string SYS_FIELD_HomeFacilityName = "sys_facname";
         internal static string SYS_FIELD_FACILITYID = "sys_facilityid";
         internal static string SYS_FIELD_SESSIONDATE = "sys_sessiondate";
+        internal const string SYS_FIELD_TODAY = "today";
         
+
         //VMMC
         internal const string FIELD_VMMC_DOB = "vm_date_of_birth";
         internal const string FIELD_VMMC_MCDATE = "vm_mc_date";
