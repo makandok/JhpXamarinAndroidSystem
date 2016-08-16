@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace JhpDataSystem
 {
-    class JhpSecurity
+    public class JhpSecurity
     {
         internal static string Decrypt(string jsonValue)
         {
@@ -26,47 +26,6 @@ namespace JhpDataSystem
                 builder.Append(hashBytes[i].ToString("x2"));
             }            
             return builder.ToString().Substring(6, 30);
-        }
-    }
-
-    public class PlainText
-    {
-        public PlainText(string plainText) { Value = plainText; }
-        public string Value { get; set; }
-    }
-
-    public class EncryptedText
-    {
-        public EncryptedText(string encryptedText) { Value = encryptedText; }
-        public string Value { get; set; }
-    }
-
-    public static class EncryptionHelper
-    {
-        public static PlainText Decrypt(this string textToEncrypt)
-        {
-            var encryptionKey = AppInstance.Instance.ApiAssets[Constants.ASSET_ADMIN_ENCRYPTIONKEY];
-            var encryptedText = new EncryptedText(textToEncrypt);
-            return encryptedText.Decrypt(encryptionKey);
-        }
-
-        public static EncryptedText Encrypt(this string textToEncrypt)
-        {
-            var encryptionKey = AppInstance.Instance.ApiAssets[Constants.ASSET_ADMIN_ENCRYPTIONKEY];
-            var plainText = new PlainText(textToEncrypt);
-            return plainText.Encrypt(encryptionKey);
-        }
-
-        public static EncryptedText Encrypt(this PlainText plainText, string encryptionKey)
-        {
-            var encryptedText = Crypto.Encrypt(plainText.Value, encryptionKey);
-            return new EncryptedText(encryptedText);
-        }
-
-        public static PlainText Decrypt(this EncryptedText encryptedText, string encryptionKey)
-        {
-            var decryptedText = Crypto.Decrypt(encryptedText.Value, encryptionKey);
-            return new PlainText(decryptedText);
         }
     }
 }

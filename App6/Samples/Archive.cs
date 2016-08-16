@@ -215,10 +215,6 @@ namespace JhpDataSystem
             request.ContentType = "application/json";
             request.Method = "GET";
 
-            //byte[] byteArray = Encoding.UTF8.GetBytes(contents);
-            ////byte[] byteArray = Encoding.ASCII.GetBytes(contents);
-            //MemoryStream stream = new MemoryStream(byteArray);
-
             string result = string.Empty;
             try
             {
@@ -246,12 +242,6 @@ namespace JhpDataSystem
             }
             return result;
         }
-
-        //[Java.Interop.Export("myClickHandler")]
-        //public void doLogin(View view)
-        //{
-        //    //object sender, EventArgs e
-        //}
     }
 }
 

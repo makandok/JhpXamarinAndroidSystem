@@ -3,26 +3,15 @@ using System.Threading.Tasks;
 using Google.Apis.Services;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Auth.OAuth2.Flows;
-using Google.Apis.Oauth2.v2.Data;
 using System.Threading;
 using Google.Apis.Http;
-using System.IO;
-using System.Security.Cryptography.X509Certificates;
-using RestSharp;
 using Google.Apis.Drive.v3;
-using System;
 using System.Net.Http;
 
 namespace JhpDataSystem.db
 {
     internal class WebDb
     {
-        public void doNothing()
-        {
-            var client = new RestClient();
-            //client.JsonSerializer = new YourCustomSerializer();
-        }
-
         public Google.Apis.Storage.v1.Data.Objects ListBucketContents(Google.Apis.Storage.v1.StorageService storage, string bucket)
         {
             //https://cloud.google.com/docs/authentication#code_samples

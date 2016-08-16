@@ -248,7 +248,7 @@ namespace JhpDataSystem
 
         void showDialog(string title, string message)
         {
-            new Android.App.AlertDialog.Builder(this)
+            new AlertDialog.Builder(this)
             .SetTitle(title)
             .SetMessage(message)
             .SetPositiveButton("OK", (senderAlert, args) => { })

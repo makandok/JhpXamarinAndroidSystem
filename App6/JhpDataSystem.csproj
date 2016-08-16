@@ -235,6 +235,8 @@
     <Compile Include="db\GoogleCredential.cs" />
     <AndroidAsset Include="Assets\vmmc_fields.json" />
     <None Include="db\GoogleDataStoreNotCompiled.cs" />
+    <Compile Include="EncryptedText.cs" />
+    <Compile Include="EncryptionHelper.cs" />
     <Compile Include="Humongous.cs" />
     <AndroidResource Include="Resources\layout\prepexreg1.axml" />
     <AndroidResource Include="Resources\layout\prepexreg2.axml" />
@@ -245,11 +247,16 @@
     </AndroidResource>
     <Compile Include="model\FieldItem.cs" />
     <Compile Include="ClientLookupProvider.cs" />
+    <Compile Include="model\GeneralEntityDataset.cs" />
+    <Compile Include="model\KindMetaData.cs" />
+    <Compile Include="model\OutEntity.cs" />
     <Compile Include="model\RecordSummary.cs" />
     <Compile Include="model\SiteProvider.cs" />
+    <Compile Include="model\UserSession.cs" />
     <Compile Include="modules\ClientSelectorBase.cs" />
     <Compile Include="modules\RecordSelectorBase.cs" />
     <Compile Include="modules\RecordSummaryAdapter.cs" />
+    <Compile Include="PlainText.cs" />
     <Compile Include="ProjectContext.cs" />
     <Compile Include="projects\BaseContextManager.cs" />
     <Compile Include="projects\BaseHomeActivity.cs" />
@@ -307,6 +314,7 @@
     <AndroidResource Include="Resources\layout\smscenter.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <Compile Include="TablestoreLookupProvider.cs" />
     <Compile Include="Utilities\SmsSender.cs" />
     <AndroidResource Include="Resources\layout\griddisplay.axml">
       <SubType>AndroidResource</SubType>
@@ -339,7 +347,6 @@
     <Compile Include="LauncherActivity.cs" />
     <Compile Include="model\AppUser.cs" />
     <Compile Include="model\EntityKey.cs" />
-    <Compile Include="BrowserDataEntryActivity.cs" />
     <Compile Include="projects\ppx\PPXHomeActivity.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
     <Compile Include="db\ServiceAccountCredentiaal.cs" />
@@ -357,7 +364,6 @@
     <Compile Include="store\LocalEntityStore.cs" />
     <Compile Include="store\ProcessLogger.cs" />
     <Compile Include="store\TableStore.cs" />
-    <None Include="Samples\DatePickerFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -398,11 +404,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\jhpiego_logo.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="adapter\" />
-    <Folder Include="communicator\" />
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserLoginLayout.axml">
       <SubType>AndroidResource</SubType>

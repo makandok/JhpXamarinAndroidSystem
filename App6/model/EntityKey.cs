@@ -9,7 +9,6 @@ namespace JhpDataSystem.model
         ISaveableEntity build();
         List<NameValuePair> ToValuesList();
         ILocalDbEntity Load(GeneralEntityDataset clientSummary);
-        //GeneralEntityDataset asGeneralEntityDataset(KindName kindName);       
     }
 
     public interface ISaveableEntity

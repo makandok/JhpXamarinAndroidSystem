@@ -1,4 +1,3 @@
-using Android.Views;
 using JhpDataSystem.model;
 using System;
 
