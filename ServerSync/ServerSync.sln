@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerSync", "ServerSync\Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerSyncTest", "ServerSyncTest\ServerSyncTest.csproj", "{592C8332-B766-4148-858C-06251B0C2A0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibraries", "ClassLibrary1\SharedLibraries.csproj", "{8C919FE0-80C7-48E8-8428-E368D2DDF329}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibraries", "SharedLibrary\SharedLibraries.csproj", "{8C919FE0-80C7-48E8-8428-E368D2DDF329}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
