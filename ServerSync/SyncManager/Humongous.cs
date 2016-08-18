@@ -2,8 +2,10 @@ using Android.App;
 using Android.Content.Res;
 using JhpDataSystem.model;
 using JhpDataSystem.store;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace JhpDataSystem
@@ -43,24 +45,30 @@ namespace JhpDataSystem
             TemporalViewData = new Dictionary<int, List<FieldValuePair>>();
             ApiAssets = new Dictionary<string, string>();
             //we read the api key file
-            var inputStream = assetManager.Open(Constants.API_KEYFILE);
-            var jsonObject = System.Json.JsonValue.Load(inputStream);
+            var bytes = SyncManager.Properties.Resources.api_keys;
+            var inputStream = new MemoryStream(bytes).toText();
 
-            foreach (var assetName in Constants.ASSET_LIST)
+            //var keys = new Dictionary<string, string>();
+            var jObject = Newtonsoft.Json.JsonConvert.DeserializeObject(inputStream)
+                as Newtonsoft.Json.Linq.JContainer;
+            var tokens = jObject.ToList<JToken>();
+            foreach (var token in tokens)
             {
-                ApiAssets[assetName] =
-                    jsonObject.decryptAndGetApiSetting(assetName);
+                var name = token.First();
+                var assetName = name.Path;
+                var assetValue = name.Value<string>();
+
+                if (Constants.ASSET_LIST.Contains(assetName.ToLowerInvariant()))
+                {
+                    ApiAssets[assetName] = assetValue;
+                }                
             }
 
             //we need to have this class initialised
             LocalEntityStoreInstance = new LocalEntityStore();
             LocalEntityStoreInstance.buildTables(false);
-            
-            CloudDbInstance = new CloudDb(_assetManager);
 
-            //Android.OS.Build.Serial
-            var configuration = new LocalDB3().DB.Table<DeviceConfiguration>().FirstOrDefault();
-            Configuration = configuration;
+            CloudDbInstance = new CloudDb() { ApiAssets = ApiAssets };
         }
 
         public projects.ContextLocalEntityStore ModuleContext { get; set; }

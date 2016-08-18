@@ -66,6 +66,17 @@ namespace JhpDataSystem
             //buttonClearClientData
             var buttonClearClientData = FindViewById<Button>(Resource.Id.buttonClearClientData);
             buttonClearClientData.Click += buttonClearClientData_Click;
+
+            //buttonRebuildIndexes
+            var buttonRebuildIndexes = FindViewById<Button>(Resource.Id.buttonRebuildIndexes);
+            buttonRebuildIndexes.Click += buttonRebuildIndexes_Click;
+        }
+
+        private void buttonRebuildIndexes_Click(object sender, EventArgs e)
+        {
+            sendToast("Started rebuilding indexes", ToastLength.Short);
+            AppInstance.Instance.LocalEntityStoreInstance.buildTables(true);
+            sendToast("Completed rebuilding indexes", ToastLength.Short);
         }
 
         private void buttonClearClientData_Click(object sender, EventArgs e)

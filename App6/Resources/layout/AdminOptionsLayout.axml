@@ -142,5 +142,20 @@
             android:layout_height="60dp"
             padding_left="60dp"
             android:id="@+id/buttonClearClientData" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+        <TextView
+            android:text="Updates list of clients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="24dp" />
+        <Button
+            android:text="Rebuild Indexes"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            padding_left="60dp"
+            android:id="@+id/buttonRebuildIndexes" />
     </LinearLayout>
 </LinearLayout>

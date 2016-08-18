@@ -650,8 +650,12 @@ namespace JhpDataSystem.projects
                 FieldValues = getIndexedFormData(data)
             };
 
+            var db = new LocalDB3().DB;
+            //var count = db.Table<ppx.PPClientSummary>().Count();
             var ppclient = new T().Load(clientSummary) as T;
             new LocalDB3().DB.InsertOrReplace(ppclient);
+
+            //count = db.Table<ppx.PPClientSummary>().Count();
         }
 
         protected virtual List<NameValuePair> getIndexedFormData(List<NameValuePair> data)

@@ -219,9 +219,10 @@ namespace JhpDataSystem.projects
             var recCount = lookupProvider.GetCount();
             var clientSummaryCount = new NameValuePair()
             {
-                Name = "ppx Client Summary",
+                Name = "Client Summary",
                 Value = recCount.ToString()
             };
+
             resList.Add(clientSummaryCount.toDisplayText());
 
             var summaryInfo = new LocalDB3().DB.Query<NameValuePair>(

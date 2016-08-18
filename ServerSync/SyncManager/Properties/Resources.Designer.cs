@@ -59,5 +59,25 @@ namespace SyncManager.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] api_keys {
+            get {
+                object obj = ResourceManager.GetObject("api_keys", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] key {
+            get {
+                object obj = ResourceManager.GetObject("key", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
