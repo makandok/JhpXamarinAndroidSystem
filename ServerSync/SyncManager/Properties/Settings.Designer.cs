@@ -22,5 +22,16 @@ namespace SyncManager.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SUPER-LAP\\SQL2014;Initial Catalog=ServerSyncDb;Integrated Security=Tr" +
+            "ue")]
+        public string TestDbConnString {
+            get {
+                return ((string)(this["TestDbConnString"]));
+            }
+        }
     }
 }

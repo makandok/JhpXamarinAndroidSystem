@@ -158,18 +158,26 @@
     <Compile Include="localdb\OutEntity.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="model\Offset.cs" />
+    <Compile Include="model\ResultsLimit.cs" />
+    <Compile Include="model\SimpleValue.cs" />
     <Compile Include="projects\BaseContextManager.cs" />
     <Compile Include="projects\ContextLocalEntityStore.cs" />
     <Compile Include="projects\DefaultLookupProvider.cs" />
     <Compile Include="projects\GeneralContextManager.cs" />
     <Compile Include="projects\PpxContextManager.cs" />
     <Compile Include="projects\VmmcContextManager.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="store\BaseTableStore.cs" />
+    <Compile Include="store\CloudDb_backup.cs" />
     <Compile Include="store\CloudDb.cs" />
     <Compile Include="store\CloudEntity.cs" />
+    <Compile Include="store\CloudLocalStore.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
     <Compile Include="store\LocalDB.cs" />
     <Compile Include="store\LocalDB3.cs" />
     <Compile Include="store\LocalEntityStore.cs" />
+    <Compile Include="store\MultiTableStore.cs" />
     <Compile Include="store\ProcessLogger.cs" />
     <Compile Include="store\TableStore.cs" />
     <Page Include="MainWindow.xaml">
@@ -223,7 +231,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\AboutAssets.txt" />

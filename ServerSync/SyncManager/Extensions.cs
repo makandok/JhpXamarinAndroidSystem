@@ -1,11 +1,33 @@
 using JhpDataSystem.model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace JhpDataSystem
 {
     internal static class Extensions
-    {
+    {        
+        internal static KindKey toKindKey(this string kindKey)
+        {
+            if (string.IsNullOrWhiteSpace(kindKey))
+                throw new ArgumentNullException(
+                    "string.toKindKey requires a non zero length string");
+            return new KindKey() { Value = kindKey };
+        }
+
+        internal static KindName toKind(this string kindName)
+        {
+            if (string.IsNullOrWhiteSpace(kindName))
+                throw new ArgumentNullException(
+                    "string.toKind requires a non zero length string");
+            return new KindName() {Value = kindName };
+        }
+
+        internal static List<KindName> toKinds(this List<string> kindNames)
+        {
+            return (from kind in kindNames select kind.toKind()).ToList();
+        }
+
         //internal static long toSafeDate(this DateTime dateValue)
         //{            
         //    return (dateValue.Year * 100 + dateValue.Month) * 100 + dateValue.Day;

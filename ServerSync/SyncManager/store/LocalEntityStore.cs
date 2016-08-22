@@ -198,7 +198,7 @@ namespace JhpDataSystem.store
         internal KindKey Save(KindKey entityId, KindName entityKind, KindItem dataToSave)
         {
             //we save to both kindregister and entity table
-            return new TableStore(entityKind).Update(entityId, dataToSave);
+            return new TableStore(entityKind.Value).Update(entityId, dataToSave);
         }
     }
 }

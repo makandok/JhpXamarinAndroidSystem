@@ -16,7 +16,7 @@ namespace JhpDataSystem.projects
 
         public List<KindItem> GetAllBlobs(KindName entityKind)
         {
-            return new TableStore(entityKind).GetAllBlobs();
+            return new TableStore(entityKind.Value).GetAllBlobs();
         }
 
         //public void updateRecordSummaryTable()

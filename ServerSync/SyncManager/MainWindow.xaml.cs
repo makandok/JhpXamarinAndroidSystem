@@ -38,6 +38,12 @@ namespace ServerSync
             this.menuConfigure.Click += MenuConfigure_Click;
             this.menuAllData.Click += MenuAllData_Click;
             this.menuSmmaries.Click += MenuSmmaries_Click;
+            
+        }
+
+        void setProgressValue(int value)
+        {
+            pbarProgress.Value = value;
         }
 
         private void MenuSmmaries_Click(object sender, RoutedEventArgs e)
@@ -57,9 +63,7 @@ namespace ServerSync
 
         private async void MenuServerSync_Click(object sender, RoutedEventArgs e)
         {
-            var res = await AppInstance.Instance.CloudDbInstance.doServerSync(null);
-
-            var fixMe = "Ended here"
+            var res = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(setProgressValue);
             //we test the connection
             var isConnected = false;
             //var isConnected = await new TestServerConnection().BeginTest();

@@ -67,8 +67,11 @@ namespace JhpDataSystem
             //we need to have this class initialised
             LocalEntityStoreInstance = new LocalEntityStore();
             LocalEntityStoreInstance.buildTables(false);
-
             CloudDbInstance = new CloudDb() { ApiAssets = ApiAssets };
+            foreach(var table in CloudDb.getAllKindNames())
+            {
+                new CloudLocalStore(table.toKind()).build();
+            }
         }
 
         public projects.ContextLocalEntityStore ModuleContext { get; set; }

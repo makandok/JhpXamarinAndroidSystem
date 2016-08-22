@@ -12,12 +12,14 @@ using JhpDataSystem.model;
 using System.Net;
 using Android.Widget;
 using SyncManager.store;
+using SyncManager.model;
 
 namespace JhpDataSystem.store
 {
     public class CloudDb
     {
-        public List<string> getAllKindNames()
+        const string DATEADDED = "dateadded";
+        public static List<string> getAllKindNames()
         {
             var allClientKinds = new List<string>();
             allClientKinds.AddRange(Constants.PPX_KIND_DISPLAYNAMES.Keys);
@@ -28,72 +30,27 @@ namespace JhpDataSystem.store
         //select __key__,kindmetadata From appusers
         //select __key__, kindmetadata From `vmmc_regandproc` where dateadded
         //select __key__, dateadded From `appusers` where dateadded >= datetime('2016-08-01T00:00:01Z')
-        public async Task<List<CloudEntity>> GetCloudEntities1(string kindName)
+        //select * from appusers where dateadded > datetime('2016-08-16T00:00:00.1Z')
+        //select __key__, dateadded From `appusers` where dateadded >=datetime('2016-08-16T00:00:00.01Z') limit 50 offset 0 order by dateadded asc 
+        //https://console.cloud.google.com/datastore/entities/query/gql?project=jhpzmb-vmmc-odk&ns=&kind=_GAE_MR_TaskPayload&gql=select%20*
+        //Key(`__Stat_Total__`, 'total_entity_usage')
+        //https://console.cloud.google.com/datastore/entities/edit?key=0%2F%7C19%2Fpp_client_devicerem%7C37%2Fname:5643a2ae27144cdaa1fe0d0e43b3864b&project=jhpzmb-vmmc-odk&ns=&kind=_GAE_MR_TaskPayload&gql=select%20*
+        //https://console.cloud.google.com/datastore/entities/query/gql?project=jhpzmb-vmmc-odk&ns=&kind=_GAE_MR_TaskPayload&gql=select%20*%20from%20appusers
+        //https://console.cloud.google.com/datastore/entities/edit?key=0%2F%7C8%2Fappusers%7C37%2Fname:524d91cffb024c7085148004cc47854c&project=jhpzmb-vmmc-odk&ns=&kind=_GAE_MR_TaskPayload&gql=select%20*%20from%20appusers
+        //https://console.cloud.google.com/datastore/entities/query/gql?project=jhpzmb-vmmc-odk&ns=&kind=_AE_Backup_Information&gql=select%20*%20from%20appusers%20order%20by%20dateadded%20asc%20limit%20500%20offset%200%20where%20dateadded%20%3E%3D%20datetime(%272016-08-16T00:00:00.01Z%27)
+
+        private DateTime getLastSyncedDateForKind(KindName kindName)
         {
-            var assets = ApiAssets;
-            var projectId = assets[Constants.ASSET_PROJECT_ID];
-            // Create the service.
-            var datastore = GetDatastoreService(GetDefaultCredential(assets), assets);
-            var res = datastore.Projects.RunQuery(
-                new RunQueryRequest()
-                {
-                    Query = new Query(){Limit = 10,Offset=0 ,Kind = new List<KindExpression> { new KindExpression() {Name = kindName } }}
-                    //GqlQuery = new GqlQuery() { QueryString = "select __key__, cardserial From jhpsystems" }
-                    ,
-                    ReadOptions = new ReadOptions() { }
-                }, projectId);
-
-            var response = await res.ExecuteAsync();
-            var entityResults = response.Batch.EntityResults;
-
-            var toReturn = new List<CloudEntity>();
-            foreach(var entityResult in response.Batch.EntityResults)
+            var db = new CloudLocalStore(kindName);
+            var entity = db.GetLatestEntity();
+            if (entity == null || string.IsNullOrWhiteSpace(entity.Id))
             {
-                var entity = entityResult.Entity;
-                var path = entity.Key.Path.FirstOrDefault();
-                var cloudEntity = new CloudEntity()
-                {
-                    FormName = path.Kind,
-                    Id = path.Name,
-                    EntityId = entity.Properties["entityid"].StringValue,
-                    DataBlob = entity.Properties["datablob"].StringValue,
-                    KindMetaData = entity.Properties["kindmetadata"].StringValue,
-                    DateAdded = Convert.ToDateTime(
-                        entity.Properties["dateadded"].TimestampValue)
-                };
-                toReturn.Add(cloudEntity);
+                return new DateTime(2016, 07, 08);
             }
-            return toReturn;
+            return entity.DateAdded;
         }
 
-        public async void GetCloudEntities(Dictionary<string, string> assets)
-        {
-            var projectId = assets[Constants.ASSET_PROJECT_ID];
-
-            // Create the service.
-            var datastore = GetDatastoreService(GetDefaultCredential(assets), assets);
-
-            //Retrieve entities from the server
-            var res = datastore.Projects.RunQuery(
-                new RunQueryRequest()
-                {
-                    //Query = new Query(){Limit = 10,Kind = new List<KindExpression> { new KindExpression() {Name = "jhpsystems" }, }},
-                    GqlQuery = new GqlQuery() { QueryString = "select __key__, cardserial From jhpsystems" }
-                    ,
-                    ReadOptions = new ReadOptions() { }
-                }, projectId);
-
-            var response = await res.ExecuteAsync();// .Execute();
-
-            var y = (
-            from entityResult in response.Batch.EntityResults
-            let entity = entityResult.Entity
-            select new { entity.Key.Path, entity.Properties.Values }).ToList();
-
-            var batch = response.Batch.EntityResults;
-        }
-
-        public async Task<Key> Save(DbSaveableEntity saveableEntity)
+        private async Task<Key> Save(DbSaveableEntity saveableEntity)
         {
             var assets = AppInstance.Instance.ApiAssets;
             var projectId = assets[Constants.ASSET_PROJECT_ID];
@@ -148,10 +105,8 @@ namespace JhpDataSystem.store
         {
             //System.IO.Stream mstream = null;
             //var googleCredential = Google.Apis.Auth.OAuth2.GoogleCredential.FromStream(mstream);
-
             var cert =
                 SyncManager.Properties.Resources.key;
-
                 //assetManager.Open(assets[Constants.ASSET_P12KEYFILE]).toByteArray();
             var serviceAccountEmail = assets[Constants.ASSET_NAME_SVC_ACCTEMAIL];
             var certificate = new X509Certificate2(cert, "notasecret", X509KeyStorageFlags.Exportable);
@@ -172,7 +127,7 @@ namespace JhpDataSystem.store
             });
         }
 
-        public int AddToOutQueue(DbSaveableEntity saveableEntity)
+        private int AddToOutQueue(DbSaveableEntity saveableEntity)
         {
             var asString = saveableEntity.getJson();
             var outEntity = new OutEntity()
@@ -185,18 +140,7 @@ namespace JhpDataSystem.store
             return res;
         }
 
-        public List<OutEntity> GetRecordsToSync()
-        {
-            //return new OutDb().DB.Table<OutEntity>().ToList();
-            return new List<OutEntity>();
-        }
-
-        //public int GetRecordsToSyncCount()
-        //{
-        //    return new OutDb().DB.Table<OutEntity>().Count();
-        //}
-
-        public async Task<bool> checkConnection()
+        private async Task<bool> checkConnection()
         {
             var googleUrl = "https://google.co.zm";
             var toReturn = false;
@@ -224,69 +168,49 @@ namespace JhpDataSystem.store
 
         public Dictionary<string, string> ApiAssets { get; set; }
 
-        public async Task<int> EnsureServerSync(WaitDialogHelper myDialog)
+        public class FetchCloudDataWorker
         {
-            if (isRunning == 1)
-                return 0;
-            isRunning = 1;
+            RunQueryRequest query;
+            ProjectsResource.RunQueryRequest res;
 
-            await myDialog.showDialog(doServerSync);
+            DatastoreService _dataStore;
+            string _projectId; KindName _kindName; ResultsLimit _skip; DateTime _dateAdded;
 
-            isRunning = 0;
-            return 0;
-        }
-
-        public async Task<int> doServerSync(Action<string, ToastLength> makeToast)
-        {
-            makeToast = (string a, ToastLength b) => { };
-            //var recs = GetRecordsToSync();
-            //if (recs.Count == 0)
-            //{
-            //    makeToast("No unsynced records", ToastLength.Short);
-            //    return 0;
-            //}
-
-            var hasConnection = await checkConnection();
-            if (!hasConnection)
+            public FetchCloudDataWorker(DatastoreService dataStore, string projectId, KindName kindName, ResultsLimit skip, DateTime dateAdded)
             {
-                isRunning = 0;
-                if (makeToast != null)
-                {
-                    makeToast("No connection detected", ToastLength.Long);
-                }
-                return 0;
+                query = getQueryRequest(skip, dateAdded, kindName);
+                res = dataStore.Projects.RunQuery(query
+                    , projectId);
+                
+                _dataStore = dataStore;
+                _projectId = projectId;
+                _kindName = kindName;
+                _skip = skip;
+                _dateAdded = dateAdded;
             }
-            makeToast("Connected tested", ToastLength.Short);
-            var recs = await GetCloudEntities1("appusers");
 
-
-            return recs.Count;
-
-            var cloudDb = new OutDb().DB;
-            
-            var recIndex = recs.Count - 1;
-            while (recIndex >= 0 && hasConnection)
+            public async Task<List<CloudEntity>> beginFetchCloudData()
             {
-                var outEntity = recs[recIndex];
-                var ppdataset = DbSaveableEntity.fromJson<GeneralEntityDataset>(new KindItem(outEntity.DataBlob));
-                var saveable = new DbSaveableEntity(ppdataset)
-                {
-                    kindName = new KindName(ppdataset.FormName)
-                };
+                var toReturn = new List<CloudEntity>();
 
-                var saved = false;
+                var dataStore = _dataStore;
+                var projectId = _projectId;
+                var kindName = _kindName;
+                var skip = _skip;
+                var dateAdded = _dateAdded;
+
+                var fetched = false;                
                 for (int i = 0; i < 4; i++)
                 {
                     try
                     {
-                        await Save(saveable);
-                        //we remove this key from the database
-                        saved = true;
+                        var fetchedData = await fetchCloudData(dataStore, projectId, kindName, skip, dateAdded);
+                        toReturn.AddRange(fetchedData);
+                        fetched = true;
                     }
                     catch (Google.GoogleApiException gex)
                     {
                         //todo: mark this record as bad to prevent it blocking for life
-
                         //cloudDb.InsertOrReplace(new OutEntityUnsynced().load(outEntity));
                         //cloudDb.Delete<OutEntity>(saveable.Id.Value);
                         //break;
@@ -300,29 +224,173 @@ namespace JhpDataSystem.store
                     {
                         //unknown exception
                     }
-                    finally { }
-                    if (saved)
+                    if (fetched)
                     {
-                        try
-                        {
-                            //we delete the record from downloads db
-                            //var deleted = cloudDb.Delete<OutEntity>(saveable.Id.Value);
-                        }
-                        catch
-                        {
-
-                        }
                         break;
                     }
                     else
                     {
                         //lets add a 2 second delay in case it failed the first time
+                        //lets log that we had to wait, try x
                         await Task.Delay(TimeSpan.FromMilliseconds(2000));
                     }
                 }
-                recIndex--;
-                hasConnection = await checkConnection();              
-            }            
+                return toReturn;
+            }
+
+            private async Task<List<CloudEntity>> fetchCloudData(
+                DatastoreService dataStore, string projectId,
+                KindName kindName, ResultsLimit skip, DateTime dateAdded)
+            {
+                var toReturn = new List<CloudEntity>();
+                while (true)
+                {
+                    var response = await res.ExecuteAsync();
+                    var entityResults = response.Batch.EntityResults;
+                    if (entityResults == null)
+                    {
+                        break;
+                    }
+
+                    query.Query.StartCursor = response.Batch.EndCursor;
+                    foreach (var entityResult in response.Batch.EntityResults)
+                    {
+                        var entity = entityResult.Entity;
+                        var path = entity.Key.Path.FirstOrDefault();
+                        var cloudEntity = new CloudEntity()
+                        {
+                            FormName = path.Kind,
+                            Id = path.Name,
+                            EntityId = entity.Properties["entityid"].StringValue,
+                            DataBlob = entity.Properties["datablob"].StringValue,
+                            KindMetaData = entity.Properties["kindmetadata"].StringValue,
+                            DateAdded = Convert.ToDateTime(
+                                entity.Properties["dateadded"].TimestampValue)
+                        };
+                        toReturn.Add(cloudEntity);
+                    }
+
+                    //moreResultsAfterLimit
+                    if (response.Batch.MoreResults == "NO_MORE_RESULTS")
+                    {
+                        break;
+                    }
+                }
+                return toReturn;
+            }
+
+            private RunQueryRequest getQueryRequest(ResultsLimit skip, DateTime dateAdded, KindName kindName = null)
+            {
+                var kindExpression = kindName == null ?
+                    new List<KindExpression>() :
+                    new List<KindExpression> { new KindExpression() { Name = kindName.Value } };
+                return new RunQueryRequest()
+                {
+                    //Query = new Query()
+                    //{
+                    //    Filter = new Google.Apis.Datastore.v1beta3.Data.Filter()
+                    //    {
+                    //        PropertyFilter = new PropertyFilter()
+                    //        {
+                    //            Property = new PropertyReference() { Name = DATEADDED },
+                    //            Value = new Value() { TimestampValue = dateAdded },
+                    //            //GREATER_THAN
+                    //            //GREATER_THAN_OR_EQUAL
+                    //            Op = "GREATER_THAN"
+                    //        }
+                    //    },
+                    //    Order = new List<PropertyOrder>() {
+                    //    new PropertyOrder() { Direction="ASCENDING",
+                    //        Property =new PropertyReference() {Name= DATEADDED } }
+                    //},
+                    //    Kind = kindExpression,
+                    //    Limit = skip.Value,
+                    //    //StartCursor=
+                    //},
+                    GqlQuery = new GqlQuery() { QueryString = 
+                    string.Format(
+                    "select * from {0} where dateadded > datetime('{1}') order by dateadded asc limit {2}",
+                    kindName.Value, dateAdded.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"), skip.Value
+                    )
+                    },
+                    ReadOptions = new ReadOptions() { }
+                };
+            }
+        }
+
+        private async Task<int> fetchRecordsForKind(KindName kindName, string projectId, DatastoreService datastore)
+        {
+            var skip = 50;
+            var lastDateForKind = getLastSyncedDateForKind(kindName);
+
+            var cloudEntities = await new FetchCloudDataWorker(datastore,
+                projectId,
+                kindName,
+                new ResultsLimit(skip),
+                lastDateForKind).beginFetchCloudData();
+
+            var savedToLocal = await addToProcessingQueue(kindName, cloudEntities);
+            return 0;
+        }
+
+        private async Task<bool> addToProcessingQueue(KindName kindName, List<CloudEntity> cloudEntities)
+        {
+            var kindStore = new CloudLocalStore(kindName);
+            foreach(var entity in cloudEntities)
+            {
+                kindStore.Update(entity);
+            }
+            return true;
+        }
+
+        private async Task<int> doServerSync(Action<int> updateProgress)
+        {
+            var currProgress = 0;
+            var hasConnection = await checkConnection();
+            if (!hasConnection)
+            {
+                isRunning = 0;
+                updateProgress(100);
+                return 0;
+            }
+
+            var assets = ApiAssets;
+            var projectId = assets[Constants.ASSET_PROJECT_ID];
+            var datastore = GetDatastoreService(GetDefaultCredential(assets), assets);
+
+            var kindNames = getAllKindNames();
+
+            updateProgress(currProgress += 5);
+            var progressStep = 70 / kindNames.Count;
+            var checkConnStep = 25 / kindNames.Count;
+
+            foreach (var kind in kindNames)
+            {
+                await fetchRecordsForKind(kind.toKind(), projectId, datastore);
+                            
+                updateProgress(currProgress += progressStep);
+                
+                //check if we have a connection
+                hasConnection = await checkConnection();
+                updateProgress(currProgress += checkConnStep);
+            }
+            updateProgress(100);
+            return 0;
+        }
+
+        public async Task<int> EnsureServerSync(Action<int> setProgress)
+        {
+            var progress = new System.Progress<int>();
+            progress.ProgressChanged += (sender, e) => { setProgress(e); };
+            var asIProgress = progress as IProgress<int>;
+
+            if (isRunning == 1)
+                return 0;
+            isRunning = 1;
+            await Task.Run(async () => await doServerSync(asIProgress.Report)
+            );
+
+            isRunning = 0;
             return 0;
         }
     }
