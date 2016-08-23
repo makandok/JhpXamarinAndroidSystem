@@ -39,15 +39,15 @@ namespace JhpDataSystem.store
         //https://console.cloud.google.com/datastore/entities/edit?key=0%2F%7C8%2Fappusers%7C37%2Fname:524d91cffb024c7085148004cc47854c&project=jhpzmb-vmmc-odk&ns=&kind=_GAE_MR_TaskPayload&gql=select%20*%20from%20appusers
         //https://console.cloud.google.com/datastore/entities/query/gql?project=jhpzmb-vmmc-odk&ns=&kind=_AE_Backup_Information&gql=select%20*%20from%20appusers%20order%20by%20dateadded%20asc%20limit%20500%20offset%200%20where%20dateadded%20%3E%3D%20datetime(%272016-08-16T00:00:00.01Z%27)
 
-        private DateTime getLastSyncedDateForKind(KindName kindName)
+        private long getLastSyncedDateForKind(KindName kindName)
         {
             var db = new CloudLocalStore(kindName);
             var entity = db.GetLatestEntity();
             if (entity == null || string.IsNullOrWhiteSpace(entity.Id))
             {
-                return new DateTime(2016, 07, 08);
+                return new DateTime(2016, 07, 08, 0, 0, 0, 1).ToBinary();
             }
-            return entity.DateAdded;
+            return entity.EditDate;
         }
 
         private async Task<Key> Save(DbSaveableEntity saveableEntity)
@@ -174,11 +174,14 @@ namespace JhpDataSystem.store
             ProjectsResource.RunQueryRequest res;
 
             DatastoreService _dataStore;
-            string _projectId; KindName _kindName; ResultsLimit _skip; DateTime _dateAdded;
+            string _projectId;
+            KindName _kindName;
+            ResultsLimit _skip;
+            long _editDate;
 
-            public FetchCloudDataWorker(DatastoreService dataStore, string projectId, KindName kindName, ResultsLimit skip, DateTime dateAdded)
+            public FetchCloudDataWorker(DatastoreService dataStore, string projectId, KindName kindName, ResultsLimit skip, long editDate)
             {
-                query = getQueryRequest(skip, dateAdded, kindName);
+                query = getQueryRequest(skip, editDate, kindName);
                 res = dataStore.Projects.RunQuery(query
                     , projectId);
                 
@@ -186,25 +189,18 @@ namespace JhpDataSystem.store
                 _projectId = projectId;
                 _kindName = kindName;
                 _skip = skip;
-                _dateAdded = dateAdded;
+                _editDate = editDate;
             }
 
             public async Task<List<CloudEntity>> beginFetchCloudData()
             {
                 var toReturn = new List<CloudEntity>();
-
-                var dataStore = _dataStore;
-                var projectId = _projectId;
-                var kindName = _kindName;
-                var skip = _skip;
-                var dateAdded = _dateAdded;
-
                 var fetched = false;                
                 for (int i = 0; i < 4; i++)
                 {
                     try
                     {
-                        var fetchedData = await fetchCloudData(dataStore, projectId, kindName, skip, dateAdded);
+                        var fetchedData = await fetchCloudData(_dataStore, _projectId, _kindName, _skip, _editDate);
                         toReturn.AddRange(fetchedData);
                         fetched = true;
                     }
@@ -222,6 +218,9 @@ namespace JhpDataSystem.store
                     }
                     catch (Exception ex)
                     {
+                        //ex.Message
+                        //"A task was canceled."
+
                         //unknown exception
                     }
                     if (fetched)
@@ -240,13 +239,14 @@ namespace JhpDataSystem.store
 
             private async Task<List<CloudEntity>> fetchCloudData(
                 DatastoreService dataStore, string projectId,
-                KindName kindName, ResultsLimit skip, DateTime dateAdded)
+                KindName kindName, ResultsLimit skip, long editDate)
             {
                 var toReturn = new List<CloudEntity>();
                 while (true)
                 {
                     var response = await res.ExecuteAsync();
                     var entityResults = response.Batch.EntityResults;
+                    //Debug.
                     if (entityResults == null)
                     {
                         break;
@@ -264,8 +264,10 @@ namespace JhpDataSystem.store
                             EntityId = entity.Properties["entityid"].StringValue,
                             DataBlob = entity.Properties["datablob"].StringValue,
                             KindMetaData = entity.Properties["kindmetadata"].StringValue,
-                            DateAdded = Convert.ToDateTime(
-                                entity.Properties["dateadded"].TimestampValue)
+                            EditDate = Convert.ToInt64(
+                                entity.Properties["editdate"].IntegerValue),
+                            EditDay = Convert.ToInt32(
+                                entity.Properties["editday"].IntegerValue)
                         };
                         toReturn.Add(cloudEntity);
                     }
@@ -279,11 +281,32 @@ namespace JhpDataSystem.store
                 return toReturn;
             }
 
-            private RunQueryRequest getQueryRequest(ResultsLimit skip, DateTime dateAdded, KindName kindName = null)
+            private RunQueryRequest getQueryRequest(ResultsLimit skip, long editDate, KindName kindName = null)
             {
                 var kindExpression = kindName == null ?
                     new List<KindExpression>() :
                     new List<KindExpression> { new KindExpression() { Name = kindName.Value } };
+                //var newDate = dateAdded.AddMilliseconds(10);
+                var queryParams = new List<GqlQueryParameter>() {
+                            new GqlQueryParameter() { Value =
+                            new Value() { IntegerValue = editDate } },
+                    new GqlQueryParameter() { Value =
+                            new Value() { IntegerValue = skip.Value } } };
+                //var t = dateAdded.toYMDInt();
+                var queryString = string.Format(
+                    "select * from {0} where dateadded > @1 order by dateadded ASC limit @2",
+                    kindName.Value, 
+                    //newDate.ToString("yyyy-MM-ddTHH:mm:ss.ffZ"), 
+                    skip.Value
+                    );
+
+                var queryString1 = string.Format(
+    "select * from {0} where editdate > {1} order by dateadded ASC limit {2}",
+    kindName.Value,
+    editDate,
+    skip.Value
+    );
+
                 return new RunQueryRequest()
                 {
                     //Query = new Query()
@@ -294,9 +317,9 @@ namespace JhpDataSystem.store
                     //        {
                     //            Property = new PropertyReference() { Name = DATEADDED },
                     //            Value = new Value() { TimestampValue = dateAdded },
-                    //            //GREATER_THAN
-                    //            //GREATER_THAN_OR_EQUAL
-                    //            Op = "GREATER_THAN"
+                    //            //Op = "GREATER_THAN",
+                    //            Op = "GREATER_THAN_OR_EQUAL",
+                    //            //Op = "GREATER_THAN"
                     //        }
                     //    },
                     //    Order = new List<PropertyOrder>() {
@@ -305,13 +328,12 @@ namespace JhpDataSystem.store
                     //},
                     //    Kind = kindExpression,
                     //    Limit = skip.Value,
-                    //    //StartCursor=
                     //},
-                    GqlQuery = new GqlQuery() { QueryString = 
-                    string.Format(
-                    "select * from {0} where dateadded > datetime('{1}') order by dateadded asc limit {2}",
-                    kindName.Value, dateAdded.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"), skip.Value
-                    )
+                    GqlQuery = new GqlQuery()
+                    {
+                        QueryString = queryString1,
+                        AllowLiterals = true,
+                        //PositionalBindings = queryParams
                     },
                     ReadOptions = new ReadOptions() { }
                 };
@@ -328,8 +350,10 @@ namespace JhpDataSystem.store
                 kindName,
                 new ResultsLimit(skip),
                 lastDateForKind).beginFetchCloudData();
-
-            var savedToLocal = await addToProcessingQueue(kindName, cloudEntities);
+            if (cloudEntities.Count > 0)
+            {
+                var savedToLocal = await addToProcessingQueue(kindName, cloudEntities);
+            }
             return 0;
         }
 

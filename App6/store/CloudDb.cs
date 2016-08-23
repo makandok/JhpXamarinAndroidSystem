@@ -53,6 +53,7 @@ namespace JhpDataSystem.store
         {
             var assets = AppInstance.Instance.ApiAssets;
             var projectId = assets[Constants.ASSET_PROJECT_ID];
+            var now = DateTime.Now;
             var entity = new Entity()
             {
                 Key = new Key()
@@ -67,7 +68,9 @@ namespace JhpDataSystem.store
                 {
                     {"id", new Value() { StringValue = saveableEntity.Id.Value  } },
                     {"entityid", new Value() { StringValue = saveableEntity.EntityId.Value } },
-                    {"dateadded", new Value() { TimestampValue = DateTime.Now } },
+                    //{"dateadded", new Value() { IntegerValue = now.toYMDInt() } },
+                    {"editday", new Value() { IntegerValue = now.toYMDInt() } },
+                    {"editdate", new Value() { IntegerValue = now.ToBinary() } },
                     {"datablob", new Value() {ExcludeFromIndexes=true,
                         StringValue =saveableEntity
                     .getJson()

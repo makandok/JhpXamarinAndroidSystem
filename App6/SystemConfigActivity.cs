@@ -70,6 +70,17 @@ namespace JhpDataSystem
             //buttonRebuildIndexes
             var buttonRebuildIndexes = FindViewById<Button>(Resource.Id.buttonRebuildIndexes);
             buttonRebuildIndexes.Click += buttonRebuildIndexes_Click;
+
+            //buttonReuploadData
+            var buttonReuploadData = FindViewById<Button>(Resource.Id.buttonReuploadData);
+            buttonReuploadData.Click += buttonReuploadData_Click;
+        }
+
+        private void buttonReuploadData_Click(object sender, EventArgs e)
+        {
+            sendToast("Reupload data", ToastLength.Short);
+
+            //sendToast("Completed rebuilding indexes", ToastLength.Short);
         }
 
         private void buttonRebuildIndexes_Click(object sender, EventArgs e)

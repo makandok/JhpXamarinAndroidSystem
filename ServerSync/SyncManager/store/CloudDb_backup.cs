@@ -145,6 +145,15 @@ namespace JhpDataSystem.store
                     DateAdded = Convert.ToDateTime(
                         entity.Properties["dateadded"].TimestampValue)
                 };
+
+                if (entity.Properties.ContainsKey("editdate")){
+                    var editDate = entity.Properties["editdate"].IntegerValue;
+                    cloudEntity.EditDate = Convert.ToInt64(editDate);
+
+                    var editDay = entity.Properties["editday"].IntegerValue;                    
+                    cloudEntity.EditDay = Convert.ToInt32(editDay);
+                }
+
                 toReturn.Add(cloudEntity);
             }
             return toReturn;

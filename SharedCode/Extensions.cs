@@ -5,6 +5,17 @@ namespace JhpDataSystem
 {
     public static class ExtensionsPCL
     {
+        /// <summary>
+        /// Converts date value to yyyMMdd format
+        /// </summary>
+        /// <param name="dateValue"></param>
+        /// <returns>Returns as int represent date e.g. 20160130</returns>
+        public static int toYMDInt(this DateTime dateValue)
+        {
+            var timeofday = dateValue.ToString("yyyyMMdd");
+            return Convert.ToInt32(timeofday);
+        }
+
         public static long toSafeDate(this DateTime dateValue)
         {            
             return (dateValue.Year * 100 + dateValue.Month) * 100 + dateValue.Day;

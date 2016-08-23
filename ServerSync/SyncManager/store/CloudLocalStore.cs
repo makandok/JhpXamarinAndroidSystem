@@ -25,7 +25,8 @@ namespace JhpDataSystem.store
                       insert into {0} (id,entityid,kindmetadata,dateadded,datablob)values(@id,@entityid,@kindmetadata,@dateadded,@datablob);
                    end
                 commit tran
-                ";
+                "
+//fix above to include editday and editdate
         }
 
         /// <summary>
@@ -58,8 +59,10 @@ namespace JhpDataSystem.store
                     command.CommandText = string.Format(insertSql, _tableName.Value);
                     command.Parameters.AddWithValue("@id", entity.Id);
                     command.Parameters.AddWithValue("@entityid", entity.EntityId);
-                    
-                    command.Parameters.AddWithValue("@dateadded", entity.DateAdded);
+
+                    command.Parameters.AddWithValue("@editdate", entity.EditDate);
+                    command.Parameters.AddWithValue("@editday", entity.EditDay);
+
                     command.Parameters.AddWithValue("@datablob", entity.DataBlob);
 
                     command.Parameters.AddWithValue("@kindmetadata", entity.KindMetaData);
@@ -98,7 +101,12 @@ namespace JhpDataSystem.store
                         {
                             entity.Id = Convert.ToString(reader["id"]);
                             entity.EntityId = Convert.ToString(reader["entityid"]);
+
                             entity.DateAdded = Convert.ToDateTime(reader["dateadded"]);
+
+                            entity.EditDate = Convert.ToInt64(reader["editdate"]);
+                            entity.EditDay = Convert.ToInt32(reader["editday"]);
+
                             entity.DataBlob = Convert.ToString(reader["datablob"]);
                             entity.KindMetaData = Convert.ToString(reader["kindmetadata"]);
                             break;
