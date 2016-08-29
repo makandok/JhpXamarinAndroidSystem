@@ -35,6 +35,7 @@ namespace ServerSync
             AppInstance.Instance.InitialiseAppResources(null,null);
             //we have loaded the app
             this.menuServerSync.Click += MenuServerSync_Click;
+            this.menuServerSyncOldData.Click += MenuServerSync_Click;
             this.menuConfigure.Click += MenuConfigure_Click;
             this.menuAllData.Click += MenuAllData_Click;
             this.menuSmmaries.Click += MenuSmmaries_Click;
@@ -63,7 +64,9 @@ namespace ServerSync
 
         private async void MenuServerSync_Click(object sender, RoutedEventArgs e)
         {
-            var res = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(setProgressValue);
+            var syncOldData = this.menuServerSyncOldData == sender;
+
+            var res = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(setProgressValue, syncOldData);
             //we test the connection
             var isConnected = false;
             //var isConnected = await new TestServerConnection().BeginTest();

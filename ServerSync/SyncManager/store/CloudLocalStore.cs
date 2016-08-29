@@ -14,18 +14,18 @@ namespace JhpDataSystem.store
     {
         public CloudLocalStore(KindName tableName) : base(tableName.Value)
         {
-            createKindSql = "if object_id('{0}') is null create table {0}(id nvarchar(32) primary key, entityid nvarchar(32), kindmetadata nvarchar(1000), dateadded datetime, datablob nvarchar(max));";
+            createKindSql = "if object_id('{0}') is null create table {0}(id nvarchar(32) primary key, entityid nvarchar(32), kindmetadata nvarchar(1000), editday int, editdate bigint, datablob nvarchar(max));";
             insertSql =
                 @"
                 begin tran
-                   update {0} with (serializable) set entityid=@entityid,kindmetadata=@kindmetadata,dateadded=@dateadded,datablob =@datablob
+                   update {0} with (serializable) set entityid=@entityid,kindmetadata=@kindmetadata,editday=@editday, editdate=@editdate,datablob =@datablob
                    where id = @id
                    if @@rowcount = 0
                    begin
-                      insert into {0} (id,entityid,kindmetadata,dateadded,datablob)values(@id,@entityid,@kindmetadata,@dateadded,@datablob);
+                      insert into {0} (id,entityid,kindmetadata,editday,editdate,datablob)values(@id,@entityid,@kindmetadata,@editday,@editdate,@datablob);
                    end
                 commit tran
-                "
+                ";
 //fix above to include editday and editdate
         }
 
@@ -94,7 +94,7 @@ namespace JhpDataSystem.store
                     conn.Open();
                     //check if our table tables, create if it doesn't
                     command.CommandText = string.Format(
-                        "select top 1 * from {0} order by dateadded desc", _tableName.Value);                    
+                        "select top 1 * from {0} order by editdate desc", _tableName.Value);                    
                     using(var reader = command.ExecuteReader()  )
                     {
                         while (reader.Read())
@@ -102,7 +102,7 @@ namespace JhpDataSystem.store
                             entity.Id = Convert.ToString(reader["id"]);
                             entity.EntityId = Convert.ToString(reader["entityid"]);
 
-                            entity.DateAdded = Convert.ToDateTime(reader["dateadded"]);
+                            //entity.DateAdded = Convert.ToDateTime(reader["dateadded"]);
 
                             entity.EditDate = Convert.ToInt64(reader["editdate"]);
                             entity.EditDay = Convert.ToInt32(reader["editday"]);

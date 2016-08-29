@@ -16,6 +16,280 @@ using SyncManager.model;
 
 namespace JhpDataSystem.store
 {
+    public class FetchCloudDataWorker
+    {
+        RunQueryRequest query;
+        ProjectsResource.RunQueryRequest res;
+
+        DatastoreService _dataStore;
+        string _projectId;
+        KindName _kindName;
+        ResultsLimit _skip;
+        long _editDate;
+        //public bool FetchOldData;
+
+        public FetchCloudDataWorker(DatastoreService dataStore, string projectId, KindName kindName, ResultsLimit skip, long editDate, bool fetchOldData)
+        {
+            query = getQueryRequest(skip, editDate, fetchOldData, kindName);
+            res = dataStore.Projects.RunQuery(query
+                , projectId);
+
+            _dataStore = dataStore;
+            _projectId = projectId;
+            _kindName = kindName;
+            _skip = skip;
+            _editDate = editDate;
+        }
+
+        public async Task<List<CloudEntity>> beginFetchCloudData()
+        {
+            var toReturn = new List<CloudEntity>();
+            var fetched = false;
+            for (int i = 0; i < 4; i++)
+            {
+                try
+                {
+                    var fetchedData = await fetchCloudData();
+                    toReturn.AddRange(fetchedData);
+                    fetched = true;
+                }
+                catch (Google.GoogleApiException gex)
+                {
+                    //todo: mark this record as bad to prevent it blocking for life
+                    //cloudDb.InsertOrReplace(new OutEntityUnsynced().load(outEntity));
+                    //cloudDb.Delete<OutEntity>(saveable.Id.Value);
+                    //break;
+                }
+                catch (System.Net.WebException wex)
+                {
+                    //perhaps lost connection
+                    //we alllow it to spin for now
+                }
+                catch (Exception ex)
+                {
+                    //ex.Message
+                    //"A task was canceled."
+
+                    //unknown exception
+                }
+                if (fetched)
+                {
+                    break;
+                }
+                else
+                {
+                    //lets add a 2 second delay in case it failed the first time
+                    //lets log that we had to wait, try x
+                    await Task.Delay(TimeSpan.FromMilliseconds(2000));
+                }
+            }
+            return toReturn;
+        }
+
+        private async Task<List<CloudEntity>> fetchCloudData()
+        {
+            var toReturn = new List<CloudEntity>();
+            while (true)
+            {
+                var response = await res.ExecuteAsync();
+                var entityResults = response.Batch.EntityResults;
+                //Debug.
+                if (entityResults == null)
+                {
+                    break;
+                }
+
+                query.Query.StartCursor = response.Batch.EndCursor;
+                foreach (var entityResult in response.Batch.EntityResults)
+                {
+                    var entity = entityResult.Entity;
+                    var path = entity.Key.Path.FirstOrDefault();
+                    var cloudEntity = new CloudEntity()
+                    {
+                        FormName = path.Kind,
+                        Id = path.Name,
+                        EntityId = entity.Properties["entityid"].StringValue,
+                        DataBlob = entity.Properties["datablob"].StringValue,
+                        KindMetaData = entity.Properties["kindmetadata"].StringValue,
+                        //EditDate = Convert.ToInt64(
+                        //    entity.Properties["editdate"].IntegerValue),
+                        //EditDay = Convert.ToInt32(
+                        //    entity.Properties["editday"].IntegerValue)
+                    };
+                    if (entity.Properties.ContainsKey("editdate"))
+                    {
+                        var editDate = entity.Properties["editdate"].IntegerValue;
+                        cloudEntity.EditDate = Convert.ToInt64(editDate);
+
+                        var editDay = entity.Properties["editday"].IntegerValue;
+                        cloudEntity.EditDay = Convert.ToInt32(editDay);
+                    }
+                    else
+                    {
+                        //use field date added 
+                        var entityDate = Convert.ToDateTime(
+                            entity.Properties["dateadded"].TimestampValue);
+                        var editday = entityDate.toYMDInt();
+                        cloudEntity.EditDay = editday;
+                        var editdate = entityDate.ToBinary();
+                        cloudEntity.EditDate = editdate;
+                    }
+                    toReturn.Add(cloudEntity);
+                }
+
+                //moreResultsAfterLimit
+                if (response.Batch.MoreResults == "NO_MORE_RESULTS")
+                {
+                    break;
+                }
+            }
+            return toReturn;
+        }
+
+        private RunQueryRequest getQueryRequest(ResultsLimit skip, long editDate, bool fetchOldData, KindName kindName = null)
+        {
+            List<GqlQueryParameter> queryParams = null;
+            var queryString = string.Empty;
+            if (fetchOldData)
+            {
+                queryString = string.Format(
+                    "select * from {0} where dateadded > @1 order by dateadded ASC limit @2",
+                    kindName.Value,
+                    skip.Value
+                    );
+                queryParams = new List<GqlQueryParameter>() {
+                            new GqlQueryParameter() { Value =
+                            new Value() { TimestampValue = DateTime.FromBinary(editDate) } },
+                    new GqlQueryParameter() { Value =
+                            new Value() { IntegerValue = skip.Value } } };
+            }
+            else
+            {
+                queryString = string.Format(
+    "select * from {0} where editdate > @1 order by editdate ASC limit @2",
+    kindName.Value,
+    skip.Value
+    );
+                queryParams = new List<GqlQueryParameter>() {
+                            new GqlQueryParameter() { Value =
+                            new Value() { IntegerValue = editDate } },
+                    new GqlQueryParameter() { Value =
+                            new Value() { IntegerValue = skip.Value } } };
+            }
+
+            return new RunQueryRequest()
+            {
+                GqlQuery = new GqlQuery()
+                {
+                    QueryString = queryString,
+                    AllowLiterals = true,
+                    PositionalBindings = queryParams
+                },
+                ReadOptions = new ReadOptions() { }
+            };
+        }
+
+        private RunQueryRequest getQueryRequest1(ResultsLimit skip, long editDate, KindName kindName = null)
+        {
+            var kindExpression = kindName == null ?
+                new List<KindExpression>() :
+                new List<KindExpression> { new KindExpression() { Name = kindName.Value } };
+            //var newDate = dateAdded.AddMilliseconds(10);
+            var queryParams = new List<GqlQueryParameter>() {
+                            new GqlQueryParameter() { Value =
+                            new Value() { IntegerValue = editDate } },
+                    new GqlQueryParameter() { Value =
+                            new Value() { IntegerValue = skip.Value } } };
+            //var t = dateAdded.toYMDInt();
+            var queryString = string.Format(
+                "select * from {0} where dateadded > @1 order by dateadded ASC limit @2",
+                kindName.Value,
+                //newDate.ToString("yyyy-MM-ddTHH:mm:ss.ffZ"), 
+                skip.Value
+                );
+            //            var queryString1 = string.Format(
+            //"select * from {0} where editdate > {1} order by dateadded ASC limit {2}",
+            //kindName.Value,
+            //editDate,
+            //skip.Value
+            //);
+            return new RunQueryRequest()
+            {
+                //Query = new Query()
+                //{
+                //    Filter = new Google.Apis.Datastore.v1beta3.Data.Filter()
+                //    {
+                //        PropertyFilter = new PropertyFilter()
+                //        {
+                //            Property = new PropertyReference() { Name = DATEADDED },
+                //            Value = new Value() { TimestampValue = dateAdded },
+                //            //Op = "GREATER_THAN",
+                //            Op = "GREATER_THAN_OR_EQUAL",
+                //            //Op = "GREATER_THAN"
+                //        }
+                //    },
+                //    Order = new List<PropertyOrder>() {
+                //    new PropertyOrder() { Direction="ASCENDING",
+                //        Property =new PropertyReference() {Name= DATEADDED } }
+                //},
+                //    Kind = kindExpression,
+                //    Limit = skip.Value,
+                //},
+                GqlQuery = new GqlQuery()
+                {
+                    QueryString = queryString,
+                    AllowLiterals = true,
+                    PositionalBindings = queryParams
+                },
+                ReadOptions = new ReadOptions() { }
+            };
+        }
+    }
+
+    public class KindDataProcessor
+    {
+        public bool FetchOldData { get; internal set; }
+
+        private long getLastSyncedDateForKind(KindName kindName)
+        {
+            var db = new CloudLocalStore(kindName);
+            var entity = db.GetLatestEntity();
+            if (entity == null || string.IsNullOrWhiteSpace(entity.Id))
+            {
+                return new DateTime(2016, 07, 08, 0, 0, 0, 1).ToBinary();
+            }
+            return entity.EditDate;
+        }
+
+        public async Task<int> fetchRecordsForKind(KindName kindName, string projectId, DatastoreService datastore)
+        {
+            var skip = 50;
+            var lastDateForKind = getLastSyncedDateForKind(kindName);
+
+            var cloudEntities = await new FetchCloudDataWorker(datastore,
+                projectId,
+                kindName,
+                new ResultsLimit(skip),
+                lastDateForKind, this.FetchOldData)
+            .beginFetchCloudData();
+            if (cloudEntities.Count > 0)
+            {
+                var savedToLocal = await addToProcessingQueue(kindName, cloudEntities);
+            }
+            return 0;
+        }
+
+        private async Task<bool> addToProcessingQueue(KindName kindName, List<CloudEntity> cloudEntities)
+        {
+            var kindStore = new CloudLocalStore(kindName);
+            foreach (var entity in cloudEntities)
+            {
+                kindStore.Update(entity);
+            }
+            return true;
+        }
+    }
+
     public class CloudDb
     {
         const string DATEADDED = "dateadded";
@@ -38,17 +312,6 @@ namespace JhpDataSystem.store
         //https://console.cloud.google.com/datastore/entities/query/gql?project=jhpzmb-vmmc-odk&ns=&kind=_GAE_MR_TaskPayload&gql=select%20*%20from%20appusers
         //https://console.cloud.google.com/datastore/entities/edit?key=0%2F%7C8%2Fappusers%7C37%2Fname:524d91cffb024c7085148004cc47854c&project=jhpzmb-vmmc-odk&ns=&kind=_GAE_MR_TaskPayload&gql=select%20*%20from%20appusers
         //https://console.cloud.google.com/datastore/entities/query/gql?project=jhpzmb-vmmc-odk&ns=&kind=_AE_Backup_Information&gql=select%20*%20from%20appusers%20order%20by%20dateadded%20asc%20limit%20500%20offset%200%20where%20dateadded%20%3E%3D%20datetime(%272016-08-16T00:00:00.01Z%27)
-
-        private long getLastSyncedDateForKind(KindName kindName)
-        {
-            var db = new CloudLocalStore(kindName);
-            var entity = db.GetLatestEntity();
-            if (entity == null || string.IsNullOrWhiteSpace(entity.Id))
-            {
-                return new DateTime(2016, 07, 08, 0, 0, 0, 1).ToBinary();
-            }
-            return entity.EditDate;
-        }
 
         private async Task<Key> Save(DbSaveableEntity saveableEntity)
         {
@@ -168,206 +431,7 @@ namespace JhpDataSystem.store
 
         public Dictionary<string, string> ApiAssets { get; set; }
 
-        public class FetchCloudDataWorker
-        {
-            RunQueryRequest query;
-            ProjectsResource.RunQueryRequest res;
-
-            DatastoreService _dataStore;
-            string _projectId;
-            KindName _kindName;
-            ResultsLimit _skip;
-            long _editDate;
-
-            public FetchCloudDataWorker(DatastoreService dataStore, string projectId, KindName kindName, ResultsLimit skip, long editDate)
-            {
-                query = getQueryRequest(skip, editDate, kindName);
-                res = dataStore.Projects.RunQuery(query
-                    , projectId);
-                
-                _dataStore = dataStore;
-                _projectId = projectId;
-                _kindName = kindName;
-                _skip = skip;
-                _editDate = editDate;
-            }
-
-            public async Task<List<CloudEntity>> beginFetchCloudData()
-            {
-                var toReturn = new List<CloudEntity>();
-                var fetched = false;                
-                for (int i = 0; i < 4; i++)
-                {
-                    try
-                    {
-                        var fetchedData = await fetchCloudData(_dataStore, _projectId, _kindName, _skip, _editDate);
-                        toReturn.AddRange(fetchedData);
-                        fetched = true;
-                    }
-                    catch (Google.GoogleApiException gex)
-                    {
-                        //todo: mark this record as bad to prevent it blocking for life
-                        //cloudDb.InsertOrReplace(new OutEntityUnsynced().load(outEntity));
-                        //cloudDb.Delete<OutEntity>(saveable.Id.Value);
-                        //break;
-                    }
-                    catch (System.Net.WebException wex)
-                    {
-                        //perhaps lost connection
-                        //we alllow it to spin for now
-                    }
-                    catch (Exception ex)
-                    {
-                        //ex.Message
-                        //"A task was canceled."
-
-                        //unknown exception
-                    }
-                    if (fetched)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        //lets add a 2 second delay in case it failed the first time
-                        //lets log that we had to wait, try x
-                        await Task.Delay(TimeSpan.FromMilliseconds(2000));
-                    }
-                }
-                return toReturn;
-            }
-
-            private async Task<List<CloudEntity>> fetchCloudData(
-                DatastoreService dataStore, string projectId,
-                KindName kindName, ResultsLimit skip, long editDate)
-            {
-                var toReturn = new List<CloudEntity>();
-                while (true)
-                {
-                    var response = await res.ExecuteAsync();
-                    var entityResults = response.Batch.EntityResults;
-                    //Debug.
-                    if (entityResults == null)
-                    {
-                        break;
-                    }
-
-                    query.Query.StartCursor = response.Batch.EndCursor;
-                    foreach (var entityResult in response.Batch.EntityResults)
-                    {
-                        var entity = entityResult.Entity;
-                        var path = entity.Key.Path.FirstOrDefault();
-                        var cloudEntity = new CloudEntity()
-                        {
-                            FormName = path.Kind,
-                            Id = path.Name,
-                            EntityId = entity.Properties["entityid"].StringValue,
-                            DataBlob = entity.Properties["datablob"].StringValue,
-                            KindMetaData = entity.Properties["kindmetadata"].StringValue,
-                            EditDate = Convert.ToInt64(
-                                entity.Properties["editdate"].IntegerValue),
-                            EditDay = Convert.ToInt32(
-                                entity.Properties["editday"].IntegerValue)
-                        };
-                        toReturn.Add(cloudEntity);
-                    }
-
-                    //moreResultsAfterLimit
-                    if (response.Batch.MoreResults == "NO_MORE_RESULTS")
-                    {
-                        break;
-                    }
-                }
-                return toReturn;
-            }
-
-            private RunQueryRequest getQueryRequest(ResultsLimit skip, long editDate, KindName kindName = null)
-            {
-                var kindExpression = kindName == null ?
-                    new List<KindExpression>() :
-                    new List<KindExpression> { new KindExpression() { Name = kindName.Value } };
-                //var newDate = dateAdded.AddMilliseconds(10);
-                var queryParams = new List<GqlQueryParameter>() {
-                            new GqlQueryParameter() { Value =
-                            new Value() { IntegerValue = editDate } },
-                    new GqlQueryParameter() { Value =
-                            new Value() { IntegerValue = skip.Value } } };
-                //var t = dateAdded.toYMDInt();
-                var queryString = string.Format(
-                    "select * from {0} where dateadded > @1 order by dateadded ASC limit @2",
-                    kindName.Value, 
-                    //newDate.ToString("yyyy-MM-ddTHH:mm:ss.ffZ"), 
-                    skip.Value
-                    );
-
-                var queryString1 = string.Format(
-    "select * from {0} where editdate > {1} order by dateadded ASC limit {2}",
-    kindName.Value,
-    editDate,
-    skip.Value
-    );
-
-                return new RunQueryRequest()
-                {
-                    //Query = new Query()
-                    //{
-                    //    Filter = new Google.Apis.Datastore.v1beta3.Data.Filter()
-                    //    {
-                    //        PropertyFilter = new PropertyFilter()
-                    //        {
-                    //            Property = new PropertyReference() { Name = DATEADDED },
-                    //            Value = new Value() { TimestampValue = dateAdded },
-                    //            //Op = "GREATER_THAN",
-                    //            Op = "GREATER_THAN_OR_EQUAL",
-                    //            //Op = "GREATER_THAN"
-                    //        }
-                    //    },
-                    //    Order = new List<PropertyOrder>() {
-                    //    new PropertyOrder() { Direction="ASCENDING",
-                    //        Property =new PropertyReference() {Name= DATEADDED } }
-                    //},
-                    //    Kind = kindExpression,
-                    //    Limit = skip.Value,
-                    //},
-                    GqlQuery = new GqlQuery()
-                    {
-                        QueryString = queryString1,
-                        AllowLiterals = true,
-                        //PositionalBindings = queryParams
-                    },
-                    ReadOptions = new ReadOptions() { }
-                };
-            }
-        }
-
-        private async Task<int> fetchRecordsForKind(KindName kindName, string projectId, DatastoreService datastore)
-        {
-            var skip = 50;
-            var lastDateForKind = getLastSyncedDateForKind(kindName);
-
-            var cloudEntities = await new FetchCloudDataWorker(datastore,
-                projectId,
-                kindName,
-                new ResultsLimit(skip),
-                lastDateForKind).beginFetchCloudData();
-            if (cloudEntities.Count > 0)
-            {
-                var savedToLocal = await addToProcessingQueue(kindName, cloudEntities);
-            }
-            return 0;
-        }
-
-        private async Task<bool> addToProcessingQueue(KindName kindName, List<CloudEntity> cloudEntities)
-        {
-            var kindStore = new CloudLocalStore(kindName);
-            foreach(var entity in cloudEntities)
-            {
-                kindStore.Update(entity);
-            }
-            return true;
-        }
-
-        private async Task<int> doServerSync(Action<int> updateProgress)
+        private async Task<int> doServerSync(Action<int> updateProgress, bool syncOldData)
         {
             var currProgress = 0;
             var hasConnection = await checkConnection();
@@ -390,7 +454,8 @@ namespace JhpDataSystem.store
 
             foreach (var kind in kindNames)
             {
-                await fetchRecordsForKind(kind.toKind(), projectId, datastore);
+                var worker = new KindDataProcessor() { FetchOldData = syncOldData };
+                var res = await worker.fetchRecordsForKind(kind.toKind(), projectId, datastore);
                             
                 updateProgress(currProgress += progressStep);
                 
@@ -402,7 +467,7 @@ namespace JhpDataSystem.store
             return 0;
         }
 
-        public async Task<int> EnsureServerSync(Action<int> setProgress)
+        public async Task<int> EnsureServerSync(Action<int> setProgress, bool syncOldData)
         {
             var progress = new System.Progress<int>();
             progress.ProgressChanged += (sender, e) => { setProgress(e); };
@@ -410,8 +475,9 @@ namespace JhpDataSystem.store
 
             if (isRunning == 1)
                 return 0;
+
             isRunning = 1;
-            await Task.Run(async () => await doServerSync(asIProgress.Report)
+            await Task.Run(async () => await doServerSync(asIProgress.Report, syncOldData)
             );
 
             isRunning = 0;

@@ -71,7 +71,9 @@ namespace JhpDataSystem
             var allTables = CloudDb.getAllKindNames();
             foreach (var table in allTables)
             {
-                new CloudLocalStore(table.toKind()).build();
+                //new CloudLocalStore(table.toKind()).build();
+
+                new CloudLocalStore(table.toKind()).build(dropAndRecreate:true);
             }
         }
 

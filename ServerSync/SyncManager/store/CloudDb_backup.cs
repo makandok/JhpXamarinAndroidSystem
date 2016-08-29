@@ -142,8 +142,15 @@ namespace JhpDataSystem.store
                     EntityId = entity.Properties["entityid"].StringValue,
                     DataBlob = entity.Properties["datablob"].StringValue,
                     KindMetaData = entity.Properties["kindmetadata"].StringValue,
-                    DateAdded = Convert.ToDateTime(
-                        entity.Properties["dateadded"].TimestampValue)
+
+                    //EditDay = Convert.ToInt32( entity.Properties["editday"].IntegerValue),
+                    //EditDate = Convert.ToInt64(entity.Properties["editdate"].IntegerValue),
+
+                    //{ "editday", new Value() { IntegerValue = now.toYMDInt() } },
+                    //{ "editdate", new Value() { IntegerValue = now.ToBinary() } },
+
+                    //DateAdded = Convert.ToDateTime(
+                    //    entity.Properties["dateadded"].TimestampValue)
                 };
 
                 if (entity.Properties.ContainsKey("editdate")){
@@ -152,6 +159,16 @@ namespace JhpDataSystem.store
 
                     var editDay = entity.Properties["editday"].IntegerValue;                    
                     cloudEntity.EditDay = Convert.ToInt32(editDay);
+                }
+                else
+                {
+                    //use field date added 
+                    var entityDate = Convert.ToDateTime(
+                        entity.Properties["dateadded"].TimestampValue);
+                    var editday = entityDate.toYMDInt();
+                    cloudEntity.EditDay = editday;
+                    var editdate = entityDate.ToBinary();
+                    cloudEntity.EditDate = editdate;
                 }
 
                 toReturn.Add(cloudEntity);

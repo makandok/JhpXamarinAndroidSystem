@@ -21,6 +21,8 @@ namespace JhpDataSystem.store
         protected KindName _tableName;
         protected LocalDB _db;
 
+        protected string dropKindSql = "if object_id('{0}') is not null drop table {0};";
+
         protected string createKindSql = "create table if not exists {0}(id nvarchar(32) primary key, datablob nvarchar(500));";
         protected string insertSql = "insert or replace into {0}(id, datablob) values (@id, @datablob)";
 
@@ -42,7 +44,8 @@ namespace JhpDataSystem.store
         /// Creates Kind if it does not exist
         /// </summary>
         /// <returns>True if successful</returns>
-        public bool build()
+        //dropAdRecreate
+        public bool build(bool dropAndRecreate = false)
         {
             //we create if does not exist
             var saveStatus = false;
@@ -52,6 +55,13 @@ namespace JhpDataSystem.store
                 try
                 {
                     conn.Open();
+                    if (dropAndRecreate)
+                    {
+                        command.CommandText = string.Format(dropKindSql, _tableName.Value);
+                        command.ExecuteNonQuery();
+
+                        command.CommandText = string.Format(createKindSql, _tableName.Value);
+                    }
                     command.ExecuteNonQuery();
                     saveStatus = true;
                 }
@@ -67,6 +77,32 @@ namespace JhpDataSystem.store
             }
             return saveStatus;
         }
+
+        //public bool build()
+        //{
+        //    //we create if does not exist
+        //    var saveStatus = false;
+        //    using (var conn = new SqlConnection(_db.ConnectionString))
+        //    using (var command = new SqlCommand(string.Format(createKindSql, _tableName.Value), conn))
+        //    {
+        //        try
+        //        {
+        //            conn.Open();
+        //            command.ExecuteNonQuery();
+        //            saveStatus = true;
+        //        }
+        //        catch (SqlException ex)
+        //        {
+        //            if (MainLogger != null)
+        //                MainLogger.Log(string.Format(
+        //                    "Error opening database connection{0}{1}", Environment.NewLine, ex.ToString()));
+        //            return false;
+        //        }
+
+        //        conn.Close();
+        //    }
+        //    return saveStatus;
+        //}
 
         internal bool DeleteAll()
         {
