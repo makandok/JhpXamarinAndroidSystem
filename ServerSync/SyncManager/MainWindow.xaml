@@ -33,6 +33,7 @@
                 </MenuItem>-->
                 <MenuItem Name="menuServerSync" Header="Sync"/>
                 <MenuItem Name="menuServerSyncOldData" Header="Sync Old Data"/>
+                <MenuItem Name="menuRefreshLocal" Header="Refresh"/>
                 <MenuItem Name="menuConfigure" Header="Configure" Foreground="Orange" FontSize="16" />
                 <MenuItem Name="menuSmmaries" Header="Summaries" Foreground="White" FontSize="16"/>
                 <MenuItem Name="menuAllData" Header="All Data" Foreground="LightGreen" FontSize="16"/>

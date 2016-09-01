@@ -1,4 +1,5 @@
 ﻿using JhpDataSystem;
+using JhpDataSystem.store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,9 +29,10 @@ namespace ServerSync
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //AppInstance.Instance.InitialiseAppResources
-            //var keys = Resources.Keys;
-
+            //var value = new Google.Apis.Datastore.v1.Data.Value() {
+            //    TimestampValue=DateTime.Now.ToString(System.Globalization.CultureInfo.InvariantCulture)
+            //};
+            //var ser = Newtonsoft.Json.JsonConvert.SerializeObject(value);
 
             AppInstance.Instance.InitialiseAppResources(null,null);
             //we have loaded the app
@@ -39,12 +41,17 @@ namespace ServerSync
             this.menuConfigure.Click += MenuConfigure_Click;
             this.menuAllData.Click += MenuAllData_Click;
             this.menuSmmaries.Click += MenuSmmaries_Click;
-            
+            this.menuRefreshLocal.Click += menuRefreshLocal_Click;
         }
 
         void setProgressValue(int value)
         {
             pbarProgress.Value = value;
+        }
+
+        private void menuRefreshLocal_Click(object sender, RoutedEventArgs e)
+        {
+            AppInstance.Instance.CloudDbInstance.RefreshLocalEntities(setProgressValue);
         }
 
         private void MenuSmmaries_Click(object sender, RoutedEventArgs e)
@@ -64,18 +71,22 @@ namespace ServerSync
 
         private async void MenuServerSync_Click(object sender, RoutedEventArgs e)
         {
+            //we test the connection
+            var isConnected = await CloudDb.checkConnection();
+            if(!isConnected)
+            {
+                MessageBox.Show("No internet connection detected");
+                return;
+            }
+
+            //we get list of files to download
             var syncOldData = this.menuServerSyncOldData == sender;
 
             var res = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(setProgressValue, syncOldData);
-            //we test the connection
-            var isConnected = false;
-            //var isConnected = await new TestServerConnection().BeginTest();
-            MessageBox.Show("Connection Status: " + isConnected);
 
-            //we get list of files to download
 
             //for each file, we download
-
+            AppInstance.Instance.CloudDbInstance.RefreshLocalEntities(setProgressValue);
             //we decrypt
 
             //we deidentify

@@ -2,15 +2,13 @@ using System;
 using System.Security.Cryptography.X509Certificates;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
-using Google.Apis.Datastore.v1beta3;
-using Android.Content.Res;
-using Google.Apis.Datastore.v1beta3.Data;
+using Google.Apis.Datastore.v1;
+using Google.Apis.Datastore.v1.Data;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using JhpDataSystem.model;
 using System.Net;
-using Android.Widget;
 using SyncManager.store;
 using SyncManager.model;
 
@@ -26,11 +24,14 @@ namespace JhpDataSystem.store
         KindName _kindName;
         ResultsLimit _skip;
         long _editDate;
-        //public bool FetchOldData;
+        bool _fetchOldData;
+
+        const string DATEADDED = "dateadded";
+        const string EDITDATE = "editdate";
 
         public FetchCloudDataWorker(DatastoreService dataStore, string projectId, KindName kindName, ResultsLimit skip, long editDate, bool fetchOldData)
         {
-            query = getQueryRequest(skip, editDate, fetchOldData, kindName);
+            query = getQueryRequest1(skip, editDate, fetchOldData, kindName);
             res = dataStore.Projects.RunQuery(query
                 , projectId);
 
@@ -39,18 +40,18 @@ namespace JhpDataSystem.store
             _kindName = kindName;
             _skip = skip;
             _editDate = editDate;
+            _fetchOldData = fetchOldData;
         }
 
-        public async Task<List<CloudEntity>> beginFetchCloudData()
+        private static async Task<RunQueryResponse> execQuery(ProjectsResource.RunQueryRequest res, int numAttempts = 4)
         {
-            var toReturn = new List<CloudEntity>();
+            RunQueryResponse response = null;
             var fetched = false;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < numAttempts; i++)
             {
                 try
                 {
-                    var fetchedData = await fetchCloudData();
-                    toReturn.AddRange(fetchedData);
+                    response = await res.ExecuteAsync();
                     fetched = true;
                 }
                 catch (Google.GoogleApiException gex)
@@ -83,19 +84,52 @@ namespace JhpDataSystem.store
                     await Task.Delay(TimeSpan.FromMilliseconds(2000));
                 }
             }
+            return response;
+        }
+
+        public async Task<List<CloudEntity>> beginFetchCloudData()
+        {
+            var toReturn = new List<CloudEntity>();
+            var response = await execQuery(res);
+            if (response == null)
+            {
+                //means we failed to get something, so we quit and perhaps try later
+                return null;
+            }
+            if (response.Batch.EntityResults == null)
+            {
+                //means we got something except its no results
+                return toReturn;
+            }
+
+            toReturn.AddRange(toCloudEntity(response.Batch.EntityResults));
+            while (response.Batch.EntityResults != null && response.Batch.MoreResults != "NO_MORE_RESULTS")
+            {
+                //means we have some more results
+                //var newQuery = getQueryRequest(_skip, _editDate, _fetchOldData, _kindName);
+                //newQuery.Query.StartCursor = response.Batch.EndCursor;
+                query.Query.StartCursor = response.Batch.EndCursor;
+                //res = _dataStore.Projects.RunQuery(newQuery, _projectId);
+                
+                response = await execQuery(res);
+                toReturn.AddRange(toCloudEntity(response.Batch.EntityResults));
+            }            
             return toReturn;
         }
 
-        private async Task<List<CloudEntity>> fetchCloudData()
+        private async Task<List<CloudEntity>> fetchCloudData1()
         {
             var toReturn = new List<CloudEntity>();
-            while (true)
+            var repeatDownload = true;
+            while (repeatDownload)
             {
+
                 var response = await res.ExecuteAsync();
                 var entityResults = response.Batch.EntityResults;
                 //Debug.
                 if (entityResults == null)
                 {
+                    repeatDownload = false;
                     break;
                 }
 
@@ -140,8 +174,55 @@ namespace JhpDataSystem.store
                 //moreResultsAfterLimit
                 if (response.Batch.MoreResults == "NO_MORE_RESULTS")
                 {
+                    repeatDownload = false;
                     break;
                 }
+                else
+                {
+                    repeatDownload = true;
+                }
+            }
+            return toReturn;
+        }
+
+        private static List<CloudEntity> toCloudEntity(IList<EntityResult> results)
+        {
+            var toReturn = new List<CloudEntity>();
+            foreach (var entityResult in results)
+            {
+                var entity = entityResult.Entity;
+                var path = entity.Key.Path.FirstOrDefault();
+                var cloudEntity = new CloudEntity()
+                {
+                    FormName = path.Kind,
+                    Id = path.Name,
+                    EntityId = entity.Properties["entityid"].StringValue,
+                    DataBlob = entity.Properties["datablob"].StringValue,
+                    KindMetaData = entity.Properties["kindmetadata"].StringValue,
+                    //EditDate = Convert.ToInt64(
+                    //    entity.Properties["editdate"].IntegerValue),
+                    //EditDay = Convert.ToInt32(
+                    //    entity.Properties["editday"].IntegerValue)
+                };
+                if (entity.Properties.ContainsKey("editdate"))
+                {
+                    var editDate = entity.Properties["editdate"].IntegerValue;
+                    cloudEntity.EditDate = Convert.ToInt64(editDate);
+
+                    var editDay = entity.Properties["editday"].IntegerValue;
+                    cloudEntity.EditDay = Convert.ToInt32(editDay);
+                }
+                else
+                {
+                    //use field date added 
+                    var entityDate = Convert.ToDateTime(
+                        entity.Properties["dateadded"].TimestampValue);
+                    var editday = entityDate.toYMDInt();
+                    cloudEntity.EditDay = editday;
+                    var editdate = entityDate.ToBinary();
+                    cloudEntity.EditDate = editdate;
+                }
+                toReturn.Add(cloudEntity);
             }
             return toReturn;
         }
@@ -159,7 +240,9 @@ namespace JhpDataSystem.store
                     );
                 queryParams = new List<GqlQueryParameter>() {
                             new GqlQueryParameter() { Value =
-                            new Value() { TimestampValue = DateTime.FromBinary(editDate) } },
+                            new Value() { TimestampValue = 
+                            DateTime.FromBinary(editDate)
+                            } },
                     new GqlQueryParameter() { Value =
                             new Value() { IntegerValue = skip.Value } } };
             }
@@ -182,65 +265,64 @@ namespace JhpDataSystem.store
                 GqlQuery = new GqlQuery()
                 {
                     QueryString = queryString,
-                    AllowLiterals = true,
-                    PositionalBindings = queryParams
+                    //AllowLiterals = true,
+                    PositionalBindings = queryParams,
+                   
                 },
                 ReadOptions = new ReadOptions() { }
             };
         }
 
-        private RunQueryRequest getQueryRequest1(ResultsLimit skip, long editDate, KindName kindName = null)
+        private RunQueryRequest getQueryRequest1(ResultsLimit skip, long editDate, bool fetchOldData, KindName kindName)
         {
-            var kindExpression = kindName == null ?
-                new List<KindExpression>() :
-                new List<KindExpression> { new KindExpression() { Name = kindName.Value } };
-            //var newDate = dateAdded.AddMilliseconds(10);
-            var queryParams = new List<GqlQueryParameter>() {
-                            new GqlQueryParameter() { Value =
-                            new Value() { IntegerValue = editDate } },
-                    new GqlQueryParameter() { Value =
-                            new Value() { IntegerValue = skip.Value } } };
-            //var t = dateAdded.toYMDInt();
-            var queryString = string.Format(
-                "select * from {0} where dateadded > @1 order by dateadded ASC limit @2",
-                kindName.Value,
-                //newDate.ToString("yyyy-MM-ddTHH:mm:ss.ffZ"), 
-                skip.Value
-                );
-            //            var queryString1 = string.Format(
-            //"select * from {0} where editdate > {1} order by dateadded ASC limit {2}",
-            //kindName.Value,
-            //editDate,
-            //skip.Value
-            //);
+            PropertyFilter filter = null;// dateFilter = 
+            string datePropertyName = string.Empty;
+            if (fetchOldData)
+            {
+                datePropertyName = DATEADDED;
+                filter = new PropertyFilter()
+                {
+                    Property = new PropertyReference() { Name = DATEADDED },
+                    Value = new Value() { TimestampValue = DateTime.FromBinary(editDate) },
+                    Op = "GREATER_THAN"
+                };
+            }
+            else
+            {
+                datePropertyName = EDITDATE;
+                filter = new PropertyFilter()
+                {
+                    Property = new PropertyReference() { Name = EDITDATE },
+                    Value = new Value() { IntegerValue = editDate },
+                    //Op = "GREATER_THAN",
+                    //Op = "GREATER_THAN_OR_EQUAL",
+                    Op = "GREATER_THAN"
+                };
+            }
+
             return new RunQueryRequest()
             {
-                //Query = new Query()
-                //{
-                //    Filter = new Google.Apis.Datastore.v1beta3.Data.Filter()
-                //    {
-                //        PropertyFilter = new PropertyFilter()
-                //        {
-                //            Property = new PropertyReference() { Name = DATEADDED },
-                //            Value = new Value() { TimestampValue = dateAdded },
-                //            //Op = "GREATER_THAN",
-                //            Op = "GREATER_THAN_OR_EQUAL",
-                //            //Op = "GREATER_THAN"
-                //        }
-                //    },
-                //    Order = new List<PropertyOrder>() {
-                //    new PropertyOrder() { Direction="ASCENDING",
-                //        Property =new PropertyReference() {Name= DATEADDED } }
-                //},
-                //    Kind = kindExpression,
-                //    Limit = skip.Value,
-                //},
-                GqlQuery = new GqlQuery()
+                Query = new Query()
                 {
-                    QueryString = queryString,
-                    AllowLiterals = true,
-                    PositionalBindings = queryParams
+                    Filter = new Filter()
+                    {
+                        PropertyFilter = filter
+                    },
+                    Order = new List<PropertyOrder>() {
+                    new PropertyOrder() { Direction="ASCENDING",
+                        Property =new PropertyReference() {Name= datePropertyName } }
                 },
+                    Kind = new List<KindExpression> {
+                        new KindExpression() { Name = kindName.Value } },
+                    Limit = skip.Value,
+                }
+               ,
+                //GqlQuery = new GqlQuery()
+                //{
+                //    QueryString = queryString,
+                //    AllowLiterals = true,
+                //    PositionalBindings = queryParams
+                //},
                 ReadOptions = new ReadOptions() { }
             };
         }
@@ -279,7 +361,7 @@ namespace JhpDataSystem.store
             return 0;
         }
 
-        private async Task<bool> addToProcessingQueue(KindName kindName, List<CloudEntity> cloudEntities)
+        public async Task<bool> addToProcessingQueue(KindName kindName, List<CloudEntity> cloudEntities)
         {
             var kindStore = new CloudLocalStore(kindName);
             foreach (var entity in cloudEntities)
@@ -403,7 +485,7 @@ namespace JhpDataSystem.store
             return res;
         }
 
-        private async Task<bool> checkConnection()
+        public static async Task<bool> checkConnection()
         {
             var googleUrl = "https://google.co.zm";
             var toReturn = false;
@@ -482,6 +564,45 @@ namespace JhpDataSystem.store
 
             isRunning = 0;
             return 0;
+        }
+
+        internal void RefreshLocalEntities(Action<int> setProgress)
+        {
+            var cloudTables = getAllKindNames();
+
+            //we get the keys and editdates
+            foreach (var table in cloudTables)
+            {
+                var store = new CloudLocalStore<CloudEntity>(table.toKind());
+                var entities = store.GetUnsyncedLocalEntities(
+                    cloudTable:table.toKind(),
+                    localTable:getLocalTableName(table).toKind()
+                    );
+                if (entities.Count == 0)
+                    continue;
+
+                var entityConverter = new EntityConverter();
+
+                var localStore = new CloudLocalStore<LocalEntity>(getLocalTableName(table).toKind());
+                foreach (var entity in entities)
+                {
+                    var localEntity = entityConverter.toLocalEntity(entity);
+                    localStore.Update(localEntity);
+                }
+            }
+
+            //check if we have these in the local tables
+
+            //fetch and process records missing
+
+            //or do a sql comparison
+
+
+        }
+
+        public static string getLocalTableName(string table)
+        {
+            return table + "_local";
         }
     }
 }

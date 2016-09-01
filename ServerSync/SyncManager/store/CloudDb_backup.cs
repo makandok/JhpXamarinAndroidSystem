@@ -2,9 +2,9 @@ using System;
 using System.Security.Cryptography.X509Certificates;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
-using Google.Apis.Datastore.v1beta3;
+using Google.Apis.Datastore.v1;
 using Android.Content.Res;
-using Google.Apis.Datastore.v1beta3.Data;
+using Google.Apis.Datastore.v1.Data;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -100,7 +100,7 @@ namespace JhpDataSystem.store
                 {
                     Limit = 10,
                     Offset = 0,
-                    Filter = new Google.Apis.Datastore.v1beta3.Data.Filter()
+                    Filter = new Google.Apis.Datastore.v1.Data.Filter()
                     {
                         PropertyFilter = new PropertyFilter()
                         {
