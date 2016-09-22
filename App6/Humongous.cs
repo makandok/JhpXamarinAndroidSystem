@@ -53,8 +53,9 @@ namespace JhpDataSystem
             }
 
             //we need to have this class initialised
-            LocalEntityStore.buildTables();
             LocalEntityStoreInstance = new LocalEntityStore();
+            LocalEntityStoreInstance.buildTables(false);
+            
             CloudDbInstance = new CloudDb(_assetManager);
 
             //Android.OS.Build.Serial
@@ -76,7 +77,8 @@ namespace JhpDataSystem
 
             var asString = fieldStream.toText();
 
-            var fields = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FieldItem>>(asString);
+            var fields = Newtonsoft.Json.JsonConvert.
+                DeserializeObject<List<FieldItem>>(asString);
 
             var viewPages = fields.Select(t => t.pageName).Distinct().ToList();
 
@@ -102,29 +104,6 @@ namespace JhpDataSystem
             //throw new NotImplementedException();
         }
 
-        //public List<FieldItem> VmmcFieldItems
-        //{
-        //    get
-        //    {
-        //        if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Vmmc)
-
-        //            return ModuleContext.ContextManager.FieldItems;
-        //        if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Vmmc)
-        //            return ContextManager.FieldItems;
-        //        throw new ArgumentNullException("Project context not defined");
-        //    }
-        //}
-
-        //public List<FieldItem> PPXFieldItems
-        //{
-        //    get
-        //    {
-        //        if (ContextManager != null && ContextManager.ProjectCtxt == ProjectContext.Ppx)
-        //            return ContextManager.FieldItems;
-        //        throw new ArgumentNullException("Project context not defined");
-        //    }
-        //}
-
         public UserSession CurrentUser { get; internal set; }
 
         internal void SetTempDataForView(int viewId, List<FieldValuePair> valueFields)
@@ -138,17 +117,5 @@ namespace JhpDataSystem
         }
         public DeviceConfiguration Configuration { get; internal set; }
         public string AppVersion { get; internal set; }
-
-        //public class MyAppConfiguration
-        //{
-        //    public int DeviceId
-        //    {
-        //        get;set;
-        //    }
-        //    public int FacilityIndex
-        //    {
-        //        get; set;
-        //    }
-        //}
     }
 }

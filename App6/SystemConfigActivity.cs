@@ -66,6 +66,28 @@ namespace JhpDataSystem
             //buttonClearClientData
             var buttonClearClientData = FindViewById<Button>(Resource.Id.buttonClearClientData);
             buttonClearClientData.Click += buttonClearClientData_Click;
+
+            //buttonRebuildIndexes
+            var buttonRebuildIndexes = FindViewById<Button>(Resource.Id.buttonRebuildIndexes);
+            buttonRebuildIndexes.Click += buttonRebuildIndexes_Click;
+
+            //buttonReuploadData
+            var buttonReuploadData = FindViewById<Button>(Resource.Id.buttonReuploadData);
+            buttonReuploadData.Click += buttonReuploadData_Click;
+        }
+
+        private void buttonReuploadData_Click(object sender, EventArgs e)
+        {
+            sendToast("Reupload data", ToastLength.Short);
+
+            //sendToast("Completed rebuilding indexes", ToastLength.Short);
+        }
+
+        private void buttonRebuildIndexes_Click(object sender, EventArgs e)
+        {
+            sendToast("Started rebuilding indexes", ToastLength.Short);
+            AppInstance.Instance.LocalEntityStoreInstance.buildTables(true);
+            sendToast("Completed rebuilding indexes", ToastLength.Short);
         }
 
         private void buttonClearClientData_Click(object sender, EventArgs e)
@@ -248,7 +270,7 @@ namespace JhpDataSystem
 
         void showDialog(string title, string message)
         {
-            new Android.App.AlertDialog.Builder(this)
+            new AlertDialog.Builder(this)
             .SetTitle(title)
             .SetMessage(message)
             .SetPositiveButton("OK", (senderAlert, args) => { })
