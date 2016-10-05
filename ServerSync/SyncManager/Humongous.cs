@@ -3,6 +3,7 @@ using Android.Content.Res;
 using JhpDataSystem.model;
 using JhpDataSystem.store;
 using Newtonsoft.Json.Linq;
+using SyncManager.store;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,7 +32,6 @@ namespace JhpDataSystem
 
         AssetManager _assetManager { get; set; }
         Activity _mainContext;
-        public LocalEntityStore LocalEntityStoreInstance { get; private set; }
 
         public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
 
@@ -64,9 +64,6 @@ namespace JhpDataSystem
                 }                
             }
 
-            //we need to have this class initialised
-            LocalEntityStoreInstance = new LocalEntityStore();
-            //LocalEntityStoreInstance.buildTables(false);
             CloudDbInstance = new CloudDb() { ApiAssets = ApiAssets };
             var allTables = CloudDb.getAllKindNames();
             foreach (var table in allTables)
@@ -74,8 +71,12 @@ namespace JhpDataSystem
                 new CloudLocalStore(table.toKind()).build();
 
                 //this creates a table used to store a decrypted set of similar data
-                new CloudLocalStore(CloudDb.getLocalTableName(table).toKind()).build();
-                //new CloudLocalStore(table.toKind()).build(dropAndRecreate: true);
+                var dropAndRecreate = false;
+
+                new CloudLocalStore(CloudDb.getLocalTableName(table).toKind())
+                    .build(dropAndRecreate);
+                new FieldValueStore(CloudDb.getTableFieldValueName(table))
+                    .build(dropAndRecreate);
             }
         }
 

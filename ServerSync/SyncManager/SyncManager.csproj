@@ -136,6 +136,7 @@
     </ApplicationDefinition>
     <Compile Include="ashared\Crypto.cs" />
     <Compile Include="ClientLookupProvider.cs" />
+    <Compile Include="store\Deidentifier.cs" />
     <Compile Include="EncryptionHelper.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="GoogleCredentials\DefaultCredentialProvider.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="store\CloudEntity.cs" />
     <Compile Include="store\CloudLocalStore.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
+    <Compile Include="store\FieldValueStore.cs" />
     <Compile Include="store\LocalDB.cs" />
     <Compile Include="store\LocalDB3.cs" />
     <Compile Include="store\LocalEntityStore.cs" />

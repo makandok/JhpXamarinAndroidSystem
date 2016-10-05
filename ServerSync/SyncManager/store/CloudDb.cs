@@ -383,6 +383,15 @@ namespace JhpDataSystem.store
             allClientKinds.Add(Constants.KIND_APPUSERS);
             return allClientKinds;
         }
+
+        public static List<string> getAllKindFields()
+        {
+            var allClientKinds = new List<string>();
+            allClientKinds.AddRange(Constants.PPX_KIND_DISPLAYNAMES.Keys);
+            allClientKinds.AddRange(Constants.VMMC_KIND_DISPLAYNAMES.Keys);
+            allClientKinds.Add(Constants.KIND_APPUSERS);
+            return allClientKinds;
+        }
         //select __key__,kindmetadata From appusers
         //select __key__, kindmetadata From `vmmc_regandproc` where dateadded
         //select __key__, dateadded From `appusers` where dateadded >= datetime('2016-08-01T00:00:01Z')
@@ -573,8 +582,8 @@ namespace JhpDataSystem.store
             //we get the keys and editdates
             foreach (var table in cloudTables)
             {
-                var store = new CloudLocalStore<CloudEntity>(table.toKind());
-                var entities = store.GetUnsyncedLocalEntities(
+                var localCloudData = new CloudLocalStore<CloudEntity>(table.toKind());
+                var entities = localCloudData.GetUnsyncedLocalEntities(
                     cloudTable:table.toKind(),
                     localTable:getLocalTableName(table).toKind()
                     );
@@ -582,13 +591,37 @@ namespace JhpDataSystem.store
                     continue;
 
                 var entityConverter = new EntityConverter();
-
                 var localStore = new CloudLocalStore<LocalEntity>(getLocalTableName(table).toKind());
+                var flatStore = new FieldValueStore(getTableFieldValueName(table)) {
+                    batchSize = 50 };
+
                 foreach (var entity in entities)
                 {
+                    //we decrypt
                     var localEntity = entityConverter.toLocalEntity(entity);
-                    localStore.Update(localEntity);
+                    var saved = localStore.Update(localEntity);
+                    if (saved == null)
+                    {
+                        //means we couldn't save, so we do what?
+                        //throw exception??
+                        log(string.Format("Couldn't save record for ", table, entity.Id));
+                        continue;
+                    }
+
+                    //and deidentify
+                    var deid = entityConverter.toDeidEntity(localEntity);
+
+                    var ged = DbSaveableEntity.fromJson<GeneralEntityDataset>(
+                        new KindItem(deid.DataBlob)
+                        );
+
+                    //todo: modify so we sync from CloudLocalStore separately than when downloading
+                    //and save to localTables
+                    flatStore.Save(ged, localEntity, saved.recordId);
                 }
+
+                //call finalise
+                flatStore.finalise();
             }
 
             //check if we have these in the local tables
@@ -597,6 +630,10 @@ namespace JhpDataSystem.store
 
             //or do a sql comparison
 
+        }
+
+        void log(string message)
+        {
 
         }
 
@@ -604,5 +641,10 @@ namespace JhpDataSystem.store
         {
             return table + "_local";
         }
+
+        public static string getTableFieldValueName(string table)
+        {
+            return table + "_local_fvs";
+        }        
     }
 }
