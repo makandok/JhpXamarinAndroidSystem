@@ -135,7 +135,15 @@
     "Name": "interaction_type",
     "Values": [
       "RemovalProceddure",
-      "Followup telephone"
+      "Followup telephone",
+      "Physical Visit"
+    ]
+  },
+  {
+    "Name": "followup_type",
+    "Values": [
+      "Telephone Call",
+      "Physical Visit"
     ]
   }
 ]

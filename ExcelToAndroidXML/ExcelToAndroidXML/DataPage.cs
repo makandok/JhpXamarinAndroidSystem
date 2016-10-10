@@ -162,15 +162,22 @@ namespace ExcelToAndroidXML
                         {
                             if (field.GridColumn == 5)
                             {
-                                fieldXml = (getXamlLabelDefForRadioGroup(field) + 
+                                fieldXml = (getXamlLabelDefForRadioGroup(field, false) + 
                                     getXamlLabelDefForEnumeratedFields(field) +                                        
                                     string.Join(Environment.NewLine, getXamlLabelDefForRadioButton(field))
                                     + "</RadioGroup >");
                             }
                             else
                             {
+                                //we look at the length of the enums and  
+                                //we change orientation if too long
+                                var changeOrientation = false;
+                                var lengths = (field.FieldOptions.Values.Select(t => t.Length)).Sum();
+                                if (lengths > 50)
+                                    changeOrientation = true;
+
                                 fieldXml = (getXamlLabelDefForEnumeratedFields(field) +
-                                    getXamlLabelDefForRadioGroup(field) +
+                                    getXamlLabelDefForRadioGroup(field, changeOrientation) +
                                     string.Join(Environment.NewLine, getXamlLabelDefForRadioButton(field))
                                     + "</RadioGroup >");
                             }
@@ -207,6 +214,7 @@ namespace ExcelToAndroidXML
                     Label = field.DisplayLabel,
                     pageName = ViewPageName
                     ,fieldType = field.ViewType
+                    ,fieldName= ""
                 });
             return fieldXml;
         }
@@ -274,7 +282,8 @@ namespace ExcelToAndroidXML
                     pageName = ViewPageName
                                         ,
                     fieldType = field.ViewType
-
+                    ,
+                    fieldName = ""
                 });
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
             return fieldXml.Replace("'", "\"");
@@ -361,12 +370,25 @@ android:textAppearance='?android:attr/textAppearanceMedium'
             return fieldXml.Replace("'", "\"");
         }
 
-        string getXamlLabelDefForRadioGroup(FieldDefinition field)
+//        string getXamlLabelDefForRadioGroup(FieldDefinition field)
+//        {
+//            var stringsEntryName = field.ViewName;
+//            var fieldXml = (@"
+//<RadioGroup
+//android:orientation='horizontal'
+//        android:minWidth='25dp'
+//        android:minHeight='25dp'
+//        android:layout_width='match_parent'
+//        android:layout_height='wrap_content'
+//        android:id='@+id/rg_" + stringsEntryName + "' >");
+//            return fieldXml.Replace("'", "\"");
+//        }
+        string getXamlLabelDefForRadioGroup(FieldDefinition field, bool setVertical)
         {
             var stringsEntryName = field.ViewName;
             var fieldXml = (@"
 <RadioGroup
-android:orientation='horizontal'
+android:orientation='" + (setVertical ? "vertical" : "horizontal") + @"'
         android:minWidth='25dp'
         android:minHeight='25dp'
         android:layout_width='match_parent'
@@ -374,7 +396,6 @@ android:orientation='horizontal'
         android:id='@+id/rg_" + stringsEntryName + "' >");
             return fieldXml.Replace("'", "\"");
         }
-
         List<string> getXamlLabelDefForCheckBox(FieldDefinition field)
         {
             var fieldOptionDefinitions = new List<string>();
@@ -398,7 +419,8 @@ android:orientation='horizontal'
                         Label = field.DisplayLabel + " [" + option + "]",
                         pageName = ViewPageName,
                         fieldType = field.ViewType
-
+                        ,
+                        fieldName = field.ViewName
                     });
                 metaDataProvider.AddStringResource(optionName, option);
 
@@ -451,7 +473,8 @@ android:id='@+id/" + optionName + "' />"
                         Label = field.DisplayLabel + " [" + option + "]",
                         pageName = ViewPageName,
                         fieldType = field.ViewType
-
+                        ,
+                        fieldName = field.ViewName
                     });
 
                 fieldOptionDefinitions.Add(fieldXml.Replace("'", "\""));

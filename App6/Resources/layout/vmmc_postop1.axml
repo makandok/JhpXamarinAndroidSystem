@@ -55,7 +55,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_vm_type_of_review" />
 <RadioGroup
-android:orientation="horizontal"
+android:orientation="vertical"
         android:minWidth="25dp"
         android:minHeight="25dp"
         android:layout_width="match_parent"

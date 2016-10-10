@@ -10,6 +10,7 @@ namespace JhpDataSystem.model
         public string Label { get; set; }
         public int PageId { get; set; }
         public string fieldType { get; set; }
+        public string fieldName { get; set; }
     }
 
     public class FieldValuePair
