@@ -227,7 +227,6 @@
     <None Include="Assets\api_keys.json" />
     <None Include="Assets\key.p12" />
     <None Include="Assets\ppx_fields.json" />
-    <None Include="Assets\ppx_fields.json.backup" />
     <None Include="Assets\vmmc_fields.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
