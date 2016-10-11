@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JhpDataSystem;
+using System;
 
 namespace SyncManager.store
 {
@@ -10,8 +11,9 @@ namespace SyncManager.store
         public string DataBlob { get; set; }
         //public DateTime DateAdded { get; set; }
         public string FormName { get; set; }
-        public long EditDate { get; internal set; }
-        public int EditDay { get; internal set; }
+        public long EditDate { get; set; }
+        public int EditDay { get; set; }
+        public int RecordId { get; set; }
     }
 
     public class CloudEntity: BlobEntity
@@ -22,15 +24,20 @@ namespace SyncManager.store
     {
     }
 
+    public class DeidEntity : BlobEntity
+    {
+    }
+
     public class EntityConverter
     {
         public LocalEntity toLocalEntity(CloudEntity entity)
         {
+            var decrypted = entity.DataBlob.Decrypt();
             return new LocalEntity()
             {
                 Id = entity.Id,
                 EntityId = entity.EntityId,
-                DataBlob = decrypt(entity.DataBlob),
+                DataBlob = decrypted.Value,
                 EditDate = entity.EditDate,
                 EditDay = entity.EditDay,
                 FormName = entity.FormName,
@@ -40,11 +47,12 @@ namespace SyncManager.store
 
         public CloudEntity toCloudEntity(LocalEntity entity)
         {
+            var encrypted = entity.DataBlob.Encrypt();
             return new CloudEntity()
             {
                 Id = entity.Id,
                 EntityId = entity.EntityId,
-                DataBlob = encrypt(entity.DataBlob),
+                DataBlob = encrypted.Value,
                 EditDate = entity.EditDate,
                 EditDay = entity.EditDay,
                 FormName = entity.FormName,
@@ -52,14 +60,19 @@ namespace SyncManager.store
             };
         }
 
-        string encrypt(string textToEncrypt)
+        public DeidEntity toDeidEntity(LocalEntity entity)
         {
-            return textToEncrypt;
-        }
-
-        string decrypt(string textToDecrypt)
-        {
-            return textToDecrypt;
+            var deidBlob = entity.DataBlob.deidentifyBlob(entity.FormName);
+            return new DeidEntity()
+            {
+                Id = entity.Id,
+                EntityId = entity.EntityId,
+                DataBlob = deidBlob,
+                EditDate = entity.EditDate,
+                EditDay = entity.EditDay,
+                FormName = entity.FormName,
+                KindMetaData = entity.KindMetaData
+            };
         }
     }
 }

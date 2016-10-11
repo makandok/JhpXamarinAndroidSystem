@@ -27,7 +27,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_typeofsite" />
 <RadioGroup
-android:orientation="horizontal"
+android:orientation="vertical"
         android:minWidth="25dp"
         android:minHeight="25dp"
         android:layout_width="match_parent"
@@ -252,7 +252,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_hivstatus" />
 <RadioGroup
-android:orientation="horizontal"
+android:orientation="vertical"
         android:minWidth="25dp"
         android:minHeight="25dp"
         android:layout_width="match_parent"

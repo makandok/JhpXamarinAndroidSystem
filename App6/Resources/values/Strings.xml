@@ -23,10 +23,9 @@
   <string name="vmc_activitylabel">VMMC Manager</string>
 
   <!-- STRINGS FOR PPX-->
+  <string name="generalsummary_hdr">General Summary</string>
   <string name="date_firstedited">Date of Data Entry</string>
   <string name="data_entered_by">Data Entry By</string>
-  
-  <string name="generalsummary_hdr">General Summary</string>
   <string name="facilityname">Facility</string>
   <string name="dateofvisit">Date of Visit</string>
   <string name="cardserialnumber">Card Serial Number</string>
@@ -202,6 +201,7 @@
   <string name="typeofinteraction">Whether Removal Procedure or Follow up</string>
   <string name="typeofinteraction_removalproceddure">RemovalProceddure</string>
   <string name="typeofinteraction_followuptelephone">Followup telephone</string>
+  <string name="typeofinteraction_physicalvisit">Physical Visit</string>
   <string name="timeforcepsapplied">Forceps applied (time)</string>
   <string name="timeinnerringremoved">Inner ring removed (time)</string>
   <string name="aesduringdeviceremoval">AES during Device Removal</string>
@@ -243,6 +243,9 @@
   <string name="isaplannedfupphonecall">Planned Followup Call</string>
   <string name="isaplannedfupphonecall_yes">Yes</string>
   <string name="isaplannedfupphonecall_no">No</string>
+  <string name="typeoffollowup">Follow Up Type</string>
+  <string name="typeoffollowup_telephonecall">Telephone Call</string>
+  <string name="typeoffollowup_physicalvisit">Physical Visit</string>
   <string name="unschedule_preassmt_hdr">Unscheduled or Pre-Assessment During Week of Device Wearing</string>
   <string name="aesswhilewearing">Any Adverse Events during week of Device Wearing</string>
   <string name="aesswhilewearing_noadverseeventsdiagnosed">No Adverse events diagnosed</string>
@@ -257,6 +260,7 @@
   <string name="nosexmastrubation">No sexual intercourse or masturbation</string>
 
   <!-- STRINGS FOR VMMC-->
+  <string name="sys_dateselect">Select Date</string>
   <string name="vm_svc_loc_details_hdr">Service Location Details</string>
   <string name="vm_intakeform_serial">Intake Form Serial</string>
   <string name="vm_date_firstedited">Date of Data Entry</string>
@@ -286,6 +290,7 @@
   <string name="vm_religion_christian">Christian</string>
   <string name="vm_religion_islam">Islam</string>
   <string name="vm_religion_other">Other</string>
+  <string name="vm_other_religion_specified">If Other Religion, Specify</string>
   <string name="vm_address_hdr">Address</string>
   <string name="vm_house_plotno">House / Plot No</string>
   <string name="vm_street">Street</string>
@@ -307,6 +312,7 @@
   <string name="vm_mmc_reasons_hygiene">Hygiene</string>
   <string name="vm_mmc_reasons_cultural">Cultural</string>
   <string name="vm_mmc_reasons_other">Other</string>
+  <string name="vm_other_mmc_reasons">If Other, Specify</string>
   <string name="vm_how_client_learnt_mmc">How did the client learn that MC service is offered here</string>
   <string name="vm_how_client_learnt_mmc_friendfamily">Friend / Family</string>
   <string name="vm_how_client_learnt_mmc_partnerspouse">Partner / Spouse</string>
@@ -499,4 +505,6 @@
   <string name="vm_ae_erectile_dysfunction">m. Erectile dysfunction</string>
   <string name="vm_ae_psycho_behav_iss">n. Psycho-behavioral issues</string>
   <string name="vm_tx_and_other_clinnotes">Treatment and Other Clinical Notes</string>
+
+
 </resources>

@@ -2485,6 +2485,18 @@
   {
     "FormName": "A2 Unscheduled or Follow-up Prepex Form",
     "GroupName": "",
+    "ViewName": "typeoffollowup",
+    "ViewType": "SingleSelect",
+    "DisplayLabel": "Follow Up Type",
+    "ListName": "followup_type",
+    "GridColumn": "2",
+    "Id": "108",
+    "IsIndexed": "",
+    "IsRequired": "",
+    "ViewPage":"1"},
+  {
+    "FormName": "A2 Unscheduled or Follow-up Prepex Form",
+    "GroupName": "",
     "ViewName": "clinicalcourse",
     "ViewType": "Text",
     "DisplayLabel": "Clinical course leading to",

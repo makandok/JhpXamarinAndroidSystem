@@ -238,7 +238,15 @@ android:id="@+id/typeofinteraction_removalproceddure" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/typeofinteraction_followuptelephone"
-android:id="@+id/typeofinteraction_followuptelephone" /></RadioGroup >
+android:id="@+id/typeofinteraction_followuptelephone" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofinteraction_physicalvisit"
+android:id="@+id/typeofinteraction_physicalvisit" /></RadioGroup >
 
     <TextView
         android:text="@string/timeforcepsapplied"

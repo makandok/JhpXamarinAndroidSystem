@@ -69,7 +69,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
              android:id="@+id/vm_mmc_reasons_other" />
 
     <TextView
-        android:text="@string/vm_mmc_reasons_other"
+        android:text="@string/vm_other_mmc_reasons"
         android:textColor="@android:color/holo_blue_dark"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
@@ -80,7 +80,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:inputType="text"
         android:id="@+id/vm_other_mmc_reasons"
-        android:hint="@string/vm_mmc_reasons_other" />
+        android:hint="@string/vm_other_mmc_reasons" />
 
     <TextView
 android:text="@string/vm_how_client_learnt_mmc"
