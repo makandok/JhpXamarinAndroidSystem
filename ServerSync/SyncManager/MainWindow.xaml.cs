@@ -79,11 +79,18 @@ namespace ServerSync
                 return;
             }
 
+            var dialog = 
+                MessageBox.Show("Do you want to start data download from the server", "Please confirm action", 
+                MessageBoxButton.OKCancel);
+
+            if (dialog != MessageBoxResult.OK)
+                return;
+            
             //we get list of files to download
             var syncOldData = this.menuServerSyncOldData == sender;
 
-            var res = await AppInstance.Instance.CloudDbInstance.EnsureServerSync(setProgressValue, syncOldData);
-
+            var res = await AppInstance.Instance.CloudDbInstance
+                .EnsureServerSync(setProgressValue, syncOldData);
 
             //for each file, we download
             AppInstance.Instance.CloudDbInstance.RefreshLocalEntities(setProgressValue);

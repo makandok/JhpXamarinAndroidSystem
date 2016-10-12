@@ -117,73 +117,73 @@ namespace JhpDataSystem.store
             return toReturn;
         }
 
-        private async Task<List<CloudEntity>> fetchCloudData1()
-        {
-            var toReturn = new List<CloudEntity>();
-            var repeatDownload = true;
-            while (repeatDownload)
-            {
+        //private async Task<List<CloudEntity>> fetchCloudData1()
+        //{
+        //    var toReturn = new List<CloudEntity>();
+        //    var repeatDownload = true;
+        //    while (repeatDownload)
+        //    {
 
-                var response = await res.ExecuteAsync();
-                var entityResults = response.Batch.EntityResults;
-                //Debug.
-                if (entityResults == null)
-                {
-                    repeatDownload = false;
-                    break;
-                }
+        //        var response = await res.ExecuteAsync();
+        //        var entityResults = response.Batch.EntityResults;
+        //        //Debug.
+        //        if (entityResults == null)
+        //        {
+        //            repeatDownload = false;
+        //            break;
+        //        }
 
-                query.Query.StartCursor = response.Batch.EndCursor;
-                foreach (var entityResult in response.Batch.EntityResults)
-                {
-                    var entity = entityResult.Entity;
-                    var path = entity.Key.Path.FirstOrDefault();
-                    var cloudEntity = new CloudEntity()
-                    {
-                        FormName = path.Kind,
-                        Id = path.Name,
-                        EntityId = entity.Properties["entityid"].StringValue,
-                        DataBlob = entity.Properties["datablob"].StringValue,
-                        KindMetaData = entity.Properties["kindmetadata"].StringValue,
-                        //EditDate = Convert.ToInt64(
-                        //    entity.Properties["editdate"].IntegerValue),
-                        //EditDay = Convert.ToInt32(
-                        //    entity.Properties["editday"].IntegerValue)
-                    };
-                    if (entity.Properties.ContainsKey("editdate"))
-                    {
-                        var editDate = entity.Properties["editdate"].IntegerValue;
-                        cloudEntity.EditDate = Convert.ToInt64(editDate);
+        //        query.Query.StartCursor = response.Batch.EndCursor;
+        //        foreach (var entityResult in response.Batch.EntityResults)
+        //        {
+        //            var entity = entityResult.Entity;
+        //            var path = entity.Key.Path.FirstOrDefault();
+        //            var cloudEntity = new CloudEntity()
+        //            {
+        //                FormName = path.Kind,
+        //                Id = path.Name,
+        //                EntityId = entity.Properties["entityid"].StringValue,
+        //                DataBlob = entity.Properties["datablob"].StringValue,
+        //                KindMetaData = entity.Properties["kindmetadata"].StringValue,
+        //                //EditDate = Convert.ToInt64(
+        //                //    entity.Properties["editdate"].IntegerValue),
+        //                //EditDay = Convert.ToInt32(
+        //                //    entity.Properties["editday"].IntegerValue)
+        //            };
+        //            if (entity.Properties.ContainsKey("editdate"))
+        //            {
+        //                var editDate = entity.Properties["editdate"].IntegerValue;
+        //                cloudEntity.EditDate = Convert.ToInt64(editDate);
 
-                        var editDay = entity.Properties["editday"].IntegerValue;
-                        cloudEntity.EditDay = Convert.ToInt32(editDay);
-                    }
-                    else
-                    {
-                        //use field date added 
-                        var entityDate = Convert.ToDateTime(
-                            entity.Properties["dateadded"].TimestampValue);
-                        var editday = entityDate.toYMDInt();
-                        cloudEntity.EditDay = editday;
-                        var editdate = entityDate.ToBinary();
-                        cloudEntity.EditDate = editdate;
-                    }
-                    toReturn.Add(cloudEntity);
-                }
+        //                var editDay = entity.Properties["editday"].IntegerValue;
+        //                cloudEntity.EditDay = Convert.ToInt32(editDay);
+        //            }
+        //            else
+        //            {
+        //                //use field date added 
+        //                var entityDate = Convert.ToDateTime(
+        //                    entity.Properties["dateadded"].TimestampValue);
+        //                var editday = entityDate.toYMDInt();
+        //                cloudEntity.EditDay = editday;
+        //                var editdate = entityDate.ToBinary();
+        //                cloudEntity.EditDate = editdate;
+        //            }
+        //            toReturn.Add(cloudEntity);
+        //        }
 
-                //moreResultsAfterLimit
-                if (response.Batch.MoreResults == "NO_MORE_RESULTS")
-                {
-                    repeatDownload = false;
-                    break;
-                }
-                else
-                {
-                    repeatDownload = true;
-                }
-            }
-            return toReturn;
-        }
+        //        //moreResultsAfterLimit
+        //        if (response.Batch.MoreResults == "NO_MORE_RESULTS")
+        //        {
+        //            repeatDownload = false;
+        //            break;
+        //        }
+        //        else
+        //        {
+        //            repeatDownload = true;
+        //        }
+        //    }
+        //    return toReturn;
+        //}
 
         private static List<CloudEntity> toCloudEntity(IList<EntityResult> results)
         {
@@ -216,10 +216,13 @@ namespace JhpDataSystem.store
                 {
                     //use field date added 
                     var entityDate = Convert.ToDateTime(
-                        entity.Properties["dateadded"].TimestampValue);
+                        entity.Properties["dateadded"].TimestampValue);                  
+
                     var editday = entityDate.toYMDInt();
                     cloudEntity.EditDay = editday;
-                    var editdate = entityDate.ToBinary();
+
+                    var local = entityDate.ToLocalTime();
+                    var editdate = local.ToBinary();
                     cloudEntity.EditDate = editdate;
                 }
                 toReturn.Add(cloudEntity);
@@ -338,7 +341,7 @@ namespace JhpDataSystem.store
             var entity = db.GetLatestEntity();
             if (entity == null || string.IsNullOrWhiteSpace(entity.Id))
             {
-                return new DateTime(2016, 07, 08, 0, 0, 0, 1).ToBinary();
+                return new DateTime(2016, 07, 08, 0, 0, 0, 1, DateTimeKind.Local).ToBinary();
             }
             return entity.EditDate;
         }
