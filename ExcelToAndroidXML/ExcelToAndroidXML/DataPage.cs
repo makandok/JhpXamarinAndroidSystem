@@ -279,10 +279,8 @@ namespace ExcelToAndroidXML
                     IsIndexed = field.IsIndexed == "1",
                     IsRequired = field.IsIndexed == "1",
                     Label = field.DisplayLabel,
-                    pageName = ViewPageName
-                                        ,
-                    fieldType = field.ViewType
-                    ,
+                    pageName = ViewPageName,
+                    fieldType = field.ViewType,
                     fieldName = ""
                 });
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
@@ -418,8 +416,7 @@ android:orientation='" + (setVertical ? "vertical" : "horizontal") + @"'
                         IsRequired = field.IsIndexed == "1",
                         Label = field.DisplayLabel + " [" + option + "]",
                         pageName = ViewPageName,
-                        fieldType = field.ViewType
-                        ,
+                        fieldType = field.ViewType,
                         fieldName = field.ViewName
                     });
                 metaDataProvider.AddStringResource(optionName, option);
@@ -472,8 +469,7 @@ android:id='@+id/" + optionName + "' />"
                         IsRequired = field.IsIndexed == "1",
                         Label = field.DisplayLabel + " [" + option + "]",
                         pageName = ViewPageName,
-                        fieldType = field.ViewType
-                        ,
+                        fieldType = field.ViewType,
                         fieldName = field.ViewName
                     });
 
