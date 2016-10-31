@@ -162,7 +162,7 @@ namespace JhpDataSystem.projects.ppx
         async Task<bool> sendSms(List<PPClientSummary> clients)
         {
             //we send           
-            Toast.MakeText(this, "Started sending messages", ToastLength.Short).Show();
+            Toast.MakeText(this, "Please wait, Started sending messages", ToastLength.Short).Show();
             var bulkSender = new BulkSmsSender()
             {
                 contactNumbers = clients,

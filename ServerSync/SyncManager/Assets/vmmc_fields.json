@@ -7,7 +7,9 @@
     "IsRequired": true,
     "Label": "Intake Form Serial",
     "fieldType": "Integer",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_date_firstedited",
@@ -17,7 +19,9 @@
     "IsRequired": false,
     "Label": "Date of Data Entry",
     "fieldType": "today",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_data_entered_by",
@@ -27,7 +31,9 @@
     "IsRequired": false,
     "Label": "Data Entry By",
     "fieldType": "username",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_facility_name",
@@ -37,7 +43,9 @@
     "IsRequired": true,
     "Label": "Facility Name",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_outreach_name",
@@ -47,7 +55,9 @@
     "IsRequired": false,
     "Label": "Outreach Name",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_facility_type_outreach",
@@ -57,7 +67,9 @@
     "IsRequired": true,
     "Label": "Outreach Name (if site is not a health center) [Outreach]",
     "fieldType": "Single Select",
-    "fieldName": "vm_facility_type"
+    "fieldName": "vm_facility_type",
+    "listName": "vm_facility_type",
+    "lookupValue": "Outreach"
   },
   {
     "name": "vm_facility_type_static",
@@ -67,7 +79,9 @@
     "IsRequired": true,
     "Label": "Outreach Name (if site is not a health center) [Static]",
     "fieldType": "Single Select",
-    "fieldName": "vm_facility_type"
+    "fieldName": "vm_facility_type",
+    "listName": "vm_facility_type",
+    "lookupValue": "Static"
   },
   {
     "name": "vm_mc_number",
@@ -77,7 +91,9 @@
     "IsRequired": true,
     "Label": "Client ID / Register Number",
     "fieldType": "Integer",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_registration_date",
@@ -87,7 +103,9 @@
     "IsRequired": true,
     "Label": "Registration Date",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_last_name",
@@ -97,7 +115,9 @@
     "IsRequired": true,
     "Label": "Client Last Name",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_first_name",
@@ -107,7 +127,9 @@
     "IsRequired": true,
     "Label": "Client First Name",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_date_of_birth",
@@ -117,7 +139,9 @@
     "IsRequired": true,
     "Label": "Date of Birth",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_age_units_mo",
@@ -127,7 +151,9 @@
     "IsRequired": false,
     "Label": "Age Units [Mo.]",
     "fieldType": "Single Select",
-    "fieldName": "vm_age_units"
+    "fieldName": "vm_age_units",
+    "listName": "vm_age_units",
+    "lookupValue": "Mo."
   },
   {
     "name": "vm_age_units_yrs",
@@ -137,7 +163,9 @@
     "IsRequired": false,
     "Label": "Age Units [Yrs]",
     "fieldType": "Single Select",
-    "fieldName": "vm_age_units"
+    "fieldName": "vm_age_units",
+    "listName": "vm_age_units",
+    "lookupValue": "Yrs"
   },
   {
     "name": "vm_age",
@@ -147,7 +175,9 @@
     "IsRequired": false,
     "Label": "Age",
     "fieldType": "Integer",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_nrc_passport",
@@ -157,7 +187,9 @@
     "IsRequired": true,
     "Label": "NRC / Passport",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_phone_number",
@@ -167,7 +199,9 @@
     "IsRequired": true,
     "Label": "Contact Phone Nummber",
     "fieldType": "CellNumber",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_next_of_kin",
@@ -177,7 +211,9 @@
     "IsRequired": false,
     "Label": "Next of Kin Names",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_phone_nextofkin",
@@ -187,7 +223,9 @@
     "IsRequired": false,
     "Label": "Next of Kin Phone Nunber",
     "fieldType": "CellNumber",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_tribe",
@@ -197,7 +235,9 @@
     "IsRequired": false,
     "Label": "Tribe",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_religion_christian",
@@ -207,7 +247,9 @@
     "IsRequired": false,
     "Label": "Religion [Christian]",
     "fieldType": "Single Select",
-    "fieldName": "vm_religion"
+    "fieldName": "vm_religion",
+    "listName": "vm_religion",
+    "lookupValue": "Christian"
   },
   {
     "name": "vm_religion_islam",
@@ -217,7 +259,9 @@
     "IsRequired": false,
     "Label": "Religion [Islam]",
     "fieldType": "Single Select",
-    "fieldName": "vm_religion"
+    "fieldName": "vm_religion",
+    "listName": "vm_religion",
+    "lookupValue": "Islam"
   },
   {
     "name": "vm_religion_other",
@@ -227,7 +271,9 @@
     "IsRequired": false,
     "Label": "Religion [Other]",
     "fieldType": "Single Select",
-    "fieldName": "vm_religion"
+    "fieldName": "vm_religion",
+    "listName": "vm_religion",
+    "lookupValue": "Other"
   },
   {
     "name": "vm_other_religion_specified",
@@ -237,7 +283,9 @@
     "IsRequired": false,
     "Label": "If Other Religion, Specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_house_plotno",
@@ -247,7 +295,9 @@
     "IsRequired": true,
     "Label": "House / Plot No",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_street",
@@ -257,7 +307,9 @@
     "IsRequired": true,
     "Label": "Street",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_township",
@@ -267,7 +319,9 @@
     "IsRequired": true,
     "Label": "Township",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_village",
@@ -277,7 +331,9 @@
     "IsRequired": true,
     "Label": "If Rural, Village",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_chief",
@@ -287,7 +343,9 @@
     "IsRequired": true,
     "Label": "Chief",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_marital_status_single",
@@ -297,7 +355,9 @@
     "IsRequired": false,
     "Label": "Marital Status [Single]",
     "fieldType": "Single Select",
-    "fieldName": "vm_marital_status"
+    "fieldName": "vm_marital_status",
+    "listName": "vm_marital_status",
+    "lookupValue": "Single"
   },
   {
     "name": "vm_marital_status_divorced",
@@ -307,7 +367,9 @@
     "IsRequired": false,
     "Label": "Marital Status [Divorced]",
     "fieldType": "Single Select",
-    "fieldName": "vm_marital_status"
+    "fieldName": "vm_marital_status",
+    "listName": "vm_marital_status",
+    "lookupValue": "Divorced"
   },
   {
     "name": "vm_marital_status_married",
@@ -317,7 +379,9 @@
     "IsRequired": false,
     "Label": "Marital Status [Married]",
     "fieldType": "Single Select",
-    "fieldName": "vm_marital_status"
+    "fieldName": "vm_marital_status",
+    "listName": "vm_marital_status",
+    "lookupValue": "Married"
   },
   {
     "name": "vm_marital_status_widower",
@@ -327,7 +391,9 @@
     "IsRequired": false,
     "Label": "Marital Status [Widower]",
     "fieldType": "Single Select",
-    "fieldName": "vm_marital_status"
+    "fieldName": "vm_marital_status",
+    "listName": "vm_marital_status",
+    "lookupValue": "Widower"
   },
   {
     "name": "vm_marital_status_cohabiting",
@@ -337,7 +403,9 @@
     "IsRequired": false,
     "Label": "Marital Status [Co-habiting]",
     "fieldType": "Single Select",
-    "fieldName": "vm_marital_status"
+    "fieldName": "vm_marital_status",
+    "listName": "vm_marital_status",
+    "lookupValue": "Co-habiting"
   },
   {
     "name": "vm_mmc_reasons_partialhivprotection",
@@ -347,7 +415,9 @@
     "IsRequired": false,
     "Label": "Primary reasons for seeking circumcision services [Partial HIV Protection]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_mmc_reasons"
+    "fieldName": "vm_mmc_reasons",
+    "listName": "vm_mmc_reasons",
+    "lookupValue": "Partial HIV Protection"
   },
   {
     "name": "vm_mmc_reasons_religious",
@@ -357,7 +427,9 @@
     "IsRequired": false,
     "Label": "Primary reasons for seeking circumcision services [Religious]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_mmc_reasons"
+    "fieldName": "vm_mmc_reasons",
+    "listName": "vm_mmc_reasons",
+    "lookupValue": "Religious"
   },
   {
     "name": "vm_mmc_reasons_medicalprotection",
@@ -367,7 +439,9 @@
     "IsRequired": false,
     "Label": "Primary reasons for seeking circumcision services [Medical Protection]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_mmc_reasons"
+    "fieldName": "vm_mmc_reasons",
+    "listName": "vm_mmc_reasons",
+    "lookupValue": "Medical Protection"
   },
   {
     "name": "vm_mmc_reasons_sexualenhancement",
@@ -377,7 +451,9 @@
     "IsRequired": false,
     "Label": "Primary reasons for seeking circumcision services [Sexual Enhancement]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_mmc_reasons"
+    "fieldName": "vm_mmc_reasons",
+    "listName": "vm_mmc_reasons",
+    "lookupValue": "Sexual Enhancement"
   },
   {
     "name": "vm_mmc_reasons_hygiene",
@@ -387,7 +463,9 @@
     "IsRequired": false,
     "Label": "Primary reasons for seeking circumcision services [Hygiene]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_mmc_reasons"
+    "fieldName": "vm_mmc_reasons",
+    "listName": "vm_mmc_reasons",
+    "lookupValue": "Hygiene"
   },
   {
     "name": "vm_mmc_reasons_cultural",
@@ -397,7 +475,9 @@
     "IsRequired": false,
     "Label": "Primary reasons for seeking circumcision services [Cultural]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_mmc_reasons"
+    "fieldName": "vm_mmc_reasons",
+    "listName": "vm_mmc_reasons",
+    "lookupValue": "Cultural"
   },
   {
     "name": "vm_mmc_reasons_other",
@@ -407,7 +487,9 @@
     "IsRequired": false,
     "Label": "Primary reasons for seeking circumcision services [Other]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_mmc_reasons"
+    "fieldName": "vm_mmc_reasons",
+    "listName": "vm_mmc_reasons",
+    "lookupValue": "Other"
   },
   {
     "name": "vm_other_mmc_reasons",
@@ -417,7 +499,9 @@
     "IsRequired": false,
     "Label": "If Other, Specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_how_client_learnt_mmc_friendfamily",
@@ -427,7 +511,9 @@
     "IsRequired": false,
     "Label": "How did the client learn that MC service is offered here [Friend / Family]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_how_client_learnt_mmc"
+    "fieldName": "vm_how_client_learnt_mmc",
+    "listName": "vm_how_client_learnt_mmc",
+    "lookupValue": "Friend / Family"
   },
   {
     "name": "vm_how_client_learnt_mmc_partnerspouse",
@@ -437,7 +523,9 @@
     "IsRequired": false,
     "Label": "How did the client learn that MC service is offered here [Partner / Spouse]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_how_client_learnt_mmc"
+    "fieldName": "vm_how_client_learnt_mmc",
+    "listName": "vm_how_client_learnt_mmc",
+    "lookupValue": "Partner / Spouse"
   },
   {
     "name": "vm_how_client_learnt_mmc_vehiclepasystem",
@@ -447,7 +535,9 @@
     "IsRequired": false,
     "Label": "How did the client learn that MC service is offered here [Vehicle PA System]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_how_client_learnt_mmc"
+    "fieldName": "vm_how_client_learnt_mmc",
+    "listName": "vm_how_client_learnt_mmc",
+    "lookupValue": "Vehicle PA System"
   },
   {
     "name": "vm_how_client_learnt_mmc_socialmedia",
@@ -457,7 +547,9 @@
     "IsRequired": false,
     "Label": "How did the client learn that MC service is offered here [Social Media]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_how_client_learnt_mmc"
+    "fieldName": "vm_how_client_learnt_mmc",
+    "listName": "vm_how_client_learnt_mmc",
+    "lookupValue": "Social Media"
   },
   {
     "name": "vm_how_client_learnt_mmc_printmaterialposterleaflet",
@@ -467,7 +559,9 @@
     "IsRequired": false,
     "Label": "How did the client learn that MC service is offered here [Print Material/Poster/Leaflet]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_how_client_learnt_mmc"
+    "fieldName": "vm_how_client_learnt_mmc",
+    "listName": "vm_how_client_learnt_mmc",
+    "lookupValue": "Print Material/Poster/Leaflet"
   },
   {
     "name": "vm_how_client_learnt_mmc_radiotv",
@@ -477,7 +571,9 @@
     "IsRequired": false,
     "Label": "How did the client learn that MC service is offered here [Radio / TV]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_how_client_learnt_mmc"
+    "fieldName": "vm_how_client_learnt_mmc",
+    "listName": "vm_how_client_learnt_mmc",
+    "lookupValue": "Radio / TV"
   },
   {
     "name": "vm_how_client_learnt_mmc_communitymobilizer",
@@ -487,7 +583,9 @@
     "IsRequired": false,
     "Label": "How did the client learn that MC service is offered here [Community Mobilizer]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_how_client_learnt_mmc"
+    "fieldName": "vm_how_client_learnt_mmc",
+    "listName": "vm_how_client_learnt_mmc",
+    "lookupValue": "Community Mobilizer"
   },
   {
     "name": "vm_how_client_learnt_mmc_communitymeeting",
@@ -497,7 +595,9 @@
     "IsRequired": false,
     "Label": "How did the client learn that MC service is offered here [Community Meeting]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_how_client_learnt_mmc"
+    "fieldName": "vm_how_client_learnt_mmc",
+    "listName": "vm_how_client_learnt_mmc",
+    "lookupValue": "Community Meeting"
   },
   {
     "name": "vm_how_client_learnt_mmc_healthfacility",
@@ -507,7 +607,9 @@
     "IsRequired": false,
     "Label": "How did the client learn that MC service is offered here [Health Facility]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_how_client_learnt_mmc"
+    "fieldName": "vm_how_client_learnt_mmc",
+    "listName": "vm_how_client_learnt_mmc",
+    "lookupValue": "Health Facility"
   },
   {
     "name": "vm_known_status_reactive",
@@ -517,7 +619,9 @@
     "IsRequired": false,
     "Label": "Known Status  (with evidence) [Reactive]",
     "fieldType": "Single Select",
-    "fieldName": "vm_known_status"
+    "fieldName": "vm_known_status",
+    "listName": "vm_known_status",
+    "lookupValue": "Reactive"
   },
   {
     "name": "vm_known_status_nonreactive",
@@ -527,7 +631,9 @@
     "IsRequired": false,
     "Label": "Known Status  (with evidence) [Non-reactive]",
     "fieldType": "Single Select",
-    "fieldName": "vm_known_status"
+    "fieldName": "vm_known_status",
+    "listName": "vm_known_status",
+    "lookupValue": "Non-reactive"
   },
   {
     "name": "vm_services_offered_counseling",
@@ -537,7 +643,9 @@
     "IsRequired": false,
     "Label": "Services offered [Counseling]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_services_offered"
+    "fieldName": "vm_services_offered",
+    "listName": "vm_services_offered",
+    "lookupValue": "Counseling"
   },
   {
     "name": "vm_services_offered_hivtesting",
@@ -547,7 +655,9 @@
     "IsRequired": false,
     "Label": "Services offered [HIV Testing]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_services_offered"
+    "fieldName": "vm_services_offered",
+    "listName": "vm_services_offered",
+    "lookupValue": "HIV Testing"
   },
   {
     "name": "vm_services_offered_resultscollected",
@@ -557,7 +667,9 @@
     "IsRequired": false,
     "Label": "Services offered [Results Collected]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_services_offered"
+    "fieldName": "vm_services_offered",
+    "listName": "vm_services_offered",
+    "lookupValue": "Results Collected"
   },
   {
     "name": "vm_hiv_test_result_reactive",
@@ -567,7 +679,9 @@
     "IsRequired": false,
     "Label": "HIV Test Result (if tested) [Reactive]",
     "fieldType": "Single Select",
-    "fieldName": "vm_hiv_test_result"
+    "fieldName": "vm_hiv_test_result",
+    "listName": "vm_hiv_test_result",
+    "lookupValue": "Reactive"
   },
   {
     "name": "vm_hiv_test_result_nonreactive",
@@ -577,7 +691,9 @@
     "IsRequired": false,
     "Label": "HIV Test Result (if tested) [Non-reactive]",
     "fieldType": "Single Select",
-    "fieldName": "vm_hiv_test_result"
+    "fieldName": "vm_hiv_test_result",
+    "listName": "vm_hiv_test_result",
+    "lookupValue": "Non-reactive"
   },
   {
     "name": "vm_hiv_test_result_indeterminate",
@@ -587,7 +703,9 @@
     "IsRequired": false,
     "Label": "HIV Test Result (if tested) [Indeterminate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_hiv_test_result"
+    "fieldName": "vm_hiv_test_result",
+    "listName": "vm_hiv_test_result",
+    "lookupValue": "Indeterminate"
   },
   {
     "name": "vm_sexual_past_3_mos_yes",
@@ -597,7 +715,9 @@
     "IsRequired": false,
     "Label": "Did client have sexual intercourse in the past 3 months [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_sexual_past_3_mos"
+    "fieldName": "vm_sexual_past_3_mos",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_sexual_past_3_mos_no",
@@ -607,7 +727,9 @@
     "IsRequired": false,
     "Label": "Did client have sexual intercourse in the past 3 months [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_sexual_past_3_mos"
+    "fieldName": "vm_sexual_past_3_mos",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_did_client_use_condom_yes",
@@ -617,7 +739,9 @@
     "IsRequired": false,
     "Label": "Did Client use a condom [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_did_client_use_condom"
+    "fieldName": "vm_did_client_use_condom",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_did_client_use_condom_no",
@@ -627,7 +751,9 @@
     "IsRequired": false,
     "Label": "Did Client use a condom [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_did_client_use_condom"
+    "fieldName": "vm_did_client_use_condom",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_client_health_cond_haemophilia",
@@ -637,7 +763,9 @@
     "IsRequired": false,
     "Label": "Does client have any of these conditions? [Haemophilia]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_client_health_cond"
+    "fieldName": "vm_client_health_cond",
+    "listName": "vm_client_health_cond",
+    "lookupValue": "Haemophilia"
   },
   {
     "name": "vm_client_health_cond_hypertension",
@@ -647,7 +775,9 @@
     "IsRequired": false,
     "Label": "Does client have any of these conditions? [Hypertension]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_client_health_cond"
+    "fieldName": "vm_client_health_cond",
+    "listName": "vm_client_health_cond",
+    "lookupValue": "Hypertension"
   },
   {
     "name": "vm_client_health_cond_diabetessugardiseases",
@@ -657,7 +787,9 @@
     "IsRequired": false,
     "Label": "Does client have any of these conditions? [Diabetes/Sugar Diseases]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_client_health_cond"
+    "fieldName": "vm_client_health_cond",
+    "listName": "vm_client_health_cond",
+    "lookupValue": "Diabetes/Sugar Diseases"
   },
   {
     "name": "vm_client_health_cond_sicklecell",
@@ -667,7 +799,9 @@
     "IsRequired": false,
     "Label": "Does client have any of these conditions? [Sickle cell]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_client_health_cond"
+    "fieldName": "vm_client_health_cond",
+    "listName": "vm_client_health_cond",
+    "lookupValue": "Sickle cell"
   },
   {
     "name": "vm_client_health_cond_bleedingnosemouth",
@@ -677,7 +811,9 @@
     "IsRequired": false,
     "Label": "Does client have any of these conditions? [Bleeding Nose/Mouth]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_client_health_cond"
+    "fieldName": "vm_client_health_cond",
+    "listName": "vm_client_health_cond",
+    "lookupValue": "Bleeding Nose/Mouth"
   },
   {
     "name": "vm_bleeding_probs_fam_mbrs_yes",
@@ -687,7 +823,9 @@
     "IsRequired": false,
     "Label": "Do other members of the family have Bleeding problems [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_bleeding_probs_fam_mbrs"
+    "fieldName": "vm_bleeding_probs_fam_mbrs",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_bleeding_probs_fam_mbrs_no",
@@ -697,7 +835,9 @@
     "IsRequired": false,
     "Label": "Do other members of the family have Bleeding problems [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_bleeding_probs_fam_mbrs"
+    "fieldName": "vm_bleeding_probs_fam_mbrs",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_client_had_surgops_yes",
@@ -707,7 +847,9 @@
     "IsRequired": false,
     "Label": "Has client had any surgical operations in the past [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_client_had_surgops"
+    "fieldName": "vm_client_had_surgops",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_client_had_surgops_no",
@@ -717,7 +859,9 @@
     "IsRequired": false,
     "Label": "Has client had any surgical operations in the past [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_client_had_surgops"
+    "fieldName": "vm_client_had_surgops",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_client_surgops_spec",
@@ -727,7 +871,9 @@
     "IsRequired": false,
     "Label": "If Yes, specify:",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_client_surgops_comp",
@@ -737,7 +883,9 @@
     "IsRequired": false,
     "Label": "Any complications:",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_client_allergic_to_meds_yes",
@@ -747,7 +895,9 @@
     "IsRequired": false,
     "Label": "Is Client allergic to any medications [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_client_allergic_to_meds"
+    "fieldName": "vm_client_allergic_to_meds",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_client_allergic_to_meds_no",
@@ -757,7 +907,9 @@
     "IsRequired": false,
     "Label": "Is Client allergic to any medications [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_client_allergic_to_meds"
+    "fieldName": "vm_client_allergic_to_meds",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_meds_client_allergic_to",
@@ -767,7 +919,9 @@
     "IsRequired": false,
     "Label": "If Yes, specify:",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_client_taking_meds_yes",
@@ -777,7 +931,9 @@
     "IsRequired": false,
     "Label": "Is Client currently taking medications [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_client_taking_meds"
+    "fieldName": "vm_client_taking_meds",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_client_taking_meds_no",
@@ -787,7 +943,9 @@
     "IsRequired": false,
     "Label": "Is Client currently taking medications [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_client_taking_meds"
+    "fieldName": "vm_client_taking_meds",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_meds_client_taking",
@@ -797,7 +955,9 @@
     "IsRequired": false,
     "Label": "If Yes, specify:",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_penile_discharge_yes",
@@ -807,7 +967,9 @@
     "IsRequired": false,
     "Label": "Penile Discharge [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_penile_discharge"
+    "fieldName": "vm_penile_discharge",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_penile_discharge_no",
@@ -817,7 +979,9 @@
     "IsRequired": false,
     "Label": "Penile Discharge [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_penile_discharge"
+    "fieldName": "vm_penile_discharge",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_genital_sore_ulcer_yes",
@@ -827,7 +991,9 @@
     "IsRequired": false,
     "Label": "Genital sore (Ulcer) [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_genital_sore_ulcer"
+    "fieldName": "vm_genital_sore_ulcer",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_genital_sore_ulcer_no",
@@ -837,7 +1003,9 @@
     "IsRequired": false,
     "Label": "Genital sore (Ulcer) [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_genital_sore_ulcer"
+    "fieldName": "vm_genital_sore_ulcer",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_pain_on_erection_yes",
@@ -847,7 +1015,9 @@
     "IsRequired": false,
     "Label": "Pain on erection [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_pain_on_erection"
+    "fieldName": "vm_pain_on_erection",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_pain_on_erection_no",
@@ -857,7 +1027,9 @@
     "IsRequired": false,
     "Label": "Pain on erection [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_pain_on_erection"
+    "fieldName": "vm_pain_on_erection",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_swelling_of_scrotum_yes",
@@ -867,7 +1039,9 @@
     "IsRequired": false,
     "Label": "Swelling of the scrotum [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_swelling_of_scrotum"
+    "fieldName": "vm_swelling_of_scrotum",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_swelling_of_scrotum_no",
@@ -877,7 +1051,9 @@
     "IsRequired": false,
     "Label": "Swelling of the scrotum [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_swelling_of_scrotum"
+    "fieldName": "vm_swelling_of_scrotum",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_pain_on_urination_yes",
@@ -887,7 +1063,9 @@
     "IsRequired": false,
     "Label": "Pain on urination [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_pain_on_urination"
+    "fieldName": "vm_pain_on_urination",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_pain_on_urination_no",
@@ -897,7 +1075,9 @@
     "IsRequired": false,
     "Label": "Pain on urination [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_pain_on_urination"
+    "fieldName": "vm_pain_on_urination",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_diff_retracting_fskin_yes",
@@ -907,7 +1087,9 @@
     "IsRequired": false,
     "Label": "Difficulty in retracting foreskin [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_diff_retracting_fskin"
+    "fieldName": "vm_diff_retracting_fskin",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_diff_retracting_fskin_no",
@@ -917,7 +1099,9 @@
     "IsRequired": false,
     "Label": "Difficulty in retracting foreskin [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_diff_retracting_fskin"
+    "fieldName": "vm_diff_retracting_fskin",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_frequent_urination_yes",
@@ -927,7 +1111,9 @@
     "IsRequired": false,
     "Label": "Frequent Urination [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_frequent_urination"
+    "fieldName": "vm_frequent_urination",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_frequent_urination_no",
@@ -937,7 +1123,9 @@
     "IsRequired": false,
     "Label": "Frequent Urination [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_frequent_urination"
+    "fieldName": "vm_frequent_urination",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_client_other_sti_symp_yes",
@@ -947,7 +1135,9 @@
     "IsRequired": false,
     "Label": "Other [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_client_other_sti_symp"
+    "fieldName": "vm_client_other_sti_symp",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_client_other_sti_symp_no",
@@ -957,7 +1147,9 @@
     "IsRequired": false,
     "Label": "Other [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_client_other_sti_symp"
+    "fieldName": "vm_client_other_sti_symp",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_other_sti_symptoms",
@@ -967,7 +1159,9 @@
     "IsRequired": false,
     "Label": "If Other, Specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_treated_stis_last_3mos_yes",
@@ -977,7 +1171,9 @@
     "IsRequired": false,
     "Label": "Was client treated for any STIs in the last 3 months [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_treated_stis_last_3mos"
+    "fieldName": "vm_treated_stis_last_3mos",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_treated_stis_last_3mos_no",
@@ -987,7 +1183,9 @@
     "IsRequired": false,
     "Label": "Was client treated for any STIs in the last 3 months [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_treated_stis_last_3mos"
+    "fieldName": "vm_treated_stis_last_3mos",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_pallor_yes",
@@ -997,7 +1195,9 @@
     "IsRequired": false,
     "Label": "Pallor [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_pallor"
+    "fieldName": "vm_pallor",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_pallor_no",
@@ -1007,7 +1207,9 @@
     "IsRequired": false,
     "Label": "Pallor [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_pallor"
+    "fieldName": "vm_pallor",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_jaundice_yes",
@@ -1017,7 +1219,9 @@
     "IsRequired": false,
     "Label": "Jaundice [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_jaundice"
+    "fieldName": "vm_jaundice",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_jaundice_no",
@@ -1027,7 +1231,9 @@
     "IsRequired": false,
     "Label": "Jaundice [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_jaundice"
+    "fieldName": "vm_jaundice",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_febrile_yes",
@@ -1037,7 +1243,9 @@
     "IsRequired": false,
     "Label": "Febrile [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_febrile"
+    "fieldName": "vm_febrile",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_febrile_no",
@@ -1047,7 +1255,9 @@
     "IsRequired": false,
     "Label": "Febrile [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_febrile"
+    "fieldName": "vm_febrile",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_pulserate",
@@ -1057,7 +1267,9 @@
     "IsRequired": false,
     "Label": "Pulse Rate (beats/min)",
     "fieldType": "Integer",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_temp",
@@ -1067,7 +1279,9 @@
     "IsRequired": false,
     "Label": "Temperature",
     "fieldType": "Number",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_weight_kg",
@@ -1077,7 +1291,9 @@
     "IsRequired": false,
     "Label": "Weight (Kg)",
     "fieldType": "Number",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_bp_systolic",
@@ -1087,7 +1303,9 @@
     "IsRequired": false,
     "Label": "BP - Systolic",
     "fieldType": "Integer",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_bp_diastolic",
@@ -1097,7 +1315,9 @@
     "IsRequired": false,
     "Label": "BP - Diastolic",
     "fieldType": "Integer",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_gexam_scrotum_normal",
@@ -1107,7 +1327,9 @@
     "IsRequired": false,
     "Label": "Scrotum [Normal]",
     "fieldType": "Single Select",
-    "fieldName": "vm_gexam_scrotum"
+    "fieldName": "vm_gexam_scrotum",
+    "listName": "vm_normal_abnormal",
+    "lookupValue": "Normal"
   },
   {
     "name": "vm_gexam_scrotum_abnormal",
@@ -1117,7 +1339,9 @@
     "IsRequired": false,
     "Label": "Scrotum [Abnormal]",
     "fieldType": "Single Select",
-    "fieldName": "vm_gexam_scrotum"
+    "fieldName": "vm_gexam_scrotum",
+    "listName": "vm_normal_abnormal",
+    "lookupValue": "Abnormal"
   },
   {
     "name": "vm_gexam_lymph_nodes_normal",
@@ -1127,7 +1351,9 @@
     "IsRequired": false,
     "Label": "Lymph Nodes [Normal]",
     "fieldType": "Single Select",
-    "fieldName": "vm_gexam_lymph_nodes"
+    "fieldName": "vm_gexam_lymph_nodes",
+    "listName": "vm_normal_abnormal",
+    "lookupValue": "Normal"
   },
   {
     "name": "vm_gexam_lymph_nodes_abnormal",
@@ -1137,7 +1363,9 @@
     "IsRequired": false,
     "Label": "Lymph Nodes [Abnormal]",
     "fieldType": "Single Select",
-    "fieldName": "vm_gexam_lymph_nodes"
+    "fieldName": "vm_gexam_lymph_nodes",
+    "listName": "vm_normal_abnormal",
+    "lookupValue": "Abnormal"
   },
   {
     "name": "vm_gexam_penis_normal",
@@ -1147,7 +1375,9 @@
     "IsRequired": false,
     "Label": "Penis [Normal]",
     "fieldType": "Single Select",
-    "fieldName": "vm_gexam_penis"
+    "fieldName": "vm_gexam_penis",
+    "listName": "vm_normal_abnormal",
+    "lookupValue": "Normal"
   },
   {
     "name": "vm_gexam_penis_abnormal",
@@ -1157,7 +1387,9 @@
     "IsRequired": false,
     "Label": "Penis [Abnormal]",
     "fieldType": "Single Select",
-    "fieldName": "vm_gexam_penis"
+    "fieldName": "vm_gexam_penis",
+    "listName": "vm_normal_abnormal",
+    "lookupValue": "Abnormal"
   },
   {
     "name": "vm_gexam_abnormal_penis_phimosis",
@@ -1167,7 +1399,9 @@
     "IsRequired": false,
     "Label": "If penis is abnormal, Tick appropriate condition [Phimosis]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_gexam_abnormal_penis"
+    "fieldName": "vm_gexam_abnormal_penis",
+    "listName": "vm_gexam_abnormal_penis",
+    "lookupValue": "Phimosis"
   },
   {
     "name": "vm_gexam_abnormal_penis_paraphimosis",
@@ -1177,7 +1411,9 @@
     "IsRequired": false,
     "Label": "If penis is abnormal, Tick appropriate condition [Paraphimosis]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_gexam_abnormal_penis"
+    "fieldName": "vm_gexam_abnormal_penis",
+    "listName": "vm_gexam_abnormal_penis",
+    "lookupValue": "Paraphimosis"
   },
   {
     "name": "vm_gexam_abnormal_penis_genitalulcerdisease",
@@ -1187,7 +1423,9 @@
     "IsRequired": false,
     "Label": "If penis is abnormal, Tick appropriate condition [Genital Ulcer Disease]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_gexam_abnormal_penis"
+    "fieldName": "vm_gexam_abnormal_penis",
+    "listName": "vm_gexam_abnormal_penis",
+    "lookupValue": "Genital Ulcer Disease"
   },
   {
     "name": "vm_gexam_abnormal_penis_genitalwarts",
@@ -1197,7 +1435,9 @@
     "IsRequired": false,
     "Label": "If penis is abnormal, Tick appropriate condition [Genital Warts]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_gexam_abnormal_penis"
+    "fieldName": "vm_gexam_abnormal_penis",
+    "listName": "vm_gexam_abnormal_penis",
+    "lookupValue": "Genital Warts"
   },
   {
     "name": "vm_gexam_abnormal_penis_discharge",
@@ -1207,7 +1447,9 @@
     "IsRequired": false,
     "Label": "If penis is abnormal, Tick appropriate condition [Discharge]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_gexam_abnormal_penis"
+    "fieldName": "vm_gexam_abnormal_penis",
+    "listName": "vm_gexam_abnormal_penis",
+    "lookupValue": "Discharge"
   },
   {
     "name": "vm_gexam_abnormal_penis_epispadiasis",
@@ -1217,7 +1459,9 @@
     "IsRequired": false,
     "Label": "If penis is abnormal, Tick appropriate condition [Epispadiasis]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_gexam_abnormal_penis"
+    "fieldName": "vm_gexam_abnormal_penis",
+    "listName": "vm_gexam_abnormal_penis",
+    "lookupValue": "Epispadiasis"
   },
   {
     "name": "vm_gexam_abnormal_penis_hypospadiasis",
@@ -1227,7 +1471,9 @@
     "IsRequired": false,
     "Label": "If penis is abnormal, Tick appropriate condition [Hypospadiasis]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_gexam_abnormal_penis"
+    "fieldName": "vm_gexam_abnormal_penis",
+    "listName": "vm_gexam_abnormal_penis",
+    "lookupValue": "Hypospadiasis"
   },
   {
     "name": "vm_gexam_abnormal_penis_other",
@@ -1237,7 +1483,9 @@
     "IsRequired": false,
     "Label": "If penis is abnormal, Tick appropriate condition [Other]",
     "fieldType": "Single Multiple",
-    "fieldName": "vm_gexam_abnormal_penis"
+    "fieldName": "vm_gexam_abnormal_penis",
+    "listName": "vm_gexam_abnormal_penis",
+    "lookupValue": "Other"
   },
   {
     "name": "vm_ge_otherabnormal_penis",
@@ -1247,7 +1495,9 @@
     "IsRequired": false,
     "Label": "If Other, specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_referred_to",
@@ -1257,7 +1507,9 @@
     "IsRequired": false,
     "Label": "Referred to",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_referral_penile_abnorm_yes",
@@ -1267,7 +1519,9 @@
     "IsRequired": false,
     "Label": "Penile abnormalities [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_referral_penile_abnorm"
+    "fieldName": "vm_referral_penile_abnorm",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_referral_penile_abnorm_no",
@@ -1277,7 +1531,9 @@
     "IsRequired": false,
     "Label": "Penile abnormalities [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_referral_penile_abnorm"
+    "fieldName": "vm_referral_penile_abnorm",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_referral_hiv_care_yes",
@@ -1287,7 +1543,9 @@
     "IsRequired": false,
     "Label": "HIV Care [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_referral_hiv_care"
+    "fieldName": "vm_referral_hiv_care",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_referral_hiv_care_no",
@@ -1297,7 +1555,9 @@
     "IsRequired": false,
     "Label": "HIV Care [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_referral_hiv_care"
+    "fieldName": "vm_referral_hiv_care",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_referral_sti_tx_yes",
@@ -1307,7 +1567,9 @@
     "IsRequired": false,
     "Label": "STI Treatment [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_referral_sti_tx"
+    "fieldName": "vm_referral_sti_tx",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_referral_sti_tx_no",
@@ -1317,7 +1579,9 @@
     "IsRequired": false,
     "Label": "STI Treatment [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_referral_sti_tx"
+    "fieldName": "vm_referral_sti_tx",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_referral_othermedical_yes",
@@ -1327,7 +1591,9 @@
     "IsRequired": false,
     "Label": "Other Medical Conditions [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_referral_othermedical"
+    "fieldName": "vm_referral_othermedical",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_referral_othermedical_no",
@@ -1337,7 +1603,9 @@
     "IsRequired": false,
     "Label": "Other Medical Conditions [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_referral_othermedical"
+    "fieldName": "vm_referral_othermedical",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_other_reasons_referral",
@@ -1347,7 +1615,9 @@
     "IsRequired": false,
     "Label": "If Other medical condtitions, specify:",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_eligible_for_mmc_yes",
@@ -1357,7 +1627,9 @@
     "IsRequired": false,
     "Label": "Is Client eligible for MMC [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_eligible_for_mmc"
+    "fieldName": "vm_eligible_for_mmc",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_eligible_for_mmc_no",
@@ -1367,7 +1639,9 @@
     "IsRequired": false,
     "Label": "Is Client eligible for MMC [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_eligible_for_mmc"
+    "fieldName": "vm_eligible_for_mmc",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_mc_date",
@@ -1377,7 +1651,9 @@
     "IsRequired": true,
     "Label": "MC Date",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_mc_provider_name",
@@ -1387,7 +1663,9 @@
     "IsRequired": false,
     "Label": "MC Provider",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_assistant",
@@ -1397,7 +1675,9 @@
     "IsRequired": false,
     "Label": "Assistant",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_mmc_performed_yes",
@@ -1407,7 +1687,9 @@
     "IsRequired": false,
     "Label": "Circumcision Performed [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_mmc_performed"
+    "fieldName": "vm_mmc_performed",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_mmc_performed_no",
@@ -1417,7 +1699,9 @@
     "IsRequired": false,
     "Label": "Circumcision Performed [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_mmc_performed"
+    "fieldName": "vm_mmc_performed",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_mmc_start_time",
@@ -1427,7 +1711,9 @@
     "IsRequired": false,
     "Label": "Start Time",
     "fieldType": "Time",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_mmc_end_time",
@@ -1437,7 +1723,9 @@
     "IsRequired": false,
     "Label": "End Time",
     "fieldType": "Time",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_skin_preparation_povudine",
@@ -1447,7 +1735,9 @@
     "IsRequired": false,
     "Label": "Skin Preparation [Povudine]",
     "fieldType": "Single Select",
-    "fieldName": "vm_skin_preparation"
+    "fieldName": "vm_skin_preparation",
+    "listName": "vm_skin_preparation",
+    "lookupValue": "Povudine"
   },
   {
     "name": "vm_skin_preparation_other",
@@ -1457,7 +1747,9 @@
     "IsRequired": false,
     "Label": "Skin Preparation [Other]",
     "fieldType": "Single Select",
-    "fieldName": "vm_skin_preparation"
+    "fieldName": "vm_skin_preparation",
+    "listName": "vm_skin_preparation",
+    "lookupValue": "Other"
   },
   {
     "name": "vm_other_skin_preparation",
@@ -1467,7 +1759,9 @@
     "IsRequired": false,
     "Label": "Skin Preparation, Other",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_type_local_anaes_lignocaine",
@@ -1477,7 +1771,9 @@
     "IsRequired": false,
     "Label": "Local Anaesthesia - Type [Lignocaine]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_local_anaes"
+    "fieldName": "vm_type_local_anaes",
+    "listName": "vm_type_local_anaes",
+    "lookupValue": "Lignocaine"
   },
   {
     "name": "vm_type_local_anaes_bupivacaine",
@@ -1487,7 +1783,9 @@
     "IsRequired": false,
     "Label": "Local Anaesthesia - Type [Bupivacaine]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_local_anaes"
+    "fieldName": "vm_type_local_anaes",
+    "listName": "vm_type_local_anaes",
+    "lookupValue": "Bupivacaine"
   },
   {
     "name": "vm_lignocaine_conc_001",
@@ -1497,7 +1795,9 @@
     "IsRequired": false,
     "Label": "Lignocaine Concentration [0.01]",
     "fieldType": "Single Select",
-    "fieldName": "vm_lignocaine_conc"
+    "fieldName": "vm_lignocaine_conc",
+    "listName": "vm_lignocaine_conc",
+    "lookupValue": "0.01"
   },
   {
     "name": "vm_lignocaine_conc_002",
@@ -1507,7 +1807,9 @@
     "IsRequired": false,
     "Label": "Lignocaine Concentration [0.02]",
     "fieldType": "Single Select",
-    "fieldName": "vm_lignocaine_conc"
+    "fieldName": "vm_lignocaine_conc",
+    "listName": "vm_lignocaine_conc",
+    "lookupValue": "0.02"
   },
   {
     "name": "vm_local_anaes_amt",
@@ -1517,7 +1819,9 @@
     "IsRequired": false,
     "Label": "Local Anaesthesia - Amount",
     "fieldType": "Number",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_type_of_procedure_dorsalslit",
@@ -1527,7 +1831,9 @@
     "IsRequired": false,
     "Label": "Type of Procedure [Dorsal Slit]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_procedure"
+    "fieldName": "vm_type_of_procedure",
+    "listName": "vm_type_of_procedure",
+    "lookupValue": "Dorsal Slit"
   },
   {
     "name": "vm_type_of_procedure_shangring",
@@ -1537,7 +1843,9 @@
     "IsRequired": false,
     "Label": "Type of Procedure [Shang ring]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_procedure"
+    "fieldName": "vm_type_of_procedure",
+    "listName": "vm_type_of_procedure",
+    "lookupValue": "Shang ring"
   },
   {
     "name": "vm_type_of_procedure_prepex",
@@ -1547,7 +1855,9 @@
     "IsRequired": false,
     "Label": "Type of Procedure [Prepex]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_procedure"
+    "fieldName": "vm_type_of_procedure",
+    "listName": "vm_type_of_procedure",
+    "lookupValue": "Prepex"
   },
   {
     "name": "vm_type_of_procedure_other",
@@ -1557,7 +1867,9 @@
     "IsRequired": false,
     "Label": "Type of Procedure [Other]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_procedure"
+    "fieldName": "vm_type_of_procedure",
+    "listName": "vm_type_of_procedure",
+    "lookupValue": "Other"
   },
   {
     "name": "vm_other_type_of_procedure",
@@ -1567,7 +1879,9 @@
     "IsRequired": false,
     "Label": "If Other, Specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_type_of_suture_chromiccatgut",
@@ -1577,7 +1891,9 @@
     "IsRequired": false,
     "Label": "Suture [Chromic Catgut]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_suture"
+    "fieldName": "vm_type_of_suture",
+    "listName": "vm_type_of_suture",
+    "lookupValue": "Chromic Catgut"
   },
   {
     "name": "vm_type_of_suture_vicryl",
@@ -1587,7 +1903,9 @@
     "IsRequired": false,
     "Label": "Suture [Vicryl]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_suture"
+    "fieldName": "vm_type_of_suture",
+    "listName": "vm_type_of_suture",
+    "lookupValue": "Vicryl"
   },
   {
     "name": "vm_type_of_suture_other",
@@ -1597,7 +1915,9 @@
     "IsRequired": false,
     "Label": "Suture [Other]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_suture"
+    "fieldName": "vm_type_of_suture",
+    "listName": "vm_type_of_suture",
+    "lookupValue": "Other"
   },
   {
     "name": "vm_other_type_suture",
@@ -1607,7 +1927,9 @@
     "IsRequired": false,
     "Label": "If Other, Specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_complic_dur_surg_none",
@@ -1617,7 +1939,9 @@
     "IsRequired": false,
     "Label": "Any Complications during surgery [None]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_dur_surg"
+    "fieldName": "vm_complic_dur_surg",
+    "listName": "vm_complic_dur_surg",
+    "lookupValue": "None"
   },
   {
     "name": "vm_complic_dur_surg_yes",
@@ -1627,7 +1951,9 @@
     "IsRequired": false,
     "Label": "Any Complications during surgery [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_dur_surg"
+    "fieldName": "vm_complic_dur_surg",
+    "listName": "vm_complic_dur_surg",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_complic_pain_moderate",
@@ -1637,7 +1963,9 @@
     "IsRequired": false,
     "Label": "Pain [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_pain"
+    "fieldName": "vm_complic_pain",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_complic_pain_severe",
@@ -1647,7 +1975,9 @@
     "IsRequired": false,
     "Label": "Pain [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_pain"
+    "fieldName": "vm_complic_pain",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_complic_excsv_bleeding_moderate",
@@ -1657,7 +1987,9 @@
     "IsRequired": false,
     "Label": "Excessive Bleeding [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_excsv_bleeding"
+    "fieldName": "vm_complic_excsv_bleeding",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_complic_excsv_bleeding_severe",
@@ -1667,7 +1999,9 @@
     "IsRequired": false,
     "Label": "Excessive Bleeding [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_excsv_bleeding"
+    "fieldName": "vm_complic_excsv_bleeding",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_complic_anaes_related_moderate",
@@ -1677,7 +2011,9 @@
     "IsRequired": false,
     "Label": "Anaesthetic related event [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_anaes_related"
+    "fieldName": "vm_complic_anaes_related",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_complic_anaes_related_severe",
@@ -1687,7 +2023,9 @@
     "IsRequired": false,
     "Label": "Anaesthetic related event [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_anaes_related"
+    "fieldName": "vm_complic_anaes_related",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_complic_excsv_skin_moderate",
@@ -1697,7 +2035,9 @@
     "IsRequired": false,
     "Label": "Excessive skin removed [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_excsv_skin"
+    "fieldName": "vm_complic_excsv_skin",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_complic_excsv_skin_severe",
@@ -1707,7 +2047,9 @@
     "IsRequired": false,
     "Label": "Excessive skin removed [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_excsv_skin"
+    "fieldName": "vm_complic_excsv_skin",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_complic_dmg_penis_moderate",
@@ -1717,7 +2059,9 @@
     "IsRequired": false,
     "Label": "Damage to the penis [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_dmg_penis"
+    "fieldName": "vm_complic_dmg_penis",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_complic_dmg_penis_severe",
@@ -1727,7 +2071,9 @@
     "IsRequired": false,
     "Label": "Damage to the penis [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_dmg_penis"
+    "fieldName": "vm_complic_dmg_penis",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_complic_other_moderate",
@@ -1737,7 +2083,9 @@
     "IsRequired": false,
     "Label": "Other [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_other"
+    "fieldName": "vm_complic_other",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_complic_other_severe",
@@ -1747,7 +2095,9 @@
     "IsRequired": false,
     "Label": "Other [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_complic_other"
+    "fieldName": "vm_complic_other",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_complic_other_spec",
@@ -1757,7 +2107,9 @@
     "IsRequired": false,
     "Label": "Complications during surgery, Other",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_intakeform_serial",
@@ -1767,7 +2119,9 @@
     "IsRequired": true,
     "Label": "Intake Form Serial",
     "fieldType": "Integer",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_mc_number",
@@ -1777,7 +2131,9 @@
     "IsRequired": true,
     "Label": "Client ID / Register Number",
     "fieldType": "Integer",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_type_of_review_02daysreview",
@@ -1787,7 +2143,9 @@
     "IsRequired": false,
     "Label": "Review Type [0 - 2 days Review]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_review"
+    "fieldName": "vm_type_of_review",
+    "listName": "vm_type_of_review",
+    "lookupValue": "0 - 2 days Review"
   },
   {
     "name": "vm_type_of_review_37daysreview",
@@ -1797,7 +2155,9 @@
     "IsRequired": false,
     "Label": "Review Type [3 - 7 days Review]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_review"
+    "fieldName": "vm_type_of_review",
+    "listName": "vm_type_of_review",
+    "lookupValue": "3 - 7 days Review"
   },
   {
     "name": "vm_type_of_review_16weeksreview",
@@ -1807,7 +2167,9 @@
     "IsRequired": false,
     "Label": "Review Type [1 - 6 weeks Review]",
     "fieldType": "Single Select",
-    "fieldName": "vm_type_of_review"
+    "fieldName": "vm_type_of_review",
+    "listName": "vm_type_of_review",
+    "lookupValue": "1 - 6 weeks Review"
   },
   {
     "name": "vm_postop_data_entry_date",
@@ -1817,7 +2179,9 @@
     "IsRequired": false,
     "Label": "Date of Data Entry",
     "fieldType": "today",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_postop_data_entered_by",
@@ -1827,7 +2191,9 @@
     "IsRequired": false,
     "Label": "Data Entry By",
     "fieldType": "username",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_reviewer_name",
@@ -1837,7 +2203,9 @@
     "IsRequired": false,
     "Label": "MC Provider/Reviewer Name",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_date_of_review",
@@ -1847,7 +2215,9 @@
     "IsRequired": true,
     "Label": "Date of Review",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_cc_fever_yes",
@@ -1857,7 +2227,9 @@
     "IsRequired": false,
     "Label": "Fever [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_fever"
+    "fieldName": "vm_cc_fever",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_cc_fever_no",
@@ -1867,7 +2239,9 @@
     "IsRequired": false,
     "Label": "Fever [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_fever"
+    "fieldName": "vm_cc_fever",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_cc_pain_on_wound_yes",
@@ -1877,7 +2251,9 @@
     "IsRequired": false,
     "Label": "Pain on wound [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_pain_on_wound"
+    "fieldName": "vm_cc_pain_on_wound",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_cc_pain_on_wound_no",
@@ -1887,7 +2263,9 @@
     "IsRequired": false,
     "Label": "Pain on wound [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_pain_on_wound"
+    "fieldName": "vm_cc_pain_on_wound",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_cc_bleeding_yes",
@@ -1897,7 +2275,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_bleeding"
+    "fieldName": "vm_cc_bleeding",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_cc_bleeding_no",
@@ -1907,7 +2287,9 @@
     "IsRequired": false,
     "Label": "Bleeding [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_bleeding"
+    "fieldName": "vm_cc_bleeding",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_cc_pain_passing_urine_yes",
@@ -1917,7 +2299,9 @@
     "IsRequired": false,
     "Label": "Pain passing urine [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_pain_passing_urine"
+    "fieldName": "vm_cc_pain_passing_urine",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_cc_pain_passing_urine_no",
@@ -1927,7 +2311,9 @@
     "IsRequired": false,
     "Label": "Pain passing urine [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_pain_passing_urine"
+    "fieldName": "vm_cc_pain_passing_urine",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_cc_swelling_yes",
@@ -1937,7 +2323,9 @@
     "IsRequired": false,
     "Label": "Swelling [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_swelling"
+    "fieldName": "vm_cc_swelling",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_cc_swelling_no",
@@ -1947,7 +2335,9 @@
     "IsRequired": false,
     "Label": "Swelling [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_swelling"
+    "fieldName": "vm_cc_swelling",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_cc_gaping_wound_yes",
@@ -1957,7 +2347,9 @@
     "IsRequired": false,
     "Label": "Gaping wound [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_gaping_wound"
+    "fieldName": "vm_cc_gaping_wound",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_cc_gaping_wound_no",
@@ -1967,7 +2359,9 @@
     "IsRequired": false,
     "Label": "Gaping wound [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_gaping_wound"
+    "fieldName": "vm_cc_gaping_wound",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_cc_pus_yes",
@@ -1977,7 +2371,9 @@
     "IsRequired": false,
     "Label": "Pus [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_pus"
+    "fieldName": "vm_cc_pus",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_cc_pus_no",
@@ -1987,7 +2383,9 @@
     "IsRequired": false,
     "Label": "Pus [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_pus"
+    "fieldName": "vm_cc_pus",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_cc_other_complaint_yes",
@@ -1997,7 +2395,9 @@
     "IsRequired": false,
     "Label": "Other [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_other_complaint"
+    "fieldName": "vm_cc_other_complaint",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_cc_other_complaint_no",
@@ -2007,7 +2407,9 @@
     "IsRequired": false,
     "Label": "Other [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_cc_other_complaint"
+    "fieldName": "vm_cc_other_complaint",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_cc_other_complaint_spec",
@@ -2017,7 +2419,9 @@
     "IsRequired": false,
     "Label": "If Other, specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "vm_any_adverse_events_yes",
@@ -2027,7 +2431,9 @@
     "IsRequired": false,
     "Label": "Any Adverse events [Yes]",
     "fieldType": "Single Select",
-    "fieldName": "vm_any_adverse_events"
+    "fieldName": "vm_any_adverse_events",
+    "listName": "vm_yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "vm_any_adverse_events_no",
@@ -2037,7 +2443,9 @@
     "IsRequired": false,
     "Label": "Any Adverse events [No]",
     "fieldType": "Single Select",
-    "fieldName": "vm_any_adverse_events"
+    "fieldName": "vm_any_adverse_events",
+    "listName": "vm_yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "vm_ae_anaesthetic_related_moderate",
@@ -2047,7 +2455,9 @@
     "IsRequired": false,
     "Label": "a. Anaesthetic related event  [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_anaesthetic_related"
+    "fieldName": "vm_ae_anaesthetic_related",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_anaesthetic_related_severe",
@@ -2057,7 +2467,9 @@
     "IsRequired": false,
     "Label": "a. Anaesthetic related event  [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_anaesthetic_related"
+    "fieldName": "vm_ae_anaesthetic_related",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_excessive_bleeding_moderate",
@@ -2067,7 +2479,9 @@
     "IsRequired": false,
     "Label": "b. Excessive Bleeding [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_excessive_bleeding"
+    "fieldName": "vm_ae_excessive_bleeding",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_excessive_bleeding_severe",
@@ -2077,7 +2491,9 @@
     "IsRequired": false,
     "Label": "b. Excessive Bleeding [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_excessive_bleeding"
+    "fieldName": "vm_ae_excessive_bleeding",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_insuff_skin_rem_moderate",
@@ -2087,7 +2503,9 @@
     "IsRequired": false,
     "Label": "c. Insufficient skin removed  [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_insuff_skin_rem"
+    "fieldName": "vm_ae_insuff_skin_rem",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_insuff_skin_rem_severe",
@@ -2097,7 +2515,9 @@
     "IsRequired": false,
     "Label": "c. Insufficient skin removed  [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_insuff_skin_rem"
+    "fieldName": "vm_ae_insuff_skin_rem",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_dmg_to_penis_moderate",
@@ -2107,7 +2527,9 @@
     "IsRequired": false,
     "Label": "d. Damage or injury to penis [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_dmg_to_penis"
+    "fieldName": "vm_ae_dmg_to_penis",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_dmg_to_penis_severe",
@@ -2117,7 +2539,9 @@
     "IsRequired": false,
     "Label": "d. Damage or injury to penis [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_dmg_to_penis"
+    "fieldName": "vm_ae_dmg_to_penis",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_pain_moderate",
@@ -2127,7 +2551,9 @@
     "IsRequired": false,
     "Label": "e. Pain [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_pain"
+    "fieldName": "vm_ae_pain",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_pain_severe",
@@ -2137,7 +2563,9 @@
     "IsRequired": false,
     "Label": "e. Pain [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_pain"
+    "fieldName": "vm_ae_pain",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_swelling_hematoma_moderate",
@@ -2147,7 +2575,9 @@
     "IsRequired": false,
     "Label": "f. Swelling or Hematoma  [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_swelling_hematoma"
+    "fieldName": "vm_ae_swelling_hematoma",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_swelling_hematoma_severe",
@@ -2157,7 +2587,9 @@
     "IsRequired": false,
     "Label": "f. Swelling or Hematoma  [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_swelling_hematoma"
+    "fieldName": "vm_ae_swelling_hematoma",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_infection_moderate",
@@ -2167,7 +2599,9 @@
     "IsRequired": false,
     "Label": "g. Infection [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_infection"
+    "fieldName": "vm_ae_infection",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_infection_severe",
@@ -2177,7 +2611,9 @@
     "IsRequired": false,
     "Label": "g. Infection [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_infection"
+    "fieldName": "vm_ae_infection",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_excsv_skin_rem_moderate",
@@ -2187,7 +2623,9 @@
     "IsRequired": false,
     "Label": "h. Excessive skin removed  [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_excsv_skin_rem"
+    "fieldName": "vm_ae_excsv_skin_rem",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_excsv_skin_rem_severe",
@@ -2197,7 +2635,9 @@
     "IsRequired": false,
     "Label": "h. Excessive skin removed  [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_excsv_skin_rem"
+    "fieldName": "vm_ae_excsv_skin_rem",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_delayed_wound_moderate",
@@ -2207,7 +2647,9 @@
     "IsRequired": false,
     "Label": "i. Delayed wound healing [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_delayed_wound"
+    "fieldName": "vm_ae_delayed_wound",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_delayed_wound_severe",
@@ -2217,7 +2659,9 @@
     "IsRequired": false,
     "Label": "i. Delayed wound healing [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_delayed_wound"
+    "fieldName": "vm_ae_delayed_wound",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_wound_dehiscence_moderate",
@@ -2227,7 +2671,9 @@
     "IsRequired": false,
     "Label": "j. Wound dehiscence [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_wound_dehiscence"
+    "fieldName": "vm_ae_wound_dehiscence",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_wound_dehiscence_severe",
@@ -2237,7 +2683,9 @@
     "IsRequired": false,
     "Label": "j. Wound dehiscence [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_wound_dehiscence"
+    "fieldName": "vm_ae_wound_dehiscence",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_difficulty_urinating_moderate",
@@ -2247,7 +2695,9 @@
     "IsRequired": false,
     "Label": "k. Difficulty Urinating [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_difficulty_urinating"
+    "fieldName": "vm_ae_difficulty_urinating",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_difficulty_urinating_severe",
@@ -2257,7 +2707,9 @@
     "IsRequired": false,
     "Label": "k. Difficulty Urinating [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_difficulty_urinating"
+    "fieldName": "vm_ae_difficulty_urinating",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_torsion_of_penis_moderate",
@@ -2267,7 +2719,9 @@
     "IsRequired": false,
     "Label": "l. Torsion of penis [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_torsion_of_penis"
+    "fieldName": "vm_ae_torsion_of_penis",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_torsion_of_penis_severe",
@@ -2277,7 +2731,9 @@
     "IsRequired": false,
     "Label": "l. Torsion of penis [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_torsion_of_penis"
+    "fieldName": "vm_ae_torsion_of_penis",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_erectile_dysfunction_moderate",
@@ -2287,7 +2743,9 @@
     "IsRequired": false,
     "Label": "m. Erectile dysfunction [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_erectile_dysfunction"
+    "fieldName": "vm_ae_erectile_dysfunction",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_erectile_dysfunction_severe",
@@ -2297,7 +2755,9 @@
     "IsRequired": false,
     "Label": "m. Erectile dysfunction [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_erectile_dysfunction"
+    "fieldName": "vm_ae_erectile_dysfunction",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_ae_psycho_behav_iss_moderate",
@@ -2307,7 +2767,9 @@
     "IsRequired": false,
     "Label": "n. Psycho-behavioral issues [Moderate]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_psycho_behav_iss"
+    "fieldName": "vm_ae_psycho_behav_iss",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Moderate"
   },
   {
     "name": "vm_ae_psycho_behav_iss_severe",
@@ -2317,7 +2779,9 @@
     "IsRequired": false,
     "Label": "n. Psycho-behavioral issues [Severe]",
     "fieldType": "Single Select",
-    "fieldName": "vm_ae_psycho_behav_iss"
+    "fieldName": "vm_ae_psycho_behav_iss",
+    "listName": "vm_moderate_severe",
+    "lookupValue": "Severe"
   },
   {
     "name": "vm_tx_and_other_clinnotes",
@@ -2327,6 +2791,8 @@
     "IsRequired": false,
     "Label": "Treatment and Other Clinical Notes",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   }
 ]

@@ -7,7 +7,9 @@
     "IsRequired": true,
     "Label": "Date of Data Entry",
     "fieldType": "today",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "data_entered_by",
@@ -17,7 +19,9 @@
     "IsRequired": true,
     "Label": "Data Entry By",
     "fieldType": "username",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "facilityname",
@@ -27,7 +31,9 @@
     "IsRequired": false,
     "Label": "Facility",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dateofvisit",
@@ -37,7 +43,9 @@
     "IsRequired": true,
     "Label": "Date of Visit",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "cardserialnumber",
@@ -47,7 +55,9 @@
     "IsRequired": true,
     "Label": "Card Serial Number",
     "fieldType": "int",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientidnumber",
@@ -57,7 +67,9 @@
     "IsRequired": true,
     "Label": "Client ID Number",
     "fieldType": "int",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientname",
@@ -67,7 +79,9 @@
     "IsRequired": true,
     "Label": "Client Name",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dob",
@@ -77,7 +91,9 @@
     "IsRequired": true,
     "Label": "DOB",
     "fieldType": "date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "ageinyears",
@@ -87,7 +103,9 @@
     "IsRequired": false,
     "Label": "Age in Years",
     "fieldType": "int",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientsphysicaladdress",
@@ -97,7 +115,9 @@
     "IsRequired": true,
     "Label": "Clients Physical Address",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clienttel",
@@ -107,7 +127,9 @@
     "IsRequired": true,
     "Label": "Client Tel",
     "fieldType": "Cell",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "homecell",
@@ -117,7 +139,9 @@
     "IsRequired": false,
     "Label": "Home Cell",
     "fieldType": "Cell",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "mobilecell",
@@ -127,7 +151,9 @@
     "IsRequired": false,
     "Label": "Mobile Cell",
     "fieldType": "Cell",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "workcontactnumber",
@@ -137,7 +163,9 @@
     "IsRequired": false,
     "Label": "Work Contact Number",
     "fieldType": "Cell",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "alternateaddresstype_work",
@@ -147,7 +175,9 @@
     "IsRequired": false,
     "Label": "Alternate Address Type [Work]",
     "fieldType": "SingleSelect",
-    "fieldName": "alternateaddresstype"
+    "fieldName": "alternateaddresstype",
+    "listName": "alternate_address_type",
+    "lookupValue": "Work"
   },
   {
     "name": "alternateaddresstype_school",
@@ -157,7 +187,9 @@
     "IsRequired": false,
     "Label": "Alternate Address Type [School]",
     "fieldType": "SingleSelect",
-    "fieldName": "alternateaddresstype"
+    "fieldName": "alternateaddresstype",
+    "listName": "alternate_address_type",
+    "lookupValue": "School"
   },
   {
     "name": "alternateaddresstype_friendnextofkin",
@@ -167,7 +199,9 @@
     "IsRequired": false,
     "Label": "Alternate Address Type [Friend/Next of Kin]",
     "fieldType": "SingleSelect",
-    "fieldName": "alternateaddresstype"
+    "fieldName": "alternateaddresstype",
+    "listName": "alternate_address_type",
+    "lookupValue": "Friend/Next of Kin"
   },
   {
     "name": "alternateaddress",
@@ -177,7 +211,9 @@
     "IsRequired": false,
     "Label": "Alternate Address",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "alternatephone",
@@ -187,7 +223,9 @@
     "IsRequired": false,
     "Label": "Alternate Tel",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "friend_nextofkin",
@@ -197,7 +235,9 @@
     "IsRequired": false,
     "Label": "Name of Friend/Next of Kin",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "typeofsite_dedicatedsite",
@@ -207,7 +247,9 @@
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Dedicated Site]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofsite"
+    "fieldName": "typeofsite",
+    "listName": "type_of_site",
+    "lookupValue": "Dedicated Site"
   },
   {
     "name": "typeofsite_mobileoutreach",
@@ -217,7 +259,9 @@
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Mobile Outreach]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofsite"
+    "fieldName": "typeofsite",
+    "listName": "type_of_site",
+    "lookupValue": "Mobile Outreach"
   },
   {
     "name": "typeofsite_masssevent",
@@ -227,7 +271,9 @@
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Masss Event]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofsite"
+    "fieldName": "typeofsite",
+    "listName": "type_of_site",
+    "lookupValue": "Masss Event"
   },
   {
     "name": "typeofsite_routineservice",
@@ -237,7 +283,9 @@
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Routine Service]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofsite"
+    "fieldName": "typeofsite",
+    "listName": "type_of_site",
+    "lookupValue": "Routine Service"
   },
   {
     "name": "typeofsite_publichospitalclinic",
@@ -247,7 +295,9 @@
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Public hospital/clinic]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofsite"
+    "fieldName": "typeofsite",
+    "listName": "type_of_site",
+    "lookupValue": "Public hospital/clinic"
   },
   {
     "name": "typeofsite_missionhospital",
@@ -257,7 +307,9 @@
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Mission hospital]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofsite"
+    "fieldName": "typeofsite",
+    "listName": "type_of_site",
+    "lookupValue": "Mission hospital"
   },
   {
     "name": "typeofsite_privateclinichospital",
@@ -267,7 +319,9 @@
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Private clinic/hospital]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofsite"
+    "fieldName": "typeofsite",
+    "listName": "type_of_site",
+    "lookupValue": "Private clinic/hospital"
   },
   {
     "name": "typeofsite_other",
@@ -277,7 +331,9 @@
     "IsRequired": false,
     "Label": "Type of Site / Service (check only one) [Other]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofsite"
+    "fieldName": "typeofsite",
+    "listName": "type_of_site",
+    "lookupValue": "Other"
   },
   {
     "name": "typeofsite_specify",
@@ -287,7 +343,9 @@
     "IsRequired": false,
     "Label": "Type of Site_Specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "howclientlearnt_friendfamily",
@@ -297,7 +355,9 @@
     "IsRequired": false,
     "Label": "How did client leant about service [Friend/Family]",
     "fieldType": "MultiSelect",
-    "fieldName": "howclientlearnt"
+    "fieldName": "howclientlearnt",
+    "listName": "how_client_learnt",
+    "lookupValue": "Friend/Family"
   },
   {
     "name": "howclientlearnt_partnerspouse",
@@ -307,7 +367,9 @@
     "IsRequired": false,
     "Label": "How did client leant about service [Partner/Spouse]",
     "fieldType": "MultiSelect",
-    "fieldName": "howclientlearnt"
+    "fieldName": "howclientlearnt",
+    "listName": "how_client_learnt",
+    "lookupValue": "Partner/Spouse"
   },
   {
     "name": "howclientlearnt_healthworker",
@@ -317,7 +379,9 @@
     "IsRequired": false,
     "Label": "How did client leant about service [Health worker]",
     "fieldType": "MultiSelect",
-    "fieldName": "howclientlearnt"
+    "fieldName": "howclientlearnt",
+    "listName": "how_client_learnt",
+    "lookupValue": "Health worker"
   },
   {
     "name": "howclientlearnt_posternewspaperleaflet",
@@ -327,7 +391,9 @@
     "IsRequired": false,
     "Label": "How did client leant about service [Poster/newspaper/leaflet]",
     "fieldType": "MultiSelect",
-    "fieldName": "howclientlearnt"
+    "fieldName": "howclientlearnt",
+    "listName": "how_client_learnt",
+    "lookupValue": "Poster/newspaper/leaflet"
   },
   {
     "name": "howclientlearnt_otherclient",
@@ -337,7 +403,9 @@
     "IsRequired": false,
     "Label": "How did client leant about service [Other Client]",
     "fieldType": "MultiSelect",
-    "fieldName": "howclientlearnt"
+    "fieldName": "howclientlearnt",
+    "listName": "how_client_learnt",
+    "lookupValue": "Other Client"
   },
   {
     "name": "howclientlearnt_communitymobilizer",
@@ -347,7 +415,9 @@
     "IsRequired": false,
     "Label": "How did client leant about service [Community Mobilizer]",
     "fieldType": "MultiSelect",
-    "fieldName": "howclientlearnt"
+    "fieldName": "howclientlearnt",
+    "listName": "how_client_learnt",
+    "lookupValue": "Community Mobilizer"
   },
   {
     "name": "howclientlearnt_tvradio",
@@ -357,7 +427,9 @@
     "IsRequired": false,
     "Label": "How did client leant about service [TV/radio]",
     "fieldType": "MultiSelect",
-    "fieldName": "howclientlearnt"
+    "fieldName": "howclientlearnt",
+    "listName": "how_client_learnt",
+    "lookupValue": "TV/radio"
   },
   {
     "name": "primaryreasoncirc_partialhivprotecction",
@@ -367,7 +439,9 @@
     "IsRequired": false,
     "Label": "Primary reason for circumcision [Partial Hiv protecction]",
     "fieldType": "MultiSelect",
-    "fieldName": "primaryreasoncirc"
+    "fieldName": "primaryreasoncirc",
+    "listName": "primary_reasons_mc",
+    "lookupValue": "Partial Hiv protecction"
   },
   {
     "name": "primaryreasoncirc_sexualpleasure",
@@ -377,7 +451,9 @@
     "IsRequired": false,
     "Label": "Primary reason for circumcision [Sexual pleasure]",
     "fieldType": "MultiSelect",
-    "fieldName": "primaryreasoncirc"
+    "fieldName": "primaryreasoncirc",
+    "listName": "primary_reasons_mc",
+    "lookupValue": "Sexual pleasure"
   },
   {
     "name": "primaryreasoncirc_stiprotection",
@@ -387,7 +463,9 @@
     "IsRequired": false,
     "Label": "Primary reason for circumcision [STI protection]",
     "fieldType": "MultiSelect",
-    "fieldName": "primaryreasoncirc"
+    "fieldName": "primaryreasoncirc",
+    "listName": "primary_reasons_mc",
+    "lookupValue": "STI protection"
   },
   {
     "name": "primaryreasoncirc_medical",
@@ -397,7 +475,9 @@
     "IsRequired": false,
     "Label": "Primary reason for circumcision [Medical]",
     "fieldType": "MultiSelect",
-    "fieldName": "primaryreasoncirc"
+    "fieldName": "primaryreasoncirc",
+    "listName": "primary_reasons_mc",
+    "lookupValue": "Medical"
   },
   {
     "name": "primaryreasoncirc_appearance",
@@ -407,7 +487,9 @@
     "IsRequired": false,
     "Label": "Primary reason for circumcision [Appearance]",
     "fieldType": "MultiSelect",
-    "fieldName": "primaryreasoncirc"
+    "fieldName": "primaryreasoncirc",
+    "listName": "primary_reasons_mc",
+    "lookupValue": "Appearance"
   },
   {
     "name": "primaryreasoncirc_hygiene",
@@ -417,7 +499,9 @@
     "IsRequired": false,
     "Label": "Primary reason for circumcision [Hygiene]",
     "fieldType": "MultiSelect",
-    "fieldName": "primaryreasoncirc"
+    "fieldName": "primaryreasoncirc",
+    "listName": "primary_reasons_mc",
+    "lookupValue": "Hygiene"
   },
   {
     "name": "primaryreasoncirc_culturalsocialreligious",
@@ -427,7 +511,9 @@
     "IsRequired": false,
     "Label": "Primary reason for circumcision [Cultural/social/religious]",
     "fieldType": "MultiSelect",
-    "fieldName": "primaryreasoncirc"
+    "fieldName": "primaryreasoncirc",
+    "listName": "primary_reasons_mc",
+    "lookupValue": "Cultural/social/religious"
   },
   {
     "name": "primaryreasoncirc_other",
@@ -437,7 +523,9 @@
     "IsRequired": false,
     "Label": "Primary reason for circumcision [Other]",
     "fieldType": "MultiSelect",
-    "fieldName": "primaryreasoncirc"
+    "fieldName": "primaryreasoncirc",
+    "listName": "primary_reasons_mc",
+    "lookupValue": "Other"
   },
   {
     "name": "primaryreasoncirc_specify",
@@ -447,7 +535,9 @@
     "IsRequired": false,
     "Label": "Other (specify)",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "hivstatus_positive",
@@ -457,7 +547,9 @@
     "IsRequired": false,
     "Label": "HIV Status [Positive]",
     "fieldType": "SingleSelect",
-    "fieldName": "hivstatus"
+    "fieldName": "hivstatus",
+    "listName": "hiv_status",
+    "lookupValue": "Positive"
   },
   {
     "name": "hivstatus_negative",
@@ -467,7 +559,9 @@
     "IsRequired": false,
     "Label": "HIV Status [Negative]",
     "fieldType": "SingleSelect",
-    "fieldName": "hivstatus"
+    "fieldName": "hivstatus",
+    "listName": "hiv_status",
+    "lookupValue": "Negative"
   },
   {
     "name": "hivstatus_indeterminate",
@@ -477,7 +571,9 @@
     "IsRequired": false,
     "Label": "HIV Status [Indeterminate]",
     "fieldType": "SingleSelect",
-    "fieldName": "hivstatus"
+    "fieldName": "hivstatus",
+    "listName": "hiv_status",
+    "lookupValue": "Indeterminate"
   },
   {
     "name": "hivstatus_unknownrefusedselfreported",
@@ -487,7 +583,9 @@
     "IsRequired": false,
     "Label": "HIV Status [Unknown/refused/self-reported]",
     "fieldType": "SingleSelect",
-    "fieldName": "hivstatus"
+    "fieldName": "hivstatus",
+    "listName": "hiv_status",
+    "lookupValue": "Unknown/refused/self-reported"
   },
   {
     "name": "allergictomeds_yes",
@@ -497,7 +595,9 @@
     "IsRequired": false,
     "Label": "Are you allergic to any medicine, rubber or latex [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "allergictomeds"
+    "fieldName": "allergictomeds",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "allergictomeds_no",
@@ -507,7 +607,9 @@
     "IsRequired": false,
     "Label": "Are you allergic to any medicine, rubber or latex [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "allergictomeds"
+    "fieldName": "allergictomeds",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "allergictomeds_specify",
@@ -517,7 +619,9 @@
     "IsRequired": false,
     "Label": "Allergic to meds_Specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "everdiagnosedwith_hemophiliableedingdisorder",
@@ -527,7 +631,9 @@
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Hemophilia/bleeding disorder]",
     "fieldType": "MultiSelect",
-    "fieldName": "everdiagnosedwith"
+    "fieldName": "everdiagnosedwith",
+    "listName": "med_history",
+    "lookupValue": "Hemophilia/bleeding disorder"
   },
   {
     "name": "everdiagnosedwith_diabetes",
@@ -537,7 +643,9 @@
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Diabetes]",
     "fieldType": "MultiSelect",
-    "fieldName": "everdiagnosedwith"
+    "fieldName": "everdiagnosedwith",
+    "listName": "med_history",
+    "lookupValue": "Diabetes"
   },
   {
     "name": "everdiagnosedwith_hypertension",
@@ -547,7 +655,9 @@
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Hypertension]",
     "fieldType": "MultiSelect",
-    "fieldName": "everdiagnosedwith"
+    "fieldName": "everdiagnosedwith",
+    "listName": "med_history",
+    "lookupValue": "Hypertension"
   },
   {
     "name": "everdiagnosedwith_cancer",
@@ -557,7 +667,9 @@
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Cancer]",
     "fieldType": "MultiSelect",
-    "fieldName": "everdiagnosedwith"
+    "fieldName": "everdiagnosedwith",
+    "listName": "med_history",
+    "lookupValue": "Cancer"
   },
   {
     "name": "everdiagnosedwith_peripheralvasculardisease",
@@ -567,7 +679,9 @@
     "IsRequired": false,
     "Label": "Hav you ever been diagnosed with any of the following [Peripheral vascular disease]",
     "fieldType": "MultiSelect",
-    "fieldName": "everdiagnosedwith"
+    "fieldName": "everdiagnosedwith",
+    "listName": "med_history",
+    "lookupValue": "Peripheral vascular disease"
   },
   {
     "name": "currentlytakingmeds_yes",
@@ -577,7 +691,9 @@
     "IsRequired": false,
     "Label": "Currently taking meds including STI tx [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "currentlytakingmeds"
+    "fieldName": "currentlytakingmeds",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "currentlytakingmeds_no",
@@ -587,7 +703,9 @@
     "IsRequired": false,
     "Label": "Currently taking meds including STI tx [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "currentlytakingmeds"
+    "fieldName": "currentlytakingmeds",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "currentlytakingmeds_specify",
@@ -597,7 +715,9 @@
     "IsRequired": false,
     "Label": "Currently taking meds_Specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "hadoperation_yes",
@@ -607,7 +727,9 @@
     "IsRequired": false,
     "Label": "Had Operation [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "hadoperation"
+    "fieldName": "hadoperation",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "hadoperation_no",
@@ -617,7 +739,9 @@
     "IsRequired": false,
     "Label": "Had Operation [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "hadoperation"
+    "fieldName": "hadoperation",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "hadoperation_specify",
@@ -627,7 +751,9 @@
     "IsRequired": false,
     "Label": "Had Operation_Specify",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "complaints_urethraldischarge",
@@ -637,7 +763,9 @@
     "IsRequired": false,
     "Label": "Do you have any of the following complaints [Urethral discharge]",
     "fieldType": "MultiSelect",
-    "fieldName": "complaints"
+    "fieldName": "complaints",
+    "listName": "sti_complaints",
+    "lookupValue": "Urethral discharge"
   },
   {
     "name": "complaints_genitalsore",
@@ -647,7 +775,9 @@
     "IsRequired": false,
     "Label": "Do you have any of the following complaints [Genital sore]",
     "fieldType": "MultiSelect",
-    "fieldName": "complaints"
+    "fieldName": "complaints",
+    "listName": "sti_complaints",
+    "lookupValue": "Genital sore"
   },
   {
     "name": "complaints_painfulweakerection",
@@ -657,7 +787,9 @@
     "IsRequired": false,
     "Label": "Do you have any of the following complaints [Painful/weak erection]",
     "fieldType": "MultiSelect",
-    "fieldName": "complaints"
+    "fieldName": "complaints",
+    "listName": "sti_complaints",
+    "lookupValue": "Painful/weak erection"
   },
   {
     "name": "complaints_swellingofthescrotum",
@@ -667,7 +799,9 @@
     "IsRequired": false,
     "Label": "Do you have any of the following complaints [Swelling of the scrotum]",
     "fieldType": "MultiSelect",
-    "fieldName": "complaints"
+    "fieldName": "complaints",
+    "listName": "sti_complaints",
+    "lookupValue": "Swelling of the scrotum"
   },
   {
     "name": "complaints_painonurination",
@@ -677,7 +811,9 @@
     "IsRequired": false,
     "Label": "Do you have any of the following complaints [Pain on urination]",
     "fieldType": "MultiSelect",
-    "fieldName": "complaints"
+    "fieldName": "complaints",
+    "listName": "sti_complaints",
+    "lookupValue": "Pain on urination"
   },
   {
     "name": "complaints_difficulltyinretractingforeskin",
@@ -687,7 +823,9 @@
     "IsRequired": false,
     "Label": "Do you have any of the following complaints [Difficullty in retracting foreskin]",
     "fieldType": "MultiSelect",
-    "fieldName": "complaints"
+    "fieldName": "complaints",
+    "listName": "sti_complaints",
+    "lookupValue": "Difficullty in retracting foreskin"
   },
   {
     "name": "complaints_other",
@@ -697,7 +835,9 @@
     "IsRequired": false,
     "Label": "Do you have any of the following complaints [Other]",
     "fieldType": "MultiSelect",
-    "fieldName": "complaints"
+    "fieldName": "complaints",
+    "listName": "sti_complaints",
+    "lookupValue": "Other"
   },
   {
     "name": "complaints_specify",
@@ -707,7 +847,9 @@
     "IsRequired": false,
     "Label": "Other (specify)",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "generalcondition_healthy",
@@ -717,7 +859,9 @@
     "IsRequired": false,
     "Label": "General condition [Healthy]",
     "fieldType": "SingleSelect",
-    "fieldName": "generalcondition"
+    "fieldName": "generalcondition",
+    "listName": "general_condition",
+    "lookupValue": "Healthy"
   },
   {
     "name": "generalcondition_illlooking",
@@ -727,7 +871,9 @@
     "IsRequired": false,
     "Label": "General condition [Ill Looking]",
     "fieldType": "SingleSelect",
-    "fieldName": "generalcondition"
+    "fieldName": "generalcondition",
+    "listName": "general_condition",
+    "lookupValue": "Ill Looking"
   },
   {
     "name": "pallor_yes",
@@ -737,7 +883,9 @@
     "IsRequired": false,
     "Label": "Pallor [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "pallor"
+    "fieldName": "pallor",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "pallor_no",
@@ -747,7 +895,9 @@
     "IsRequired": false,
     "Label": "Pallor [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "pallor"
+    "fieldName": "pallor",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "lymphadenopathy_yes",
@@ -757,7 +907,9 @@
     "IsRequired": false,
     "Label": "Lymphadenopathy [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "lymphadenopathy"
+    "fieldName": "lymphadenopathy",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "lymphadenopathy_no",
@@ -767,7 +919,9 @@
     "IsRequired": false,
     "Label": "Lymphadenopathy [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "lymphadenopathy"
+    "fieldName": "lymphadenopathy",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "wasting_yes",
@@ -777,7 +931,9 @@
     "IsRequired": false,
     "Label": "Wasting [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "wasting"
+    "fieldName": "wasting",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "wasting_no",
@@ -787,7 +943,9 @@
     "IsRequired": false,
     "Label": "Wasting [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "wasting"
+    "fieldName": "wasting",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "phimosis_yes",
@@ -797,7 +955,9 @@
     "IsRequired": false,
     "Label": "Phimosis [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "phimosis"
+    "fieldName": "phimosis",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "phimosis_no",
@@ -807,7 +967,9 @@
     "IsRequired": false,
     "Label": "Phimosis [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "phimosis"
+    "fieldName": "phimosis",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "paraphimosis_yes",
@@ -817,7 +979,9 @@
     "IsRequired": false,
     "Label": "Paraphimosis [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "paraphimosis"
+    "fieldName": "paraphimosis",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "paraphimosis_no",
@@ -827,7 +991,9 @@
     "IsRequired": false,
     "Label": "Paraphimosis [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "paraphimosis"
+    "fieldName": "paraphimosis",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "narrowprepuce_yes",
@@ -837,7 +1003,9 @@
     "IsRequired": false,
     "Label": "Narrow prepuce [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "narrowprepuce"
+    "fieldName": "narrowprepuce",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "narrowprepuce_no",
@@ -847,7 +1015,9 @@
     "IsRequired": false,
     "Label": "Narrow prepuce [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "narrowprepuce"
+    "fieldName": "narrowprepuce",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "tightfrenulum_yes",
@@ -857,7 +1027,9 @@
     "IsRequired": false,
     "Label": "Tight frenulum [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "tightfrenulum"
+    "fieldName": "tightfrenulum",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "tightfrenulum_no",
@@ -867,7 +1039,9 @@
     "IsRequired": false,
     "Label": "Tight frenulum [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "tightfrenulum"
+    "fieldName": "tightfrenulum",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "epispadiasis_yes",
@@ -877,7 +1051,9 @@
     "IsRequired": false,
     "Label": "Epispadiasis [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "epispadiasis"
+    "fieldName": "epispadiasis",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "epispadiasis_no",
@@ -887,7 +1063,9 @@
     "IsRequired": false,
     "Label": "Epispadiasis [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "epispadiasis"
+    "fieldName": "epispadiasis",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "hypospadiasis_yes",
@@ -897,7 +1075,9 @@
     "IsRequired": false,
     "Label": "Hypospadiasis [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "hypospadiasis"
+    "fieldName": "hypospadiasis",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "hypospadiasis_no",
@@ -907,7 +1087,9 @@
     "IsRequired": false,
     "Label": "Hypospadiasis [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "hypospadiasis"
+    "fieldName": "hypospadiasis",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "otherurethralanomaly_yes",
@@ -917,7 +1099,9 @@
     "IsRequired": false,
     "Label": "Other urethral anomaly [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "otherurethralanomaly"
+    "fieldName": "otherurethralanomaly",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "otherurethralanomaly_no",
@@ -927,7 +1111,9 @@
     "IsRequired": false,
     "Label": "Other urethral anomaly [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "otherurethralanomaly"
+    "fieldName": "otherurethralanomaly",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "hydrocele_yes",
@@ -937,7 +1123,9 @@
     "IsRequired": false,
     "Label": "Hydrocele [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "hydrocele"
+    "fieldName": "hydrocele",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "hydrocele_no",
@@ -947,7 +1135,9 @@
     "IsRequired": false,
     "Label": "Hydrocele [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "hydrocele"
+    "fieldName": "hydrocele",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "scrotalhernia_yes",
@@ -957,7 +1147,9 @@
     "IsRequired": false,
     "Label": "Scrotal hernia [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "scrotalhernia"
+    "fieldName": "scrotalhernia",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "scrotalhernia_no",
@@ -967,7 +1159,9 @@
     "IsRequired": false,
     "Label": "Scrotal hernia [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "scrotalhernia"
+    "fieldName": "scrotalhernia",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "genitalulcers_yes",
@@ -977,7 +1171,9 @@
     "IsRequired": false,
     "Label": "Genital Ulcers [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "genitalulcers"
+    "fieldName": "genitalulcers",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "genitalulcers_no",
@@ -987,7 +1183,9 @@
     "IsRequired": false,
     "Label": "Genital Ulcers [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "genitalulcers"
+    "fieldName": "genitalulcers",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "dermatitisofthepenis_yes",
@@ -997,7 +1195,9 @@
     "IsRequired": false,
     "Label": "Dermatitis  of the penis [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "dermatitisofthepenis"
+    "fieldName": "dermatitisofthepenis",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "dermatitisofthepenis_no",
@@ -1007,7 +1207,9 @@
     "IsRequired": false,
     "Label": "Dermatitis  of the penis [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "dermatitisofthepenis"
+    "fieldName": "dermatitisofthepenis",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "genitalwarts_yes",
@@ -1017,7 +1219,9 @@
     "IsRequired": false,
     "Label": "Genital warts [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "genitalwarts"
+    "fieldName": "genitalwarts",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "genitalwarts_no",
@@ -1027,7 +1231,9 @@
     "IsRequired": false,
     "Label": "Genital warts [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "genitalwarts"
+    "fieldName": "genitalwarts",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "urethraldischarge_yes",
@@ -1037,7 +1243,9 @@
     "IsRequired": false,
     "Label": "Urethral discharge [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "urethraldischarge"
+    "fieldName": "urethraldischarge",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "urethraldischarge_no",
@@ -1047,7 +1255,9 @@
     "IsRequired": false,
     "Label": "Urethral discharge [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "urethraldischarge"
+    "fieldName": "urethraldischarge",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "balantis_yes",
@@ -1057,7 +1267,9 @@
     "IsRequired": false,
     "Label": "Balantis [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "balantis"
+    "fieldName": "balantis",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "balantis_no",
@@ -1067,7 +1279,9 @@
     "IsRequired": false,
     "Label": "Balantis [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "balantis"
+    "fieldName": "balantis",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "posthitis_yes",
@@ -1077,7 +1291,9 @@
     "IsRequired": false,
     "Label": "Posthitis [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "posthitis"
+    "fieldName": "posthitis",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "posthitis_no",
@@ -1087,7 +1303,9 @@
     "IsRequired": false,
     "Label": "Posthitis [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "posthitis"
+    "fieldName": "posthitis",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "foreskinattachedtotheglans_yes",
@@ -1097,7 +1315,9 @@
     "IsRequired": false,
     "Label": "Foreskin attached to the glans [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "foreskinattachedtotheglans"
+    "fieldName": "foreskinattachedtotheglans",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "foreskinattachedtotheglans_no",
@@ -1107,7 +1327,9 @@
     "IsRequired": false,
     "Label": "Foreskin attached to the glans [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "foreskinattachedtotheglans"
+    "fieldName": "foreskinattachedtotheglans",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "others_yes",
@@ -1117,7 +1339,9 @@
     "IsRequired": false,
     "Label": "Others [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "others"
+    "fieldName": "others",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "others_no",
@@ -1127,7 +1351,9 @@
     "IsRequired": false,
     "Label": "Others [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "others"
+    "fieldName": "others",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "circumcisionmethodchosen_surgicalcircumcision",
@@ -1137,7 +1363,9 @@
     "IsRequired": false,
     "Label": "Circumcision method chosen [Surgical Circumcision]",
     "fieldType": "SingleSelect",
-    "fieldName": "circumcisionmethodchosen"
+    "fieldName": "circumcisionmethodchosen",
+    "listName": "circumcision_method",
+    "lookupValue": "Surgical Circumcision"
   },
   {
     "name": "circumcisionmethodchosen_prepexcircumcision",
@@ -1147,7 +1375,9 @@
     "IsRequired": false,
     "Label": "Circumcision method chosen [Prepex Circumcision]",
     "fieldType": "SingleSelect",
-    "fieldName": "circumcisionmethodchosen"
+    "fieldName": "circumcisionmethodchosen",
+    "listName": "circumcision_method",
+    "lookupValue": "Prepex Circumcision"
   },
   {
     "name": "eligibleforprepex_yes",
@@ -1157,7 +1387,9 @@
     "IsRequired": false,
     "Label": "If Prepex, is client eligible [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "eligibleforprepex"
+    "fieldName": "eligibleforprepex",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "eligibleforprepex_no",
@@ -1167,7 +1399,9 @@
     "IsRequired": false,
     "Label": "If Prepex, is client eligible [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "eligibleforprepex"
+    "fieldName": "eligibleforprepex",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "prepex_proc_hdr",
@@ -1177,7 +1411,9 @@
     "IsRequired": false,
     "Label": "Prepex Placement Procedure",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "prepexdevicesize_a",
@@ -1187,7 +1423,9 @@
     "IsRequired": false,
     "Label": "Prepex Device Size [A]",
     "fieldType": "SingleSelect",
-    "fieldName": "prepexdevicesize"
+    "fieldName": "prepexdevicesize",
+    "listName": "device_size",
+    "lookupValue": "A"
   },
   {
     "name": "prepexdevicesize_b",
@@ -1197,7 +1435,9 @@
     "IsRequired": false,
     "Label": "Prepex Device Size [B]",
     "fieldType": "SingleSelect",
-    "fieldName": "prepexdevicesize"
+    "fieldName": "prepexdevicesize",
+    "listName": "device_size",
+    "lookupValue": "B"
   },
   {
     "name": "prepexdevicesize_c",
@@ -1207,7 +1447,9 @@
     "IsRequired": false,
     "Label": "Prepex Device Size [C]",
     "fieldType": "SingleSelect",
-    "fieldName": "prepexdevicesize"
+    "fieldName": "prepexdevicesize",
+    "listName": "device_size",
+    "lookupValue": "C"
   },
   {
     "name": "prepexdevicesize_d",
@@ -1217,7 +1459,9 @@
     "IsRequired": false,
     "Label": "Prepex Device Size [D]",
     "fieldType": "SingleSelect",
-    "fieldName": "prepexdevicesize"
+    "fieldName": "prepexdevicesize",
+    "listName": "device_size",
+    "lookupValue": "D"
   },
   {
     "name": "prepexdevicesize_e",
@@ -1227,7 +1471,9 @@
     "IsRequired": false,
     "Label": "Prepex Device Size [E]",
     "fieldType": "SingleSelect",
-    "fieldName": "prepexdevicesize"
+    "fieldName": "prepexdevicesize",
+    "listName": "device_size",
+    "lookupValue": "E"
   },
   {
     "name": "devicebatchid",
@@ -1237,7 +1483,9 @@
     "IsRequired": false,
     "Label": "Device Batch Id",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "timelineofcircmarked",
@@ -1247,7 +1495,9 @@
     "IsRequired": false,
     "Label": "Time Line of Circ Marked",
     "fieldType": "Time",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "timeplacementringremoved",
@@ -1257,7 +1507,9 @@
     "IsRequired": false,
     "Label": "Time Placement Ring Removed",
     "fieldType": "Time",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "comments",
@@ -1267,7 +1519,9 @@
     "IsRequired": false,
     "Label": "Comments",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "aesduringplacement_noadverseeventsdiagnosed",
@@ -1277,7 +1531,9 @@
     "IsRequired": false,
     "Label": "AES during placement [No Adverse events diagnosed]",
     "fieldType": "SingleSelect",
-    "fieldName": "aesduringplacement"
+    "fieldName": "aesduringplacement",
+    "listName": "aes_diagnosed",
+    "lookupValue": "No Adverse events diagnosed"
   },
   {
     "name": "aesduringplacement_adverseeventsdiagnosed",
@@ -1287,7 +1543,9 @@
     "IsRequired": false,
     "Label": "AES during placement [Adverse events diagnosed]",
     "fieldType": "SingleSelect",
-    "fieldName": "aesduringplacement"
+    "fieldName": "aesduringplacement",
+    "listName": "aes_diagnosed",
+    "lookupValue": "Adverse events diagnosed"
   },
   {
     "name": "pain_mild",
@@ -1297,7 +1555,9 @@
     "IsRequired": false,
     "Label": "Pain [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "pain_moderate",
@@ -1307,7 +1567,9 @@
     "IsRequired": false,
     "Label": "Pain [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "pain_severe",
@@ -1317,7 +1579,9 @@
     "IsRequired": false,
     "Label": "Pain [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "pain_severitynotclassified",
@@ -1327,7 +1591,9 @@
     "IsRequired": false,
     "Label": "Pain [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "bleeding_mild",
@@ -1337,7 +1603,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "bleeding_moderate",
@@ -1347,7 +1615,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "bleeding_severe",
@@ -1357,7 +1627,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "bleeding_severitynotclassified",
@@ -1367,7 +1639,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "anesthesia_analgesicreaction_mild",
@@ -1377,7 +1651,9 @@
     "IsRequired": false,
     "Label": "Anesthesia/analgesic reaction [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "anesthesia_analgesicreaction"
+    "fieldName": "anesthesia_analgesicreaction",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "anesthesia_analgesicreaction_moderate",
@@ -1387,7 +1663,9 @@
     "IsRequired": false,
     "Label": "Anesthesia/analgesic reaction [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "anesthesia_analgesicreaction"
+    "fieldName": "anesthesia_analgesicreaction",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "anesthesia_analgesicreaction_severe",
@@ -1397,7 +1675,9 @@
     "IsRequired": false,
     "Label": "Anesthesia/analgesic reaction [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "anesthesia_analgesicreaction"
+    "fieldName": "anesthesia_analgesicreaction",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "anesthesia_analgesicreaction_severitynotclassified",
@@ -1407,7 +1687,9 @@
     "IsRequired": false,
     "Label": "Anesthesia/analgesic reaction [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "anesthesia_analgesicreaction"
+    "fieldName": "anesthesia_analgesicreaction",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "damagetopenis_mild",
@@ -1417,7 +1699,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "damagetopenis_moderate",
@@ -1427,7 +1711,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "damagetopenis_severe",
@@ -1437,7 +1723,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "damagetopenis_severitynotclassified",
@@ -1447,7 +1735,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "difficultywithplacement_mild",
@@ -1457,7 +1747,9 @@
     "IsRequired": false,
     "Label": "Difficulty with placement [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "difficultywithplacement"
+    "fieldName": "difficultywithplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "difficultywithplacement_moderate",
@@ -1467,7 +1759,9 @@
     "IsRequired": false,
     "Label": "Difficulty with placement [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "difficultywithplacement"
+    "fieldName": "difficultywithplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "difficultywithplacement_severe",
@@ -1477,7 +1771,9 @@
     "IsRequired": false,
     "Label": "Difficulty with placement [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "difficultywithplacement"
+    "fieldName": "difficultywithplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "difficultywithplacement_severitynotclassified",
@@ -1487,7 +1783,9 @@
     "IsRequired": false,
     "Label": "Difficulty with placement [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "difficultywithplacement"
+    "fieldName": "difficultywithplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "devicemalfunction_mild",
@@ -1497,7 +1795,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "devicemalfunction_moderate",
@@ -1507,7 +1807,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "devicemalfunction_severe",
@@ -1517,7 +1819,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "devicemalfunction_severitynotclassified",
@@ -1527,7 +1831,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "nottomovedevice_yes",
@@ -1537,7 +1843,9 @@
     "IsRequired": false,
     "Label": "Not to Move Device [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "nottomovedevice"
+    "fieldName": "nottomovedevice",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "nottomovedevice_no",
@@ -1547,7 +1855,9 @@
     "IsRequired": false,
     "Label": "Not to Move Device [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "nottomovedevice"
+    "fieldName": "nottomovedevice",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "removalond7_yes",
@@ -1557,7 +1867,9 @@
     "IsRequired": false,
     "Label": "To return for removal on Day7 [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "removalond7"
+    "fieldName": "removalond7",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "removalond7_no",
@@ -1567,7 +1879,9 @@
     "IsRequired": false,
     "Label": "To return for removal on Day7 [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "removalond7"
+    "fieldName": "removalond7",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "removalbefored7_yes",
@@ -1577,7 +1891,9 @@
     "IsRequired": false,
     "Label": "To return if wants removal before D7 [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "removalbefored7"
+    "fieldName": "removalbefored7",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "removalbefored7_no",
@@ -1587,7 +1903,9 @@
     "IsRequired": false,
     "Label": "To return if wants removal before D7 [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "removalbefored7"
+    "fieldName": "removalbefored7",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "onlydesignatedprovider_yes",
@@ -1597,7 +1915,9 @@
     "IsRequired": false,
     "Label": "Only designated provider [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "onlydesignatedprovider"
+    "fieldName": "onlydesignatedprovider",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "onlydesignatedprovider_no",
@@ -1607,7 +1927,9 @@
     "IsRequired": false,
     "Label": "Only designated provider [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "onlydesignatedprovider"
+    "fieldName": "onlydesignatedprovider",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "notpullforeskin_yes",
@@ -1617,7 +1939,9 @@
     "IsRequired": false,
     "Label": "Not to pull foreskin [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "notpullforeskin"
+    "fieldName": "notpullforeskin",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "notpullforeskin_no",
@@ -1627,7 +1951,9 @@
     "IsRequired": false,
     "Label": "Not to pull foreskin [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "notpullforeskin"
+    "fieldName": "notpullforeskin",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "nosexualintercourse_yes",
@@ -1637,7 +1963,9 @@
     "IsRequired": false,
     "Label": "No sexual intercourse or masturbation [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "nosexualintercourse"
+    "fieldName": "nosexualintercourse",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "nosexualintercourse_no",
@@ -1647,7 +1975,9 @@
     "IsRequired": false,
     "Label": "No sexual intercourse or masturbation [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "nosexualintercourse"
+    "fieldName": "nosexualintercourse",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "writteninstructions_yes",
@@ -1657,7 +1987,9 @@
     "IsRequired": false,
     "Label": "Client provided post-procedural written instructions [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "writteninstructions"
+    "fieldName": "writteninstructions",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "writteninstructions_no",
@@ -1667,7 +1999,9 @@
     "IsRequired": false,
     "Label": "Client provided post-procedural written instructions [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "writteninstructions"
+    "fieldName": "writteninstructions",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "clientclinicaldisposition",
@@ -1677,7 +2011,9 @@
     "IsRequired": false,
     "Label": "Clinical disposition of client",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "oralanalgesiagiven_yes",
@@ -1687,7 +2023,9 @@
     "IsRequired": false,
     "Label": "Oral analgesia given [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "oralanalgesiagiven"
+    "fieldName": "oralanalgesiagiven",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "oralanalgesiagiven_no",
@@ -1697,7 +2035,9 @@
     "IsRequired": false,
     "Label": "Oral analgesia given [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "oralanalgesiagiven"
+    "fieldName": "oralanalgesiagiven",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "nameoralanalgesiadrug",
@@ -1707,7 +2047,9 @@
     "IsRequired": false,
     "Label": "Oral Analgesia Drug",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "scheduledremovaldate",
@@ -1717,7 +2059,9 @@
     "IsRequired": false,
     "Label": "Scheduled removal date",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dischargedby",
@@ -1727,7 +2071,9 @@
     "IsRequired": false,
     "Label": "Discharged by (Name)",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "signed_yes",
@@ -1737,7 +2083,9 @@
     "IsRequired": false,
     "Label": "Signed [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "signed"
+    "fieldName": "signed",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "signed_no",
@@ -1747,7 +2095,9 @@
     "IsRequired": false,
     "Label": "Signed [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "signed"
+    "fieldName": "signed",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "date_firstedited",
@@ -1757,7 +2107,9 @@
     "IsRequired": true,
     "Label": "Date of Data Entry",
     "fieldType": "today",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "data_entered_by",
@@ -1767,7 +2119,9 @@
     "IsRequired": true,
     "Label": "Data Entry By",
     "fieldType": "username",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "facilityname",
@@ -1777,7 +2131,9 @@
     "IsRequired": false,
     "Label": "Facility",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dateofvisit",
@@ -1787,7 +2143,9 @@
     "IsRequired": true,
     "Label": "Date of Visit",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "cardserialnumber",
@@ -1797,7 +2155,9 @@
     "IsRequired": true,
     "Label": "Card Serial Number",
     "fieldType": "int",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientidnumber",
@@ -1807,7 +2167,9 @@
     "IsRequired": true,
     "Label": "Client ID Number",
     "fieldType": "int",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dateofplacement",
@@ -1817,7 +2179,9 @@
     "IsRequired": false,
     "Label": "Date of Placement",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientname",
@@ -1827,7 +2191,9 @@
     "IsRequired": true,
     "Label": "Client Name",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientsphysicaladdress",
@@ -1837,7 +2203,9 @@
     "IsRequired": true,
     "Label": "Clients Physical Address",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clienttel",
@@ -1847,7 +2215,9 @@
     "IsRequired": true,
     "Label": "Client Tel",
     "fieldType": "Cell",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "typeofinteraction_removalproceddure",
@@ -1857,7 +2227,9 @@
     "IsRequired": false,
     "Label": "Whether Removal Procedure or Follow up [RemovalProceddure]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofinteraction"
+    "fieldName": "typeofinteraction",
+    "listName": "interaction_type",
+    "lookupValue": "RemovalProceddure"
   },
   {
     "name": "typeofinteraction_followuptelephone",
@@ -1867,7 +2239,9 @@
     "IsRequired": false,
     "Label": "Whether Removal Procedure or Follow up [Followup telephone]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofinteraction"
+    "fieldName": "typeofinteraction",
+    "listName": "interaction_type",
+    "lookupValue": "Followup telephone"
   },
   {
     "name": "typeofinteraction_physicalvisit",
@@ -1877,7 +2251,9 @@
     "IsRequired": false,
     "Label": "Whether Removal Procedure or Follow up [Physical Visit]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeofinteraction"
+    "fieldName": "typeofinteraction",
+    "listName": "interaction_type",
+    "lookupValue": "Physical Visit"
   },
   {
     "name": "timeforcepsapplied",
@@ -1887,7 +2263,9 @@
     "IsRequired": false,
     "Label": "Forceps applied (time)",
     "fieldType": "date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "timeinnerringremoved",
@@ -1897,7 +2275,9 @@
     "IsRequired": false,
     "Label": "Inner ring removed (time)",
     "fieldType": "date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "comments",
@@ -1907,7 +2287,9 @@
     "IsRequired": false,
     "Label": "Comments",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "aesduringdeviceremoval_noadverseeventsdiagnosed",
@@ -1917,7 +2299,9 @@
     "IsRequired": false,
     "Label": "AES during Device Removal [No Adverse events diagnosed]",
     "fieldType": "SingleSelect",
-    "fieldName": "aesduringdeviceremoval"
+    "fieldName": "aesduringdeviceremoval",
+    "listName": "aes_diagnosed",
+    "lookupValue": "No Adverse events diagnosed"
   },
   {
     "name": "aesduringdeviceremoval_adverseeventsdiagnosed",
@@ -1927,7 +2311,9 @@
     "IsRequired": false,
     "Label": "AES during Device Removal [Adverse events diagnosed]",
     "fieldType": "SingleSelect",
-    "fieldName": "aesduringdeviceremoval"
+    "fieldName": "aesduringdeviceremoval",
+    "listName": "aes_diagnosed",
+    "lookupValue": "Adverse events diagnosed"
   },
   {
     "name": "pain_mild",
@@ -1937,7 +2323,9 @@
     "IsRequired": false,
     "Label": "Pain [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "pain_moderate",
@@ -1947,7 +2335,9 @@
     "IsRequired": false,
     "Label": "Pain [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "pain_severe",
@@ -1957,7 +2347,9 @@
     "IsRequired": false,
     "Label": "Pain [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "pain_severitynotclassified",
@@ -1967,7 +2359,9 @@
     "IsRequired": false,
     "Label": "Pain [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "bleeding_mild",
@@ -1977,7 +2371,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "bleeding_moderate",
@@ -1987,7 +2383,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "bleeding_severe",
@@ -1997,7 +2395,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "bleeding_severitynotclassified",
@@ -2007,7 +2407,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "damagetopenis_mild",
@@ -2017,7 +2419,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "damagetopenis_moderate",
@@ -2027,7 +2431,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "damagetopenis_severe",
@@ -2037,7 +2443,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "damagetopenis_severitynotclassified",
@@ -2047,7 +2455,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "infection_mild",
@@ -2057,7 +2467,9 @@
     "IsRequired": false,
     "Label": "Infection [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "infection_moderate",
@@ -2067,7 +2479,9 @@
     "IsRequired": false,
     "Label": "Infection [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "infection_severe",
@@ -2077,7 +2491,9 @@
     "IsRequired": false,
     "Label": "Infection [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "infection_severitynotclassified",
@@ -2087,7 +2503,9 @@
     "IsRequired": false,
     "Label": "Infection [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "hematoma_mild",
@@ -2097,7 +2515,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "hematoma_moderate",
@@ -2107,7 +2527,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "hematoma_severe",
@@ -2117,7 +2539,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "hematoma_severitynotclassified",
@@ -2127,7 +2551,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "edema_swelling_mild",
@@ -2137,7 +2563,9 @@
     "IsRequired": false,
     "Label": "Edema / Swelling [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "edema_swelling_moderate",
@@ -2147,7 +2575,9 @@
     "IsRequired": false,
     "Label": "Edema / Swelling [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "edema_swelling_severe",
@@ -2157,7 +2587,9 @@
     "IsRequired": false,
     "Label": "Edema / Swelling [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "edema_swelling_severitynotclassified",
@@ -2167,7 +2599,9 @@
     "IsRequired": false,
     "Label": "Edema / Swelling [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "problemsvoiding_mild",
@@ -2177,7 +2611,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "problemsvoiding_moderate",
@@ -2187,7 +2623,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "problemsvoiding_severe",
@@ -2197,7 +2635,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "problemsvoiding_severitynotclassified",
@@ -2207,7 +2647,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "psychological_mild",
@@ -2217,7 +2659,9 @@
     "IsRequired": false,
     "Label": "Psychological [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "psychological_moderate",
@@ -2227,7 +2671,9 @@
     "IsRequired": false,
     "Label": "Psychological [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "psychological_severe",
@@ -2237,7 +2683,9 @@
     "IsRequired": false,
     "Label": "Psychological [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "psychological_severitynotclassified",
@@ -2247,7 +2695,9 @@
     "IsRequired": false,
     "Label": "Psychological [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "requestingearlyremoval_mild",
@@ -2257,7 +2707,9 @@
     "IsRequired": false,
     "Label": "Requesting early removal [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "requestingearlyremoval"
+    "fieldName": "requestingearlyremoval",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "requestingearlyremoval_moderate",
@@ -2267,7 +2719,9 @@
     "IsRequired": false,
     "Label": "Requesting early removal [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "requestingearlyremoval"
+    "fieldName": "requestingearlyremoval",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "requestingearlyremoval_severe",
@@ -2277,7 +2731,9 @@
     "IsRequired": false,
     "Label": "Requesting early removal [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "requestingearlyremoval"
+    "fieldName": "requestingearlyremoval",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "requestingearlyremoval_severitynotclassified",
@@ -2287,7 +2743,9 @@
     "IsRequired": false,
     "Label": "Requesting early removal [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "requestingearlyremoval"
+    "fieldName": "requestingearlyremoval",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "devicemalfunction_mild",
@@ -2297,7 +2755,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "devicemalfunction_moderate",
@@ -2307,7 +2767,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "devicemalfunction_severe",
@@ -2317,7 +2779,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "devicemalfunction_severitynotclassified",
@@ -2327,7 +2791,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "devicedisplacement_mild",
@@ -2337,7 +2803,9 @@
     "IsRequired": false,
     "Label": "Device displacement [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicedisplacement"
+    "fieldName": "devicedisplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "devicedisplacement_moderate",
@@ -2347,7 +2815,9 @@
     "IsRequired": false,
     "Label": "Device displacement [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicedisplacement"
+    "fieldName": "devicedisplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "devicedisplacement_severe",
@@ -2357,7 +2827,9 @@
     "IsRequired": false,
     "Label": "Device displacement [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicedisplacement"
+    "fieldName": "devicedisplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "devicedisplacement_severitynotclassified",
@@ -2367,7 +2839,9 @@
     "IsRequired": false,
     "Label": "Device displacement [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicedisplacement"
+    "fieldName": "devicedisplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "prematuredifferentialsloughing_mild",
@@ -2377,7 +2851,9 @@
     "IsRequired": false,
     "Label": "Premature differential sloughing [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "prematuredifferentialsloughing"
+    "fieldName": "prematuredifferentialsloughing",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "prematuredifferentialsloughing_moderate",
@@ -2387,7 +2863,9 @@
     "IsRequired": false,
     "Label": "Premature differential sloughing [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "prematuredifferentialsloughing"
+    "fieldName": "prematuredifferentialsloughing",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "prematuredifferentialsloughing_severe",
@@ -2397,7 +2875,9 @@
     "IsRequired": false,
     "Label": "Premature differential sloughing [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "prematuredifferentialsloughing"
+    "fieldName": "prematuredifferentialsloughing",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "prematuredifferentialsloughing_severitynotclassified",
@@ -2407,7 +2887,9 @@
     "IsRequired": false,
     "Label": "Premature differential sloughing [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "prematuredifferentialsloughing"
+    "fieldName": "prematuredifferentialsloughing",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "dressingintact_yes",
@@ -2417,7 +2899,9 @@
     "IsRequired": false,
     "Label": "Dressing Intact [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "dressingintact"
+    "fieldName": "dressingintact",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "dressingintact_no",
@@ -2427,7 +2911,9 @@
     "IsRequired": false,
     "Label": "Dressing Intact [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "dressingintact"
+    "fieldName": "dressingintact",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "clientprovidedppinstr_nospecify_yes",
@@ -2437,7 +2923,9 @@
     "IsRequired": false,
     "Label": "Client provided post procedure written instructions [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "clientprovidedppinstr_nospecify"
+    "fieldName": "clientprovidedppinstr_nospecify",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "clientprovidedppinstr_nospecify_no",
@@ -2447,7 +2935,9 @@
     "IsRequired": false,
     "Label": "Client provided post procedure written instructions [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "clientprovidedppinstr_nospecify"
+    "fieldName": "clientprovidedppinstr_nospecify",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "clientprovidedppinstr",
@@ -2457,7 +2947,9 @@
     "IsRequired": false,
     "Label": "if no, Explain",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clinicaldisposition",
@@ -2467,7 +2959,9 @@
     "IsRequired": false,
     "Label": "Clinical Disposition of Client",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "oralanalgesiagiven_yes",
@@ -2477,7 +2971,9 @@
     "IsRequired": false,
     "Label": "Oral analgesia given [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "oralanalgesiagiven"
+    "fieldName": "oralanalgesiagiven",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "oralanalgesiagiven_no",
@@ -2487,7 +2983,9 @@
     "IsRequired": false,
     "Label": "Oral analgesia given [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "oralanalgesiagiven"
+    "fieldName": "oralanalgesiagiven",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "nameoralanalgesiadrug",
@@ -2497,7 +2995,9 @@
     "IsRequired": false,
     "Label": "Oral Analgesia Drug",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dischargedby",
@@ -2507,7 +3007,9 @@
     "IsRequired": false,
     "Label": "Discharged by (Name)",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "signed_yes",
@@ -2517,7 +3019,9 @@
     "IsRequired": false,
     "Label": "Signed [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "signed"
+    "fieldName": "signed",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "signed_no",
@@ -2527,7 +3031,9 @@
     "IsRequired": false,
     "Label": "Signed [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "signed"
+    "fieldName": "signed",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "date_firstedited",
@@ -2537,7 +3043,9 @@
     "IsRequired": true,
     "Label": "Date of Data Entry",
     "fieldType": "today",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "data_entered_by",
@@ -2547,7 +3055,9 @@
     "IsRequired": true,
     "Label": "Data Entry By",
     "fieldType": "username",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "facilityname",
@@ -2557,7 +3067,9 @@
     "IsRequired": false,
     "Label": "Facility",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dateofvisit",
@@ -2567,7 +3079,9 @@
     "IsRequired": true,
     "Label": "Date of Visit",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "cardserialnumber",
@@ -2577,7 +3091,9 @@
     "IsRequired": true,
     "Label": "Card Serial Number",
     "fieldType": "int",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientidnumber",
@@ -2587,7 +3103,9 @@
     "IsRequired": true,
     "Label": "Client ID Number",
     "fieldType": "int",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dateofplacement",
@@ -2597,7 +3115,9 @@
     "IsRequired": false,
     "Label": "Date of Placement",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientname",
@@ -2607,7 +3127,9 @@
     "IsRequired": true,
     "Label": "Client Name",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientsphysicaladdress",
@@ -2617,7 +3139,9 @@
     "IsRequired": true,
     "Label": "Clients Physical Address",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clienttel",
@@ -2627,7 +3151,9 @@
     "IsRequired": true,
     "Label": "Client Tel",
     "fieldType": "Cell",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clinicalcourse",
@@ -2637,7 +3163,9 @@
     "IsRequired": false,
     "Label": "Clinical course experienced / reported by client",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "appearanceofwound_fullyhealed",
@@ -2647,7 +3175,9 @@
     "IsRequired": false,
     "Label": "Appearance of Wound [Fully Healed]",
     "fieldType": "SingleSelect",
-    "fieldName": "appearanceofwound"
+    "fieldName": "appearanceofwound",
+    "listName": "wound_appearance",
+    "lookupValue": "Fully Healed"
   },
   {
     "name": "appearanceofwound_notfullyhealednocomplications",
@@ -2657,7 +3187,9 @@
     "IsRequired": false,
     "Label": "Appearance of Wound [Not fully healed No Complications]",
     "fieldType": "SingleSelect",
-    "fieldName": "appearanceofwound"
+    "fieldName": "appearanceofwound",
+    "listName": "wound_appearance",
+    "lookupValue": "Not fully healed No Complications"
   },
   {
     "name": "appearanceofwound_notfullyhealedcomplicationsnoted",
@@ -2667,7 +3199,9 @@
     "IsRequired": false,
     "Label": "Appearance of Wound [Not fully healed Complications Noted]",
     "fieldType": "SingleSelect",
-    "fieldName": "appearanceofwound"
+    "fieldName": "appearanceofwound",
+    "listName": "wound_appearance",
+    "lookupValue": "Not fully healed Complications Noted"
   },
   {
     "name": "careprovided",
@@ -2677,7 +3211,9 @@
     "IsRequired": false,
     "Label": "Care Provided (if any)",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "followupplan",
@@ -2687,7 +3223,9 @@
     "IsRequired": false,
     "Label": "Follow-up plan (if additional visits needed)",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "pain_mild",
@@ -2697,7 +3235,9 @@
     "IsRequired": false,
     "Label": "Pain [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "pain_moderate",
@@ -2707,7 +3247,9 @@
     "IsRequired": false,
     "Label": "Pain [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "pain_severe",
@@ -2717,7 +3259,9 @@
     "IsRequired": false,
     "Label": "Pain [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "pain_severitynotclassified",
@@ -2727,7 +3271,9 @@
     "IsRequired": false,
     "Label": "Pain [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "bleeding_mild",
@@ -2737,7 +3283,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "bleeding_moderate",
@@ -2747,7 +3295,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "bleeding_severe",
@@ -2757,7 +3307,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "bleeding_severitynotclassified",
@@ -2767,7 +3319,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "damagetopenis_mild",
@@ -2777,7 +3331,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "damagetopenis_moderate",
@@ -2787,7 +3343,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "damagetopenis_severe",
@@ -2797,7 +3355,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "damagetopenis_severitynotclassified",
@@ -2807,7 +3367,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "infection_mild",
@@ -2817,7 +3379,9 @@
     "IsRequired": false,
     "Label": "Infection [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "infection_moderate",
@@ -2827,7 +3391,9 @@
     "IsRequired": false,
     "Label": "Infection [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "infection_severe",
@@ -2837,7 +3403,9 @@
     "IsRequired": false,
     "Label": "Infection [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "infection_severitynotclassified",
@@ -2847,7 +3415,9 @@
     "IsRequired": false,
     "Label": "Infection [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "hematoma_mild",
@@ -2857,7 +3427,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "hematoma_moderate",
@@ -2867,7 +3439,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "hematoma_severe",
@@ -2877,7 +3451,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "hematoma_severitynotclassified",
@@ -2887,7 +3463,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "edema_swelling_mild",
@@ -2897,7 +3475,9 @@
     "IsRequired": false,
     "Label": "Edema_Swelling [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "edema_swelling_moderate",
@@ -2907,7 +3487,9 @@
     "IsRequired": false,
     "Label": "Edema_Swelling [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "edema_swelling_severe",
@@ -2917,7 +3499,9 @@
     "IsRequired": false,
     "Label": "Edema_Swelling [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "edema_swelling_severitynotclassified",
@@ -2927,7 +3511,9 @@
     "IsRequired": false,
     "Label": "Edema_Swelling [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "problemsvoiding_mild",
@@ -2937,7 +3523,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "problemsvoiding_moderate",
@@ -2947,7 +3535,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "problemsvoiding_severe",
@@ -2957,7 +3547,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "problemsvoiding_severitynotclassified",
@@ -2967,7 +3559,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "wounddehiscence_mild",
@@ -2977,7 +3571,9 @@
     "IsRequired": false,
     "Label": "Wound dehiscence [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "wounddehiscence"
+    "fieldName": "wounddehiscence",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "wounddehiscence_moderate",
@@ -2987,7 +3583,9 @@
     "IsRequired": false,
     "Label": "Wound dehiscence [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "wounddehiscence"
+    "fieldName": "wounddehiscence",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "wounddehiscence_severe",
@@ -2997,7 +3595,9 @@
     "IsRequired": false,
     "Label": "Wound dehiscence [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "wounddehiscence"
+    "fieldName": "wounddehiscence",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "wounddehiscence_severitynotclassified",
@@ -3007,7 +3607,9 @@
     "IsRequired": false,
     "Label": "Wound dehiscence [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "wounddehiscence"
+    "fieldName": "wounddehiscence",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "excessskinremoved_mild",
@@ -3017,7 +3619,9 @@
     "IsRequired": false,
     "Label": "Excess skin removed [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "excessskinremoved"
+    "fieldName": "excessskinremoved",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "excessskinremoved_moderate",
@@ -3027,7 +3631,9 @@
     "IsRequired": false,
     "Label": "Excess skin removed [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "excessskinremoved"
+    "fieldName": "excessskinremoved",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "excessskinremoved_severe",
@@ -3037,7 +3643,9 @@
     "IsRequired": false,
     "Label": "Excess skin removed [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "excessskinremoved"
+    "fieldName": "excessskinremoved",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "excessskinremoved_severitynotclassified",
@@ -3047,7 +3655,9 @@
     "IsRequired": false,
     "Label": "Excess skin removed [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "excessskinremoved"
+    "fieldName": "excessskinremoved",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "insufficiientskinremoved_mild",
@@ -3057,7 +3667,9 @@
     "IsRequired": false,
     "Label": "Insufficiient skin removed [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "insufficiientskinremoved"
+    "fieldName": "insufficiientskinremoved",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "insufficiientskinremoved_moderate",
@@ -3067,7 +3679,9 @@
     "IsRequired": false,
     "Label": "Insufficiient skin removed [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "insufficiientskinremoved"
+    "fieldName": "insufficiientskinremoved",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "insufficiientskinremoved_severe",
@@ -3077,7 +3691,9 @@
     "IsRequired": false,
     "Label": "Insufficiient skin removed [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "insufficiientskinremoved"
+    "fieldName": "insufficiientskinremoved",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "insufficiientskinremoved_severitynotclassified",
@@ -3087,7 +3703,9 @@
     "IsRequired": false,
     "Label": "Insufficiient skin removed [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "insufficiientskinremoved"
+    "fieldName": "insufficiientskinremoved",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "torsion_mild",
@@ -3097,7 +3715,9 @@
     "IsRequired": false,
     "Label": "Torsion [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "torsion"
+    "fieldName": "torsion",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "torsion_moderate",
@@ -3107,7 +3727,9 @@
     "IsRequired": false,
     "Label": "Torsion [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "torsion"
+    "fieldName": "torsion",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "torsion_severe",
@@ -3117,7 +3739,9 @@
     "IsRequired": false,
     "Label": "Torsion [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "torsion"
+    "fieldName": "torsion",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "torsion_severitynotclassified",
@@ -3127,7 +3751,9 @@
     "IsRequired": false,
     "Label": "Torsion [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "torsion"
+    "fieldName": "torsion",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "delayedwouldhealing_mild",
@@ -3137,7 +3763,9 @@
     "IsRequired": false,
     "Label": "Delayed would healing [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "delayedwouldhealing"
+    "fieldName": "delayedwouldhealing",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "delayedwouldhealing_moderate",
@@ -3147,7 +3775,9 @@
     "IsRequired": false,
     "Label": "Delayed would healing [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "delayedwouldhealing"
+    "fieldName": "delayedwouldhealing",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "delayedwouldhealing_severe",
@@ -3157,7 +3787,9 @@
     "IsRequired": false,
     "Label": "Delayed would healing [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "delayedwouldhealing"
+    "fieldName": "delayedwouldhealing",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "delayedwouldhealing_severitynotclassified",
@@ -3167,7 +3799,9 @@
     "IsRequired": false,
     "Label": "Delayed would healing [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "delayedwouldhealing"
+    "fieldName": "delayedwouldhealing",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "scarring_disfigurement_mild",
@@ -3177,7 +3811,9 @@
     "IsRequired": false,
     "Label": "Scarring_disfigurement [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "scarring_disfigurement"
+    "fieldName": "scarring_disfigurement",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "scarring_disfigurement_moderate",
@@ -3187,7 +3823,9 @@
     "IsRequired": false,
     "Label": "Scarring_disfigurement [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "scarring_disfigurement"
+    "fieldName": "scarring_disfigurement",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "scarring_disfigurement_severe",
@@ -3197,7 +3835,9 @@
     "IsRequired": false,
     "Label": "Scarring_disfigurement [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "scarring_disfigurement"
+    "fieldName": "scarring_disfigurement",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "scarring_disfigurement_severitynotclassified",
@@ -3207,7 +3847,9 @@
     "IsRequired": false,
     "Label": "Scarring_disfigurement [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "scarring_disfigurement"
+    "fieldName": "scarring_disfigurement",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "psychological_mild",
@@ -3217,7 +3859,9 @@
     "IsRequired": false,
     "Label": "Psychological [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "psychological_moderate",
@@ -3227,7 +3871,9 @@
     "IsRequired": false,
     "Label": "Psychological [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "psychological_severe",
@@ -3237,7 +3883,9 @@
     "IsRequired": false,
     "Label": "Psychological [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "psychological_severitynotclassified",
@@ -3247,7 +3895,9 @@
     "IsRequired": false,
     "Label": "Psychological [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "erectiledysfunction_mild",
@@ -3257,7 +3907,9 @@
     "IsRequired": false,
     "Label": "Erectile dysfunction [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "erectiledysfunction"
+    "fieldName": "erectiledysfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "erectiledysfunction_moderate",
@@ -3267,7 +3919,9 @@
     "IsRequired": false,
     "Label": "Erectile dysfunction [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "erectiledysfunction"
+    "fieldName": "erectiledysfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "erectiledysfunction_severe",
@@ -3277,7 +3931,9 @@
     "IsRequired": false,
     "Label": "Erectile dysfunction [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "erectiledysfunction"
+    "fieldName": "erectiledysfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "erectiledysfunction_severitynotclassified",
@@ -3287,7 +3943,9 @@
     "IsRequired": false,
     "Label": "Erectile dysfunction [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "erectiledysfunction"
+    "fieldName": "erectiledysfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "clinicaldisposition",
@@ -3297,7 +3955,9 @@
     "IsRequired": false,
     "Label": "Clinical Disposition of Client",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dischargedby",
@@ -3307,7 +3967,9 @@
     "IsRequired": false,
     "Label": "Discharged by (Name)",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "signed_yes",
@@ -3317,7 +3979,9 @@
     "IsRequired": false,
     "Label": "Signed [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "signed"
+    "fieldName": "signed",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "signed_no",
@@ -3327,7 +3991,9 @@
     "IsRequired": false,
     "Label": "Signed [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "signed"
+    "fieldName": "signed",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "date_firstedited",
@@ -3337,7 +4003,9 @@
     "IsRequired": true,
     "Label": "Date of Data Entry",
     "fieldType": "today",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "data_entered_by",
@@ -3347,7 +4015,9 @@
     "IsRequired": true,
     "Label": "Data Entry By",
     "fieldType": "username",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "facilityname",
@@ -3357,7 +4027,9 @@
     "IsRequired": false,
     "Label": "Facility",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dateofvisit",
@@ -3367,7 +4039,9 @@
     "IsRequired": true,
     "Label": "Date of Visit",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "cardserialnumber",
@@ -3377,7 +4051,9 @@
     "IsRequired": true,
     "Label": "Card Serial Number",
     "fieldType": "int",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientidnumber",
@@ -3387,7 +4063,9 @@
     "IsRequired": true,
     "Label": "Client ID Number",
     "fieldType": "int",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "dateofplacement",
@@ -3397,7 +4075,9 @@
     "IsRequired": false,
     "Label": "Date of Placement",
     "fieldType": "Date",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientname",
@@ -3407,7 +4087,9 @@
     "IsRequired": true,
     "Label": "Client Name",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clientsphysicaladdress",
@@ -3417,7 +4099,9 @@
     "IsRequired": true,
     "Label": "Clients Physical Address",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "clienttel",
@@ -3427,7 +4111,9 @@
     "IsRequired": true,
     "Label": "Client Tel",
     "fieldType": "Cell",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "isaplannedfupphonecall_yes",
@@ -3437,7 +4123,9 @@
     "IsRequired": false,
     "Label": "Planned Followup Call [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "isaplannedfupphonecall"
+    "fieldName": "isaplannedfupphonecall",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "isaplannedfupphonecall_no",
@@ -3447,7 +4135,9 @@
     "IsRequired": false,
     "Label": "Planned Followup Call [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "isaplannedfupphonecall"
+    "fieldName": "isaplannedfupphonecall",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "typeoffollowup_telephonecall",
@@ -3457,7 +4147,9 @@
     "IsRequired": false,
     "Label": "Follow Up Type [Telephone Call]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeoffollowup"
+    "fieldName": "typeoffollowup",
+    "listName": "followup_type",
+    "lookupValue": "Telephone Call"
   },
   {
     "name": "typeoffollowup_physicalvisit",
@@ -3467,7 +4159,9 @@
     "IsRequired": false,
     "Label": "Follow Up Type [Physical Visit]",
     "fieldType": "SingleSelect",
-    "fieldName": "typeoffollowup"
+    "fieldName": "typeoffollowup",
+    "listName": "followup_type",
+    "lookupValue": "Physical Visit"
   },
   {
     "name": "clinicalcourse",
@@ -3477,7 +4171,9 @@
     "IsRequired": false,
     "Label": "Clinical course leading to",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "careprovided",
@@ -3487,7 +4183,9 @@
     "IsRequired": false,
     "Label": "Care Provided (if any)",
     "fieldType": "Text",
-    "fieldName": ""
+    "fieldName": "",
+    "listName": null,
+    "lookupValue": null
   },
   {
     "name": "aesswhilewearing_noadverseeventsdiagnosed",
@@ -3497,7 +4195,9 @@
     "IsRequired": false,
     "Label": "Any Adverse Events during week of Device Wearing [No Adverse events diagnosed]",
     "fieldType": "SingleSelect",
-    "fieldName": "aesswhilewearing"
+    "fieldName": "aesswhilewearing",
+    "listName": "aes_diagnosed",
+    "lookupValue": "No Adverse events diagnosed"
   },
   {
     "name": "aesswhilewearing_adverseeventsdiagnosed",
@@ -3507,7 +4207,9 @@
     "IsRequired": false,
     "Label": "Any Adverse Events during week of Device Wearing [Adverse events diagnosed]",
     "fieldType": "SingleSelect",
-    "fieldName": "aesswhilewearing"
+    "fieldName": "aesswhilewearing",
+    "listName": "aes_diagnosed",
+    "lookupValue": "Adverse events diagnosed"
   },
   {
     "name": "pain_mild",
@@ -3517,7 +4219,9 @@
     "IsRequired": false,
     "Label": "Pain [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "pain_moderate",
@@ -3527,7 +4231,9 @@
     "IsRequired": false,
     "Label": "Pain [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "pain_severe",
@@ -3537,7 +4243,9 @@
     "IsRequired": false,
     "Label": "Pain [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "pain_severitynotclassified",
@@ -3547,7 +4255,9 @@
     "IsRequired": false,
     "Label": "Pain [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "pain"
+    "fieldName": "pain",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "bleeding_mild",
@@ -3557,7 +4267,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "bleeding_moderate",
@@ -3567,7 +4279,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "bleeding_severe",
@@ -3577,7 +4291,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "bleeding_severitynotclassified",
@@ -3587,7 +4303,9 @@
     "IsRequired": false,
     "Label": "Bleeding [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "bleeding"
+    "fieldName": "bleeding",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "damagetopenis_mild",
@@ -3597,7 +4315,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "damagetopenis_moderate",
@@ -3607,7 +4327,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "damagetopenis_severe",
@@ -3617,7 +4339,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "damagetopenis_severitynotclassified",
@@ -3627,7 +4351,9 @@
     "IsRequired": false,
     "Label": "Damage to penis [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "damagetopenis"
+    "fieldName": "damagetopenis",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "infection_mild",
@@ -3637,7 +4363,9 @@
     "IsRequired": false,
     "Label": "Infection [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "infection_moderate",
@@ -3647,7 +4375,9 @@
     "IsRequired": false,
     "Label": "Infection [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "infection_severe",
@@ -3657,7 +4387,9 @@
     "IsRequired": false,
     "Label": "Infection [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "infection_severitynotclassified",
@@ -3667,7 +4399,9 @@
     "IsRequired": false,
     "Label": "Infection [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "infection"
+    "fieldName": "infection",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "hematoma_mild",
@@ -3677,7 +4411,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "hematoma_moderate",
@@ -3687,7 +4423,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "hematoma_severe",
@@ -3697,7 +4435,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "hematoma_severitynotclassified",
@@ -3707,7 +4447,9 @@
     "IsRequired": false,
     "Label": "Hematoma [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "hematoma"
+    "fieldName": "hematoma",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "edema_swelling_mild",
@@ -3717,7 +4459,9 @@
     "IsRequired": false,
     "Label": "Edema / Swelling [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "edema_swelling_moderate",
@@ -3727,7 +4471,9 @@
     "IsRequired": false,
     "Label": "Edema / Swelling [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "edema_swelling_severe",
@@ -3737,7 +4483,9 @@
     "IsRequired": false,
     "Label": "Edema / Swelling [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "edema_swelling_severitynotclassified",
@@ -3747,7 +4495,9 @@
     "IsRequired": false,
     "Label": "Edema / Swelling [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "edema_swelling"
+    "fieldName": "edema_swelling",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "problemsvoiding_mild",
@@ -3757,7 +4507,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "problemsvoiding_moderate",
@@ -3767,7 +4519,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "problemsvoiding_severe",
@@ -3777,7 +4531,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "problemsvoiding_severitynotclassified",
@@ -3787,7 +4543,9 @@
     "IsRequired": false,
     "Label": "Problems voiding [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "problemsvoiding"
+    "fieldName": "problemsvoiding",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "psychological_mild",
@@ -3797,7 +4555,9 @@
     "IsRequired": false,
     "Label": "Psychological [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "psychological_moderate",
@@ -3807,7 +4567,9 @@
     "IsRequired": false,
     "Label": "Psychological [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "psychological_severe",
@@ -3817,7 +4579,9 @@
     "IsRequired": false,
     "Label": "Psychological [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "psychological_severitynotclassified",
@@ -3827,7 +4591,9 @@
     "IsRequired": false,
     "Label": "Psychological [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "psychological"
+    "fieldName": "psychological",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "requestingearlyremoval_mild",
@@ -3837,7 +4603,9 @@
     "IsRequired": false,
     "Label": "Requesting early removal [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "requestingearlyremoval"
+    "fieldName": "requestingearlyremoval",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "requestingearlyremoval_moderate",
@@ -3847,7 +4615,9 @@
     "IsRequired": false,
     "Label": "Requesting early removal [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "requestingearlyremoval"
+    "fieldName": "requestingearlyremoval",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "requestingearlyremoval_severe",
@@ -3857,7 +4627,9 @@
     "IsRequired": false,
     "Label": "Requesting early removal [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "requestingearlyremoval"
+    "fieldName": "requestingearlyremoval",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "requestingearlyremoval_severitynotclassified",
@@ -3867,7 +4639,9 @@
     "IsRequired": false,
     "Label": "Requesting early removal [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "requestingearlyremoval"
+    "fieldName": "requestingearlyremoval",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "devicemalfunction_mild",
@@ -3877,7 +4651,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "devicemalfunction_moderate",
@@ -3887,7 +4663,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "devicemalfunction_severe",
@@ -3897,7 +4675,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "devicemalfunction_severitynotclassified",
@@ -3907,7 +4687,9 @@
     "IsRequired": false,
     "Label": "Device malfunction [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicemalfunction"
+    "fieldName": "devicemalfunction",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "devicedisplacement_mild",
@@ -3917,7 +4699,9 @@
     "IsRequired": false,
     "Label": "Device displacement [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicedisplacement"
+    "fieldName": "devicedisplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "devicedisplacement_moderate",
@@ -3927,7 +4711,9 @@
     "IsRequired": false,
     "Label": "Device displacement [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicedisplacement"
+    "fieldName": "devicedisplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "devicedisplacement_severe",
@@ -3937,7 +4723,9 @@
     "IsRequired": false,
     "Label": "Device displacement [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicedisplacement"
+    "fieldName": "devicedisplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "devicedisplacement_severitynotclassified",
@@ -3947,7 +4735,9 @@
     "IsRequired": false,
     "Label": "Device displacement [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "devicedisplacement"
+    "fieldName": "devicedisplacement",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "prematuredifferentialsloughing_mild",
@@ -3957,7 +4747,9 @@
     "IsRequired": false,
     "Label": "Premature differential sloughing [Mild]",
     "fieldType": "SingleSelect",
-    "fieldName": "prematuredifferentialsloughing"
+    "fieldName": "prematuredifferentialsloughing",
+    "listName": "ae_severity",
+    "lookupValue": "Mild"
   },
   {
     "name": "prematuredifferentialsloughing_moderate",
@@ -3967,7 +4759,9 @@
     "IsRequired": false,
     "Label": "Premature differential sloughing [Moderate]",
     "fieldType": "SingleSelect",
-    "fieldName": "prematuredifferentialsloughing"
+    "fieldName": "prematuredifferentialsloughing",
+    "listName": "ae_severity",
+    "lookupValue": "Moderate"
   },
   {
     "name": "prematuredifferentialsloughing_severe",
@@ -3977,7 +4771,9 @@
     "IsRequired": false,
     "Label": "Premature differential sloughing [Severe]",
     "fieldType": "SingleSelect",
-    "fieldName": "prematuredifferentialsloughing"
+    "fieldName": "prematuredifferentialsloughing",
+    "listName": "ae_severity",
+    "lookupValue": "Severe"
   },
   {
     "name": "prematuredifferentialsloughing_severitynotclassified",
@@ -3987,7 +4783,9 @@
     "IsRequired": false,
     "Label": "Premature differential sloughing [Severity not classified]",
     "fieldType": "SingleSelect",
-    "fieldName": "prematuredifferentialsloughing"
+    "fieldName": "prematuredifferentialsloughing",
+    "listName": "ae_severity",
+    "lookupValue": "Severity not classified"
   },
   {
     "name": "notmovedevice_yes",
@@ -3997,7 +4795,9 @@
     "IsRequired": false,
     "Label": "Not to move the device [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "notmovedevice"
+    "fieldName": "notmovedevice",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "notmovedevice_no",
@@ -4007,7 +4807,9 @@
     "IsRequired": false,
     "Label": "Not to move the device [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "notmovedevice"
+    "fieldName": "notmovedevice",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "removalonday7_yes",
@@ -4017,7 +4819,9 @@
     "IsRequired": false,
     "Label": "To return for removal on day 7 [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "removalonday7"
+    "fieldName": "removalonday7",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "removalonday7_no",
@@ -4027,7 +4831,9 @@
     "IsRequired": false,
     "Label": "To return for removal on day 7 [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "removalonday7"
+    "fieldName": "removalonday7",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "returnifwantsdeviceremoved_yes",
@@ -4037,7 +4843,9 @@
     "IsRequired": false,
     "Label": "To return if he wants device removed before Day 7 [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "returnifwantsdeviceremoved"
+    "fieldName": "returnifwantsdeviceremoved",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "returnifwantsdeviceremoved_no",
@@ -4047,7 +4855,9 @@
     "IsRequired": false,
     "Label": "To return if he wants device removed before Day 7 [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "returnifwantsdeviceremoved"
+    "fieldName": "returnifwantsdeviceremoved",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "notremovedevice_yes",
@@ -4057,7 +4867,9 @@
     "IsRequired": false,
     "Label": "Not to remove the device or allow anyone to remove [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "notremovedevice"
+    "fieldName": "notremovedevice",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "notremovedevice_no",
@@ -4067,7 +4879,9 @@
     "IsRequired": false,
     "Label": "Not to remove the device or allow anyone to remove [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "notremovedevice"
+    "fieldName": "notremovedevice",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "notpullforeskin_yes",
@@ -4077,7 +4891,9 @@
     "IsRequired": false,
     "Label": "Not to pull foreskin in case of partial detachment [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "notpullforeskin"
+    "fieldName": "notpullforeskin",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "notpullforeskin_no",
@@ -4087,7 +4903,9 @@
     "IsRequired": false,
     "Label": "Not to pull foreskin in case of partial detachment [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "notpullforeskin"
+    "fieldName": "notpullforeskin",
+    "listName": "yes_no",
+    "lookupValue": "No"
   },
   {
     "name": "nosexmastrubation_yes",
@@ -4097,7 +4915,9 @@
     "IsRequired": false,
     "Label": "No sexual intercourse or masturbation [Yes]",
     "fieldType": "SingleSelect",
-    "fieldName": "nosexmastrubation"
+    "fieldName": "nosexmastrubation",
+    "listName": "yes_no",
+    "lookupValue": "Yes"
   },
   {
     "name": "nosexmastrubation_no",
@@ -4107,6 +4927,8 @@
     "IsRequired": false,
     "Label": "No sexual intercourse or masturbation [No]",
     "fieldType": "SingleSelect",
-    "fieldName": "nosexmastrubation"
+    "fieldName": "nosexmastrubation",
+    "listName": "yes_no",
+    "lookupValue": "No"
   }
 ]

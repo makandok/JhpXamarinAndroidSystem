@@ -17,6 +17,8 @@ namespace ExcelToAndroidXML
         public string Label { get; set; }
         public string fieldType { get; set; }
         public string fieldName { get; set; }
-        //public List<string> options { get; set; }
+        public string listName { get; set; }
+        public string lookupValue { get; set; }
+        public bool IsDeprecated { get; set; }
     }
 }

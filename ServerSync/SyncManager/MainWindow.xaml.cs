@@ -66,7 +66,8 @@ namespace ServerSync
 
         private void MenuConfigure_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Menu item clicked ");
+            AppInstance.Instance.updateFieldDictionary();
+            //MessageBox.Show("Menu item clicked ");
         }
 
         private async void MenuServerSync_Click(object sender, RoutedEventArgs e)

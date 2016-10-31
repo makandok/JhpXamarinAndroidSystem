@@ -30,6 +30,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="vertical"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_typeofsite" >
@@ -121,42 +122,49 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_howclientlearnt" /> <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_friendfamily"
              android:id="@+id/howclientlearnt_friendfamily" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_partnerspouse"
              android:id="@+id/howclientlearnt_partnerspouse" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_healthworker"
              android:id="@+id/howclientlearnt_healthworker" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_posternewspaperleaflet"
              android:id="@+id/howclientlearnt_posternewspaperleaflet" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_otherclient"
              android:id="@+id/howclientlearnt_otherclient" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_communitymobilizer"
              android:id="@+id/howclientlearnt_communitymobilizer" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_tvradio"
@@ -181,48 +189,56 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_primaryreasoncirc" /> <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_partialhivprotecction"
              android:id="@+id/primaryreasoncirc_partialhivprotecction" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_sexualpleasure"
              android:id="@+id/primaryreasoncirc_sexualpleasure" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_stiprotection"
              android:id="@+id/primaryreasoncirc_stiprotection" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_medical"
              android:id="@+id/primaryreasoncirc_medical" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_appearance"
              android:id="@+id/primaryreasoncirc_appearance" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_hygiene"
              android:id="@+id/primaryreasoncirc_hygiene" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_culturalsocialreligious"
              android:id="@+id/primaryreasoncirc_culturalsocialreligious" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_other"
@@ -255,6 +271,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="vertical"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_hivstatus" >

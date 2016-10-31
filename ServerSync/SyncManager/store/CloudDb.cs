@@ -602,6 +602,7 @@ namespace JhpDataSystem.store
                 {
                     //we decrypt
                     var localEntity = entityConverter.toLocalEntity(entity);
+                    localEntity.FormName = table;
                     var saved = localStore.Update(localEntity);
                     if (saved == null)
                     {

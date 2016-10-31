@@ -211,6 +211,7 @@ namespace ExcelToAndroidXML
                     name = stringsEntryName,
                     IsIndexed = field.IsIndexed == "1",
                     IsRequired = field.IsIndexed == "1",
+                    IsDeprecated = field.IsDeprecated == "1",
                     Label = field.DisplayLabel,
                     pageName = ViewPageName
                     ,fieldType = field.ViewType
@@ -278,6 +279,7 @@ namespace ExcelToAndroidXML
                     name = stringsEntryName,
                     IsIndexed = field.IsIndexed == "1",
                     IsRequired = field.IsIndexed == "1",
+                    IsDeprecated = field.IsDeprecated == "1",
                     Label = field.DisplayLabel,
                     pageName = ViewPageName,
                     fieldType = field.ViewType,
@@ -368,27 +370,16 @@ android:textAppearance='?android:attr/textAppearanceMedium'
             return fieldXml.Replace("'", "\"");
         }
 
-//        string getXamlLabelDefForRadioGroup(FieldDefinition field)
-//        {
-//            var stringsEntryName = field.ViewName;
-//            var fieldXml = (@"
-//<RadioGroup
-//android:orientation='horizontal'
-//        android:minWidth='25dp'
-//        android:minHeight='25dp'
-//        android:layout_width='match_parent'
-//        android:layout_height='wrap_content'
-//        android:id='@+id/rg_" + stringsEntryName + "' >");
-//            return fieldXml.Replace("'", "\"");
-//        }
         string getXamlLabelDefForRadioGroup(FieldDefinition field, bool setVertical)
         {
             var stringsEntryName = field.ViewName;
+            var visibility = field.IsDeprecated == "1" ? "gone" : "visible";
             var fieldXml = (@"
 <RadioGroup
 android:orientation='" + (setVertical ? "vertical" : "horizontal") + @"'
         android:minWidth='25dp'
         android:minHeight='25dp'
+        android:visibility='" + visibility + @"'
         android:layout_width='match_parent'
         android:layout_height='wrap_content'
         android:id='@+id/rg_" + stringsEntryName + "' >");
@@ -397,11 +388,13 @@ android:orientation='" + (setVertical ? "vertical" : "horizontal") + @"'
         List<string> getXamlLabelDefForCheckBox(FieldDefinition field)
         {
             var fieldOptionDefinitions = new List<string>();
+            var visibility = field.IsDeprecated == "1" ? "gone" : "visible";
             foreach (var option in field.FieldOptions.Values)
             {
                 var optionName = field.ViewName + "_" + option.Clean();
             var fieldXml = (@" <CheckBox
             android:layout_width='wrap_content'
+            android:visibility='" + visibility + @"'
             android:layout_height='wrap_content'
             android:checked='false'
              android:text='@string/" + optionName + @"'
@@ -414,10 +407,13 @@ android:orientation='" + (setVertical ? "vertical" : "horizontal") + @"'
                         name = optionName,
                         IsIndexed = field.IsIndexed == "1",
                         IsRequired = field.IsIndexed == "1",
+                        IsDeprecated = field.IsDeprecated == "1",
                         Label = field.DisplayLabel + " [" + option + "]",
                         pageName = ViewPageName,
                         fieldType = field.ViewType,
-                        fieldName = field.ViewName
+                        fieldName = field.ViewName,
+                        listName = field.ListName,
+                        lookupValue = option
                     });
                 metaDataProvider.AddStringResource(optionName, option);
 
@@ -467,10 +463,13 @@ android:id='@+id/" + optionName + "' />"
                         name = optionName,
                         IsIndexed = field.IsIndexed == "1",
                         IsRequired = field.IsIndexed == "1",
+                        IsDeprecated = field.IsDeprecated == "1",
                         Label = field.DisplayLabel + " [" + option + "]",
                         pageName = ViewPageName,
                         fieldType = field.ViewType,
-                        fieldName = field.ViewName
+                        fieldName = field.ViewName,
+                        listName = field.ListName,
+                        lookupValue = option
                     });
 
                 fieldOptionDefinitions.Add(fieldXml.Replace("'", "\""));
