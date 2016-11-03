@@ -12,7 +12,7 @@ GO
 
 if object_id('pp_client_eval_func') is not null drop function pp_client_eval_func
 go
-create FUNCTION pp_client_eval_func() RETURNS TABLE AS return (
+CREATE FUNCTION [dbo].[pp_client_eval_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
@@ -27,7 +27,11 @@ from (
 		select FieldValue, case when RecordId is null then 0 else RecordId end as RecordId, d.* 
 		from DataDictionaryForTable('ppx','pp_client_eval') d 
 		left join 
-		pp_client_eval_local_fvs fvs on d.longname = fvs.fieldname
+		(
+		select * from 
+		pp_client_eval_local_fvs where recordid is not null
+		) fvs on d.longname = fvs.fieldname
+
 	)b
 ) dataset
 )
@@ -35,7 +39,7 @@ GO
 
 if object_id('pp_client_devicerem_func') is not null drop function pp_client_devicerem_func
 go
-create FUNCTION pp_client_devicerem_func() RETURNS TABLE AS return (
+CREATE FUNCTION [dbo].[pp_client_devicerem_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
@@ -50,15 +54,19 @@ from (
 		select FieldValue, case when RecordId is null then 0 else RecordId end as RecordId, d.* 
 		from DataDictionaryForTable('ppx','pp_client_devicerem') d 
 		left join 
-		pp_client_devicerem_local_fvs fvs on d.longname = fvs.fieldname
+		(
+		select * from 
+		pp_client_devicerem_local_fvs where recordid is not null
+		) fvs on d.longname = fvs.fieldname
 	)b
 ) dataset
 )
 GO
 
+
 if object_id('pp_client_postrem_func') is not null drop function pp_client_postrem_func
 go
-create FUNCTION pp_client_postrem_func() RETURNS TABLE AS return (
+CREATE FUNCTION [dbo].[pp_client_postrem_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
@@ -73,7 +81,10 @@ from (
 		select FieldValue, case when RecordId is null then 0 else RecordId end as RecordId, d.* 
 		from DataDictionaryForTable('ppx','pp_client_postrem') d 
 		left join 
-		pp_client_postrem_local_fvs fvs on d.longname = fvs.fieldname
+		(
+		select * from 
+		pp_client_postrem_local_fvs where recordid is not null
+		) fvs on d.longname = fvs.fieldname
 	)b
 ) dataset
 )
@@ -81,7 +92,7 @@ GO
 
 if object_id('pp_client_unsched_func') is not null drop function pp_client_unsched_func
 go
-create FUNCTION pp_client_unsched_func() RETURNS TABLE AS return (
+CREATE FUNCTION [dbo].[pp_client_unsched_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
@@ -101,7 +112,11 @@ from (
 		select FieldValue, case when RecordId is null then 0 else RecordId end as RecordId, d.* 
 		from DataDictionaryForTable('ppx','pp_client_unsched') d 
 		left join 
-		pp_client_unsched_local_fvs fvs on d.longname = fvs.fieldname
+		(
+		select * from 
+		pp_client_unsched_local_fvs where recordid is not null
+		) fvs on d.longname = fvs.fieldname
+
 	)b
 ) dataset
 )
@@ -110,7 +125,7 @@ GO
 
 if object_id('vmmc_regandproc_func') is not null drop function vmmc_regandproc_func
 go
-create FUNCTION vmmc_regandproc_func() RETURNS TABLE AS return (
+CREATE FUNCTION [dbo].[vmmc_regandproc_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
@@ -125,7 +140,10 @@ from (
 		select FieldValue, case when RecordId is null then 0 else RecordId end as RecordId, d.* 
 		from DataDictionaryForTable('vmc','vmmc_regandproc') d 
 		left join 
-		vmmc_regandproc_local_fvs fvs on d.longname = fvs.fieldname
+		(
+		select * from 
+		vmmc_regandproc_local_fvs where recordid is not null
+		) fvs on d.longname = fvs.fieldname
 	)b
 ) dataset
 )
@@ -134,7 +152,7 @@ GO
 
 if object_id('vmmc_postop_func') is not null drop function vmmc_postop_func
 go
-create FUNCTION vmmc_postop_func() RETURNS TABLE AS return (
+CREATE FUNCTION [dbo].[vmmc_postop_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
@@ -149,7 +167,10 @@ from (
 		select FieldValue, case when RecordId is null then 0 else RecordId end as RecordId, d.* 
 		from DataDictionaryForTable('vmc','vmmc_postop') d 
 		left join 
-		vmmc_postop_local_fvs fvs on d.longname = fvs.fieldname
+		(
+		select * from 
+		vmmc_postop_local_fvs where recordid is not null
+		) fvs on d.longname = fvs.fieldname
 	)b
 ) dataset
 )

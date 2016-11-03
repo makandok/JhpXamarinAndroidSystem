@@ -11,7 +11,7 @@ namespace JhpDataSystem.store
     {
         public CloudLocalStore(KindName tableName) : base(tableName.Value)
         {
-            createKindSql = "if object_id('{0}') is null create table {0}(recordid int identity(1,1), id nvarchar(32) primary key, entityid nvarchar(32), kindmetadata nvarchar(1000), editday int, editdate bigint, datablob nvarchar(max));";
+            createKindSql = "if object_id('{0}') is null create table {0}(recordid int identity(1,1)  primary key, id nvarchar(32) not null unique, entityid nvarchar(32), kindmetadata nvarchar(1000), editday int, editdate bigint, datablob nvarchar(max));";
             insertSql =
                 @"
                 begin tran
