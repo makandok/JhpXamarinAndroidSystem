@@ -170,6 +170,7 @@
     <Compile Include="store\MultiTableStore.cs" />
     <Compile Include="store\ProcessLogger.cs" />
     <Compile Include="store\TableStore.cs" />
+    <Compile Include="store\UniqueIdentifierMap.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

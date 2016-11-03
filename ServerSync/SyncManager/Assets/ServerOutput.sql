@@ -9,17 +9,18 @@ select * From DataDictionary where project = '' or (project =@project and tablen
 ) 
 GO
 
-
 if object_id('pp_client_eval_func') is not null drop function pp_client_eval_func
 go
-CREATE FUNCTION [dbo].[pp_client_eval_func]() RETURNS TABLE AS return (
+create FUNCTION [dbo].[pp_client_eval_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
 	 GeneralLabel
 	, case when len(groupkey) > 0 then groupkey +'_'+ VariableName else VariableName end FullVariableName
 	, case when lookupcode is null then 0 else 1 end as IsCodedValue
-	, case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end as Value,
+			, case when datatype = 'checkbox' then '1'
+	else case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end 
+	end as Value,
 	VariableName as GeneralVariableName,
 	label DescriptiveLabel, longname uniquename
 	From 
@@ -39,14 +40,17 @@ GO
 
 if object_id('pp_client_devicerem_func') is not null drop function pp_client_devicerem_func
 go
-CREATE FUNCTION [dbo].[pp_client_devicerem_func]() RETURNS TABLE AS return (
+create FUNCTION [dbo].[pp_client_devicerem_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
 	 GeneralLabel
 	, case when len(groupkey) > 0 then groupkey +'_'+ VariableName else VariableName end FullVariableName
 	, case when lookupcode is null then 0 else 1 end as IsCodedValue
-	, case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end as Value,
+	--, case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end as Value,
+		, case when datatype = 'checkbox' then '1'
+	else case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end 
+	end as Value,
 	VariableName as GeneralVariableName,
 	label DescriptiveLabel, longname uniquename
 	From 
@@ -63,17 +67,18 @@ from (
 )
 GO
 
-
 if object_id('pp_client_postrem_func') is not null drop function pp_client_postrem_func
 go
-CREATE FUNCTION [dbo].[pp_client_postrem_func]() RETURNS TABLE AS return (
+ALTER FUNCTION [dbo].[pp_client_postrem_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
 	 GeneralLabel
 	, case when len(groupkey) > 0 then groupkey +'_'+ VariableName else VariableName end FullVariableName
 	, case when lookupcode is null then 0 else 1 end as IsCodedValue
-	, case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end as Value,
+				, case when datatype = 'checkbox' then '1'
+	else case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end 
+	end as Value,
 	VariableName as GeneralVariableName,
 	label DescriptiveLabel, longname uniquename
 	From 
@@ -92,14 +97,16 @@ GO
 
 if object_id('pp_client_unsched_func') is not null drop function pp_client_unsched_func
 go
-CREATE FUNCTION [dbo].[pp_client_unsched_func]() RETURNS TABLE AS return (
+create FUNCTION [dbo].[pp_client_unsched_func]() RETURNS TABLE AS return (
 select RecordId, Serial, GeneralLabel,FullVariableName,IsCodedValue,Value,GeneralVariableName
 from (
 	select RecordId, Serial, 
 	 GeneralLabel
 	, case when len(groupkey) > 0 then groupkey +'_'+ VariableName else VariableName end FullVariableName
 	, case when lookupcode is null then 0 else 1 end as IsCodedValue
-	, case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end as Value,
+					, case when datatype = 'checkbox' then '1'
+	else case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end 
+	end as Value,
 	VariableName as GeneralVariableName,
 	label DescriptiveLabel, longname uniquename
 	From 
@@ -122,7 +129,6 @@ from (
 )
 GO
 
-
 if object_id('vmmc_regandproc_func') is not null drop function vmmc_regandproc_func
 go
 CREATE FUNCTION [dbo].[vmmc_regandproc_func]() RETURNS TABLE AS return (
@@ -132,14 +138,16 @@ from (
 	 GeneralLabel
 	, case when len(groupkey) > 0 then groupkey +'_'+ VariableName else VariableName end FullVariableName
 	, case when lookupcode is null then 0 else 1 end as IsCodedValue
-	, case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end as Value,
+	, case when datatype = 'checkbox' then '1'
+	else case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end 
+	end as Value,
 	VariableName as GeneralVariableName,
 	label DescriptiveLabel, longname uniquename
 	From 
 	(
 		select FieldValue, case when RecordId is null then 0 else RecordId end as RecordId, d.* 
 		from DataDictionaryForTable('vmc','vmmc_regandproc') d 
-		left join 
+												left join 
 		(
 		select * from 
 		vmmc_regandproc_local_fvs where recordid is not null
@@ -148,7 +156,6 @@ from (
 ) dataset
 )
 GO
-
 
 if object_id('vmmc_postop_func') is not null drop function vmmc_postop_func
 go
@@ -159,7 +166,9 @@ from (
 	 GeneralLabel
 	, case when len(groupkey) > 0 then groupkey +'_'+ VariableName else VariableName end FullVariableName
 	, case when lookupcode is null then 0 else 1 end as IsCodedValue
-	, case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end as Value,
+	, case when datatype = 'checkbox' then '1'
+	else case when lookupcode is null then fieldvalue else convert(varchar(50),lookupcode) end 
+	end as Value,
 	VariableName as GeneralVariableName,
 	label DescriptiveLabel, longname uniquename
 	From 
@@ -175,6 +184,7 @@ from (
 ) dataset
 )
 GO
+
 
 
 if object_id('allData') is not null drop view allData

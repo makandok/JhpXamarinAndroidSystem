@@ -1,4 +1,11 @@
-﻿CREATE TABLE [dbo].[FieldDictionary](
+﻿CREATE TABLE [dbo].[UniqueIdMap](
+--  drop table UniqueIdMap
+	[IntegerId] [int] IDENTITY(1,1) NOT NULL,
+	[StringId] [nvarchar](32) primary key
+)
+go
+
+CREATE TABLE [dbo].[FieldDictionary](
 --  drop table [FieldDictionary]
 	[project] [varchar](255) NULL,
 	[dataType] [varchar](255) NULL,
@@ -113,7 +120,10 @@ listname, lookupvalue, choicename lookupvalueclean,
 lookupcode, pagename,tablename
 from (
 	select f.*, lookupCode,
-	case when len(fieldname) = 0 then name else fieldname end FieldNameActual
+	--case when len(fieldname) = 0 then name else fieldname end FieldNameActual
+		case when datatype='CheckBox' then name
+	else case when len(fieldname) = 0 then name else fieldname end 
+	end FieldNameActual
 	 From fd f 
 	left join LookupValues v on f.listName = v.lookupname
 	and f.lookupValue = v.lookupValue
