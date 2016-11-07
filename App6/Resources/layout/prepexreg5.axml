@@ -776,7 +776,7 @@ android:id="@+id/oralanalgesiagiven_no" /></RadioGroup >
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_scheduledremovaldate"
             android:textSize="25sp" />

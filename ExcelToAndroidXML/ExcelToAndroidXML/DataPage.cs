@@ -100,6 +100,11 @@ namespace ExcelToAndroidXML
             return builder.ToString();
         }
 
+        enum numericTypes
+        {
+            isNA = 1, isInteger = 2, isDecimal = 3
+        }
+
         string getData(List<FieldDefinition> viewFields)
         {
             var builder = new StringBuilder();
@@ -114,7 +119,9 @@ namespace ExcelToAndroidXML
                     case "cellnumber":
                     case "number":
                         {
-                            fieldXml = getXamlDefinitionForTextField(field, true);
+                            var numType = field.ViewType.ToLowerInvariant() == "number" ? 
+                                numericTypes.isDecimal : numericTypes.isInteger;
+                            fieldXml = getXamlDefinitionForTextField(field, true, numType);
                             break;
                         }
                     case "time":
@@ -246,7 +253,7 @@ namespace ExcelToAndroidXML
         <EditText
             android:text=''
             android:textColor='@android:color/holo_blue_dark'
-            android:layout_width='220dp'
+            android:layout_width='330dp'
             android:layout_height='50dp'
             android:id='@+id/" + textName + @"'
             android:textSize='25sp' />
@@ -254,7 +261,7 @@ namespace ExcelToAndroidXML
             return fieldXml.Replace("'", "\"");
         }
 
-        string getXamlDefinitionForTextField(FieldDefinition field, bool isNumeric)
+        string getXamlDefinitionForTextField(FieldDefinition field, bool isNumeric, numericTypes typeOfNumber = numericTypes.isNA)
         {
             var stringsEntryText = field.DisplayLabel;
             var stringsEntryName = field.ViewName;
@@ -269,7 +276,7 @@ namespace ExcelToAndroidXML
     <EditText
         android:layout_height='40dp'
         android:layout_width='match_parent'
-        android:inputType='" + (isNumeric?"number":"text") + @"'
+        android:inputType='" + (isNumeric?(typeOfNumber==numericTypes.isDecimal? "numberDecimal|numberSigned" : "number") :"text") + @"'
         android:id='@+id/" + stringsEntryName + @"'
         android:hint='@string/" + stringsEntryName + @"' />");
             metaDataProvider.ModelItems.Add(

@@ -384,6 +384,7 @@ namespace JhpDataSystem.projects
                 })
                 .SetPositiveButton("OK", (senderAlert, args) =>
                 {
+                    AppInstance.Instance.TemporalViewData.Clear();
                     this.Finish();
                     showHome();
                     //showPrepexHome();
@@ -674,7 +675,6 @@ namespace JhpDataSystem.projects
 
         protected void displayTemporalDataAvailable()
         {
-            var fields = AppInstance.Instance.TemporalViewData;
             var nameValuePairs = getFormData(useDisplayLabels: true).Select(t => t.Name + ": " + t.Value);
             var message = string.Join(
             System.Environment.NewLine, nameValuePairs);
