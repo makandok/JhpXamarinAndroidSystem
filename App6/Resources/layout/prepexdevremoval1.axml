@@ -36,7 +36,7 @@
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_date_firstedited"
             android:textSize="25sp" />
@@ -89,7 +89,7 @@
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_dateofvisit"
             android:textSize="25sp" />
@@ -142,7 +142,7 @@
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_dateofplacement"
             android:textSize="25sp" />
@@ -221,6 +221,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_typeofinteraction" >
@@ -267,7 +268,7 @@ android:id="@+id/typeofinteraction_physicalvisit" /></RadioGroup >
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_timeforcepsapplied"
             android:textSize="25sp" />
@@ -292,7 +293,7 @@ android:id="@+id/typeofinteraction_physicalvisit" /></RadioGroup >
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_timeinnerringremoved"
             android:textSize="25sp" />

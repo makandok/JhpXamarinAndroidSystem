@@ -100,6 +100,11 @@ namespace ExcelToAndroidXML
             return builder.ToString();
         }
 
+        enum numericTypes
+        {
+            isNA = 1, isInteger = 2, isDecimal = 3
+        }
+
         string getData(List<FieldDefinition> viewFields)
         {
             var builder = new StringBuilder();
@@ -114,7 +119,9 @@ namespace ExcelToAndroidXML
                     case "cellnumber":
                     case "number":
                         {
-                            fieldXml = getXamlDefinitionForTextField(field, true);
+                            var numType = field.ViewType.ToLowerInvariant() == "number" ? 
+                                numericTypes.isDecimal : numericTypes.isInteger;
+                            fieldXml = getXamlDefinitionForTextField(field, true, numType);
                             break;
                         }
                     case "time":
@@ -211,6 +218,7 @@ namespace ExcelToAndroidXML
                     name = stringsEntryName,
                     IsIndexed = field.IsIndexed == "1",
                     IsRequired = field.IsIndexed == "1",
+                    IsDeprecated = field.IsDeprecated == "1",
                     Label = field.DisplayLabel,
                     pageName = ViewPageName
                     ,fieldType = field.ViewType
@@ -245,7 +253,7 @@ namespace ExcelToAndroidXML
         <EditText
             android:text=''
             android:textColor='@android:color/holo_blue_dark'
-            android:layout_width='220dp'
+            android:layout_width='330dp'
             android:layout_height='50dp'
             android:id='@+id/" + textName + @"'
             android:textSize='25sp' />
@@ -253,7 +261,7 @@ namespace ExcelToAndroidXML
             return fieldXml.Replace("'", "\"");
         }
 
-        string getXamlDefinitionForTextField(FieldDefinition field, bool isNumeric)
+        string getXamlDefinitionForTextField(FieldDefinition field, bool isNumeric, numericTypes typeOfNumber = numericTypes.isNA)
         {
             var stringsEntryText = field.DisplayLabel;
             var stringsEntryName = field.ViewName;
@@ -268,7 +276,7 @@ namespace ExcelToAndroidXML
     <EditText
         android:layout_height='40dp'
         android:layout_width='match_parent'
-        android:inputType='" + (isNumeric?"number":"text") + @"'
+        android:inputType='" + (isNumeric?(typeOfNumber==numericTypes.isDecimal? "numberDecimal|numberSigned" : "number") :"text") + @"'
         android:id='@+id/" + stringsEntryName + @"'
         android:hint='@string/" + stringsEntryName + @"' />");
             metaDataProvider.ModelItems.Add(
@@ -278,11 +286,10 @@ namespace ExcelToAndroidXML
                     name = stringsEntryName,
                     IsIndexed = field.IsIndexed == "1",
                     IsRequired = field.IsIndexed == "1",
+                    IsDeprecated = field.IsDeprecated == "1",
                     Label = field.DisplayLabel,
-                    pageName = ViewPageName
-                                        ,
-                    fieldType = field.ViewType
-                    ,
+                    pageName = ViewPageName,
+                    fieldType = field.ViewType,
                     fieldName = ""
                 });
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
@@ -370,27 +377,16 @@ android:textAppearance='?android:attr/textAppearanceMedium'
             return fieldXml.Replace("'", "\"");
         }
 
-//        string getXamlLabelDefForRadioGroup(FieldDefinition field)
-//        {
-//            var stringsEntryName = field.ViewName;
-//            var fieldXml = (@"
-//<RadioGroup
-//android:orientation='horizontal'
-//        android:minWidth='25dp'
-//        android:minHeight='25dp'
-//        android:layout_width='match_parent'
-//        android:layout_height='wrap_content'
-//        android:id='@+id/rg_" + stringsEntryName + "' >");
-//            return fieldXml.Replace("'", "\"");
-//        }
         string getXamlLabelDefForRadioGroup(FieldDefinition field, bool setVertical)
         {
             var stringsEntryName = field.ViewName;
+            var visibility = field.IsDeprecated == "1" ? "gone" : "visible";
             var fieldXml = (@"
 <RadioGroup
 android:orientation='" + (setVertical ? "vertical" : "horizontal") + @"'
         android:minWidth='25dp'
         android:minHeight='25dp'
+        android:visibility='" + visibility + @"'
         android:layout_width='match_parent'
         android:layout_height='wrap_content'
         android:id='@+id/rg_" + stringsEntryName + "' >");
@@ -399,11 +395,13 @@ android:orientation='" + (setVertical ? "vertical" : "horizontal") + @"'
         List<string> getXamlLabelDefForCheckBox(FieldDefinition field)
         {
             var fieldOptionDefinitions = new List<string>();
+            var visibility = field.IsDeprecated == "1" ? "gone" : "visible";
             foreach (var option in field.FieldOptions.Values)
             {
                 var optionName = field.ViewName + "_" + option.Clean();
             var fieldXml = (@" <CheckBox
             android:layout_width='wrap_content'
+            android:visibility='" + visibility + @"'
             android:layout_height='wrap_content'
             android:checked='false'
              android:text='@string/" + optionName + @"'
@@ -416,11 +414,13 @@ android:orientation='" + (setVertical ? "vertical" : "horizontal") + @"'
                         name = optionName,
                         IsIndexed = field.IsIndexed == "1",
                         IsRequired = field.IsIndexed == "1",
+                        IsDeprecated = field.IsDeprecated == "1",
                         Label = field.DisplayLabel + " [" + option + "]",
                         pageName = ViewPageName,
-                        fieldType = field.ViewType
-                        ,
-                        fieldName = field.ViewName
+                        fieldType = field.ViewType,
+                        fieldName = field.ViewName,
+                        listName = field.ListName,
+                        lookupValue = option
                     });
                 metaDataProvider.AddStringResource(optionName, option);
 
@@ -470,11 +470,13 @@ android:id='@+id/" + optionName + "' />"
                         name = optionName,
                         IsIndexed = field.IsIndexed == "1",
                         IsRequired = field.IsIndexed == "1",
+                        IsDeprecated = field.IsDeprecated == "1",
                         Label = field.DisplayLabel + " [" + option + "]",
                         pageName = ViewPageName,
-                        fieldType = field.ViewType
-                        ,
-                        fieldName = field.ViewName
+                        fieldType = field.ViewType,
+                        fieldName = field.ViewName,
+                        listName = field.ListName,
+                        lookupValue = option
                     });
 
                 fieldOptionDefinitions.Add(fieldXml.Replace("'", "\""));

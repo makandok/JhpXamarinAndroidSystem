@@ -25,6 +25,7 @@ namespace JhpDataSystem.projects.vmc
 
         void showPPXHome()
         {
+            AppInstance.Instance.TemporalViewData.Clear();
             SetContentView(Resource.Layout.PrepexHome);
             var closeButton = FindViewById<Button>(Resource.Id.buttonClose);
             closeButton.Click += (sender, e) => {

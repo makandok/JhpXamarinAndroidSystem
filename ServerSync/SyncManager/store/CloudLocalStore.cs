@@ -9,9 +9,11 @@ namespace JhpDataSystem.store
 {
     public class CloudLocalStore<T> : BaseTableStore where T:BlobEntity, new()
     {
+        UniqueIdentifierMap _identifierMap;
         public CloudLocalStore(KindName tableName) : base(tableName.Value)
         {
-            createKindSql = "if object_id('{0}') is null create table {0}(recordid int identity(1,1), id nvarchar(32) primary key, entityid nvarchar(32), kindmetadata nvarchar(1000), editday int, editdate bigint, datablob nvarchar(max));";
+            _identifierMap = new UniqueIdentifierMap();
+            createKindSql = "if object_id('{0}') is null create table {0}(recordid int identity(1,1)  primary key, id nvarchar(32) not null unique, entityid nvarchar(32), kindmetadata nvarchar(1000), editday int, editdate bigint, datablob nvarchar(max));";
             insertSql =
                 @"
                 begin tran
@@ -47,6 +49,9 @@ namespace JhpDataSystem.store
         {
             ResultObject toReturn = new ResultObject();
             //we create if does not exist
+            var entityIdInt = _identifierMap.Save(entity.EntityId);
+            var idInt = _identifierMap.Save(entity.Id);
+
             using (var conn = new SqlConnection(_db.ConnectionString))
             using (var command = new SqlCommand(string.Format(insertSql, _tableName.Value), conn))
             {

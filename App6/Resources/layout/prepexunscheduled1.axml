@@ -36,7 +36,7 @@
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_date_firstedited"
             android:textSize="25sp" />
@@ -89,7 +89,7 @@
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_dateofvisit"
             android:textSize="25sp" />
@@ -142,7 +142,7 @@
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_dateofplacement"
             android:textSize="25sp" />
@@ -200,6 +200,15 @@
         android:hint="@string/clienttel" />
 
     <TextView
+        android:text="@string/removalprocedure_hdr"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/removalprocedure_hdr" />
+
+    <TextView
 android:text="@string/isaplannedfupphonecall"
 android:textColor="@android:color/holo_blue_dark"
 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -212,6 +221,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_isaplannedfupphonecall" >
@@ -244,6 +254,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_typeoffollowup" >
