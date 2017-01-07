@@ -290,6 +290,11 @@ namespace JhpDataSystem.projects
             }
         }
 
+        void showErrorAndHalt(FieldItem field)
+        {
+
+        }
+
         protected void getDataForView(int viewId)
         {
             //we get all the relevant fields for this view
@@ -325,7 +330,15 @@ namespace JhpDataSystem.projects
                         {
                             var view = field.GetDataView<EditText>(this);
                             if (string.IsNullOrWhiteSpace(view.Text))
+                            {
+                                if (field.IsRequired)
+                                {
+                                    //we show error
+                                    //and halt
+                                    showErrorAndHalt(field);
+                                }
                                 continue;
+                            }
 
                             resultObject.Value = view.Text;
                             break;
