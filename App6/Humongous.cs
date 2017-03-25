@@ -21,7 +21,7 @@ namespace JhpDataSystem
                 {
                     _instance = new AppInstance()
                     {
-                        AppVersion = "1.1"
+                        AppVersion = "1.2"
                     };                        
                 }
                 return _instance;
@@ -50,7 +50,7 @@ namespace JhpDataSystem
             var filePath = Path.Combine(downloadsFolder.Path,"jhp", filename);
             using (var streamWriter = File.CreateText(filePath))
             {
-                streamWriter.Write(exception.Message);
+                streamWriter.Write(exception.Message ?? "No exception message");
                 streamWriter.WriteLine(exception.StackTrace ?? "No Stacktrace");
             }
 
@@ -68,6 +68,11 @@ namespace JhpDataSystem
             var exception = args.ExceptionObject as Exception;
             if (exception == null)
                 return;
+
+            Android.Widget.Toast.MakeText(_mainContext, 
+                "An error occurred. "+ (exception.Message ?? "No exception message"), 
+                Android.Widget.ToastLength.Long).Show();
+
             //can't do Log.Debug as process is being destroyed
             //we do our own
             var logUri = writeErrorLog(exception);
