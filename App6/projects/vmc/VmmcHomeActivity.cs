@@ -78,6 +78,33 @@ namespace JhpDataSystem.projects.vmc
             {
                 await getClientSummaryReport(new VmmcLookupProvider(), Constants.VMMC_KIND_DISPLAYNAMES);
             };
+
+            //buttonViewRecordSummaries.Click += (sender, e) =>
+            //{
+            //    //await getClientSummaryReport(new lspProvider(), Constants.LSP_KIND_DISPLAYNAMES);
+            //    var unsyncdRecs = new store.CloudDb(Assets).GetRecordsToSync();
+
+            //    var js = Newtonsoft.Json.JsonConvert.SerializeObject(unsyncdRecs);
+            //    var bytes = System.Text.Encoding.UTF8.GetBytes(js);
+
+            //    var b64 = string.Empty;
+            //    using (var input = new System.IO.MemoryStream(bytes))
+            //    {
+            //        using (var outStream = new System.IO.MemoryStream())
+            //        using (var deflateStream = new System.IO.Compression
+            //    .DeflateStream(outStream,
+            //    System.IO.Compression.CompressionMode.Compress))
+            //        {
+            //            input.CopyTo(deflateStream);
+            //            deflateStream.Close();
+            //            b64 = System.Convert.ToBase64String(outStream.ToArray());
+            //        }
+            //    }
+            //    setTextResults(b64);
+            //};
+            //buttonViewRecordSummaries.Text = "Get unsynced clients";
+
+            updateUnsyncedRecsStats();
         }
     }
 }

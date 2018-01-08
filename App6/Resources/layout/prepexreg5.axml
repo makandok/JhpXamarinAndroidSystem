@@ -48,7 +48,15 @@ android:id="@+id/aesduringplacement_noadverseeventsdiagnosed" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/aesduringplacement_adverseeventsdiagnosed"
-android:id="@+id/aesduringplacement_adverseeventsdiagnosed" /></RadioGroup >
+android:id="@+id/aesduringplacement_adverseeventsdiagnosed" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/aesduringplacement_notsp"
+android:id="@+id/aesduringplacement_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/aesdiagnosed_hdr"
@@ -148,7 +156,15 @@ android:id="@+id/pain_severe" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/pain_severitynotclassified" /></RadioGroup >
+android:id="@+id/pain_severitynotclassified" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/pain_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -197,7 +213,15 @@ android:id="@+id/bleeding_severe" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/bleeding_severitynotclassified" /></RadioGroup >
+android:id="@+id/bleeding_severitynotclassified" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/bleeding_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -246,7 +270,15 @@ android:id="@+id/anesthesia_analgesicreaction_severe" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/anesthesia_analgesicreaction_severitynotclassified" /></RadioGroup >
+android:id="@+id/anesthesia_analgesicreaction_severitynotclassified" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/anesthesia_analgesicreaction_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -295,7 +327,15 @@ android:id="@+id/damagetopenis_severe" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/damagetopenis_severitynotclassified" /></RadioGroup >
+android:id="@+id/damagetopenis_severitynotclassified" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/damagetopenis_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -344,7 +384,15 @@ android:id="@+id/difficultywithplacement_severe" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/difficultywithplacement_severitynotclassified" /></RadioGroup >
+android:id="@+id/difficultywithplacement_severitynotclassified" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/difficultywithplacement_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -393,7 +441,15 @@ android:id="@+id/devicemalfunction_severe" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/devicemalfunction_severitynotclassified" /></RadioGroup >
+android:id="@+id/devicemalfunction_severitynotclassified" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/devicemalfunction_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/providername"
@@ -463,6 +519,15 @@ android:id="@+id/devicemalfunction_severitynotclassified" /></RadioGroup >
             android:layout_height="wrap_content"
             android:layout_width="100dp"
             android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:textColor="@android:color/holo_blue_dark"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/clientinstructedonhdr_notsp"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
 <RadioGroup
@@ -496,7 +561,15 @@ android:id="@+id/nottomovedevice_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/nottomovedevice_no" /></RadioGroup >
+android:id="@+id/nottomovedevice_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/nottomovedevice_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -529,7 +602,15 @@ android:id="@+id/removalond7_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/removalond7_no" /></RadioGroup >
+android:id="@+id/removalond7_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/removalond7_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -562,7 +643,15 @@ android:id="@+id/removalbefored7_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/removalbefored7_no" /></RadioGroup >
+android:id="@+id/removalbefored7_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/removalbefored7_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -595,7 +684,15 @@ android:id="@+id/onlydesignatedprovider_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/onlydesignatedprovider_no" /></RadioGroup >
+android:id="@+id/onlydesignatedprovider_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/onlydesignatedprovider_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -628,7 +725,15 @@ android:id="@+id/notpullforeskin_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/notpullforeskin_no" /></RadioGroup >
+android:id="@+id/notpullforeskin_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/notpullforeskin_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
@@ -661,7 +766,15 @@ android:id="@+id/nosexualintercourse_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/nosexualintercourse_no" /></RadioGroup >
+android:id="@+id/nosexualintercourse_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/nosexualintercourse_notsp" /></RadioGroup >
 
     <TextView
 android:text="@string/writteninstructions"
@@ -694,7 +807,15 @@ android:id="@+id/writteninstructions_yes" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/writteninstructions_no"
-android:id="@+id/writteninstructions_no" /></RadioGroup >
+android:id="@+id/writteninstructions_no" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/writteninstructions_notsp"
+android:id="@+id/writteninstructions_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/clientclinicaldisposition"
@@ -741,7 +862,15 @@ android:id="@+id/oralanalgesiagiven_yes" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/oralanalgesiagiven_no"
-android:id="@+id/oralanalgesiagiven_no" /></RadioGroup >
+android:id="@+id/oralanalgesiagiven_no" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/oralanalgesiagiven_notsp"
+android:id="@+id/oralanalgesiagiven_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/nameoralanalgesiadrug"
@@ -827,7 +956,15 @@ android:id="@+id/signed_yes" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/signed_no"
-android:id="@+id/signed_no" /></RadioGroup >
+android:id="@+id/signed_no" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/signed_notsp"
+android:id="@+id/signed_notsp" /></RadioGroup >
 
 </LinearLayout>
 </ScrollView>
