@@ -21,7 +21,7 @@ namespace JhpDataSystem
                 {
                     _instance = new AppInstance()
                     {
-                        AppVersion = "1.4"
+                        AppVersion = "1.5"
                     };                        
                 }
                 return _instance;
