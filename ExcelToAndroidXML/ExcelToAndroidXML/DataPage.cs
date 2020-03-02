@@ -290,6 +290,7 @@ namespace ExcelToAndroidXML
                     Label = field.DisplayLabel,
                     pageName = ViewPageName,
                     fieldType = field.ViewType,
+                    validation = field.Validation,
                     fieldName = ""
                 });
             metaDataProvider.AddStringResource(stringsEntryName, stringsEntryText);
@@ -432,6 +433,11 @@ android:orientation='" + (setVertical ? "vertical" : "horizontal") + @"'
         List<string> getXamlLabelDefForRadioButton(FieldDefinition field)
         {
            var fieldOptionDefinitions = new List<string>();
+            if (!field.FieldOptions.Values.Contains("NotSp"))
+            {
+                field.FieldOptions.Values.Add("NotSp");
+            }
+
             var isFirst = true;
             foreach (var option in field.FieldOptions.Values)
             {

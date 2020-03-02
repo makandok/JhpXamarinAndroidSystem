@@ -56,7 +56,7 @@ namespace ExcelToAndroidXML
 
         static void Main(string[] args)
         {
-            bool ProcessingForVMMC = false;
+            bool ProcessingForVMMC = true;
             var projectHelper = ProcessingForVMMC ? 
                 new vmmcHelper() as ProjectInfo: 
                 new ppxHelper();
@@ -88,7 +88,7 @@ namespace ExcelToAndroidXML
             }
             else
             {
-                if (fields.Count != 234)
+                if (fields.Count != 240)
                     throw new ArgumentOutOfRangeException("Expected 210 fields");
             }
 

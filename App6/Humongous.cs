@@ -21,7 +21,7 @@ namespace JhpDataSystem
                 {
                     _instance = new AppInstance()
                     {
-                        AppVersion = "1.2"
+                        AppVersion = "1.4"
                     };                        
                 }
                 return _instance;
@@ -34,6 +34,25 @@ namespace JhpDataSystem
 
         public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
 
+        public Android.Net.Uri writeToFile(string fileContents)
+        {
+            var filename = "a" + Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".txt";
+            var downloadsFolder = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
+            var defaultDirectory = Path.Combine(downloadsFolder.Path, "jhp");
+            if (!Directory.Exists(defaultDirectory))
+            {
+                Directory.CreateDirectory(defaultDirectory);
+            }
+            var filePath = Path.Combine(downloadsFolder.Path, "jhp", filename);
+            using (var streamWriter = File.CreateText(filePath))
+            {
+                streamWriter.Write(string.IsNullOrWhiteSpace(fileContents) ? "Nothing to write" : fileContents);
+            }
+
+            var file = new Java.IO.File(filePath);
+            file.SetReadable(true, false);
+            return Android.Net.Uri.FromFile(file);
+        }
         Android.Net.Uri writeErrorLog(Exception exception)
         {
             //https://developer.xamarin.com/api/property/Android.OS.Environment.ExternalStorageDirectory/

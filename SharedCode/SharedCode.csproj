@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="model\DataValidationIssue.cs" />
     <Compile Include="WaitDialogHelper.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="EncryptedText.cs" />
