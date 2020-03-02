@@ -37,6 +37,11 @@ namespace JhpDataSystem
                 var user = AppInstance.Instance.CurrentUser;
                 loggedInUserText.Text = string.Format(user.User.Names + " ({0})", user.User.UserId);
             }
+            else
+            {
+                //we show the login form
+                doLogOut();
+            }
             loggedInUserText.Click += showMenuLoggedInUser;
 
             var buttonPrepexHome = FindViewById<Button>(Resource.Id.buttonPrepexHome);

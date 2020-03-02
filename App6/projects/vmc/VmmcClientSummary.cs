@@ -89,7 +89,6 @@ namespace JhpDataSystem.projects.vmc
             this.EntityId = new KindKey(KindKey);
             this.Id = new KindKey(KindKey);
             this.KindMetaData = lookupEntry.KindMetaData;
-            //this.FormSerial = lookupEntry.Id.Value;
 
             var dateStr = allFields[Constants.FIELD_VMMC_DATEOFVISIT];
             DateTime coreActivityDate;
@@ -107,8 +106,23 @@ namespace JhpDataSystem.projects.vmc
 
             this.LastName = allFields[Constants.FIELD_VMMC_CLIENTLASTNAME];
             this.FirstName = allFields[Constants.FIELD_VMMC_CLIENTFIRSTNAME];
-            this.FormSerial = Convert.ToInt32(allFields[Constants.FIELD_VMMC_CARD_SERIAL]);
-            this.MCNumber = Convert.ToInt32(allFields[Constants.FIELD_VMMC_MCNUMBER]);
+
+            var formSerial = allFields[Constants.FIELD_VMMC_CARD_SERIAL];
+            if (!string.IsNullOrWhiteSpace(formSerial))
+            {
+                this.FormSerial = Convert.ToInt32(formSerial);
+            }
+            else
+                this.FormSerial = -1;
+
+            var vmmcNumber = allFields[Constants.FIELD_VMMC_MCNUMBER];
+            if (!string.IsNullOrWhiteSpace(vmmcNumber))
+            {
+                this.MCNumber = Convert.ToInt32(vmmcNumber);
+            }
+            else
+                this.MCNumber = -1;         
+
             this.ClientTel = allFields[Constants.FIELD_VMMC_CLIENTTEL];
 
             var dobStr = allFields[Constants.FIELD_VMMC_DOB];

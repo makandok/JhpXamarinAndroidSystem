@@ -51,6 +51,11 @@ namespace JhpDataSystem.projects.ppx
             var rgroup = FindViewById<RadioGroup>(Resource.Id.rgroupCSOptions);
             rgroup.CheckedChange += applyFilter;
 
+            //todo: wire filter for search view
+            var searchView = FindViewById<SearchView>(Resource.Id.searchViewClientList);
+            searchView.QueryTextChange += applyTextChangedFilter;
+            searchView.QueryTextSubmit += applyTextSubmittedFilter;
+
             //buttonPerformAction
             var buttonPerformAction = FindViewById<Button>(Resource.Id.buttonPerformAction);
             buttonPerformAction.Click += performActionSpecified;
@@ -162,7 +167,7 @@ namespace JhpDataSystem.projects.ppx
         async Task<bool> sendSms(List<PPClientSummary> clients)
         {
             //we send           
-            Toast.MakeText(this, "Started sending messages", ToastLength.Short).Show();
+            Toast.MakeText(this, "Please wait, Started sending messages", ToastLength.Short).Show();
             var bulkSender = new BulkSmsSender()
             {
                 contactNumbers = clients,
@@ -175,6 +180,21 @@ namespace JhpDataSystem.projects.ppx
             //save to db list of clients send
 
             return true;
+        }
+
+        //applyTextSubmittedFilter
+        void applyTextSubmittedFilter(object sender, SearchView.QueryTextSubmitEventArgs e)
+        {
+            //todo: filter client list
+            Toast.MakeText(this, "Soon to Implement. Searching for " + e.Query, ToastLength.Short).Show();
+            e.Handled = true;
+        }
+
+        void applyTextChangedFilter(object sender, SearchView.QueryTextChangeEventArgs e)
+        {
+            //todo: filter client list
+            Toast.MakeText(this, "Soon to Implement. Searched for " + e.NewText, ToastLength.Short).Show();
+            e.Handled = true;
         }
 
         void applyFilter(object sender, RadioGroup.CheckedChangeEventArgs e)

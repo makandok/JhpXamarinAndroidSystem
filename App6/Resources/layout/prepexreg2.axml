@@ -27,9 +27,10 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_typeofsite" />
 <RadioGroup
-android:orientation="horizontal"
+android:orientation="vertical"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_typeofsite" >
@@ -95,7 +96,15 @@ android:id="@+id/typeofsite_privateclinichospital" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/typeofsite_other"
-android:id="@+id/typeofsite_other" /></RadioGroup >
+android:id="@+id/typeofsite_other" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofsite_notsp"
+android:id="@+id/typeofsite_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/typeofsite_specify"
@@ -121,42 +130,49 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_howclientlearnt" /> <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_friendfamily"
              android:id="@+id/howclientlearnt_friendfamily" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_partnerspouse"
              android:id="@+id/howclientlearnt_partnerspouse" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_healthworker"
              android:id="@+id/howclientlearnt_healthworker" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_posternewspaperleaflet"
              android:id="@+id/howclientlearnt_posternewspaperleaflet" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_otherclient"
              android:id="@+id/howclientlearnt_otherclient" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_communitymobilizer"
              android:id="@+id/howclientlearnt_communitymobilizer" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/howclientlearnt_tvradio"
@@ -181,48 +197,56 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_primaryreasoncirc" /> <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_partialhivprotecction"
              android:id="@+id/primaryreasoncirc_partialhivprotecction" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_sexualpleasure"
              android:id="@+id/primaryreasoncirc_sexualpleasure" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_stiprotection"
              android:id="@+id/primaryreasoncirc_stiprotection" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_medical"
              android:id="@+id/primaryreasoncirc_medical" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_appearance"
              android:id="@+id/primaryreasoncirc_appearance" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_hygiene"
              android:id="@+id/primaryreasoncirc_hygiene" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_culturalsocialreligious"
              android:id="@+id/primaryreasoncirc_culturalsocialreligious" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/primaryreasoncirc_other"
@@ -252,9 +276,10 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_hivstatus" />
 <RadioGroup
-android:orientation="horizontal"
+android:orientation="vertical"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_hivstatus" >
@@ -288,7 +313,97 @@ android:id="@+id/hivstatus_indeterminate" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/hivstatus_unknownrefusedselfreported"
-android:id="@+id/hivstatus_unknownrefusedselfreported" /></RadioGroup >
+android:id="@+id/hivstatus_unknownrefusedselfreported" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/hivstatus_notsp"
+android:id="@+id/hivstatus_notsp" /></RadioGroup >
+
+    <TextView
+android:text="@string/hivstatus2ndtest"
+android:textColor="@android:color/holo_blue_dark"
+android:textAppearance="?android:attr/textAppearanceMedium"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/l_hivstatus2ndtest" />
+<RadioGroup
+android:orientation="vertical"
+        android:minWidth="25dp"
+        android:minHeight="25dp"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_hivstatus2ndtest" >
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/hivstatus2ndtest_positive"
+android:id="@+id/hivstatus2ndtest_positive" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/hivstatus2ndtest_negative"
+android:id="@+id/hivstatus2ndtest_negative" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/hivstatus2ndtest_indeterminate"
+android:id="@+id/hivstatus2ndtest_indeterminate" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/hivstatus2ndtest_unknownrefusedselfreported"
+android:id="@+id/hivstatus2ndtest_unknownrefusedselfreported" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/hivstatus2ndtest_notsp"
+android:id="@+id/hivstatus2ndtest_notsp" /></RadioGroup >
+
+    <TextView
+        android:text="@string/date2ndhivtest"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/dttxt_date2ndhivtest" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/dtbtn_date2ndhivtest"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:text="@string/sys_dateselect"/>
+        <EditText
+            android:text=""
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:id="@+id/dttxt_date2ndhivtest"
+            android:textSize="25sp" />
+    </LinearLayout>
 
 </LinearLayout>
 </ScrollView>

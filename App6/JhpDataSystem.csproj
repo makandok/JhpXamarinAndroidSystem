@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -66,8 +66,9 @@
     <DebugSymbols>False</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto">
-      <HintPath>..\..\..\..\GitHub\google-api-dotnet-client\bccrypto-csharp-1.8.1-bin\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libraries\bccrypto-csharp-1.8.1-bin\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis, Version=1.13.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.13.1\lib\portable-net45+sl50+netcore45+wpa81+wp8\Google.Apis.dll</HintPath>
@@ -160,12 +161,28 @@
       <HintPath>..\packages\RestSharp.105.2.3\lib\MonoAndroid10\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlite-net-pcl.1.1.2\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SQLitePCL, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\MonoAndroid\SQLitePCL.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SQLitePCL.batteries, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCL.bundle_green.0.9.2\lib\MonoAndroid\SQLitePCL.batteries.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SQLitePCL.Ext, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\MonoAndroid\SQLitePCL.Ext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCL.raw, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCL.raw.0.9.2\lib\MonoAndroid\SQLitePCL.raw.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCLPlugin_esqlite3, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCL.plugin.sqlite3.android.0.9.2\lib\MonoAndroid\SQLitePCLPlugin_esqlite3.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -228,14 +245,12 @@
   <ItemGroup>
     <Compile Include="ApplicationSplashActivity.cs" />
     <Compile Include="ashared\Crypto.cs" />
-    <Compile Include="Constants.cs" />
     <Compile Include="DatePickerFragment.cs" />
-    <Compile Include="db\BigQueryAssist.cs" />
     <Compile Include="db\DefaultCredentialProvider.cs" />
     <Compile Include="db\GoogleCredential.cs" />
     <AndroidAsset Include="Assets\vmmc_fields.json" />
-    <None Include="db\GoogleDataStoreNotCompiled.cs" />
-    <Compile Include="EncryptedText.cs" />
+    <Compile Include="WebFileDownloader.cs" />
+    <None Include="Samples\GoogleDataStoreNotCompiled.cs" />
     <Compile Include="EncryptionHelper.cs" />
     <Compile Include="Humongous.cs" />
     <AndroidResource Include="Resources\layout\prepexreg1.axml" />
@@ -245,19 +260,10 @@
     <AndroidResource Include="Resources\layout\prepexdatareviewer.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <Compile Include="model\FieldItem.cs" />
     <Compile Include="ClientLookupProvider.cs" />
-    <Compile Include="model\GeneralEntityDataset.cs" />
-    <Compile Include="model\KindMetaData.cs" />
-    <Compile Include="model\OutEntity.cs" />
-    <Compile Include="model\RecordSummary.cs" />
-    <Compile Include="model\SiteProvider.cs" />
-    <Compile Include="model\UserSession.cs" />
     <Compile Include="modules\ClientSelectorBase.cs" />
     <Compile Include="modules\RecordSelectorBase.cs" />
     <Compile Include="modules\RecordSummaryAdapter.cs" />
-    <Compile Include="PlainText.cs" />
-    <Compile Include="ProjectContext.cs" />
     <Compile Include="projects\BaseContextManager.cs" />
     <Compile Include="projects\BaseHomeActivity.cs" />
     <Compile Include="projects\BaseWorkflowController.cs" />
@@ -325,8 +331,6 @@
     <AndroidResource Include="Resources\layout\clientlist.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <Compile Include="WaitDialogHelper.cs" />
-    <Compile Include="WebFileDownloader.cs" />
     <AndroidResource Include="Resources\layout\recordsummaryview.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -345,15 +349,13 @@
     </AndroidResource>
     <None Include="Samples\Archive.cs" />
     <Compile Include="LauncherActivity.cs" />
-    <Compile Include="model\AppUser.cs" />
-    <Compile Include="model\EntityKey.cs" />
     <Compile Include="projects\ppx\PPXHomeActivity.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
     <Compile Include="db\ServiceAccountCredentiaal.cs" />
-    <Compile Include="db\SampleMain.cs" />
+    <Compile Include="Samples\SampleMain.cs" />
     <Compile Include="db\SHA256CryptoServiceProvider.cs" />
-    <Compile Include="db\StorageSample.cs" />
-    <Compile Include="db\WebDb.cs" />
+    <Compile Include="Samples\StorageSample.cs" />
+    <Compile Include="Samples\WebDb.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="JhpSecurity.cs" />
     <Compile Include="MainActivity.cs" />
@@ -371,7 +373,6 @@
     </None>
     <AndroidAsset Include="Assets\api_keys.json" />
     <AndroidAsset Include="Assets\key.p12" />
-    <None Include="GettingStarted.Xamarin" />
     <AndroidResource Include="Resources\layout\PrepexHome.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -404,7 +405,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\jhpiego_logo.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SharedCode\SharedCode.csproj">
+      <Project>{e4da1c18-2442-41a5-9048-0ef01b027c15}</Project>
+      <Name>SharedCode</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserLoginLayout.axml">
       <SubType>AndroidResource</SubType>
@@ -437,6 +443,12 @@
     <None Include="Adding a Module.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="googleplayservices-vision">
+      <Visible>False</Visible>
+      <Version>42.1001.0.0</Version>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
