@@ -136,6 +136,8 @@
     </ApplicationDefinition>
     <Compile Include="ashared\Crypto.cs" />
     <Compile Include="ClientLookupProvider.cs" />
+    <Compile Include="MyFieldItem.cs" />
+    <Compile Include="store\Deidentifier.cs" />
     <Compile Include="EncryptionHelper.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="GoogleCredentials\DefaultCredentialProvider.cs" />
@@ -144,24 +146,6 @@
     <Compile Include="GoogleCredentials\SHA256CryptoServiceProvider.cs" />
     <Compile Include="Humongous.cs" />
     <Compile Include="JhpSecurity.cs" />
-    <Compile Include="localdb\DB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="localdb\DB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="localdb\DB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="localdb\OutEntity.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
     <Compile Include="model\Offset.cs" />
     <Compile Include="model\ResultsLimit.cs" />
     <Compile Include="model\SimpleValue.cs" />
@@ -178,12 +162,15 @@
     <Compile Include="store\CloudEntity.cs" />
     <Compile Include="store\CloudLocalStore.cs" />
     <Compile Include="store\DbSaveableEntity.cs" />
+    <Compile Include="store\FieldDictionaryStore.cs" />
+    <Compile Include="store\FieldValueStore.cs" />
     <Compile Include="store\LocalDB.cs" />
     <Compile Include="store\LocalDB3.cs" />
     <Compile Include="store\LocalEntityStore.cs" />
     <Compile Include="store\MultiTableStore.cs" />
     <Compile Include="store\ProcessLogger.cs" />
     <Compile Include="store\TableStore.cs" />
+    <Compile Include="store\UniqueIdentifierMap.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -211,22 +198,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="localdb\DB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="localdb\DB.edmx.diagram">
-      <DependentUpon>DB.edmx</DependentUpon>
-    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Assets\api_keys.json" />
     <None Include="Assets\key.p12" />
-    <None Include="Assets\ppx_fields.json" />
-    <None Include="Assets\ppx_fields.json.backup" />
-    <None Include="Assets\vmmc_fields.json" />
+    <None Include="Assets\ppx_fields.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\vmmc_fields.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -247,17 +230,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="localdb\DB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DB.Context.cs</LastGenOutput>
-      <DependentUpon>DB.edmx</DependentUpon>
-    </Content>
-    <Content Include="localdb\DB.edmx.sql" />
-    <Content Include="localdb\DB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DB.cs</LastGenOutput>
-      <DependentUpon>DB.edmx</DependentUpon>
-    </Content>
+    <Content Include="Assets\FieldDictionary.sql" />
+    <Content Include="Assets\ServerOutput.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

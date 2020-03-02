@@ -4,14 +4,27 @@ namespace JhpDataSystem.projects.ppx
 {
     public class PPDeviceSizes
     {
+        internal bool isMonth;
         public PPDeviceSizes(DateTime placementDate)
         {
+            setUp(placementDate.Day, 
+                placementDate.Month, 
+                placementDate.Year);
+        }
+
+        public PPDeviceSizes(int day, int month, int year)
+        {
+            setUp(day, month, year);
+        }
+        public void setUp(int day, int month, int year)
+        {
             var dateValue = string.Format("{0}/{1}/{2}",
-                placementDate.Day < 10 ? "0" + placementDate.Day : placementDate.Day.ToString(),
-                placementDate.Month < 10 ? "0" + placementDate.Month : placementDate.Month.ToString()
-                , placementDate.Year);
+                (isMonth?"--":
+                day < 10 ? "0" + day : day.ToString()),
+                month < 10 ? "0" + month : month.ToString()
+                , year);
             ddMMyyy = dateValue;
-            PlacementDate = placementDate;
+            PlacementDate = new DateTime(year, month, day);
             Unk = A = B = C = D = E = 0;
         }
         public DateTime PlacementDate { get; set; }
@@ -32,9 +45,10 @@ namespace JhpDataSystem.projects.ppx
         {
             return string.Format("{0},\t\t{1},\t{2},\t{3},\t{4},\t{5},\t{6},\t\t\t\t{7}", ddMMyyy, A, B, C, D, E, Unk, (A + B + C + D + E + Unk));
         }
-
+        public string size { get; set; }
         internal void Add(string deviceSize)
         {
+            size = deviceSize;
             if (string.IsNullOrWhiteSpace(deviceSize))
             {
                 Unk += 1;

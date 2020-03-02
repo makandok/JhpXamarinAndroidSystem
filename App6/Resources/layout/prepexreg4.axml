@@ -39,12 +39,22 @@
             android:layout_height="wrap_content"
             android:layout_width="100dp"
             android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:textColor="@android:color/holo_blue_dark"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/genital_notsp"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_phimosis" >
@@ -71,12 +81,21 @@ android:id="@+id/phimosis_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/phimosis_no" /></RadioGroup >
+android:id="@+id/phimosis_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/phimosis_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_paraphimosis" >
@@ -103,12 +122,21 @@ android:id="@+id/paraphimosis_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/paraphimosis_no" /></RadioGroup >
+android:id="@+id/paraphimosis_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/paraphimosis_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_narrowprepuce" >
@@ -135,12 +163,21 @@ android:id="@+id/narrowprepuce_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/narrowprepuce_no" /></RadioGroup >
+android:id="@+id/narrowprepuce_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/narrowprepuce_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_tightfrenulum" >
@@ -167,12 +204,21 @@ android:id="@+id/tightfrenulum_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/tightfrenulum_no" /></RadioGroup >
+android:id="@+id/tightfrenulum_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/tightfrenulum_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_epispadiasis" >
@@ -199,12 +245,21 @@ android:id="@+id/epispadiasis_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/epispadiasis_no" /></RadioGroup >
+android:id="@+id/epispadiasis_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/epispadiasis_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_hypospadiasis" >
@@ -231,12 +286,21 @@ android:id="@+id/hypospadiasis_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/hypospadiasis_no" /></RadioGroup >
+android:id="@+id/hypospadiasis_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/hypospadiasis_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_otherurethralanomaly" >
@@ -263,12 +327,21 @@ android:id="@+id/otherurethralanomaly_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/otherurethralanomaly_no" /></RadioGroup >
+android:id="@+id/otherurethralanomaly_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/otherurethralanomaly_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_hydrocele" >
@@ -295,12 +368,21 @@ android:id="@+id/hydrocele_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/hydrocele_no" /></RadioGroup >
+android:id="@+id/hydrocele_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/hydrocele_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_scrotalhernia" >
@@ -327,12 +409,21 @@ android:id="@+id/scrotalhernia_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/scrotalhernia_no" /></RadioGroup >
+android:id="@+id/scrotalhernia_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/scrotalhernia_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_genitalulcers" >
@@ -359,12 +450,21 @@ android:id="@+id/genitalulcers_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/genitalulcers_no" /></RadioGroup >
+android:id="@+id/genitalulcers_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/genitalulcers_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_dermatitisofthepenis" >
@@ -391,12 +491,21 @@ android:id="@+id/dermatitisofthepenis_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/dermatitisofthepenis_no" /></RadioGroup >
+android:id="@+id/dermatitisofthepenis_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/dermatitisofthepenis_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_genitalwarts" >
@@ -423,12 +532,21 @@ android:id="@+id/genitalwarts_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/genitalwarts_no" /></RadioGroup >
+android:id="@+id/genitalwarts_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/genitalwarts_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_urethraldischarge" >
@@ -455,12 +573,21 @@ android:id="@+id/urethraldischarge_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/urethraldischarge_no" /></RadioGroup >
+android:id="@+id/urethraldischarge_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/urethraldischarge_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_balantis" >
@@ -487,12 +614,21 @@ android:id="@+id/balantis_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/balantis_no" /></RadioGroup >
+android:id="@+id/balantis_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/balantis_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_posthitis" >
@@ -519,12 +655,21 @@ android:id="@+id/posthitis_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/posthitis_no" /></RadioGroup >
+android:id="@+id/posthitis_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/posthitis_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_foreskinattachedtotheglans" >
@@ -551,12 +696,21 @@ android:id="@+id/foreskinattachedtotheglans_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/foreskinattachedtotheglans_no" /></RadioGroup >
+android:id="@+id/foreskinattachedtotheglans_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/foreskinattachedtotheglans_notsp" /></RadioGroup >
 
 <RadioGroup
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_others" >
@@ -583,7 +737,15 @@ android:id="@+id/others_yes" />
     android:layout_height="wrap_content"
     android:checked="false"
 android:text=""
-android:id="@+id/others_no" /></RadioGroup >
+android:id="@+id/others_no" />
+
+<RadioButton
+    android:layout_marginStart="10dp"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:checked="false"
+android:text=""
+android:id="@+id/others_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/circ_method_hdr"
@@ -607,6 +769,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_circumcisionmethodchosen" >
@@ -624,7 +787,15 @@ android:id="@+id/circumcisionmethodchosen_surgicalcircumcision" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/circumcisionmethodchosen_prepexcircumcision"
-android:id="@+id/circumcisionmethodchosen_prepexcircumcision" /></RadioGroup >
+android:id="@+id/circumcisionmethodchosen_prepexcircumcision" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/circumcisionmethodchosen_notsp"
+android:id="@+id/circumcisionmethodchosen_notsp" /></RadioGroup >
 
     <TextView
 android:text="@string/eligibleforprepex"
@@ -639,6 +810,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_eligibleforprepex" >
@@ -656,7 +828,15 @@ android:id="@+id/eligibleforprepex_yes" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/eligibleforprepex_no"
-android:id="@+id/eligibleforprepex_no" /></RadioGroup >
+android:id="@+id/eligibleforprepex_no" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/eligibleforprepex_notsp"
+android:id="@+id/eligibleforprepex_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/eligibleforprepex_noreason"
@@ -703,6 +883,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_prepexdevicesize" >
@@ -744,7 +925,15 @@ android:id="@+id/prepexdevicesize_d" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/prepexdevicesize_e"
-android:id="@+id/prepexdevicesize_e" /></RadioGroup >
+android:id="@+id/prepexdevicesize_e" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/prepexdevicesize_notsp"
+android:id="@+id/prepexdevicesize_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/devicebatchid"
@@ -779,7 +968,7 @@ android:id="@+id/prepexdevicesize_e" /></RadioGroup >
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_timelineofcircmarked"
             android:textSize="25sp" />
@@ -804,7 +993,7 @@ android:id="@+id/prepexdevicesize_e" /></RadioGroup >
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_timeplacementringremoved"
             android:textSize="25sp" />

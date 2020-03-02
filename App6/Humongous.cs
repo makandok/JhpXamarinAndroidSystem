@@ -1,9 +1,11 @@
 using Android.App;
+using Android.Content;
 using Android.Content.Res;
 using JhpDataSystem.model;
 using JhpDataSystem.store;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace JhpDataSystem
@@ -19,9 +21,8 @@ namespace JhpDataSystem
                 {
                     _instance = new AppInstance()
                     {
-                        AppVersion = "1.0"
-                    }
-                        ;
+                        AppVersion = "1.5"
+                    };                        
                 }
                 return _instance;
             }
@@ -33,9 +34,87 @@ namespace JhpDataSystem
 
         public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
 
+        public Android.Net.Uri writeToFile(string fileContents)
+        {
+            var filename = "a" + Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".txt";
+            var downloadsFolder = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
+            var defaultDirectory = Path.Combine(downloadsFolder.Path, "jhp");
+            if (!Directory.Exists(defaultDirectory))
+            {
+                Directory.CreateDirectory(defaultDirectory);
+            }
+            var filePath = Path.Combine(downloadsFolder.Path, "jhp", filename);
+            using (var streamWriter = File.CreateText(filePath))
+            {
+                streamWriter.Write(string.IsNullOrWhiteSpace(fileContents) ? "Nothing to write" : fileContents);
+            }
+
+            var file = new Java.IO.File(filePath);
+            file.SetReadable(true, false);
+            return Android.Net.Uri.FromFile(file);
+        }
+        Android.Net.Uri writeErrorLog(Exception exception)
+        {
+            //https://developer.xamarin.com/api/property/Android.OS.Environment.ExternalStorageDirectory/
+            var filename = "a"+Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".txt";
+            var downloadsFolder = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads);
+            var defaultDirectory = Path.Combine(downloadsFolder.Path, "jhp");
+            if (!Directory.Exists(defaultDirectory))
+            {
+                //System.Security.AccessControl.DirectorySecurity.
+                //var f = new System.Security.AccessControl.DirectorySecurity() {                    
+                //};f.
+                Directory.CreateDirectory(defaultDirectory);                
+            }
+            var filePath = Path.Combine(downloadsFolder.Path,"jhp", filename);
+            using (var streamWriter = File.CreateText(filePath))
+            {
+                streamWriter.Write(exception.Message ?? "No exception message");
+                streamWriter.WriteLine(exception.StackTrace ?? "No Stacktrace");
+            }
+
+            var file = new Java.IO.File(filePath);
+            file.SetReadable(true, false);
+            return Android.Net.Uri.FromFile(file);
+        }
+
         public Dictionary<string, string> ApiAssets = null;
+        protected void uncaughtExceptionHandler(object sender, 
+            //Exception exception
+            UnhandledExceptionEventArgs args
+            )
+        {
+            var exception = args.ExceptionObject as Exception;
+            if (exception == null)
+                return;
+
+            Android.Widget.Toast.MakeText(_mainContext, 
+                "An error occurred. "+ (exception.Message ?? "No exception message"), 
+                Android.Widget.ToastLength.Long).Show();
+
+            //can't do Log.Debug as process is being destroyed
+            //we do our own
+            var logUri = writeErrorLog(exception);
+            Android.Widget.Toast.MakeText(_mainContext, "Preparing to send email with error", Android.Widget.ToastLength.Long).Show();
+            new Utilities.EmailSender()
+            {
+                appContext = _mainContext,
+                receipients = new List<string>() {
+                            "makando.kabila@jhpiego.org"},
+                messageSubject = "Crash Report",
+                attachment= logUri,
+                message = "See attached log"
+            }.Send();
+            if (!args.IsTerminating)
+            {
+                _mainContext.FinishAffinity();
+                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+            }
+        }
+
         public void InitialiseAppResources(AssetManager assetManager, Activity context)
         {
+            AppDomain.CurrentDomain.UnhandledException += uncaughtExceptionHandler;
             //ContextManager = null;
             ModuleContext = null;
             _assetManager = assetManager;

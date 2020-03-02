@@ -10,7 +10,14 @@ namespace JhpDataSystem
         public WaitDialogHelper(Activity context, Action<string, Android.Widget.ToastLength> makeToast)
         {
             _context = context;
-            _makeToast = makeToast;
+            _makeToast =
+                setDialogMessage;
+                //makeToast;
+        }
+
+        void setDialogMessage(string message, Android.Widget.ToastLength toastLength)
+        {
+            _progressDialog.SetMessage(message);
         }
 
         //ProgressDialog getDialog()
@@ -25,13 +32,13 @@ namespace JhpDataSystem
         //    progress.SetCancelable(true);
         //    return progress;
         //}
-
+        ProgressDialog _progressDialog;
         public async System.Threading.Tasks.Task<int> showDialog(
             Func<Action<string, Android.Widget.ToastLength>, System.Threading.Tasks.Task<int>> worker)
         {
-            var progressDialog = ProgressDialog.Show(_context, "Please wait...", "Synchronising with server", true);
+            _progressDialog = ProgressDialog.Show(_context, "Please wait...", "Synchronising with server", true);
             await worker(_makeToast);
-            progressDialog.Hide();
+            _progressDialog.Hide();
             //new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             //{
             ////_context.RunOnUiThread(

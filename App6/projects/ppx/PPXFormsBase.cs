@@ -24,7 +24,14 @@ namespace JhpDataSystem.projects.ppx
             var deviceSizeControl = data.Where(t => t.Name.Contains(Constants.FIELD_PPX_DEVSIZE_PREFIX)).FirstOrDefault();
             if (deviceSizeControl != null)
             {
-                var deviceSize = deviceSizeControl.Name.Last().ToString().ToUpperInvariant();
+                //NotSp
+                //prepexdevicesize_notsp
+                var deviceSize = string.Empty;
+                if (deviceSizeControl.Name.Contains("notsp"))
+                    deviceSize = "";
+                else
+                    deviceSize = deviceSizeControl.Name.Last().ToString().ToUpperInvariant();
+
                 toReturn.Add(new NameValuePair() { Name = Constants.FIELD_PPX_DEVSIZE, Value = deviceSize });
             }
             return toReturn;
