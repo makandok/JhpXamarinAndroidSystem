@@ -7,4 +7,5 @@
     <color name="divider_color">#ff263238</color>
     <color name="white">#ffff</color>
   <color name="colorTableHeader">#dad8c4</color>
+  <color name="colorError">#724518</color>
 </resources>

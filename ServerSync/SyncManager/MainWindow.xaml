@@ -32,7 +32,9 @@
                     </MenuItem.Icon>
                 </MenuItem>-->
                 <MenuItem Name="menuServerSync" Header="Sync"/>
-                <MenuItem Name="menuConfigure" Header="Configure" Foreground="Orange" FontSize="16" />
+                <MenuItem Name="menuServerSyncOldData" Header="Sync Old Data"/>
+                <MenuItem Name="menuRefreshLocal" Header="Refresh"/>
+                <MenuItem Name="menuConfigure" Header="Field Dict" Foreground="Orange" FontSize="16" />
                 <MenuItem Name="menuSmmaries" Header="Summaries" Foreground="White" FontSize="16"/>
                 <MenuItem Name="menuAllData" Header="All Data" Foreground="LightGreen" FontSize="16"/>
             </Menu>
@@ -45,5 +47,6 @@
             Margin="0,40,0,0"
             Background="Brown" >
         </Grid>
+        <ProgressBar Name="pbarProgress" Value="0" HorizontalAlignment="Left" Height="10" Margin="0,35,-1,0" VerticalAlignment="Top" Width="518"/>
     </Grid>
 </Window>

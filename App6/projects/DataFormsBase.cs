@@ -290,7 +290,12 @@ namespace JhpDataSystem.projects
             }
         }
 
-        protected void getDataForView(int viewId)
+        void showErrorAndHalt(FieldItem field)
+        {
+
+        }
+
+        protected viewValidations getDataForView(int viewId)
         {
             //we get all the relevant fields for this view
             var viewFields = GetFieldsForView(viewId);
@@ -306,17 +311,40 @@ namespace JhpDataSystem.projects
                               select field).ToList();
             var context = this;
             var valueFields = new List<FieldValuePair>();
+            var validationIssues = new List<DataValidationIssue>();
             foreach (var field in dataFields)
             {
                 var resultObject = new FieldValuePair() { Field = field, Value = string.Empty };
+                var fieldView = new ValidationObject()
+                {
+                    isRequired = field.IsRequired,
+                    label = field.Label,
+                    //value = view.Text,
+                    //viewId = view.Id,
+                    validation = field.validation
+                };
                 switch (field.dataType)
                 {
                     case Constants.TIMEPICKER:
                     case Constants.DATEPICKER:
                         {
                             var view = field.GetDataView<EditText>(this);
+                            fieldView.value = view.Text;
+                            fieldView.viewId = view.Id;
+                            fieldView.viewObject = view;
+
+                            var validationResult = DateValidator.validates(fieldView);
+                            clearError(view);
+
+                            if (validationResult != null)
+                            {
+                                validationIssues.Add(validationResult);
+                            }
+
                             if (string.IsNullOrWhiteSpace(view.Text))
+                            {
                                 continue;
+                            }
 
                             resultObject.Value = view.Text;
                             break;
@@ -324,8 +352,17 @@ namespace JhpDataSystem.projects
                     case Constants.EDITTEXT:
                         {
                             var view = field.GetDataView<EditText>(this);
-                            if (string.IsNullOrWhiteSpace(view.Text))
-                                continue;
+                            fieldView.value = view.Text;
+                            fieldView.viewId = view.Id;
+                            fieldView.viewObject = view;
+                            clearError(view);
+                            var validationResult = TextValidator.validates(fieldView);
+                            if (validationResult != null)
+                            {
+                                validationIssues.Add(validationResult);
+                            }
+
+                            if (string.IsNullOrWhiteSpace(view.Text)) continue;
 
                             resultObject.Value = view.Text;
                             break;
@@ -343,6 +380,11 @@ namespace JhpDataSystem.projects
                     case Constants.RADIOBUTTON:
                         {
                             var view = field.GetDataView<RadioButton>(this);
+                            if (view == null)
+                            {
+                                view = field.GetDataView<RadioButton>(this);
+                            }
+
                             if (!view.Checked)
                             {
                                 continue;
@@ -362,7 +404,8 @@ namespace JhpDataSystem.projects
                 }
                 valueFields.Add(resultObject);
             }
-            AppInstance.Instance.TemporalViewData[viewId] = valueFields;
+
+            return new viewValidations() { TemporalViewData = valueFields, Validations = validationIssues };
         }
 
         protected virtual List<FieldItem> GetFieldsForView(int viewId)
@@ -384,6 +427,7 @@ namespace JhpDataSystem.projects
                 })
                 .SetPositiveButton("OK", (senderAlert, args) =>
                 {
+                    AppInstance.Instance.TemporalViewData.Clear();
                     this.Finish();
                     showHome();
                     //showPrepexHome();
@@ -404,6 +448,38 @@ namespace JhpDataSystem.projects
                 .Show();
         }
 
+        Android.Graphics.Color _color;
+        bool defaultColorIsSet = false;
+        Android.Graphics.Color defaultBackgroundColor
+        {
+            get
+            {
+                return _color;
+            }
+            set
+            {
+                if (defaultColorIsSet) return;
+                _color = value;
+                defaultColorIsSet = true;
+            }
+        }
+
+        void clearError(Android.Views.View view)
+        {
+            view.SetBackgroundColor(Android.Graphics.Color.Black);
+            //if (defaultColorIsSet)
+            //{
+            //    view.SetBackgroundColor(defaultBackgroundColor);
+            //}
+        }
+
+        void highlightError(Android.Views.View view)
+        {
+            view.SetBackgroundColor(
+                Android.Graphics.Color
+                .ParseColor(GetString(
+                    Resource.Color.colorError)));
+        }
 
         protected virtual List<NameValuePair> getModuleClientSummaries(IEnumerable<NameValuePair> data)
         {
@@ -452,8 +528,18 @@ namespace JhpDataSystem.projects
                 var buttonNext = FindViewById<Button>(Resource.Id.buttonNext);
                 buttonNext.Click += (sender, e) =>
                 {
-                    //we get the values
-                    getDataForView(myView);
+                    //we get the values                    
+                    var viewData = getDataForView(myView);
+                    if (viewData.Validations != null && viewData.Validations.Count > 0)
+                    {
+                        viewData.Validations.ForEach(
+                            x => highlightError(x.validationObject.viewObject));
+                        sendToast("Invalid data specified", ToastLength.Short);
+                        return;
+                    }
+
+                    AppInstance.Instance.TemporalViewData[myView] = viewData.TemporalViewData;
+                    
                     //showAddNewView(true);
                     var next = myNavController.GetNextLayout(myView, true);
                     if (myView == next)
@@ -650,8 +736,12 @@ namespace JhpDataSystem.projects
                 FieldValues = getIndexedFormData(data)
             };
 
+            var db = new LocalDB3().DB;
+            //var count = db.Table<ppx.PPClientSummary>().Count();
             var ppclient = new T().Load(clientSummary) as T;
             new LocalDB3().DB.InsertOrReplace(ppclient);
+
+            //count = db.Table<ppx.PPClientSummary>().Count();
         }
 
         protected virtual List<NameValuePair> getIndexedFormData(List<NameValuePair> data)
@@ -668,9 +758,18 @@ namespace JhpDataSystem.projects
                     select rec).ToList();
         }
 
+        protected void showAlertDialog(string message, string title, string okText)
+        {
+            new AlertDialog.Builder(this)
+                .SetTitle(title)
+                .SetMessage(message)
+                .SetPositiveButton(okText, (senderAlert, args) => { })
+                .Create()
+                .Show();
+        }
+
         protected void displayTemporalDataAvailable()
         {
-            var fields = AppInstance.Instance.TemporalViewData;
             var nameValuePairs = getFormData(useDisplayLabels: true).Select(t => t.Name + ": " + t.Value);
             var message = string.Join(
             System.Environment.NewLine, nameValuePairs);

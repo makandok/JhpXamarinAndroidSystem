@@ -13,13 +13,13 @@ namespace JhpDataSystem.store
         public LocalDB InstanceLocalDb { get { return _localDb; } }
         internal TableStore defaultTableStore { get; set; }
 
-        public static bool RebuildIndexes { get; set; }
+        //public bool RebuildIndexes { get; set; }
 
         public LocalEntityStore()
         {
             _localDb = new LocalDB();
             defaultTableStore = new TableStore(Constants.KIND_DEFAULT);
-            RebuildIndexes = false;
+            //RebuildIndexes = false;
         }
 
         public static void RebuildRecordSummaryIndexes()
@@ -98,9 +98,9 @@ namespace JhpDataSystem.store
             clearTables();
         }
 
-        private static void clearTables()
+        private void clearTables()
         {
-            buildTables();
+            buildTables(false);
 
             var db = new LocalDB3().DB;
             db.DeleteAll<OutEntity>();
@@ -126,7 +126,7 @@ namespace JhpDataSystem.store
             new TableStore(Constants.KIND_VMMC_REGANDPROCEDURE).DeleteAll();
         }
 
-        public static void buildTables()
+        public void buildTables(bool rebuildIndexes)
         {
             var db = new LocalDB3().DB;
             db.CreateTable<OutEntity>();
@@ -138,7 +138,8 @@ namespace JhpDataSystem.store
 
             db.CreateTable<DeviceConfiguration>();
             //we load from kinds
-            if (RebuildIndexes)
+            //RebuildIndexes = true;
+            if (rebuildIndexes)
             {
                 RebuildClientSummaryIndexes<
                     projects.vmc.VmmcClientSummary,
