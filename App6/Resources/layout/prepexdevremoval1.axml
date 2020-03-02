@@ -247,7 +247,15 @@ android:id="@+id/typeofinteraction_followuptelephone" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/typeofinteraction_physicalvisit"
-android:id="@+id/typeofinteraction_physicalvisit" /></RadioGroup >
+android:id="@+id/typeofinteraction_physicalvisit" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeofinteraction_notsp"
+android:id="@+id/typeofinteraction_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/timeforcepsapplied"

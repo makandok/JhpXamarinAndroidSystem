@@ -221,7 +221,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_isaplannedfupphonecall" >
@@ -239,7 +239,15 @@ android:id="@+id/isaplannedfupphonecall_yes" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/isaplannedfupphonecall_no"
-android:id="@+id/isaplannedfupphonecall_no" /></RadioGroup >
+android:id="@+id/isaplannedfupphonecall_no" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/isaplannedfupphonecall_notsp"
+android:id="@+id/isaplannedfupphonecall_notsp" /></RadioGroup >
 
     <TextView
 android:text="@string/typeoffollowup"
@@ -251,7 +259,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_typeoffollowup" />
 <RadioGroup
-android:orientation="horizontal"
+android:orientation="vertical"
         android:minWidth="25dp"
         android:minHeight="25dp"
         android:visibility="visible"
@@ -272,7 +280,23 @@ android:id="@+id/typeoffollowup_telephonecall" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/typeoffollowup_physicalvisit"
-android:id="@+id/typeoffollowup_physicalvisit" /></RadioGroup >
+android:id="@+id/typeoffollowup_physicalvisit" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeoffollowup_unscheduledphysicalvisit"
+android:id="@+id/typeoffollowup_unscheduledphysicalvisit" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/typeoffollowup_notsp"
+android:id="@+id/typeoffollowup_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/clinicalcourse"

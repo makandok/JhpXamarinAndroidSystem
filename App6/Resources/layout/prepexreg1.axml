@@ -294,7 +294,15 @@ android:id="@+id/alternateaddresstype_school" />
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="@string/alternateaddresstype_friendnextofkin"
-android:id="@+id/alternateaddresstype_friendnextofkin" /></RadioGroup >
+android:id="@+id/alternateaddresstype_friendnextofkin" />
+
+<RadioButton
+            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/alternateaddresstype_notsp"
+android:id="@+id/alternateaddresstype_notsp" /></RadioGroup >
 
     <TextView
         android:text="@string/alternateaddress"
@@ -320,7 +328,7 @@ android:id="@+id/alternateaddresstype_friendnextofkin" /></RadioGroup >
     <EditText
         android:layout_height="40dp"
         android:layout_width="match_parent"
-        android:inputType="text"
+        android:inputType="number"
         android:id="@+id/alternatephone"
         android:hint="@string/alternatephone" />
 

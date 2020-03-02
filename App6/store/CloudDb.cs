@@ -149,6 +149,7 @@ namespace JhpDataSystem.store
 
         public async Task<bool> checkConnection()
         {
+            //var googleUrl = "https://drive.google.com/open?id=0B9L3WksBN3AAVmVCam84d0NRUWc";
             var googleUrl = "https://google.co.zm";
             var toReturn = false;
             try
@@ -186,6 +187,7 @@ namespace JhpDataSystem.store
 
         async Task<int> doServerSync(Action<string, ToastLength> makeToast)
         {
+            makeToast("Getting records to sync", ToastLength.Short);
             var recs = GetRecordsToSync();
             if (recs.Count == 0)
             {
@@ -193,22 +195,31 @@ namespace JhpDataSystem.store
                 return 0;
             }
 
+            makeToast("Checking internet connection", ToastLength.Short);
+
             var hasConnection = await checkConnection();
             if (!hasConnection)
             {
                 isRunning = 0;
-                if (makeToast != null)
-                {
-                    makeToast("No connection detected", ToastLength.Long);
-                }
+                makeToast("No connection detected", ToastLength.Long);
+                //if (makeToast != null)
+                //{
+                //    makeToast("No connection detected", ToastLength.Long);
+                //}
                 return 0;
             }
-            makeToast("Connected tested", ToastLength.Short);
+
+            makeToast("Connection checked", ToastLength.Short);
+
             var cloudDb = new OutDb().DB;
-            
+            var totalCount = recs.Count;
             var recIndex = recs.Count - 1;
             while (recIndex >= 0 && hasConnection)
             {
+                makeToast(
+                   string.Format("Processing {0} of {1}",
+                   totalCount - recIndex, totalCount)
+                    , ToastLength.Short);
                 var outEntity = recs[recIndex];
                 var ppdataset = DbSaveableEntity.fromJson<GeneralEntityDataset>(new KindItem(outEntity.DataBlob));
                 var saveable = new DbSaveableEntity(ppdataset)
@@ -217,8 +228,13 @@ namespace JhpDataSystem.store
                 };
 
                 var saved = false;
+                var shouldCheckConnection = false;
                 for (int i = 0; i < 4; i++)
                 {
+                    makeToast(
+                       string.Format("Saving {0} of {1}" + (i == 0 ? "" : " (Attempt {2} of {3})"),
+                       totalCount - recIndex, totalCount, i + 1, 4)
+                        , ToastLength.Short);
                     try
                     {
                         await Save(saveable);
@@ -227,6 +243,7 @@ namespace JhpDataSystem.store
                     }
                     catch (Google.GoogleApiException gex)
                     {
+                        makeToast("Not saved - Google Api Exception", ToastLength.Short);
                         //todo: mark this record as bad to prevent it blocking for life
 
                         //cloudDb.InsertOrReplace(new OutEntityUnsynced().load(outEntity));
@@ -235,11 +252,13 @@ namespace JhpDataSystem.store
                     }
                     catch (System.Net.WebException wex)
                     {
+                        makeToast("Not saved - Web Exception", ToastLength.Short);
                         //perhaps lost connection
                         //we alllow it to spin for now
                     }
                     catch (Exception ex)
                     {
+                        makeToast("Not saved - Other Exception", ToastLength.Short);
                         //unknown exception
                     }
                     finally { }
@@ -258,12 +277,26 @@ namespace JhpDataSystem.store
                     else
                     {
                         //lets add a 2 second delay in case it failed the first time
-                        await Task.Delay(TimeSpan.FromMilliseconds(2000));
+                        if (i < 3)
+                        {
+                            makeToast("Not saved. Awaiting for 2 secs", ToastLength.Short);
+                            await Task.Delay(TimeSpan.FromMilliseconds(2000));
+                        }
+                        else
+                        {
+                            //we check the connection
+                            shouldCheckConnection = true;
+                        }
                     }
                 }
                 recIndex--;
-                hasConnection = await checkConnection();                
-            }            
+
+                if (recIndex >= 0 && shouldCheckConnection)
+                {
+                    makeToast("Checking connection", ToastLength.Short);
+                    hasConnection = await checkConnection();
+                }          
+            }
             return 0;
         }
     }

@@ -23,7 +23,6 @@ namespace JhpDataSystem
         public const string SYS_FIELD_USERNAMES = "sys_usernames";
         public const string SYS_FIELD_PASSWDHASH = "sys_pwdhash";
 
-
         public const string SYS_FIELD_DATEEDITED = "sys_editdate";
 
         public const string SYS_FIELD_DATECREATED = "sys_datecreated";
@@ -38,8 +37,8 @@ namespace JhpDataSystem
         public const string SYS_FIELD_FACILITYID = "sys_facilityid";
         public const string SYS_FIELD_SESSIONDATE = "sys_sessiondate";
         public const string SYS_FIELD_TODAY = "today";
-        
 
+        public const string GENERAL_FIELD_FACILITYNAME = "facilityname";
         //VMMC
         public const string FIELD_VMMC_DOB = "vm_date_of_birth";
         public const string FIELD_VMMC_MCDATE = "vm_mc_date";
@@ -58,6 +57,7 @@ namespace JhpDataSystem
                 FIELD_VMMC_MCDATE,FIELD_VMMC_DOB,
                 FIELD_ID,FIELD_ENTITYID,FIELD_VMMC_DATEOFVISIT,
                 FIELD_VMMC_CARD_SERIAL,FIELD_VMMC_MCNUMBER,FIELD_VMMC_CLIENTTEL,
+                GENERAL_FIELD_FACILITYNAME
                 //FIELD_VMMC_CLIENTPHYSICALADDR
         };
 
@@ -73,14 +73,22 @@ namespace JhpDataSystem
         public const string FIELD_PPX_CLIENTNAME = "clientname";
         public const string FIELD_PPX_DOB = "dob";
         public const string FIELD_PPX_CLIENTTEL = "clienttel";
+        public const string FIELD_PPX_MOBILECELL = "mobilecell";
         public const string FIELD_PPX_CLIENTPHYSICALADDR = "clientsphysicaladdress";
         public const string FIELD_PPX_PLACEMENTDATE = "dateofplacement";
+
+        public const string FIELD_PPX_FIRSTTTCVDATE = "datefirstttvac";
+        public const string FIELD_PPX_SECONDTTCVDATE = "datesecondttvac";
+
         public static List<string> PP_IndexedFieldNames = new List<string>() {
             //FIELD_PLACEMENTDATE,
                 FIELD_PPX_DEVSIZE,
                 FIELD_ID,FIELD_ENTITYID,FIELD_PPX_DATEOFVISIT,
                 FIELD_PPX_CARD_SERIAL,FIELD_PPX_CLIENTIDNUMBER,FIELD_PPX_CLIENTNAME,FIELD_PPX_DOB,FIELD_PPX_CLIENTTEL,
-                FIELD_PPX_CLIENTPHYSICALADDR};
+                FIELD_PPX_CLIENTPHYSICALADDR,
+                FIELD_PPX_MOBILECELL,FIELD_PPX_FIRSTTTCVDATE,FIELD_PPX_SECONDTTCVDATE,
+                GENERAL_FIELD_FACILITYNAME
+        };
 
         public const string LABEL_PPX_ACTIVITYLABEL = "Prepex Manager";
         
@@ -170,5 +178,10 @@ namespace JhpDataSystem
         public const string LABEL_PREFIX = "sylbl_";
 
         public const string DEFAULT_CHECKED = "1";
+
+        public const string VALIDATION_PHONE = "phone";
+        public const string VALIDATION_HowCellStarts = "09";
+        public const string VALIDATION_HowPhoneStarts = "02";
+        public const int VALIDATION_PhoneNumberLength = 10;
     }
 }
