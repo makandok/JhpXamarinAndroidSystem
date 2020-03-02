@@ -132,10 +132,19 @@
     ]
   },
   {
+    "Name": "followup_type",
+    "Values": [
+      "Telephone Call",
+      "Physical Visit",
+      "Unscheduled Physical Visit"
+    ]
+  },
+  {
     "Name": "interaction_type",
     "Values": [
       "RemovalProceddure",
-      "Followup telephone"
+      "Followup telephone",
+      "Physical Visit"
     ]
   }
 ]

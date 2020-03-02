@@ -15,7 +15,6 @@ namespace JhpDataSystem
 
         public virtual List<T> Get()
         {
-            //var count = GetCount();
             var all = new LocalDB3().DB
                 .Table<T>()
                 .ToList<T>()

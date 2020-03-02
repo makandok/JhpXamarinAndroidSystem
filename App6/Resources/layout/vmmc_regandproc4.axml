@@ -41,7 +41,7 @@
     <EditText
         android:layout_height="40dp"
         android:layout_width="match_parent"
-        android:inputType="number"
+        android:inputType="numberDecimal|numberSigned"
         android:id="@+id/vm_temp"
         android:hint="@string/vm_temp" />
 
@@ -55,7 +55,7 @@
     <EditText
         android:layout_height="40dp"
         android:layout_width="match_parent"
-        android:inputType="number"
+        android:inputType="numberDecimal|numberSigned"
         android:id="@+id/vm_weight_kg"
         android:hint="@string/vm_weight_kg" />
 
@@ -124,6 +124,7 @@
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_vm_gexam_scrotum" >
@@ -156,6 +157,7 @@ android:id="@+id/vm_gexam_scrotum_abnormal" /></RadioGroup >
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_vm_gexam_lymph_nodes" >
@@ -188,6 +190,7 @@ android:id="@+id/vm_gexam_lymph_nodes_abnormal" /></RadioGroup >
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_vm_gexam_penis" >
@@ -226,48 +229,56 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_vm_gexam_abnormal_penis" /> <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/vm_gexam_abnormal_penis_phimosis"
              android:id="@+id/vm_gexam_abnormal_penis_phimosis" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/vm_gexam_abnormal_penis_paraphimosis"
              android:id="@+id/vm_gexam_abnormal_penis_paraphimosis" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/vm_gexam_abnormal_penis_genitalulcerdisease"
              android:id="@+id/vm_gexam_abnormal_penis_genitalulcerdisease" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/vm_gexam_abnormal_penis_genitalwarts"
              android:id="@+id/vm_gexam_abnormal_penis_genitalwarts" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/vm_gexam_abnormal_penis_discharge"
              android:id="@+id/vm_gexam_abnormal_penis_discharge" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/vm_gexam_abnormal_penis_epispadiasis"
              android:id="@+id/vm_gexam_abnormal_penis_epispadiasis" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/vm_gexam_abnormal_penis_hypospadiasis"
              android:id="@+id/vm_gexam_abnormal_penis_hypospadiasis" />
  <CheckBox
             android:layout_width="wrap_content"
+            android:visibility="visible"
             android:layout_height="wrap_content"
             android:checked="false"
              android:text="@string/vm_gexam_abnormal_penis_other"
@@ -347,6 +358,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_vm_referral_penile_abnorm" >
@@ -379,6 +391,7 @@ android:id="@+id/vm_referral_penile_abnorm_no" /></RadioGroup >
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_vm_referral_hiv_care" >
@@ -411,6 +424,7 @@ android:id="@+id/vm_referral_hiv_care_no" /></RadioGroup >
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_vm_referral_sti_tx" >
@@ -443,6 +457,7 @@ android:id="@+id/vm_referral_sti_tx_no" /></RadioGroup >
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_vm_referral_othermedical" >
@@ -498,6 +513,7 @@ android:textAppearance="?android:attr/textAppearanceMedium"
 android:orientation="horizontal"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_vm_eligible_for_mmc" >

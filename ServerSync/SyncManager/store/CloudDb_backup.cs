@@ -167,7 +167,9 @@ namespace JhpDataSystem.store
                         entity.Properties["dateadded"].TimestampValue);
                     var editday = entityDate.toYMDInt();
                     cloudEntity.EditDay = editday;
-                    var editdate = entityDate.ToBinary();
+
+                    var local = entityDate.ToLocalTime();
+                    var editdate = local.ToBinary();
                     cloudEntity.EditDate = editdate;
                 }
 

@@ -43,16 +43,16 @@ namespace JhpDataSystem.store
 
         public void Save()
         {
-            if (Entity == null)
-                throw new ArgumentNullException("Wrapped entity can not be null");
-            Save(new KindItem(getJson()));
+            //if (Entity == null)
+            //    throw new ArgumentNullException("Wrapped entity can not be null");
+            //Save(new KindItem(getJson()));
         }
 
         public void Save(KindItem kindItem)
         {
-            if (Entity == null)
-                throw new ArgumentNullException("Wrapped entity can not be null");
-            AppInstance.Instance.LocalEntityStoreInstance.Save(Entity.Id, kindName, kindItem);
+            //if (Entity == null)
+            //    throw new ArgumentNullException("Wrapped entity can not be null");
+            //AppInstance.Instance.LocalEntityStoreInstance.Save(Entity.Id, kindName, kindItem);
         }
     }
 }

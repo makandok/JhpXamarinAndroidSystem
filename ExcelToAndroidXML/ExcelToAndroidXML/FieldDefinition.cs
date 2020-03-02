@@ -19,6 +19,8 @@ namespace ExcelToAndroidXML
         public string IsIndexed { get; set; }
         public string IsRequired { get; set; }
         public string ViewPage { get; set; }
+        public string IsDeprecated { get; set; }
+        public string Validation { get; set; }
         public FieldChoices FieldOptions { get; set; }
     }
 }

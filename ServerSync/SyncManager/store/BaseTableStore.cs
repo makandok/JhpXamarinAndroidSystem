@@ -21,7 +21,7 @@ namespace JhpDataSystem.store
         protected KindName _tableName;
         protected LocalDB _db;
 
-        protected string dropKindSql = "if object_id('{0}') is not null drop table {0};";
+        protected string dropKindSql = "if object_id('{0}') is not null begin delete from {0}; drop table {0}; end";
 
         protected string createKindSql = "create table if not exists {0}(id nvarchar(32) primary key, datablob nvarchar(500));";
         protected string insertSql = "insert or replace into {0}(id, datablob) values (@id, @datablob)";
@@ -45,7 +45,7 @@ namespace JhpDataSystem.store
         /// </summary>
         /// <returns>True if successful</returns>
         //dropAdRecreate
-        public bool build(bool dropAndRecreate = false)
+        public virtual bool build(bool dropAndRecreate = false)
         {
             //we create if does not exist
             var saveStatus = false;

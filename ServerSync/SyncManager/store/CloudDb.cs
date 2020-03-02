@@ -117,73 +117,73 @@ namespace JhpDataSystem.store
             return toReturn;
         }
 
-        private async Task<List<CloudEntity>> fetchCloudData1()
-        {
-            var toReturn = new List<CloudEntity>();
-            var repeatDownload = true;
-            while (repeatDownload)
-            {
+        //private async Task<List<CloudEntity>> fetchCloudData1()
+        //{
+        //    var toReturn = new List<CloudEntity>();
+        //    var repeatDownload = true;
+        //    while (repeatDownload)
+        //    {
 
-                var response = await res.ExecuteAsync();
-                var entityResults = response.Batch.EntityResults;
-                //Debug.
-                if (entityResults == null)
-                {
-                    repeatDownload = false;
-                    break;
-                }
+        //        var response = await res.ExecuteAsync();
+        //        var entityResults = response.Batch.EntityResults;
+        //        //Debug.
+        //        if (entityResults == null)
+        //        {
+        //            repeatDownload = false;
+        //            break;
+        //        }
 
-                query.Query.StartCursor = response.Batch.EndCursor;
-                foreach (var entityResult in response.Batch.EntityResults)
-                {
-                    var entity = entityResult.Entity;
-                    var path = entity.Key.Path.FirstOrDefault();
-                    var cloudEntity = new CloudEntity()
-                    {
-                        FormName = path.Kind,
-                        Id = path.Name,
-                        EntityId = entity.Properties["entityid"].StringValue,
-                        DataBlob = entity.Properties["datablob"].StringValue,
-                        KindMetaData = entity.Properties["kindmetadata"].StringValue,
-                        //EditDate = Convert.ToInt64(
-                        //    entity.Properties["editdate"].IntegerValue),
-                        //EditDay = Convert.ToInt32(
-                        //    entity.Properties["editday"].IntegerValue)
-                    };
-                    if (entity.Properties.ContainsKey("editdate"))
-                    {
-                        var editDate = entity.Properties["editdate"].IntegerValue;
-                        cloudEntity.EditDate = Convert.ToInt64(editDate);
+        //        query.Query.StartCursor = response.Batch.EndCursor;
+        //        foreach (var entityResult in response.Batch.EntityResults)
+        //        {
+        //            var entity = entityResult.Entity;
+        //            var path = entity.Key.Path.FirstOrDefault();
+        //            var cloudEntity = new CloudEntity()
+        //            {
+        //                FormName = path.Kind,
+        //                Id = path.Name,
+        //                EntityId = entity.Properties["entityid"].StringValue,
+        //                DataBlob = entity.Properties["datablob"].StringValue,
+        //                KindMetaData = entity.Properties["kindmetadata"].StringValue,
+        //                //EditDate = Convert.ToInt64(
+        //                //    entity.Properties["editdate"].IntegerValue),
+        //                //EditDay = Convert.ToInt32(
+        //                //    entity.Properties["editday"].IntegerValue)
+        //            };
+        //            if (entity.Properties.ContainsKey("editdate"))
+        //            {
+        //                var editDate = entity.Properties["editdate"].IntegerValue;
+        //                cloudEntity.EditDate = Convert.ToInt64(editDate);
 
-                        var editDay = entity.Properties["editday"].IntegerValue;
-                        cloudEntity.EditDay = Convert.ToInt32(editDay);
-                    }
-                    else
-                    {
-                        //use field date added 
-                        var entityDate = Convert.ToDateTime(
-                            entity.Properties["dateadded"].TimestampValue);
-                        var editday = entityDate.toYMDInt();
-                        cloudEntity.EditDay = editday;
-                        var editdate = entityDate.ToBinary();
-                        cloudEntity.EditDate = editdate;
-                    }
-                    toReturn.Add(cloudEntity);
-                }
+        //                var editDay = entity.Properties["editday"].IntegerValue;
+        //                cloudEntity.EditDay = Convert.ToInt32(editDay);
+        //            }
+        //            else
+        //            {
+        //                //use field date added 
+        //                var entityDate = Convert.ToDateTime(
+        //                    entity.Properties["dateadded"].TimestampValue);
+        //                var editday = entityDate.toYMDInt();
+        //                cloudEntity.EditDay = editday;
+        //                var editdate = entityDate.ToBinary();
+        //                cloudEntity.EditDate = editdate;
+        //            }
+        //            toReturn.Add(cloudEntity);
+        //        }
 
-                //moreResultsAfterLimit
-                if (response.Batch.MoreResults == "NO_MORE_RESULTS")
-                {
-                    repeatDownload = false;
-                    break;
-                }
-                else
-                {
-                    repeatDownload = true;
-                }
-            }
-            return toReturn;
-        }
+        //        //moreResultsAfterLimit
+        //        if (response.Batch.MoreResults == "NO_MORE_RESULTS")
+        //        {
+        //            repeatDownload = false;
+        //            break;
+        //        }
+        //        else
+        //        {
+        //            repeatDownload = true;
+        //        }
+        //    }
+        //    return toReturn;
+        //}
 
         private static List<CloudEntity> toCloudEntity(IList<EntityResult> results)
         {
@@ -216,10 +216,13 @@ namespace JhpDataSystem.store
                 {
                     //use field date added 
                     var entityDate = Convert.ToDateTime(
-                        entity.Properties["dateadded"].TimestampValue);
+                        entity.Properties["dateadded"].TimestampValue);                  
+
                     var editday = entityDate.toYMDInt();
                     cloudEntity.EditDay = editday;
-                    var editdate = entityDate.ToBinary();
+
+                    var local = entityDate.ToLocalTime();
+                    var editdate = local.ToBinary();
                     cloudEntity.EditDate = editdate;
                 }
                 toReturn.Add(cloudEntity);
@@ -338,7 +341,7 @@ namespace JhpDataSystem.store
             var entity = db.GetLatestEntity();
             if (entity == null || string.IsNullOrWhiteSpace(entity.Id))
             {
-                return new DateTime(2016, 07, 08, 0, 0, 0, 1).ToBinary();
+                return new DateTime(2016, 07, 08, 0, 0, 0, 1, DateTimeKind.Local).ToBinary();
             }
             return entity.EditDate;
         }
@@ -376,6 +379,15 @@ namespace JhpDataSystem.store
     {
         const string DATEADDED = "dateadded";
         public static List<string> getAllKindNames()
+        {
+            var allClientKinds = new List<string>();
+            allClientKinds.AddRange(Constants.PPX_KIND_DISPLAYNAMES.Keys);
+            allClientKinds.AddRange(Constants.VMMC_KIND_DISPLAYNAMES.Keys);
+            allClientKinds.Add(Constants.KIND_APPUSERS);
+            return allClientKinds;
+        }
+
+        public static List<string> getAllKindFields()
         {
             var allClientKinds = new List<string>();
             allClientKinds.AddRange(Constants.PPX_KIND_DISPLAYNAMES.Keys);
@@ -573,8 +585,8 @@ namespace JhpDataSystem.store
             //we get the keys and editdates
             foreach (var table in cloudTables)
             {
-                var store = new CloudLocalStore<CloudEntity>(table.toKind());
-                var entities = store.GetUnsyncedLocalEntities(
+                var localCloudData = new CloudLocalStore<CloudEntity>(table.toKind());
+                var entities = localCloudData.GetUnsyncedLocalEntities(
                     cloudTable:table.toKind(),
                     localTable:getLocalTableName(table).toKind()
                     );
@@ -582,13 +594,38 @@ namespace JhpDataSystem.store
                     continue;
 
                 var entityConverter = new EntityConverter();
-
                 var localStore = new CloudLocalStore<LocalEntity>(getLocalTableName(table).toKind());
+                var flatStore = new FieldValueStore(getTableFieldValueName(table)) {
+                    batchSize = 50 };
+
                 foreach (var entity in entities)
                 {
+                    //we decrypt
                     var localEntity = entityConverter.toLocalEntity(entity);
-                    localStore.Update(localEntity);
+                    localEntity.FormName = table;
+                    var saved = localStore.Update(localEntity);
+                    if (saved == null)
+                    {
+                        //means we couldn't save, so we do what?
+                        //throw exception??
+                        log(string.Format("Couldn't save record for ", table, entity.Id));
+                        continue;
+                    }
+
+                    //and deidentify
+                    var deid = entityConverter.toDeidEntity(localEntity);
+
+                    var ged = DbSaveableEntity.fromJson<GeneralEntityDataset>(
+                        new KindItem(deid.DataBlob)
+                        );
+
+                    //todo: modify so we sync from CloudLocalStore separately than when downloading
+                    //and save to localTables
+                    flatStore.Save(ged, localEntity, saved.recordId);
                 }
+
+                //call finalise
+                flatStore.finalise();
             }
 
             //check if we have these in the local tables
@@ -597,6 +634,10 @@ namespace JhpDataSystem.store
 
             //or do a sql comparison
 
+        }
+
+        void log(string message)
+        {
 
         }
 
@@ -604,5 +645,10 @@ namespace JhpDataSystem.store
         {
             return table + "_local";
         }
+
+        public static string getTableFieldValueName(string table)
+        {
+            return table + "_local_fvs";
+        }        
     }
 }

@@ -16,6 +16,11 @@ namespace ExcelToAndroidXML
         public bool IsRequired { get; set; }
         public string Label { get; set; }
         public string fieldType { get; set; }
-        //public List<string> options { get; set; }
+        private string validations = "";
+        public string validation { get { return validations; } set { validations = value; } }
+        public string fieldName { get; set; }
+        public string listName { get; set; }
+        public string lookupValue { get; set; }
+        public bool IsDeprecated { get; set; }
     }
 }

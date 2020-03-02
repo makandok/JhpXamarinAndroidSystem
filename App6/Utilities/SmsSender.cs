@@ -73,6 +73,7 @@ namespace JhpDataSystem.Utilities
         public string messageSubject { get; set; }
         public List<string> receipients { get; set; }
         public Activity appContext { get; set; }
+        public Android.Net.Uri attachment { get; set; }
         public void Send()
         {
             var email = new Intent(Android.Content.Intent.ActionSend)
@@ -81,8 +82,13 @@ namespace JhpDataSystem.Utilities
             .PutExtra(Intent.ExtraEmail, receipients.ToArray())
             .PutExtra(Android.Content.Intent.ExtraSubject, messageSubject)
             .PutExtra(Android.Content.Intent.ExtraText, message);
+            if (attachment != null)
+            {
+                email.PutExtra(Intent.ExtraStream, attachment);
+            }
+
             appContext.StartActivity(email);
-            Toast.MakeText(appContext, "Your message has been sent", ToastLength.Short).Show();
+            Toast.MakeText(appContext, "Message will be sent by your default email app", ToastLength.Short).Show();
         }
     }
 

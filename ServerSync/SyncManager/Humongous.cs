@@ -1,8 +1,10 @@
 using Android.App;
 using Android.Content.Res;
 using JhpDataSystem.model;
+using JhpDataSystem.projects;
 using JhpDataSystem.store;
 using Newtonsoft.Json.Linq;
+using SyncManager.store;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,9 +33,44 @@ namespace JhpDataSystem
 
         AssetManager _assetManager { get; set; }
         Activity _mainContext;
-        public LocalEntityStore LocalEntityStoreInstance { get; private set; }
 
         public Dictionary<int, List<FieldValuePair>> TemporalViewData = null;
+
+        public void updateFieldDictionary()
+        {
+            var currentContexts = new List<BaseContextManager>();
+            var allContexts = new List<BaseContextManager>() {
+                //new LspContextManager(null,null),
+                new VmmcContextManager(null,null),
+                new PpxContextManager(null,null)
+            };
+
+            foreach (var projContext in allContexts)
+            {
+                if (projContext.FieldItems != null)
+                { currentContexts.Add(projContext); }
+            }
+
+            foreach (var currCtxt in currentContexts)
+            {
+                var views = currCtxt.FieldItems.Select(t => t.pageName).Distinct().ToList();
+                foreach (var kind in currCtxt.KindDisplayNames.Keys)
+                {
+                    var fieldDictionaryStore = new
+                        FieldDictionaryStore()
+                    { DatasetName = kind };
+                    var kindSearchName = kind;
+                    if (currCtxt.KindToFieldTablename != null
+                        && currCtxt.KindToFieldTablename.ContainsKey(kind))
+                    {
+                        kindSearchName = currCtxt.KindToFieldTablename[kind];
+                    }
+                    fieldDictionaryStore.getFields(currCtxt.Name,
+                        currCtxt.FieldItems.Where(t => t.pageName.Contains(kindSearchName)).ToList());
+                    fieldDictionaryStore.saveToDb();
+                }
+            }
+        }
 
         public Dictionary<string, string> ApiAssets = null;
         public void InitialiseAppResources(AssetManager assetManager, Activity context)
@@ -64,18 +101,29 @@ namespace JhpDataSystem
                 }                
             }
 
-            //we need to have this class initialised
-            LocalEntityStoreInstance = new LocalEntityStore();
-            //LocalEntityStoreInstance.buildTables(false);
-            CloudDbInstance = new CloudDb() { ApiAssets = ApiAssets };
+            var saveDictionaryToDb = false;
+            if (saveDictionaryToDb)
+            {
+                updateFieldDictionary();
+            }
+
+            CloudDbInstance = new CloudDb() { ApiAssets = ApiAssets,  };
+
+            //var allKindNames = new List<string>();
+            //foreach (var ctxt in currentContexts)
+            //    foreach (var kind in ctxt.KindDisplayNames.Keys)
+            //        allKindNames.Add(kind);
+
+            //this creates a table used to store a decrypted set of similar data
+            var dropAndRecreate = false;
             var allTables = CloudDb.getAllKindNames();
             foreach (var table in allTables)
             {
                 new CloudLocalStore(table.toKind()).build();
-
-                //this creates a table used to store a decrypted set of similar data
-                new CloudLocalStore(CloudDb.getLocalTableName(table).toKind()).build();
-                //new CloudLocalStore(table.toKind()).build(dropAndRecreate: true);
+                new CloudLocalStore(CloudDb.getLocalTableName(table).toKind())
+                    .build(dropAndRecreate);
+                new FieldValueStore(CloudDb.getTableFieldValueName(table))
+                    .build(dropAndRecreate);
             }
         }
 

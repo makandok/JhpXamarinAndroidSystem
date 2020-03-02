@@ -55,9 +55,10 @@ android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="wrap_content"
         android:id="@+id/l_vm_type_of_review" />
 <RadioGroup
-android:orientation="horizontal"
+android:orientation="vertical"
         android:minWidth="25dp"
         android:minHeight="25dp"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rg_vm_type_of_review" >
@@ -104,7 +105,7 @@ android:id="@+id/vm_type_of_review_16weeksreview" /></RadioGroup >
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_vm_postop_data_entry_date"
             android:textSize="25sp" />
@@ -157,7 +158,7 @@ android:id="@+id/vm_type_of_review_16weeksreview" /></RadioGroup >
         <EditText
             android:text=""
             android:textColor="@android:color/holo_blue_dark"
-            android:layout_width="220dp"
+            android:layout_width="330dp"
             android:layout_height="50dp"
             android:id="@+id/dttxt_vm_date_of_review"
             android:textSize="25sp" />

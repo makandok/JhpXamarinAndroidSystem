@@ -35,6 +35,7 @@ namespace JhpDataSystem.projects.ppx
 
         void showPPXHome()
         {
+            AppInstance.Instance.TemporalViewData.Clear();
             SetContentView(Resource.Layout.PrepexHome);
             var closeButton = FindViewById<Button>(Resource.Id.buttonClose);
             closeButton.Click += (sender, e) => {
@@ -96,6 +97,9 @@ namespace JhpDataSystem.projects.ppx
             var allSizes = new Dictionary<int, PPDeviceSizes>();
             foreach (var client in allClients)
             {
+                if (client.PlacementDate.Year != 1900 && 
+                    client.PlacementDate.Year < 2017)
+                    continue;
                 PPDeviceSizes current = null;
                 var dayId = (client.PlacementDate.Year * 1000) + client.PlacementDate.DayOfYear;
                 if (!allSizes.TryGetValue(dayId, out current))
@@ -119,11 +123,29 @@ namespace JhpDataSystem.projects.ppx
             resList.Add(Resources.GetString(Resource.String.ppx_sys_deviceusage));
             resList.Add(System.Environment.NewLine);
             resList.Add(PPDeviceSizes.getHeader());
-
             var ordered = allSizes.OrderByDescending(t=>t.PlacementDate);
+
+            var monthTotals = new Dictionary<int, PPDeviceSizes>();
             foreach (var dayUsage in ordered)
             {
-                resList.Add(dayUsage.toDisplay());
+                var month = dayUsage.PlacementDate.Month;
+                var year = dayUsage.PlacementDate.Year;
+                var yyyyMM = year * 100 + month;
+                PPDeviceSizes sizeForMonth = null;
+                if (!monthTotals.TryGetValue(yyyyMM, out sizeForMonth))
+                {
+                    sizeForMonth = new PPDeviceSizes(01, month, year) {isMonth = true };
+                    monthTotals[yyyyMM] = sizeForMonth;
+                }
+                sizeForMonth.Add(dayUsage.size);
+            }
+            //foreach (var dayUsage in ordered)
+            //{
+            //    resList.Add(dayUsage.toDisplay());
+            //}
+            foreach (var monthUsages in monthTotals)
+            {
+                resList.Add(monthUsages.Value.toDisplay());
             }
 
             var asString = string.Join(System.Environment.NewLine, resList);

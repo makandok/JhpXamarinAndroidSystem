@@ -12,7 +12,7 @@ namespace JhpDataSystem.store
 
     public class LocalDB3
     {
-        public string defaultConnectionString = @"data source=SUPER-LAP\SQL2014;initial catalog=ServerSyncDb;integrated security=true;";
+        public string defaultConnectionString = SyncManager.Properties.Settings.Default.TestDbConnString;
         public LocalDB3(string connString)
         {
             defaultConnectionString = connString;

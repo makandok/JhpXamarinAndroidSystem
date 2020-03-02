@@ -30,6 +30,7 @@ namespace JhpDataSystem.projects.vmc
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.clientlist);
 
+
             var listview = FindViewById<ListView>(Resource.Id.listviewClientList);
             listview.FastScrollEnabled = true;
             listview.FastScrollAlwaysVisible = true;
@@ -38,6 +39,11 @@ namespace JhpDataSystem.projects.vmc
 
             _allPrepexClients = new VmmcLookupProvider().Get();
             _defaultAdapter = new VmmcClientSummaryAdapter(this, listview, _allPrepexClients);
+
+            //todo: wire filter for search view
+            var searchView = FindViewById<SearchView>(Resource.Id.searchViewClientList);
+            searchView.QueryTextChange += applyTextChangedFilter;
+            searchView.QueryTextSubmit += applyTextSubmittedFilter;
 
             listview.Adapter = _defaultAdapter;
 
@@ -49,7 +55,19 @@ namespace JhpDataSystem.projects.vmc
             buttonPerformAction.Visibility = ViewStates.Gone;
             //buttonPerformAction.Click += performActionSpecified;
         }
+        void applyTextSubmittedFilter(object sender, SearchView.QueryTextSubmitEventArgs e)
+        {
+            //todo: filter client list
+            Toast.MakeText(this, "Soon to Implement. Searching for " + e.Query, ToastLength.Short).Show();
+            e.Handled = true;
+        }
 
+        void applyTextChangedFilter(object sender, SearchView.QueryTextChangeEventArgs e)
+        {
+            //todo: filter client list
+            Toast.MakeText(this, "Soon to Implement. Searched for " + e.NewText, ToastLength.Short).Show();
+            e.Handled = true;
+        }
         void OnListItemClick(ListView l, View v, int position, long id)
         {
             var t = _allPrepexClients[position];
